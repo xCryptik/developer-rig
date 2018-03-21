@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ExtensionFrame /> when in config mode renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ExtensionFrame
+    extension={
+        Object {
+            "authorName": "test",
+            "channelId": "channelId",
+            "description": "description",
+            "iconUrl": "icon_url",
+            "id": "id",
+            "name": "name",
+            "requestIdentity": false,
+            "sku": "sku",
+            "state": "state",
+            "summary": "summary",
+            "token": "token",
+            "vendorCode": "vendorCode",
+            "version": "version",
+            "views": Object {},
+            "whitelistedConfigUrls": "foo",
+            "whitelistedPanelUrls": "bar",
+          }
+    }
+    iframeClassName="rig-frame frameid-0"
+    mode="config"
+    type="config"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "className": "extension-frame-wrapper",
+    },
+    "ref": [Function],
+    "rendered": null,
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "className": "extension-frame-wrapper",
+      },
+      "ref": [Function],
+      "rendered": null,
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<ExtensionFrame /> when in live config mode renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ExtensionFrame
+    extension={
+        Object {
+            "authorName": "test",
+            "channelId": "channelId",
+            "description": "description",
+            "iconUrl": "icon_url",
+            "id": "id",
+            "name": "name",
+            "requestIdentity": false,
+            "sku": "sku",
+            "state": "state",
+            "summary": "summary",
+            "token": "token",
+            "vendorCode": "vendorCode",
+            "version": "version",
+            "views": Object {},
+            "whitelistedConfigUrls": "foo",
+            "whitelistedPanelUrls": "bar",
+          }
+    }
+    iframeClassName="rig-frame frameid-0"
+    mode="dashboard"
+    type="liveConfig"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "className": "extension-frame-wrapper",
+    },
+    "ref": [Function],
+    "rendered": null,
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "className": "extension-frame-wrapper",
+      },
+      "ref": [Function],
+      "rendered": null,
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<ExtensionFrame /> when in live config mode renders correctly 2`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ExtensionFrame
+    extension={
+        Object {
+            "authorName": "test",
+            "channelId": "channelId",
+            "description": "description",
+            "iconUrl": "icon_url",
+            "id": "id",
+            "name": "name",
+            "requestIdentity": false,
+            "sku": "sku",
+            "state": "state",
+            "summary": "summary",
+            "token": "token",
+            "vendorCode": "vendorCode",
+            "version": "version",
+            "views": Object {},
+            "whitelistedConfigUrls": "foo",
+            "whitelistedPanelUrls": "bar",
+          }
+    }
+    iframeClassName="rig-frame frameid-0"
+    mode="viewer"
+    type="panel"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "className": "extension-frame-wrapper",
+    },
+    "ref": [Function],
+    "rendered": null,
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "className": "extension-frame-wrapper",
+      },
+      "ref": [Function],
+      "rendered": null,
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

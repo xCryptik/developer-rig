@@ -1,0 +1,100 @@
+@import "../dialog-component/component.sass"
+
+// .new-extension-view
+.new-extension-view__background
+  @extend .dialog__backdrop
+
+.new-extension-view__dialog
+  @extend .dialog
+
+.dialog__container
+  @extend .container
+
+.dialog__divider
+  @extend .dialog__divider-width
+
+.dialog__top-bar-container
+  @extend .top-bar
+
+.top-bar-container__title
+  @extend .top-bar-element-left
+  margin-top: 5px
+  font-weight: bold
+
+.top-bar-container__escape
+  @extend .top-bar-element-right
+  width: $top-bar-dimension
+  cursor: pointer
+  width: 4em
+  margin-top: 5px
+
+.dialog__type-and-size-container
+  @extend .container
+  min-height: 130px
+
+.type-and-size-container__type-title
+  @extend .container__left-block
+  @extend .title
+  width: 40%
+
+.type-title__type-container
+  @extend .container
+  // the children of this live in div-option/
+
+.type-and-size-container__size-title
+  @extend .container__right-block
+  @extend .title
+  width: 50%
+  text-align: left
+
+.size-title__size-subcontainer
+  @extend .container
+  margin-top: 10px
+
+.size-subcontainer__presets
+  @extend .container__block
+  height: 100%
+  width: 20%
+  //children of this live in radio-option/
+
+.size-subcontainer__custom-subcontainer
+  @extend .container__block
+
+.custom-subcontainer__inputs
+  margin-top: 15px
+  margin-left: 25px
+
+.custom-subcontainer__input
+  margin-bottom: 5px
+
+.inputs__option-label
+  clear: left
+  font-size: 12px
+  margin-right: 10px
+
+.inputs__width-offset
+  margin-right: 14px
+
+.dialog__viewer-container
+  @extend .container
+
+.viewer-container__viewer-block
+  @extend .container__left-block
+  @extend .title
+  width: auto
+
+.viewer-block__inputs
+  @extend .container
+  margin-top: 10px
+
+.dialog__bottom-bar
+  @extend .container__left-block
+
+.bottom-bar__save
+  @include bottom-bar-box(white, #7D55C7)
+  margin: 1em
+  margin-left: 20px
+
+.bottom-bar__cancel
+  @include bottom-bar-box(#7D55C7, white)
+  margin: 1em

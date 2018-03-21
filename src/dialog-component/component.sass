@@ -1,0 +1,75 @@
+$top-bar-dimension: 40px
+
+.dialog__backdrop
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background-color: grey
+  opacity: 0.5
+  padding: 50
+
+.dialog
+  background-color: white
+  border-radius: 5
+  width: 66%
+  margin: 0 auto
+  border: 2px solid black
+  position: absolute
+  top: 20%
+  left: 20%
+
+.container
+  display: flex
+
+.container__block
+  display: inline-block
+
+.container__left-block
+  @extend .container__block
+  float: left
+  margin-left: 20px
+
+.container__right-block
+  @extend .container__block
+  float: right
+
+.top-bar
+  @extend .container
+  height: $top-bar-dimension
+  justify-content: space-between
+
+.top-bar-element
+  width: auto
+  text-align: center
+  vertical-align: middle
+  line-height: $top-bar-dimension
+
+.top-bar-element-left
+  @extend .container__left-block
+  @extend .top-bar-element
+
+.top-bar-element-right
+  @extend .container__right-block
+  @extend .top-bar-element
+
+.dialog__divider-width
+  width: 95%
+
+@mixin bottom-bar-box($color, $bg-color)
+  color: $color
+  background-color: $bg-color
+  border: 2px solid #7D55C7
+  display: inline
+  float: left
+  text-align: center
+  width: 80px
+  height: 25px
+  vertical-align: middle
+  line-height: 25px
+  cursor: pointer
+
+.title
+  font-weight: bold
+  font-size: 13px
