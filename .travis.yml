@@ -33,3 +33,4 @@ deploy:
     repo: twitchdev/developer-rig
     branch: master
     node_js: "node"
+    tags: true
