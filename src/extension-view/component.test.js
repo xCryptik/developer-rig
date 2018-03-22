@@ -46,13 +46,48 @@ describe('<ExtensionView />', () => {
   });
 
   describe('overlay mode views', () => {
-    it('renders correctly in overlay mode', () => {
-    const { wrapper } = setupShallow({
-      type: ExtensionAnchor.Overlay,
-      overlaySize: {
-        height: "1px",
+    it('renders correctly in overlay mode as a Broadcaster', () => {
+      const { wrapper } = setupShallow({
+        type: ExtensionAnchor.Overlay,
+        overlaySize: {
+          height: "1px",
           width: "1px"
         }
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly when in overlay mode as a Logged In and Unlinked Viewer', () => {
+      const { wrapper } = setupShallow({
+        role: ViewerTypes.LoggedIn,
+        linked: false,
+        overlaySize: {
+          height: "1px",
+          width: "1px"
+        }
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly when in overlay mode as a Logged In and Linked Viewer', () => {
+      const { wrapper } = setupShallow({
+        role: ViewerTypes.LoggedIn,
+        linked: true,
+        overlaySize: {
+          height: "1px",
+          width: "1px"
+        }
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly when in overlay mode as a Logged Out', () => {
+      const { wrapper } = setupShallow({
+        role: ViewerTypes.LoggedOut,
+        overlaySize: {
+          height: "1px",
+            width: "1px"
+          }
       });
       expect(wrapper).toMatchSnapshot();
     });
