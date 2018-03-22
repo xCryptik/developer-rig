@@ -1,0 +1,18 @@
+export const ExtensionForTest = {
+  authorName: 'test',
+  id: 'id',
+  description: 'description',
+  iconUrl: 'icon_url',
+  name: 'name',
+  requestIdentity: false,
+  sku: 'sku',
+  state: 'state',
+  summary: 'summary',
+  token: 'token',
+  vendorCode: 'vendorCode',
+  version: '0.1',
+  views: {},
+  whitelistedConfigUrls: ['foo'],
+  whitelistedPanelUrls: ['bar'],
+  channelId: 'channelId',
+};

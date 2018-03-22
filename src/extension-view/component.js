@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './component.sass';
 import { ExtensionFrame } from '../extension-frame';
 import { IdentityOptions } from '../constants/identity-options';
-import { ViewerTypes } from '../constants/viewer_types';
+import { ViewerTypes } from '../constants/viewer-types';
 import closeButton from '../img/close_icon.png';
 const { ExtensionAnchor } = window['extension-coordinator'];
 

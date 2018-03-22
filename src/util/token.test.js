@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { createToken, createSignedToken } from './token';
-import { ViewerTypes } from '../constants/viewer_types';
+import { ViewerTypes } from '../constants/viewer-types';
 import { RIG_ROLE } from '../constants/rig';
 
 describe('token', () => {

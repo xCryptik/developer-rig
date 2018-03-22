@@ -1,72 +1,60 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { ExtensionView } from './component';
+import { ViewerTypes } from '../constants/viewer-types';
+import { ExtensionForTest } from '../tests/constants/extension';
+const { ExtensionAnchor } = window['extension-coordinator'];
 
 describe('<ExtensionView />', () => {
-  const extension = {
-    authorName: 'test',
-    id: 'id',
-    description: 'description',
-    iconUrl: 'icon_url',
-    name: 'name',
-    requestIdentity: false,
-    sku: 'sku',
-    state: 'state',
-    summary: 'summary',
-    token: 'token',
-    vendorCode: 'vendorCode',
-    version: 'version',
-    views: {},
-    whitelistedConfigUrls: 'foo',
-    whitelistedPanelUrls: 'bar',
-    channelId: 'channelId',
-  };
-  const iframeClassName = 'rig-frame frameid-0';
+  const setupShallow = setupShallowTest(ExtensionView, () => ({
+    id: '0',
+    extension: ExtensionForTest,
+    type: ExtensionAnchor.Panel,
+    role: ViewerTypes.Broadcaster,
+    mode: 'viewer',
+    linked: false,
+    deleteViewHandler: jest.fn()
+  }));
 
-  describe('when a panel type', () => {
-    const panelType = 'panel';
-    const role = 'Broadcaster';
-    const mode = 'viewer';
-    const linked = false;
-    const component = shallow(
-      <ExtensionView
-        id={'0'}
-        extension={extension}
-        type={panelType}
-        mode={mode}
-        role={role}
-        linked={linked}
-        deleteViewHandler={() => { }}/>
-    );
+  describe('panel mode views', () => {
+    it('renders correctly when in panel mode as a Broadcaster', () => {
+      const { wrapper } = setupShallow();
+      expect(wrapper).toMatchSnapshot();
+    });
 
-    it('renders correctly', () => {
-      expect(component).toMatchSnapshot();
+    it('renders correctly when in panel mode as a Logged In and Unlinked Viewer', () => {
+      const { wrapper } = setupShallow({
+        role: ViewerTypes.LoggedIn,
+        linked: false,
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly when in panel mode as a Logged In and Linked Viewer', () => {
+      const { wrapper } = setupShallow({
+        role: ViewerTypes.LoggedIn,
+        linked: true,
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly when in panel mode as a Logged Out', () => {
+      const { wrapper } = setupShallow({
+        role: ViewerTypes.LoggedOut,
+      });
+      expect(wrapper).toMatchSnapshot();
     });
   });
 
-
-  describe('when a panel type', () => {
-    const panelType = 'video_overlay';
-    const role = 'Broadcaster';
-    const mode = 'viewer';
-    const linked = false;
-    const component = shallow(
-      <ExtensionView
-        id={'0'}
-        extension={extension}
-        type={panelType}
-        mode={mode}
-        role={role}
-        linked={linked}
-        overlaySize={{
-          width: '1px',
-          height: '1px',
-        }}
-        deleteViewHandler={() => { }}/>
-    );
-
-    it('renders correctly', () => {
-      expect(component).toMatchSnapshot();
+  describe('overlay mode views', () => {
+    it('renders correctly in overlay mode', () => {
+    const { wrapper } = setupShallow({
+      type: ExtensionAnchor.Overlay,
+      overlaySize: {
+        height: "1px",
+          width: "1px"
+        }
+      });
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });
