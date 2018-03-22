@@ -17,6 +17,9 @@ script:
   - yarn test
   - yarn build
 
+after_success:
+  - coveralls < coverage/lcov.info
+
 before_deploy:
   - cd $TRAVIS_BUILD_DIR/build
   - sudo zip -rX devrig.zip ./*
