@@ -5,7 +5,7 @@ import { ExtensionFrame } from '../extension-frame';
 import { IdentityOptions } from '../constants/identity-options';
 import { ViewerTypes } from '../constants/viewer_types';
 import closeButton from '../img/close_icon.png';
-const { ExtensionAnchor } = window['extension-coordinator'];
+const { ExtensionAnchor, ExtensionMode } = window['extension-coordinator'];
 
 export class ExtensionView extends Component {
   constructor(props) {
@@ -36,11 +36,25 @@ export class ExtensionView extends Component {
     const extensionProps = {}
     switch(this.props.type) {
       case ExtensionAnchor.Panel:
-        extensionProps.width = "320px";
+        extensionProps.viewStyles = {
+          width: "320px",
+        };
         break;
       case ExtensionAnchor.Overlay:
-        extensionProps.width = this.props.overlaySize.width;
-        extensionProps.height = this.props.overlaySize.height;
+        extensionProps.viewStyles = {
+          width: this.props.overlaySize.width,
+          height: this.props.overlaySize.height
+        };
+        break;
+      case ExtensionMode.Config:
+        extensionProps.viewStyles = {
+          width: "100%",
+          height: "700px"
+        };
+        extensionProps.viewWrapperStyles = {
+          overflow: "auto",
+          height: "70vh",
+        };
         break;
       default:
         break;
@@ -51,7 +65,8 @@ export class ExtensionView extends Component {
       <div
         className={'view__wrapper'}
         onMouseEnter={() => { this.mouseEnter() }}
-        onMouseLeave={() => { this.mouseLeave() }}>
+        onMouseLeave={() => { this.mouseLeave() }}
+        style={extensionProps.viewWrapperStyles}>
         <div
           className={'view__header'}>
           {(this.props.deleteViewHandler !== undefined && this.state.mousedOver) &&
@@ -74,10 +89,7 @@ export class ExtensionView extends Component {
         <div
           className="view"
           ref={this._boundIframeHostRefHandler}
-          style={{
-            height: extensionProps.height,
-            width: extensionProps.width,
-          }}>
+          style={extensionProps.viewStyles}>
           <ExtensionFrame
             iframeClassName={`rig-frame frameid-${this.props.id}`}
             extension={this.props.extension}

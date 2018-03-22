@@ -45,10 +45,35 @@ describe('<ExtensionView />', () => {
   });
 
 
-  describe('when a panel type', () => {
+  describe('when a video_overlay type', () => {
     const panelType = 'video_overlay';
     const role = 'Broadcaster';
     const mode = 'viewer';
+    const linked = false;
+    const component = shallow(
+      <ExtensionView
+        id={'0'}
+        extension={extension}
+        type={panelType}
+        mode={mode}
+        role={role}
+        linked={linked}
+        overlaySize={{
+          width: '1px',
+          height: '1px',
+        }}
+        deleteViewHandler={() => { }}/>
+    );
+
+    it('renders correctly', () => {
+      expect(component).toMatchSnapshot();
+    });
+  });
+
+  describe('when a config type', () => {
+    const panelType = 'config';
+    const role = 'Broadcaster';
+    const mode = 'config';
     const linked = false;
     const component = shallow(
       <ExtensionView
