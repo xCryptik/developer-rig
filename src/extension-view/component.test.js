@@ -114,8 +114,8 @@ describe('<ExtensionView />', () => {
         role: ViewerTypes.LoggedOut,
         overlaySize: {
           height: "1px",
-            width: "1px"
-          }
+          width: "1px"
+        }
       });
       expect(wrapper).toMatchSnapshot();
     });
