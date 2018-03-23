@@ -4,8 +4,8 @@ language: node_js
 # Lock compatible node versions
 node_js:
   - "node"
+  - "9"
   - "8"
-  - "7"
 
 # Build on Ubuntu Trust 14.04
 dist: trusty
