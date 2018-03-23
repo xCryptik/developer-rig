@@ -2,6 +2,7 @@
   "name": "dev-rig",
   "version": "0.1.0",
   "private": true,
+  "repository": "github:twitchdev/developer-rig",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
@@ -58,6 +59,7 @@
     "host": "node ./scripts/ssl.js && node ./scripts/host.js"
   },
   "devDependencies": {
+    "coveralls": "^3.0.0",
     "cross-env": "^5.1.4",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -68,6 +70,8 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
     ],
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "<rootDir>/src/tests/setup.js"

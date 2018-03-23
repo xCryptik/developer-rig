@@ -1,5 +1,5 @@
 # Twitch Extensions Developer Rig
-[![Build Status](https://travis-ci.org/twitchdev/developer-rig.svg?branch=master)](https://travis-ci.org/twitchdev/developer-rig)
+[![Build Status](https://travis-ci.org/twitchdev/developer-rig.svg?branch=master)](https://travis-ci.org/twitchdev/developer-rig) [![Coverage Status](https://coveralls.io/repos/github/twitchdev/developer-rig/badge.svg)](https://coveralls.io/github/twitchdev/developer-rig)
 ## Twitch Extensions 101
 Think of Twitch Extensions as Apps for Twitch. Developers can create sandboxed web applications that run on [Twitch](https://twitch.tv) that provide new and different ways for viewers and broadcasters to interact.
 
