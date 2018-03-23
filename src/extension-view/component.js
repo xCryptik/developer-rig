@@ -4,6 +4,7 @@ import './component.sass';
 import { ExtensionFrame } from '../extension-frame';
 import { IdentityOptions } from '../constants/identity-options';
 import { ViewerTypes } from '../constants/viewer_types';
+import { CONFIG_VIEW_DIMENSIONS, CONFIG_VIEW_WRAPPER_DIMENSIONS, PANEL_VIEW_DIMENSIONS } from '../constants/view_sizes';
 import closeButton from '../img/close_icon.png';
 const { ExtensionAnchor, ExtensionMode } = window['extension-coordinator'];
 
@@ -36,9 +37,7 @@ export class ExtensionView extends Component {
     const extensionProps = {}
     switch(this.props.type) {
       case ExtensionAnchor.Panel:
-        extensionProps.viewStyles = {
-          width: "320px",
-        };
+        extensionProps.viewStyles = PANEL_VIEW_DIMENSIONS;
         break;
       case ExtensionAnchor.Overlay:
         extensionProps.viewStyles = {
@@ -47,14 +46,8 @@ export class ExtensionView extends Component {
         };
         break;
       case ExtensionMode.Config:
-        extensionProps.viewStyles = {
-          width: "100%",
-          height: "700px"
-        };
-        extensionProps.viewWrapperStyles = {
-          overflow: "auto",
-          height: "70vh",
-        };
+        extensionProps.viewStyles = CONFIG_VIEW_DIMENSIONS;
+        extensionProps.viewWrapperStyles = CONFIG_VIEW_WRAPPER_DIMENSIONS;
         break;
       default:
         break;
