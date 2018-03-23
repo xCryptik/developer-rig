@@ -18,7 +18,8 @@ script:
   - yarn build
 
 after_success:
-  - coveralls < coverage/lcov.info
+  - test $TRAVIS_NODE_VERSION = "node" &&
+    coveralls < coverage/lcov.info
 
 before_deploy:
   - cd $TRAVIS_BUILD_DIR/build
