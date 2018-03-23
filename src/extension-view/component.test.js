@@ -4,6 +4,8 @@ import { ViewerTypes } from '../constants/viewer-types';
 import { ExtensionForTest } from '../tests/constants/extension';
 const { ExtensionAnchor } = window['extension-coordinator'];
 
+const DeleteButtonSelector = '.view__close_button';
+
 describe('<ExtensionView />', () => {
   const setupShallow = setupShallowTest(ExtensionView, () => ({
     id: '0',
@@ -14,6 +16,32 @@ describe('<ExtensionView />', () => {
     linked: false,
     deleteViewHandler: jest.fn()
   }));
+
+  it('when moused over displays the delete button', () => {
+    const { wrapper } = setupShallow();
+    wrapper.simulate('mouseEnter');
+    expect(wrapper.state().mousedOver).toBe(true);
+    expect(wrapper.find(DeleteButtonSelector)).toHaveLength(1);
+  });
+
+  it('when moused over and mouse leaves, no delete button displayed', () => {
+    const { wrapper } = setupShallow();
+    wrapper.simulate('mouseEnter');
+    expect(wrapper.state().mousedOver).toBe(true);
+    expect(wrapper.find(DeleteButtonSelector)).toHaveLength(1);
+    wrapper.simulate('mouseLeave')
+    expect(wrapper.state().mousedOver).toBe(false);
+    expect(wrapper.find(DeleteButtonSelector)).toHaveLength(0);
+  });
+
+  it('when moused over and delete button is clicked, the deleteViewHandler is clicked', () => {
+    const { wrapper } = setupShallow();
+    wrapper.simulate('mouseEnter');
+    expect(wrapper.state().mousedOver).toBe(true);
+    expect(wrapper.find(DeleteButtonSelector)).toHaveLength(1);
+    wrapper.find(DeleteButtonSelector).simulate('click');
+    expect(wrapper.instance().props.deleteViewHandler).toHaveBeenCalled();
+  });
 
   describe('panel mode views', () => {
     it('renders correctly when in panel mode as a Broadcaster', () => {
