@@ -141,7 +141,7 @@ export class Rig extends Component {
       ),
       linked: linked,
       role: this.refs.extensionViewDialog.state.viewerType,
-      overlaySize: OverlaySizes[this.refs.extensionViewDialog.state.overlaySize],
+      overlaySize: (this.refs.extensionViewDialog.state.overlaySize === 'Custom' ? {width: this.refs.extensionViewDialog.state.width, height: this.refs.extensionViewDialog.state.height} : OverlaySizes[this.refs.extensionViewDialog.state.overlaySize]),
     });
     this._pushExtensionViews(extensionViews);
     this.closeExtensionViewDialog();
