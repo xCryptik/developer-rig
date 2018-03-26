@@ -168,7 +168,7 @@ export class Rig extends Component {
         {this.state.showExtensionsView &&
           <ExtensionViewDialog
             ref="extensionViewDialog"
-            extensionType={this.state.manifest.anchor}
+            extensionViews={this.state.manifest.views}
             show={this.state.showExtensionsView}
             closeHandler={this.closeExtensionViewDialog}
             saveHandler={this.createExtensionView} />}

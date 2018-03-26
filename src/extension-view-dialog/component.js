@@ -38,7 +38,7 @@ export class ExtensionViewDialog extends Component {
   }
 
   renderExtensionTypeComponents() {
-    const allowedAnchors = Object.keys(ExtensionAnchors).filter(anchor => anchor === this.props.extensionType);
+    const allowedAnchors = this._getSupportedViews();
     return allowedAnchors.map(key => {
       return <DivOption
         key={key}
@@ -138,10 +138,17 @@ export class ExtensionViewDialog extends Component {
       </div>
     );
   }
+
+  _getSupportedViews() {
+    return Object.keys(ExtensionAnchors).filter(anchorS => {
+      const anchorC = anchorS.replace(/_\w/g, (m) => m[1].toUpperCase());
+      return this.props.extensionViews[anchorC];
+    });
+  }
 }
 
 ExtensionViewDialog.propTypes = {
-  extensionType: PropTypes.string.isRequired,
+  extensionViews: PropTypes.object.isRequired,
   closeHandler: PropTypes.func.isRequired,
   saveHandler: PropTypes.func.isRequired,
   show: PropTypes.bool,
