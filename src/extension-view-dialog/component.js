@@ -9,7 +9,6 @@ import { ViewTypeImages } from '../constants/img-map';
 import { RadioOption } from './radio-option';
 import { DivOption } from './div-option';
 import closeButton from '../img/close_icon.png';
-const { ExtensionAnchor } = window['extension-coordinator'];
 export class ExtensionViewDialog extends Component {
   constructor(props) {
     super(props);
@@ -32,17 +31,17 @@ export class ExtensionViewDialog extends Component {
   }
 
   componentWillMount() {
-    this.setState({
-      extensionViewType: this.props.extensionType === ExtensionAnchor.Overlay ? DEFAULT_EXTENSION_TYPE : ExtensionAnchor.Panel
-    });
+    const allowedAnchors = this._getSupportedViews();
+    if (allowedAnchors.length > 0) {
+      this.setState({
+        extensionViewType: allowedAnchors[0],
+      });
+    }
   }
 
   renderExtensionTypeComponents() {
     const allowedAnchors = this._getSupportedViews();
     const onlyOneOption = allowedAnchors.length === 1;
-    if (onlyOneOption && this.state.extensionViewType !== allowedAnchors[0]) {
-      this.setState({extensionViewType: allowedAnchors[0]});
-    }
     return allowedAnchors.map(key => {
       return <DivOption
         key={key}
@@ -108,7 +107,7 @@ export class ExtensionViewDialog extends Component {
                   {this.renderOverlaySizeComponents()}
                 </div>
                 <div className="size-subcontainer__custom-subcontainer">
-                  <RadioOption name="overlaySize" value="Custom" onChange={this.onChange}/>
+                  <RadioOption name="overlaySize" value="Custom" onChange={this.onChange} checked={"Custom" === DEFAULT_IDENTITY_OPTION}/>
                   <div className="custom-subcontainer__inputs">
                     <div className="custom-subcontainer__input">
                       <label className="inputs__option-label inputs__width-offset"> Width </label>
@@ -156,5 +155,4 @@ ExtensionViewDialog.propTypes = {
   closeHandler: PropTypes.func.isRequired,
   saveHandler: PropTypes.func.isRequired,
   show: PropTypes.bool,
-  children: PropTypes.node
 };
