@@ -4,8 +4,8 @@ language: node_js
 # Lock compatible node versions
 node_js:
   - "node"
+  - "9"
   - "8"
-  - "7"
 
 # Build on Ubuntu Trust 14.04
 dist: trusty
@@ -13,28 +13,22 @@ dist: trusty
 # "sudo: required" forces build in a complete virtual environment rather than containerized
 sudo: required
 
+# Build and Test
 script:
   - yarn test
   - yarn build
 
+# Publish coverage results to coveralls.io
 after_success:
-  - test $TRAVIS_NODE_VERSION = "node" &&
-    coveralls < coverage/lcov.info
-
-before_deploy:
-  - cd $TRAVIS_BUILD_DIR/build
-  - sudo zip -rX devrig.zip ./*
+  - npm install -g travis-deploy-once
+  - travis-deploy-once "coveralls < coverage/lcov.info"
 
 # Deploy to GitHub Releases (api key is encrypted)
 # Deploy only master built on latest stable version of node
 deploy:
-  provider: releases
-  api_key:
-    secure: WXB0eXH5rMo6K4X2zogF8MAUOYVHquBcvcbSv/ftlzkuccSla8kdU2ViDYhMkPmGLQGAbLy9YxI9yGWFp4CSUrGo6DcNDEuNo0+OTeooeAgYXFmXTDKsZcW16Rv4IKGEItaZCL9fuAuh9zO0tR8mzI4SoRigFtZQT9oRLNRoVQgD741dQHoQxueI9oD26gXg0K7miWV0DdKzKp3kqGE5T300C27GyBqC2vzfxJhi+vqubGhpRZ0oJiPwtO1m3FknqX/lDmwLjaUiBq6mirF5TSZAjGHNuGIc4qDU7ZE5OIarQT9bcDDXRuhrzx18OvYKxQxlEYGplmRFnMDzBioV+ZdAQBQlWRdUAGRBKyFqUBYQN7wzFrwyJH7EUINHk17GVtTL+uSAWYGmLS4B4Ovg96u2f1kCEBdkStnXQ+n5UJwGoO7ZEwCGorr12ZjvdvWsO0iTzmYydTKV4tWW6ioapkWTLqKe/C4ic6cszmuLRsuzASFtJwQZ1pJA/PL2UcCLsx/7Kd0eJqLPXJQlKaMxT7DqunSi9bz485KPlSWwDAqpzSfbswvNwsksXQlNN7Psw8ny6AeAlSrezgGfErxdAYJmA4CWQDCH1RCfv7ryryWesPEGjyw4y/Alss/4YQrL8cDhilEvi8hta/pYuNECAjSTrxyEhM7V/q34kDPz5yA=
-  file: $TRAVIS_BUILD_DIR/build/devrig.zip
+  provider: script
+  # skip_cleanup is required to prevent purging files needed for the release on deploy
   skip_cleanup: true
-  on:
-    repo: twitchdev/developer-rig
-    branch: master
-    node_js: "node"
-    tags: true
+  # run semantic-version script to appropriately increment version
+  script:
+      - npx travis-deploy-once "npx semantic-release --debug"
