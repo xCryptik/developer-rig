@@ -4,37 +4,36 @@ language: node_js
 # Lock compatible node versions
 node_js:
   - "node"
+  - "9"
   - "8"
-  - "7"
 
 # Build on Ubuntu Trust 14.04
 dist: trusty
 
+# Load tokens and env vars
+env:
+  global:
+    secure: koWS1SzAwocN3WFQaRXwBRanwAufinuASmwqYfOCpKhcXNrLaRDQlBfB/t24rRnmq0+yQSGfaGPJIrokZuA4K2AZoOSmO99PPYkgUf/nKV5HK3oz8x/R2oEOjWK5pr5RtqN8x469cLkmMjDk3qTYU11JauQoB9GjE3NkWggN4xsozbyJwwXzNhDMHqwjEDqyh3W58garp6MslvKa4TpXjjerj6AWF/F0VgcJHr4GDB6SCEwV7W084k1lowBUarxP4vi7Cv84jDVBmC2j5vPObKugHm7yZOCMOfeolF/Xicg6SoOcyrPOU396yHWCHvKB5yX+5RNBpQrQ/s4wthM9jlA0wiYwV6SmKzI7Ok6TAn8grimpHvZwa42DAXUOUwx02koit5k3CIKP0tlgW0FiVT+N4LqEEt+RygMBLm1olCwTrkLd4YNictTwork69uzmBrG2GaH5pOIjoNQ5Rxr5GYGcbR63EUjXqIbXsJ95Hp0i22WJk95i0jkNjedAW7t37SHYcRayAdHzJ0z07ernXtTNVomqX7xc4o6jQpmF60+0kg0lRARCyoo10tVbl3OCqmQvI5dPo0weQtt201kQ12IkURc9hqofAYD8PkeQGBZIaZlw5atCmhdF+VvN857lGXIauN6r1KCrV5KSUpm+JyUAcTQLG07qCJTzgahMnu4=
+
 # "sudo: required" forces build in a complete virtual environment rather than containerized
 sudo: required
 
+# Build and Test
 script:
   - yarn test
   - yarn build
 
+# Publish coverage results to coveralls.io
 after_success:
-  - test $TRAVIS_NODE_VERSION = "node" &&
-    coveralls < coverage/lcov.info
-
-before_deploy:
-  - cd $TRAVIS_BUILD_DIR/build
-  - sudo zip -rX devrig.zip ./*
+  - npm install -g travis-deploy-once
+  - travis-deploy-once "coveralls < coverage/lcov.info"
 
 # Deploy to GitHub Releases (api key is encrypted)
 # Deploy only master built on latest stable version of node
 deploy:
-  provider: releases
-  api_key:
-    secure: koWS1SzAwocN3WFQaRXwBRanwAufinuASmwqYfOCpKhcXNrLaRDQlBfB/t24rRnmq0+yQSGfaGPJIrokZuA4K2AZoOSmO99PPYkgUf/nKV5HK3oz8x/R2oEOjWK5pr5RtqN8x469cLkmMjDk3qTYU11JauQoB9GjE3NkWggN4xsozbyJwwXzNhDMHqwjEDqyh3W58garp6MslvKa4TpXjjerj6AWF/F0VgcJHr4GDB6SCEwV7W084k1lowBUarxP4vi7Cv84jDVBmC2j5vPObKugHm7yZOCMOfeolF/Xicg6SoOcyrPOU396yHWCHvKB5yX+5RNBpQrQ/s4wthM9jlA0wiYwV6SmKzI7Ok6TAn8grimpHvZwa42DAXUOUwx02koit5k3CIKP0tlgW0FiVT+N4LqEEt+RygMBLm1olCwTrkLd4YNictTwork69uzmBrG2GaH5pOIjoNQ5Rxr5GYGcbR63EUjXqIbXsJ95Hp0i22WJk95i0jkNjedAW7t37SHYcRayAdHzJ0z07ernXtTNVomqX7xc4o6jQpmF60+0kg0lRARCyoo10tVbl3OCqmQvI5dPo0weQtt201kQ12IkURc9hqofAYD8PkeQGBZIaZlw5atCmhdF+VvN857lGXIauN6r1KCrV5KSUpm+JyUAcTQLG07qCJTzgahMnu4=
-  file: $TRAVIS_BUILD_DIR/build/devrig.zip
+  provider: script
+  # skip_cleanup is required to prevent purging files needed for the release on deploy
   skip_cleanup: true
-  on:
-    repo: twitchdev/developer-rig
-    branch: master
-    node_js: "node"
-    tags: true
+  # run semantic-version script to appropriately increment version
+  script:
+      - npx travis-deploy-once "npx semantic-release"
