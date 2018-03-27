@@ -39,6 +39,10 @@ export class ExtensionViewDialog extends Component {
 
   renderExtensionTypeComponents() {
     const allowedAnchors = this._getSupportedViews();
+    const onlyOneOption = allowedAnchors.length === 1;
+    if (onlyOneOption && this.state.extensionViewType !== allowedAnchors[0]) {
+      this.setState({extensionViewType: allowedAnchors[0]});
+    }
     return allowedAnchors.map(key => {
       return <DivOption
         key={key}
@@ -46,7 +50,7 @@ export class ExtensionViewDialog extends Component {
         name={ExtensionAnchors[key]}
         value={key}
         onChange={this.onChange}
-        checked={key === this.state.extensionViewType} />
+        checked={(key === this.state.extensionViewType || onlyOneOption)} />
     });
   }
 
