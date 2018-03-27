@@ -23,12 +23,19 @@ after_success:
   - npm install -g travis-deploy-once
   - travis-deploy-once "coveralls < coverage/lcov.info"
 
+before_deploy:
+  - cd $TRAVIS_BUILD_DIR/build
+  - sudo zip -rX devrig.zip ./*
+
 # Deploy to GitHub Releases (api key is encrypted)
 # Deploy only master built on latest stable version of node
 deploy:
-  provider: script
-  # skip_cleanup is required to prevent purging files needed for the release on deploy
+  provider: releases
+  api_key: $GH_TOKEN
+  file: $TRAVIS_BUILD_DIR/build/devrig.zip
   skip_cleanup: true
-  # run semantic-version script to appropriately increment version
-  script:
-      - npx travis-deploy-once "npx semantic-release --debug"
+  on:
+    repo: twitchdev/developer-rig
+    branch: master
+    node_js: "node"
+    tags: true
