@@ -9,7 +9,6 @@ import { ViewTypeImages } from '../constants/img-map';
 import { RadioOption } from './radio-option';
 import { DivOption } from './div-option';
 import closeButton from '../img/close_icon.png';
-const { ExtensionAnchor } = window['extension-coordinator'];
 export class ExtensionViewDialog extends Component {
   constructor(props) {
     super(props);
@@ -32,13 +31,17 @@ export class ExtensionViewDialog extends Component {
   }
 
   componentWillMount() {
-    this.setState({
-      extensionViewType: this.props.extensionType === ExtensionAnchor.Overlay ? DEFAULT_EXTENSION_TYPE : ExtensionAnchor.Panel
-    });
+    const allowedAnchors = this._getSupportedViews();
+    if (allowedAnchors.length > 0) {
+      this.setState({
+        extensionViewType: allowedAnchors[0],
+      });
+    }
   }
 
   renderExtensionTypeComponents() {
-    const allowedAnchors = Object.keys(ExtensionAnchors).filter(anchor => anchor === this.props.extensionType);
+    const allowedAnchors = this._getSupportedViews();
+    const onlyOneOption = allowedAnchors.length === 1;
     return allowedAnchors.map(key => {
       return <DivOption
         key={key}
@@ -46,7 +49,7 @@ export class ExtensionViewDialog extends Component {
         name={ExtensionAnchors[key]}
         value={key}
         onChange={this.onChange}
-        checked={key === this.state.extensionViewType} />
+        checked={(key === this.state.extensionViewType || onlyOneOption)} />
     });
   }
 
@@ -104,7 +107,7 @@ export class ExtensionViewDialog extends Component {
                   {this.renderOverlaySizeComponents()}
                 </div>
                 <div className="size-subcontainer__custom-subcontainer">
-                  <RadioOption name="overlaySize" value="Custom" onChange={this.onChange}/>
+                  <RadioOption name="overlaySize" value="Custom" onChange={this.onChange} checked={"Custom" === DEFAULT_IDENTITY_OPTION}/>
                   <div className="custom-subcontainer__inputs">
                     <div className="custom-subcontainer__input">
                       <label className="inputs__option-label inputs__width-offset"> Width </label>
@@ -138,12 +141,18 @@ export class ExtensionViewDialog extends Component {
       </div>
     );
   }
+
+  _getSupportedViews() {
+    return Object.keys(ExtensionAnchors).filter(anchorS => {
+      const anchorC = anchorS.replace(/_\w/g, (m) => m[1].toUpperCase());
+      return this.props.extensionViews[anchorC];
+    });
+  }
 }
 
 ExtensionViewDialog.propTypes = {
-  extensionType: PropTypes.string.isRequired,
+  extensionViews: PropTypes.object.isRequired,
   closeHandler: PropTypes.func.isRequired,
   saveHandler: PropTypes.func.isRequired,
   show: PropTypes.bool,
-  children: PropTypes.node
 };
