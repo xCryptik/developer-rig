@@ -119,7 +119,7 @@ There are several pieces of configuration that the Developer Rig requires to fun
 
   <img src="./docs/version.png" width="60%">
 
-* Channel: the name of the channel to be used for Twitch PubSub messaging. A channel is a string of less than 32 alphanumeric characters. We recommend prefixing your channel with `rig`.
+* Channel: the name of the channel to be used for Twitch PubSub messaging. A channel is a string of less than 32 alphanumeric characters. We recommend prefixing your channel with `rig`. If you later want to change the name of your channel you must delete or edit your browser's local storage as well as changing your EXT_CHANNEL argument.
 
 * Owner name: the Twitch user name of the owner of the Extension (the Twitch user who created the Extension).
 
