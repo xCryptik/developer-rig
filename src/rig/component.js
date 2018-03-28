@@ -8,7 +8,7 @@ import { createExtensionObject } from '../util/extension';
 import { createSignedToken } from '../util/token';
 import { fetchManifest, fetchExtensionManifest } from '../util/api';
 import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG, CONFIGURATIONS } from '../constants/nav-items'
-import { ViewerTypes } from '../constants/viewer_types';
+import { ViewerTypes } from '../constants/viewer-types';
 import { OverlaySizes } from '../constants/overlay_sizes';
 import { IdentityOptions } from '../constants/identity-options';
 import { RIG_ROLE } from '../constants/rig';

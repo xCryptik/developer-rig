@@ -1,4 +1,4 @@
-import { ViewerTypes } from '../constants/viewer_types';
+import { ViewerTypes } from '../constants/viewer-types';
 import { RIG_ROLE } from '../constants/rig';
 import jwt from 'jsonwebtoken';
 

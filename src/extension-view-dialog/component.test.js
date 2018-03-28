@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { ExtensionViewDialog } from './component';
 import { DEFAULT_EXTENSION_TYPE } from '../constants/extension_types.js'
 import { DEFAULT_OVERLAY_SIZE } from '../constants/overlay_sizes.js'
-import { DEFAULT_VIEWER_TYPE } from '../constants/viewer_types.js'
+import { DEFAULT_VIEWER_TYPE } from '../constants/viewer-types.js'
 const { ExtensionAnchor } = window['extension-coordinator'];
 
 describe('<ExtensionViewDialog />', () => {
@@ -12,7 +12,7 @@ describe('<ExtensionViewDialog />', () => {
       videoOverlay: true,
       panel: true,
     }
-  
+
     const component = shallow(
       <ExtensionViewDialog
         extensionViews={views}
@@ -21,11 +21,11 @@ describe('<ExtensionViewDialog />', () => {
         show={true}
       />
     );
-  
+
     it('renders correctly', () => {
       expect(component).toMatchSnapshot();
     });
-  
+
     it('has the correct default state', () => {
       expect(component.state('extensionViewType')).toBe(DEFAULT_EXTENSION_TYPE);
       expect(component.state('overlaySize')).toBe(DEFAULT_OVERLAY_SIZE);
@@ -50,7 +50,7 @@ describe('<ExtensionViewDialog />', () => {
     const views = {
       panel: true,
     }
-  
+
     const component = shallow(
       <ExtensionViewDialog
         extensionViews={views}
@@ -59,7 +59,7 @@ describe('<ExtensionViewDialog />', () => {
         show={true}
       />
     );
-  
+
     it('renders correctly', () => {
       expect(component).toMatchSnapshot();
     });
