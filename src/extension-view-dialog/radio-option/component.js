@@ -6,8 +6,10 @@ export class RadioOption extends Component {
   render() {
     return (
       <div>
-        <input type="radio" name={this.props.name} value={this.props.value}  onChange={this.props.onChange} defaultChecked={this.props.checked}/>
-        <label className="option-label"> {this.props.value} </label>
+        <label className="option-label">
+            <input type="radio" name={this.props.name} value={this.props.value} onChange={this.props.onChange} defaultChecked={this.props.checked}/>
+            {this.props.value}
+        </label>
       </div>
     )
   }
