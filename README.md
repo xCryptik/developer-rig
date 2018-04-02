@@ -247,7 +247,7 @@ _The Extension I have specified is not appearing the Developer Rig._
 
 _I am certain that my Developer Rig Configuration is correct, but my Extension is still not working._
 
-> Clear your browser cache, restart the Developer Rig, and cross your fingers.
+> Clear your browser cache and local storage, restart the Developer Rig, and cross your fingers. To delete the rig's local storage open the javascript console in your browser on a tab with the rig open and do `localStorage.clear();` then refresh.
 
 _I see an error when attempting to run 'yarn test'._
 
