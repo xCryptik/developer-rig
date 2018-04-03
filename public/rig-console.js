@@ -26,7 +26,7 @@ window.addEventListener('message', e => {
       }
     }
     if (frame) {
-      const frameId = frame.classList[1];
+      const frameId = frame.title;
       e.data.messages.forEach(message => {
         if (message instanceof Object) {
           message = JSON.stringify(message);

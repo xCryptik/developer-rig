@@ -1,17 +1,19 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { ExtensionViewButton } from './component';
 
 describe('<ExtensionViewButton />', () => {
-  let hasBeenClicked = false;
-  const func = () => {
-    hasBeenClicked = true;
-  }
-  const component = shallow(
-  <ExtensionViewButton
-    onClick={func} />
-  );
+  const setupShallow = setupShallowTest(ExtensionViewButton, () => ({
+    onClick: jest.fn(),
+  }));
+
   it('renders correctly', () => {
-    expect(component).toMatchSnapshot();
+    const { wrapper } = setupShallow();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('fires onClick when clicked on', () => {
+    const { wrapper } = setupShallow();
+    wrapper.simulate('click');
+    expect(wrapper.instance().props.onClick).toHaveBeenCalled();
   });
 });

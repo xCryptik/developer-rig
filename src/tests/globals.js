@@ -5,13 +5,13 @@ export function mockGlobals() {
   const coordinator = {}
   coordinator.ExtensionMode = {
     Viewer: 'viewer',
-    Dashbord: 'dashboard',
+    Dashboard: 'dashboard',
     Config: 'config',
   };
 
   coordinator.ExtensionViewType = {
     Config: 'config',
-    Component: 'component',
+    LiveConfig: 'liveConfig',
   };
   coordinator.ExtensionPlatform = {
     Web: 'web',

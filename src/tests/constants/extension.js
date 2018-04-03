@@ -1,3 +1,7 @@
+import { ViewerTypes } from '../../constants/viewer-types';
+import { ExtensionAnchors } from '../../constants/extension-types';
+const { ExtensionAnchor } = window['extension-coordinator'];
+
 export const ExtensionForTest = {
   authorName: 'test',
   id: 'id',
@@ -16,3 +20,17 @@ export const ExtensionForTest = {
   whitelistedPanelUrls: ['bar'],
   channelId: 'channelId',
 };
+
+export function createViewsForTest(numOfViews) {
+  const extViews = [];
+  for (let i = 0; i < numOfViews; i++) {
+    extViews.push({
+      id: (extViews.length + 1).toString(),
+      type: ExtensionAnchors[ExtensionAnchor.Panel],
+      extension: ExtensionForTest,
+      linked: false,
+      role: ViewerTypes.LoggedOut,
+    })
+  }
+  return extViews;
+}

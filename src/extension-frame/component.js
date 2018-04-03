@@ -3,59 +3,58 @@ import PropTypes from 'prop-types';
 import './component.sass';
 const { ExtensionPlatform } = window['extension-coordinator'];
 
-export const EXT_FRAME_WRAPPER_CLASS = 'extension-frame-wrapper';
+const IFRAME_CLASS = 'extension-frame';
+const EXTENSION_FRAME_INIT_ACTION = 'extension-frame-init';
 
 export class ExtensionFrame extends Component {
-  constructor() {
-    super(...arguments);
-
-    this._boundOnFrameDoubleClick = this._onFrameDoubleClick.bind(this);
-    this._boundOnIdentityLinked = this._onIdentityLinked.bind(this);
-    this._boundOnModalRequested = this._onModalRequested.bind(this);
-    this._boundIframeHostRefHandler = this._iframeHostRefHandler.bind(this);
-
-  }
-
   componentDidMount() {
-    const { ExtensionFrame } = window['extension-coordinator'];
-    this.extensionFrame = new ExtensionFrame({
-      anchor: this.props.type,
-      channelId: this.props.extension.channelId,
-      loginId: null,
-      dobbin: {
-        trackEvent: (eventName, properties, services) => { },
-      },
-      extension: this.props.extension,
-      iframeClassName: this.props.iframeClassName,
-      mode: this.props.mode,
-      platform: ExtensionPlatform.Web,
-      parentElement: this.parentElement,
-      trackingProperties: {},
-    });
-
-    if (this.parentElement) {
-      this.parentElement.addEventListener('dblclick', this._boundOnFrameDoubleClick);
+    if (this.iframe) {
+      this.iframe.onload = this._extensionFrameInit;
     }
-    this.extensionFrame.on('identityLinked', this._boundOnIdentityLinked);
-    this.extensionFrame.on('requestModal', this._boundOnModalRequested);
   }
 
   render() {
     return (
-      <div
-        ref={this._boundIframeHostRefHandler}
-        className={EXT_FRAME_WRAPPER_CLASS}
-      />
+      <iframe
+        ref={this._bindIframeRef}
+        src={process.env.PUBLIC_URL + '/extension-frame.html'}
+        frameBorder={0}
+        className={'rig-frame ' + IFRAME_CLASS}
+        title={this.props.frameId}/>
     );
   }
 
-    _onIdentityLinked(isLinked) {
-      const { extension, onIdentityLinked } = this.props;
-      if (!onIdentityLinked) {
-          return;
+  _bindIframeRef = (iframe) => {
+    this.iframe = iframe;
+  }
+
+  _extensionFrameInit = () => {
+      const extension = {
+        anchor: this.props.type,
+        channelId: this.props.extension.channelId,
+        loginId: null,
+        extension: this.props.extension,
+        mode: this.props.mode,
+        platform: ExtensionPlatform.Web,
+        trackingProperties: {},
+        iframeClassName: IFRAME_CLASS,
+      }
+      const data = {
+        extension: extension,
+        action: EXTENSION_FRAME_INIT_ACTION,
+        frameId: this.props.frameId,
       }
 
-      onIdentityLinked(extension.id, isLinked);
+      this.iframe.contentWindow.postMessage(data, '*');
+  }
+
+  _onIdentityLinked(isLinked) {
+    const { extension, onIdentityLinked } = this.props;
+    if (!onIdentityLinked) {
+        return;
+    }
+
+    onIdentityLinked(extension.id, isLinked);
   }
 
   _onFrameDoubleClick(evt) {
@@ -65,14 +64,11 @@ export class ExtensionFrame extends Component {
   _onModalRequested(confirmationRequest) {
       this.props.onModalRequested(confirmationRequest);
   }
-
-  _iframeHostRefHandler(element) {
-    this.parentElement = element;
-  }
 }
 
 ExtensionFrame.propTypes = {
-  iframeClassName: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+  frameId: PropTypes.string.isRequired,
   extension: PropTypes.object.isRequired,
   type: PropTypes.string.isRequired,
   mode: PropTypes.string.isRequired,

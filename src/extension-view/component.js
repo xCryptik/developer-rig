@@ -6,7 +6,7 @@ import { IdentityOptions } from '../constants/identity-options';
 import { ViewerTypes } from '../constants/viewer-types';
 import { CONFIG_VIEW_DIMENSIONS, CONFIG_VIEW_WRAPPER_DIMENSIONS, PANEL_VIEW_DIMENSIONS } from '../constants/view_sizes';
 import closeButton from '../img/close_icon.png';
-const { ExtensionAnchor, ExtensionMode } = window['extension-coordinator'];
+const { ExtensionAnchor, ExtensionMode, ExtensionViewType } = window['extension-coordinator'];
 
 export class ExtensionView extends Component {
   constructor(props) {
@@ -35,9 +35,16 @@ export class ExtensionView extends Component {
 
   render() {
     const extensionProps = {}
+    let panelHeight = PANEL_VIEW_DIMENSIONS.height;
+    if (this.props.extension.views.panel && this.props.extension.views.panel.height) {
+      panelHeight = this.props.extension.views.panel.height;
+    }
     switch(this.props.type) {
       case ExtensionAnchor.Panel:
-        extensionProps.viewStyles = PANEL_VIEW_DIMENSIONS;
+        extensionProps.viewStyles = {
+          height: panelHeight,
+          width: PANEL_VIEW_DIMENSIONS.width,
+        }
         break;
       case ExtensionAnchor.Overlay:
         extensionProps.viewStyles = {
@@ -49,7 +56,14 @@ export class ExtensionView extends Component {
         extensionProps.viewStyles = CONFIG_VIEW_DIMENSIONS;
         extensionProps.viewWrapperStyles = CONFIG_VIEW_WRAPPER_DIMENSIONS;
         break;
+      case ExtensionViewType.LiveConfig:
+        extensionProps.viewStyles = {
+          height: panelHeight,
+          width: PANEL_VIEW_DIMENSIONS.width,
+        }
+        break;
       default:
+        extensionProps.viewStyles = PANEL_VIEW_DIMENSIONS;
         break;
     }
 
@@ -84,7 +98,8 @@ export class ExtensionView extends Component {
           ref={this._boundIframeHostRefHandler}
           style={extensionProps.viewStyles}>
           <ExtensionFrame
-            iframeClassName={`rig-frame frameid-${this.props.id}`}
+            className="view"
+            frameId={`frameid-${this.props.id}`}
             extension={this.props.extension}
             type={this.props.type}
             mode={this.props.mode}

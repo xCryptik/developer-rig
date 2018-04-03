@@ -1,97 +1,61 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import { setupShallowTest } from '../tests/enzyme-util/shallow';
+import { ExtensionForTest } from '../tests/constants/extension';
 import { ExtensionFrame } from './component';
 
+const { ExtensionViewType, ExtensionAnchor, ExtensionMode } = window['extension-coordinator'];
+
 describe('<ExtensionFrame />', () => {
-  const extension = {
-    authorName: 'test',
-    id: 'id',
-    description: 'description',
-    iconUrl: 'icon_url',
-    name: 'name',
-    requestIdentity: false,
-    sku: 'sku',
-    state: 'state',
-    summary: 'summary',
-    token: 'token',
-    vendorCode: 'vendorCode',
-    version: 'version',
-    views: {},
-    whitelistedConfigUrls: 'foo',
-    whitelistedPanelUrls: 'bar',
-    channelId: 'channelId',
-  };
-  const iframeClassName = 'rig-frame frameid-0';
+  //const dblClickHandler = jest.spyOn(ExtensionFrame.prototype, '_onFrameDoubleClick');
+  const setupShallow = setupShallowTest(ExtensionFrame, () => ({
+    className: 'view',
+    frameId: '0',
+    extension: ExtensionForTest,
+    type: ExtensionAnchor.Panel,
+    mode: ExtensionMode.Viewer,
+  }));
 
+  it('prevents the default when double clicked', () => {
+    const { wrapper } = setupShallow();
+    wrapper.simulate('dblclick');
+  //  expect(dblClickHandler).toHaveBeenCalled();
+  });
   describe('when in live config mode', () => {
-    const frameType = 'liveConfig';
-    const frameMode = 'dashboard';
-    const component = shallow(
-      <ExtensionFrame
-        iframeClassName={iframeClassName}
-        extension={extension}
-        type={frameType}
-        mode={frameMode}/>
-    );
-
     it('renders correctly', () => {
-      expect(component).toMatchSnapshot();
-    });
-
-    it('has the correct props', () => {
-      const props = component.instance().props;
-      expect(props.iframeClassName).toBe(iframeClassName);
-      expect(props.type).toBe(frameType);
-      expect(props.mode).toBe(frameMode);
-      expect(props.extension).toBe(extension);
+      const { wrapper } = setupShallow({
+        type: ExtensionViewType.LiveConfig,
+        mode: ExtensionMode.Dashboard,
+      });
+      expect(wrapper).toMatchSnapshot();
     });
   });
 
   describe('when in config mode', () => {
-    const frameType = 'config';
-    const frameMode = 'config';
-    const component = shallow(
-      <ExtensionFrame
-        iframeClassName={iframeClassName}
-        extension={extension}
-        type={frameType}
-        mode={frameMode}/>
-    );
-
     it('renders correctly', () => {
-      expect(component).toMatchSnapshot();
-    });
-
-    it('has the correct props', () => {
-      const props = component.instance().props;
-      expect(props.iframeClassName).toBe(iframeClassName);
-      expect(props.type).toBe(frameType);
-      expect(props.mode).toBe(frameMode);
-      expect(props.extension).toBe(extension);
+      const { wrapper } = setupShallow({
+        type: ExtensionViewType.Config,
+        mode: ExtensionMode.Config,
+      });
+      expect(wrapper).toMatchSnapshot();
     });
   });
 
-  describe('when in live config mode', () => {
-    const frameType = 'panel';
-    const frameMode = 'viewer';
-    const component = shallow(
-      <ExtensionFrame
-        iframeClassName={iframeClassName}
-        extension={extension}
-        type={frameType}
-        mode={frameMode}/>
-    );
-
+  describe('when in panel mode', () => {
     it('renders correctly', () => {
-      expect(component).toMatchSnapshot();
+      const { wrapper } = setupShallow({
+        type: ExtensionAnchor.Panel,
+        mode: ExtensionMode.Viewer,
+      });
+      expect(wrapper).toMatchSnapshot();
     });
+  });
 
-    it('has the correct props', () => {
-      const props = component.instance().props;
-      expect(props.iframeClassName).toBe(iframeClassName);
-      expect(props.type).toBe(frameType);
-      expect(props.mode).toBe(frameMode);
-      expect(props.extension).toBe(extension);
+  describe('when in video overlay mode', () => {
+    it('renders correctly', () => {
+      const { wrapper } = setupShallow({
+        type: ExtensionAnchor.Overlay,
+        mode: ExtensionMode.Viewer,
+      });
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });

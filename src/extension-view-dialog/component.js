@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './component.sass';
-import { ExtensionAnchors, DEFAULT_EXTENSION_TYPE } from '../constants/extension_types.js'
+import { ExtensionAnchors, DEFAULT_EXTENSION_TYPE } from '../constants/extension-types.js'
 import { OverlaySizes, DEFAULT_OVERLAY_SIZE, DEFAULT_CUSTOM_DIMENSIONS } from '../constants/overlay_sizes.js'
 import { ViewerTypes, DEFAULT_VIEWER_TYPE } from '../constants/viewer-types.js'
 import { IdentityOptions, DEFAULT_IDENTITY_OPTION } from '../constants/identity-options';

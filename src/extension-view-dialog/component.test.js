@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { ExtensionViewDialog } from './component';
-import { DEFAULT_EXTENSION_TYPE } from '../constants/extension_types.js'
+import { DEFAULT_EXTENSION_TYPE } from '../constants/extension-types.js'
 import { DEFAULT_OVERLAY_SIZE } from '../constants/overlay_sizes.js'
 import { DEFAULT_VIEWER_TYPE } from '../constants/viewer-types.js'
 const { ExtensionAnchor } = window['extension-coordinator'];

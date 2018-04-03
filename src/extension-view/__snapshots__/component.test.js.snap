@@ -77,6 +77,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    className="view"
                     extension={
                               Object {
                                         "authorName": "test",
@@ -101,7 +102,7 @@ ShallowWrapper {
                                         ],
                                       }
                     }
-                    iframeClassName="rig-frame frameid-0"
+                    frameId="frameid-0"
                     mode="viewer"
                     type="video_overlay"
           />
@@ -168,6 +169,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            className="view"
             extension={
                         Object {
                                     "authorName": "test",
@@ -192,7 +194,7 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            iframeClassName="rig-frame frameid-0"
+            frameId="frameid-0"
             mode="viewer"
             type="video_overlay"
 />,
@@ -208,6 +210,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "className": "view",
             "extension": Object {
               "authorName": "test",
               "channelId": "channelId",
@@ -230,7 +233,7 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "iframeClassName": "rig-frame frameid-0",
+            "frameId": "frameid-0",
             "mode": "viewer",
             "type": "video_overlay",
           },
@@ -272,6 +275,7 @@ ShallowWrapper {
             }
 >
             <ExtensionFrame
+                        className="view"
                         extension={
                                     Object {
                                                 "authorName": "test",
@@ -296,7 +300,7 @@ ShallowWrapper {
                                                 ],
                                               }
                         }
-                        iframeClassName="rig-frame frameid-0"
+                        frameId="frameid-0"
                         mode="viewer"
                         type="video_overlay"
             />
@@ -363,6 +367,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              className="view"
               extension={
                             Object {
                                           "authorName": "test",
@@ -387,7 +392,7 @@ ShallowWrapper {
                                           ],
                                         }
               }
-              iframeClassName="rig-frame frameid-0"
+              frameId="frameid-0"
               mode="viewer"
               type="video_overlay"
 />,
@@ -403,6 +408,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "channelId": "channelId",
@@ -425,7 +431,7 @@ ShallowWrapper {
                   "bar",
                 ],
               },
-              "iframeClassName": "rig-frame frameid-0",
+              "frameId": "frameid-0",
               "mode": "viewer",
               "type": "video_overlay",
             },
@@ -522,11 +528,13 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
+                              "height": "150px",
                               "width": "320px",
                             }
           }
 >
           <ExtensionFrame
+                    className="view"
                     extension={
                               Object {
                                         "authorName": "test",
@@ -551,7 +559,7 @@ ShallowWrapper {
                                         ],
                                       }
                     }
-                    iframeClassName="rig-frame frameid-0"
+                    frameId="frameid-0"
                     mode="viewer"
                     type="panel"
           />
@@ -620,6 +628,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            className="view"
             extension={
                         Object {
                                     "authorName": "test",
@@ -644,12 +653,13 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            iframeClassName="rig-frame frameid-0"
+            frameId="frameid-0"
             mode="viewer"
             type="panel"
 />,
           "className": "view",
           "style": Object {
+            "height": "150px",
             "width": "320px",
           },
         },
@@ -659,6 +669,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "className": "view",
             "extension": Object {
               "authorName": "test",
               "channelId": "channelId",
@@ -681,7 +692,7 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "iframeClassName": "rig-frame frameid-0",
+            "frameId": "frameid-0",
             "mode": "viewer",
             "type": "panel",
           },
@@ -719,11 +730,13 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
+                                    "height": "150px",
                                     "width": "320px",
                                   }
             }
 >
             <ExtensionFrame
+                        className="view"
                         extension={
                                     Object {
                                                 "authorName": "test",
@@ -748,7 +761,7 @@ ShallowWrapper {
                                                 ],
                                               }
                         }
-                        iframeClassName="rig-frame frameid-0"
+                        frameId="frameid-0"
                         mode="viewer"
                         type="panel"
             />
@@ -817,6 +830,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              className="view"
               extension={
                             Object {
                                           "authorName": "test",
@@ -841,12 +855,13 @@ ShallowWrapper {
                                           ],
                                         }
               }
-              iframeClassName="rig-frame frameid-0"
+              frameId="frameid-0"
               mode="viewer"
               type="panel"
 />,
             "className": "view",
             "style": Object {
+              "height": "150px",
               "width": "320px",
             },
           },
@@ -856,6 +871,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "channelId": "channelId",
@@ -878,7 +894,7 @@ ShallowWrapper {
                   "bar",
                 ],
               },
-              "iframeClassName": "rig-frame frameid-0",
+              "frameId": "frameid-0",
               "mode": "viewer",
               "type": "panel",
             },
@@ -975,11 +991,13 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
+                              "height": "150px",
                               "width": "320px",
                             }
           }
 >
           <ExtensionFrame
+                    className="view"
                     extension={
                               Object {
                                         "authorName": "test",
@@ -1004,7 +1022,7 @@ ShallowWrapper {
                                         ],
                                       }
                     }
-                    iframeClassName="rig-frame frameid-0"
+                    frameId="frameid-0"
                     mode="viewer"
                     type="panel"
           />
@@ -1073,6 +1091,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            className="view"
             extension={
                         Object {
                                     "authorName": "test",
@@ -1097,12 +1116,13 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            iframeClassName="rig-frame frameid-0"
+            frameId="frameid-0"
             mode="viewer"
             type="panel"
 />,
           "className": "view",
           "style": Object {
+            "height": "150px",
             "width": "320px",
           },
         },
@@ -1112,6 +1132,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "className": "view",
             "extension": Object {
               "authorName": "test",
               "channelId": "channelId",
@@ -1134,7 +1155,7 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "iframeClassName": "rig-frame frameid-0",
+            "frameId": "frameid-0",
             "mode": "viewer",
             "type": "panel",
           },
@@ -1172,11 +1193,13 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
+                                    "height": "150px",
                                     "width": "320px",
                                   }
             }
 >
             <ExtensionFrame
+                        className="view"
                         extension={
                                     Object {
                                                 "authorName": "test",
@@ -1201,7 +1224,7 @@ ShallowWrapper {
                                                 ],
                                               }
                         }
-                        iframeClassName="rig-frame frameid-0"
+                        frameId="frameid-0"
                         mode="viewer"
                         type="panel"
             />
@@ -1270,6 +1293,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              className="view"
               extension={
                             Object {
                                           "authorName": "test",
@@ -1294,12 +1318,13 @@ ShallowWrapper {
                                           ],
                                         }
               }
-              iframeClassName="rig-frame frameid-0"
+              frameId="frameid-0"
               mode="viewer"
               type="panel"
 />,
             "className": "view",
             "style": Object {
+              "height": "150px",
               "width": "320px",
             },
           },
@@ -1309,6 +1334,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "channelId": "channelId",
@@ -1331,7 +1357,7 @@ ShallowWrapper {
                   "bar",
                 ],
               },
-              "iframeClassName": "rig-frame frameid-0",
+              "frameId": "frameid-0",
               "mode": "viewer",
               "type": "panel",
             },
@@ -1426,11 +1452,13 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
+                              "height": "150px",
                               "width": "320px",
                             }
           }
 >
           <ExtensionFrame
+                    className="view"
                     extension={
                               Object {
                                         "authorName": "test",
@@ -1455,7 +1483,7 @@ ShallowWrapper {
                                         ],
                                       }
                     }
-                    iframeClassName="rig-frame frameid-0"
+                    frameId="frameid-0"
                     mode="viewer"
                     type="panel"
           />
@@ -1522,6 +1550,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            className="view"
             extension={
                         Object {
                                     "authorName": "test",
@@ -1546,12 +1575,13 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            iframeClassName="rig-frame frameid-0"
+            frameId="frameid-0"
             mode="viewer"
             type="panel"
 />,
           "className": "view",
           "style": Object {
+            "height": "150px",
             "width": "320px",
           },
         },
@@ -1561,6 +1591,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "className": "view",
             "extension": Object {
               "authorName": "test",
               "channelId": "channelId",
@@ -1583,7 +1614,7 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "iframeClassName": "rig-frame frameid-0",
+            "frameId": "frameid-0",
             "mode": "viewer",
             "type": "panel",
           },
@@ -1619,11 +1650,13 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
+                                    "height": "150px",
                                     "width": "320px",
                                   }
             }
 >
             <ExtensionFrame
+                        className="view"
                         extension={
                                     Object {
                                                 "authorName": "test",
@@ -1648,7 +1681,7 @@ ShallowWrapper {
                                                 ],
                                               }
                         }
-                        iframeClassName="rig-frame frameid-0"
+                        frameId="frameid-0"
                         mode="viewer"
                         type="panel"
             />
@@ -1715,6 +1748,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              className="view"
               extension={
                             Object {
                                           "authorName": "test",
@@ -1739,12 +1773,13 @@ ShallowWrapper {
                                           ],
                                         }
               }
-              iframeClassName="rig-frame frameid-0"
+              frameId="frameid-0"
               mode="viewer"
               type="panel"
 />,
             "className": "view",
             "style": Object {
+              "height": "150px",
               "width": "320px",
             },
           },
@@ -1754,6 +1789,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "channelId": "channelId",
@@ -1776,7 +1812,7 @@ ShallowWrapper {
                   "bar",
                 ],
               },
-              "iframeClassName": "rig-frame frameid-0",
+              "frameId": "frameid-0",
               "mode": "viewer",
               "type": "panel",
             },
@@ -1865,11 +1901,13 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
+                              "height": "150px",
                               "width": "320px",
                             }
           }
 >
           <ExtensionFrame
+                    className="view"
                     extension={
                               Object {
                                         "authorName": "test",
@@ -1894,7 +1932,7 @@ ShallowWrapper {
                                         ],
                                       }
                     }
-                    iframeClassName="rig-frame frameid-0"
+                    frameId="frameid-0"
                     mode="viewer"
                     type="panel"
           />
@@ -1961,6 +1999,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            className="view"
             extension={
                         Object {
                                     "authorName": "test",
@@ -1985,12 +2024,13 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            iframeClassName="rig-frame frameid-0"
+            frameId="frameid-0"
             mode="viewer"
             type="panel"
 />,
           "className": "view",
           "style": Object {
+            "height": "150px",
             "width": "320px",
           },
         },
@@ -2000,6 +2040,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "className": "view",
             "extension": Object {
               "authorName": "test",
               "channelId": "channelId",
@@ -2022,7 +2063,7 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "iframeClassName": "rig-frame frameid-0",
+            "frameId": "frameid-0",
             "mode": "viewer",
             "type": "panel",
           },
@@ -2058,11 +2099,13 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
+                                    "height": "150px",
                                     "width": "320px",
                                   }
             }
 >
             <ExtensionFrame
+                        className="view"
                         extension={
                                     Object {
                                                 "authorName": "test",
@@ -2087,7 +2130,7 @@ ShallowWrapper {
                                                 ],
                                               }
                         }
-                        iframeClassName="rig-frame frameid-0"
+                        frameId="frameid-0"
                         mode="viewer"
                         type="panel"
             />
@@ -2154,6 +2197,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              className="view"
               extension={
                             Object {
                                           "authorName": "test",
@@ -2178,12 +2222,13 @@ ShallowWrapper {
                                           ],
                                         }
               }
-              iframeClassName="rig-frame frameid-0"
+              frameId="frameid-0"
               mode="viewer"
               type="panel"
 />,
             "className": "view",
             "style": Object {
+              "height": "150px",
               "width": "320px",
             },
           },
@@ -2193,6 +2238,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "channelId": "channelId",
@@ -2215,7 +2261,7 @@ ShallowWrapper {
                   "bar",
                 ],
               },
-              "iframeClassName": "rig-frame frameid-0",
+              "frameId": "frameid-0",
               "mode": "viewer",
               "type": "panel",
             },
@@ -2306,11 +2352,13 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
+                              "height": "150px",
                               "width": "320px",
                             }
           }
 >
           <ExtensionFrame
+                    className="view"
                     extension={
                               Object {
                                         "authorName": "test",
@@ -2335,7 +2383,7 @@ ShallowWrapper {
                                         ],
                                       }
                     }
-                    iframeClassName="rig-frame frameid-0"
+                    frameId="frameid-0"
                     mode="viewer"
                     type="panel"
           />
@@ -2404,6 +2452,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            className="view"
             extension={
                         Object {
                                     "authorName": "test",
@@ -2428,12 +2477,13 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            iframeClassName="rig-frame frameid-0"
+            frameId="frameid-0"
             mode="viewer"
             type="panel"
 />,
           "className": "view",
           "style": Object {
+            "height": "150px",
             "width": "320px",
           },
         },
@@ -2443,6 +2493,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "className": "view",
             "extension": Object {
               "authorName": "test",
               "channelId": "channelId",
@@ -2465,7 +2516,7 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "iframeClassName": "rig-frame frameid-0",
+            "frameId": "frameid-0",
             "mode": "viewer",
             "type": "panel",
           },
@@ -2503,11 +2554,13 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
+                                    "height": "150px",
                                     "width": "320px",
                                   }
             }
 >
             <ExtensionFrame
+                        className="view"
                         extension={
                                     Object {
                                                 "authorName": "test",
@@ -2532,7 +2585,7 @@ ShallowWrapper {
                                                 ],
                                               }
                         }
-                        iframeClassName="rig-frame frameid-0"
+                        frameId="frameid-0"
                         mode="viewer"
                         type="panel"
             />
@@ -2601,6 +2654,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              className="view"
               extension={
                             Object {
                                           "authorName": "test",
@@ -2625,12 +2679,13 @@ ShallowWrapper {
                                           ],
                                         }
               }
-              iframeClassName="rig-frame frameid-0"
+              frameId="frameid-0"
               mode="viewer"
               type="panel"
 />,
             "className": "view",
             "style": Object {
+              "height": "150px",
               "width": "320px",
             },
           },
@@ -2640,6 +2695,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "channelId": "channelId",
@@ -2662,7 +2718,7 @@ ShallowWrapper {
                   "bar",
                 ],
               },
-              "iframeClassName": "rig-frame frameid-0",
+              "frameId": "frameid-0",
               "mode": "viewer",
               "type": "panel",
             },
@@ -2753,11 +2809,13 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
+                              "height": "150px",
                               "width": "320px",
                             }
           }
 >
           <ExtensionFrame
+                    className="view"
                     extension={
                               Object {
                                         "authorName": "test",
@@ -2782,7 +2840,7 @@ ShallowWrapper {
                                         ],
                                       }
                     }
-                    iframeClassName="rig-frame frameid-0"
+                    frameId="frameid-0"
                     mode="viewer"
                     type="panel"
           />
@@ -2851,6 +2909,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            className="view"
             extension={
                         Object {
                                     "authorName": "test",
@@ -2875,12 +2934,13 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            iframeClassName="rig-frame frameid-0"
+            frameId="frameid-0"
             mode="viewer"
             type="panel"
 />,
           "className": "view",
           "style": Object {
+            "height": "150px",
             "width": "320px",
           },
         },
@@ -2890,6 +2950,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "className": "view",
             "extension": Object {
               "authorName": "test",
               "channelId": "channelId",
@@ -2912,7 +2973,7 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "iframeClassName": "rig-frame frameid-0",
+            "frameId": "frameid-0",
             "mode": "viewer",
             "type": "panel",
           },
@@ -2950,11 +3011,13 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
+                                    "height": "150px",
                                     "width": "320px",
                                   }
             }
 >
             <ExtensionFrame
+                        className="view"
                         extension={
                                     Object {
                                                 "authorName": "test",
@@ -2979,7 +3042,7 @@ ShallowWrapper {
                                                 ],
                                               }
                         }
-                        iframeClassName="rig-frame frameid-0"
+                        frameId="frameid-0"
                         mode="viewer"
                         type="panel"
             />
@@ -3048,6 +3111,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              className="view"
               extension={
                             Object {
                                           "authorName": "test",
@@ -3072,12 +3136,13 @@ ShallowWrapper {
                                           ],
                                         }
               }
-              iframeClassName="rig-frame frameid-0"
+              frameId="frameid-0"
               mode="viewer"
               type="panel"
 />,
             "className": "view",
             "style": Object {
+              "height": "150px",
               "width": "320px",
             },
           },
@@ -3087,6 +3152,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "channelId": "channelId",
@@ -3109,7 +3175,7 @@ ShallowWrapper {
                   "bar",
                 ],
               },
-              "iframeClassName": "rig-frame frameid-0",
+              "frameId": "frameid-0",
               "mode": "viewer",
               "type": "panel",
             },
@@ -3198,11 +3264,13 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
+                              "height": "150px",
                               "width": "320px",
                             }
           }
 >
           <ExtensionFrame
+                    className="view"
                     extension={
                               Object {
                                         "authorName": "test",
@@ -3227,7 +3295,7 @@ ShallowWrapper {
                                         ],
                                       }
                     }
-                    iframeClassName="rig-frame frameid-0"
+                    frameId="frameid-0"
                     mode="viewer"
                     type="panel"
           />
@@ -3294,6 +3362,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            className="view"
             extension={
                         Object {
                                     "authorName": "test",
@@ -3318,12 +3387,13 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            iframeClassName="rig-frame frameid-0"
+            frameId="frameid-0"
             mode="viewer"
             type="panel"
 />,
           "className": "view",
           "style": Object {
+            "height": "150px",
             "width": "320px",
           },
         },
@@ -3333,6 +3403,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "className": "view",
             "extension": Object {
               "authorName": "test",
               "channelId": "channelId",
@@ -3355,7 +3426,7 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "iframeClassName": "rig-frame frameid-0",
+            "frameId": "frameid-0",
             "mode": "viewer",
             "type": "panel",
           },
@@ -3391,11 +3462,13 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
+                                    "height": "150px",
                                     "width": "320px",
                                   }
             }
 >
             <ExtensionFrame
+                        className="view"
                         extension={
                                     Object {
                                                 "authorName": "test",
@@ -3420,7 +3493,7 @@ ShallowWrapper {
                                                 ],
                                               }
                         }
-                        iframeClassName="rig-frame frameid-0"
+                        frameId="frameid-0"
                         mode="viewer"
                         type="panel"
             />
@@ -3487,6 +3560,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              className="view"
               extension={
                             Object {
                                           "authorName": "test",
@@ -3511,12 +3585,13 @@ ShallowWrapper {
                                           ],
                                         }
               }
-              iframeClassName="rig-frame frameid-0"
+              frameId="frameid-0"
               mode="viewer"
               type="panel"
 />,
             "className": "view",
             "style": Object {
+              "height": "150px",
               "width": "320px",
             },
           },
@@ -3526,6 +3601,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "channelId": "channelId",
@@ -3548,7 +3624,7 @@ ShallowWrapper {
                   "bar",
                 ],
               },
-              "iframeClassName": "rig-frame frameid-0",
+              "frameId": "frameid-0",
               "mode": "viewer",
               "type": "panel",
             },
