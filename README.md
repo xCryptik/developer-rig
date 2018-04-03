@@ -76,7 +76,7 @@ These are hard requirements that enable the Developer Rig to function correctly!
 Where possible, the Developer Rig is self-contained.
 
 #### Host File
-To allow non-Twitch hosted assets to not be blocked by the Extension's [Content Security Policy](https://dev.twitch.tv/docs/extensions#appendix-b-guidelines-and-policies) (CSP), the Developer Rig requires a local host file entry.
+To allow non-Twitch hosted assets to not be blocked by the Extension's [Content Security Policy](https://dev.twitch.tv/docs/extensions/guide#appendix-b-guidelines-and-policies) (CSP), the Developer Rig requires a local host file entry.
 
 The following line must be added to your local hosts file:
 ```bash
