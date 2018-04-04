@@ -2,6 +2,8 @@ import { ViewerTypes } from '../constants/viewer-types';
 import { RIG_ROLE } from '../constants/rig';
 import jwt from 'jsonwebtoken';
 
+const ONE_YEAR_MS = 365 * 24 * 60 * 60 * 1000;
+
 export function createToken(newRole, isLinked, ownerID, channelId, secret) {
   switch (newRole) {
     case ViewerTypes.LoggedOut:
@@ -21,7 +23,7 @@ export function createToken(newRole, isLinked, ownerID, channelId, secret) {
 
 export function createSignedToken(role, opaqueUserId, userId, channelId, secret) {
   const payload = {
-    exp: Math.floor(((Date.now() + 6000000) / 1000)),
+    exp: Math.floor(((Date.now() + ONE_YEAR_MS) / 1000)),
     opaque_user_id: opaqueUserId,
     channel_id: channelId,
     role: role,
