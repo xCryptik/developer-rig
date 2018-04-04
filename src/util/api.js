@@ -2,7 +2,7 @@ import { createSignedToken } from '../util/token';
 import { missingConfigurations } from '../util/errors';
 import { RIG_ROLE } from '../constants/rig';
 
-function convertViews(data) {
+export function convertViews(data) {
   const views = {};
   if (data.config) {
     views.config = { viewerUrl: data.config.viewer_url };

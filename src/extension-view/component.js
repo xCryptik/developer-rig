@@ -95,7 +95,6 @@ export class ExtensionView extends Component {
         </div>
         <div
           className="view"
-          ref={this._boundIframeHostRefHandler}
           style={extensionProps.viewStyles}>
           <ExtensionFrame
             className="view"

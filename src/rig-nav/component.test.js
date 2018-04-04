@@ -1,55 +1,50 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { RigNav } from './component';
 import { EXTENSION_VIEWS } from '../constants/nav-items';
 
 describe('<RigNav />', () => {
-  describe('receives an error', () => {
-    const error = "RigNav Error";
-    const component = shallow(
-      <RigNav 
-        error={error}/>
-    );
-  
-    it('renders correctly', () => {
-      expect(component).toMatchSnapshot();
-    });
+  const setupShallow = setupShallowTest(RigNav, () => ({
+    openConfigurationsHandler: jest.fn(),
+    viewerHandler: jest.fn(),
+    configHandler: jest.fn(),
+    liveConfigHandler: jest.fn(),
+    selectedView: EXTENSION_VIEWS,
+    error: '',
+  }));
 
-    it('has the correct prop', () => {
-      expect(component.instance().props.error).toEqual(error);
-    });
+  it('renders correctly', () => {
+    const { wrapper } = setupShallow();
+    expect(wrapper).toMatchSnapshot();
   });
 
-  describe('starts up successfully', () => {
-    let usage = 0;
-    const error = '';
-    const func = () => {
-      usage++;
-    }
-    const component = shallow(
-      <RigNav
-        openConfigurationsHandler={func}
-        viewHandler={func}
-        configHandler={func}
-        liveConfigHandler={func}
-        selectedView={EXTENSION_VIEWS}
-      />
-    );
+  it('renders an error', () => {
+    const { wrapper } = setupShallow({
+      error: 'test error',
+    });
+    expect(wrapper.find('.top-nav-error').text().trim()).toBe('test error');
+  });
 
-    it('renders correctly', () => {
-      expect(component).toMatchSnapshot();
+  it('correctly handles clicks on each tab', () => {
+    const { wrapper } = setupShallow();
+    wrapper.find('a.top-nav-item').forEach(tab => {
+      tab.simulate('click');
     });
+    expect(wrapper.instance().props.viewerHandler).toHaveBeenCalled();
+    expect(wrapper.instance().props.configHandler).toHaveBeenCalled();
+    expect(wrapper.instance().props.liveConfigHandler).toHaveBeenCalled();
+    expect(wrapper.instance().props.openConfigurationsHandler).toHaveBeenCalled();
+  });
 
-    it('has the correct props', () => {
-      expect(component.instance().props.selectedView).toEqual(EXTENSION_VIEWS);
-      expect(component.instance().props.viewHandler).toEqual(func);
-      expect(component.instance().props.openConfigurationsHandler).toEqual(func);
-      expect(component.instance().props.configHandler).toEqual(func);
-      expect(component.instance().props.liveConfigHandler).toEqual(func);
+  it('correct css classes are set when things are selected', () => {
+    const { wrapper } = setupShallow({
+      selectedView: EXTENSION_VIEWS,
     });
-    
-    it('handles clicks properly', () => {
-      //TODO: implement
-    });
+    expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
+
+    wrapper.setProps({
+      selectedView: EXTENSION_VIEWS,
+    })
+    wrapper.update();
+    expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
   })
 });

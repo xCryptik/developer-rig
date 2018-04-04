@@ -21,7 +21,17 @@ ShallowWrapper {
             "token": "token",
             "vendorCode": "vendorCode",
             "version": "0.1",
-            "views": Object {},
+            "views": Object {
+              "config": Object {
+                "viewerUrl": "test",
+              },
+              "liveConfig": Object {
+                "viewerUrl": "test",
+              },
+              "panel": Object {
+                "viewerUrl": "test",
+              },
+            },
             "whitelistedConfigUrls": Array [
               "foo",
             ],
@@ -102,7 +112,108 @@ ShallowWrapper {
             "token": "token",
             "vendorCode": "vendorCode",
             "version": "0.1",
-            "views": Object {},
+            "views": Object {
+              "config": Object {
+                "viewerUrl": "test",
+              },
+              "liveConfig": Object {
+                "viewerUrl": "test",
+              },
+              "panel": Object {
+                "viewerUrl": "test",
+              },
+            },
+            "whitelistedConfigUrls": Array [
+              "foo",
+            ],
+            "whitelistedPanelUrls": Array [
+              "bar",
+            ],
+          }
+    }
+    frameId="0"
+    mode="dashboard"
+    type="liveConfig"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "className": "rig-frame extension-frame",
+      "frameBorder": 0,
+      "src": "/extension-frame.html",
+      "title": "0",
+    },
+    "ref": [Function],
+    "rendered": null,
+    "type": "iframe",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "className": "rig-frame extension-frame",
+        "frameBorder": 0,
+        "src": "/extension-frame.html",
+        "title": "0",
+      },
+      "ref": [Function],
+      "rendered": null,
+      "type": "iframe",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<ExtensionFrame /> when in live config mode renders correctly 2`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ExtensionFrame
+    className="view"
+    extension={
+        Object {
+            "authorName": "test",
+            "channelId": "channelId",
+            "description": "description",
+            "iconUrl": "icon_url",
+            "id": "id",
+            "name": "name",
+            "requestIdentity": false,
+            "sku": "sku",
+            "state": "state",
+            "summary": "summary",
+            "token": "token",
+            "vendorCode": "vendorCode",
+            "version": "0.1",
+            "views": Object {
+              "config": Object {
+                "viewerUrl": "test",
+              },
+              "liveConfig": Object {
+                "viewerUrl": "test",
+              },
+              "panel": Object {
+                "viewerUrl": "test",
+              },
+            },
             "whitelistedConfigUrls": Array [
               "foo",
             ],
@@ -183,7 +294,17 @@ ShallowWrapper {
             "token": "token",
             "vendorCode": "vendorCode",
             "version": "0.1",
-            "views": Object {},
+            "views": Object {
+              "config": Object {
+                "viewerUrl": "test",
+              },
+              "liveConfig": Object {
+                "viewerUrl": "test",
+              },
+              "panel": Object {
+                "viewerUrl": "test",
+              },
+            },
             "whitelistedConfigUrls": Array [
               "foo",
             ],
@@ -264,7 +385,17 @@ ShallowWrapper {
             "token": "token",
             "vendorCode": "vendorCode",
             "version": "0.1",
-            "views": Object {},
+            "views": Object {
+              "config": Object {
+                "viewerUrl": "test",
+              },
+              "liveConfig": Object {
+                "viewerUrl": "test",
+              },
+              "panel": Object {
+                "viewerUrl": "test",
+              },
+            },
             "whitelistedConfigUrls": Array [
               "foo",
             ],

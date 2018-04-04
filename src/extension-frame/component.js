@@ -29,41 +29,31 @@ export class ExtensionFrame extends Component {
   }
 
   _extensionFrameInit = () => {
-      const extension = {
-        anchor: this.props.type,
-        channelId: this.props.extension.channelId,
-        loginId: null,
-        extension: this.props.extension,
-        mode: this.props.mode,
-        platform: ExtensionPlatform.Web,
-        trackingProperties: {},
-        iframeClassName: IFRAME_CLASS,
-      }
-      const data = {
-        extension: extension,
-        action: EXTENSION_FRAME_INIT_ACTION,
-        frameId: this.props.frameId,
-      }
-
-      this.iframe.contentWindow.postMessage(data, '*');
-  }
-
-  _onIdentityLinked(isLinked) {
-    const { extension, onIdentityLinked } = this.props;
-    if (!onIdentityLinked) {
-        return;
+    const extension = {
+      anchor: this.props.type,
+      channelId: this.props.extension.channelId,
+      loginId: null,
+      extension: this.props.extension,
+      mode: this.props.mode,
+      platform: ExtensionPlatform.Web,
+      trackingProperties: {},
+      iframeClassName: IFRAME_CLASS,
     }
-
-    onIdentityLinked(extension.id, isLinked);
+    const data = {
+      extension: extension,
+      action: EXTENSION_FRAME_INIT_ACTION,
+      frameId: this.props.frameId,
+    }
+    this.iframe.contentWindow.postMessage(data, '*');
   }
+
+  _onIdentityLinked(isLinked) {}
 
   _onFrameDoubleClick(evt) {
     evt.preventDefault();
   }
 
-  _onModalRequested(confirmationRequest) {
-      this.props.onModalRequested(confirmationRequest);
-  }
+  _onModalRequested(confirmationRequest) {}
 }
 
 ExtensionFrame.propTypes = {

@@ -206,6 +206,7 @@ export class Rig extends Component {
     const extensionViewsValue = localStorage.getItem("extensionViews");
     if (!extensionViewsValue) {
       localStorage.setItem("extensionViews", JSON.stringify([]));
+      return;
     }
     this.setState({
       extensionViews: JSON.parse(extensionViewsValue)

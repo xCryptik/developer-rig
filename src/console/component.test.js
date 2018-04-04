@@ -1,19 +1,17 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { ExtensionRigConsole } from './component';
 
 describe('<ExtensionRigConsole />', () => {
-  const component = shallow(
-    <ExtensionRigConsole />
-  );
+  const setupShallow = setupShallowTest(ExtensionRigConsole, () => ({}));
 
   it('renders correctly', () => {
-    expect(component).toMatchSnapshot();
+    const { wrapper } = setupShallow();
+    expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders log messages correctly', () => {
-    expect(component.find('ExtensionRigConsoleLog').exists()).toEqual(false);
-    component.setState({
+  it('calling window.rig.update correctly updates the console.', () => {
+    const { wrapper } = setupShallow();
+    wrapper.setState({
       logHistory: [
         {
           log: 'test',
@@ -21,7 +19,22 @@ describe('<ExtensionRigConsole />', () => {
         },
       ],
     });
-    component.update();
-    expect(component.find('ExtensionRigConsoleLog').exists()).toEqual(true);
+    window.rig.update();
+    expect(wrapper.find('ExtensionRigConsoleLog').dive().instance().props.log).toBe('test');
+  });
+
+  it('renders log messages correctly', () => {
+    const { wrapper } = setupShallow();
+    expect(wrapper.find('ExtensionRigConsoleLog').exists()).toEqual(false);
+    wrapper.setState({
+      logHistory: [
+        {
+          log: 'test',
+          frame: 'test-frame',
+        },
+      ],
+    });
+    wrapper.update();
+    expect(wrapper.find('ExtensionRigConsoleLog').exists()).toEqual(true);
   });
 });

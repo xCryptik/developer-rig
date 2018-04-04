@@ -1,11 +1,10 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
+import { setupMountTest } from '../tests/enzyme-util/mount';
 import { ExtensionForTest } from '../tests/constants/extension';
 import { ExtensionFrame } from './component';
-
 const { ExtensionViewType, ExtensionAnchor, ExtensionMode } = window['extension-coordinator'];
 
 describe('<ExtensionFrame />', () => {
-  //const dblClickHandler = jest.spyOn(ExtensionFrame.prototype, '_onFrameDoubleClick');
   const setupShallow = setupShallowTest(ExtensionFrame, () => ({
     className: 'view',
     frameId: '0',
@@ -14,11 +13,50 @@ describe('<ExtensionFrame />', () => {
     mode: ExtensionMode.Viewer,
   }));
 
+  const setupMount = setupMountTest(ExtensionFrame, () => ({
+    className: 'view',
+    frameId: '0',
+    extension: ExtensionForTest,
+    type: ExtensionAnchor.Panel,
+    mode: ExtensionMode.Viewer,
+  }));
+
   it('prevents the default when double clicked', () => {
+    const mockEvent = {};
+    mockEvent.preventDefault = jest.fn();
     const { wrapper } = setupShallow();
-    wrapper.simulate('dblclick');
-  //  expect(dblClickHandler).toHaveBeenCalled();
+    wrapper.instance()._onFrameDoubleClick(mockEvent);
+    expect(mockEvent.preventDefault).toHaveBeenCalled();
   });
+
+  it('onload postMessages data correctly', () => {
+    const { wrapper } = setupMount();
+
+    const mockIframeRef = {
+      contentWindow: {
+        postMessage: jest.fn(),
+      },
+    };
+
+    wrapper.instance().iframe = mockIframeRef
+    wrapper.instance()._extensionFrameInit();
+    expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
+      "action": "extension-frame-init",
+      "extension": { "anchor": "panel", "channelId": "channelId", "extension": { "authorName": "test", "channelId": "channelId", "description": "description", "iconUrl": "icon_url", "id": "id", "name": "name", "requestIdentity": false, "sku": "sku", "state": "state", "summary": "summary", "token": "token", "vendorCode": "vendorCode", "version": "0.1", "views": { "config": { "viewerUrl": "test" }, "liveConfig": { "viewerUrl": "test" }, "panel": { "viewerUrl": "test" } }, "whitelistedConfigUrls": ["foo"], "whitelistedPanelUrls": ["bar"] }, "iframeClassName": "extension-frame", "loginId": null, "mode": "viewer", "platform": "web", "trackingProperties": {} },
+      "frameId": "0"
+    }, "*");
+  });
+
+  describe('when in live config mode', () => {
+    it('renders correctly', () => {
+      const { wrapper } = setupShallow({
+        type: ExtensionViewType.LiveConfig,
+        mode: ExtensionMode.Dashboard,
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
   describe('when in live config mode', () => {
     it('renders correctly', () => {
       const { wrapper } = setupShallow({

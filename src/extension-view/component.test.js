@@ -2,7 +2,7 @@ import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { ExtensionView } from './component';
 import { ViewerTypes } from '../constants/viewer-types';
 import { ExtensionForTest } from '../tests/constants/extension';
-const { ExtensionAnchor } = window['extension-coordinator'];
+const { ExtensionAnchor, ExtensionMode, ExtensionViewType } = window['extension-coordinator'];
 
 const DeleteButtonSelector = '.view__close_button';
 
@@ -16,6 +16,13 @@ describe('<ExtensionView />', () => {
     linked: false,
     deleteViewHandler: jest.fn()
   }));
+
+  it('uses correct panel view styles if no type provided', () => {
+    const { wrapper } = setupShallow({
+      type: '',
+    });
+    expect(wrapper).toMatchSnapshot();
+  });
 
   it('when moused over displays the delete button', () => {
     const { wrapper } = setupShallow();
@@ -43,9 +50,49 @@ describe('<ExtensionView />', () => {
     expect(wrapper.instance().props.deleteViewHandler).toHaveBeenCalled();
   });
 
+  describe('config mode views', () => {
+    it('renders correctly when in config mode', () => {
+      const { wrapper } = setupShallow({
+        type: ExtensionMode.Config
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe('live config mode views', () => {
+    it('renders correctly when in config mode', () => {
+      const { wrapper } = setupShallow({
+        type: ExtensionViewType.LiveConfig
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
   describe('panel mode views', () => {
     it('renders correctly when in panel mode as a Broadcaster', () => {
       const { wrapper } = setupShallow();
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('sets correct panel height when panel height provided', () => {
+      const extensionWithPanelHeight = Object.assign({}, ExtensionForTest, {
+        ...ExtensionForTest,
+        views: {
+          config: {
+            viewerUrl: "test",
+          },
+          liveConfig: {
+            viewerUrl: "test",
+          },
+          panel: {
+            viewerUrl: 'test',
+            height: '300px'
+          }
+        },
+      });
+      const { wrapper } = setupShallow({
+        extension: extensionWithPanelHeight
+      });
       expect(wrapper).toMatchSnapshot();
     });
 

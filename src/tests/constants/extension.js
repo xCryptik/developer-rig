@@ -15,7 +15,17 @@ export const ExtensionForTest = {
   token: 'token',
   vendorCode: 'vendorCode',
   version: '0.1',
-  views: {},
+  views: {
+    panel: {
+      viewerUrl: 'test'
+    },
+    config: {
+      viewerUrl: 'test'
+    },
+    liveConfig: {
+      viewerUrl: 'test',
+    }
+  },
   whitelistedConfigUrls: ['foo'],
   whitelistedPanelUrls: ['bar'],
   channelId: 'channelId',

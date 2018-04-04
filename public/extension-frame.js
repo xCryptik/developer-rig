@@ -2,6 +2,7 @@ let extensionFrameAPI;
 window.addEventListener('message', proxyIframeEvent);
 
 function proxyIframeEvent(event) {
+  console.log(event)
   const data = event.data;
   switch (data.action) {
     case 'extension-frame-init':

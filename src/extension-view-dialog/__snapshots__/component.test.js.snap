@@ -8,7 +8,7 @@ ShallowWrapper {
     closeHandler={[Function]}
     extensionViews={
         Object {
-            "panel": true,
+            "panel": Object {},
           }
     }
     saveHandler={[Function]}
@@ -2659,8 +2659,8 @@ ShallowWrapper {
     closeHandler={[Function]}
     extensionViews={
         Object {
-            "panel": true,
-            "videoOverlay": true,
+            "panel": Object {},
+            "videoOverlay": Object {},
           }
     }
     saveHandler={[Function]}

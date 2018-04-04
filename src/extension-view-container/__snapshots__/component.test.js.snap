@@ -21,7 +21,17 @@ ShallowWrapper {
             "token": "token",
             "vendorCode": "vendorCode",
             "version": "0.1",
-            "views": Object {},
+            "views": Object {
+              "config": Object {
+                "viewerUrl": "test",
+              },
+              "liveConfig": Object {
+                "viewerUrl": "test",
+              },
+              "panel": Object {
+                "viewerUrl": "test",
+              },
+            },
             "whitelistedConfigUrls": Array [
               "foo",
             ],
@@ -60,7 +70,17 @@ ShallowWrapper {
         "token": "token",
         "vendorCode": "vendorCode",
         "version": "0.1",
-        "views": Object {},
+        "views": Object {
+          "config": Object {
+            "viewerUrl": "test",
+          },
+          "liveConfig": Object {
+            "viewerUrl": "test",
+          },
+          "panel": Object {
+            "viewerUrl": "test",
+          },
+        },
         "whitelistedConfigUrls": Array [
           "foo",
         ],
@@ -96,7 +116,17 @@ ShallowWrapper {
           "token": "token",
           "vendorCode": "vendorCode",
           "version": "0.1",
-          "views": Object {},
+          "views": Object {
+            "config": Object {
+              "viewerUrl": "test",
+            },
+            "liveConfig": Object {
+              "viewerUrl": "test",
+            },
+            "panel": Object {
+              "viewerUrl": "test",
+            },
+          },
           "whitelistedConfigUrls": Array [
             "foo",
           ],
@@ -144,7 +174,17 @@ ShallowWrapper {
             "token": "token",
             "vendorCode": "vendorCode",
             "version": "0.1",
-            "views": Object {},
+            "views": Object {
+              "config": Object {
+                "viewerUrl": "test",
+              },
+              "liveConfig": Object {
+                "viewerUrl": "test",
+              },
+              "panel": Object {
+                "viewerUrl": "test",
+              },
+            },
             "whitelistedConfigUrls": Array [
               "foo",
             ],
@@ -183,7 +223,17 @@ ShallowWrapper {
         "token": "token",
         "vendorCode": "vendorCode",
         "version": "0.1",
-        "views": Object {},
+        "views": Object {
+          "config": Object {
+            "viewerUrl": "test",
+          },
+          "liveConfig": Object {
+            "viewerUrl": "test",
+          },
+          "panel": Object {
+            "viewerUrl": "test",
+          },
+        },
         "whitelistedConfigUrls": Array [
           "foo",
         ],
@@ -219,7 +269,17 @@ ShallowWrapper {
           "token": "token",
           "vendorCode": "vendorCode",
           "version": "0.1",
-          "views": Object {},
+          "views": Object {
+            "config": Object {
+              "viewerUrl": "test",
+            },
+            "liveConfig": Object {
+              "viewerUrl": "test",
+            },
+            "panel": Object {
+              "viewerUrl": "test",
+            },
+          },
           "whitelistedConfigUrls": Array [
             "foo",
           ],
@@ -267,7 +327,17 @@ ShallowWrapper {
             "token": "token",
             "vendorCode": "vendorCode",
             "version": "0.1",
-            "views": Object {},
+            "views": Object {
+              "config": Object {
+                "viewerUrl": "test",
+              },
+              "liveConfig": Object {
+                "viewerUrl": "test",
+              },
+              "panel": Object {
+                "viewerUrl": "test",
+              },
+            },
             "whitelistedConfigUrls": Array [
               "foo",
             ],

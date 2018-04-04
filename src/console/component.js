@@ -6,7 +6,7 @@ export class ExtensionRigConsole extends Component {
 
   constructor(props) {
     super(props);
-    window.rig.update = (data) => {
+    window.rig.update = () => {
       this.updateConsole()
     }
     this.state = {

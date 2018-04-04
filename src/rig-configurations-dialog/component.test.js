@@ -1,40 +1,55 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { RigConfigurationsDialog } from './component';
 
 describe('<RigConfigurationsDialog />', () => {
-  describe('should not be shown', () => {
-    const func = () => {};
-    const component = shallow(
-      <RigConfigurationsDialog
-        config={{}}
-        closeConfigurationsHandler={func}
-        refreshConfigurationsHandler={func}
-        show={false}/>
-    );
-  
-    it('renders correctly', () => {
-      expect(component).toMatchSnapshot();
-    });
+  const setupShallow = setupShallowTest(RigConfigurationsDialog, () => ({
+    show: true,
+    config: {},
+    closeConfigurationsHandler: jest.fn(),
+    refreshConfigurationsHandler: jest.fn()
+  }));
 
-    it('should be null', () => {
-      expect(component.type()).toEqual(null);
-    });
+  it('renders correctly', () => {
+    const { wrapper } = setupShallow();
+    expect(wrapper).toMatchSnapshot();
   });
 
-  describe('should have JSON configurations', () => {
-    const func = () => {};
-    const config = {'test': 'config'};
-    const component = shallow (
-      <RigConfigurationsDialog
-        config={config}
-        closeConfigurationsHandler={func}
-        refreshConfigurationsHandler={func}
-        show={false}/>
-    );
-
-    it('renders correctly', () => {
-      expect(component).toMatchSnapshot();
+  it('should be null if show is false', () => {
+    const { wrapper } = setupShallow({
+      show: false,
     });
+    expect(wrapper.type()).toBe(null);
+  })
+  it('expect no config', () => {
+    const { wrapper } = setupShallow();
+    expect(wrapper.find('.rig-configurations-view__content').text().trim()).toBe('{}');
+  });
+
+  it('should have some configurations', () => {
+    const testConfig = {
+      test: 'config'
+    }
+    const { wrapper } = setupShallow({
+      config: testConfig
+    });
+    expect(JSON.parse(wrapper.find('.rig-configurations-view__content').text().trim())).toEqual(testConfig);
+  });
+
+  it('fires closeConfigurationsHandler when top exit button is clicked', () => {
+    const { wrapper } = setupShallow();
+    wrapper.find('.top-bar-container__escape').simulate('click');
+    expect(wrapper.instance().props.closeConfigurationsHandler).toHaveBeenCalled();
+  });
+
+  it('fires closeConfigurationsHandler when cancel button is clicked', () => {
+    const { wrapper } = setupShallow();
+    wrapper.find('.bottom-bar__cancel').simulate('click');
+    expect(wrapper.instance().props.closeConfigurationsHandler).toHaveBeenCalled();
+  });
+
+  it('fires refreshConfigurationsHandler when refresh button is clicked', () => {
+    const { wrapper } = setupShallow();
+    wrapper.find('.bottom-bar__refresh').simulate('click');
+    expect(wrapper.instance().props.refreshConfigurationsHandler).toHaveBeenCalled();
   });
 });
