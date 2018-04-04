@@ -9,7 +9,7 @@ import { createSignedToken } from '../util/token';
 import { fetchManifest, fetchExtensionManifest } from '../util/api';
 import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG, CONFIGURATIONS } from '../constants/nav-items'
 import { ViewerTypes } from '../constants/viewer-types';
-import { OverlaySizes } from '../constants/overlay_sizes';
+import { OverlaySizes } from '../constants/overlay-sizes';
 import { IdentityOptions } from '../constants/identity-options';
 import { RIG_ROLE } from '../constants/rig';
 const { ExtensionMode } = window['extension-coordinator'];
@@ -17,6 +17,7 @@ const { ExtensionMode } = window['extension-coordinator'];
 export class Rig extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       clientId: process.env.EXT_CLIENT_ID,
       secret: process.env.EXT_SECRET,

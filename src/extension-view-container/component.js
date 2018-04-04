@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ExtensionView } from '../extension-view';
 import { ExtensionViewButton } from '../extension-view-button';
-import { EXTENSION_MODE_TO_VIEW } from '../constants/extension_modes.js'
+import { EXTENSION_MODE_TO_VIEW } from '../constants/extension-modes.js'
 import './component.sass';
 const { ExtensionMode } = window['extension-coordinator'];
 

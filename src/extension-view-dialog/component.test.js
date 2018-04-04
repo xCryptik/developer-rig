@@ -1,7 +1,7 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { ExtensionViewDialog } from './component';
 import { DEFAULT_EXTENSION_TYPE } from '../constants/extension-types.js'
-import { DEFAULT_OVERLAY_SIZE } from '../constants/overlay_sizes.js'
+import { DEFAULT_OVERLAY_SIZE } from '../constants/overlay-sizes.js'
 import { ViewerTypes, DEFAULT_VIEWER_TYPE } from '../constants/viewer-types.js'
 
 describe('<ExtensionViewDialog />', () => {
