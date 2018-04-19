@@ -1,19 +1,19 @@
 export const OverlaySizes = Object.freeze({
   '640x480': {
-    width: '640px',
-    height: '480px'
+    width: '640',
+    height: '480'
   },
   '576x432': {
-    width: '576px',
-    height: '432px',
+    width: '576',
+    height: '432',
   },
   '512x384': {
-    width: '512px',
-    height: '384px',
+    width: '512',
+    height: '384',
   },
   '448x336': {
-    width: '448px',
-    height: '336px',
+    width: '448',
+    height: '336',
   },
 });
 

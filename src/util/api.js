@@ -27,6 +27,17 @@ export function convertViews(data) {
     views.videoOverlay = { viewerUrl: data.video_overlay.viewer_url };
   }
 
+  if (data.component) {
+    views.component = {
+      aspectHeight: data.component.aspect_height,
+      aspectWidth: data.component.aspect_width,
+      size: data.component.size,
+      viewerUrl: data.component.viewer_url,
+      zoom: data.component.zoom,
+      zoomPixels: data.component.zoom_pixels,
+    };
+  }
+
   return views;
 }
 

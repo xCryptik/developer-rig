@@ -1,5 +1,475 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<ExtensionView /> component mode views renders component view when in component mode 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ExtensionView
+    deleteViewHandler={[Function]}
+    extension={
+        Object {
+            "authorName": "test",
+            "channelId": "channelId",
+            "description": "description",
+            "iconUrl": "icon_url",
+            "id": "id",
+            "name": "name",
+            "requestIdentity": false,
+            "sku": "sku",
+            "state": "state",
+            "summary": "summary",
+            "token": "token",
+            "vendorCode": "vendorCode",
+            "version": "0.1",
+            "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
+              "config": Object {
+                "viewerUrl": "test",
+              },
+              "liveConfig": Object {
+                "viewerUrl": "test",
+              },
+              "panel": Object {
+                "viewerUrl": "test",
+              },
+            },
+            "whitelistedConfigUrls": Array [
+              "foo",
+            ],
+            "whitelistedPanelUrls": Array [
+              "bar",
+            ],
+          }
+    }
+    id="0"
+    linked={false}
+    mode="viewer"
+    openEditViewHandler={[Function]}
+    overlaySize={
+        Object {
+            "height": 0,
+            "width": 0,
+          }
+    }
+    position={
+        Object {
+            "x": 0,
+            "y": 0,
+          }
+    }
+    role="Broadcaster"
+    type="component"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="view__header"
+>
+          <div
+                    className="view__descriptor"
+          >
+                    Broadcaster
+          </div>
+          <div
+                    className="view__descriptor"
+          />
+</div>,
+        <ExtensionComponentView
+          className="view"
+          extension={
+                    Object {
+                              "authorName": "test",
+                              "channelId": "channelId",
+                              "description": "description",
+                              "iconUrl": "icon_url",
+                              "id": "id",
+                              "name": "name",
+                              "requestIdentity": false,
+                              "sku": "sku",
+                              "state": "state",
+                              "summary": "summary",
+                              "token": "token",
+                              "vendorCode": "vendorCode",
+                              "version": "0.1",
+                              "views": Object {
+                                "component": Object {
+                                  "aspectHeight": 3000,
+                                  "aspectWidth": 2500,
+                                  "viewerUrl": "test",
+                                  "zoom": false,
+                                },
+                                "config": Object {
+                                  "viewerUrl": "test",
+                                },
+                                "liveConfig": Object {
+                                  "viewerUrl": "test",
+                                },
+                                "panel": Object {
+                                  "viewerUrl": "test",
+                                },
+                              },
+                              "whitelistedConfigUrls": Array [
+                                "foo",
+                              ],
+                              "whitelistedPanelUrls": Array [
+                                "bar",
+                              ],
+                            }
+          }
+          frameId="frameid-0"
+          id="component-0"
+          overlaySize={
+                    Object {
+                              "height": 0,
+                              "width": 0,
+                            }
+          }
+          position={
+                    Object {
+                              "x": 0,
+                              "y": 0,
+                            }
+          }
+/>,
+      ],
+      "className": "view__wrapper",
+      "onMouseEnter": [Function],
+      "onMouseLeave": [Function],
+      "style": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            false,
+            <div
+              className="view__descriptor"
+>
+              Broadcaster
+</div>,
+            <div
+              className="view__descriptor"
+/>,
+          ],
+          "className": "view__header",
+        },
+        "ref": null,
+        "rendered": Array [
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Broadcaster",
+              "className": "view__descriptor",
+            },
+            "ref": null,
+            "rendered": "Broadcaster",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": null,
+              "className": "view__descriptor",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "className": "view",
+          "extension": Object {
+            "authorName": "test",
+            "channelId": "channelId",
+            "description": "description",
+            "iconUrl": "icon_url",
+            "id": "id",
+            "name": "name",
+            "requestIdentity": false,
+            "sku": "sku",
+            "state": "state",
+            "summary": "summary",
+            "token": "token",
+            "vendorCode": "vendorCode",
+            "version": "0.1",
+            "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
+              "config": Object {
+                "viewerUrl": "test",
+              },
+              "liveConfig": Object {
+                "viewerUrl": "test",
+              },
+              "panel": Object {
+                "viewerUrl": "test",
+              },
+            },
+            "whitelistedConfigUrls": Array [
+              "foo",
+            ],
+            "whitelistedPanelUrls": Array [
+              "bar",
+            ],
+          },
+          "frameId": "frameid-0",
+          "id": "component-0",
+          "overlaySize": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "position": Object {
+            "x": 0,
+            "y": 0,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="view__header"
+>
+            <div
+                        className="view__descriptor"
+            >
+                        Broadcaster
+            </div>
+            <div
+                        className="view__descriptor"
+            />
+</div>,
+          <ExtensionComponentView
+            className="view"
+            extension={
+                        Object {
+                                    "authorName": "test",
+                                    "channelId": "channelId",
+                                    "description": "description",
+                                    "iconUrl": "icon_url",
+                                    "id": "id",
+                                    "name": "name",
+                                    "requestIdentity": false,
+                                    "sku": "sku",
+                                    "state": "state",
+                                    "summary": "summary",
+                                    "token": "token",
+                                    "vendorCode": "vendorCode",
+                                    "version": "0.1",
+                                    "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
+                                      "config": Object {
+                                        "viewerUrl": "test",
+                                      },
+                                      "liveConfig": Object {
+                                        "viewerUrl": "test",
+                                      },
+                                      "panel": Object {
+                                        "viewerUrl": "test",
+                                      },
+                                    },
+                                    "whitelistedConfigUrls": Array [
+                                      "foo",
+                                    ],
+                                    "whitelistedPanelUrls": Array [
+                                      "bar",
+                                    ],
+                                  }
+            }
+            frameId="frameid-0"
+            id="component-0"
+            overlaySize={
+                        Object {
+                                    "height": 0,
+                                    "width": 0,
+                                  }
+            }
+            position={
+                        Object {
+                                    "x": 0,
+                                    "y": 0,
+                                  }
+            }
+/>,
+        ],
+        "className": "view__wrapper",
+        "onMouseEnter": [Function],
+        "onMouseLeave": [Function],
+        "style": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              false,
+              <div
+                className="view__descriptor"
+>
+                Broadcaster
+</div>,
+              <div
+                className="view__descriptor"
+/>,
+            ],
+            "className": "view__header",
+          },
+          "ref": null,
+          "rendered": Array [
+            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Broadcaster",
+                "className": "view__descriptor",
+              },
+              "ref": null,
+              "rendered": "Broadcaster",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": null,
+                "className": "view__descriptor",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "className": "view",
+            "extension": Object {
+              "authorName": "test",
+              "channelId": "channelId",
+              "description": "description",
+              "iconUrl": "icon_url",
+              "id": "id",
+              "name": "name",
+              "requestIdentity": false,
+              "sku": "sku",
+              "state": "state",
+              "summary": "summary",
+              "token": "token",
+              "vendorCode": "vendorCode",
+              "version": "0.1",
+              "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
+                "config": Object {
+                  "viewerUrl": "test",
+                },
+                "liveConfig": Object {
+                  "viewerUrl": "test",
+                },
+                "panel": Object {
+                  "viewerUrl": "test",
+                },
+              },
+              "whitelistedConfigUrls": Array [
+                "foo",
+              ],
+              "whitelistedPanelUrls": Array [
+                "bar",
+              ],
+            },
+            "frameId": "frameid-0",
+            "id": "component-0",
+            "overlaySize": Object {
+              "height": 0,
+              "width": 0,
+            },
+            "position": Object {
+              "x": 0,
+              "y": 0,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
 exports[`<ExtensionView /> config mode views renders correctly when in config mode 1`] = `
 ShallowWrapper {
   "length": 1,
@@ -22,6 +492,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -43,6 +519,19 @@ ShallowWrapper {
     id="0"
     linked={false}
     mode="viewer"
+    openEditViewHandler={[Function]}
+    overlaySize={
+        Object {
+            "height": 0,
+            "width": 0,
+          }
+    }
+    position={
+        Object {
+            "x": 0,
+            "y": 0,
+          }
+    }
     role="Broadcaster"
     type="config"
 />,
@@ -98,6 +587,12 @@ ShallowWrapper {
                                         "vendorCode": "vendorCode",
                                         "version": "0.1",
                                         "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
                                           "config": Object {
                                             "viewerUrl": "test",
                                           },
@@ -203,6 +698,12 @@ ShallowWrapper {
                                     "vendorCode": "vendorCode",
                                     "version": "0.1",
                                     "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
                                       "config": Object {
                                         "viewerUrl": "test",
                                       },
@@ -253,6 +754,12 @@ ShallowWrapper {
               "vendorCode": "vendorCode",
               "version": "0.1",
               "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
                 "config": Object {
                   "viewerUrl": "test",
                 },
@@ -329,6 +836,12 @@ ShallowWrapper {
                                                 "vendorCode": "vendorCode",
                                                 "version": "0.1",
                                                 "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
                                                   "config": Object {
                                                     "viewerUrl": "test",
                                                   },
@@ -434,6 +947,12 @@ ShallowWrapper {
                                           "vendorCode": "vendorCode",
                                           "version": "0.1",
                                           "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
                                             "config": Object {
                                               "viewerUrl": "test",
                                             },
@@ -484,6 +1003,12 @@ ShallowWrapper {
                 "vendorCode": "vendorCode",
                 "version": "0.1",
                 "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
                   "config": Object {
                     "viewerUrl": "test",
                   },
@@ -547,6 +1072,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -568,6 +1099,19 @@ ShallowWrapper {
     id="0"
     linked={false}
     mode="viewer"
+    openEditViewHandler={[Function]}
+    overlaySize={
+        Object {
+            "height": 0,
+            "width": 0,
+          }
+    }
+    position={
+        Object {
+            "x": 0,
+            "y": 0,
+          }
+    }
     role="Broadcaster"
     type="liveConfig"
 />,
@@ -600,8 +1144,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -623,6 +1167,12 @@ ShallowWrapper {
                                         "vendorCode": "vendorCode",
                                         "version": "0.1",
                                         "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
                                           "config": Object {
                                             "viewerUrl": "test",
                                           },
@@ -725,6 +1275,12 @@ ShallowWrapper {
                                     "vendorCode": "vendorCode",
                                     "version": "0.1",
                                     "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
                                       "config": Object {
                                         "viewerUrl": "test",
                                       },
@@ -749,8 +1305,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -775,6 +1331,12 @@ ShallowWrapper {
               "vendorCode": "vendorCode",
               "version": "0.1",
               "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
                 "config": Object {
                   "viewerUrl": "test",
                 },
@@ -828,8 +1390,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -851,6 +1413,12 @@ ShallowWrapper {
                                                 "vendorCode": "vendorCode",
                                                 "version": "0.1",
                                                 "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
                                                   "config": Object {
                                                     "viewerUrl": "test",
                                                   },
@@ -953,6 +1521,12 @@ ShallowWrapper {
                                           "vendorCode": "vendorCode",
                                           "version": "0.1",
                                           "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
                                             "config": Object {
                                               "viewerUrl": "test",
                                             },
@@ -977,8 +1551,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -1003,6 +1577,12 @@ ShallowWrapper {
                 "vendorCode": "vendorCode",
                 "version": "0.1",
                 "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
                   "config": Object {
                     "viewerUrl": "test",
                   },
@@ -1066,6 +1646,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -1087,10 +1673,17 @@ ShallowWrapper {
     id="0"
     linked={false}
     mode="viewer"
+    openEditViewHandler={[Function]}
     overlaySize={
         Object {
             "height": "1px",
             "width": "1px",
+          }
+    }
+    position={
+        Object {
+            "x": 0,
+            "y": 0,
           }
     }
     role="Broadcaster"
@@ -1125,8 +1718,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "1px",
-                              "width": "1px",
+                              "height": "1pxpx",
+                              "width": "1pxpx",
                             }
           }
 >
@@ -1148,6 +1741,12 @@ ShallowWrapper {
                                         "vendorCode": "vendorCode",
                                         "version": "0.1",
                                         "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
                                           "config": Object {
                                             "viewerUrl": "test",
                                           },
@@ -1250,6 +1849,12 @@ ShallowWrapper {
                                     "vendorCode": "vendorCode",
                                     "version": "0.1",
                                     "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
                                       "config": Object {
                                         "viewerUrl": "test",
                                       },
@@ -1274,8 +1879,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "1px",
-            "width": "1px",
+            "height": "1pxpx",
+            "width": "1pxpx",
           },
         },
         "ref": null,
@@ -1300,6 +1905,12 @@ ShallowWrapper {
               "vendorCode": "vendorCode",
               "version": "0.1",
               "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
                 "config": Object {
                   "viewerUrl": "test",
                 },
@@ -1353,8 +1964,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "1px",
-                                    "width": "1px",
+                                    "height": "1pxpx",
+                                    "width": "1pxpx",
                                   }
             }
 >
@@ -1376,6 +1987,12 @@ ShallowWrapper {
                                                 "vendorCode": "vendorCode",
                                                 "version": "0.1",
                                                 "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
                                                   "config": Object {
                                                     "viewerUrl": "test",
                                                   },
@@ -1478,6 +2095,12 @@ ShallowWrapper {
                                           "vendorCode": "vendorCode",
                                           "version": "0.1",
                                           "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
                                             "config": Object {
                                               "viewerUrl": "test",
                                             },
@@ -1502,8 +2125,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "1px",
-              "width": "1px",
+              "height": "1pxpx",
+              "width": "1pxpx",
             },
           },
           "ref": null,
@@ -1528,6 +2151,12 @@ ShallowWrapper {
                 "vendorCode": "vendorCode",
                 "version": "0.1",
                 "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
                   "config": Object {
                     "viewerUrl": "test",
                   },
@@ -1591,6 +2220,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -1612,10 +2247,17 @@ ShallowWrapper {
     id="0"
     linked={true}
     mode="viewer"
+    openEditViewHandler={[Function]}
     overlaySize={
         Object {
             "height": "1px",
             "width": "1px",
+          }
+    }
+    position={
+        Object {
+            "x": 0,
+            "y": 0,
           }
     }
     role="Logged-In Viewer"
@@ -1652,8 +2294,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -1675,6 +2317,12 @@ ShallowWrapper {
                                         "vendorCode": "vendorCode",
                                         "version": "0.1",
                                         "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
                                           "config": Object {
                                             "viewerUrl": "test",
                                           },
@@ -1779,6 +2427,12 @@ ShallowWrapper {
                                     "vendorCode": "vendorCode",
                                     "version": "0.1",
                                     "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
                                       "config": Object {
                                         "viewerUrl": "test",
                                       },
@@ -1803,8 +2457,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -1829,6 +2483,12 @@ ShallowWrapper {
               "vendorCode": "vendorCode",
               "version": "0.1",
               "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
                 "config": Object {
                   "viewerUrl": "test",
                 },
@@ -1884,8 +2544,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -1907,6 +2567,12 @@ ShallowWrapper {
                                                 "vendorCode": "vendorCode",
                                                 "version": "0.1",
                                                 "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
                                                   "config": Object {
                                                     "viewerUrl": "test",
                                                   },
@@ -2011,6 +2677,12 @@ ShallowWrapper {
                                           "vendorCode": "vendorCode",
                                           "version": "0.1",
                                           "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
                                             "config": Object {
                                               "viewerUrl": "test",
                                             },
@@ -2035,8 +2707,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -2061,6 +2733,12 @@ ShallowWrapper {
                 "vendorCode": "vendorCode",
                 "version": "0.1",
                 "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
                   "config": Object {
                     "viewerUrl": "test",
                   },
@@ -2124,6 +2802,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -2145,10 +2829,17 @@ ShallowWrapper {
     id="0"
     linked={false}
     mode="viewer"
+    openEditViewHandler={[Function]}
     overlaySize={
         Object {
             "height": "1px",
             "width": "1px",
+          }
+    }
+    position={
+        Object {
+            "x": 0,
+            "y": 0,
           }
     }
     role="Logged-In Viewer"
@@ -2185,8 +2876,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -2208,6 +2899,12 @@ ShallowWrapper {
                                         "vendorCode": "vendorCode",
                                         "version": "0.1",
                                         "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
                                           "config": Object {
                                             "viewerUrl": "test",
                                           },
@@ -2312,6 +3009,12 @@ ShallowWrapper {
                                     "vendorCode": "vendorCode",
                                     "version": "0.1",
                                     "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
                                       "config": Object {
                                         "viewerUrl": "test",
                                       },
@@ -2336,8 +3039,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -2362,6 +3065,12 @@ ShallowWrapper {
               "vendorCode": "vendorCode",
               "version": "0.1",
               "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
                 "config": Object {
                   "viewerUrl": "test",
                 },
@@ -2417,8 +3126,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -2440,6 +3149,12 @@ ShallowWrapper {
                                                 "vendorCode": "vendorCode",
                                                 "version": "0.1",
                                                 "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
                                                   "config": Object {
                                                     "viewerUrl": "test",
                                                   },
@@ -2544,6 +3259,12 @@ ShallowWrapper {
                                           "vendorCode": "vendorCode",
                                           "version": "0.1",
                                           "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
                                             "config": Object {
                                               "viewerUrl": "test",
                                             },
@@ -2568,8 +3289,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -2594,6 +3315,12 @@ ShallowWrapper {
                 "vendorCode": "vendorCode",
                 "version": "0.1",
                 "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
                   "config": Object {
                     "viewerUrl": "test",
                   },
@@ -2657,6 +3384,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -2678,10 +3411,17 @@ ShallowWrapper {
     id="0"
     linked={false}
     mode="viewer"
+    openEditViewHandler={[Function]}
     overlaySize={
         Object {
             "height": "1px",
             "width": "1px",
+          }
+    }
+    position={
+        Object {
+            "x": 0,
+            "y": 0,
           }
     }
     role="Logged-Out Viewer"
@@ -2716,8 +3456,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -2739,6 +3479,12 @@ ShallowWrapper {
                                         "vendorCode": "vendorCode",
                                         "version": "0.1",
                                         "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
                                           "config": Object {
                                             "viewerUrl": "test",
                                           },
@@ -2841,6 +3587,12 @@ ShallowWrapper {
                                     "vendorCode": "vendorCode",
                                     "version": "0.1",
                                     "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
                                       "config": Object {
                                         "viewerUrl": "test",
                                       },
@@ -2865,8 +3617,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -2891,6 +3643,12 @@ ShallowWrapper {
               "vendorCode": "vendorCode",
               "version": "0.1",
               "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
                 "config": Object {
                   "viewerUrl": "test",
                 },
@@ -2944,8 +3702,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -2967,6 +3725,12 @@ ShallowWrapper {
                                                 "vendorCode": "vendorCode",
                                                 "version": "0.1",
                                                 "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
                                                   "config": Object {
                                                     "viewerUrl": "test",
                                                   },
@@ -3069,6 +3833,12 @@ ShallowWrapper {
                                           "vendorCode": "vendorCode",
                                           "version": "0.1",
                                           "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
                                             "config": Object {
                                               "viewerUrl": "test",
                                             },
@@ -3093,8 +3863,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -3119,6 +3889,12 @@ ShallowWrapper {
                 "vendorCode": "vendorCode",
                 "version": "0.1",
                 "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
                   "config": Object {
                     "viewerUrl": "test",
                   },
@@ -3182,6 +3958,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -3203,6 +3985,19 @@ ShallowWrapper {
     id="0"
     linked={false}
     mode="viewer"
+    openEditViewHandler={[Function]}
+    overlaySize={
+        Object {
+            "height": 0,
+            "width": 0,
+          }
+    }
+    position={
+        Object {
+            "x": 0,
+            "y": 0,
+          }
+    }
     role="Broadcaster"
     type="panel"
 />,
@@ -3235,8 +4030,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -3258,6 +4053,12 @@ ShallowWrapper {
                                         "vendorCode": "vendorCode",
                                         "version": "0.1",
                                         "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
                                           "config": Object {
                                             "viewerUrl": "test",
                                           },
@@ -3360,6 +4161,12 @@ ShallowWrapper {
                                     "vendorCode": "vendorCode",
                                     "version": "0.1",
                                     "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
                                       "config": Object {
                                         "viewerUrl": "test",
                                       },
@@ -3384,8 +4191,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -3410,6 +4217,12 @@ ShallowWrapper {
               "vendorCode": "vendorCode",
               "version": "0.1",
               "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
                 "config": Object {
                   "viewerUrl": "test",
                 },
@@ -3463,8 +4276,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -3486,6 +4299,12 @@ ShallowWrapper {
                                                 "vendorCode": "vendorCode",
                                                 "version": "0.1",
                                                 "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
                                                   "config": Object {
                                                     "viewerUrl": "test",
                                                   },
@@ -3588,6 +4407,12 @@ ShallowWrapper {
                                           "vendorCode": "vendorCode",
                                           "version": "0.1",
                                           "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
                                             "config": Object {
                                               "viewerUrl": "test",
                                             },
@@ -3612,8 +4437,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -3638,6 +4463,12 @@ ShallowWrapper {
                 "vendorCode": "vendorCode",
                 "version": "0.1",
                 "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
                   "config": Object {
                     "viewerUrl": "test",
                   },
@@ -3701,6 +4532,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -3722,6 +4559,19 @@ ShallowWrapper {
     id="0"
     linked={true}
     mode="viewer"
+    openEditViewHandler={[Function]}
+    overlaySize={
+        Object {
+            "height": 0,
+            "width": 0,
+          }
+    }
+    position={
+        Object {
+            "x": 0,
+            "y": 0,
+          }
+    }
     role="Logged-In Viewer"
     type="panel"
 />,
@@ -3756,8 +4606,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -3779,6 +4629,12 @@ ShallowWrapper {
                                         "vendorCode": "vendorCode",
                                         "version": "0.1",
                                         "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
                                           "config": Object {
                                             "viewerUrl": "test",
                                           },
@@ -3883,6 +4739,12 @@ ShallowWrapper {
                                     "vendorCode": "vendorCode",
                                     "version": "0.1",
                                     "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
                                       "config": Object {
                                         "viewerUrl": "test",
                                       },
@@ -3907,8 +4769,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -3933,6 +4795,12 @@ ShallowWrapper {
               "vendorCode": "vendorCode",
               "version": "0.1",
               "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
                 "config": Object {
                   "viewerUrl": "test",
                 },
@@ -3988,8 +4856,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -4011,6 +4879,12 @@ ShallowWrapper {
                                                 "vendorCode": "vendorCode",
                                                 "version": "0.1",
                                                 "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
                                                   "config": Object {
                                                     "viewerUrl": "test",
                                                   },
@@ -4115,6 +4989,12 @@ ShallowWrapper {
                                           "vendorCode": "vendorCode",
                                           "version": "0.1",
                                           "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
                                             "config": Object {
                                               "viewerUrl": "test",
                                             },
@@ -4139,8 +5019,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -4165,6 +5045,12 @@ ShallowWrapper {
                 "vendorCode": "vendorCode",
                 "version": "0.1",
                 "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
                   "config": Object {
                     "viewerUrl": "test",
                   },
@@ -4228,6 +5114,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -4249,6 +5141,19 @@ ShallowWrapper {
     id="0"
     linked={false}
     mode="viewer"
+    openEditViewHandler={[Function]}
+    overlaySize={
+        Object {
+            "height": 0,
+            "width": 0,
+          }
+    }
+    position={
+        Object {
+            "x": 0,
+            "y": 0,
+          }
+    }
     role="Logged-In Viewer"
     type="panel"
 />,
@@ -4283,8 +5188,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -4306,6 +5211,12 @@ ShallowWrapper {
                                         "vendorCode": "vendorCode",
                                         "version": "0.1",
                                         "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
                                           "config": Object {
                                             "viewerUrl": "test",
                                           },
@@ -4410,6 +5321,12 @@ ShallowWrapper {
                                     "vendorCode": "vendorCode",
                                     "version": "0.1",
                                     "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
                                       "config": Object {
                                         "viewerUrl": "test",
                                       },
@@ -4434,8 +5351,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -4460,6 +5377,12 @@ ShallowWrapper {
               "vendorCode": "vendorCode",
               "version": "0.1",
               "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
                 "config": Object {
                   "viewerUrl": "test",
                 },
@@ -4515,8 +5438,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -4538,6 +5461,12 @@ ShallowWrapper {
                                                 "vendorCode": "vendorCode",
                                                 "version": "0.1",
                                                 "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
                                                   "config": Object {
                                                     "viewerUrl": "test",
                                                   },
@@ -4642,6 +5571,12 @@ ShallowWrapper {
                                           "vendorCode": "vendorCode",
                                           "version": "0.1",
                                           "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
                                             "config": Object {
                                               "viewerUrl": "test",
                                             },
@@ -4666,8 +5601,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -4692,6 +5627,12 @@ ShallowWrapper {
                 "vendorCode": "vendorCode",
                 "version": "0.1",
                 "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
                   "config": Object {
                     "viewerUrl": "test",
                   },
@@ -4755,6 +5696,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -4776,6 +5723,19 @@ ShallowWrapper {
     id="0"
     linked={false}
     mode="viewer"
+    openEditViewHandler={[Function]}
+    overlaySize={
+        Object {
+            "height": 0,
+            "width": 0,
+          }
+    }
+    position={
+        Object {
+            "x": 0,
+            "y": 0,
+          }
+    }
     role="Logged-Out Viewer"
     type="panel"
 />,
@@ -4808,8 +5768,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -4831,6 +5791,12 @@ ShallowWrapper {
                                         "vendorCode": "vendorCode",
                                         "version": "0.1",
                                         "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
                                           "config": Object {
                                             "viewerUrl": "test",
                                           },
@@ -4933,6 +5899,12 @@ ShallowWrapper {
                                     "vendorCode": "vendorCode",
                                     "version": "0.1",
                                     "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
                                       "config": Object {
                                         "viewerUrl": "test",
                                       },
@@ -4957,8 +5929,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -4983,6 +5955,12 @@ ShallowWrapper {
               "vendorCode": "vendorCode",
               "version": "0.1",
               "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
                 "config": Object {
                   "viewerUrl": "test",
                 },
@@ -5036,8 +6014,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -5059,6 +6037,12 @@ ShallowWrapper {
                                                 "vendorCode": "vendorCode",
                                                 "version": "0.1",
                                                 "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
                                                   "config": Object {
                                                     "viewerUrl": "test",
                                                   },
@@ -5161,6 +6145,12 @@ ShallowWrapper {
                                           "vendorCode": "vendorCode",
                                           "version": "0.1",
                                           "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
                                             "config": Object {
                                               "viewerUrl": "test",
                                             },
@@ -5185,8 +6175,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -5211,6 +6201,12 @@ ShallowWrapper {
                 "vendorCode": "vendorCode",
                 "version": "0.1",
                 "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
                   "config": Object {
                     "viewerUrl": "test",
                   },
@@ -5296,6 +6292,19 @@ ShallowWrapper {
     id="0"
     linked={false}
     mode="viewer"
+    openEditViewHandler={[Function]}
+    overlaySize={
+        Object {
+            "height": 0,
+            "width": 0,
+          }
+    }
+    position={
+        Object {
+            "x": 0,
+            "y": 0,
+          }
+    }
     role="Broadcaster"
     type="panel"
 />,
@@ -5328,8 +6337,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "300px",
-                              "width": "320px",
+                              "height": "300pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -5479,8 +6488,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "300px",
-            "width": "320px",
+            "height": "300pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -5559,8 +6568,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "300px",
-                                    "width": "320px",
+                                    "height": "300pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -5710,8 +6719,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "300px",
-              "width": "320px",
+              "height": "300pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -5800,6 +6809,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -5821,6 +6836,19 @@ ShallowWrapper {
     id="0"
     linked={false}
     mode="viewer"
+    openEditViewHandler={[Function]}
+    overlaySize={
+        Object {
+            "height": 0,
+            "width": 0,
+          }
+    }
+    position={
+        Object {
+            "x": 0,
+            "y": 0,
+          }
+    }
     role="Broadcaster"
     type=""
 />,
@@ -5876,6 +6904,12 @@ ShallowWrapper {
                                         "vendorCode": "vendorCode",
                                         "version": "0.1",
                                         "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
                                           "config": Object {
                                             "viewerUrl": "test",
                                           },
@@ -5978,6 +7012,12 @@ ShallowWrapper {
                                     "vendorCode": "vendorCode",
                                     "version": "0.1",
                                     "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
                                       "config": Object {
                                         "viewerUrl": "test",
                                       },
@@ -6028,6 +7068,12 @@ ShallowWrapper {
               "vendorCode": "vendorCode",
               "version": "0.1",
               "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
                 "config": Object {
                   "viewerUrl": "test",
                 },
@@ -6104,6 +7150,12 @@ ShallowWrapper {
                                                 "vendorCode": "vendorCode",
                                                 "version": "0.1",
                                                 "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
                                                   "config": Object {
                                                     "viewerUrl": "test",
                                                   },
@@ -6206,6 +7258,12 @@ ShallowWrapper {
                                           "vendorCode": "vendorCode",
                                           "version": "0.1",
                                           "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
                                             "config": Object {
                                               "viewerUrl": "test",
                                             },
@@ -6256,6 +7314,12 @@ ShallowWrapper {
                 "vendorCode": "vendorCode",
                 "version": "0.1",
                 "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
                   "config": Object {
                     "viewerUrl": "test",
                   },

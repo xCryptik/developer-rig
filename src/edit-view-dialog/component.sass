@@ -1,20 +1,25 @@
 @import "../dialog-component/component.sass"
-.rig-configurations-view
 
-
-.rig-configurations-view__background
+.edit-view__background
   @extend .dialog__backdrop
 
-.rig-configurations-view__dialog
+.edit-view__dialog
   @extend .dialog
-  height: 375px
-
-.rig-configurations-view__content
-  @extend .container__left-block
-  white-space: pre
-  overflow-y: auto
   height: 250px
+  width: 275px
+  left: 40%
+
+.edit-view__content
+  @extend .container__left-block
+  overflow-y: auto
+  height: 50%
   width: 95%
+  display: flex
+  flex-direction: column
+
+.edit-subcontainer__input
+  margin-top: .5em
+  margin-bottom: .5em
 
 .dialog__top-bar-container
   @extend .top-bar
@@ -36,7 +41,7 @@
 .dialog__bottom-bar
   @extend .container__left-block
 
-.bottom-bar__refresh
+.bottom-bar__save
   @include bottom-bar-box(white, #7D55C7)
   margin: 1em
   margin-left: 20px

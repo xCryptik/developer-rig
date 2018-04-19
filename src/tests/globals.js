@@ -28,21 +28,45 @@ export function mockGlobals() {
   };
 
   coordinator.ExtensionViewType = {
+    Component: 'component',
     Config: 'config',
+    Hidden: 'hidden',
     LiveConfig: 'liveConfig',
+    Mobile: 'mobile',
+    Panel: 'panel',
+    VideoOverlay: 'videoOverlay',
   };
+
   coordinator.ExtensionPlatform = {
     Web: 'web',
   };
+
   coordinator.ExtensionFrame = function () {
     return {
       on: () => { },
     }
   };
+
   coordinator.ExtensionAnchor = {
     Panel: 'panel',
     Overlay: 'video_overlay',
+    Component: 'component',
   };
+
+  coordinator.getComponentPositionFromView = function () {
+    return {
+      x: 20,
+      y: 20,
+    }
+  }
+
+  coordinator.getComponentSizeFromView = function () {
+    return {
+      width: 10,
+      height: 10,
+      zoomScale: 1024,
+    }
+  }
 
   global.window['extension-coordinator'] = coordinator;
 }

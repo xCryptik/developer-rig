@@ -33,7 +33,9 @@ export class ExtensionViewContainer extends Component {
           mode={this.props.mode}
           role={view.role}
           overlaySize={view.overlaySize}
+          position={{x: view.x, y: view.y}}
           linked={view.linked}
+          openEditViewHandler={this.props.openEditViewHandler}
           deleteViewHandler={this.props.deleteExtensionViewHandler}/>
       });
     }
@@ -56,6 +58,7 @@ export class ExtensionViewContainer extends Component {
 ExtensionViewContainer.propTypes = {
   mode: PropTypes.string.isRequired,
   extensionViews: PropTypes.array.isRequired,
+  openEditViewHandler: PropTypes.func,
   deleteExtensionViewHandler: PropTypes.func.isRequired,
   openExtensionViewHandler: PropTypes.func.isRequired,
   extension: PropTypes.object.isRequired,

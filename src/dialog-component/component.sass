@@ -6,16 +6,17 @@ $top-bar-dimension: 40px
   bottom: 0
   left: 0
   right: 0
-  background-color: grey
-  opacity: 0.5
+  background-color: #19171C
+  opacity: 0.75
   padding: 50
+  height: 100vh
 
 .dialog
   background-color: white
   border-radius: 5
   width: 66%
   margin: 0 auto
-  border: 2px solid black
+  border: 1px solid #DAD8DE
   position: absolute
   top: 20%
   left: 20%
@@ -60,7 +61,7 @@ $top-bar-dimension: 40px
 @mixin bottom-bar-box($color, $bg-color)
   color: $color
   background-color: $bg-color
-  border: 2px solid #7D55C7
+  border: 1px solid #7D55C7
   display: inline
   float: left
   text-align: center
@@ -71,5 +72,4 @@ $top-bar-dimension: 40px
   cursor: pointer
 
 .title
-  font-weight: bold
   font-size: 13px

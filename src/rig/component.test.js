@@ -3,12 +3,19 @@ import { createViewsForTest, ExtensionForTest } from '../tests/constants/extensi
 import { mockFetchForManifest } from '../tests/mocks';
 import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG } from '../constants/nav-items';
 import { Rig } from './component';
-const { ExtensionMode } = window['extension-coordinator'];
+import { ExtensionAnchors } from '../constants/extension-types';
+import { ViewerTypes } from '../constants/viewer-types';
+import { IdentityOptions } from '../constants/identity-options';
+const { ExtensionMode, ExtensionAnchor } = window['extension-coordinator'];
 
 describe('<Rig />', () => {
   const setupShallow = setupShallowTest(Rig, () => { });
   const setupViewsForTest = numViews => {
-    const testViews = createViewsForTest(numViews);
+    const testViews = createViewsForTest(numViews, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut);
+    localStorage.setItem('extensionViews', JSON.stringify(testViews));
+  };
+  const setupComponentViewsForTest = numViews => {
+    const testViews = createViewsForTest(numViews, ExtensionAnchors[ExtensionAnchor.Component], ViewerTypes.LoggedOut);
     localStorage.setItem('extensionViews', JSON.stringify(testViews));
   };
 
@@ -35,7 +42,7 @@ describe('<Rig />', () => {
 
   it('gets extension views from local storage correctly', () => {
     setupViewsForTest(1);
-    const testViews = createViewsForTest(1);
+    const testViews = createViewsForTest(1, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut);
     const { wrapper } = setupShallow();
     expect(wrapper.instance()._getExtensionViews()).toEqual(testViews);
   });
@@ -45,9 +52,40 @@ describe('<Rig />', () => {
     const { wrapper } = setupShallow();
     expect(wrapper.find('ExtensionViewContainer').props().extensionViews).toHaveLength(1);
 
-    wrapper.instance()._boundDeleteExtensionView('1');
+    wrapper.instance().deleteExtensionView('1');
     wrapper.update();
     expect(wrapper.find('ExtensionViewContainer').props().extensionViews).toHaveLength(0);
+  });
+
+  it('toggles state when edit dialog is opened/closed', () => {
+    setupComponentViewsForTest(1);
+    const { wrapper } = setupShallow();
+
+    wrapper.instance().openEditViewHandler('1');
+    expect(wrapper.instance().state.showEditView).toBe(true);
+    expect(wrapper.instance().state.idToEdit).toBe('1');
+
+    wrapper.instance().closeEditViewHandler('1');
+    expect(wrapper.instance().state.showEditView).toBe(false);
+    expect(wrapper.instance().state.idToEdit).toBe('0');
+  });
+
+  it('edit changes the view and sets them correctly', () => {
+    setupComponentViewsForTest(1);
+    const { wrapper } = setupShallow();
+
+    wrapper.instance().openEditViewHandler('1');
+    expect(wrapper.instance().state.showEditView).toBe(true);
+    expect(wrapper.instance().state.idToEdit).toBe('1');
+
+    wrapper.instance().editComponentViewPosition({ x: 25, y: 25 });
+
+    const views = wrapper.instance()._getExtensionViews();
+    const editedView = views.filter(element => element.id === '1');
+    expect(editedView[0].x).toEqual(25);
+    expect(editedView[0].y).toEqual(25);
+    expect(wrapper.instance().state.showEditView).toBe(false);
+    expect(wrapper.instance().state.idToEdit).toBe('0');
   });
 
   it('correctly toggles state when configuration dialog is opened/closed', () => {
@@ -104,7 +142,7 @@ describe('<Rig />', () => {
   });
 
   it('gets the correct views when _getExtensionViews invoked', () => {
-    const testViews = createViewsForTest(1);
+    const testViews = createViewsForTest(1, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut);
     setupViewsForTest(1);
     const { wrapper } = setupShallow();
 
@@ -112,12 +150,12 @@ describe('<Rig />', () => {
   });
 
   it('sets views in local storage correctly when _pushExtensionViews invoked', () => {
-    const testViews = createViewsForTest(1);
+    const testViews = createViewsForTest(1, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut);
     setupViewsForTest(1);
     const { wrapper } = setupShallow();
     expect(wrapper.instance().state.extensionViews).toEqual(testViews);
 
-    wrapper.instance().state.extensionViews.push(createViewsForTest(1));
+    wrapper.instance().state.extensionViews.push(createViewsForTest(1,ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut));
     wrapper.instance()._pushExtensionViews(wrapper.instance().state.extensionViews);
   });
 

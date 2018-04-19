@@ -15,7 +15,7 @@ export class DivOption extends Component {
               alt={this.props.value}
               src={this.props.img} />
           </div>
-          <div className="extension-type-text">{this.props.name}</div>
+          <div className={this.props.checked ? 'extension-type-text dialog-selected': 'extension-type-text'}>{this.props.name}</div>
         </label>
       </div>
     );

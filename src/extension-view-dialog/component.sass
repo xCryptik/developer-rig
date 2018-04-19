@@ -12,6 +12,9 @@
 
 .dialog__divider
   @extend .dialog__divider-width
+  background-color: #DAD8DE
+  border: 0
+  height: 1px
 
 .dialog__top-bar-container
   @extend .top-bar
@@ -19,7 +22,7 @@
 .top-bar-container__title
   @extend .top-bar-element-left
   margin-top: 5px
-  font-weight: bold
+  font-size: 22px
 
 .top-bar-container__escape
   @extend .top-bar-element-right
@@ -34,11 +37,18 @@
 
 .type-and-size-container__type-title
   @extend .container__left-block
-  @extend .title
-  width: 40%
+  font-size: 14px
+  margin-top: 5px
+  margin-bottom: 5px
 
 .type-title__type-container
   @extend .container
+  flex-direction: column
+
+.dialog__type-container
+  @extend .container
+  margin-left: 20px
+  margin-top: 10px
   // the children of this live in div-option/
 
 .type-and-size-container__size-title
@@ -49,12 +59,17 @@
 
 .size-title__size-subcontainer
   @extend .container
-  margin-top: 10px
+
+.size-subcontainer__presets-container
+  display: flex
+  margin-left: 20px
 
 .size-subcontainer__presets
   @extend .container__block
   height: 100%
-  width: 20%
+  display: flex
+  flex-direction: column
+  margin-left: 10%
   //children of this live in radio-option/
 
 .size-subcontainer__custom-subcontainer
@@ -98,3 +113,7 @@
 .bottom-bar__cancel
   @include bottom-bar-box(#7D55C7, white)
   margin: 1em
+
+.overlay-custom-container
+  margin-left: 1em
+  color: #706A7C

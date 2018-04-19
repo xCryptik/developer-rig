@@ -42,7 +42,37 @@ describe('<ExtensionFrame />', () => {
     wrapper.instance()._extensionFrameInit();
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
       "action": "extension-frame-init",
-      "extension": { "anchor": "panel", "channelId": "channelId", "extension": { "authorName": "test", "channelId": "channelId", "description": "description", "iconUrl": "icon_url", "id": "id", "name": "name", "requestIdentity": false, "sku": "sku", "state": "state", "summary": "summary", "token": "token", "vendorCode": "vendorCode", "version": "0.1", "views": { "config": { "viewerUrl": "test" }, "liveConfig": { "viewerUrl": "test" }, "panel": { "viewerUrl": "test" } }, "whitelistedConfigUrls": ["foo"], "whitelistedPanelUrls": ["bar"] }, "iframeClassName": "extension-frame", "loginId": null, "mode": "viewer", "platform": "web", "trackingProperties": {} },
+      "extension": {
+        "anchor": "panel",
+        "channelId": "channelId",
+        "extension": {
+          "authorName": "test",
+          "channelId": "channelId",
+          "description": "description",
+          "iconUrl": "icon_url",
+          "id": "id",
+          "name": "name",
+          "requestIdentity": false,
+          "sku": "sku",
+          "state": "state",
+          "summary": "summary",
+          "token": "token",
+          "vendorCode": "vendorCode",
+          "version": "0.1",
+          "views": {
+            "component": { "aspectHeight": 3000, "aspectWidth": 2500, "viewerUrl": "test", "zoom": false },
+            "config": { "viewerUrl": "test" },
+            "liveConfig": { "viewerUrl": "test" },
+            "panel": { "viewerUrl": "test" }
+          },
+          "whitelistedConfigUrls": ["foo"],
+          "whitelistedPanelUrls": ["bar"] },
+          "iframeClassName": "extension-frame",
+          "loginId": null,
+          "mode": "viewer",
+          "platform": "web",
+          "trackingProperties": {}
+        },
       "frameId": "0"
     }, "*");
   });

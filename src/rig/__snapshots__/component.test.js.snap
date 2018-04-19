@@ -31,8 +31,10 @@ ShallowWrapper {
           extension={Object {}}
           extensionViews={Array []}
           mode="viewer"
+          openEditViewHandler={[Function]}
           openExtensionViewHandler={[Function]}
 />,
+        false,
         false,
         <RigConfigurationsDialog
           closeConfigurationsHandler={[Function]}
@@ -70,12 +72,14 @@ ShallowWrapper {
           "extension": Object {},
           "extensionViews": Array [],
           "mode": "viewer",
+          "openEditViewHandler": [Function],
           "openExtensionViewHandler": [Function],
         },
         "ref": "extensionViewContainer",
         "rendered": null,
         "type": [Function],
       },
+      false,
       false,
       Object {
         "instance": null,
@@ -123,8 +127,10 @@ ShallowWrapper {
             extension={Object {}}
             extensionViews={Array []}
             mode="viewer"
+            openEditViewHandler={[Function]}
             openExtensionViewHandler={[Function]}
 />,
+          false,
           false,
           <RigConfigurationsDialog
             closeConfigurationsHandler={[Function]}
@@ -162,12 +168,14 @@ ShallowWrapper {
             "extension": Object {},
             "extensionViews": Array [],
             "mode": "viewer",
+            "openEditViewHandler": [Function],
             "openExtensionViewHandler": [Function],
           },
           "ref": "extensionViewContainer",
           "rendered": null,
           "type": [Function],
         },
+        false,
         false,
         Object {
           "instance": null,
@@ -253,6 +261,12 @@ ShallowWrapper {
                                   "vendorCode": "vendorCode",
                                   "version": "0.1",
                                   "views": Object {
+                                    "component": Object {
+                                      "aspectHeight": 3000,
+                                      "aspectWidth": 2500,
+                                      "viewerUrl": "test",
+                                      "zoom": false,
+                                    },
                                     "config": Object {
                                       "viewerUrl": "test",
                                     },
@@ -274,12 +288,16 @@ ShallowWrapper {
                                 "linked": false,
                                 "role": "Logged-Out Viewer",
                                 "type": "Panel",
+                                "x": 0,
+                                "y": 0,
                               },
                             ]
           }
           mode="viewer"
+          openEditViewHandler={[Function]}
           openExtensionViewHandler={[Function]}
 />,
+        false,
         false,
         <RigConfigurationsDialog
           closeConfigurationsHandler={[Function]}
@@ -332,6 +350,12 @@ ShallowWrapper {
                 "vendorCode": "vendorCode",
                 "version": "0.1",
                 "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
                   "config": Object {
                     "viewerUrl": "test",
                   },
@@ -353,15 +377,19 @@ ShallowWrapper {
               "linked": false,
               "role": "Logged-Out Viewer",
               "type": "Panel",
+              "x": 0,
+              "y": 0,
             },
           ],
           "mode": "viewer",
+          "openEditViewHandler": [Function],
           "openExtensionViewHandler": [Function],
         },
         "ref": "extensionViewContainer",
         "rendered": null,
         "type": [Function],
       },
+      false,
       false,
       Object {
         "instance": null,
@@ -425,6 +453,12 @@ ShallowWrapper {
                                         "vendorCode": "vendorCode",
                                         "version": "0.1",
                                         "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
                                           "config": Object {
                                             "viewerUrl": "test",
                                           },
@@ -446,12 +480,16 @@ ShallowWrapper {
                                       "linked": false,
                                       "role": "Logged-Out Viewer",
                                       "type": "Panel",
+                                      "x": 0,
+                                      "y": 0,
                                     },
                                   ]
             }
             mode="viewer"
+            openEditViewHandler={[Function]}
             openExtensionViewHandler={[Function]}
 />,
+          false,
           false,
           <RigConfigurationsDialog
             closeConfigurationsHandler={[Function]}
@@ -504,6 +542,12 @@ ShallowWrapper {
                   "vendorCode": "vendorCode",
                   "version": "0.1",
                   "views": Object {
+                    "component": Object {
+                      "aspectHeight": 3000,
+                      "aspectWidth": 2500,
+                      "viewerUrl": "test",
+                      "zoom": false,
+                    },
                     "config": Object {
                       "viewerUrl": "test",
                     },
@@ -525,15 +569,19 @@ ShallowWrapper {
                 "linked": false,
                 "role": "Logged-Out Viewer",
                 "type": "Panel",
+                "x": 0,
+                "y": 0,
               },
             ],
             "mode": "viewer",
+            "openEditViewHandler": [Function],
             "openExtensionViewHandler": [Function],
           },
           "ref": "extensionViewContainer",
           "rendered": null,
           "type": [Function],
         },
+        false,
         false,
         Object {
           "instance": null,

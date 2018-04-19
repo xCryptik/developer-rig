@@ -6,6 +6,8 @@ import { IdentityOptions } from '../constants/identity-options';
 import { ViewerTypes } from '../constants/viewer-types';
 import { CONFIG_VIEW_DIMENSIONS, CONFIG_VIEW_WRAPPER_DIMENSIONS, PANEL_VIEW_DIMENSIONS } from '../constants/view_sizes';
 import closeButton from '../img/close_icon.png';
+import { ExtensionComponentView } from '../extension-component-view';
+
 const { ExtensionAnchor, ExtensionMode, ExtensionViewType } = window['extension-coordinator'];
 
 export class ExtensionView extends Component {
@@ -42,14 +44,14 @@ export class ExtensionView extends Component {
     switch(this.props.type) {
       case ExtensionAnchor.Panel:
         extensionProps.viewStyles = {
-          height: panelHeight,
-          width: PANEL_VIEW_DIMENSIONS.width,
+          height: panelHeight + 'px',
+          width: PANEL_VIEW_DIMENSIONS.width + 'px',
         }
         break;
       case ExtensionAnchor.Overlay:
         extensionProps.viewStyles = {
-          width: this.props.overlaySize.width,
-          height: this.props.overlaySize.height
+          width: this.props.overlaySize.width + 'px',
+          height: this.props.overlaySize.height + 'px'
         };
         break;
       case ExtensionMode.Config:
@@ -58,8 +60,8 @@ export class ExtensionView extends Component {
         break;
       case ExtensionViewType.LiveConfig:
         extensionProps.viewStyles = {
-          height: panelHeight,
-          width: PANEL_VIEW_DIMENSIONS.width,
+          height: panelHeight + 'px',
+          width: PANEL_VIEW_DIMENSIONS.width + 'px',
         }
         break;
       default:
@@ -68,7 +70,6 @@ export class ExtensionView extends Component {
     }
 
     return (
-
       <div
         className={'view__wrapper'}
         onMouseEnter={() => { this.mouseEnter() }}
@@ -77,13 +78,22 @@ export class ExtensionView extends Component {
         <div
           className={'view__header'}>
           {(this.props.deleteViewHandler !== undefined && this.state.mousedOver) &&
-            (<div className={'view__close_button'}
-              onClick={() => { this.props.deleteViewHandler(this.props.id) }}>
-            <img
-              alt='Close'
-              src={closeButton}
-            />
-            </div>)
+            (
+            <div>
+              <div className={'view__close_button'}
+                onClick={() => { this.props.deleteViewHandler(this.props.id) }}>
+              <img
+                alt='Close'
+                src={closeButton}
+              />
+              </div>
+              {this.props.type === ExtensionAnchor.Component &&
+                <div className='view__edit_button'
+                onClick={() => { this.props.openEditViewHandler(this.props.id) }}>
+                Edit
+                </div>}
+            </div>
+          )
           }
           <div className={'view__descriptor'}>
             { this.props.role }
@@ -93,17 +103,27 @@ export class ExtensionView extends Component {
               this.renderLinkedOrUnlinked() : null}
           </div>
         </div>
-        <div
-          className="view"
-          style={extensionProps.viewStyles}>
-          <ExtensionFrame
+        {this.props.type === ExtensionAnchor.Component ?
+          <ExtensionComponentView
+            id={`component-${this.props.id}`}
             className="view"
             frameId={`frameid-${this.props.id}`}
             extension={this.props.extension}
-            type={this.props.type}
-            mode={this.props.mode}
-          />
-        </div>
+            overlaySize={this.props.overlaySize}
+            position={this.props.position}
+          /> :
+          <div
+            className="view"
+            style={extensionProps.viewStyles}>
+            <ExtensionFrame
+              className="view"
+              frameId={`frameid-${this.props.id}`}
+              extension={this.props.extension}
+              type={this.props.type}
+              mode={this.props.mode}
+            />
+          </div>
+        }
       </div>
     );
   }
@@ -115,5 +135,8 @@ ExtensionView.propTypes = {
   type: PropTypes.string.isRequired,
   mode: PropTypes.string.isRequired,
   role: PropTypes.string,
+  deleteViewHandler: PropTypes.func,
+  openEditViewHandler: PropTypes.func,
+  position: PropTypes.object,
   overlaySize: PropTypes.object,
 };

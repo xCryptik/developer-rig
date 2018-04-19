@@ -14,7 +14,10 @@ describe('<ExtensionView />', () => {
     role: ViewerTypes.Broadcaster,
     mode: 'viewer',
     linked: false,
-    deleteViewHandler: jest.fn()
+    position: { x: 0, y: 0 },
+    overlaySize: { width: 0, height: 0 },
+    deleteViewHandler: jest.fn(),
+    openEditViewHandler: jest.fn(),
   }));
 
   it('uses correct panel view styles if no type provided', () => {
@@ -65,6 +68,27 @@ describe('<ExtensionView />', () => {
         type: ExtensionViewType.LiveConfig
       });
       expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe('component mode views', () => {
+    it('renders component view when in component mode', () => {
+      const { wrapper } = setupShallow({
+        type: ExtensionAnchor.Component,
+      });
+      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find('ExtensionComponentView').length).toBe(1);
+    });
+
+    it('brings up the edit dialog when edit is clicked', () => {
+      const { wrapper } = setupShallow({
+        type: ExtensionAnchor.Component,
+      });
+
+      wrapper.simulate('mouseEnter');
+      expect(wrapper.state().mousedOver).toBe(true);
+      wrapper.find('.view__edit_button').simulate('click');
+      expect(wrapper.instance().props.openEditViewHandler).toHaveBeenCalled();
     });
   });
 

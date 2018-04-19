@@ -32,8 +32,13 @@ ShallowWrapper {
                 type="radio"
                 value="test"
         />
-        test
+        <span
+                className={null}
+        >
+                test
+        </span>
 </label>,
+      "className": "option-div",
     },
     "ref": null,
     "rendered": Object {
@@ -49,7 +54,11 @@ ShallowWrapper {
             type="radio"
             value="test"
 />,
-          "test",
+          <span
+            className={null}
+>
+            test
+</span>,
         ],
         "className": "option-label",
       },
@@ -70,7 +79,18 @@ ShallowWrapper {
           "rendered": null,
           "type": "input",
         },
-        "test",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "test",
+            "className": null,
+          },
+          "ref": null,
+          "rendered": "test",
+          "type": "span",
+        },
       ],
       "type": "label",
     },
@@ -92,8 +112,13 @@ ShallowWrapper {
                     type="radio"
                     value="test"
           />
-          test
+          <span
+                    className={null}
+          >
+                    test
+          </span>
 </label>,
+        "className": "option-div",
       },
       "ref": null,
       "rendered": Object {
@@ -109,7 +134,11 @@ ShallowWrapper {
               type="radio"
               value="test"
 />,
-            "test",
+            <span
+              className={null}
+>
+              test
+</span>,
           ],
           "className": "option-label",
         },
@@ -130,7 +159,18 @@ ShallowWrapper {
             "rendered": null,
             "type": "input",
           },
-          "test",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "test",
+              "className": null,
+            },
+            "ref": null,
+            "rendered": "test",
+            "type": "span",
+          },
         ],
         "type": "label",
       },

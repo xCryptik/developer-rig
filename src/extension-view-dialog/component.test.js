@@ -104,9 +104,6 @@ describe('<ExtensionViewDialog />', () => {
       expect(wrapper.find('DivOption[value="panel"][checked=true]')).toHaveLength(1);
       expect(wrapper.find('DivOption[checked=false]')).toHaveLength(0);
 
-      expect(wrapper.find('RadioOption[value="640x480"][checked=true]')).toHaveLength(1);
-      expect(wrapper.find('RadioOption[name="overlaySize"][checked=false]')).toHaveLength(4);
-
       expect(wrapper.find('RadioOption[value="Broadcaster"][checked=true]')).toHaveLength(1);
       expect(wrapper.find('RadioOption[name="viewerType"][checked=false]')).toHaveLength(2);
 

@@ -22,6 +22,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -113,6 +119,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -204,6 +216,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -295,6 +313,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },
@@ -386,6 +410,12 @@ ShallowWrapper {
             "vendorCode": "vendorCode",
             "version": "0.1",
             "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "viewerUrl": "test",
+                "zoom": false,
+              },
               "config": Object {
                 "viewerUrl": "test",
               },

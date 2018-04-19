@@ -4,6 +4,7 @@ import { ExtensionViewContainer } from '../extension-view-container';
 import { ExtensionRigConsole } from '../console';
 import { ExtensionViewDialog } from '../extension-view-dialog';
 import { RigConfigurationsDialog } from '../rig-configurations-dialog';
+import { EditViewDialog } from '../edit-view-dialog';
 import { createExtensionObject } from '../util/extension';
 import { createSignedToken } from '../util/token';
 import { fetchManifest, fetchExtensionManifest } from '../util/api';
@@ -29,12 +30,13 @@ export class Rig extends Component {
       manifest: {},
       showExtensionsView: false,
       showConfigurations: false,
+      showEditView: false,
+      idToEdit: 0,
       selectedView: EXTENSION_VIEWS,
       extension: {},
       userId: '',
       error: '',
     };
-    this._boundDeleteExtensionView = this._deleteExtensionView.bind(this);
   }
 
   componentDidMount() {
@@ -51,10 +53,23 @@ export class Rig extends Component {
       selectedView: CONFIGURATIONS
     });
   }
-
   closeConfigurationsHandler = () => {
     this.setState({
       showConfigurations: false,
+    });
+  }
+
+  openEditViewHandler = (id) => {
+    this.setState({
+      showEditView: true,
+      idToEdit: id,
+    });
+  }
+
+  closeEditViewHandler = () => {
+    this.setState({
+      showEditView: false,
+      idToEdit: '0',
     });
   }
 
@@ -142,10 +157,28 @@ export class Rig extends Component {
       ),
       linked: linked,
       role: this.refs.extensionViewDialog.state.viewerType,
+      x: this.refs.extensionViewDialog.state.x,
+      y: this.refs.extensionViewDialog.state.y,
       overlaySize: (this.refs.extensionViewDialog.state.overlaySize === 'Custom' ? {width: this.refs.extensionViewDialog.state.width, height: this.refs.extensionViewDialog.state.height} : OverlaySizes[this.refs.extensionViewDialog.state.overlaySize]),
     });
     this._pushExtensionViews(extensionViews);
     this.closeExtensionViewDialog();
+  }
+
+  deleteExtensionView = (id) => {
+    this._pushExtensionViews(this.state.extensionViews.filter(element => element.id !== id));
+  }
+
+  editComponentViewPosition = (position) => {
+    const views = this._getExtensionViews();
+    views.forEach(element => {
+      if (element.id === this.state.idToEdit) {
+        element.x = position.x;
+        element.y = position.y;
+      }
+    });
+    this._pushExtensionViews(views);
+    this.closeEditViewHandler();
   }
 
   render() {
@@ -163,8 +196,9 @@ export class Rig extends Component {
           ref="extensionViewContainer"
           mode={this.state.mode}
           extensionViews={this.state.extensionViews}
-          deleteExtensionViewHandler={this._boundDeleteExtensionView}
+          deleteExtensionViewHandler={this.deleteExtensionView}
           openExtensionViewHandler={this.openExtensionViewHandler}
+          openEditViewHandler={this.openEditViewHandler}
           extension={this.state.extension} />
         {this.state.showExtensionsView &&
           <ExtensionViewDialog
@@ -173,6 +207,15 @@ export class Rig extends Component {
             show={this.state.showExtensionsView}
             closeHandler={this.closeExtensionViewDialog}
             saveHandler={this.createExtensionView} />}
+        {this.state.showEditView &&
+          <EditViewDialog
+            ref="editViewDialog"
+            idToEdit={this.state.idToEdit}
+            show={this.state.showEditView}
+            views={this._getExtensionViews()}
+            closeHandler={this.closeEditViewHandler}
+            saveViewHandler={this.editComponentViewPosition}
+          />}
         <RigConfigurationsDialog
           show={this.state.showConfigurations}
           config={this.state.manifest}
@@ -193,10 +236,6 @@ export class Rig extends Component {
     this.setState({
       extensionViews: newViews,
     });
-  }
-
-  _deleteExtensionView(id) {
-    this._pushExtensionViews(this.state.extensionViews.filter(element => element.id !== id));
   }
 
   _fetchInitialConfiguration() {

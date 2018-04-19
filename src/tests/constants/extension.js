@@ -24,6 +24,12 @@ export const ExtensionForTest = {
     },
     liveConfig: {
       viewerUrl: 'test',
+    },
+    component: {
+      aspectHeight: 3000,
+      aspectWidth: 2500,
+      zoom: false,
+      viewerUrl: 'test',
     }
   },
   whitelistedConfigUrls: ['foo'],
@@ -31,15 +37,26 @@ export const ExtensionForTest = {
   channelId: 'channelId',
 };
 
-export function createViewsForTest(numOfViews) {
+export function createViewsForTest(numOfViews, type, role, position) {
+  let pos = {
+    x: 0,
+    y: 0
+  }
   const extViews = [];
+  if (position) {
+    pos.x = position.x;
+    pos.y = position.y;
+  }
+
   for (let i = 0; i < numOfViews; i++) {
     extViews.push({
       id: (extViews.length + 1).toString(),
-      type: ExtensionAnchors[ExtensionAnchor.Panel],
+      type: type,
       extension: ExtensionForTest,
       linked: false,
-      role: ViewerTypes.LoggedOut,
+      role: role,
+      x: pos.x,
+      y: pos.y,
     })
   }
   return extViews;
