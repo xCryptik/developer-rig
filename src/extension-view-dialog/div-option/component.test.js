@@ -14,4 +14,11 @@ describe('<DivOption />', () => {
     const { wrapper } = setupShallow();
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('correctly renders selected styles when checked', () => {
+    const { wrapper } = setupShallow({
+      checked: true,
+    });
+    expect(wrapper.find('.dialog-selected').length).toBe(1);
+  })
 });

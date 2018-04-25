@@ -45,7 +45,7 @@ export class EditViewDialog extends Component {
           <hr className="dialog__divider"/>
           <div className="edit-view__content">
             <div className="type-and-size-container__type-title">
-                  Position (Percent)
+                  Position (%)
             </div>
               <div className='overlay-custom-container'>
                 <div className='overlay-custom-container'>

@@ -118,7 +118,7 @@ export class ExtensionViewDialog extends Component {
                       Overlay Size
                     </div>
                     <div className='size-subcontainer__presets-container'>
-                      <div>
+                      <div className='size-subcontainer__size-selection'>
                         {this.renderOverlaySizeComponents()}
                       </div>
                       <div className='overlay-custom-container'>
@@ -128,7 +128,7 @@ export class ExtensionViewDialog extends Component {
                             <label className="inputs__option-label inputs__width-offset"> Width </label>
                             <input type="text" name="width" onChange={this.onChange}/>
                           </div>
-                          <div>
+                          <div className="custom-subcontainer__input">
                             <label className="inputs__option-label"> Height </label>
                             <input type="text" name="height" onChange={this.onChange}/>
                           </div>
@@ -144,7 +144,7 @@ export class ExtensionViewDialog extends Component {
                       Player Size
                     </div>
                     <div className='size-subcontainer__presets-container'>
-                      <div>
+                      <div className='size-subcontainer__size-selection'>
                         {this.renderOverlaySizeComponents()}
                       </div>
                       <div className='overlay-custom-container'>
@@ -154,41 +154,48 @@ export class ExtensionViewDialog extends Component {
                             <label className="inputs__option-label inputs__width-offset"> Width </label>
                             <input type="text" name="width" onChange={this.onChange}/>
                           </div>
-                          <div>
+                          <div className="custom-subcontainer__input">
                             <label className="inputs__option-label"> Height </label>
                             <input type="text" name="height" onChange={this.onChange}/>
                           </div>
                         </div>
                       </div>
                   </div>
-                  <div className="type-and-size-container__type-title">
-                      Position (Percent)
-                  </div>
-                  <div className='overlay-custom-container'>
-                    <div className='overlay-custom-container'>
-                      <div className="custom-subcontainer__input">
-                        <label className="inputs__option-label">X</label>
-                        <input type="text" name="x" placeholder='0 - 100' onChange={this.onChange}/>
-                      </div>
-                      <div>
-                        <label className="inputs__option-label">Y</label>
-                        <input type="text" name="y" placeholder='0 - 100' onChange={this.onChange}/>
-                      </div>
-                    </div>
-                  </div>
                 </div>}
 
+                {(this.state.extensionViewType === ExtensionAnchor.Component) &&
+                  <div className="size-subcontainer__presets">
+                    <div className="type-and-size-container__type-title">
+                      Position (%)
+                    </div>
+                    <div className='overlay-custom-container'>
+                      <div className='overlay-custom-container'>
+                        <div className="custom-subcontainer__input">
+                          <label className="inputs__option-label">X</label>
+                          <input type="text" name="x" placeholder='0 - 100' onChange={this.onChange} />
+                        </div>
+                        <div className="custom-subcontainer__input">
+                          <label className="inputs__option-label">Y</label>
+                          <input type="text" name="y" placeholder='0 - 100' onChange={this.onChange} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>}
               </div>
             </div>
           </div>
           <div className="dialog__viewer-container">
-            <div className="viewer-container__viewer-block">
-            Viewer Type
-            <div className="viewer-block__inputs">
-              {this.renderViewerTypeComponents()}
-            </div>
-              {(this.state.viewerType === ViewerTypes.LoggedIn) ?
-                this.renderIdentityOptionComponents() : null}
+            <div className="type-title__type-container">
+              <div className="type-and-size-container__type-title">
+                Viewer Type
+              </div>
+              <div className='dialog__type-container'>
+                {this.renderViewerTypeComponents()}
+                <div>
+                  {(this.state.viewerType === ViewerTypes.LoggedIn) ?
+                    this.renderIdentityOptionComponents() : null}
+                </div>
+              </div>
             </div>
           </div>
           <hr className="dialog__divider" />

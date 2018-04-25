@@ -34,10 +34,12 @@
 .dialog__type-and-size-container
   @extend .container
   min-height: 130px
+  margin-top: 10px
 
 .type-and-size-container__type-title
   @extend .container__left-block
-  font-size: 14px
+  font-size: 16px
+  font-weight: lighter
   margin-top: 5px
   margin-bottom: 5px
 
@@ -69,7 +71,7 @@
   height: 100%
   display: flex
   flex-direction: column
-  margin-left: 10%
+  margin-left: 10px
   //children of this live in radio-option/
 
 .size-subcontainer__custom-subcontainer
@@ -82,6 +84,9 @@
 .custom-subcontainer__input
   margin-bottom: 5px
 
+.custom-subcontainer__input > input
+  width: 50px
+
 .inputs__option-label
   clear: left
   font-size: 12px
@@ -92,6 +97,8 @@
 
 .dialog__viewer-container
   @extend .container
+  margin-top: 25px
+  margin-bottom: 25px
 
 .viewer-container__viewer-block
   @extend .container__left-block
@@ -107,13 +114,13 @@
 
 .bottom-bar__save
   @include bottom-bar-box(white, #7D55C7)
-  margin: 1em
-  margin-left: 20px
 
 .bottom-bar__cancel
   @include bottom-bar-box(#7D55C7, white)
-  margin: 1em
 
 .overlay-custom-container
-  margin-left: 1em
   color: #706A7C
+  margin-left: 20px
+
+.size-subcontainer__size-selection
+  margin-right: 20px

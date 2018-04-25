@@ -13,7 +13,7 @@ describe('<ExtensionViewButton />', () => {
 
   it('fires onClick when clicked on', () => {
     const { wrapper } = setupShallow();
-    wrapper.simulate('click');
+    wrapper.find('.circle-button').simulate('click');
     expect(wrapper.instance().props.onClick).toHaveBeenCalled();
   });
 });

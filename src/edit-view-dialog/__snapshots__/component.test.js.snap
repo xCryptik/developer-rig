@@ -279,7 +279,7 @@ ShallowWrapper {
                     <div
                               className="type-and-size-container__type-title"
                     >
-                              Position (Percent)
+                              Position (%)
                     </div>
                     <div
                               className="overlay-custom-container"
@@ -389,7 +389,7 @@ ShallowWrapper {
               <div
                             className="type-and-size-container__type-title"
               >
-                            Position (Percent)
+                            Position (%)
               </div>
               <div
                             className="overlay-custom-container"
@@ -541,7 +541,7 @@ ShallowWrapper {
                 <div
                   className="type-and-size-container__type-title"
 >
-                  Position (Percent)
+                  Position (%)
 </div>,
                 <div
                   className="overlay-custom-container"
@@ -591,11 +591,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Position (Percent)",
+                  "children": "Position (%)",
                   "className": "type-and-size-container__type-title",
                 },
                 "ref": null,
-                "rendered": "Position (Percent)",
+                "rendered": "Position (%)",
                 "type": "div",
               },
               Object {
@@ -900,7 +900,7 @@ ShallowWrapper {
                         <div
                                     className="type-and-size-container__type-title"
                         >
-                                    Position (Percent)
+                                    Position (%)
                         </div>
                         <div
                                     className="overlay-custom-container"
@@ -1010,7 +1010,7 @@ ShallowWrapper {
                 <div
                                 className="type-and-size-container__type-title"
                 >
-                                Position (Percent)
+                                Position (%)
                 </div>
                 <div
                                 className="overlay-custom-container"
@@ -1162,7 +1162,7 @@ ShallowWrapper {
                   <div
                     className="type-and-size-container__type-title"
 >
-                    Position (Percent)
+                    Position (%)
 </div>,
                   <div
                     className="overlay-custom-container"
@@ -1212,11 +1212,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Position (Percent)",
+                    "children": "Position (%)",
                     "className": "type-and-size-container__type-title",
                   },
                   "ref": null,
-                  "rendered": "Position (Percent)",
+                  "rendered": "Position (%)",
                   "type": "div",
                 },
                 Object {

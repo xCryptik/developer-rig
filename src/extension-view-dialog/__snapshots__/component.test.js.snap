@@ -91,11 +91,15 @@ ShallowWrapper {
                     className="dialog__viewer-container"
           >
                     <div
-                              className="viewer-container__viewer-block"
+                              className="type-title__type-container"
                     >
-                              Viewer Type
                               <div
-                                        className="viewer-block__inputs"
+                                        className="type-and-size-container__type-title"
+                              >
+                                        Viewer Type
+                              </div>
+                              <div
+                                        className="dialog__type-container"
                               >
                                         <RadioOption
                                                   checked={true}
@@ -115,6 +119,7 @@ ShallowWrapper {
                                                   onChange={[Function]}
                                                   value="Logged-In Viewer"
                                         />
+                                        <div />
                               </div>
                     </div>
           </div>
@@ -218,11 +223,15 @@ ShallowWrapper {
               className="dialog__viewer-container"
 >
               <div
-                            className="viewer-container__viewer-block"
+                            className="type-title__type-container"
               >
-                            Viewer Type
                             <div
-                                          className="viewer-block__inputs"
+                                          className="type-and-size-container__type-title"
+                            >
+                                          Viewer Type
+                            </div>
+                            <div
+                                          className="dialog__type-container"
                             >
                                           <RadioOption
                                                         checked={true}
@@ -242,6 +251,7 @@ ShallowWrapper {
                                                         onChange={[Function]}
                                                         value="Logged-In Viewer"
                                           />
+                                          <div />
                             </div>
               </div>
 </div>,
@@ -486,11 +496,13 @@ ShallowWrapper {
                     "children": Array [
                       false,
                       false,
+                      false,
                     ],
                     "className": "size-title__size-subcontainer",
                   },
                   "ref": null,
                   "rendered": Array [
+                    false,
                     false,
                     false,
                   ],
@@ -507,11 +519,15 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <div
-                className="viewer-container__viewer-block"
+                className="type-title__type-container"
 >
-                Viewer Type
                 <div
-                                className="viewer-block__inputs"
+                                className="type-and-size-container__type-title"
+                >
+                                Viewer Type
+                </div>
+                <div
+                                className="dialog__type-container"
                 >
                                 <RadioOption
                                                 checked={true}
@@ -531,6 +547,7 @@ ShallowWrapper {
                                                 onChange={[Function]}
                                                 value="Logged-In Viewer"
                                 />
+                                <div />
                 </div>
 </div>,
               "className": "dialog__viewer-container",
@@ -542,9 +559,13 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "Viewer Type",
                   <div
-                    className="viewer-block__inputs"
+                    className="type-and-size-container__type-title"
+>
+                    Viewer Type
+</div>,
+                  <div
+                    className="dialog__type-container"
 >
                     <RadioOption
                                         checked={true}
@@ -564,40 +585,54 @@ ShallowWrapper {
                                         onChange={[Function]}
                                         value="Logged-In Viewer"
                     />
+                    <div />
 </div>,
-                  null,
                 ],
-                "className": "viewer-container__viewer-block",
+                "className": "type-title__type-container",
               },
               "ref": null,
               "rendered": Array [
-                "Viewer Type",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Viewer Type",
+                    "className": "type-and-size-container__type-title",
+                  },
+                  "ref": null,
+                  "rendered": "Viewer Type",
+                  "type": "div",
+                },
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
                     "children": Array [
-                      <RadioOption
-                        checked={true}
-                        name="viewerType"
-                        onChange={[Function]}
-                        value="Broadcaster"
+                      Array [
+                        <RadioOption
+                          checked={true}
+                          name="viewerType"
+                          onChange={[Function]}
+                          value="Broadcaster"
 />,
-                      <RadioOption
-                        checked={false}
-                        name="viewerType"
-                        onChange={[Function]}
-                        value="Logged-Out Viewer"
+                        <RadioOption
+                          checked={false}
+                          name="viewerType"
+                          onChange={[Function]}
+                          value="Logged-Out Viewer"
 />,
-                      <RadioOption
-                        checked={false}
-                        name="viewerType"
-                        onChange={[Function]}
-                        value="Logged-In Viewer"
+                        <RadioOption
+                          checked={false}
+                          name="viewerType"
+                          onChange={[Function]}
+                          value="Logged-In Viewer"
 />,
+                      ],
+                      <div />,
                     ],
-                    "className": "viewer-block__inputs",
+                    "className": "dialog__type-container",
                   },
                   "ref": null,
                   "rendered": Array [
@@ -643,10 +678,20 @@ ShallowWrapper {
                       "rendered": null,
                       "type": [Function],
                     },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": null,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "div",
+                    },
                   ],
                   "type": "div",
                 },
-                null,
               ],
               "type": "div",
             },
@@ -792,11 +837,15 @@ ShallowWrapper {
                         className="dialog__viewer-container"
             >
                         <div
-                                    className="viewer-container__viewer-block"
+                                    className="type-title__type-container"
                         >
-                                    Viewer Type
                                     <div
-                                                className="viewer-block__inputs"
+                                                className="type-and-size-container__type-title"
+                                    >
+                                                Viewer Type
+                                    </div>
+                                    <div
+                                                className="dialog__type-container"
                                     >
                                                 <RadioOption
                                                             checked={true}
@@ -816,6 +865,7 @@ ShallowWrapper {
                                                             onChange={[Function]}
                                                             value="Logged-In Viewer"
                                                 />
+                                                <div />
                                     </div>
                         </div>
             </div>
@@ -919,11 +969,15 @@ ShallowWrapper {
                 className="dialog__viewer-container"
 >
                 <div
-                                className="viewer-container__viewer-block"
+                                className="type-title__type-container"
                 >
-                                Viewer Type
                                 <div
-                                                className="viewer-block__inputs"
+                                                className="type-and-size-container__type-title"
+                                >
+                                                Viewer Type
+                                </div>
+                                <div
+                                                className="dialog__type-container"
                                 >
                                                 <RadioOption
                                                                 checked={true}
@@ -943,6 +997,7 @@ ShallowWrapper {
                                                                 onChange={[Function]}
                                                                 value="Logged-In Viewer"
                                                 />
+                                                <div />
                                 </div>
                 </div>
 </div>,
@@ -1187,11 +1242,13 @@ ShallowWrapper {
                       "children": Array [
                         false,
                         false,
+                        false,
                       ],
                       "className": "size-title__size-subcontainer",
                     },
                     "ref": null,
                     "rendered": Array [
+                      false,
                       false,
                       false,
                     ],
@@ -1208,11 +1265,15 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <div
-                  className="viewer-container__viewer-block"
+                  className="type-title__type-container"
 >
-                  Viewer Type
                   <div
-                                    className="viewer-block__inputs"
+                                    className="type-and-size-container__type-title"
+                  >
+                                    Viewer Type
+                  </div>
+                  <div
+                                    className="dialog__type-container"
                   >
                                     <RadioOption
                                                       checked={true}
@@ -1232,6 +1293,7 @@ ShallowWrapper {
                                                       onChange={[Function]}
                                                       value="Logged-In Viewer"
                                     />
+                                    <div />
                   </div>
 </div>,
                 "className": "dialog__viewer-container",
@@ -1243,9 +1305,13 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    "Viewer Type",
                     <div
-                      className="viewer-block__inputs"
+                      className="type-and-size-container__type-title"
+>
+                      Viewer Type
+</div>,
+                    <div
+                      className="dialog__type-container"
 >
                       <RadioOption
                                             checked={true}
@@ -1265,40 +1331,54 @@ ShallowWrapper {
                                             onChange={[Function]}
                                             value="Logged-In Viewer"
                       />
+                      <div />
 </div>,
-                    null,
                   ],
-                  "className": "viewer-container__viewer-block",
+                  "className": "type-title__type-container",
                 },
                 "ref": null,
                 "rendered": Array [
-                  "Viewer Type",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Viewer Type",
+                      "className": "type-and-size-container__type-title",
+                    },
+                    "ref": null,
+                    "rendered": "Viewer Type",
+                    "type": "div",
+                  },
                   Object {
                     "instance": null,
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
                       "children": Array [
-                        <RadioOption
-                          checked={true}
-                          name="viewerType"
-                          onChange={[Function]}
-                          value="Broadcaster"
+                        Array [
+                          <RadioOption
+                            checked={true}
+                            name="viewerType"
+                            onChange={[Function]}
+                            value="Broadcaster"
 />,
-                        <RadioOption
-                          checked={false}
-                          name="viewerType"
-                          onChange={[Function]}
-                          value="Logged-Out Viewer"
+                          <RadioOption
+                            checked={false}
+                            name="viewerType"
+                            onChange={[Function]}
+                            value="Logged-Out Viewer"
 />,
-                        <RadioOption
-                          checked={false}
-                          name="viewerType"
-                          onChange={[Function]}
-                          value="Logged-In Viewer"
+                          <RadioOption
+                            checked={false}
+                            name="viewerType"
+                            onChange={[Function]}
+                            value="Logged-In Viewer"
 />,
+                        ],
+                        <div />,
                       ],
-                      "className": "viewer-block__inputs",
+                      "className": "dialog__type-container",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -1344,10 +1424,20 @@ ShallowWrapper {
                         "rendered": null,
                         "type": [Function],
                       },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": null,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "div",
+                      },
                     ],
                     "type": "div",
                   },
-                  null,
                 ],
                 "type": "div",
               },
@@ -1535,7 +1625,9 @@ ShallowWrapper {
                                                   <div
                                                             className="size-subcontainer__presets-container"
                                                   >
-                                                            <div>
+                                                            <div
+                                                                      className="size-subcontainer__size-selection"
+                                                            >
                                                                       <RadioOption
                                                                                 checked={true}
                                                                                 name="overlaySize"
@@ -1588,7 +1680,9 @@ ShallowWrapper {
                                                                                                     type="text"
                                                                                           />
                                                                                 </div>
-                                                                                <div>
+                                                                                <div
+                                                                                          className="custom-subcontainer__input"
+                                                                                >
                                                                                           <label
                                                                                                     className="inputs__option-label"
                                                                                           >
@@ -1611,11 +1705,15 @@ ShallowWrapper {
                     className="dialog__viewer-container"
           >
                     <div
-                              className="viewer-container__viewer-block"
+                              className="type-title__type-container"
                     >
-                              Viewer Type
                               <div
-                                        className="viewer-block__inputs"
+                                        className="type-and-size-container__type-title"
+                              >
+                                        Viewer Type
+                              </div>
+                              <div
+                                        className="dialog__type-container"
                               >
                                         <RadioOption
                                                   checked={true}
@@ -1635,6 +1733,7 @@ ShallowWrapper {
                                                   onChange={[Function]}
                                                   value="Logged-In Viewer"
                                         />
+                                        <div />
                               </div>
                     </div>
           </div>
@@ -1748,7 +1847,9 @@ ShallowWrapper {
                                                         <div
                                                                       className="size-subcontainer__presets-container"
                                                         >
-                                                                      <div>
+                                                                      <div
+                                                                                    className="size-subcontainer__size-selection"
+                                                                      >
                                                                                     <RadioOption
                                                                                                   checked={true}
                                                                                                   name="overlaySize"
@@ -1801,7 +1902,9 @@ ShallowWrapper {
                                                                                                                               type="text"
                                                                                                                 />
                                                                                                   </div>
-                                                                                                  <div>
+                                                                                                  <div
+                                                                                                                className="custom-subcontainer__input"
+                                                                                                  >
                                                                                                                 <label
                                                                                                                               className="inputs__option-label"
                                                                                                                 >
@@ -1824,11 +1927,15 @@ ShallowWrapper {
               className="dialog__viewer-container"
 >
               <div
-                            className="viewer-container__viewer-block"
+                            className="type-title__type-container"
               >
-                            Viewer Type
                             <div
-                                          className="viewer-block__inputs"
+                                          className="type-and-size-container__type-title"
+                            >
+                                          Viewer Type
+                            </div>
+                            <div
+                                          className="dialog__type-container"
                             >
                                           <RadioOption
                                                         checked={true}
@@ -1848,6 +1955,7 @@ ShallowWrapper {
                                                         onChange={[Function]}
                                                         value="Logged-In Viewer"
                                           />
+                                          <div />
                             </div>
               </div>
 </div>,
@@ -2003,7 +2111,9 @@ ShallowWrapper {
                                                       <div
                                                                         className="size-subcontainer__presets-container"
                                                       >
-                                                                        <div>
+                                                                        <div
+                                                                                          className="size-subcontainer__size-selection"
+                                                                        >
                                                                                           <RadioOption
                                                                                                             checked={true}
                                                                                                             name="overlaySize"
@@ -2056,7 +2166,9 @@ ShallowWrapper {
                                                                                                                                                 type="text"
                                                                                                                               />
                                                                                                             </div>
-                                                                                                            <div>
+                                                                                                            <div
+                                                                                                                              className="custom-subcontainer__input"
+                                                                                                            >
                                                                                                                               <label
                                                                                                                                                 className="inputs__option-label"
                                                                                                                               >
@@ -2205,7 +2317,9 @@ ShallowWrapper {
                                         <div
                                                             className="size-subcontainer__presets-container"
                                         >
-                                                            <div>
+                                                            <div
+                                                                                className="size-subcontainer__size-selection"
+                                                            >
                                                                                 <RadioOption
                                                                                                     checked={true}
                                                                                                     name="overlaySize"
@@ -2258,7 +2372,9 @@ ShallowWrapper {
                                                                                                                                             type="text"
                                                                                                                         />
                                                                                                     </div>
-                                                                                                    <div>
+                                                                                                    <div
+                                                                                                                        className="custom-subcontainer__input"
+                                                                                                    >
                                                                                                                         <label
                                                                                                                                             className="inputs__option-label"
                                                                                                                         >
@@ -2295,7 +2411,9 @@ ShallowWrapper {
                         <div
                                                 className="size-subcontainer__presets-container"
                         >
-                                                <div>
+                                                <div
+                                                                        className="size-subcontainer__size-selection"
+                                                >
                                                                         <RadioOption
                                                                                                 checked={true}
                                                                                                 name="overlaySize"
@@ -2348,7 +2466,9 @@ ShallowWrapper {
                                                                                                                                                 type="text"
                                                                                                                         />
                                                                                                 </div>
-                                                                                                <div>
+                                                                                                <div
+                                                                                                                        className="custom-subcontainer__input"
+                                                                                                >
                                                                                                                         <label
                                                                                                                                                 className="inputs__option-label"
                                                                                                                         >
@@ -2364,6 +2484,7 @@ ShallowWrapper {
                                                 </div>
                         </div>
 </div>,
+                      false,
                       false,
                     ],
                     "className": "size-title__size-subcontainer",
@@ -2384,7 +2505,9 @@ ShallowWrapper {
                           <div
                             className="size-subcontainer__presets-container"
 >
-                            <div>
+                            <div
+                                                        className="size-subcontainer__size-selection"
+                            >
                                                         <RadioOption
                                                                                     checked={true}
                                                                                     name="overlaySize"
@@ -2437,7 +2560,9 @@ ShallowWrapper {
                                                                                                                                             type="text"
                                                                                                                 />
                                                                                     </div>
-                                                                                    <div>
+                                                                                    <div
+                                                                                                                className="custom-subcontainer__input"
+                                                                                    >
                                                                                                                 <label
                                                                                                                                             className="inputs__option-label"
                                                                                                                 >
@@ -2475,7 +2600,9 @@ ShallowWrapper {
                           "nodeType": "host",
                           "props": Object {
                             "children": Array [
-                              <div>
+                              <div
+                                className="size-subcontainer__size-selection"
+>
                                 <RadioOption
                                                                 checked={true}
                                                                 name="overlaySize"
@@ -2528,7 +2655,9 @@ ShallowWrapper {
                                                                                                                                 type="text"
                                                                                                 />
                                                                 </div>
-                                                                <div>
+                                                                <div
+                                                                                                className="custom-subcontainer__input"
+                                                                >
                                                                                                 <label
                                                                                                                                 className="inputs__option-label"
                                                                                                 >
@@ -2578,6 +2707,7 @@ ShallowWrapper {
                                     value="448x336"
 />,
                                 ],
+                                "className": "size-subcontainer__size-selection",
                               },
                               "ref": null,
                               "rendered": Array [
@@ -2670,7 +2800,9 @@ ShallowWrapper {
                                                                                                             type="text"
                                                                         />
                                     </div>
-                                    <div>
+                                    <div
+                                                                        className="custom-subcontainer__input"
+                                    >
                                                                         <label
                                                                                                             className="inputs__option-label"
                                                                         >
@@ -2723,7 +2855,9 @@ ShallowWrapper {
                                                                                 type="text"
                                         />
 </div>,
-                                      <div>
+                                      <div
+                                        className="custom-subcontainer__input"
+>
                                         <label
                                                                                 className="inputs__option-label"
                                         >
@@ -2806,6 +2940,7 @@ ShallowWrapper {
                                             type="text"
 />,
                                         ],
+                                        "className": "custom-subcontainer__input",
                                       },
                                       "ref": null,
                                       "rendered": Array [
@@ -2850,6 +2985,7 @@ ShallowWrapper {
                       "type": "div",
                     },
                     false,
+                    false,
                   ],
                   "type": "div",
                 },
@@ -2864,11 +3000,15 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <div
-                className="viewer-container__viewer-block"
+                className="type-title__type-container"
 >
-                Viewer Type
                 <div
-                                className="viewer-block__inputs"
+                                className="type-and-size-container__type-title"
+                >
+                                Viewer Type
+                </div>
+                <div
+                                className="dialog__type-container"
                 >
                                 <RadioOption
                                                 checked={true}
@@ -2888,6 +3028,7 @@ ShallowWrapper {
                                                 onChange={[Function]}
                                                 value="Logged-In Viewer"
                                 />
+                                <div />
                 </div>
 </div>,
               "className": "dialog__viewer-container",
@@ -2899,9 +3040,13 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "Viewer Type",
                   <div
-                    className="viewer-block__inputs"
+                    className="type-and-size-container__type-title"
+>
+                    Viewer Type
+</div>,
+                  <div
+                    className="dialog__type-container"
 >
                     <RadioOption
                                         checked={true}
@@ -2921,40 +3066,54 @@ ShallowWrapper {
                                         onChange={[Function]}
                                         value="Logged-In Viewer"
                     />
+                    <div />
 </div>,
-                  null,
                 ],
-                "className": "viewer-container__viewer-block",
+                "className": "type-title__type-container",
               },
               "ref": null,
               "rendered": Array [
-                "Viewer Type",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Viewer Type",
+                    "className": "type-and-size-container__type-title",
+                  },
+                  "ref": null,
+                  "rendered": "Viewer Type",
+                  "type": "div",
+                },
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
                     "children": Array [
-                      <RadioOption
-                        checked={true}
-                        name="viewerType"
-                        onChange={[Function]}
-                        value="Broadcaster"
+                      Array [
+                        <RadioOption
+                          checked={true}
+                          name="viewerType"
+                          onChange={[Function]}
+                          value="Broadcaster"
 />,
-                      <RadioOption
-                        checked={false}
-                        name="viewerType"
-                        onChange={[Function]}
-                        value="Logged-Out Viewer"
+                        <RadioOption
+                          checked={false}
+                          name="viewerType"
+                          onChange={[Function]}
+                          value="Logged-Out Viewer"
 />,
-                      <RadioOption
-                        checked={false}
-                        name="viewerType"
-                        onChange={[Function]}
-                        value="Logged-In Viewer"
+                        <RadioOption
+                          checked={false}
+                          name="viewerType"
+                          onChange={[Function]}
+                          value="Logged-In Viewer"
 />,
+                      ],
+                      <div />,
                     ],
-                    "className": "viewer-block__inputs",
+                    "className": "dialog__type-container",
                   },
                   "ref": null,
                   "rendered": Array [
@@ -3000,10 +3159,20 @@ ShallowWrapper {
                       "rendered": null,
                       "type": [Function],
                     },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": null,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "div",
+                    },
                   ],
                   "type": "div",
                 },
-                null,
               ],
               "type": "div",
             },
@@ -3159,7 +3328,9 @@ ShallowWrapper {
                                                             <div
                                                                         className="size-subcontainer__presets-container"
                                                             >
-                                                                        <div>
+                                                                        <div
+                                                                                    className="size-subcontainer__size-selection"
+                                                                        >
                                                                                     <RadioOption
                                                                                                 checked={true}
                                                                                                 name="overlaySize"
@@ -3212,7 +3383,9 @@ ShallowWrapper {
                                                                                                                         type="text"
                                                                                                             />
                                                                                                 </div>
-                                                                                                <div>
+                                                                                                <div
+                                                                                                            className="custom-subcontainer__input"
+                                                                                                >
                                                                                                             <label
                                                                                                                         className="inputs__option-label"
                                                                                                             >
@@ -3235,11 +3408,15 @@ ShallowWrapper {
                         className="dialog__viewer-container"
             >
                         <div
-                                    className="viewer-container__viewer-block"
+                                    className="type-title__type-container"
                         >
-                                    Viewer Type
                                     <div
-                                                className="viewer-block__inputs"
+                                                className="type-and-size-container__type-title"
+                                    >
+                                                Viewer Type
+                                    </div>
+                                    <div
+                                                className="dialog__type-container"
                                     >
                                                 <RadioOption
                                                             checked={true}
@@ -3259,6 +3436,7 @@ ShallowWrapper {
                                                             onChange={[Function]}
                                                             value="Logged-In Viewer"
                                                 />
+                                                <div />
                                     </div>
                         </div>
             </div>
@@ -3372,7 +3550,9 @@ ShallowWrapper {
                                                                 <div
                                                                                 className="size-subcontainer__presets-container"
                                                                 >
-                                                                                <div>
+                                                                                <div
+                                                                                                className="size-subcontainer__size-selection"
+                                                                                >
                                                                                                 <RadioOption
                                                                                                                 checked={true}
                                                                                                                 name="overlaySize"
@@ -3425,7 +3605,9 @@ ShallowWrapper {
                                                                                                                                                 type="text"
                                                                                                                                 />
                                                                                                                 </div>
-                                                                                                                <div>
+                                                                                                                <div
+                                                                                                                                className="custom-subcontainer__input"
+                                                                                                                >
                                                                                                                                 <label
                                                                                                                                                 className="inputs__option-label"
                                                                                                                                 >
@@ -3448,11 +3630,15 @@ ShallowWrapper {
                 className="dialog__viewer-container"
 >
                 <div
-                                className="viewer-container__viewer-block"
+                                className="type-title__type-container"
                 >
-                                Viewer Type
                                 <div
-                                                className="viewer-block__inputs"
+                                                className="type-and-size-container__type-title"
+                                >
+                                                Viewer Type
+                                </div>
+                                <div
+                                                className="dialog__type-container"
                                 >
                                                 <RadioOption
                                                                 checked={true}
@@ -3472,6 +3658,7 @@ ShallowWrapper {
                                                                 onChange={[Function]}
                                                                 value="Logged-In Viewer"
                                                 />
+                                                <div />
                                 </div>
                 </div>
 </div>,
@@ -3627,7 +3814,9 @@ ShallowWrapper {
                                                             <div
                                                                                 className="size-subcontainer__presets-container"
                                                             >
-                                                                                <div>
+                                                                                <div
+                                                                                                    className="size-subcontainer__size-selection"
+                                                                                >
                                                                                                     <RadioOption
                                                                                                                         checked={true}
                                                                                                                         name="overlaySize"
@@ -3680,7 +3869,9 @@ ShallowWrapper {
                                                                                                                                                                 type="text"
                                                                                                                                             />
                                                                                                                         </div>
-                                                                                                                        <div>
+                                                                                                                        <div
+                                                                                                                                            className="custom-subcontainer__input"
+                                                                                                                        >
                                                                                                                                             <label
                                                                                                                                                                 className="inputs__option-label"
                                                                                                                                             >
@@ -3829,7 +4020,9 @@ ShallowWrapper {
                                             <div
                                                                   className="size-subcontainer__presets-container"
                                             >
-                                                                  <div>
+                                                                  <div
+                                                                                        className="size-subcontainer__size-selection"
+                                                                  >
                                                                                         <RadioOption
                                                                                                               checked={true}
                                                                                                               name="overlaySize"
@@ -3882,7 +4075,9 @@ ShallowWrapper {
                                                                                                                                                           type="text"
                                                                                                                                     />
                                                                                                               </div>
-                                                                                                              <div>
+                                                                                                              <div
+                                                                                                                                    className="custom-subcontainer__input"
+                                                                                                              >
                                                                                                                                     <label
                                                                                                                                                           className="inputs__option-label"
                                                                                                                                     >
@@ -3919,7 +4114,9 @@ ShallowWrapper {
                           <div
                                                     className="size-subcontainer__presets-container"
                           >
-                                                    <div>
+                                                    <div
+                                                                              className="size-subcontainer__size-selection"
+                                                    >
                                                                               <RadioOption
                                                                                                         checked={true}
                                                                                                         name="overlaySize"
@@ -3972,7 +4169,9 @@ ShallowWrapper {
                                                                                                                                                             type="text"
                                                                                                                                   />
                                                                                                         </div>
-                                                                                                        <div>
+                                                                                                        <div
+                                                                                                                                  className="custom-subcontainer__input"
+                                                                                                        >
                                                                                                                                   <label
                                                                                                                                                             className="inputs__option-label"
                                                                                                                                   >
@@ -3988,6 +4187,7 @@ ShallowWrapper {
                                                     </div>
                           </div>
 </div>,
+                        false,
                         false,
                       ],
                       "className": "size-title__size-subcontainer",
@@ -4008,7 +4208,9 @@ ShallowWrapper {
                             <div
                               className="size-subcontainer__presets-container"
 >
-                              <div>
+                              <div
+                                                            className="size-subcontainer__size-selection"
+                              >
                                                             <RadioOption
                                                                                           checked={true}
                                                                                           name="overlaySize"
@@ -4061,7 +4263,9 @@ ShallowWrapper {
                                                                                                                                                       type="text"
                                                                                                                         />
                                                                                           </div>
-                                                                                          <div>
+                                                                                          <div
+                                                                                                                        className="custom-subcontainer__input"
+                                                                                          >
                                                                                                                         <label
                                                                                                                                                       className="inputs__option-label"
                                                                                                                         >
@@ -4099,7 +4303,9 @@ ShallowWrapper {
                             "nodeType": "host",
                             "props": Object {
                               "children": Array [
-                                <div>
+                                <div
+                                  className="size-subcontainer__size-selection"
+>
                                   <RadioOption
                                                                     checked={true}
                                                                     name="overlaySize"
@@ -4152,7 +4358,9 @@ ShallowWrapper {
                                                                                                                                         type="text"
                                                                                                       />
                                                                     </div>
-                                                                    <div>
+                                                                    <div
+                                                                                                      className="custom-subcontainer__input"
+                                                                    >
                                                                                                       <label
                                                                                                                                         className="inputs__option-label"
                                                                                                       >
@@ -4202,6 +4410,7 @@ ShallowWrapper {
                                       value="448x336"
 />,
                                   ],
+                                  "className": "size-subcontainer__size-selection",
                                 },
                                 "ref": null,
                                 "rendered": Array [
@@ -4294,7 +4503,9 @@ ShallowWrapper {
                                                                                                                   type="text"
                                                                             />
                                       </div>
-                                      <div>
+                                      <div
+                                                                            className="custom-subcontainer__input"
+                                      >
                                                                             <label
                                                                                                                   className="inputs__option-label"
                                                                             >
@@ -4347,7 +4558,9 @@ ShallowWrapper {
                                                                                     type="text"
                                           />
 </div>,
-                                        <div>
+                                        <div
+                                          className="custom-subcontainer__input"
+>
                                           <label
                                                                                     className="inputs__option-label"
                                           >
@@ -4430,6 +4643,7 @@ ShallowWrapper {
                                               type="text"
 />,
                                           ],
+                                          "className": "custom-subcontainer__input",
                                         },
                                         "ref": null,
                                         "rendered": Array [
@@ -4474,6 +4688,7 @@ ShallowWrapper {
                         "type": "div",
                       },
                       false,
+                      false,
                     ],
                     "type": "div",
                   },
@@ -4488,11 +4703,15 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <div
-                  className="viewer-container__viewer-block"
+                  className="type-title__type-container"
 >
-                  Viewer Type
                   <div
-                                    className="viewer-block__inputs"
+                                    className="type-and-size-container__type-title"
+                  >
+                                    Viewer Type
+                  </div>
+                  <div
+                                    className="dialog__type-container"
                   >
                                     <RadioOption
                                                       checked={true}
@@ -4512,6 +4731,7 @@ ShallowWrapper {
                                                       onChange={[Function]}
                                                       value="Logged-In Viewer"
                                     />
+                                    <div />
                   </div>
 </div>,
                 "className": "dialog__viewer-container",
@@ -4523,9 +4743,13 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    "Viewer Type",
                     <div
-                      className="viewer-block__inputs"
+                      className="type-and-size-container__type-title"
+>
+                      Viewer Type
+</div>,
+                    <div
+                      className="dialog__type-container"
 >
                       <RadioOption
                                             checked={true}
@@ -4545,40 +4769,54 @@ ShallowWrapper {
                                             onChange={[Function]}
                                             value="Logged-In Viewer"
                       />
+                      <div />
 </div>,
-                    null,
                   ],
-                  "className": "viewer-container__viewer-block",
+                  "className": "type-title__type-container",
                 },
                 "ref": null,
                 "rendered": Array [
-                  "Viewer Type",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Viewer Type",
+                      "className": "type-and-size-container__type-title",
+                    },
+                    "ref": null,
+                    "rendered": "Viewer Type",
+                    "type": "div",
+                  },
                   Object {
                     "instance": null,
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
                       "children": Array [
-                        <RadioOption
-                          checked={true}
-                          name="viewerType"
-                          onChange={[Function]}
-                          value="Broadcaster"
+                        Array [
+                          <RadioOption
+                            checked={true}
+                            name="viewerType"
+                            onChange={[Function]}
+                            value="Broadcaster"
 />,
-                        <RadioOption
-                          checked={false}
-                          name="viewerType"
-                          onChange={[Function]}
-                          value="Logged-Out Viewer"
+                          <RadioOption
+                            checked={false}
+                            name="viewerType"
+                            onChange={[Function]}
+                            value="Logged-Out Viewer"
 />,
-                        <RadioOption
-                          checked={false}
-                          name="viewerType"
-                          onChange={[Function]}
-                          value="Logged-In Viewer"
+                          <RadioOption
+                            checked={false}
+                            name="viewerType"
+                            onChange={[Function]}
+                            value="Logged-In Viewer"
 />,
+                        ],
+                        <div />,
                       ],
-                      "className": "viewer-block__inputs",
+                      "className": "dialog__type-container",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -4624,10 +4862,20 @@ ShallowWrapper {
                         "rendered": null,
                         "type": [Function],
                       },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": null,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "div",
+                      },
                     ],
                     "type": "div",
                   },
-                  null,
                 ],
                 "type": "div",
               },
