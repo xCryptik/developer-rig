@@ -39,6 +39,7 @@ export function mockGlobals() {
 
   coordinator.ExtensionPlatform = {
     Web: 'web',
+    Mobile: 'mobile'
   };
 
   coordinator.ExtensionFrame = function () {

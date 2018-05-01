@@ -77,6 +77,56 @@ describe('<ExtensionFrame />', () => {
     }, "*");
   });
 
+  it('onload postMessages data correctly when platform is mobile', () => {
+    const { wrapper } = setupMount({
+      type: ExtensionViewType.Mobile
+    });
+
+    const mockIframeRef = {
+      contentWindow: {
+        postMessage: jest.fn(),
+      },
+    };
+
+    wrapper.instance().iframe = mockIframeRef
+    wrapper.instance()._extensionFrameInit();
+    expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
+      "action": "extension-frame-init",
+      "extension": {
+        "anchor": "mobile",
+        "channelId": "channelId",
+        "extension": {
+          "authorName": "test",
+          "channelId": "channelId",
+          "description": "description",
+          "iconUrl": "icon_url",
+          "id": "id",
+          "name": "name",
+          "requestIdentity": false,
+          "sku": "sku",
+          "state": "state",
+          "summary": "summary",
+          "token": "token",
+          "vendorCode": "vendorCode",
+          "version": "0.1",
+          "views": {
+            "component": { "aspectHeight": 3000, "aspectWidth": 2500, "viewerUrl": "test", "zoom": false },
+            "config": { "viewerUrl": "test" },
+            "liveConfig": { "viewerUrl": "test" },
+            "panel": { "viewerUrl": "test" }
+          },
+          "whitelistedConfigUrls": ["foo"],
+          "whitelistedPanelUrls": ["bar"] },
+          "iframeClassName": "extension-frame",
+          "loginId": null,
+          "mode": "viewer",
+          "platform": "mobile",
+          "trackingProperties": {}
+        },
+      "frameId": "0"
+    }, "*");
+  });
+
   describe('when in live config mode', () => {
     it('renders correctly', () => {
       const { wrapper } = setupShallow({
@@ -111,6 +161,16 @@ describe('<ExtensionFrame />', () => {
     it('renders correctly', () => {
       const { wrapper } = setupShallow({
         type: ExtensionAnchor.Panel,
+        mode: ExtensionMode.Viewer,
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe('when in video overlay mode', () => {
+    it('renders correctly', () => {
+      const { wrapper } = setupShallow({
+        type: ExtensionAnchor.Overlay,
         mode: ExtensionMode.Viewer,
       });
       expect(wrapper).toMatchSnapshot();

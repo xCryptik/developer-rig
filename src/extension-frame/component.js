@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './component.sass';
-const { ExtensionPlatform } = window['extension-coordinator'];
+
+const { ExtensionPlatform, ExtensionViewType} = window['extension-coordinator'];
 
 const IFRAME_CLASS = 'extension-frame';
 const EXTENSION_FRAME_INIT_ACTION = 'extension-frame-init';
@@ -16,7 +17,7 @@ export class ExtensionFrame extends Component {
   render() {
     return (
       <iframe
-        ref={this._bindIframeRef}
+      ref={this._bindIframeRef}
         src={process.env.PUBLIC_URL + '/extension-frame.html'}
         frameBorder={0}
         className={'rig-frame ' + IFRAME_CLASS}
@@ -35,7 +36,7 @@ export class ExtensionFrame extends Component {
       loginId: null,
       extension: this.props.extension,
       mode: this.props.mode,
-      platform: ExtensionPlatform.Web,
+      platform: (this.props.type === ExtensionViewType.Mobile) ? ExtensionPlatform.Mobile : ExtensionPlatform.Web,
       trackingProperties: {},
       iframeClassName: IFRAME_CLASS,
     }

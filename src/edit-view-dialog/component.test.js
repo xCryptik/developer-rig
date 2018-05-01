@@ -1,15 +1,15 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { EditViewDialog } from './component';
-import { ExtensionAnchors } from '../constants/extension-types';
 import { ViewerTypes } from '../constants/viewer-types';
 import { createViewsForTest } from '../tests/constants/extension';
-const { ExtensionAnchor } = window['extension-coordinator'];
+import { MobileOrientation } from '../constants/mobile';
+const { ExtensionViewType } = window['extension-coordinator'];
 
 describe('<EditViewDialog />', () => {
   const setupShallow = setupShallowTest(EditViewDialog, () => ({
     show: true,
     idToEdit: '1',
-    views: createViewsForTest(2, ExtensionAnchors[ExtensionAnchor.Component], ViewerTypes.LoggedOut, { x: 10, y: 10 }),
+    views: createViewsForTest(2, ExtensionViewType.Component, ViewerTypes.LoggedOut, { x: 10, y: 10 }),
     closeHandler: jest.fn(),
     saveViewHandler: jest.fn(),
   }));
@@ -57,5 +57,24 @@ describe('<EditViewDialog />', () => {
     inputs = wrapper.find('div.edit-subcontainer__input > input');
     expect(inputs.get(0).props.value).toEqual(expectedChangedPosition.x);
     expect(inputs.get(1).props.value).toEqual(expectedChangedPosition.y);
+  });
+
+  it('component state changes orientation correctly', () => {
+    const { wrapper } = setupShallow({
+      idToEdit: '1',
+      views: createViewsForTest(2, ExtensionViewType.Mobile, ViewerTypes.LoggedOut, { orientation: MobileOrientation.Portrait}),
+    });
+
+    let inputs = wrapper.find('RadioOption');
+    expect(inputs.get(0).props.checked).toBeTruthy();
+    expect(inputs.get(1).props.checked).toBeFalsy();
+
+    inputs.last().simulate('change', { 'target': { 'name': 'orientation', 'value': MobileOrientation.Landscape }});
+
+    wrapper.update();
+
+    inputs = wrapper.find('RadioOption');
+    expect(inputs.get(0).props.checked).toBeFalsy();
+    expect(inputs.get(1).props.checked).toBeTruthy();
   });
 });

@@ -7,15 +7,15 @@ export class ExtensionComponentView extends Component {
   computeViewStyles() {
     const extension = this.props.extension;
     const positionFromView = getComponentPositionFromView(
-      this.props.overlaySize.width,
-      this.props.overlaySize.height,
+      this.props.frameSize.width,
+      this.props.frameSize.height,
       {
         x: this.props.position.x * 100,
         y: this.props.position.y * 100,
       });
     const sizeFromView = getComponentSizeFromView(
-      this.props.overlaySize.width,
-      this.props.overlaySize.height,
+      this.props.frameSize.width,
+      this.props.frameSize.height,
       extension.views.component);
 
     let viewStyles = {
@@ -44,8 +44,8 @@ export class ExtensionComponentView extends Component {
       <div
         className="view component-view"
         style={{
-          width: this.props.overlaySize.width + 'px',
-          height: this.props.overlaySize.height + 'px',
+          width: this.props.frameSize.width + 'px',
+          height: this.props.frameSize.height + 'px',
         }}>
           <div style={this.computeViewStyles()}>
           <ExtensionFrame
@@ -64,7 +64,7 @@ export class ExtensionComponentView extends Component {
 ExtensionComponentView.propTypes = {
   id: PropTypes.string.isRequired,
   extension: PropTypes.object.isRequired,
-  overlaySize: PropTypes.object.isRequired,
+  frameSize: PropTypes.object.isRequired,
   position: PropTypes.object.isRequired,
   role: PropTypes.string,
 };

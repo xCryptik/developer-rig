@@ -45,13 +45,13 @@ ShallowWrapper {
             ],
           }
     }
-    id="1"
-    overlaySize={
+    frameSize={
         Object {
             "height": 600,
             "width": 800,
           }
     }
+    id="1"
     position={
         Object {
             "x": 10,
@@ -500,13 +500,13 @@ ShallowWrapper {
             ],
           }
     }
-    id="1"
-    overlaySize={
+    frameSize={
         Object {
             "height": 600,
             "width": 800,
           }
     }
+    id="1"
     position={
         Object {
             "x": 10,

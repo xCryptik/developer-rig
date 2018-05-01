@@ -7,8 +7,9 @@ import { ViewerTypes } from '../constants/viewer-types';
 import { CONFIG_VIEW_DIMENSIONS, CONFIG_VIEW_WRAPPER_DIMENSIONS, PANEL_VIEW_DIMENSIONS } from '../constants/view_sizes';
 import closeButton from '../img/close_icon.png';
 import { ExtensionComponentView } from '../extension-component-view';
+import { ExtensionMobileView } from '../extension-mobile-view/component';
 
-const { ExtensionAnchor, ExtensionMode, ExtensionViewType } = window['extension-coordinator'];
+const { ExtensionAnchor, ExtensionMode, ExtensionViewType, ExtensionPlatform} = window['extension-coordinator'];
 
 export class ExtensionView extends Component {
   constructor(props) {
@@ -35,6 +36,10 @@ export class ExtensionView extends Component {
     return this.props.linked ? IdentityOptions.Linked : IdentityOptions.Unlinked;
   }
 
+  _isEditable() {
+    return this.props.type === ExtensionAnchor.Component || this.props.type === ExtensionPlatform.Mobile;
+  }
+
   render() {
     const extensionProps = {}
     let panelHeight = PANEL_VIEW_DIMENSIONS.height;
@@ -50,8 +55,8 @@ export class ExtensionView extends Component {
         break;
       case ExtensionAnchor.Overlay:
         extensionProps.viewStyles = {
-          width: this.props.overlaySize.width + 'px',
-          height: this.props.overlaySize.height + 'px'
+          width: this.props.frameSize.width + 'px',
+          height: this.props.frameSize.height + 'px'
         };
         break;
       case ExtensionMode.Config:
@@ -87,7 +92,7 @@ export class ExtensionView extends Component {
                 src={closeButton}
               />
               </div>
-              {this.props.type === ExtensionAnchor.Component &&
+              { this._isEditable() &&
                 <div className='view__edit_button'
                 onClick={() => { this.props.openEditViewHandler(this.props.id) }}>
                 Edit
@@ -103,27 +108,40 @@ export class ExtensionView extends Component {
               this.renderLinkedOrUnlinked() : null}
           </div>
         </div>
-        {this.props.type === ExtensionAnchor.Component ?
+
+        {this.props.type === ExtensionAnchor.Component &&
           <ExtensionComponentView
             id={`component-${this.props.id}`}
             className="view"
             frameId={`frameid-${this.props.id}`}
             extension={this.props.extension}
-            overlaySize={this.props.overlaySize}
+            frameSize={this.props.frameSize}
             position={this.props.position}
-          /> :
-          <div
+          />}
+
+        {this.props.type === ExtensionViewType.Mobile &&
+         <ExtensionMobileView
+            id={`mobile-${this.props.id}`}
             className="view"
-            style={extensionProps.viewStyles}>
-            <ExtensionFrame
-              className="view"
-              frameId={`frameid-${this.props.id}`}
-              extension={this.props.extension}
-              type={this.props.type}
-              mode={this.props.mode}
-            />
-          </div>
-        }
+            frameId={`frameid-${this.props.id}`}
+            extension={this.props.extension}
+            frameSize={this.props.frameSize}
+            position={this.props.position}
+            orientation={this.props.orientation}
+          />}
+
+        {(this.props.type === ExtensionAnchor.Overlay || this.props.type === ExtensionAnchor.Panel) &&
+          <div
+          className="view"
+          style={extensionProps.viewStyles}>
+          <ExtensionFrame
+            className="view"
+            frameId={`frameid-${this.props.id}`}
+            extension={this.props.extension}
+            type={this.props.type}
+            mode={this.props.mode}
+          />
+        </div>}
       </div>
     );
   }
@@ -138,5 +156,5 @@ ExtensionView.propTypes = {
   deleteViewHandler: PropTypes.func,
   openEditViewHandler: PropTypes.func,
   position: PropTypes.object,
-  overlaySize: PropTypes.object,
+  frameSize: PropTypes.object,
 };

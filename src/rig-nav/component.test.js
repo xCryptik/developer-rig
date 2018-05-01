@@ -1,6 +1,6 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { RigNav } from './component';
-import { EXTENSION_VIEWS } from '../constants/nav-items';
+import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG, CONFIGURATIONS  } from '../constants/nav-items';
 
 describe('<RigNav />', () => {
   const setupShallow = setupShallowTest(RigNav, () => ({
@@ -42,8 +42,20 @@ describe('<RigNav />', () => {
     expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
 
     wrapper.setProps({
-      selectedView: EXTENSION_VIEWS,
-    })
+      selectedView: BROADCASTER_CONFIG,
+    });
+    wrapper.update();
+    expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
+
+    wrapper.setProps({
+      selectedView: LIVE_CONFIG,
+    });
+    wrapper.update();
+    expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
+
+    wrapper.setProps({
+      selectedView: CONFIGURATIONS,
+    });
     wrapper.update();
     expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
   })

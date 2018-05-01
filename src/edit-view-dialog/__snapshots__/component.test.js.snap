@@ -52,8 +52,9 @@ ShallowWrapper {
               },
               "id": "1",
               "linked": false,
+              "orientation": "Portrait",
               "role": "Logged-Out Viewer",
-              "type": "Component",
+              "type": "component",
               "x": 10,
               "y": 10,
             },
@@ -98,8 +99,9 @@ ShallowWrapper {
               },
               "id": "2",
               "linked": false,
+              "orientation": "Portrait",
               "role": "Logged-Out Viewer",
-              "type": "Component",
+              "type": "component",
               "x": 10,
               "y": 10,
             },
@@ -179,8 +181,9 @@ ShallowWrapper {
               },
               "id": "1",
               "linked": false,
+              "orientation": "Portrait",
               "role": "Logged-Out Viewer",
-              "type": "Component",
+              "type": "component",
               "x": 10,
               "y": 10,
             },
@@ -225,8 +228,9 @@ ShallowWrapper {
               },
               "id": "2",
               "linked": false,
+              "orientation": "Portrait",
               "role": "Logged-Out Viewer",
-              "type": "Component",
+              "type": "component",
               "x": 10,
               "y": 10,
             },
@@ -250,7 +254,7 @@ ShallowWrapper {
           className="edit-view__background"
 />,
         <div
-          className="edit-view__dialog"
+          className="edit-view__dialog-component"
 >
           <div
                     className="dialog__top-bar-container"
@@ -430,6 +434,7 @@ ShallowWrapper {
                             </div>
               </div>
 </div>,
+            false,
             <hr
               className="dialog__divider"
 />,
@@ -450,7 +455,7 @@ ShallowWrapper {
               </div>
 </div>,
           ],
-          "className": "edit-view__dialog",
+          "className": "edit-view__dialog-component",
         },
         "ref": null,
         "rendered": Array [
@@ -791,6 +796,7 @@ ShallowWrapper {
             ],
             "type": "div",
           },
+          false,
           Object {
             "instance": null,
             "key": undefined,
@@ -871,7 +877,7 @@ ShallowWrapper {
             className="edit-view__background"
 />,
           <div
-            className="edit-view__dialog"
+            className="edit-view__dialog-component"
 >
             <div
                         className="dialog__top-bar-container"
@@ -1051,6 +1057,7 @@ ShallowWrapper {
                                 </div>
                 </div>
 </div>,
+              false,
               <hr
                 className="dialog__divider"
 />,
@@ -1071,7 +1078,7 @@ ShallowWrapper {
                 </div>
 </div>,
             ],
-            "className": "edit-view__dialog",
+            "className": "edit-view__dialog-component",
           },
           "ref": null,
           "rendered": Array [
@@ -1412,6 +1419,7 @@ ShallowWrapper {
               ],
               "type": "div",
             },
+            false,
             Object {
               "instance": null,
               "key": undefined,

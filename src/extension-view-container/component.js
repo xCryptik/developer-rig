@@ -32,9 +32,10 @@ export class ExtensionViewContainer extends Component {
           type={view.type}
           mode={this.props.mode}
           role={view.role}
-          overlaySize={view.overlaySize}
+          frameSize={view.frameSize}
           position={{x: view.x, y: view.y}}
           linked={view.linked}
+          orientation={view.orientation}
           openEditViewHandler={this.props.openEditViewHandler}
           deleteViewHandler={this.props.deleteExtensionViewHandler}/>
       });

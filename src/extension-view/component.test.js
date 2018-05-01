@@ -15,7 +15,7 @@ describe('<ExtensionView />', () => {
     mode: 'viewer',
     linked: false,
     position: { x: 0, y: 0 },
-    overlaySize: { width: 0, height: 0 },
+    frameSize: { width: 0, height: 0 },
     deleteViewHandler: jest.fn(),
     openEditViewHandler: jest.fn(),
   }));
@@ -148,7 +148,7 @@ describe('<ExtensionView />', () => {
     it('renders correctly in overlay mode as a Broadcaster', () => {
       const { wrapper } = setupShallow({
         type: ExtensionAnchor.Overlay,
-        overlaySize: {
+        frameSize: {
           height: "1px",
           width: "1px"
         }
@@ -160,7 +160,7 @@ describe('<ExtensionView />', () => {
       const { wrapper } = setupShallow({
         role: ViewerTypes.LoggedIn,
         linked: false,
-        overlaySize: {
+        frameSize: {
           height: "1px",
           width: "1px"
         }
@@ -172,7 +172,7 @@ describe('<ExtensionView />', () => {
       const { wrapper } = setupShallow({
         role: ViewerTypes.LoggedIn,
         linked: true,
-        overlaySize: {
+        frameSize: {
           height: "1px",
           width: "1px"
         }
@@ -183,7 +183,7 @@ describe('<ExtensionView />', () => {
     it('renders correctly when in overlay mode as a Logged Out', () => {
       const { wrapper } = setupShallow({
         role: ViewerTypes.LoggedOut,
-        overlaySize: {
+        frameSize: {
           height: "1px",
           width: "1px"
         }

@@ -12,8 +12,9 @@ import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG, CONFIGURATIONS } from
 import { ViewerTypes } from '../constants/viewer-types';
 import { OverlaySizes } from '../constants/overlay-sizes';
 import { IdentityOptions } from '../constants/identity-options';
+import { MobileSizes } from '../constants/mobile';
 import { RIG_ROLE } from '../constants/rig';
-const { ExtensionMode } = window['extension-coordinator'];
+const { ExtensionMode, ExtensionViewType } = window['extension-coordinator'];
 
 export class Rig extends Component {
   constructor(props) {
@@ -140,6 +141,20 @@ export class Rig extends Component {
     });
   }
 
+  _getFrameSizeFromDialog(dialogRef) {
+    if (dialogRef.state.frameSize === 'Custom') {
+      return {
+        width: dialogRef.state.width,
+        height: dialogRef.state.height
+      };
+    }
+    if (dialogRef.state.extensionViewType === ExtensionViewType.Mobile) {
+      return MobileSizes[dialogRef.state.frameSize];
+    }
+
+    return OverlaySizes[dialogRef.state.frameSize];
+  }
+
   createExtensionView = () => {
     const extensionViews = this._getExtensionViews();
     const linked = this.refs.extensionViewDialog.state.identityOption === IdentityOptions.Linked;
@@ -159,7 +174,8 @@ export class Rig extends Component {
       role: this.refs.extensionViewDialog.state.viewerType,
       x: this.refs.extensionViewDialog.state.x,
       y: this.refs.extensionViewDialog.state.y,
-      overlaySize: (this.refs.extensionViewDialog.state.overlaySize === 'Custom' ? {width: this.refs.extensionViewDialog.state.width, height: this.refs.extensionViewDialog.state.height} : OverlaySizes[this.refs.extensionViewDialog.state.overlaySize]),
+      orientation: this.refs.extensionViewDialog.state.orientation,
+      frameSize: this._getFrameSizeFromDialog(this.refs.extensionViewDialog),
     });
     this._pushExtensionViews(extensionViews);
     this.closeExtensionViewDialog();
@@ -169,12 +185,13 @@ export class Rig extends Component {
     this._pushExtensionViews(this.state.extensionViews.filter(element => element.id !== id));
   }
 
-  editComponentViewPosition = (position) => {
+  editViewHandler = (newViewState) => {
     const views = this._getExtensionViews();
     views.forEach(element => {
       if (element.id === this.state.idToEdit) {
-        element.x = position.x;
-        element.y = position.y;
+        element.x = newViewState.x;
+        element.y = newViewState.y;
+        element.orientation = newViewState.orientation;
       }
     });
     this._pushExtensionViews(views);
@@ -214,7 +231,7 @@ export class Rig extends Component {
             show={this.state.showEditView}
             views={this._getExtensionViews()}
             closeHandler={this.closeEditViewHandler}
-            saveViewHandler={this.editComponentViewPosition}
+            saveViewHandler={this.editViewHandler}
           />}
         <RigConfigurationsDialog
           show={this.state.showConfigurations}

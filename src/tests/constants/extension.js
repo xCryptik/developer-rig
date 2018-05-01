@@ -1,5 +1,6 @@
 import { ViewerTypes } from '../../constants/viewer-types';
 import { ExtensionAnchors } from '../../constants/extension-types';
+import { MobileOrientation } from '../../constants/mobile';
 const { ExtensionAnchor } = window['extension-coordinator'];
 
 export const ExtensionForTest = {
@@ -37,15 +38,16 @@ export const ExtensionForTest = {
   channelId: 'channelId',
 };
 
-export function createViewsForTest(numOfViews, type, role, position) {
-  let pos = {
+export function createViewsForTest(numOfViews, type, role, extras) {
+  let ex = {
     x: 0,
-    y: 0
+    y: 0,
+    orientation: MobileOrientation.Portrait,
   }
   const extViews = [];
-  if (position) {
-    pos.x = position.x;
-    pos.y = position.y;
+  if (extras) {
+    ex.x = extras.x;
+    ex.y = extras.y;
   }
 
   for (let i = 0; i < numOfViews; i++) {
@@ -55,8 +57,9 @@ export function createViewsForTest(numOfViews, type, role, position) {
       extension: ExtensionForTest,
       linked: false,
       role: role,
-      x: pos.x,
-      y: pos.y,
+      x: ex.x,
+      y: ex.y,
+      orientation: ex.orientation
     })
   }
   return extViews;

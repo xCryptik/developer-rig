@@ -3,7 +3,19 @@
 .edit-view__background
   @extend .dialog__backdrop
 
-.edit-view__dialog
+.edit-view__dialog-component
+  @extend .dialog
+  height: 275px
+  width: 275px
+  left: 40%
+
+.edit-view__dialog-mobile
+  @extend .dialog
+  height: 275px
+  width: 415px
+  left: 35%
+
+.edit-view__dialog-overlay
   @extend .dialog
   height: 275px
   width: 275px

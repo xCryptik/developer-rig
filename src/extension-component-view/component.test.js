@@ -7,7 +7,7 @@ describe('<ExtensionComponentView />', () => {
   const setupShallow = setupShallowTest(ExtensionComponentView, () => ({
     id: '1',
     extension: ExtensionForTest,
-    overlaySize: { width: 800, height: 600 },
+    frameSize: { width: 800, height: 600 },
     position: { x: 10, y: 10 },
     role: ViewerTypes.Broadcaster,
   }));
