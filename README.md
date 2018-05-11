@@ -185,8 +185,8 @@ _Ensure that the URL that the sample Extension's Extension Backend Service (EBS)
 
 In the above screenshot, assets are specified as being available at:
 ```
-https://locahost:8080/viewer.html
-https://locahost:8080/config.html
+https://localhost:8080/viewer.html
+https://localhost:8080/config.html
 ```
 
 If the Developer Rig is used to `host` an Extension's front end assets, the _Testing Base URI_ must be set to:
