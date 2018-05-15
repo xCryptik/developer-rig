@@ -147,8 +147,6 @@ ShallowWrapper {
                             }
           }
 />,
-        false,
-        false,
       ],
       "className": "view__wrapper",
       "onMouseEnter": [Function],
@@ -264,8 +262,6 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
-      false,
-      false,
     ],
     "type": "div",
   },
@@ -345,8 +341,6 @@ ShallowWrapper {
                                   }
             }
 />,
-          false,
-          false,
         ],
         "className": "view__wrapper",
         "onMouseEnter": [Function],
@@ -462,8 +456,6 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
-        false,
-        false,
       ],
       "type": "div",
     },
@@ -568,9 +560,62 @@ ShallowWrapper {
                     className="view__descriptor"
           />
 </div>,
-        false,
-        false,
-        false,
+        <div
+          className="view"
+          style={
+                    Object {
+                              "height": "700px",
+                              "width": "100%",
+                            }
+          }
+>
+          <ExtensionFrame
+                    className="view"
+                    extension={
+                              Object {
+                                        "authorName": "test",
+                                        "channelId": "channelId",
+                                        "description": "description",
+                                        "iconUrl": "icon_url",
+                                        "id": "id",
+                                        "name": "name",
+                                        "requestIdentity": false,
+                                        "sku": "sku",
+                                        "state": "state",
+                                        "summary": "summary",
+                                        "token": "token",
+                                        "vendorCode": "vendorCode",
+                                        "version": "0.1",
+                                        "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
+                                          "config": Object {
+                                            "viewerUrl": "test",
+                                          },
+                                          "liveConfig": Object {
+                                            "viewerUrl": "test",
+                                          },
+                                          "panel": Object {
+                                            "viewerUrl": "test",
+                                          },
+                                        },
+                                        "whitelistedConfigUrls": Array [
+                                          "foo",
+                                        ],
+                                        "whitelistedPanelUrls": Array [
+                                          "bar",
+                                        ],
+                                      }
+                    }
+                    frameId="frameid-0"
+                    mode="viewer"
+                    type="config"
+          />
+</div>,
       ],
       "className": "view__wrapper",
       "onMouseEnter": [Function],
@@ -630,9 +675,118 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      false,
-      false,
-      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <ExtensionFrame
+            className="view"
+            extension={
+                        Object {
+                                    "authorName": "test",
+                                    "channelId": "channelId",
+                                    "description": "description",
+                                    "iconUrl": "icon_url",
+                                    "id": "id",
+                                    "name": "name",
+                                    "requestIdentity": false,
+                                    "sku": "sku",
+                                    "state": "state",
+                                    "summary": "summary",
+                                    "token": "token",
+                                    "vendorCode": "vendorCode",
+                                    "version": "0.1",
+                                    "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
+                                      "config": Object {
+                                        "viewerUrl": "test",
+                                      },
+                                      "liveConfig": Object {
+                                        "viewerUrl": "test",
+                                      },
+                                      "panel": Object {
+                                        "viewerUrl": "test",
+                                      },
+                                    },
+                                    "whitelistedConfigUrls": Array [
+                                      "foo",
+                                    ],
+                                    "whitelistedPanelUrls": Array [
+                                      "bar",
+                                    ],
+                                  }
+            }
+            frameId="frameid-0"
+            mode="viewer"
+            type="config"
+/>,
+          "className": "view",
+          "style": Object {
+            "height": "700px",
+            "width": "100%",
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "className": "view",
+            "extension": Object {
+              "authorName": "test",
+              "channelId": "channelId",
+              "description": "description",
+              "iconUrl": "icon_url",
+              "id": "id",
+              "name": "name",
+              "requestIdentity": false,
+              "sku": "sku",
+              "state": "state",
+              "summary": "summary",
+              "token": "token",
+              "vendorCode": "vendorCode",
+              "version": "0.1",
+              "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
+                "config": Object {
+                  "viewerUrl": "test",
+                },
+                "liveConfig": Object {
+                  "viewerUrl": "test",
+                },
+                "panel": Object {
+                  "viewerUrl": "test",
+                },
+              },
+              "whitelistedConfigUrls": Array [
+                "foo",
+              ],
+              "whitelistedPanelUrls": Array [
+                "bar",
+              ],
+            },
+            "frameId": "frameid-0",
+            "mode": "viewer",
+            "type": "config",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
     ],
     "type": "div",
   },
@@ -655,9 +809,62 @@ ShallowWrapper {
                         className="view__descriptor"
             />
 </div>,
-          false,
-          false,
-          false,
+          <div
+            className="view"
+            style={
+                        Object {
+                                    "height": "700px",
+                                    "width": "100%",
+                                  }
+            }
+>
+            <ExtensionFrame
+                        className="view"
+                        extension={
+                                    Object {
+                                                "authorName": "test",
+                                                "channelId": "channelId",
+                                                "description": "description",
+                                                "iconUrl": "icon_url",
+                                                "id": "id",
+                                                "name": "name",
+                                                "requestIdentity": false,
+                                                "sku": "sku",
+                                                "state": "state",
+                                                "summary": "summary",
+                                                "token": "token",
+                                                "vendorCode": "vendorCode",
+                                                "version": "0.1",
+                                                "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
+                                                  "config": Object {
+                                                    "viewerUrl": "test",
+                                                  },
+                                                  "liveConfig": Object {
+                                                    "viewerUrl": "test",
+                                                  },
+                                                  "panel": Object {
+                                                    "viewerUrl": "test",
+                                                  },
+                                                },
+                                                "whitelistedConfigUrls": Array [
+                                                  "foo",
+                                                ],
+                                                "whitelistedPanelUrls": Array [
+                                                  "bar",
+                                                ],
+                                              }
+                        }
+                        frameId="frameid-0"
+                        mode="viewer"
+                        type="config"
+            />
+</div>,
         ],
         "className": "view__wrapper",
         "onMouseEnter": [Function],
@@ -717,9 +924,118 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        false,
-        false,
-        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ExtensionFrame
+              className="view"
+              extension={
+                            Object {
+                                          "authorName": "test",
+                                          "channelId": "channelId",
+                                          "description": "description",
+                                          "iconUrl": "icon_url",
+                                          "id": "id",
+                                          "name": "name",
+                                          "requestIdentity": false,
+                                          "sku": "sku",
+                                          "state": "state",
+                                          "summary": "summary",
+                                          "token": "token",
+                                          "vendorCode": "vendorCode",
+                                          "version": "0.1",
+                                          "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
+                                            "config": Object {
+                                              "viewerUrl": "test",
+                                            },
+                                            "liveConfig": Object {
+                                              "viewerUrl": "test",
+                                            },
+                                            "panel": Object {
+                                              "viewerUrl": "test",
+                                            },
+                                          },
+                                          "whitelistedConfigUrls": Array [
+                                            "foo",
+                                          ],
+                                          "whitelistedPanelUrls": Array [
+                                            "bar",
+                                          ],
+                                        }
+              }
+              frameId="frameid-0"
+              mode="viewer"
+              type="config"
+/>,
+            "className": "view",
+            "style": Object {
+              "height": "700px",
+              "width": "100%",
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "className": "view",
+              "extension": Object {
+                "authorName": "test",
+                "channelId": "channelId",
+                "description": "description",
+                "iconUrl": "icon_url",
+                "id": "id",
+                "name": "name",
+                "requestIdentity": false,
+                "sku": "sku",
+                "state": "state",
+                "summary": "summary",
+                "token": "token",
+                "vendorCode": "vendorCode",
+                "version": "0.1",
+                "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
+                  "config": Object {
+                    "viewerUrl": "test",
+                  },
+                  "liveConfig": Object {
+                    "viewerUrl": "test",
+                  },
+                  "panel": Object {
+                    "viewerUrl": "test",
+                  },
+                },
+                "whitelistedConfigUrls": Array [
+                  "foo",
+                ],
+                "whitelistedPanelUrls": Array [
+                  "bar",
+                ],
+              },
+              "frameId": "frameid-0",
+              "mode": "viewer",
+              "type": "config",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
       ],
       "type": "div",
     },
@@ -824,9 +1140,62 @@ ShallowWrapper {
                     className="view__descriptor"
           />
 </div>,
-        false,
-        false,
-        false,
+        <div
+          className="view"
+          style={
+                    Object {
+                              "height": "150pxpx",
+                              "width": "320pxpx",
+                            }
+          }
+>
+          <ExtensionFrame
+                    className="view"
+                    extension={
+                              Object {
+                                        "authorName": "test",
+                                        "channelId": "channelId",
+                                        "description": "description",
+                                        "iconUrl": "icon_url",
+                                        "id": "id",
+                                        "name": "name",
+                                        "requestIdentity": false,
+                                        "sku": "sku",
+                                        "state": "state",
+                                        "summary": "summary",
+                                        "token": "token",
+                                        "vendorCode": "vendorCode",
+                                        "version": "0.1",
+                                        "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
+                                          "config": Object {
+                                            "viewerUrl": "test",
+                                          },
+                                          "liveConfig": Object {
+                                            "viewerUrl": "test",
+                                          },
+                                          "panel": Object {
+                                            "viewerUrl": "test",
+                                          },
+                                        },
+                                        "whitelistedConfigUrls": Array [
+                                          "foo",
+                                        ],
+                                        "whitelistedPanelUrls": Array [
+                                          "bar",
+                                        ],
+                                      }
+                    }
+                    frameId="frameid-0"
+                    mode="viewer"
+                    type="liveConfig"
+          />
+</div>,
       ],
       "className": "view__wrapper",
       "onMouseEnter": [Function],
@@ -883,9 +1252,118 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      false,
-      false,
-      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <ExtensionFrame
+            className="view"
+            extension={
+                        Object {
+                                    "authorName": "test",
+                                    "channelId": "channelId",
+                                    "description": "description",
+                                    "iconUrl": "icon_url",
+                                    "id": "id",
+                                    "name": "name",
+                                    "requestIdentity": false,
+                                    "sku": "sku",
+                                    "state": "state",
+                                    "summary": "summary",
+                                    "token": "token",
+                                    "vendorCode": "vendorCode",
+                                    "version": "0.1",
+                                    "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
+                                      "config": Object {
+                                        "viewerUrl": "test",
+                                      },
+                                      "liveConfig": Object {
+                                        "viewerUrl": "test",
+                                      },
+                                      "panel": Object {
+                                        "viewerUrl": "test",
+                                      },
+                                    },
+                                    "whitelistedConfigUrls": Array [
+                                      "foo",
+                                    ],
+                                    "whitelistedPanelUrls": Array [
+                                      "bar",
+                                    ],
+                                  }
+            }
+            frameId="frameid-0"
+            mode="viewer"
+            type="liveConfig"
+/>,
+          "className": "view",
+          "style": Object {
+            "height": "150pxpx",
+            "width": "320pxpx",
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "className": "view",
+            "extension": Object {
+              "authorName": "test",
+              "channelId": "channelId",
+              "description": "description",
+              "iconUrl": "icon_url",
+              "id": "id",
+              "name": "name",
+              "requestIdentity": false,
+              "sku": "sku",
+              "state": "state",
+              "summary": "summary",
+              "token": "token",
+              "vendorCode": "vendorCode",
+              "version": "0.1",
+              "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
+                "config": Object {
+                  "viewerUrl": "test",
+                },
+                "liveConfig": Object {
+                  "viewerUrl": "test",
+                },
+                "panel": Object {
+                  "viewerUrl": "test",
+                },
+              },
+              "whitelistedConfigUrls": Array [
+                "foo",
+              ],
+              "whitelistedPanelUrls": Array [
+                "bar",
+              ],
+            },
+            "frameId": "frameid-0",
+            "mode": "viewer",
+            "type": "liveConfig",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
     ],
     "type": "div",
   },
@@ -908,9 +1386,62 @@ ShallowWrapper {
                         className="view__descriptor"
             />
 </div>,
-          false,
-          false,
-          false,
+          <div
+            className="view"
+            style={
+                        Object {
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
+                                  }
+            }
+>
+            <ExtensionFrame
+                        className="view"
+                        extension={
+                                    Object {
+                                                "authorName": "test",
+                                                "channelId": "channelId",
+                                                "description": "description",
+                                                "iconUrl": "icon_url",
+                                                "id": "id",
+                                                "name": "name",
+                                                "requestIdentity": false,
+                                                "sku": "sku",
+                                                "state": "state",
+                                                "summary": "summary",
+                                                "token": "token",
+                                                "vendorCode": "vendorCode",
+                                                "version": "0.1",
+                                                "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
+                                                  "config": Object {
+                                                    "viewerUrl": "test",
+                                                  },
+                                                  "liveConfig": Object {
+                                                    "viewerUrl": "test",
+                                                  },
+                                                  "panel": Object {
+                                                    "viewerUrl": "test",
+                                                  },
+                                                },
+                                                "whitelistedConfigUrls": Array [
+                                                  "foo",
+                                                ],
+                                                "whitelistedPanelUrls": Array [
+                                                  "bar",
+                                                ],
+                                              }
+                        }
+                        frameId="frameid-0"
+                        mode="viewer"
+                        type="liveConfig"
+            />
+</div>,
         ],
         "className": "view__wrapper",
         "onMouseEnter": [Function],
@@ -967,9 +1498,118 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        false,
-        false,
-        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ExtensionFrame
+              className="view"
+              extension={
+                            Object {
+                                          "authorName": "test",
+                                          "channelId": "channelId",
+                                          "description": "description",
+                                          "iconUrl": "icon_url",
+                                          "id": "id",
+                                          "name": "name",
+                                          "requestIdentity": false,
+                                          "sku": "sku",
+                                          "state": "state",
+                                          "summary": "summary",
+                                          "token": "token",
+                                          "vendorCode": "vendorCode",
+                                          "version": "0.1",
+                                          "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
+                                            "config": Object {
+                                              "viewerUrl": "test",
+                                            },
+                                            "liveConfig": Object {
+                                              "viewerUrl": "test",
+                                            },
+                                            "panel": Object {
+                                              "viewerUrl": "test",
+                                            },
+                                          },
+                                          "whitelistedConfigUrls": Array [
+                                            "foo",
+                                          ],
+                                          "whitelistedPanelUrls": Array [
+                                            "bar",
+                                          ],
+                                        }
+              }
+              frameId="frameid-0"
+              mode="viewer"
+              type="liveConfig"
+/>,
+            "className": "view",
+            "style": Object {
+              "height": "150pxpx",
+              "width": "320pxpx",
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "className": "view",
+              "extension": Object {
+                "authorName": "test",
+                "channelId": "channelId",
+                "description": "description",
+                "iconUrl": "icon_url",
+                "id": "id",
+                "name": "name",
+                "requestIdentity": false,
+                "sku": "sku",
+                "state": "state",
+                "summary": "summary",
+                "token": "token",
+                "vendorCode": "vendorCode",
+                "version": "0.1",
+                "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
+                  "config": Object {
+                    "viewerUrl": "test",
+                  },
+                  "liveConfig": Object {
+                    "viewerUrl": "test",
+                  },
+                  "panel": Object {
+                    "viewerUrl": "test",
+                  },
+                },
+                "whitelistedConfigUrls": Array [
+                  "foo",
+                ],
+                "whitelistedPanelUrls": Array [
+                  "bar",
+                ],
+              },
+              "frameId": "frameid-0",
+              "mode": "viewer",
+              "type": "liveConfig",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
       ],
       "type": "div",
     },
@@ -1074,8 +1714,6 @@ ShallowWrapper {
                     className="view__descriptor"
           />
 </div>,
-        false,
-        false,
         <div
           className="view"
           style={
@@ -1188,8 +1826,6 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      false,
-      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -1324,8 +1960,6 @@ ShallowWrapper {
                         className="view__descriptor"
             />
 </div>,
-          false,
-          false,
           <div
             className="view"
             style={
@@ -1438,8 +2072,6 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        false,
-        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -1658,8 +2290,6 @@ ShallowWrapper {
                     Linked
           </div>
 </div>,
-        false,
-        false,
         <div
           className="view"
           style={
@@ -1774,8 +2404,6 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      false,
-      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -1912,8 +2540,6 @@ ShallowWrapper {
                         Linked
             </div>
 </div>,
-          false,
-          false,
           <div
             className="view"
             style={
@@ -2028,8 +2654,6 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        false,
-        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -2248,8 +2872,6 @@ ShallowWrapper {
                     Unlinked
           </div>
 </div>,
-        false,
-        false,
         <div
           className="view"
           style={
@@ -2364,8 +2986,6 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      false,
-      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -2502,8 +3122,6 @@ ShallowWrapper {
                         Unlinked
             </div>
 </div>,
-          false,
-          false,
           <div
             className="view"
             style={
@@ -2618,8 +3236,6 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        false,
-        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -2836,8 +3452,6 @@ ShallowWrapper {
                     className="view__descriptor"
           />
 </div>,
-        false,
-        false,
         <div
           className="view"
           style={
@@ -2950,8 +3564,6 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      false,
-      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -3086,8 +3698,6 @@ ShallowWrapper {
                         className="view__descriptor"
             />
 </div>,
-          false,
-          false,
           <div
             className="view"
             style={
@@ -3200,8 +3810,6 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        false,
-        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -3418,8 +4026,6 @@ ShallowWrapper {
                     className="view__descriptor"
           />
 </div>,
-        false,
-        false,
         <div
           className="view"
           style={
@@ -3532,8 +4138,6 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      false,
-      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -3668,8 +4272,6 @@ ShallowWrapper {
                         className="view__descriptor"
             />
 </div>,
-          false,
-          false,
           <div
             className="view"
             style={
@@ -3782,8 +4384,6 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        false,
-        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -4002,8 +4602,6 @@ ShallowWrapper {
                     Linked
           </div>
 </div>,
-        false,
-        false,
         <div
           className="view"
           style={
@@ -4118,8 +4716,6 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      false,
-      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -4256,8 +4852,6 @@ ShallowWrapper {
                         Linked
             </div>
 </div>,
-          false,
-          false,
           <div
             className="view"
             style={
@@ -4372,8 +4966,6 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        false,
-        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -4592,8 +5184,6 @@ ShallowWrapper {
                     Unlinked
           </div>
 </div>,
-        false,
-        false,
         <div
           className="view"
           style={
@@ -4708,8 +5298,6 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      false,
-      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -4846,8 +5434,6 @@ ShallowWrapper {
                         Unlinked
             </div>
 </div>,
-          false,
-          false,
           <div
             className="view"
             style={
@@ -4962,8 +5548,6 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        false,
-        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -5180,8 +5764,6 @@ ShallowWrapper {
                     className="view__descriptor"
           />
 </div>,
-        false,
-        false,
         <div
           className="view"
           style={
@@ -5294,8 +5876,6 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      false,
-      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -5430,8 +6010,6 @@ ShallowWrapper {
                         className="view__descriptor"
             />
 </div>,
-          false,
-          false,
           <div
             className="view"
             style={
@@ -5544,8 +6122,6 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        false,
-        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -5757,8 +6333,6 @@ ShallowWrapper {
                     className="view__descriptor"
           />
 </div>,
-        false,
-        false,
         <div
           className="view"
           style={
@@ -5866,8 +6440,6 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      false,
-      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -5992,8 +6564,6 @@ ShallowWrapper {
                         className="view__descriptor"
             />
 </div>,
-          false,
-          false,
           <div
             className="view"
             style={
@@ -6101,8 +6671,6 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        false,
-        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -6309,9 +6877,62 @@ ShallowWrapper {
                     className="view__descriptor"
           />
 </div>,
-        false,
-        false,
-        false,
+        <div
+          className="view"
+          style={
+                    Object {
+                              "height": "150px",
+                              "width": "320px",
+                            }
+          }
+>
+          <ExtensionFrame
+                    className="view"
+                    extension={
+                              Object {
+                                        "authorName": "test",
+                                        "channelId": "channelId",
+                                        "description": "description",
+                                        "iconUrl": "icon_url",
+                                        "id": "id",
+                                        "name": "name",
+                                        "requestIdentity": false,
+                                        "sku": "sku",
+                                        "state": "state",
+                                        "summary": "summary",
+                                        "token": "token",
+                                        "vendorCode": "vendorCode",
+                                        "version": "0.1",
+                                        "views": Object {
+                                          "component": Object {
+                                            "aspectHeight": 3000,
+                                            "aspectWidth": 2500,
+                                            "viewerUrl": "test",
+                                            "zoom": false,
+                                          },
+                                          "config": Object {
+                                            "viewerUrl": "test",
+                                          },
+                                          "liveConfig": Object {
+                                            "viewerUrl": "test",
+                                          },
+                                          "panel": Object {
+                                            "viewerUrl": "test",
+                                          },
+                                        },
+                                        "whitelistedConfigUrls": Array [
+                                          "foo",
+                                        ],
+                                        "whitelistedPanelUrls": Array [
+                                          "bar",
+                                        ],
+                                      }
+                    }
+                    frameId="frameid-0"
+                    mode="viewer"
+                    type=""
+          />
+</div>,
       ],
       "className": "view__wrapper",
       "onMouseEnter": [Function],
@@ -6368,9 +6989,118 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      false,
-      false,
-      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <ExtensionFrame
+            className="view"
+            extension={
+                        Object {
+                                    "authorName": "test",
+                                    "channelId": "channelId",
+                                    "description": "description",
+                                    "iconUrl": "icon_url",
+                                    "id": "id",
+                                    "name": "name",
+                                    "requestIdentity": false,
+                                    "sku": "sku",
+                                    "state": "state",
+                                    "summary": "summary",
+                                    "token": "token",
+                                    "vendorCode": "vendorCode",
+                                    "version": "0.1",
+                                    "views": Object {
+                                      "component": Object {
+                                        "aspectHeight": 3000,
+                                        "aspectWidth": 2500,
+                                        "viewerUrl": "test",
+                                        "zoom": false,
+                                      },
+                                      "config": Object {
+                                        "viewerUrl": "test",
+                                      },
+                                      "liveConfig": Object {
+                                        "viewerUrl": "test",
+                                      },
+                                      "panel": Object {
+                                        "viewerUrl": "test",
+                                      },
+                                    },
+                                    "whitelistedConfigUrls": Array [
+                                      "foo",
+                                    ],
+                                    "whitelistedPanelUrls": Array [
+                                      "bar",
+                                    ],
+                                  }
+            }
+            frameId="frameid-0"
+            mode="viewer"
+            type=""
+/>,
+          "className": "view",
+          "style": Object {
+            "height": "150px",
+            "width": "320px",
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "className": "view",
+            "extension": Object {
+              "authorName": "test",
+              "channelId": "channelId",
+              "description": "description",
+              "iconUrl": "icon_url",
+              "id": "id",
+              "name": "name",
+              "requestIdentity": false,
+              "sku": "sku",
+              "state": "state",
+              "summary": "summary",
+              "token": "token",
+              "vendorCode": "vendorCode",
+              "version": "0.1",
+              "views": Object {
+                "component": Object {
+                  "aspectHeight": 3000,
+                  "aspectWidth": 2500,
+                  "viewerUrl": "test",
+                  "zoom": false,
+                },
+                "config": Object {
+                  "viewerUrl": "test",
+                },
+                "liveConfig": Object {
+                  "viewerUrl": "test",
+                },
+                "panel": Object {
+                  "viewerUrl": "test",
+                },
+              },
+              "whitelistedConfigUrls": Array [
+                "foo",
+              ],
+              "whitelistedPanelUrls": Array [
+                "bar",
+              ],
+            },
+            "frameId": "frameid-0",
+            "mode": "viewer",
+            "type": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
     ],
     "type": "div",
   },
@@ -6393,9 +7123,62 @@ ShallowWrapper {
                         className="view__descriptor"
             />
 </div>,
-          false,
-          false,
-          false,
+          <div
+            className="view"
+            style={
+                        Object {
+                                    "height": "150px",
+                                    "width": "320px",
+                                  }
+            }
+>
+            <ExtensionFrame
+                        className="view"
+                        extension={
+                                    Object {
+                                                "authorName": "test",
+                                                "channelId": "channelId",
+                                                "description": "description",
+                                                "iconUrl": "icon_url",
+                                                "id": "id",
+                                                "name": "name",
+                                                "requestIdentity": false,
+                                                "sku": "sku",
+                                                "state": "state",
+                                                "summary": "summary",
+                                                "token": "token",
+                                                "vendorCode": "vendorCode",
+                                                "version": "0.1",
+                                                "views": Object {
+                                                  "component": Object {
+                                                    "aspectHeight": 3000,
+                                                    "aspectWidth": 2500,
+                                                    "viewerUrl": "test",
+                                                    "zoom": false,
+                                                  },
+                                                  "config": Object {
+                                                    "viewerUrl": "test",
+                                                  },
+                                                  "liveConfig": Object {
+                                                    "viewerUrl": "test",
+                                                  },
+                                                  "panel": Object {
+                                                    "viewerUrl": "test",
+                                                  },
+                                                },
+                                                "whitelistedConfigUrls": Array [
+                                                  "foo",
+                                                ],
+                                                "whitelistedPanelUrls": Array [
+                                                  "bar",
+                                                ],
+                                              }
+                        }
+                        frameId="frameid-0"
+                        mode="viewer"
+                        type=""
+            />
+</div>,
         ],
         "className": "view__wrapper",
         "onMouseEnter": [Function],
@@ -6452,9 +7235,118 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        false,
-        false,
-        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ExtensionFrame
+              className="view"
+              extension={
+                            Object {
+                                          "authorName": "test",
+                                          "channelId": "channelId",
+                                          "description": "description",
+                                          "iconUrl": "icon_url",
+                                          "id": "id",
+                                          "name": "name",
+                                          "requestIdentity": false,
+                                          "sku": "sku",
+                                          "state": "state",
+                                          "summary": "summary",
+                                          "token": "token",
+                                          "vendorCode": "vendorCode",
+                                          "version": "0.1",
+                                          "views": Object {
+                                            "component": Object {
+                                              "aspectHeight": 3000,
+                                              "aspectWidth": 2500,
+                                              "viewerUrl": "test",
+                                              "zoom": false,
+                                            },
+                                            "config": Object {
+                                              "viewerUrl": "test",
+                                            },
+                                            "liveConfig": Object {
+                                              "viewerUrl": "test",
+                                            },
+                                            "panel": Object {
+                                              "viewerUrl": "test",
+                                            },
+                                          },
+                                          "whitelistedConfigUrls": Array [
+                                            "foo",
+                                          ],
+                                          "whitelistedPanelUrls": Array [
+                                            "bar",
+                                          ],
+                                        }
+              }
+              frameId="frameid-0"
+              mode="viewer"
+              type=""
+/>,
+            "className": "view",
+            "style": Object {
+              "height": "150px",
+              "width": "320px",
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "className": "view",
+              "extension": Object {
+                "authorName": "test",
+                "channelId": "channelId",
+                "description": "description",
+                "iconUrl": "icon_url",
+                "id": "id",
+                "name": "name",
+                "requestIdentity": false,
+                "sku": "sku",
+                "state": "state",
+                "summary": "summary",
+                "token": "token",
+                "vendorCode": "vendorCode",
+                "version": "0.1",
+                "views": Object {
+                  "component": Object {
+                    "aspectHeight": 3000,
+                    "aspectWidth": 2500,
+                    "viewerUrl": "test",
+                    "zoom": false,
+                  },
+                  "config": Object {
+                    "viewerUrl": "test",
+                  },
+                  "liveConfig": Object {
+                    "viewerUrl": "test",
+                  },
+                  "panel": Object {
+                    "viewerUrl": "test",
+                  },
+                },
+                "whitelistedConfigUrls": Array [
+                  "foo",
+                ],
+                "whitelistedPanelUrls": Array [
+                  "bar",
+                ],
+              },
+              "frameId": "frameid-0",
+              "mode": "viewer",
+              "type": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
       ],
       "type": "div",
     },

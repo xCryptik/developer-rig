@@ -32,6 +32,48 @@ export class ExtensionView extends Component {
     });
   }
 
+  renderView(extensionProps) {
+    let view = null;
+    switch (this.props.type) {
+      case ExtensionAnchor.Component:
+        view = (<ExtensionComponentView
+          id={`component-${this.props.id}`}
+          className="view"
+          frameId={`frameid-${this.props.id}`}
+          extension={this.props.extension}
+          frameSize={this.props.frameSize}
+          position={this.props.position}
+        />);
+        break;
+      case ExtensionViewType.Mobile:
+        view = (<ExtensionMobileView
+          id={`mobile-${this.props.id}`}
+          className="view"
+          frameId={`frameid-${this.props.id}`}
+          extension={this.props.extension}
+          frameSize={this.props.frameSize}
+          position={this.props.position}
+          orientation={this.props.orientation}
+        />);
+        break;
+      default:
+        // standard view for overlays, panels, live config, and broadcaster config
+        view = (<div
+          className="view"
+          style={extensionProps.viewStyles}>
+          <ExtensionFrame
+            className="view"
+            frameId={`frameid-${this.props.id}`}
+            extension={this.props.extension}
+            type={this.props.type}
+            mode={this.props.mode}
+          />
+        </div>)
+        break;
+    }
+    return view;
+  }
+
   renderLinkedOrUnlinked() {
     return this.props.linked ? IdentityOptions.Linked : IdentityOptions.Unlinked;
   }
@@ -108,40 +150,7 @@ export class ExtensionView extends Component {
               this.renderLinkedOrUnlinked() : null}
           </div>
         </div>
-
-        {this.props.type === ExtensionAnchor.Component &&
-          <ExtensionComponentView
-            id={`component-${this.props.id}`}
-            className="view"
-            frameId={`frameid-${this.props.id}`}
-            extension={this.props.extension}
-            frameSize={this.props.frameSize}
-            position={this.props.position}
-          />}
-
-        {this.props.type === ExtensionViewType.Mobile &&
-         <ExtensionMobileView
-            id={`mobile-${this.props.id}`}
-            className="view"
-            frameId={`frameid-${this.props.id}`}
-            extension={this.props.extension}
-            frameSize={this.props.frameSize}
-            position={this.props.position}
-            orientation={this.props.orientation}
-          />}
-
-        {(this.props.type === ExtensionAnchor.Overlay || this.props.type === ExtensionAnchor.Panel) &&
-          <div
-          className="view"
-          style={extensionProps.viewStyles}>
-          <ExtensionFrame
-            className="view"
-            frameId={`frameid-${this.props.id}`}
-            extension={this.props.extension}
-            type={this.props.type}
-            mode={this.props.mode}
-          />
-        </div>}
+        {this.renderView(extensionProps)}
       </div>
     );
   }
