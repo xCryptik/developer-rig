@@ -168,7 +168,8 @@ export class Rig extends Component {
         linked,
         this.state.userName,
         this.state.channelId,
-        this.state.secret
+        this.state.secret,
+        this.refs.extensionViewDialog.state.opaqueId,
       ),
       linked: linked,
       role: this.refs.extensionViewDialog.state.viewerType,

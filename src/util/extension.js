@@ -1,6 +1,6 @@
 import { createToken } from './token';
 
-export function createExtensionObject(manifest, index, role, isLinked, ownerID, channelId, secret) {
+export function createExtensionObject(manifest, index, role, isLinked, ownerID, channelId, secret, opaqueId) {
   return {
     authorName: manifest.author_name,
     clientId: manifest.id,
@@ -12,7 +12,7 @@ export function createExtensionObject(manifest, index, role, isLinked, ownerID, 
     sku: manifest.sku,
     state: manifest.state,
     summary: manifest.summary,
-    token: createToken(role, isLinked, ownerID, channelId, secret),
+    token: createToken(role, isLinked, ownerID, channelId, secret, opaqueId),
     vendorCode: manifest.vendor_code,
     version: manifest.version,
     views: manifest.views,

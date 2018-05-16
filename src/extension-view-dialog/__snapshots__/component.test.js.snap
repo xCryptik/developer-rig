@@ -250,6 +250,20 @@ ShallowWrapper {
                                                   value="Logged-In Viewer"
                                         />
                                         <div />
+                                        <div
+                                                  className="opaque_id-input"
+                                        >
+                                                  <label
+                                                            className="opaque-id-label"
+                                                  >
+                                                            Custom Opaque ID
+                                                  </label>
+                                                  <input
+                                                            name="opaqueId"
+                                                            onChange={[Function]}
+                                                            type="text"
+                                                  />
+                                        </div>
                               </div>
                     </div>
           </div>
@@ -512,6 +526,20 @@ ShallowWrapper {
                                                         value="Logged-In Viewer"
                                           />
                                           <div />
+                                          <div
+                                                        className="opaque_id-input"
+                                          >
+                                                        <label
+                                                                      className="opaque-id-label"
+                                                        >
+                                                                      Custom Opaque ID
+                                                        </label>
+                                                        <input
+                                                                      name="opaqueId"
+                                                                      onChange={[Function]}
+                                                                      type="text"
+                                                        />
+                                          </div>
                             </div>
               </div>
 </div>,
@@ -1949,6 +1977,20 @@ ShallowWrapper {
                                                 value="Logged-In Viewer"
                                 />
                                 <div />
+                                <div
+                                                className="opaque_id-input"
+                                >
+                                                <label
+                                                                className="opaque-id-label"
+                                                >
+                                                                Custom Opaque ID
+                                                </label>
+                                                <input
+                                                                name="opaqueId"
+                                                                onChange={[Function]}
+                                                                type="text"
+                                                />
+                                </div>
                 </div>
 </div>,
               "className": "dialog__viewer-container",
@@ -1987,6 +2029,20 @@ ShallowWrapper {
                                         value="Logged-In Viewer"
                     />
                     <div />
+                    <div
+                                        className="opaque_id-input"
+                    >
+                                        <label
+                                                            className="opaque-id-label"
+                                        >
+                                                            Custom Opaque ID
+                                        </label>
+                                        <input
+                                                            name="opaqueId"
+                                                            onChange={[Function]}
+                                                            type="text"
+                                        />
+                    </div>
 </div>,
                 ],
                 "className": "type-title__type-container",
@@ -2032,6 +2088,20 @@ ShallowWrapper {
 />,
                       ],
                       <div />,
+                      <div
+                        className="opaque_id-input"
+>
+                        <label
+                                                className="opaque-id-label"
+                        >
+                                                Custom Opaque ID
+                        </label>
+                        <input
+                                                name="opaqueId"
+                                                onChange={[Function]}
+                                                type="text"
+                        />
+</div>,
                     ],
                     "className": "dialog__type-container",
                   },
@@ -2088,6 +2158,55 @@ ShallowWrapper {
                       },
                       "ref": null,
                       "rendered": null,
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <label
+                            className="opaque-id-label"
+>
+                            Custom Opaque ID
+</label>,
+                          <input
+                            name="opaqueId"
+                            onChange={[Function]}
+                            type="text"
+/>,
+                        ],
+                        "className": "opaque_id-input",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Custom Opaque ID",
+                            "className": "opaque-id-label",
+                          },
+                          "ref": null,
+                          "rendered": "Custom Opaque ID",
+                          "type": "label",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "name": "opaqueId",
+                            "onChange": [Function],
+                            "type": "text",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                      ],
                       "type": "div",
                     },
                   ],
@@ -2397,6 +2516,20 @@ ShallowWrapper {
                                                             value="Logged-In Viewer"
                                                 />
                                                 <div />
+                                                <div
+                                                            className="opaque_id-input"
+                                                >
+                                                            <label
+                                                                        className="opaque-id-label"
+                                                            >
+                                                                        Custom Opaque ID
+                                                            </label>
+                                                            <input
+                                                                        name="opaqueId"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                            />
+                                                </div>
                                     </div>
                         </div>
             </div>
@@ -2659,6 +2792,20 @@ ShallowWrapper {
                                                                 value="Logged-In Viewer"
                                                 />
                                                 <div />
+                                                <div
+                                                                className="opaque_id-input"
+                                                >
+                                                                <label
+                                                                                className="opaque-id-label"
+                                                                >
+                                                                                Custom Opaque ID
+                                                                </label>
+                                                                <input
+                                                                                name="opaqueId"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                />
+                                                </div>
                                 </div>
                 </div>
 </div>,
@@ -4096,6 +4243,20 @@ ShallowWrapper {
                                                       value="Logged-In Viewer"
                                     />
                                     <div />
+                                    <div
+                                                      className="opaque_id-input"
+                                    >
+                                                      <label
+                                                                        className="opaque-id-label"
+                                                      >
+                                                                        Custom Opaque ID
+                                                      </label>
+                                                      <input
+                                                                        name="opaqueId"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                      />
+                                    </div>
                   </div>
 </div>,
                 "className": "dialog__viewer-container",
@@ -4134,6 +4295,20 @@ ShallowWrapper {
                                             value="Logged-In Viewer"
                       />
                       <div />
+                      <div
+                                            className="opaque_id-input"
+                      >
+                                            <label
+                                                                  className="opaque-id-label"
+                                            >
+                                                                  Custom Opaque ID
+                                            </label>
+                                            <input
+                                                                  name="opaqueId"
+                                                                  onChange={[Function]}
+                                                                  type="text"
+                                            />
+                      </div>
 </div>,
                   ],
                   "className": "type-title__type-container",
@@ -4179,6 +4354,20 @@ ShallowWrapper {
 />,
                         ],
                         <div />,
+                        <div
+                          className="opaque_id-input"
+>
+                          <label
+                                                    className="opaque-id-label"
+                          >
+                                                    Custom Opaque ID
+                          </label>
+                          <input
+                                                    name="opaqueId"
+                                                    onChange={[Function]}
+                                                    type="text"
+                          />
+</div>,
                       ],
                       "className": "dialog__type-container",
                     },
@@ -4235,6 +4424,55 @@ ShallowWrapper {
                         },
                         "ref": null,
                         "rendered": null,
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <label
+                              className="opaque-id-label"
+>
+                              Custom Opaque ID
+</label>,
+                            <input
+                              name="opaqueId"
+                              onChange={[Function]}
+                              type="text"
+/>,
+                          ],
+                          "className": "opaque_id-input",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Custom Opaque ID",
+                              "className": "opaque-id-label",
+                            },
+                            "ref": null,
+                            "rendered": "Custom Opaque ID",
+                            "type": "label",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "name": "opaqueId",
+                              "onChange": [Function],
+                              "type": "text",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
                         "type": "div",
                       },
                     ],
@@ -4569,6 +4807,20 @@ ShallowWrapper {
                                                   value="Logged-In Viewer"
                                         />
                                         <div />
+                                        <div
+                                                  className="opaque_id-input"
+                                        >
+                                                  <label
+                                                            className="opaque-id-label"
+                                                  >
+                                                            Custom Opaque ID
+                                                  </label>
+                                                  <input
+                                                            name="opaqueId"
+                                                            onChange={[Function]}
+                                                            type="text"
+                                                  />
+                                        </div>
                               </div>
                     </div>
           </div>
@@ -4825,6 +5077,20 @@ ShallowWrapper {
                                                         value="Logged-In Viewer"
                                           />
                                           <div />
+                                          <div
+                                                        className="opaque_id-input"
+                                          >
+                                                        <label
+                                                                      className="opaque-id-label"
+                                                        >
+                                                                      Custom Opaque ID
+                                                        </label>
+                                                        <input
+                                                                      name="opaqueId"
+                                                                      onChange={[Function]}
+                                                                      type="text"
+                                                        />
+                                          </div>
                             </div>
               </div>
 </div>,
@@ -6287,6 +6553,20 @@ ShallowWrapper {
                                                 value="Logged-In Viewer"
                                 />
                                 <div />
+                                <div
+                                                className="opaque_id-input"
+                                >
+                                                <label
+                                                                className="opaque-id-label"
+                                                >
+                                                                Custom Opaque ID
+                                                </label>
+                                                <input
+                                                                name="opaqueId"
+                                                                onChange={[Function]}
+                                                                type="text"
+                                                />
+                                </div>
                 </div>
 </div>,
               "className": "dialog__viewer-container",
@@ -6325,6 +6605,20 @@ ShallowWrapper {
                                         value="Logged-In Viewer"
                     />
                     <div />
+                    <div
+                                        className="opaque_id-input"
+                    >
+                                        <label
+                                                            className="opaque-id-label"
+                                        >
+                                                            Custom Opaque ID
+                                        </label>
+                                        <input
+                                                            name="opaqueId"
+                                                            onChange={[Function]}
+                                                            type="text"
+                                        />
+                    </div>
 </div>,
                 ],
                 "className": "type-title__type-container",
@@ -6370,6 +6664,20 @@ ShallowWrapper {
 />,
                       ],
                       <div />,
+                      <div
+                        className="opaque_id-input"
+>
+                        <label
+                                                className="opaque-id-label"
+                        >
+                                                Custom Opaque ID
+                        </label>
+                        <input
+                                                name="opaqueId"
+                                                onChange={[Function]}
+                                                type="text"
+                        />
+</div>,
                     ],
                     "className": "dialog__type-container",
                   },
@@ -6426,6 +6734,55 @@ ShallowWrapper {
                       },
                       "ref": null,
                       "rendered": null,
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <label
+                            className="opaque-id-label"
+>
+                            Custom Opaque ID
+</label>,
+                          <input
+                            name="opaqueId"
+                            onChange={[Function]}
+                            type="text"
+/>,
+                        ],
+                        "className": "opaque_id-input",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Custom Opaque ID",
+                            "className": "opaque-id-label",
+                          },
+                          "ref": null,
+                          "rendered": "Custom Opaque ID",
+                          "type": "label",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "name": "opaqueId",
+                            "onChange": [Function],
+                            "type": "text",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                      ],
                       "type": "div",
                     },
                   ],
@@ -6729,6 +7086,20 @@ ShallowWrapper {
                                                             value="Logged-In Viewer"
                                                 />
                                                 <div />
+                                                <div
+                                                            className="opaque_id-input"
+                                                >
+                                                            <label
+                                                                        className="opaque-id-label"
+                                                            >
+                                                                        Custom Opaque ID
+                                                            </label>
+                                                            <input
+                                                                        name="opaqueId"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                            />
+                                                </div>
                                     </div>
                         </div>
             </div>
@@ -6985,6 +7356,20 @@ ShallowWrapper {
                                                                 value="Logged-In Viewer"
                                                 />
                                                 <div />
+                                                <div
+                                                                className="opaque_id-input"
+                                                >
+                                                                <label
+                                                                                className="opaque-id-label"
+                                                                >
+                                                                                Custom Opaque ID
+                                                                </label>
+                                                                <input
+                                                                                name="opaqueId"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                />
+                                                </div>
                                 </div>
                 </div>
 </div>,
@@ -8447,6 +8832,20 @@ ShallowWrapper {
                                                       value="Logged-In Viewer"
                                     />
                                     <div />
+                                    <div
+                                                      className="opaque_id-input"
+                                    >
+                                                      <label
+                                                                        className="opaque-id-label"
+                                                      >
+                                                                        Custom Opaque ID
+                                                      </label>
+                                                      <input
+                                                                        name="opaqueId"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                      />
+                                    </div>
                   </div>
 </div>,
                 "className": "dialog__viewer-container",
@@ -8485,6 +8884,20 @@ ShallowWrapper {
                                             value="Logged-In Viewer"
                       />
                       <div />
+                      <div
+                                            className="opaque_id-input"
+                      >
+                                            <label
+                                                                  className="opaque-id-label"
+                                            >
+                                                                  Custom Opaque ID
+                                            </label>
+                                            <input
+                                                                  name="opaqueId"
+                                                                  onChange={[Function]}
+                                                                  type="text"
+                                            />
+                      </div>
 </div>,
                   ],
                   "className": "type-title__type-container",
@@ -8530,6 +8943,20 @@ ShallowWrapper {
 />,
                         ],
                         <div />,
+                        <div
+                          className="opaque_id-input"
+>
+                          <label
+                                                    className="opaque-id-label"
+                          >
+                                                    Custom Opaque ID
+                          </label>
+                          <input
+                                                    name="opaqueId"
+                                                    onChange={[Function]}
+                                                    type="text"
+                          />
+</div>,
                       ],
                       "className": "dialog__type-container",
                     },
@@ -8586,6 +9013,55 @@ ShallowWrapper {
                         },
                         "ref": null,
                         "rendered": null,
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <label
+                              className="opaque-id-label"
+>
+                              Custom Opaque ID
+</label>,
+                            <input
+                              name="opaqueId"
+                              onChange={[Function]}
+                              type="text"
+/>,
+                          ],
+                          "className": "opaque_id-input",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Custom Opaque ID",
+                              "className": "opaque-id-label",
+                            },
+                            "ref": null,
+                            "rendered": "Custom Opaque ID",
+                            "type": "label",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "name": "opaqueId",
+                              "onChange": [Function],
+                              "type": "text",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
                         "type": "div",
                       },
                     ],
@@ -8796,6 +9272,20 @@ ShallowWrapper {
                                                   value="Logged-In Viewer"
                                         />
                                         <div />
+                                        <div
+                                                  className="opaque_id-input"
+                                        >
+                                                  <label
+                                                            className="opaque-id-label"
+                                                  >
+                                                            Custom Opaque ID
+                                                  </label>
+                                                  <input
+                                                            name="opaqueId"
+                                                            onChange={[Function]}
+                                                            type="text"
+                                                  />
+                                        </div>
                               </div>
                     </div>
           </div>
@@ -8928,6 +9418,20 @@ ShallowWrapper {
                                                         value="Logged-In Viewer"
                                           />
                                           <div />
+                                          <div
+                                                        className="opaque_id-input"
+                                          >
+                                                        <label
+                                                                      className="opaque-id-label"
+                                                        >
+                                                                      Custom Opaque ID
+                                                        </label>
+                                                        <input
+                                                                      name="opaqueId"
+                                                                      onChange={[Function]}
+                                                                      type="text"
+                                                        />
+                                          </div>
                             </div>
               </div>
 </div>,
@@ -9226,6 +9730,20 @@ ShallowWrapper {
                                                 value="Logged-In Viewer"
                                 />
                                 <div />
+                                <div
+                                                className="opaque_id-input"
+                                >
+                                                <label
+                                                                className="opaque-id-label"
+                                                >
+                                                                Custom Opaque ID
+                                                </label>
+                                                <input
+                                                                name="opaqueId"
+                                                                onChange={[Function]}
+                                                                type="text"
+                                                />
+                                </div>
                 </div>
 </div>,
               "className": "dialog__viewer-container",
@@ -9264,6 +9782,20 @@ ShallowWrapper {
                                         value="Logged-In Viewer"
                     />
                     <div />
+                    <div
+                                        className="opaque_id-input"
+                    >
+                                        <label
+                                                            className="opaque-id-label"
+                                        >
+                                                            Custom Opaque ID
+                                        </label>
+                                        <input
+                                                            name="opaqueId"
+                                                            onChange={[Function]}
+                                                            type="text"
+                                        />
+                    </div>
 </div>,
                 ],
                 "className": "type-title__type-container",
@@ -9309,6 +9841,20 @@ ShallowWrapper {
 />,
                       ],
                       <div />,
+                      <div
+                        className="opaque_id-input"
+>
+                        <label
+                                                className="opaque-id-label"
+                        >
+                                                Custom Opaque ID
+                        </label>
+                        <input
+                                                name="opaqueId"
+                                                onChange={[Function]}
+                                                type="text"
+                        />
+</div>,
                     ],
                     "className": "dialog__type-container",
                   },
@@ -9365,6 +9911,55 @@ ShallowWrapper {
                       },
                       "ref": null,
                       "rendered": null,
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <label
+                            className="opaque-id-label"
+>
+                            Custom Opaque ID
+</label>,
+                          <input
+                            name="opaqueId"
+                            onChange={[Function]}
+                            type="text"
+/>,
+                        ],
+                        "className": "opaque_id-input",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Custom Opaque ID",
+                            "className": "opaque-id-label",
+                          },
+                          "ref": null,
+                          "rendered": "Custom Opaque ID",
+                          "type": "label",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "name": "opaqueId",
+                            "onChange": [Function],
+                            "type": "text",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                      ],
                       "type": "div",
                     },
                   ],
@@ -9544,6 +10139,20 @@ ShallowWrapper {
                                                             value="Logged-In Viewer"
                                                 />
                                                 <div />
+                                                <div
+                                                            className="opaque_id-input"
+                                                >
+                                                            <label
+                                                                        className="opaque-id-label"
+                                                            >
+                                                                        Custom Opaque ID
+                                                            </label>
+                                                            <input
+                                                                        name="opaqueId"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                            />
+                                                </div>
                                     </div>
                         </div>
             </div>
@@ -9676,6 +10285,20 @@ ShallowWrapper {
                                                                 value="Logged-In Viewer"
                                                 />
                                                 <div />
+                                                <div
+                                                                className="opaque_id-input"
+                                                >
+                                                                <label
+                                                                                className="opaque-id-label"
+                                                                >
+                                                                                Custom Opaque ID
+                                                                </label>
+                                                                <input
+                                                                                name="opaqueId"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                />
+                                                </div>
                                 </div>
                 </div>
 </div>,
@@ -9974,6 +10597,20 @@ ShallowWrapper {
                                                       value="Logged-In Viewer"
                                     />
                                     <div />
+                                    <div
+                                                      className="opaque_id-input"
+                                    >
+                                                      <label
+                                                                        className="opaque-id-label"
+                                                      >
+                                                                        Custom Opaque ID
+                                                      </label>
+                                                      <input
+                                                                        name="opaqueId"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                      />
+                                    </div>
                   </div>
 </div>,
                 "className": "dialog__viewer-container",
@@ -10012,6 +10649,20 @@ ShallowWrapper {
                                             value="Logged-In Viewer"
                       />
                       <div />
+                      <div
+                                            className="opaque_id-input"
+                      >
+                                            <label
+                                                                  className="opaque-id-label"
+                                            >
+                                                                  Custom Opaque ID
+                                            </label>
+                                            <input
+                                                                  name="opaqueId"
+                                                                  onChange={[Function]}
+                                                                  type="text"
+                                            />
+                      </div>
 </div>,
                   ],
                   "className": "type-title__type-container",
@@ -10057,6 +10708,20 @@ ShallowWrapper {
 />,
                         ],
                         <div />,
+                        <div
+                          className="opaque_id-input"
+>
+                          <label
+                                                    className="opaque-id-label"
+                          >
+                                                    Custom Opaque ID
+                          </label>
+                          <input
+                                                    name="opaqueId"
+                                                    onChange={[Function]}
+                                                    type="text"
+                          />
+</div>,
                       ],
                       "className": "dialog__type-container",
                     },
@@ -10113,6 +10778,55 @@ ShallowWrapper {
                         },
                         "ref": null,
                         "rendered": null,
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <label
+                              className="opaque-id-label"
+>
+                              Custom Opaque ID
+</label>,
+                            <input
+                              name="opaqueId"
+                              onChange={[Function]}
+                              type="text"
+/>,
+                          ],
+                          "className": "opaque_id-input",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Custom Opaque ID",
+                              "className": "opaque-id-label",
+                            },
+                            "ref": null,
+                            "rendered": "Custom Opaque ID",
+                            "type": "label",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "name": "opaqueId",
+                              "onChange": [Function],
+                              "type": "text",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
                         "type": "div",
                       },
                     ],
@@ -10418,6 +11132,20 @@ ShallowWrapper {
                                                   value="Logged-In Viewer"
                                         />
                                         <div />
+                                        <div
+                                                  className="opaque_id-input"
+                                        >
+                                                  <label
+                                                            className="opaque-id-label"
+                                                  >
+                                                            Custom Opaque ID
+                                                  </label>
+                                                  <input
+                                                            name="opaqueId"
+                                                            onChange={[Function]}
+                                                            type="text"
+                                                  />
+                                        </div>
                               </div>
                     </div>
           </div>
@@ -10644,6 +11372,20 @@ ShallowWrapper {
                                                         value="Logged-In Viewer"
                                           />
                                           <div />
+                                          <div
+                                                        className="opaque_id-input"
+                                          >
+                                                        <label
+                                                                      className="opaque-id-label"
+                                                        >
+                                                                      Custom Opaque ID
+                                                        </label>
+                                                        <input
+                                                                      name="opaqueId"
+                                                                      onChange={[Function]}
+                                                                      type="text"
+                                                        />
+                                          </div>
                             </div>
               </div>
 </div>,
@@ -11825,6 +12567,20 @@ ShallowWrapper {
                                                 value="Logged-In Viewer"
                                 />
                                 <div />
+                                <div
+                                                className="opaque_id-input"
+                                >
+                                                <label
+                                                                className="opaque-id-label"
+                                                >
+                                                                Custom Opaque ID
+                                                </label>
+                                                <input
+                                                                name="opaqueId"
+                                                                onChange={[Function]}
+                                                                type="text"
+                                                />
+                                </div>
                 </div>
 </div>,
               "className": "dialog__viewer-container",
@@ -11863,6 +12619,20 @@ ShallowWrapper {
                                         value="Logged-In Viewer"
                     />
                     <div />
+                    <div
+                                        className="opaque_id-input"
+                    >
+                                        <label
+                                                            className="opaque-id-label"
+                                        >
+                                                            Custom Opaque ID
+                                        </label>
+                                        <input
+                                                            name="opaqueId"
+                                                            onChange={[Function]}
+                                                            type="text"
+                                        />
+                    </div>
 </div>,
                 ],
                 "className": "type-title__type-container",
@@ -11908,6 +12678,20 @@ ShallowWrapper {
 />,
                       ],
                       <div />,
+                      <div
+                        className="opaque_id-input"
+>
+                        <label
+                                                className="opaque-id-label"
+                        >
+                                                Custom Opaque ID
+                        </label>
+                        <input
+                                                name="opaqueId"
+                                                onChange={[Function]}
+                                                type="text"
+                        />
+</div>,
                     ],
                     "className": "dialog__type-container",
                   },
@@ -11964,6 +12748,55 @@ ShallowWrapper {
                       },
                       "ref": null,
                       "rendered": null,
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <label
+                            className="opaque-id-label"
+>
+                            Custom Opaque ID
+</label>,
+                          <input
+                            name="opaqueId"
+                            onChange={[Function]}
+                            type="text"
+/>,
+                        ],
+                        "className": "opaque_id-input",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Custom Opaque ID",
+                            "className": "opaque-id-label",
+                          },
+                          "ref": null,
+                          "rendered": "Custom Opaque ID",
+                          "type": "label",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "name": "opaqueId",
+                            "onChange": [Function],
+                            "type": "text",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                      ],
                       "type": "div",
                     },
                   ],
@@ -12237,6 +13070,20 @@ ShallowWrapper {
                                                             value="Logged-In Viewer"
                                                 />
                                                 <div />
+                                                <div
+                                                            className="opaque_id-input"
+                                                >
+                                                            <label
+                                                                        className="opaque-id-label"
+                                                            >
+                                                                        Custom Opaque ID
+                                                            </label>
+                                                            <input
+                                                                        name="opaqueId"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                            />
+                                                </div>
                                     </div>
                         </div>
             </div>
@@ -12463,6 +13310,20 @@ ShallowWrapper {
                                                                 value="Logged-In Viewer"
                                                 />
                                                 <div />
+                                                <div
+                                                                className="opaque_id-input"
+                                                >
+                                                                <label
+                                                                                className="opaque-id-label"
+                                                                >
+                                                                                Custom Opaque ID
+                                                                </label>
+                                                                <input
+                                                                                name="opaqueId"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                />
+                                                </div>
                                 </div>
                 </div>
 </div>,
@@ -13644,6 +14505,20 @@ ShallowWrapper {
                                                       value="Logged-In Viewer"
                                     />
                                     <div />
+                                    <div
+                                                      className="opaque_id-input"
+                                    >
+                                                      <label
+                                                                        className="opaque-id-label"
+                                                      >
+                                                                        Custom Opaque ID
+                                                      </label>
+                                                      <input
+                                                                        name="opaqueId"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                      />
+                                    </div>
                   </div>
 </div>,
                 "className": "dialog__viewer-container",
@@ -13682,6 +14557,20 @@ ShallowWrapper {
                                             value="Logged-In Viewer"
                       />
                       <div />
+                      <div
+                                            className="opaque_id-input"
+                      >
+                                            <label
+                                                                  className="opaque-id-label"
+                                            >
+                                                                  Custom Opaque ID
+                                            </label>
+                                            <input
+                                                                  name="opaqueId"
+                                                                  onChange={[Function]}
+                                                                  type="text"
+                                            />
+                      </div>
 </div>,
                   ],
                   "className": "type-title__type-container",
@@ -13727,6 +14616,20 @@ ShallowWrapper {
 />,
                         ],
                         <div />,
+                        <div
+                          className="opaque_id-input"
+>
+                          <label
+                                                    className="opaque-id-label"
+                          >
+                                                    Custom Opaque ID
+                          </label>
+                          <input
+                                                    name="opaqueId"
+                                                    onChange={[Function]}
+                                                    type="text"
+                          />
+</div>,
                       ],
                       "className": "dialog__type-container",
                     },
@@ -13783,6 +14686,55 @@ ShallowWrapper {
                         },
                         "ref": null,
                         "rendered": null,
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <label
+                              className="opaque-id-label"
+>
+                              Custom Opaque ID
+</label>,
+                            <input
+                              name="opaqueId"
+                              onChange={[Function]}
+                              type="text"
+/>,
+                          ],
+                          "className": "opaque_id-input",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Custom Opaque ID",
+                              "className": "opaque-id-label",
+                            },
+                            "ref": null,
+                            "rendered": "Custom Opaque ID",
+                            "type": "label",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "name": "opaqueId",
+                              "onChange": [Function],
+                              "type": "text",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
                         "type": "div",
                       },
                     ],
@@ -14070,6 +15022,20 @@ ShallowWrapper {
                                                   value="Logged-In Viewer"
                                         />
                                         <div />
+                                        <div
+                                                  className="opaque_id-input"
+                                        >
+                                                  <label
+                                                            className="opaque-id-label"
+                                                  >
+                                                            Custom Opaque ID
+                                                  </label>
+                                                  <input
+                                                            name="opaqueId"
+                                                            onChange={[Function]}
+                                                            type="text"
+                                                  />
+                                        </div>
                               </div>
                     </div>
           </div>
@@ -14283,6 +15249,20 @@ ShallowWrapper {
                                                         value="Logged-In Viewer"
                                           />
                                           <div />
+                                          <div
+                                                        className="opaque_id-input"
+                                          >
+                                                        <label
+                                                                      className="opaque-id-label"
+                                                        >
+                                                                      Custom Opaque ID
+                                                        </label>
+                                                        <input
+                                                                      name="opaqueId"
+                                                                      onChange={[Function]}
+                                                                      type="text"
+                                                        />
+                                          </div>
                             </div>
               </div>
 </div>,
@@ -15392,6 +16372,20 @@ ShallowWrapper {
                                                 value="Logged-In Viewer"
                                 />
                                 <div />
+                                <div
+                                                className="opaque_id-input"
+                                >
+                                                <label
+                                                                className="opaque-id-label"
+                                                >
+                                                                Custom Opaque ID
+                                                </label>
+                                                <input
+                                                                name="opaqueId"
+                                                                onChange={[Function]}
+                                                                type="text"
+                                                />
+                                </div>
                 </div>
 </div>,
               "className": "dialog__viewer-container",
@@ -15430,6 +16424,20 @@ ShallowWrapper {
                                         value="Logged-In Viewer"
                     />
                     <div />
+                    <div
+                                        className="opaque_id-input"
+                    >
+                                        <label
+                                                            className="opaque-id-label"
+                                        >
+                                                            Custom Opaque ID
+                                        </label>
+                                        <input
+                                                            name="opaqueId"
+                                                            onChange={[Function]}
+                                                            type="text"
+                                        />
+                    </div>
 </div>,
                 ],
                 "className": "type-title__type-container",
@@ -15475,6 +16483,20 @@ ShallowWrapper {
 />,
                       ],
                       <div />,
+                      <div
+                        className="opaque_id-input"
+>
+                        <label
+                                                className="opaque-id-label"
+                        >
+                                                Custom Opaque ID
+                        </label>
+                        <input
+                                                name="opaqueId"
+                                                onChange={[Function]}
+                                                type="text"
+                        />
+</div>,
                     ],
                     "className": "dialog__type-container",
                   },
@@ -15531,6 +16553,55 @@ ShallowWrapper {
                       },
                       "ref": null,
                       "rendered": null,
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <label
+                            className="opaque-id-label"
+>
+                            Custom Opaque ID
+</label>,
+                          <input
+                            name="opaqueId"
+                            onChange={[Function]}
+                            type="text"
+/>,
+                        ],
+                        "className": "opaque_id-input",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Custom Opaque ID",
+                            "className": "opaque-id-label",
+                          },
+                          "ref": null,
+                          "rendered": "Custom Opaque ID",
+                          "type": "label",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "name": "opaqueId",
+                            "onChange": [Function],
+                            "type": "text",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                      ],
                       "type": "div",
                     },
                   ],
@@ -15791,6 +16862,20 @@ ShallowWrapper {
                                                             value="Logged-In Viewer"
                                                 />
                                                 <div />
+                                                <div
+                                                            className="opaque_id-input"
+                                                >
+                                                            <label
+                                                                        className="opaque-id-label"
+                                                            >
+                                                                        Custom Opaque ID
+                                                            </label>
+                                                            <input
+                                                                        name="opaqueId"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                            />
+                                                </div>
                                     </div>
                         </div>
             </div>
@@ -16004,6 +17089,20 @@ ShallowWrapper {
                                                                 value="Logged-In Viewer"
                                                 />
                                                 <div />
+                                                <div
+                                                                className="opaque_id-input"
+                                                >
+                                                                <label
+                                                                                className="opaque-id-label"
+                                                                >
+                                                                                Custom Opaque ID
+                                                                </label>
+                                                                <input
+                                                                                name="opaqueId"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                />
+                                                </div>
                                 </div>
                 </div>
 </div>,
@@ -17113,6 +18212,20 @@ ShallowWrapper {
                                                       value="Logged-In Viewer"
                                     />
                                     <div />
+                                    <div
+                                                      className="opaque_id-input"
+                                    >
+                                                      <label
+                                                                        className="opaque-id-label"
+                                                      >
+                                                                        Custom Opaque ID
+                                                      </label>
+                                                      <input
+                                                                        name="opaqueId"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                      />
+                                    </div>
                   </div>
 </div>,
                 "className": "dialog__viewer-container",
@@ -17151,6 +18264,20 @@ ShallowWrapper {
                                             value="Logged-In Viewer"
                       />
                       <div />
+                      <div
+                                            className="opaque_id-input"
+                      >
+                                            <label
+                                                                  className="opaque-id-label"
+                                            >
+                                                                  Custom Opaque ID
+                                            </label>
+                                            <input
+                                                                  name="opaqueId"
+                                                                  onChange={[Function]}
+                                                                  type="text"
+                                            />
+                      </div>
 </div>,
                   ],
                   "className": "type-title__type-container",
@@ -17196,6 +18323,20 @@ ShallowWrapper {
 />,
                         ],
                         <div />,
+                        <div
+                          className="opaque_id-input"
+>
+                          <label
+                                                    className="opaque-id-label"
+                          >
+                                                    Custom Opaque ID
+                          </label>
+                          <input
+                                                    name="opaqueId"
+                                                    onChange={[Function]}
+                                                    type="text"
+                          />
+</div>,
                       ],
                       "className": "dialog__type-container",
                     },
@@ -17252,6 +18393,55 @@ ShallowWrapper {
                         },
                         "ref": null,
                         "rendered": null,
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <label
+                              className="opaque-id-label"
+>
+                              Custom Opaque ID
+</label>,
+                            <input
+                              name="opaqueId"
+                              onChange={[Function]}
+                              type="text"
+/>,
+                          ],
+                          "className": "opaque_id-input",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Custom Opaque ID",
+                              "className": "opaque-id-label",
+                            },
+                            "ref": null,
+                            "rendered": "Custom Opaque ID",
+                            "type": "label",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "name": "opaqueId",
+                              "onChange": [Function],
+                              "type": "text",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
                         "type": "div",
                       },
                     ],

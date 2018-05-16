@@ -52,9 +52,6 @@ export class EditViewDialog extends Component {
       case ExtensionViewType.Mobile:
         editClass = 'edit-view__dialog-mobile';
         break;
-      case ExtensionViewType.Overlay:
-        editClass = 'edit-view__dialog-overlay';
-        break;
       default:
         editClass = 'edit-view__dialog'
     }

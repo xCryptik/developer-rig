@@ -23,7 +23,7 @@ export class ExtensionViewContainer extends Component {
     }
 
     let extensionViews = [];
-    if (this.props.extensionViews) {
+    if (this.props.extensionViews && this.props.extensionViews.length > 0) {
       extensionViews = this.props.extensionViews.map(view => {
         return <ExtensionView
           key={view.id}

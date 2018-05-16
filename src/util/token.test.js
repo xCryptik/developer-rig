@@ -12,7 +12,6 @@ describe('token', () => {
   const ownerId = 'rig_owner';
   const isLinked = false;
 
-
   describe('createSignedToken', () => {
     const expected = {
       opaqueUserId: ouid,
@@ -45,7 +44,7 @@ describe('token', () => {
   describe('createToken', () => {
     const LOGGED_OUT_PAYLOAD = {
       channel_id: channelId,
-      opaque_user_id: 'ARIG00000',
+      opaque_user_id: 'ARIG'+ouid,
       pubsub_perms: {
         listen: [],
         send: [],
@@ -55,7 +54,7 @@ describe('token', () => {
 
     const LOGGED_IN_UNLINKED_PAYLOAD = {
       channel_id: channelId,
-      opaque_user_id: 'URIG00000',
+      opaque_user_id: 'URIG'+ouid,
       pubsub_perms: {
         listen: [],
         send: [],
@@ -65,7 +64,7 @@ describe('token', () => {
 
     const LOGGED_IN_LINKED_PAYLOAD = {
       channel_id: channelId,
-      opaque_user_id: 'URIG00000',
+      opaque_user_id: 'URIG'+ouid,
       pubsub_perms: {
         listen: [],
         send: [],
@@ -76,7 +75,7 @@ describe('token', () => {
 
     const BROADCASTER_PAYLOAD = {
       channel_id: channelId,
-      opaque_user_id: 'URIG'+ownerId,
+      opaque_user_id: 'URIG'+ouid,
       pubsub_perms: {
         listen: [],
         send: [],
@@ -86,7 +85,7 @@ describe('token', () => {
     };
 
     it('should create a token for logged out unlinked users', () => {
-      const token = createToken(ViewerTypes.LoggedOut, isLinked, ownerId, channelId, secret);
+      const token = createToken(ViewerTypes.LoggedOut, isLinked, ownerId, channelId, secret, ouid);
       const payload = jwt.verify(token, secret);
 
       expect(payload.opaque_user_id).toBe(LOGGED_OUT_PAYLOAD.opaque_user_id);
@@ -94,14 +93,14 @@ describe('token', () => {
     });
 
     it('should create a token for logged in unlinked users', () => {
-      const token = createToken(ViewerTypes.LoggedIn, isLinked, ownerId, channelId, secret);
+      const token = createToken(ViewerTypes.LoggedIn, isLinked, ownerId, channelId, secret, ouid);
       const payload = jwt.verify(token, secret);
       expect(payload.opaque_user_id).toBe(LOGGED_IN_UNLINKED_PAYLOAD.opaque_user_id);
       expect(payload.role).toBe(LOGGED_IN_UNLINKED_PAYLOAD.role);
     });
 
     it('should create a token for logged in linked users', () => {
-      const token = createToken(ViewerTypes.LoggedIn, !isLinked, ownerId, channelId, secret);
+      const token = createToken(ViewerTypes.LoggedIn, !isLinked, ownerId, channelId, secret, ouid);
       const payload = jwt.verify(token, secret);
 
       expect(payload.opaque_user_id).toBe(LOGGED_IN_LINKED_PAYLOAD.opaque_user_id);
@@ -110,7 +109,7 @@ describe('token', () => {
     });
 
     it('should create a token for broadcaster users', () => {
-      const token = createToken(ViewerTypes.Broadcaster, isLinked, ownerId, channelId, secret);
+      const token = createToken(ViewerTypes.Broadcaster, isLinked, ownerId, channelId, secret, ouid);
       const payload = jwt.verify(token, secret);
 
       expect(payload.opaque_user_id).toBe(BROADCASTER_PAYLOAD.opaque_user_id);
@@ -119,7 +118,7 @@ describe('token', () => {
     });
 
     it('should create a token for the rig', () => {
-      const token = createToken(RIG_ROLE, isLinked, ownerId, channelId, secret);
+      const token = createToken(RIG_ROLE, isLinked, ownerId, channelId, secret, ouid);
       const payload = jwt.verify(token, secret);
 
       expect(payload.role).toBe(RIG_ROLE);

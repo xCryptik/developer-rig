@@ -65,6 +65,11 @@ describe('<ExtensionViewDialog />', () => {
     expect(wrapper.find('RadioOption[name="identityOption"]')).toHaveLength(2);
   });
 
+  it('renders opaque id input field correctly', () => {
+    const { wrapper } = setupShallow();
+    expect(wrapper.find('.opaque_id-input')).toHaveLength(1);
+  });
+
   describe('for an extension that supports video overlays and panels', () => {
     const { wrapper } = setupShallow();
 

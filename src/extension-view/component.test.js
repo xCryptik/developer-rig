@@ -2,7 +2,8 @@ import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { ExtensionView } from './component';
 import { ViewerTypes } from '../constants/viewer-types';
 import { ExtensionForTest } from '../tests/constants/extension';
-const { ExtensionAnchor, ExtensionMode, ExtensionViewType } = window['extension-coordinator'];
+import { MobileOrientation } from '../constants/mobile';
+const { ExtensionAnchor, ExtensionMode, ExtensionViewType, ExtensionPlatform} = window['extension-coordinator'];
 
 const DeleteButtonSelector = '.view__close_button';
 
@@ -66,6 +67,16 @@ describe('<ExtensionView />', () => {
     it('renders correctly when in config mode', () => {
       const { wrapper } = setupShallow({
         type: ExtensionViewType.LiveConfig
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe('mobile mode views', () => {
+    it('renders correctly when in mobile mode', () => {
+      const { wrapper } = setupShallow({
+        type: ExtensionPlatform.Mobile,
+        orientation: MobileOrientation.Portrait,
       });
       expect(wrapper).toMatchSnapshot();
     });

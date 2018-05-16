@@ -29,6 +29,7 @@ describe('extension', () => {
   const ownerID = 'test';
   const channelId = 'test';
   const secret = 'test';
+  const opaqueId = 'testOpaqueId';
 
   it('creates an extension with the correct data', () => {
     const expected = {
@@ -42,7 +43,7 @@ describe('extension', () => {
       sku: manifest.sku,
       state: manifest.state,
       summary: manifest.summary,
-      token: createToken(role, isLinked, ownerID, channelId, secret),
+      token: createToken(role, isLinked, ownerID, channelId, secret, opaqueId),
       vendorCode: manifest.vendor_code,
       version: manifest.version,
       views: manifest.views,
@@ -50,7 +51,7 @@ describe('extension', () => {
       whitelistedPanelUrls: manifest.whitelisted_panel_urls,
       channelId: channelId,
     };
-    const result = createExtensionObject(manifest, index, role, isLinked, ownerID, channelId, secret);
+    const result = createExtensionObject(manifest, index, role, isLinked, ownerID, channelId, secret, opaqueId);
     expect(result).toEqual(expected);
   });
 });

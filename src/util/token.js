@@ -3,21 +3,32 @@ import { RIG_ROLE } from '../constants/rig';
 import jwt from 'jsonwebtoken';
 
 const ONE_YEAR_MS = 365 * 24 * 60 * 60 * 1000;
+const idSource = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+const idLength = 15;
 
-export function createToken(newRole, isLinked, ownerID, channelId, secret) {
+function generateOpaqueID() {
+  let id = '';
+  for (let i = 0; i < idLength; i++) {
+    id += idSource.charAt(Math.floor(Math.random() * idSource.length));
+  }
+  return id;
+}
+
+export function createToken(newRole, isLinked, ownerID, channelId, secret, opaqueId) {
+  const opaque = opaqueId ? opaqueId : generateOpaqueID();
   switch (newRole) {
     case ViewerTypes.LoggedOut:
-      return createSignedToken('viewer', 'ARIG00000', '', channelId, secret)
+      return createSignedToken('viewer', 'ARIG' + opaque, '', channelId, secret)
     case ViewerTypes.LoggedIn:
       if (isLinked) {
-        return createSignedToken('viewer', 'URIG00000', 'RIG'+ownerID, channelId, secret)
+        return createSignedToken('viewer', 'URIG' + opaque, 'RIG'+ownerID, channelId, secret)
       } else {
-        return createSignedToken('viewer', 'URIG00000', '', channelId, secret)
+        return createSignedToken('viewer', 'URIG' + opaque, '', channelId, secret)
       }
     case ViewerTypes.Broadcaster:
-      return createSignedToken('broadcaster', 'URIG' + ownerID, 'RIG' + ownerID, channelId, secret)
+      return createSignedToken('broadcaster', 'URIG' + opaque, 'RIG' + ownerID, channelId, secret)
     default:
-      return createSignedToken(RIG_ROLE, 'ARIG0000', '', channelId, secret);
+      return createSignedToken(RIG_ROLE, 'ARIG' + opaque, '', channelId, secret);
   }
 }
 

@@ -32,6 +32,10 @@ describe('<ExtensionViewContainer />', () => {
       });
       expect(wrapper.find('ExtensionView')).toHaveLength(2);
     });
+    it('renders no views if none specified', () => {
+      const { wrapper } = setupShallow();
+      expect(wrapper.find('ExtensionView')).toHaveLength(0);
+    });
   });
 
   describe('when in broadcaster config mode', () => {

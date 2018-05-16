@@ -25,6 +25,7 @@ export class ExtensionViewDialog extends Component {
       height: DEFAULT_CUSTOM_DIMENSIONS.height,
       identityOption: DEFAULT_IDENTITY_OPTION,
       orientation: DefaultMobileOrientation,
+      opaqueId: '',
     }
 
     this.defaultState = this.state;
@@ -245,6 +246,10 @@ export class ExtensionViewDialog extends Component {
                 <div>
                   {(this.state.viewerType === ViewerTypes.LoggedIn) ?
                     this.renderIdentityOptionComponents() : null}
+                </div>
+                <div className='opaque_id-input'>
+                  <label className="opaque-id-label">Custom Opaque ID</label>
+                  <input type="text" name="opaqueId" onChange={this.onChange}/>
                 </div>
               </div>
             </div>
