@@ -109,6 +109,8 @@ Extension output logs can be redirected to the [Rig Console](#rig-console), a De
 ## Getting Started in Online Mode
 If you're just getting started with Extensions and haven't going through Extension Developer Onboarding, follow the steps at the top of the documentation for Local Mode.  Otherwise, the following guide will help you create your first Extension on Twitch and run it in the Developer Rig in Online Mode.
 
+There are detailed guides for [Mac](docs/Mac.html) and [Windows](docs/Windows.html) to get you from nothing to Hello World.
+
 #### Create an Extension on the Twitch Dev Site
 For each Extension to be tested online in the Developer Rig, a corresponding Extension needs to be created on the [Twitch Dev Site](https://dev.twitch.tv/dashboard). More detailed instructions to do this can be found [here](https://dev.twitch.tv/docs/extensions#creating-your-extension). Most fields are not relevant for the Developer Rig. The _Type of Extension_ is loaded into the Developer Rig, and is hence important. Similarly, the _Author Email_ must be correctly set and verified, before an [Extension secret](#developer-rig-configuration) can be created.
 
