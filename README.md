@@ -53,7 +53,7 @@ Extension output logs can be redirected to the [Rig Console](#rig-console), a De
 This project requires `yarn` and `NodeJS`. Both must be installed to use the Developer Rig.
 
 #### Installing Dependencies
-To install `Node.js`, [follow the instructions here](https://nodejs.org/en/download/current/). By default, this installs the NPM package manager (`npm`), however, in all of our documentation we reference the use of Yarn which you can install by [following the instructions here](https://yarnpkg.com/lang/en/docs/install).
+To install `Node.js`, [follow the instructions here](https://nodejs.org/en/download/). By default, this installs the NPM package manager (`npm`), however, in all of our documentation we reference the use of Yarn which you can install by [following the instructions here](https://yarnpkg.com/lang/en/docs/install).
 
 Once you have Yarn installed, simply run the command `yarn install` from the root of the cloned repository to fetch all the dependencies need to run the Developer Rig.
 ```bash
