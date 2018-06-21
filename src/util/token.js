@@ -6,7 +6,7 @@ const ONE_YEAR_MS = 365 * 24 * 60 * 60 * 1000;
 const idSource = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 const idLength = 15;
 
-function generateOpaqueID() {
+export function generateOpaqueID() {
   let id = '';
   for (let i = 0; i < idLength; i++) {
     id += idSource.charAt(Math.floor(Math.random() * idSource.length));

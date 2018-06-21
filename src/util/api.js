@@ -86,7 +86,6 @@ export function fetchExtensionManifest(host, clientId, version, jwt, onSuccess, 
 export function fetchManifest(host, clientId, username, version, channelId, secret, onSuccess, onError) {
   if (!username || !clientId || !version || !channelId || !secret) {
     onError(missingConfigurations({
-      'EXT_OWNER_NAME': username,
       'EXT_CLIENT_ID': clientId,
       'EXT_VERSION': version,
       'EXT_CHANNEL': channelId,
@@ -117,4 +116,24 @@ export function fetchManifest(host, clientId, username, version, channelId, secr
   }).catch((error) => {
       onError(error);
   });
+}
+
+export function fetchUserInfo(host, accessToken, onSuccess, onError) {
+  const api = 'https://' + host + '/helix/users';
+  return fetch(api, {
+    method: 'GET',
+    headers: {
+      'authorization': 'Bearer ' + accessToken,
+    }
+  }).then(response => response.json())
+    .then(respJson => {
+      const data = respJson.data;
+      if (!data && data.length === 0) {
+        onError('Unable to get user data for token: ', accessToken);
+        return null;
+      }
+      onSuccess(data[0]);
+    }).catch(error => {
+      onError(error);
+    });
 }

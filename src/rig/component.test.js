@@ -1,8 +1,9 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { createViewsForTest, ExtensionForTest } from '../tests/constants/extension';
-import { mockFetchForManifest } from '../tests/mocks';
+import { mockFetchForManifest, mockFetchForUserInfo } from '../tests/mocks';
 import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG } from '../constants/nav-items';
 import { Rig } from './component';
+import { store } from '../core/rig';
 import { ExtensionAnchors } from '../constants/extension-types';
 import { ViewerTypes } from '../constants/viewer-types';
 const { ExtensionMode, ExtensionAnchor, ExtensionViewType } = window['extension-coordinator'];
@@ -17,6 +18,15 @@ describe('<Rig />', () => {
     const testViews = createViewsForTest(numViews, ExtensionAnchors[ExtensionAnchor.Component], ViewerTypes.LoggedOut);
     localStorage.setItem('extensionViews', JSON.stringify(testViews));
   };
+
+  const setupLoginForTest = () => {
+    const rigLogin = {
+      login: 'test',
+      profileImageUrl: 'test.png',
+      authToken: 'test',
+    }
+    localStorage.setItem('rigLogin', JSON.stringify(rigLogin));
+  }
 
   beforeEach(() => {
     global.fetch = jest.fn().mockImplementation(mockFetchForManifest);
@@ -211,7 +221,6 @@ describe('<Rig />', () => {
       expect(frameSize).toEqual(expectedOverlayFrameSize);
     });
 
-
     it('returns correct data for custom size', () => {
       const { wrapper } = setupShallow();
       const overlayTestDialogRef = {
@@ -228,6 +237,14 @@ describe('<Rig />', () => {
       }
       const frameSize = wrapper.instance()._getFrameSizeFromDialog(overlayTestDialogRef);
       expect(frameSize).toEqual(expectedOverlayFrameSize);
+    });
+
+    it('correctly fetches user info if login not in localStorage', () => {
+      global.fetch = jest.fn().mockImplementation(mockFetchForUserInfo);
+      global.window.location.hash = 'access_token=test&';
+
+      const { wrapper } = setupShallow();
+      expect(global.fetch).toHaveBeenCalled();
     });
   });
 });

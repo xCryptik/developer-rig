@@ -18,7 +18,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <RigNav
+        <Connect(RigNavComponent)
           configHandler={[Function]}
           error=""
           liveConfigHandler={[Function]}
@@ -114,7 +114,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <RigNav
+          <Connect(RigNavComponent)
             configHandler={[Function]}
             error=""
             liveConfigHandler={[Function]}
@@ -232,7 +232,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <RigNav
+        <Connect(RigNavComponent)
           configHandler={[Function]}
           error=""
           liveConfigHandler={[Function]}
@@ -426,7 +426,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <RigNav
+          <Connect(RigNavComponent)
             configHandler={[Function]}
             error=""
             liveConfigHandler={[Function]}

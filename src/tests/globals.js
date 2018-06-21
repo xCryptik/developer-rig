@@ -19,6 +19,7 @@ export function mockGlobals() {
 
   global.window.rig = {};
   global.window.rig.history = [];
+  global.window.location = {};
 
   const coordinator = {}
   coordinator.ExtensionMode = {

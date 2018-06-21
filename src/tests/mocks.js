@@ -46,6 +46,25 @@ export function mockFetchForExtensionManifest() {
   return p;
 }
 
+export function mockFetchForUserInfo() {
+  var p = new Promise((resolve, reject) => {
+    resolve({
+      ok: true,
+      json: function () {
+        return {
+          data: [
+            {
+              login: 'test',
+              profile_image_url: 'test.png',
+            }
+          ]
+        }
+      }
+    });
+  });
+  return p;
+}
+
 export function mockFetchError() {
   var p = new Promise((resolve, reject) => {
     resolve({

@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { createToken, createSignedToken } from './token';
+import { createToken, createSignedToken, generateOpaqueID } from './token';
 import { ViewerTypes } from '../constants/viewer-types';
 import { RIG_ROLE } from '../constants/rig';
 
@@ -130,6 +130,12 @@ describe('token', () => {
       expect(payload.role).toBe(RIG_ROLE);
       expect(payload.pubsub_perms.send).toEqual(['*']);
       expect(payload.pubsub_perms.listen).toEqual(['*']);
+    });
+
+    it('generateOpaqueId should generate an opaque ID we expect', () => {
+      const idLength = 15;
+      const genOpaqueId = generateOpaqueID();
+      expect(genOpaqueId).toHaveLength(idLength);
     });
   });
 });

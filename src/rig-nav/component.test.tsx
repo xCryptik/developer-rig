@@ -1,32 +1,37 @@
-import { setupShallowTest } from '../tests/enzyme-util/shallow';
-import { RigNav } from './component';
+import { setupShallowTestWithStore, setupShallowTest } from '../tests/enzyme-util/shallow';
+import { RigNav, RigNavComponent } from '.';
 import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG, CONFIGURATIONS  } from '../constants/nav-items';
+import { LoginButton } from '../login-button';
+import { UserDropdown } from '../user-dropdown';
 
-describe('<RigNav />', () => {
-  const setupShallow = setupShallowTest(RigNav, () => ({
+describe('<RigNavComponent />', () => {
+  const defaultGenerator = () => ({
     openConfigurationsHandler: jest.fn(),
     viewerHandler: jest.fn(),
     configHandler: jest.fn(),
     liveConfigHandler: jest.fn(),
     selectedView: EXTENSION_VIEWS,
     error: '',
-  }));
+  });
+  const setupRenderer = setupShallowTest(RigNavComponent, defaultGenerator);
+  const setupShallow = setupShallowTestWithStore(RigNav, defaultGenerator);
 
   it('renders correctly', () => {
-    const { wrapper } = setupShallow();
+    const { wrapper } = setupRenderer();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('renders an error', () => {
-    const { wrapper } = setupShallow({
+    const { wrapper } = setupRenderer({
       error: 'test error',
     });
+
     expect(wrapper.find('.top-nav-error').text().trim()).toBe('test error');
   });
 
   it('correctly handles clicks on each tab', () => {
-    const { wrapper } = setupShallow();
-    wrapper.find('a.top-nav-item').forEach(tab => {
+    const { wrapper } = setupRenderer();
+    wrapper.find('a.top-nav-item').forEach((tab: any) => {
       tab.simulate('click');
     });
     expect(wrapper.instance().props.viewerHandler).toHaveBeenCalled();
@@ -36,7 +41,7 @@ describe('<RigNav />', () => {
   });
 
   it('correct css classes are set when things are selected', () => {
-    const { wrapper } = setupShallow({
+    const { wrapper } = setupRenderer({
       selectedView: EXTENSION_VIEWS,
     });
     expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
@@ -58,5 +63,19 @@ describe('<RigNav />', () => {
     });
     wrapper.update();
     expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
-  })
+  });
+
+  it('renders login button if no session', () => {
+    const { wrapper } = setupRenderer({
+      session: undefined,
+    });
+    expect(wrapper.find(LoginButton));
+  });
+
+  it('renders user dropdown if session exists', () => {
+    const { wrapper } = setupRenderer({
+      session: { login: 'test', profileImageUrl: 'test.png', authToken: 'test'},
+    });
+    expect(wrapper.find(UserDropdown));
+  });
 });

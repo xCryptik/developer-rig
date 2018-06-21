@@ -7,13 +7,16 @@ import { RigConfigurationsDialog } from '../rig-configurations-dialog';
 import { EditViewDialog } from '../edit-view-dialog';
 import { createExtensionObject } from '../util/extension';
 import { createSignedToken } from '../util/token';
-import { fetchManifest, fetchExtensionManifest } from '../util/api';
+import { fetchManifest, fetchExtensionManifest, fetchUserInfo } from '../util/api';
 import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG, CONFIGURATIONS } from '../constants/nav-items'
 import { ViewerTypes } from '../constants/viewer-types';
 import { OverlaySizes } from '../constants/overlay-sizes';
 import { IdentityOptions } from '../constants/identity-options';
 import { MobileSizes } from '../constants/mobile';
 import { RIG_ROLE } from '../constants/rig';
+import { userLogin } from '../core/actions/user-session';
+import { saveManifest } from '../core/actions/extensions';
+import { store } from '../core/rig';
 const { ExtensionMode, ExtensionViewType } = window['extension-coordinator'];
 
 export class Rig extends Component {
@@ -46,6 +49,7 @@ export class Rig extends Component {
 
   componentWillMount() {
     this._initLocalStorage();
+    this._setLogin();
   }
 
   openConfigurationsHandler = () => {
@@ -132,6 +136,7 @@ export class Rig extends Component {
   }
 
   _onConfigurationSuccess = (data) => {
+    store.dispatch(saveManifest(data.manifest));
     this.setState(data);
   }
 
@@ -257,7 +262,9 @@ export class Rig extends Component {
   }
 
   _fetchInitialConfiguration() {
-    fetchManifest("api.twitch.tv", this.state.clientId, this.state.userName, this.state.version, this.state.channelId, this.state.secret, this._onConfigurationSuccess, this._onConfigurationError);
+    if (this.state.userName) {
+      fetchManifest("api.twitch.tv", this.state.clientId, this.state.userName, this.state.version, this.state.channelId, this.state.secret, this._onConfigurationSuccess, this._onConfigurationError);
+    }
   }
 
   _initLocalStorage() {
@@ -269,5 +276,44 @@ export class Rig extends Component {
     this.setState({
       extensionViews: JSON.parse(extensionViewsValue)
     })
+  }
+
+  _setLogin() {
+    const windowHash = window.location.hash;
+    const rigLogin = localStorage.getItem('rigLogin');
+    if (windowHash.includes('access_token')) {
+      const accessTokenKey = 'access_token=';
+      const accessTokenIndex = windowHash.indexOf(accessTokenKey);
+      const ampersandIndex = windowHash.indexOf('&');
+      const accessToken = windowHash.substring(accessTokenIndex + accessTokenKey.length, ampersandIndex);
+      fetchUserInfo('api.twitch.tv', accessToken, resp => {
+        const userSess = {
+          login: resp.login,
+          authToken: accessToken,
+          profileImageUrl: resp.profile_image_url,
+        }
+        this.setState({
+          userName: resp.login,
+        });
+        store.dispatch(userLogin(userSess));
+        localStorage.setItem('rigLogin', JSON.stringify(userSess));
+        window.location = '/';
+      }, err => {
+        this.setState({
+          error: err,
+        });
+      })
+    }
+    else if (rigLogin) {
+      const login = JSON.parse(rigLogin);
+      this.setState({
+        userName: login.login,
+      })
+      store.dispatch(userLogin({
+        login: login.login,
+        authToken: login.authToken,
+        profileImageUrl: login.profileImageUrl,
+      }));
+    }
   }
 }

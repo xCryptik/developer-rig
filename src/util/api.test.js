@@ -1,5 +1,10 @@
-import { convertViews, fetchManifest, fetchExtensionManifest } from './api';
-import { mockFetchError, mockFetchErrorForManifest, mockFetchForExtensionManifest, mockFetchForManifest } from '../tests/mocks';
+import { convertViews, fetchManifest, fetchExtensionManifest, fetchUserInfo } from './api';
+import {
+  mockFetchError,
+  mockFetchForExtensionManifest,
+  mockFetchForManifest,
+  mockFetchForUserInfo,
+} from '../tests/mocks';
 
 describe('api', () => {
   describe('fetchManifest', () => {
@@ -8,7 +13,7 @@ describe('api', () => {
     });
 
     it('should return data', async function () {
-      await fetchManifest("127.0.0.1:8080", "clientId", 'username', 'version', 'channelId', 'secret', data => {
+      await fetchManifest('127.0.0.1:8080', 'clientId', 'username', 'version', 'channelId', 'secret', data => {
         expect(data).toBeDefined();
       }, jest.fn());
     });
@@ -16,7 +21,7 @@ describe('api', () => {
     it('on error should be fired ', async function () {
       const onError = jest.fn();
       global.fetch = jest.fn().mockImplementation(mockFetchError);
-      await fetchManifest("127.0.0.1:8080", "clientId", '', '', '', '', data => {
+      await fetchManifest('127.0.0.1:8080', 'clientId', '', '', '', '', data => {
         expect(data).toBeDefined();
       }, onError);
       expect(onError).toHaveBeenCalled();
@@ -29,7 +34,7 @@ describe('api', () => {
     });
 
     it('should return data', async function () {
-      await fetchExtensionManifest("127.0.0.1:8080", "clientId", "version", "jwt", (data) => {
+      await fetchExtensionManifest('127.0.0.1:8080', 'clientId', 'version', 'jwt', (data) => {
         expect(data).toBeDefined();
       });
     });
@@ -37,7 +42,25 @@ describe('api', () => {
     it('should error out if data missing', async function () {
       global.fetch = jest.fn().mockImplementation(mockFetchError);
       const onError = jest.fn();
-      await fetchExtensionManifest("127.0.0.1:8080", "clientId", "version", "jwt", jest.fn(), onError);
+      await fetchExtensionManifest('127.0.0.1:8080', 'clientId', 'version', 'jwt', jest.fn(), onError);
+      expect(onError).toHaveBeenCalled();
+    });
+  });
+
+  describe('fetchUserInfo', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(mockFetchForUserInfo);
+    });
+    it('should return data', async function () {
+      await fetchUserInfo('127.0.0.1:8080', 'token', (data) => {
+        expect(data).toBeDefined();
+      });
+    });
+
+    it('on error should fire', async function () {
+      const onError = jest.fn()
+      global.fetch = jest.fn().mockImplementation(mockFetchError);
+      await fetchUserInfo('127.0.0.1:8080', 'token', () => { }, onError);
       expect(onError).toHaveBeenCalled();
     });
   });

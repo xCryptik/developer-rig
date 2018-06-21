@@ -1,10 +1,17 @@
 {
   "name": "dev-rig",
-  "engines" : { "node" : "<=9.11.1" },
+  "engines": {
+    "node": "<=9.11.1"
+  },
   "version": "0.1.1",
   "private": true,
   "repository": "github:twitchdev/developer-rig",
   "dependencies": {
+    "@types/classnames": "^2.2.4",
+    "@types/enzyme": "^3.1.10",
+    "@types/jest": "^23.0.0",
+    "@types/react": "^16.3.16",
+    "@types/react-redux": "^6.0.2",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -14,6 +21,7 @@
     "babel-runtime": "6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
+    "classnames": "^2.2.6",
     "command-line-args": "^5.0.2",
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
@@ -41,12 +49,20 @@
     "react": "^16.2.0",
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-scripts": "2.0.0-next.66cc7a90",
+    "redux": "^4.0.0",
+    "redux-thunk": "2.2.0",
     "selfsigned": "^1.10.2",
     "shelljs": "^0.8.1",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
+    "ts-jest": "^22.4.6",
+    "ts-loader": "3.5.0",
+    "typescript": "^2.9.1",
+    "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "0.6.2",
-    "webpack": "3.8.1",
+    "webpack": "3.6.0",
     "webpack-dev-server": "2.9.4",
     "webpack-manifest-plugin": "1.3.2",
     "whatwg-fetch": "2.0.3"
@@ -70,10 +86,18 @@
     "travis-deploy-once": "^4.4.1"
   },
   "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.json"
+      }
+    },
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}",
+      "src/**/*.{js,jsx,ts,tsx,mjs}",
       "!src/**/index.js",
-      "!src/tests/**"
+      "!src/**/index.ts",
+      "!src/**/container.ts",
+      "!src/tests/**",
+      "!src/core/models/**"
     ],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
@@ -82,13 +106,14 @@
       "<rootDir>/src/tests/setup.js"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
-      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
+      "<rootDir>/src/**/__tests__/**/*.{js,ts,tsx,jsx,mjs}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,ts,tsx,jsx,mjs}"
     ],
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.(ts|tsx)$": "ts-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
@@ -105,6 +130,8 @@
       "json",
       "web.jsx",
       "jsx",
+      "ts",
+      "tsx",
       "node"
     ]
   },
