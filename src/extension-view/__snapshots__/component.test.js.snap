@@ -1144,8 +1144,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150pxpx",
-                              "width": "320pxpx",
+                              "height": "300px",
+                              "width": "320px",
                             }
           }
 >
@@ -1305,8 +1305,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150pxpx",
-            "width": "320pxpx",
+            "height": "300px",
+            "width": "320px",
           },
         },
         "ref": null,
@@ -1390,8 +1390,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150pxpx",
-                                    "width": "320pxpx",
+                                    "height": "300px",
+                                    "width": "320px",
                                   }
             }
 >
@@ -1551,8 +1551,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150pxpx",
-              "width": "320pxpx",
+              "height": "300px",
+              "width": "320px",
             },
           },
           "ref": null,
@@ -2769,8 +2769,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150pxpx",
-                              "width": "320pxpx",
+                              "height": "300px",
+                              "width": "320px",
                             }
           }
 >
@@ -2932,8 +2932,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150pxpx",
-            "width": "320pxpx",
+            "height": "300px",
+            "width": "320px",
           },
         },
         "ref": null,
@@ -3019,8 +3019,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150pxpx",
-                                    "width": "320pxpx",
+                                    "height": "300px",
+                                    "width": "320px",
                                   }
             }
 >
@@ -3182,8 +3182,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150pxpx",
-              "width": "320pxpx",
+              "height": "300px",
+              "width": "320px",
             },
           },
           "ref": null,
@@ -3351,8 +3351,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150pxpx",
-                              "width": "320pxpx",
+                              "height": "300px",
+                              "width": "320px",
                             }
           }
 >
@@ -3514,8 +3514,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150pxpx",
-            "width": "320pxpx",
+            "height": "300px",
+            "width": "320px",
           },
         },
         "ref": null,
@@ -3601,8 +3601,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150pxpx",
-                                    "width": "320pxpx",
+                                    "height": "300px",
+                                    "width": "320px",
                                   }
             }
 >
@@ -3764,8 +3764,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150pxpx",
-              "width": "320pxpx",
+              "height": "300px",
+              "width": "320px",
             },
           },
           "ref": null,
@@ -3931,8 +3931,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150pxpx",
-                              "width": "320pxpx",
+                              "height": "300px",
+                              "width": "320px",
                             }
           }
 >
@@ -4092,8 +4092,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150pxpx",
-            "width": "320pxpx",
+            "height": "300px",
+            "width": "320px",
           },
         },
         "ref": null,
@@ -4177,8 +4177,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150pxpx",
-                                    "width": "320pxpx",
+                                    "height": "300px",
+                                    "width": "320px",
                                   }
             }
 >
@@ -4338,8 +4338,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150pxpx",
-              "width": "320pxpx",
+              "height": "300px",
+              "width": "320px",
             },
           },
           "ref": null,
@@ -4505,8 +4505,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150pxpx",
-                              "width": "320pxpx",
+                              "height": "300px",
+                              "width": "320px",
                             }
           }
 >
@@ -4666,8 +4666,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150pxpx",
-            "width": "320pxpx",
+            "height": "300px",
+            "width": "320px",
           },
         },
         "ref": null,
@@ -4751,8 +4751,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150pxpx",
-                                    "width": "320pxpx",
+                                    "height": "300px",
+                                    "width": "320px",
                                   }
             }
 >
@@ -4912,8 +4912,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150pxpx",
-              "width": "320pxpx",
+              "height": "300px",
+              "width": "320px",
             },
           },
           "ref": null,
@@ -5081,8 +5081,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150pxpx",
-                              "width": "320pxpx",
+                              "height": "300px",
+                              "width": "320px",
                             }
           }
 >
@@ -5244,8 +5244,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150pxpx",
-            "width": "320pxpx",
+            "height": "300px",
+            "width": "320px",
           },
         },
         "ref": null,
@@ -5331,8 +5331,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150pxpx",
-                                    "width": "320pxpx",
+                                    "height": "300px",
+                                    "width": "320px",
                                   }
             }
 >
@@ -5494,8 +5494,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150pxpx",
-              "width": "320pxpx",
+              "height": "300px",
+              "width": "320px",
             },
           },
           "ref": null,
@@ -5663,8 +5663,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150pxpx",
-                              "width": "320pxpx",
+                              "height": "300px",
+                              "width": "320px",
                             }
           }
 >
@@ -5826,8 +5826,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150pxpx",
-            "width": "320pxpx",
+            "height": "300px",
+            "width": "320px",
           },
         },
         "ref": null,
@@ -5913,8 +5913,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150pxpx",
-                                    "width": "320pxpx",
+                                    "height": "300px",
+                                    "width": "320px",
                                   }
             }
 >
@@ -6076,8 +6076,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150pxpx",
-              "width": "320pxpx",
+              "height": "300px",
+              "width": "320px",
             },
           },
           "ref": null,
@@ -6243,8 +6243,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150pxpx",
-                              "width": "320pxpx",
+                              "height": "300px",
+                              "width": "320px",
                             }
           }
 >
@@ -6404,8 +6404,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150pxpx",
-            "width": "320pxpx",
+            "height": "300px",
+            "width": "320px",
           },
         },
         "ref": null,
@@ -6489,8 +6489,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150pxpx",
-                                    "width": "320pxpx",
+                                    "height": "300px",
+                                    "width": "320px",
                                   }
             }
 >
@@ -6650,8 +6650,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150pxpx",
-              "width": "320pxpx",
+              "height": "300px",
+              "width": "320px",
             },
           },
           "ref": null,
@@ -6813,7 +6813,7 @@ ShallowWrapper {
           style={
                     Object {
                               "height": "300pxpx",
-                              "width": "320pxpx",
+                              "width": "320px",
                             }
           }
 >
@@ -6964,7 +6964,7 @@ ShallowWrapper {
           "className": "view",
           "style": Object {
             "height": "300pxpx",
-            "width": "320pxpx",
+            "width": "320px",
           },
         },
         "ref": null,
@@ -7044,7 +7044,7 @@ ShallowWrapper {
             style={
                         Object {
                                     "height": "300pxpx",
-                                    "width": "320pxpx",
+                                    "width": "320px",
                                   }
             }
 >
@@ -7195,7 +7195,7 @@ ShallowWrapper {
             "className": "view",
             "style": Object {
               "height": "300pxpx",
-              "width": "320pxpx",
+              "width": "320px",
             },
           },
           "ref": null,
@@ -7356,7 +7356,7 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "150px",
+                              "height": "300px",
                               "width": "320px",
                             }
           }
@@ -7517,7 +7517,7 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "150px",
+            "height": "300px",
             "width": "320px",
           },
         },
@@ -7602,7 +7602,7 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "150px",
+                                    "height": "300px",
                                     "width": "320px",
                                   }
             }
@@ -7763,7 +7763,7 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "150px",
+              "height": "300px",
               "width": "320px",
             },
           },

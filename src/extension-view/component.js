@@ -112,7 +112,10 @@ export class ExtensionView extends Component {
         }
         break;
       default:
-        extensionProps.viewStyles = PANEL_VIEW_DIMENSIONS;
+        extensionProps.viewStyles = {
+          height: PANEL_VIEW_DIMENSIONS.height + 'px',
+          width: PANEL_VIEW_DIMENSIONS.width + 'px',
+        }
         break;
     }
 
