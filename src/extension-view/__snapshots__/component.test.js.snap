@@ -1144,8 +1144,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "300px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -1305,8 +1305,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "300px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -1390,8 +1390,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "300px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -1551,8 +1551,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "300px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -2147,8 +2147,8 @@ ShallowWrapper {
     }
     frameSize={
         Object {
-            "height": 1,
-            "width": 1,
+            "height": "1px",
+            "width": "1px",
           }
     }
     id="0"
@@ -2162,7 +2162,7 @@ ShallowWrapper {
           }
     }
     role="Broadcaster"
-    type="videoOverlay"
+    type="video_overlay"
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -2193,8 +2193,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "1px",
-                              "width": "1px",
+                              "height": "1pxpx",
+                              "width": "1pxpx",
                             }
           }
 >
@@ -2242,7 +2242,7 @@ ShallowWrapper {
                     }
                     frameId="frameid-0"
                     mode="viewer"
-                    type="videoOverlay"
+                    type="video_overlay"
           />
 </div>,
       ],
@@ -2350,12 +2350,12 @@ ShallowWrapper {
             }
             frameId="frameid-0"
             mode="viewer"
-            type="videoOverlay"
+            type="video_overlay"
 />,
           "className": "view",
           "style": Object {
-            "height": "1px",
-            "width": "1px",
+            "height": "1pxpx",
+            "width": "1pxpx",
           },
         },
         "ref": null,
@@ -2405,7 +2405,7 @@ ShallowWrapper {
             },
             "frameId": "frameid-0",
             "mode": "viewer",
-            "type": "videoOverlay",
+            "type": "video_overlay",
           },
           "ref": null,
           "rendered": null,
@@ -2439,8 +2439,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "1px",
-                                    "width": "1px",
+                                    "height": "1pxpx",
+                                    "width": "1pxpx",
                                   }
             }
 >
@@ -2488,7 +2488,7 @@ ShallowWrapper {
                         }
                         frameId="frameid-0"
                         mode="viewer"
-                        type="videoOverlay"
+                        type="video_overlay"
             />
 </div>,
         ],
@@ -2596,12 +2596,12 @@ ShallowWrapper {
               }
               frameId="frameid-0"
               mode="viewer"
-              type="videoOverlay"
+              type="video_overlay"
 />,
             "className": "view",
             "style": Object {
-              "height": "1px",
-              "width": "1px",
+              "height": "1pxpx",
+              "width": "1pxpx",
             },
           },
           "ref": null,
@@ -2651,7 +2651,7 @@ ShallowWrapper {
               },
               "frameId": "frameid-0",
               "mode": "viewer",
-              "type": "videoOverlay",
+              "type": "video_overlay",
             },
             "ref": null,
             "rendered": null,
@@ -2721,8 +2721,8 @@ ShallowWrapper {
     }
     frameSize={
         Object {
-            "height": 1,
-            "width": 1,
+            "height": "1px",
+            "width": "1px",
           }
     }
     id="0"
@@ -2769,8 +2769,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "300px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -2932,8 +2932,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "300px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -3019,8 +3019,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "300px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -3182,8 +3182,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "300px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -3303,8 +3303,8 @@ ShallowWrapper {
     }
     frameSize={
         Object {
-            "height": 1,
-            "width": 1,
+            "height": "1px",
+            "width": "1px",
           }
     }
     id="0"
@@ -3351,8 +3351,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "300px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -3514,8 +3514,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "300px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -3601,8 +3601,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "300px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -3764,8 +3764,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "300px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -3885,8 +3885,8 @@ ShallowWrapper {
     }
     frameSize={
         Object {
-            "height": 1,
-            "width": 1,
+            "height": "1px",
+            "width": "1px",
           }
     }
     id="0"
@@ -3931,8 +3931,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "300px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -4092,8 +4092,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "300px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -4177,8 +4177,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "300px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -4338,8 +4338,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "300px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -4505,8 +4505,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "300px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -4666,8 +4666,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "300px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -4751,8 +4751,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "300px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -4912,8 +4912,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "300px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -5081,8 +5081,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "300px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -5244,8 +5244,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "300px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -5331,8 +5331,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "300px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -5494,8 +5494,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "300px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -5663,8 +5663,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "300px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -5826,8 +5826,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "300px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -5913,8 +5913,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "300px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -6076,8 +6076,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "300px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -6243,8 +6243,8 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "300px",
-                              "width": "320px",
+                              "height": "150pxpx",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -6404,8 +6404,8 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "300px",
-            "width": "320px",
+            "height": "150pxpx",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -6489,8 +6489,8 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "300px",
-                                    "width": "320px",
+                                    "height": "150pxpx",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -6650,8 +6650,8 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "300px",
-              "width": "320px",
+              "height": "150pxpx",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -6813,7 +6813,7 @@ ShallowWrapper {
           style={
                     Object {
                               "height": "300pxpx",
-                              "width": "320px",
+                              "width": "320pxpx",
                             }
           }
 >
@@ -6964,7 +6964,7 @@ ShallowWrapper {
           "className": "view",
           "style": Object {
             "height": "300pxpx",
-            "width": "320px",
+            "width": "320pxpx",
           },
         },
         "ref": null,
@@ -7044,7 +7044,7 @@ ShallowWrapper {
             style={
                         Object {
                                     "height": "300pxpx",
-                                    "width": "320px",
+                                    "width": "320pxpx",
                                   }
             }
 >
@@ -7195,7 +7195,7 @@ ShallowWrapper {
             "className": "view",
             "style": Object {
               "height": "300pxpx",
-              "width": "320px",
+              "width": "320pxpx",
             },
           },
           "ref": null,
@@ -7356,7 +7356,7 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "300px",
+                              "height": "150px",
                               "width": "320px",
                             }
           }
@@ -7517,7 +7517,7 @@ ShallowWrapper {
 />,
           "className": "view",
           "style": Object {
-            "height": "300px",
+            "height": "150px",
             "width": "320px",
           },
         },
@@ -7602,7 +7602,7 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "300px",
+                                    "height": "150px",
                                     "width": "320px",
                                   }
             }
@@ -7763,7 +7763,7 @@ ShallowWrapper {
 />,
             "className": "view",
             "style": Object {
-              "height": "300px",
+              "height": "150px",
               "width": "320px",
             },
           },

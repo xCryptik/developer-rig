@@ -10991,7 +10991,7 @@ ShallowWrapper {
                                                   img="overlay.png"
                                                   name="Overlay"
                                                   onChange={[Function]}
-                                                  value="videoOverlay"
+                                                  value="video_overlay"
                                         />
                                         <DivOption
                                                   checked={false}
@@ -11231,7 +11231,7 @@ ShallowWrapper {
                                                         img="overlay.png"
                                                         name="Overlay"
                                                         onChange={[Function]}
-                                                        value="videoOverlay"
+                                                        value="video_overlay"
                                           />
                                           <DivOption
                                                         checked={false}
@@ -11513,7 +11513,7 @@ ShallowWrapper {
                                                       img="overlay.png"
                                                       name="Overlay"
                                                       onChange={[Function]}
-                                                      value="videoOverlay"
+                                                      value="video_overlay"
                                     />
                                     <DivOption
                                                       checked={false}
@@ -11644,7 +11644,7 @@ ShallowWrapper {
                                             img="overlay.png"
                                             name="Overlay"
                                             onChange={[Function]}
-                                            value="videoOverlay"
+                                            value="video_overlay"
                       />
                       <DivOption
                                             checked={false}
@@ -11682,7 +11682,7 @@ ShallowWrapper {
                           img="overlay.png"
                           name="Overlay"
                           onChange={[Function]}
-                          value="videoOverlay"
+                          value="video_overlay"
 />,
                         <DivOption
                           checked={false}
@@ -11698,14 +11698,14 @@ ShallowWrapper {
                     "rendered": Array [
                       Object {
                         "instance": null,
-                        "key": "videoOverlay",
+                        "key": "video_overlay",
                         "nodeType": "class",
                         "props": Object {
                           "checked": true,
                           "img": "overlay.png",
                           "name": "Overlay",
                           "onChange": [Function],
-                          "value": "videoOverlay",
+                          "value": "video_overlay",
                         },
                         "ref": null,
                         "rendered": null,
@@ -12929,7 +12929,7 @@ ShallowWrapper {
                                                             img="overlay.png"
                                                             name="Overlay"
                                                             onChange={[Function]}
-                                                            value="videoOverlay"
+                                                            value="video_overlay"
                                                 />
                                                 <DivOption
                                                             checked={false}
@@ -13169,7 +13169,7 @@ ShallowWrapper {
                                                                 img="overlay.png"
                                                                 name="Overlay"
                                                                 onChange={[Function]}
-                                                                value="videoOverlay"
+                                                                value="video_overlay"
                                                 />
                                                 <DivOption
                                                                 checked={false}
@@ -13451,7 +13451,7 @@ ShallowWrapper {
                                                             img="overlay.png"
                                                             name="Overlay"
                                                             onChange={[Function]}
-                                                            value="videoOverlay"
+                                                            value="video_overlay"
                                         />
                                         <DivOption
                                                             checked={false}
@@ -13582,7 +13582,7 @@ ShallowWrapper {
                                                 img="overlay.png"
                                                 name="Overlay"
                                                 onChange={[Function]}
-                                                value="videoOverlay"
+                                                value="video_overlay"
                         />
                         <DivOption
                                                 checked={false}
@@ -13620,7 +13620,7 @@ ShallowWrapper {
                             img="overlay.png"
                             name="Overlay"
                             onChange={[Function]}
-                            value="videoOverlay"
+                            value="video_overlay"
 />,
                           <DivOption
                             checked={false}
@@ -13636,14 +13636,14 @@ ShallowWrapper {
                       "rendered": Array [
                         Object {
                           "instance": null,
-                          "key": "videoOverlay",
+                          "key": "video_overlay",
                           "nodeType": "class",
                           "props": Object {
                             "checked": true,
                             "img": "overlay.png",
                             "name": "Overlay",
                             "onChange": [Function],
-                            "value": "videoOverlay",
+                            "value": "video_overlay",
                           },
                           "ref": null,
                           "rendered": null,

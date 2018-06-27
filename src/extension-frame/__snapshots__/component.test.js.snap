@@ -436,7 +436,7 @@ ShallowWrapper {
     }
     frameId="0"
     mode="viewer"
-    type="videoOverlay"
+    type="video_overlay"
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -533,7 +533,7 @@ ShallowWrapper {
     }
     frameId="0"
     mode="viewer"
-    type="videoOverlay"
+    type="video_overlay"
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

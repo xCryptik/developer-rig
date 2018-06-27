@@ -6,20 +6,20 @@ import component from '../img/component.png';
 import componentOff from '../img/componentOff.png';
 import mobile from '../img/mobile.png';
 import mobileOff from '../img/mobileOff.png';
-const { ExtensionViewType, ExtensionPlatform  } = window['extension-coordinator'];
+const { ExtensionAnchor, ExtensionPlatform } = window['extension-coordinator'];
 
 const imgMap = {};
-imgMap[ExtensionViewType.VideoOverlay] = {
+imgMap[ExtensionAnchor.Overlay] = {
   on: overlay,
   off: overlayOff,
 };
 
-imgMap[ExtensionViewType.Panel] = {
+imgMap[ExtensionAnchor.Panel] = {
   on: panel,
   off: panelOff,
 };
 
-imgMap[ExtensionViewType.Component] = {
+imgMap[ExtensionAnchor.Component] = {
   on: component,
   off: componentOff,
 };

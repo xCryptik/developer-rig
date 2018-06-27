@@ -4,18 +4,18 @@ import { mockFetchForManifest, mockFetchForUserInfo } from '../tests/mocks';
 import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG } from '../constants/nav-items';
 import { Rig } from './component';
 import { store } from '../core/rig';
-import { ExtensionViewTypes } from '../constants/extension-types';
+import { ExtensionAnchors } from '../constants/extension-types';
 import { ViewerTypes } from '../constants/viewer-types';
-const { ExtensionMode, ExtensionViewType , ExtensionPlatform } = window['extension-coordinator'];
+const { ExtensionMode, ExtensionAnchor, ExtensionViewType } = window['extension-coordinator'];
 
 describe('<Rig />', () => {
   const setupShallow = setupShallowTest(Rig, () => { });
   const setupViewsForTest = numViews => {
-    const testViews = createViewsForTest(numViews, ExtensionViewTypes[ExtensionViewType.Panel], ViewerTypes.LoggedOut);
+    const testViews = createViewsForTest(numViews, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut);
     localStorage.setItem('extensionViews', JSON.stringify(testViews));
   };
   const setupComponentViewsForTest = numViews => {
-    const testViews = createViewsForTest(numViews, ExtensionViewTypes[ExtensionViewType.Component], ViewerTypes.LoggedOut);
+    const testViews = createViewsForTest(numViews, ExtensionAnchors[ExtensionAnchor.Component], ViewerTypes.LoggedOut);
     localStorage.setItem('extensionViews', JSON.stringify(testViews));
   };
 
@@ -51,7 +51,7 @@ describe('<Rig />', () => {
 
   it('gets extension views from local storage correctly', () => {
     setupViewsForTest(1);
-    const testViews = createViewsForTest(1, ExtensionViewTypes[ExtensionViewType.Panel], ViewerTypes.LoggedOut);
+    const testViews = createViewsForTest(1, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut);
     const { wrapper } = setupShallow();
     expect(wrapper.instance()._getExtensionViews()).toEqual(testViews);
   });
@@ -151,7 +151,7 @@ describe('<Rig />', () => {
   });
 
   it('gets the correct views when _getExtensionViews invoked', () => {
-    const testViews = createViewsForTest(1, ExtensionViewTypes[ExtensionViewType.Panel], ViewerTypes.LoggedOut);
+    const testViews = createViewsForTest(1, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut);
     setupViewsForTest(1);
     const { wrapper } = setupShallow();
 
@@ -159,12 +159,12 @@ describe('<Rig />', () => {
   });
 
   it('sets views in local storage correctly when _pushExtensionViews invoked', () => {
-    const testViews = createViewsForTest(1, ExtensionViewTypes[ExtensionViewType.Panel], ViewerTypes.LoggedOut);
+    const testViews = createViewsForTest(1, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut);
     setupViewsForTest(1);
     const { wrapper } = setupShallow();
     expect(wrapper.instance().state.extensionViews).toEqual(testViews);
 
-    wrapper.instance().state.extensionViews.push(createViewsForTest(1,ExtensionViewTypes[ExtensionViewType.Panel], ViewerTypes.LoggedOut));
+    wrapper.instance().state.extensionViews.push(createViewsForTest(1,ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut));
     wrapper.instance()._pushExtensionViews(wrapper.instance().state.extensionViews);
   });
 
@@ -192,7 +192,7 @@ describe('<Rig />', () => {
           width: 0,
           height: 0,
           frameSize: 'iPhone X (375x822)',
-          extensionViewType: ExtensionPlatform.Mobile
+          extensionViewType: ExtensionViewType.Mobile
         }
       };
       const expectedMobileFrameSize = {
@@ -210,7 +210,7 @@ describe('<Rig />', () => {
           width: 0,
           height: 0,
           frameSize: '640x480',
-          extensionViewType: ExtensionViewType.VideoOverlay
+          extensionViewType: ExtensionViewType.Overlay
         }
       }
       const expectedOverlayFrameSize = {
@@ -228,7 +228,7 @@ describe('<Rig />', () => {
           width: 100,
           height: 100,
           frameSize: 'Custom',
-          extensionViewType: ExtensionViewType.VideoOverlay
+          extensionViewType: ExtensionViewType.Overlay
         }
       }
       const expectedOverlayFrameSize = {

@@ -1,9 +1,9 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { ExtensionForTest, createViewsForTest } from '../tests/constants/extension';
 import { ExtensionViewContainer } from './component';
-import { ExtensionViewTypes } from '../constants/extension-types';
+import { ExtensionAnchors } from '../constants/extension-types';
 import { ViewerTypes } from '../constants/viewer-types';
-const { ExtensionMode, ExtensionViewType } = window['extension-coordinator'];
+const { ExtensionMode, ExtensionAnchor } = window['extension-coordinator'];
 
 describe('<ExtensionViewContainer />', () => {
   const setupShallow = setupShallowTest(ExtensionViewContainer, () => ({
@@ -28,7 +28,7 @@ describe('<ExtensionViewContainer />', () => {
     });
     it('has the correct number of views', () => {
       const { wrapper } = setupShallow({
-        extensionViews: createViewsForTest(2, ExtensionViewTypes[ExtensionViewType.Panel], ViewerTypes.LoggedOut)
+        extensionViews: createViewsForTest(2, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut)
       });
       expect(wrapper.find('ExtensionView')).toHaveLength(2);
     });

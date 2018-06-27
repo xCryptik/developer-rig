@@ -2,14 +2,14 @@ import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { setupMountTest } from '../tests/enzyme-util/mount';
 import { ExtensionForTest } from '../tests/constants/extension';
 import { ExtensionFrame } from './component';
-const { ExtensionViewType, ExtensionMode, ExtensionPlatform  } = window['extension-coordinator'];
+const { ExtensionViewType, ExtensionAnchor, ExtensionMode } = window['extension-coordinator'];
 
 describe('<ExtensionFrame />', () => {
   const setupShallow = setupShallowTest(ExtensionFrame, () => ({
     className: 'view',
     frameId: '0',
     extension: ExtensionForTest,
-    type: ExtensionViewType.Panel,
+    type: ExtensionAnchor.Panel,
     mode: ExtensionMode.Viewer,
   }));
 
@@ -17,7 +17,7 @@ describe('<ExtensionFrame />', () => {
     className: 'view',
     frameId: '0',
     extension: ExtensionForTest,
-    type: ExtensionViewType.Panel,
+    type: ExtensionAnchor.Panel,
     mode: ExtensionMode.Viewer,
   }));
 
@@ -79,7 +79,7 @@ describe('<ExtensionFrame />', () => {
 
   it('onload postMessages data correctly when platform is mobile', () => {
     const { wrapper } = setupMount({
-      type: ExtensionPlatform.Mobile
+      type: ExtensionViewType.Mobile
     });
 
     const mockIframeRef = {
@@ -160,7 +160,7 @@ describe('<ExtensionFrame />', () => {
   describe('when in panel mode', () => {
     it('renders correctly', () => {
       const { wrapper } = setupShallow({
-        type: ExtensionViewType.Panel,
+        type: ExtensionAnchor.Panel,
         mode: ExtensionMode.Viewer,
       });
       expect(wrapper).toMatchSnapshot();
@@ -170,7 +170,7 @@ describe('<ExtensionFrame />', () => {
   describe('when in video overlay mode', () => {
     it('renders correctly', () => {
       const { wrapper } = setupShallow({
-        type: ExtensionViewType.VideoOverlay,
+        type: ExtensionAnchor.Overlay,
         mode: ExtensionMode.Viewer,
       });
       expect(wrapper).toMatchSnapshot();
@@ -180,7 +180,7 @@ describe('<ExtensionFrame />', () => {
   describe('when in video overlay mode', () => {
     it('renders correctly', () => {
       const { wrapper } = setupShallow({
-        type: ExtensionViewType.VideoOverlay,
+        type: ExtensionAnchor.Overlay,
         mode: ExtensionMode.Viewer,
       });
       expect(wrapper).toMatchSnapshot();

@@ -37,8 +37,7 @@ export function mockGlobals() {
     Panel: 'panel',
     VideoOverlay: 'videoOverlay',
   };
-  
-  /** DEPRECATED */
+
   coordinator.ExtensionPlatform = {
     Web: 'web',
     Mobile: 'mobile'
@@ -50,7 +49,6 @@ export function mockGlobals() {
     }
   };
 
-  /** DEPRECATED */
   coordinator.ExtensionAnchor = {
     Panel: 'panel',
     Overlay: 'video_overlay',

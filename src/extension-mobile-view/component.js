@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ExtensionFrame } from '../extension-frame';
 import { MobileOrientation } from '../constants/mobile';
-const { ExtensionMode, ExtensionPlatform  } = window['extension-coordinator'];
+const { ExtensionMode, ExtensionViewType } = window['extension-coordinator'];
 
 const ViewBackgroundColor = '#322F37';
 const AbsolutePosition = 'absolute';
@@ -58,7 +58,7 @@ export class ExtensionMobileView extends Component {
             className="view"
             frameId={`frameid-${this.props.id}`}
             extension={this.props.extension}
-            type={ExtensionPlatform.Mobile}
+            type={ExtensionViewType.Mobile}
             mode={ExtensionMode.Viewer}
           />
         </div>
