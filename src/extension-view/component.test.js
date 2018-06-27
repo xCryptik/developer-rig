@@ -3,7 +3,7 @@ import { ExtensionView } from './component';
 import { ViewerTypes } from '../constants/viewer-types';
 import { ExtensionForTest } from '../tests/constants/extension';
 import { MobileOrientation } from '../constants/mobile';
-const { ExtensionAnchor, ExtensionMode, ExtensionViewType, ExtensionPlatform} = window['extension-coordinator'];
+const { ExtensionMode, ExtensionViewType, ExtensionPlatform  } = window['extension-coordinator'];
 
 const DeleteButtonSelector = '.view__close_button';
 
@@ -11,7 +11,7 @@ describe('<ExtensionView />', () => {
   const setupShallow = setupShallowTest(ExtensionView, () => ({
     id: '0',
     extension: ExtensionForTest,
-    type: ExtensionAnchor.Panel,
+    type: ExtensionViewType.Panel,
     role: ViewerTypes.Broadcaster,
     mode: 'viewer',
     linked: false,
@@ -85,7 +85,7 @@ describe('<ExtensionView />', () => {
   describe('component mode views', () => {
     it('renders component view when in component mode', () => {
       const { wrapper } = setupShallow({
-        type: ExtensionAnchor.Component,
+        type: ExtensionViewType.Component,
       });
       expect(wrapper).toMatchSnapshot();
       expect(wrapper.find('ExtensionComponentView').length).toBe(1);
@@ -93,7 +93,7 @@ describe('<ExtensionView />', () => {
 
     it('brings up the edit dialog when edit is clicked', () => {
       const { wrapper } = setupShallow({
-        type: ExtensionAnchor.Component,
+        type: ExtensionViewType.Component,
       });
 
       wrapper.simulate('mouseEnter');
@@ -158,10 +158,10 @@ describe('<ExtensionView />', () => {
   describe('overlay mode views', () => {
     it('renders correctly in overlay mode as a Broadcaster', () => {
       const { wrapper } = setupShallow({
-        type: ExtensionAnchor.Overlay,
+        type: ExtensionViewType.VideoOverlay,
         frameSize: {
-          height: "1px",
-          width: "1px"
+          height: 1,
+          width: 1
         }
       });
       expect(wrapper).toMatchSnapshot();
@@ -172,8 +172,8 @@ describe('<ExtensionView />', () => {
         role: ViewerTypes.LoggedIn,
         linked: false,
         frameSize: {
-          height: "1px",
-          width: "1px"
+          height: 1,
+          width: 1
         }
       });
       expect(wrapper).toMatchSnapshot();
@@ -184,8 +184,8 @@ describe('<ExtensionView />', () => {
         role: ViewerTypes.LoggedIn,
         linked: true,
         frameSize: {
-          height: "1px",
-          width: "1px"
+          height: 1,
+          width: 1
         }
       });
       expect(wrapper).toMatchSnapshot();
@@ -195,8 +195,8 @@ describe('<ExtensionView />', () => {
       const { wrapper } = setupShallow({
         role: ViewerTypes.LoggedOut,
         frameSize: {
-          height: "1px",
-          width: "1px"
+          height: 1,
+          width: 1
         }
       });
       expect(wrapper).toMatchSnapshot();

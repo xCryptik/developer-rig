@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './component.sass';
-import { ExtensionAnchors, DEFAULT_EXTENSION_TYPE } from '../constants/extension-types.js'
+import { ExtensionViewTypes, DEFAULT_EXTENSION_TYPE } from '../constants/extension-types.js'
 import { OverlaySizes, DEFAULT_OVERLAY_SIZE, DEFAULT_CUSTOM_DIMENSIONS } from '../constants/overlay-sizes.js'
 import { ViewerTypes, DEFAULT_VIEWER_TYPE } from '../constants/viewer-types.js'
 import { IdentityOptions, DEFAULT_IDENTITY_OPTION } from '../constants/identity-options';
@@ -10,7 +10,7 @@ import { RadioOption } from './radio-option';
 import { DivOption } from './div-option';
 import closeButton from '../img/close_icon.png';
 import { MobileOrientation, DefaultMobileOrientation, MobileSizes } from '../constants/mobile';
-const { ExtensionAnchor, ExtensionPlatform } = window['extension-coordinator'];
+const { ExtensionViewType, ExtensionPlatform  } = window['extension-coordinator'];
 
 export class ExtensionViewDialog extends Component {
   constructor(props) {
@@ -53,7 +53,7 @@ export class ExtensionViewDialog extends Component {
       return <DivOption
         key={key}
         img={this.state.extensionViewType === key ? ViewTypeImages[key].on : ViewTypeImages[key].off }
-        name={ExtensionAnchors[key]}
+        name={ExtensionViewTypes[key]}
         value={key}
         onChange={this.onChange}
         checked={(key === this.state.extensionViewType || onlyOneOption)} />
@@ -127,7 +127,7 @@ export class ExtensionViewDialog extends Component {
             <div className="type-and-size-container__size-title">
               <div className="size-title__size-subcontainer">
 
-                {(this.state.extensionViewType === ExtensionAnchor.Overlay) &&
+                {(this.state.extensionViewType === ExtensionViewType.VideoOverlay) &&
                 <div className="size-title__size-subcontainer">
                   <div className="size-subcontainer__presets">
                     <div className="type-and-size-container__type-title">
@@ -190,7 +190,7 @@ export class ExtensionViewDialog extends Component {
                 </div>
                 }
 
-                {(this.state.extensionViewType === ExtensionAnchor.Component) &&
+                {(this.state.extensionViewType === ExtensionViewType.Component) &&
                   <div className="size-subcontainer__presets">
                     <div className="type-and-size-container__type-title">
                       Player Size
@@ -215,7 +215,7 @@ export class ExtensionViewDialog extends Component {
                   </div>
                 </div>}
 
-                {(this.state.extensionViewType === ExtensionAnchor.Component) &&
+                {(this.state.extensionViewType === ExtensionViewType.Component) &&
                   <div className="size-subcontainer__presets">
                     <div className="type-and-size-container__type-title">
                       Position (%)
@@ -265,7 +265,7 @@ export class ExtensionViewDialog extends Component {
   }
 
   _getSupportedViews() {
-    return Object.keys(ExtensionAnchors).filter(anchorS => {
+    return Object.keys(ExtensionViewTypes).filter(anchorS => {
       const anchorC = anchorS.replace(/_\w/g, (m) => m[1].toUpperCase());
       return this.props.extensionViews[anchorC];
     });

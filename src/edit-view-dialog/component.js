@@ -5,7 +5,7 @@ import './component.sass';
 import { RadioOption } from '../extension-view-dialog/radio-option';
 import { DefaultMobileOrientation } from '../constants/mobile';
 import { MobileOrientation} from '../constants/mobile';
-const { ExtensionViewType } = window['extension-coordinator'];
+const { ExtensionViewType , ExtensionPlatform } = window['extension-coordinator'];
 
 export class EditViewDialog extends Component {
   constructor(args) {
@@ -49,7 +49,7 @@ export class EditViewDialog extends Component {
       case ExtensionViewType.Component:
         editClass = 'edit-view__dialog-component';
         break;
-      case ExtensionViewType.Mobile:
+      case ExtensionPlatform.Mobile:
         editClass = 'edit-view__dialog-mobile';
         break;
       default:
@@ -92,7 +92,7 @@ export class EditViewDialog extends Component {
               </div>
             </div>}
 
-            {this.state.type === ExtensionViewType.Mobile &&
+            {this.state.type === ExtensionPlatform.Mobile &&
             <div className="size-title__size-subcontainer">
               <div className="size-subcontainer__presets">
                 <div className="type-and-size-container__type-title">

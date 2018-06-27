@@ -3,7 +3,7 @@ import { ExtensionViewDialog } from './component';
 import { DEFAULT_EXTENSION_TYPE } from '../constants/extension-types.js'
 import { DEFAULT_OVERLAY_SIZE } from '../constants/overlay-sizes.js'
 import { ViewerTypes, DEFAULT_VIEWER_TYPE } from '../constants/viewer-types.js'
-const { ExtensionViewType } = window['extension-coordinator'];
+const { ExtensionViewType, ExtensionPlatform  } = window['extension-coordinator'];
 
 describe('<ExtensionViewDialog />', () => {
   const setupShallow = setupShallowTest(ExtensionViewDialog, () => ({
@@ -84,7 +84,7 @@ describe('<ExtensionViewDialog />', () => {
     });
 
     it('has the correct selected UI elements', () => {
-      expect(wrapper.find('DivOption[value="video_overlay"][checked=true]')).toHaveLength(1);
+      expect(wrapper.find('DivOption[value="videoOverlay"][checked=true]')).toHaveLength(1);
       expect(wrapper.find('DivOption[checked=false]')).toHaveLength(1);
 
       expect(wrapper.find('RadioOption[value="640x480"][checked=true]')).toHaveLength(1);
@@ -164,7 +164,7 @@ describe('<ExtensionViewDialog />', () => {
     });
 
     it('has the correct default state', () => {
-      expect(wrapper.state('extensionViewType')).toBe(ExtensionViewType.Mobile);
+      expect(wrapper.state('extensionViewType')).toBe(ExtensionPlatform.Mobile);
       expect(wrapper.state('frameSize')).toBe(DEFAULT_OVERLAY_SIZE);
       expect(wrapper.state('viewerType')).toBe(DEFAULT_VIEWER_TYPE);
     });

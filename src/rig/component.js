@@ -17,7 +17,7 @@ import { RIG_ROLE } from '../constants/rig';
 import { userLogin } from '../core/actions/user-session';
 import { saveManifest } from '../core/actions/extensions';
 import { store } from '../core/rig';
-const { ExtensionMode, ExtensionViewType } = window['extension-coordinator'];
+const { ExtensionMode, ExtensionPlatform  } = window['extension-coordinator'];
 
 export class Rig extends Component {
   constructor(props) {
@@ -153,7 +153,7 @@ export class Rig extends Component {
         height: dialogRef.state.height
       };
     }
-    if (dialogRef.state.extensionViewType === ExtensionViewType.Mobile) {
+    if (dialogRef.state.extensionViewType === ExtensionPlatform.Mobile) {
       return MobileSizes[dialogRef.state.frameSize];
     }
 

@@ -10,5 +10,5 @@ export const CONFIG_VIEW_DIMENSIONS = Object.freeze({
 
 export const PANEL_VIEW_DIMENSIONS = Object.freeze({
   width: "320px",
-  height: "150px",
+  height: "300px",
 });

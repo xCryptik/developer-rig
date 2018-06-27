@@ -3,7 +3,7 @@ import { EditViewDialog } from './component';
 import { ViewerTypes } from '../constants/viewer-types';
 import { createViewsForTest } from '../tests/constants/extension';
 import { MobileOrientation } from '../constants/mobile';
-const { ExtensionViewType } = window['extension-coordinator'];
+const { ExtensionViewType , ExtensionPlatform  } = window['extension-coordinator'];
 
 describe('<EditViewDialog />', () => {
   const setupShallow = setupShallowTest(EditViewDialog, () => ({
@@ -62,7 +62,7 @@ describe('<EditViewDialog />', () => {
   it('component state changes orientation correctly', () => {
     const { wrapper } = setupShallow({
       idToEdit: '1',
-      views: createViewsForTest(2, ExtensionViewType.Mobile, ViewerTypes.LoggedOut, { orientation: MobileOrientation.Portrait}),
+      views: createViewsForTest(2, ExtensionPlatform.Mobile, ViewerTypes.LoggedOut, { orientation: MobileOrientation.Portrait}),
     });
 
     let inputs = wrapper.find('RadioOption');

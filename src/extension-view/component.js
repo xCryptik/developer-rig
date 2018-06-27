@@ -9,7 +9,7 @@ import closeButton from '../img/close_icon.png';
 import { ExtensionComponentView } from '../extension-component-view';
 import { ExtensionMobileView } from '../extension-mobile-view/component';
 
-const { ExtensionAnchor, ExtensionMode, ExtensionViewType, ExtensionPlatform} = window['extension-coordinator'];
+const { ExtensionViewType, ExtensionPlatform  } = window['extension-coordinator'];
 
 export class ExtensionView extends Component {
   constructor(props) {
@@ -35,7 +35,7 @@ export class ExtensionView extends Component {
   renderView(extensionProps) {
     let view = null;
     switch (this.props.type) {
-      case ExtensionAnchor.Component:
+      case ExtensionViewType.Component:
         view = (<ExtensionComponentView
           id={`component-${this.props.id}`}
           className="view"
@@ -45,7 +45,7 @@ export class ExtensionView extends Component {
           position={this.props.position}
         />);
         break;
-      case ExtensionViewType.Mobile:
+      case ExtensionPlatform.Mobile:
         view = (<ExtensionMobileView
           id={`mobile-${this.props.id}`}
           className="view"
@@ -79,43 +79,42 @@ export class ExtensionView extends Component {
   }
 
   _isEditable() {
-    return this.props.type === ExtensionAnchor.Component || this.props.type === ExtensionPlatform.Mobile;
+    return this.props.type === ExtensionViewType.Component || this.props.type === ExtensionPlatform.Mobile;
   }
 
   render() {
     const extensionProps = {}
     let panelHeight = PANEL_VIEW_DIMENSIONS.height;
     if (this.props.extension.views.panel && this.props.extension.views.panel.height) {
-      panelHeight = this.props.extension.views.panel.height;
+      panelHeight = this.props.extension.views.panel.height+'px';
     }
     switch(this.props.type) {
-      case ExtensionAnchor.Panel:
+      case ExtensionViewType.Panel:
         extensionProps.viewStyles = {
-          height: panelHeight + 'px',
-          width: PANEL_VIEW_DIMENSIONS.width + 'px',
+          height: panelHeight,
+          width: PANEL_VIEW_DIMENSIONS.width,
         }
         break;
-      case ExtensionAnchor.Overlay:
+      case ExtensionViewType.VideoOverlay:
         extensionProps.viewStyles = {
           width: this.props.frameSize.width + 'px',
           height: this.props.frameSize.height + 'px'
         };
         break;
-      case ExtensionMode.Config:
+      case ExtensionViewType.Config:
         extensionProps.viewStyles = CONFIG_VIEW_DIMENSIONS;
         extensionProps.viewWrapperStyles = CONFIG_VIEW_WRAPPER_DIMENSIONS;
         break;
       case ExtensionViewType.LiveConfig:
         extensionProps.viewStyles = {
-          height: panelHeight + 'px',
-          width: PANEL_VIEW_DIMENSIONS.width + 'px',
+          height: panelHeight,
+          width: PANEL_VIEW_DIMENSIONS.width,
         }
         break;
       default:
         extensionProps.viewStyles = PANEL_VIEW_DIMENSIONS;
         break;
     }
-
     return (
       <div
         className={'view__wrapper'}

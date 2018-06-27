@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './component.sass';
 
-const { ExtensionPlatform, ExtensionViewType} = window['extension-coordinator'];
+const { ExtensionPlatform } = window['extension-coordinator'];
 
 const IFRAME_CLASS = 'extension-frame';
 const EXTENSION_FRAME_INIT_ACTION = 'extension-frame-init';
@@ -36,7 +36,7 @@ export class ExtensionFrame extends Component {
       loginId: null,
       extension: this.props.extension,
       mode: this.props.mode,
-      platform: (this.props.type === ExtensionViewType.Mobile) ? ExtensionPlatform.Mobile : ExtensionPlatform.Web,
+      platform: (this.props.type === ExtensionPlatform.Mobile) ? ExtensionPlatform.Mobile : ExtensionPlatform.Web,
       trackingProperties: {},
       iframeClassName: IFRAME_CLASS,
     }
