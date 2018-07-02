@@ -50,7 +50,7 @@ export function fetchExtensionManifest(host, clientId, version, jwt, onSuccess, 
   return fetch(api, {
     method: 'POST',
     headers: {
-      'Authorization': 'Bearer ' +  jwt,
+      'Authorization': 'Bearer ' + jwt,
       'Accept': 'application/vnd.twitchtv.v5+json',
       'Content-Type': 'application/json',
       'Client-ID': clientId,
@@ -69,18 +69,16 @@ export function fetchExtensionManifest(host, clientId, version, jwt, onSuccess, 
       ]
     }),
     referrer: 'Twitch Developer Rig',
-  }).then((response) => response.json())
+  }).then((response) =>  response.json())
     .then((data) => {
       if (data.extensions && data.extensions.length > 0) {
         const manifest = data.extensions[0];
         manifest.views = convertViews(manifest.views);
-        onSuccess({manifest: manifest, error: ''});
+        onSuccess({ manifest: manifest, error: '' });
       } else {
         onError("Unable to retrieve extension manifest, please verify EXT_OWNER_NAME and EXT_SECRET");
       }
-  }).catch((error) => {
-      onError(error);
-  });
+    });
 }
 
 export function fetchManifest(host, clientId, username, version, channelId, secret, onSuccess, onError) {
@@ -101,20 +99,31 @@ export function fetchManifest(host, clientId, username, version, channelId, secr
       'Client-ID': clientId,
     },
     referrer: 'Twitch Developer Rig',
-  }).then((response) => response.json())
-    .then((respJson) => {
-      const data = respJson.data;
-      if (!data && data.length === 0) {
-        onError('Unable to verify the id for username: ' + username);
-        return null;
-      }
-      const userId = data[0]['id'];
-      onSuccess({userId: userId});
+  }).then((response) => {
+    if (response.status >= 400 && response.status < 500) {
+      onError(`Unable to authorize for user ${username} and client id ${clientId}`)
+      return null;
+    }
+    if (response.status >= 500) {
+      onError('Unable to hit Twitch API to initialize the rig. Try again later.');
+      return null;
+    }
+    return response.json()
+  }).then((respJson) => {
+    if (!respJson) {
+      return null;
+    }
 
-      const token = createSignedToken(RIG_ROLE, '', userId, channelId, secret);
-      return fetchExtensionManifest(host, clientId, version, token, onSuccess, onError);
-  }).catch((error) => {
-      onError(error);
+    const data = respJson.data;
+    if (!data && data.length === 0) {
+      onError('Unable to verify the id for username: ' + username);
+      return null;
+    }
+    const userId = data[0]['id'];
+    onSuccess({ userId: userId });
+
+    const token = createSignedToken(RIG_ROLE, '', userId, channelId, secret);
+    return fetchExtensionManifest(host, clientId, version, token, onSuccess, onError);
   });
 }
 

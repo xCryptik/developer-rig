@@ -39,13 +39,6 @@ describe('api', () => {
         expect(data).toBeDefined();
       });
     });
-
-    it('should error out if data missing', async function () {
-      global.fetch = jest.fn().mockImplementation(mockFetchError);
-      const onError = jest.fn();
-      await fetchExtensionManifest('127.0.0.1:8080', 'clientId', 'version', 'jwt', jest.fn(), onError);
-      expect(onError).toHaveBeenCalled();
-    });
   });
 
   describe('fetchUserInfo', () => {
