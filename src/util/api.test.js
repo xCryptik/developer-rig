@@ -1,9 +1,10 @@
-import { convertViews, fetchManifest, fetchExtensionManifest, fetchUserInfo } from './api';
+import { convertViews, fetchManifest, fetchExtensionManifest, fetchUserInfo, fetchProducts } from './api';
 import {
   mockFetchError,
   mockFetchForExtensionManifest,
   mockFetchForManifest,
   mockFetchForUserInfo,
+  mockFetchProducts
 } from '../tests/mocks';
 
 describe('api', () => {
@@ -91,6 +92,33 @@ describe('api', () => {
       expect(results.videoOverlay.viewerUrl).toBe('test');
       expect(results.panel.viewerUrl).toBe('test');
       expect(results.hidden.viewerUrl).toBe('test');
+    });
+  });
+
+  describe('fetchProducts', () => {
+    beforeEach(function() {
+      global.fetch = jest.fn().mockImplementation(mockFetchProducts);
+    });
+
+    it('should return products', async function () {
+      await fetchProducts('127.0.0.1:8080', 'clientId', (products) => {
+        expect(products).toBeDefined();
+      }, jest.fn());
+    });
+
+    it('should serialize products correctly', async function () {
+      await fetchProducts('127.0.0.1:8080', 'clientId', (products) => {
+        expect(products).toHaveLength(2);
+        products.forEach(product => {
+          expect(product).toMatchObject({
+            sku: expect.any(String),
+            displayName: expect.any(String),
+            amount: expect.stringMatching(/[1-9]\d*/),
+            inDevelopment: expect.stringMatching(/true|false/),
+            broadcast: expect.stringMatching(/true|false/)
+          });
+        });
+      }, jest.fn());
     });
   });
 });

@@ -137,3 +137,77 @@ export function fetchUserInfo(host, accessToken, onSuccess, onError) {
       onError(error);
     });
 }
+
+export function fetchProducts(host, clientId, token, onSuccess, onError) {
+  const api = 'https://' + host + '/v5/bits/extensions/twitch.ext.' + clientId + '/products?includeAll=true';
+  
+  fetch(api, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/vnd.twitchtv.v5+json',
+      'Content-Type': 'application/json',
+      'Authorization': 'OAuth ' + token,
+      'Client-ID': clientId,
+    },
+    referrer: 'Twitch Developer Rig',
+  }).then(response => response.json())
+    .then(respJson => {
+      if (respJson.error) {
+        onError(respJson.message);
+        return null;
+      }
+      const products = respJson.products;
+      if (!products) {
+        onError('Unable to get products for clientId: ' + clientId);
+        return null;
+      } 
+      const serializedProducts = products.map(p => {
+        let product = {
+          sku: p.sku || '',
+          displayName: p.displayName || '',
+          amount: p.cost ? p.cost.amount.toString() : '1',
+          inDevelopment: p.inDevelopment ? 'true' : 'false',
+          broadcast: p.broadcast ? 'true' : 'false',
+          deprecated: p.expiration ? Date.parse(p.expiration) <= Date.now() : false,
+        };
+
+        return product;
+      });
+      onSuccess(serializedProducts);
+    }).catch(error => {
+      onError(error);
+    });
+}
+
+export function saveProduct(host, clientId, token, product, index, onSuccess, onError) {
+  const api = 'https://' + host + '/v5/bits/extensions/twitch.ext.' + clientId + '/products/put';
+  const deserializedProduct = {
+    domain: 'twitch.ext.' + clientId,
+    sku: product.sku,
+    displayName: product.displayName,
+    cost: {
+      amount: product.amount,
+      type: 'bits'
+    },
+    inDevelopment: product.inDevelopment === 'true' ? true : false,
+    broadcast: product.broadcast === 'true' ? true : false,
+    expiration: product.deprecated ? new Date(Date.now()).toISOString() : null
+  };
+
+  fetch(api, {
+    method: 'POST',
+    body: JSON.stringify({ product: deserializedProduct }),
+    headers: {
+      'Accept': 'application/vnd.twitchtv.v5+json',
+      'Content-Type': 'application/json',
+      'Authorization': 'OAuth ' + token,
+      'Client-ID': clientId,
+    },
+    referrer: 'Twitch Developer Rig',
+  }).then(response => response.json())
+    .then(respJson => {
+      onSuccess(index);
+    }).catch(error => {
+      onError(index, error);
+    });
+}

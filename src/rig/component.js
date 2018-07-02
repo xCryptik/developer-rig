@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import './component.sass'; 
 import { RigNav } from '../rig-nav';
 import { ExtensionViewContainer } from '../extension-view-container';
 import { ExtensionRigConsole } from '../console';
 import { ExtensionViewDialog } from '../extension-view-dialog';
 import { RigConfigurationsDialog } from '../rig-configurations-dialog';
 import { EditViewDialog } from '../edit-view-dialog';
+import { ProductManagementViewContainer } from '../product-management-container';
 import { createExtensionObject } from '../util/extension';
 import { createSignedToken } from '../util/token';
 import { fetchManifest, fetchExtensionManifest, fetchUserInfo } from '../util/api';
-import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG, CONFIGURATIONS } from '../constants/nav-items'
+import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG, CONFIGURATIONS, PRODUCT_MANAGEMENT } from '../constants/nav-items'
 import { ViewerTypes } from '../constants/viewer-types';
 import { OverlaySizes } from '../constants/overlay-sizes';
 import { IdentityOptions } from '../constants/identity-options';
@@ -35,6 +37,7 @@ export class Rig extends Component {
       showExtensionsView: false,
       showConfigurations: false,
       showEditView: false,
+      showProductManagementView: false,
       idToEdit: 0,
       selectedView: EXTENSION_VIEWS,
       extension: {},
@@ -113,6 +116,12 @@ export class Rig extends Component {
         this.state.userName,
         this.state.channelId,
         this.state.secret),
+    });
+  }
+
+  openProductManagementHandler = () => {
+    this.setState({
+      selectedView: PRODUCT_MANAGEMENT,
     });
   }
 
@@ -205,16 +214,8 @@ export class Rig extends Component {
   }
 
   render() {
-    return (
+    let view = (
       <div>
-        <RigNav
-          ref="rigNav"
-          selectedView={this.state.selectedView}
-          viewerHandler={this.viewerHandler}
-          configHandler={this.configHandler}
-          liveConfigHandler={this.liveConfigHandler}
-          openConfigurationsHandler={this.openConfigurationsHandler}
-          error={this.state.error}/>
         <ExtensionViewContainer
           ref="extensionViewContainer"
           mode={this.state.mode}
@@ -245,6 +246,27 @@ export class Rig extends Component {
           closeConfigurationsHandler={this.closeConfigurationsHandler}
           refreshConfigurationsHandler={this.refreshConfigurationsHandler} />
         <ExtensionRigConsole />
+      </div>
+    );
+
+    if (this.state.selectedView === PRODUCT_MANAGEMENT) {
+      view = (
+        <ProductManagementViewContainer clientId={this.state.clientId} token={this.state.accessToken} />
+      );
+    }
+
+    return (
+      <div className="rig-container">
+        <RigNav
+          ref="rigNav"
+          selectedView={this.state.selectedView}
+          viewerHandler={this.viewerHandler}
+          configHandler={this.configHandler}
+          liveConfigHandler={this.liveConfigHandler}
+          openConfigurationsHandler={this.openConfigurationsHandler}
+          openProductManagementHandler={this.openProductManagementHandler}
+          error={this.state.error}/>
+        {view}
       </div>
     );
   }
