@@ -33,7 +33,7 @@ Take the following steps to get Hello World running in Local Mode in the Rig.
 1. Open **Git Bash** and execute these commands in a directory of your choosing.
   1.  Navigate to the root folder where you have downloaded/cloned the Developer Rig.
   2.  `yarn install` # This takes about half a minute.
-  3.  `yarn extension-init -l ../my-extension`  
+  3.  `yarn extension-init -d ../my-extension`
         \# You may replace `my-extension` with a different directory name here and in subsequent steps.  This will clone the Hello World sample from GitHub
 2.  `yarn create-manifest -t type -o manifest.json [other options]` where type is the type of extension and manifest.json is the created extension manifest. Types can be: *panel*, *video_overlay*, *mobile* or *video_component* (you can have multiple types).  The other options are for panel or component attributes along with some text descriptors. They all have reasonable defaults and don't need to be set by you.  Note that you can directly edit the json file to make changes or adjustments.  See later in this document for specifics.
 4. `yarn start -l manifest.json` where manifest.json is the output of create-manifest.  **You will need to sign in with your Twitch credentials to use the rig in Local Mode.**
@@ -244,10 +244,10 @@ If you are experience difficulties getting things to work:
 * if you are struggling to get PubSub to work, assert that your EBS receives and extracts the channel name from the JWT sent by the Extension front end
 
 ## Using Local Mode
-Local Mode enables developers to run their extension projects against mock APIs and mock PubSub locally on their machine.  Developers can start building extensions without having first gone through the Twitch Extension Developer onboarding.  Additionally, coming soon, it will provide an ability to perform integration tests against your extension via configurable responses to the Extensions Helper Library.  The following sections will illustrate how to use Local Mode in the Rig.  
+Local Mode enables developers to run their extension projects against mock APIs and mock PubSub locally on their machine.  Developers can start building extensions without having first gone through the Twitch Extension Developer onboarding.  Additionally, coming soon, it will provide an ability to perform integration tests against your extension via configurable responses to the Extensions Helper Library.  The following sections will illustrate how to use Local Mode in the Rig.
 
 ### Providing a Secret for Your EBS in Local Mode
-When you use Local Mode with your EBS, you'll be using a hardcoded secret in the Rig.  This is also included already in the Hello World sample.  When creating an extension on Twitch, you'll have your own clientID and secret.  
+When you use Local Mode with your EBS, you'll be using a hardcoded secret in the Rig.  This is also included already in the Hello World sample.  When creating an extension on Twitch, you'll have your own clientID and secret.
 
 The Local Mode Secret is: kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
 
@@ -318,3 +318,7 @@ _`yarn install` fails in libssh2_
 _I get an error when pulling in the sample project!
 
 > Ensure that Git is in your PATH variables by attempting to run "git" at your commmandline. If that works, also ensure that the local folder does not currently exist.
+
+_The Developer Rig stops running unexpectedly in Local Mode._
+
+> Try to delete node_modules, and rerun `yarn install`.
