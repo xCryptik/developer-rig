@@ -235,6 +235,11 @@ module.exports = {
       inject: true,
       template: paths.appHtml,
     }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: 'extension-frame.html',
+      template: paths.extensionFrame,
+    }),
     // Add module names to factory functions so they appear in browser profiler.
     new webpack.NamedModulesPlugin(),
     // Makes some environment variables available to the JS code, for example:
