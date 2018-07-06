@@ -220,3 +220,28 @@ export function saveProduct(host, clientId, token, product, index, onSuccess, on
       onError(index, error);
     });
 }
+
+export function fetchNewRelease(onSuccess, onError) {
+  const api = 'https://api.github.com/repos/twitchdev/developer-rig/releases/latest';
+  return fetch(api, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/vnd.github.v3+json',
+    }
+  }).then(response => response.json())
+    .then(respJson => {
+      const tagName = respJson.tag_name;
+      const zipUrl = respJson.assets[0].browser_download_url;
+      if (tagName && zipUrl) {
+        onSuccess(tagName, zipUrl);
+      } else {
+        throw new Error('Cannot get GitHub developer rig latest release');
+      }
+    }).catch(error => {
+      if (onError) {
+        onError(error);
+      } else {
+        console.error(error);
+      }
+    });
+}

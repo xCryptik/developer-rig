@@ -51,6 +51,11 @@ if (cmdOptions.config) {
   }
 }
 
+// Check for a newer release if this isn't a clone.
+if (fs.existsSync('.release')) {
+  process.env.GIT_RELEASE = fs.readFileSync('.release', 'utf8').trim();
+}
+
 // Set local mode, if requested.
 let extension;
 if (cmdOptions.local) {

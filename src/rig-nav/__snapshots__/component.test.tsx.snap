@@ -109,7 +109,7 @@ ShallowWrapper {
           </div>
 </div>,
         <div
-          className="top-nab__item-container"
+          className="top-nav__item-container"
 >
           <a
                     className="offset top-nav-item top-nav-item__selected"
@@ -276,7 +276,7 @@ ShallowWrapper {
               Manage Bits Products
 </a>,
           ],
-          "className": "top-nab__item-container",
+          "className": "top-nav__item-container",
         },
         "ref": null,
         "rendered": Array [
@@ -383,7 +383,7 @@ ShallowWrapper {
             </div>
 </div>,
           <div
-            className="top-nab__item-container"
+            className="top-nav__item-container"
 >
             <a
                         className="offset top-nav-item top-nav-item__selected"
@@ -550,7 +550,7 @@ ShallowWrapper {
                 Manage Bits Products
 </a>,
             ],
-            "className": "top-nab__item-container",
+            "className": "top-nav__item-container",
           },
           "ref": null,
           "rendered": Array [

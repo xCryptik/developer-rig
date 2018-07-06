@@ -10,6 +10,8 @@
 /build
 
 # misc
+*.sw[op]
+.release
 .DS_Store
 .env.local
 .env.development.local
