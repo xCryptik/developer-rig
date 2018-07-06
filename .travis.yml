@@ -34,7 +34,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key: $GH_TOKEN
-  file: $TRAVIS_BUILD_DIR/build/devrig.zip
+  file: $TRAVIS_BUILD_DIR/devrig.zip
   skip_cleanup: true
   on:
     repo: twitchdev/developer-rig
