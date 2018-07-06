@@ -120,7 +120,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Open <strong>Git Bash</strong> and execute these commands in a directory of your choosing.</li>
 <li>Navigate to the root folder where you have downloaded/cloned the Developer Rig.</li>
 <li><code>yarn install</code> # This takes about half a minute.</li>
-<li><code>yarn extension-init -l ../my-extension</code><br />
+<li><code>yarn extension-init -d ../my-extension</code><br />
 # You may replace <code>my-extension</code> with a different directory name here and in subsequent steps. This will clone the Hello World sample from GitHub</li>
 <li><code>yarn create-manifest -t type -o manifest.json [other options]</code> where type is the type of extension and manifest.json is the created extension manifest. Types can be: <em>panel</em>, <em>video_overlay</em>, <em>mobile</em> or <em>video_component</em> (you can have multiple types). The other options are for panel or component attributes along with some text descriptors. They all have reasonable defaults and don’t need to be set by you. Note that you can directly edit the json file to make changes or adjustments. See later in this document for specifics.</li>
 <li><code>yarn start -l manifest.json</code> where manifest.json is the output of create-manifest. <strong>You will need to sign in with your Twitch credentials to use the rig in Local Mode.</strong></li>
