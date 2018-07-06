@@ -24,8 +24,10 @@ after_success:
   - travis-deploy-once "coveralls < coverage/lcov.info"
 
 before_deploy:
-  - cd $TRAVIS_BUILD_DIR/build
-  - sudo zip -rX devrig.zip ./*
+  - cd $TRAVIS_BUILD_DIR
+  - echo $TRAVIS_TAG > ./.release
+  - sudo zip -rX devrig.zip ./* -x "*/.*"
+  - sudo zip -r devrig.zip .release
 
 # Deploy to GitHub Releases (api key is encrypted)
 # Deploy only master built on latest stable version of node
