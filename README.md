@@ -169,7 +169,7 @@ If you don't want to set these values via environment variables, all but the ext
 ```javascript
 {
   "clientID": "<client id>",
-  "version": "<version>",
+  "version": "<version>"
 }
 ```
 
