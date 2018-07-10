@@ -50,7 +50,7 @@ Take the following steps to get Hello World running in Local Mode in the Rig.
   4. `mv ssl/selfsigned.key ../my-extension/conf/server.key`
 
 ### All Developers
-7. Run `node services/backend -l ../manifest.json` to locally run the Extension Backend Service for Hello World.  In this case, manifest.json is the same that was provided to the Yarn Start command and exists in the Developer Rig directory.
+7. Run `node services/backend -l ../developer-rig/manifest.json` to locally run the Extension Backend Service for Hello World.  In this case, manifest.json is the same that was provided to the Yarn Start command and exists in the Developer Rig directory.
 8. In the Developer Rig, click the + button to create a new view.  You should see the Hello World extension in the Rig after this.
 9. Make sure local mode is turned on, and use the drop down for the view/trigger button to send mock callback responses to your extension.
 
