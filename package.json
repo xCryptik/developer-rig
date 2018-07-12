@@ -67,6 +67,9 @@
     "whatwg-fetch": "2.0.3",
     "ws": "^5.2.0"
   },
+  "resolutions": {
+    "eslint-scope": "3.7.1"
+  },
   "scripts": {
     "create-manifest": "node scripts/create-manifest.js",
     "start": "node ./scripts/ssl.js && cross-env HOST=localhost.rig.twitch.tv HTTPS=true node scripts/start.js",
