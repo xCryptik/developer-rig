@@ -2,9 +2,10 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { RigStore } from '../../core/rig-store';
 import { wrap } from '../../util/react';
+
 /**
- * Builds th
- * e shallow wrapper for a component given defaults set in a test suite, and allowing overrides for each case.
+ * Builds the shallow wrapper for a component given defaults set in a test suite,
+ * and allowing overrides for each case.
  * @param {*} Component
  * @param {*} generator
  * @param {*} shallowOptions

@@ -1,6 +1,6 @@
 import { setupShallowTestWithStore, setupShallowTest } from '../tests/enzyme-util/shallow';
 import { RigNav, RigNavComponent } from '.';
-import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG, CONFIGURATIONS, PRODUCT_MANAGEMENT  } from '../constants/nav-items';
+import { ExtensionViews, BroadcasterConfig, LiveConfig, Configurations, ProductManagement  } from '../constants/nav-items';
 import { LoginButton } from '../login-button';
 import { UserDropdown } from '../user-dropdown';
 import { ManifestForTest } from '../tests/constants/extension';
@@ -12,7 +12,7 @@ describe('<RigNavComponent />', () => {
     configHandler: jest.fn(),
     liveConfigHandler: jest.fn(),
     openProductManagementHandler: jest.fn(),
-    selectedView: EXTENSION_VIEWS,
+    selectedView: ExtensionViews,
     error: '',
     manifest: ManifestForTest,
     session: { login: 'test', profileImageUrl: 'test.png', authToken: 'test'},
@@ -47,30 +47,30 @@ describe('<RigNavComponent />', () => {
 
   it('correct css classes are set when things are selected', () => {
     const { wrapper } = setupRenderer({
-      selectedView: EXTENSION_VIEWS,
+      selectedView: ExtensionViews,
     });
     expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
 
     wrapper.setProps({
-      selectedView: BROADCASTER_CONFIG,
-    });
-    wrapper.update();
-    expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
-
-    wrapper.setProps({
-      selectedView: LIVE_CONFIG,
+      selectedView: BroadcasterConfig,
     });
     wrapper.update();
     expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
 
     wrapper.setProps({
-      selectedView: CONFIGURATIONS,
+      selectedView: LiveConfig,
     });
     wrapper.update();
     expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
 
     wrapper.setProps({
-      selectedView: PRODUCT_MANAGEMENT,
+      selectedView: Configurations,
+    });
+    wrapper.update();
+    expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
+
+    wrapper.setProps({
+      selectedView: ProductManagement,
     });
     wrapper.update();
     expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);

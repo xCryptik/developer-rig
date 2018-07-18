@@ -1,6 +1,5 @@
-import { setupShallowTestWithStore, setupShallowTest } from '../tests/enzyme-util/shallow';
+import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { LoginButton } from './component';
-import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG, CONFIGURATIONS  } from '../constants/nav-items';
 
 describe('<LoginButton />', () => {
   const defaultGenerator = () => ({});

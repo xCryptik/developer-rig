@@ -1,5 +1,5 @@
-export const EXTENSION_VIEWS: string = 'Extension Views';
-export const BROADCASTER_CONFIG: string = 'Broadcaster Config';
-export const LIVE_CONFIG: string  = 'Live Config';
-export const CONFIGURATIONS: string  = 'Configurations';
-export const PRODUCT_MANAGEMENT: string = 'Product Management';
+export const ExtensionViews = 'Extension Views';
+export const BroadcasterConfig = 'Broadcaster Config';
+export const LiveConfig  = 'Live Config';
+export const Configurations  = 'Configurations';
+export const ProductManagement = 'Product Management';

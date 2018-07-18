@@ -1,11 +1,11 @@
-export const MobileOrientation = {
+export const MobileOrientation: { [key: string]: string } = {
   Portrait: 'Portrait',
   Landscape: 'Landscape',
 }
 
 export const DefaultMobileOrientation = MobileOrientation.Portrait;
 
-export const MobileSizes = Object.freeze({
+export const MobileSizes: { [key: string]: { width: number; height: number;} } = Object.freeze({
   'iPhone X (375x822)': {
     width: 375,
     height: 822

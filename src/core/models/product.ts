@@ -11,6 +11,19 @@ export interface Product {
   validationErrors?: ValidationErrors;
 }
 
+export interface DeserializedProduct {
+  domain: string;
+  sku: string;
+  displayName: string;
+  cost: {
+    amount: string;
+    type: string;
+  },
+  inDevelopment: boolean;
+  broadcast: boolean;
+  expiration: string;
+}
+
 export interface ValidationErrors {
   sku?: string;
   displayName?: string;

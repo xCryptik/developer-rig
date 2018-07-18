@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 import { UserSession } from '../core/models/user-session';
-const { fetchNewRelease } = require('../util/api');
-const reddot = require('../img/reddot.svg');
+import { fetchNewRelease } from '../util/api';
+import * as reddot from '../img/reddot.svg';
 import './component.sass';
 
 export interface PublicProps {
@@ -21,35 +21,37 @@ interface State {
 
 type Props = PublicProps & ReduxDispatchProps;
 export class UserDropdownComponent extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      open: false,
-      showNewRelease: false,
-      releaseUrl: null,
-    }
+  public state: State = {
+    open: false,
+    showNewRelease: false,
+    releaseUrl: null,
   }
-  private signOut() {
+
+  private signOut = () => {
     localStorage.removeItem('rigLogin');
     this.props.logout();
   }
-  private toggleDropdown() {
+
+  private toggleDropdown = () => {
     this.setState({
       open: !this.state.open,
     })
   }
+
   public componentDidMount() {
-    if(process.env.GIT_RELEASE) {
-      fetchNewRelease((tagName : string, releaseUrl : string) => {
-        if(tagName !== process.env.GIT_RELEASE) {
-          this.setState({
-            showNewRelease: true,
-            releaseUrl,
-          });
-        }
-      });
+    if (process.env.GIT_RELEASE) {
+      fetchNewRelease()
+        .then((result) => {
+          if (result.tagName !== process.env.GIT_RELEASE) {
+            this.setState({
+              showNewRelease: true,
+              releaseUrl: result.zipUrl,
+            });
+          }
+        });
     }
   }
+
   public render() {
     if (!this.props.session) {
       return null;
@@ -66,7 +68,7 @@ export class UserDropdownComponent extends React.Component<Props, State> {
     });
 
     return (
-      <div onClick={() => { this.toggleDropdown(); }} className='user-dropdown' tabIndex={0}>
+      <div onClick={this.toggleDropdown} className='user-dropdown' tabIndex={0}>
         <div className='user-dropdown__name-container'>
           {this.state.showNewRelease && (
             <img alt='!' title='Rig Update Available' src={reddot} width='8' height='8' />

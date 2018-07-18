@@ -1,5 +1,7 @@
 import { MobileOrientation } from '../../constants/mobile';
 import { ExtensionManifest } from '../../core/models/manifest';
+import { RigExtensionView } from '../../core/models/rig';
+import { ExtensionMode } from '../../constants/extension-coordinator';
 
 export const ManifestForTest: ExtensionManifest = {
   anchor: 'panel',
@@ -52,7 +54,7 @@ export const ExtensionForTest = {
   description: 'description',
   iconUrl: 'icon_url',
   name: 'name',
-  requestIdentity: false,
+  requestIdentityLink: false,
   sku: 'sku',
   state: 'state',
   summary: 'summary',
@@ -81,7 +83,7 @@ export const ExtensionForTest = {
   channelId: 'channelId',
 };
 
-export function createViewsForTest(numOfViews: number, type: string, role: string, extras: any) {
+export function createViewsForTest(numOfViews: number, type: string, role: string, extras?: any): Partial<RigExtensionView>[] {
   let ex = {
     x: 0,
     y: 0,
@@ -97,12 +99,13 @@ export function createViewsForTest(numOfViews: number, type: string, role: strin
     extViews.push({
       id: (extViews.length + 1).toString(),
       type: type,
+      mode: 'viewer',
       extension: ExtensionForTest,
       linked: false,
       role: role,
       x: ex.x,
       y: ex.y,
-      orientation: ex.orientation
+      orientation: ex.orientation,
     })
   }
   return extViews;

@@ -98,6 +98,19 @@
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.4.tgz#d3ee9ebf714aa34006707b8f4a58fd46b642305a"
 
+"@types/enzyme-adapter-react-16@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.0.2.tgz#15ae37c64d6221a6f4b3a4aacc357cf773859de4"
+  dependencies:
+    "@types/enzyme" "*"
+
+"@types/enzyme@*":
+  version "3.1.11"
+  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.1.11.tgz#0a059d2fe2c686f024ada911d24473cdb2e13903"
+  dependencies:
+    "@types/cheerio" "*"
+    "@types/react" "*"
+
 "@types/enzyme@^3.1.10":
   version "3.1.10"
   resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.1.10.tgz#28108a9864e65699751469551a803a35d2e26160"
@@ -105,13 +118,32 @@
     "@types/cheerio" "*"
     "@types/react" "*"
 
+"@types/eventemitter2@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@types/eventemitter2/-/eventemitter2-4.1.0.tgz#090b4a67f25aa0fc087c8f2403e46f5ccc3fdfbc"
+  dependencies:
+    eventemitter2 "*"
+
 "@types/jest@^23.0.0":
   version "23.1.1"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.1.1.tgz#c54ab1a5f41aa693c0957222dd10414416d0c87b"
 
+"@types/jsonwebtoken@^7.2.8":
+  version "7.2.8"
+  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-7.2.8.tgz#8d199dab4ddb5bba3234f8311b804d2027af2b3a"
+  dependencies:
+    "@types/node" "*"
+
 "@types/node@*":
   version "10.3.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.4.tgz#c74e8aec19e555df44609b8057311052a2c84d9e"
+
+"@types/react-dom@^16.0.6":
+  version "16.0.6"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.6.tgz#f1a65a4e7be8ed5d123f8b3b9eacc913e35a1a3c"
+  dependencies:
+    "@types/node" "*"
+    "@types/react" "*"
 
 "@types/react-redux@^6.0.2":
   version "6.0.2"
@@ -3210,6 +3242,10 @@ event-emitter@~0.3.5:
   dependencies:
     d "1"
     es5-ext "~0.10.14"
+
+eventemitter2@*:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-5.0.1.tgz#6197a095d5fb6b57e8942f6fd7eaad63a09c9452"
 
 eventemitter3@^3.0.0:
   version "3.1.0"
