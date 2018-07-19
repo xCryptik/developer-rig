@@ -264,8 +264,8 @@ If you are experience difficulties getting things to work:
 Local Mode enables developers to run their extension projects against
 mock APIs and mock PubSub locally on their machine.  Developers can
 start building extensions without having first gone through the
-Twitch Extension Developer onboarding.  Additionally, coming soon,
-it will provide an ability to perform integration tests against your
+Twitch Extension Developer onboarding.  Additionally,
+it provides an ability to perform integration tests against your
 extension via configurable responses to the Extensions Helper Library.
 The following sections will illustrate how to use Local Mode in the Rig.
 
@@ -279,6 +279,25 @@ reasonable defaults; specifying them is optional.  For more information
 on the available options, run `yarn create-manifest -h` in a terminal
 window.  Note that you can edit the JSON file to make changes or
 adjustments.
+
+### Using the Run List in the Rig
+The foundation of Local Mode is a JSON document called the "Run List".  It provides developers the ability to trigger specific callback responses through the Extensions Helper Library. To your extension, it will appear like these have come from Twitch Extension APIs.
+
+When you get the Local Mode edition of the rig, it will contain a Run List pre-populated with mock responses.  You'll be able to alter these responses by directly editing the document.
+
+When Local Mode is enabled, each extension view will have a dropdown that enables the developer to choose a response from the "Run List".  When a response is selected, clicking the "Trigger" button will send it through the Extension Coordinator and it will pass through Helper to your extension code.
+
+Different views can be pointing at different places in the "Run List" at the same time.
+
+For more details about the APIs and responses see the documentation [here](https://dev.twitch.tv/docs/extensions/reference/#javascript-helper)
+
+### Editing the Run List
+To edit the "Run List" look for the document called runlist.json in your Rig directory.  Each entry in the Run List has 3 components:
+1. A name for easy identification
+2. The type of callback e.g OnContext
+3. The callback response
+
+You should refer to the Helper API documentation [here](https://dev.twitch.tv/docs/extensions/reference/#javascript-helper) before editing and creating new responses.
 
 ### Providing a Secret for Your EBS in Local Mode
 When you use Local Mode with your EBS, you'll be using a hard-coded secret in the Rig.  This is also included already in the Hello World example.  When creating an extension on Twitch, you'll have your own clientID and secret.
