@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionMobileView
+    biindIframeToParent={[Function]}
     extension={
         Object {
             "authorName": "test",
@@ -84,6 +85,7 @@ ShallowWrapper {
         }
 >
         <ExtensionFrame
+                bindIframeToParent={undefined}
                 className="view"
                 extension={
                         Object {
@@ -144,6 +146,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <ExtensionFrame
+          bindIframeToParent={undefined}
           className="view"
           extension={
                     Object {
@@ -202,6 +205,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "bindIframeToParent": undefined,
           "className": "view",
           "extension": Object {
             "authorName": "test",
@@ -270,6 +274,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    bindIframeToParent={undefined}
                     className="view"
                     extension={
                               Object {
@@ -330,6 +335,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            bindIframeToParent={undefined}
             className="view"
             extension={
                         Object {
@@ -388,6 +394,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",

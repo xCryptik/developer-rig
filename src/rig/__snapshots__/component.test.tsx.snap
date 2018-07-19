@@ -45,6 +45,10 @@ ShallowWrapper {
                     refreshConfigurationsHandler={[Function]}
                     show={false}
           />
+          <SignInDialog
+                    closeSignInDialog={[Function]}
+                    show={true}
+          />
           <Console />
 </div>,
       ],
@@ -91,6 +95,10 @@ ShallowWrapper {
               refreshConfigurationsHandler={[Function]}
               show={false}
 />,
+            <SignInDialog
+              closeSignInDialog={[Function]}
+              show={true}
+/>,
             <Console />,
           ],
         },
@@ -123,6 +131,18 @@ ShallowWrapper {
               "config": Object {},
               "refreshConfigurationsHandler": [Function],
               "show": false,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "closeSignInDialog": [Function],
+              "show": true,
             },
             "ref": null,
             "rendered": null,
@@ -174,6 +194,10 @@ ShallowWrapper {
                         refreshConfigurationsHandler={[Function]}
                         show={false}
             />
+            <SignInDialog
+                        closeSignInDialog={[Function]}
+                        show={true}
+            />
             <Console />
 </div>,
         ],
@@ -220,6 +244,10 @@ ShallowWrapper {
                 refreshConfigurationsHandler={[Function]}
                 show={false}
 />,
+              <SignInDialog
+                closeSignInDialog={[Function]}
+                show={true}
+/>,
               <Console />,
             ],
           },
@@ -252,6 +280,18 @@ ShallowWrapper {
                 "config": Object {},
                 "refreshConfigurationsHandler": [Function],
                 "show": false,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "closeSignInDialog": [Function],
+                "show": true,
               },
               "ref": null,
               "rendered": null,
@@ -379,6 +419,10 @@ ShallowWrapper {
                     refreshConfigurationsHandler={[Function]}
                     show={false}
           />
+          <SignInDialog
+                    closeSignInDialog={[Function]}
+                    show={true}
+          />
           <Console />
 </div>,
       ],
@@ -476,6 +520,10 @@ ShallowWrapper {
               refreshConfigurationsHandler={[Function]}
               show={false}
 />,
+            <SignInDialog
+              closeSignInDialog={[Function]}
+              show={true}
+/>,
             <Console />,
           ],
         },
@@ -557,6 +605,18 @@ ShallowWrapper {
               "config": Object {},
               "refreshConfigurationsHandler": [Function],
               "show": false,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "closeSignInDialog": [Function],
+              "show": true,
             },
             "ref": null,
             "rendered": null,
@@ -659,6 +719,10 @@ ShallowWrapper {
                         refreshConfigurationsHandler={[Function]}
                         show={false}
             />
+            <SignInDialog
+                        closeSignInDialog={[Function]}
+                        show={true}
+            />
             <Console />
 </div>,
         ],
@@ -756,6 +820,10 @@ ShallowWrapper {
                 refreshConfigurationsHandler={[Function]}
                 show={false}
 />,
+              <SignInDialog
+                closeSignInDialog={[Function]}
+                show={true}
+/>,
               <Console />,
             ],
           },
@@ -837,6 +905,18 @@ ShallowWrapper {
                 "config": Object {},
                 "refreshConfigurationsHandler": [Function],
                 "show": false,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "closeSignInDialog": [Function],
+                "show": true,
               },
               "ref": null,
               "rendered": null,

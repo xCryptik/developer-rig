@@ -12,6 +12,7 @@ describe('<ExtensionMobileView />', () => {
     frameSize: { width: 100, height: 100 },
     position: { x: 0, y: 0 },
     role: ExtensionMode.Viewer,
+    biindIframeToParent: jest.fn(),
   }));
 
   it('renders correctly', () => {

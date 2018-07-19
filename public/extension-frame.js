@@ -34,6 +34,11 @@ function proxyIframeEvent(event) {
         method: 'POST',
       }).catch(reason => console.error(endpoint, reason));
       break;
+    case 'twitch-ext-auth':
+    case 'twitch-ext-context':
+      const ext = document.getElementById('extension-frame').getElementsByTagName('iframe')[0].contentWindow;
+      ext.postMessage(data, '*');
+      break;
     case 'twitch-ext-rig-log':
       window.parent.postMessage(data, '*');
       break;

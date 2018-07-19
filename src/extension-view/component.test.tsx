@@ -1,14 +1,14 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
-import { ExtensionView } from './component';
+import { ExtensionViewComponent } from './component';
 import { ViewerTypes } from '../constants/viewer-types';
 import { ExtensionForTest } from '../tests/constants/extension';
 import { MobileOrientation } from '../constants/mobile';
 import { ExtensionAnchor, ExtensionMode, ExtensionViewType, ExtensionPlatform} from '../constants/extension-coordinator';
 
-const DeleteButtonSelector = '.view__close_button';
+const DeleteButtonSelector = '.view__close_button.visible';
 
-describe('<ExtensionView />', () => {
-  const setupShallow = setupShallowTest(ExtensionView, () => ({
+describe('<ExtensionViewComponent />', () => {
+  const setupShallow = setupShallowTest(ExtensionViewComponent, () => ({
     id: '0',
     extension: ExtensionForTest,
     type: ExtensionAnchor.Panel,
@@ -19,6 +19,7 @@ describe('<ExtensionView />', () => {
     frameSize: { width: 0, height: 0 },
     deleteViewHandler: jest.fn(),
     openEditViewHandler: jest.fn(),
+    iframe: '',
   }));
 
   it('uses correct panel view styles if no type provided', () => {
@@ -40,7 +41,7 @@ describe('<ExtensionView />', () => {
     wrapper.simulate('mouseEnter');
     expect(wrapper.state().mousedOver).toBe(true);
     expect(wrapper.find(DeleteButtonSelector)).toHaveLength(1);
-    wrapper.simulate('mouseLeave')
+    wrapper.simulate('mouseLeave');
     expect(wrapper.state().mousedOver).toBe(false);
     expect(wrapper.find(DeleteButtonSelector)).toHaveLength(0);
   });

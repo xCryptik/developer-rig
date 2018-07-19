@@ -30,11 +30,11 @@ describe('<ExtensionViewContainer />', () => {
       const { wrapper } = setupShallow({
         extensionViews: createViewsForTest(2, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut)
       });
-      expect(wrapper.find('ExtensionView')).toHaveLength(2);
+      expect(wrapper.find('Connect(ExtensionViewComponent)')).toHaveLength(2);
     });
     it('renders no views if none specified', () => {
       const { wrapper } = setupShallow();
-      expect(wrapper.find('ExtensionView')).toHaveLength(0);
+      expect(wrapper.find('Connect(ExtensionViewComponent)')).toHaveLength(0);
     });
   });
 
@@ -49,7 +49,7 @@ describe('<ExtensionViewContainer />', () => {
       const { wrapper } = setupShallow({
         mode: ExtensionMode.Config
       });
-      expect(wrapper.find('ExtensionView')).toHaveLength(1);
+      expect(wrapper.find('Connect(ExtensionViewComponent)')).toHaveLength(1);
     });
   });
 
@@ -64,7 +64,7 @@ describe('<ExtensionViewContainer />', () => {
       const { wrapper } = setupShallow({
         mode: ExtensionMode.Dashboard
       });
-      expect(wrapper.find('ExtensionView')).toHaveLength(1);
+      expect(wrapper.find('Connect(ExtensionViewComponent)')).toHaveLength(1);
     });
   });
 });

@@ -87,6 +87,7 @@ ShallowWrapper {
         <div
           className="personal-bar"
 >
+          <Connect(MockApiDropdownComponent) />
           <div
                     className="personal-bar__ext-name"
           >
@@ -153,6 +154,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
+            <Connect(MockApiDropdownComponent) />,
             <div
               className="personal-bar__ext-name"
 >
@@ -178,6 +180,15 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           Object {
             "instance": null,
             "key": undefined,
@@ -361,6 +372,7 @@ ShallowWrapper {
           <div
             className="personal-bar"
 >
+            <Connect(MockApiDropdownComponent) />
             <div
                         className="personal-bar__ext-name"
             >
@@ -427,6 +439,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
+              <Connect(MockApiDropdownComponent) />,
               <div
                 className="personal-bar__ext-name"
 >
@@ -452,6 +465,15 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
             Object {
               "instance": null,
               "key": undefined,

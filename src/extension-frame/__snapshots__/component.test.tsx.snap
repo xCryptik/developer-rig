@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionFrame
+    bindIframeToParent={[Function]}
     extension={
         Object {
             "authorName": "test",
@@ -102,6 +103,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionFrame
+    bindIframeToParent={[Function]}
     extension={
         Object {
             "authorName": "test",
@@ -199,6 +201,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionFrame
+    bindIframeToParent={[Function]}
     extension={
         Object {
             "authorName": "test",
@@ -296,6 +299,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionFrame
+    bindIframeToParent={[Function]}
     extension={
         Object {
             "authorName": "test",
@@ -393,6 +397,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionFrame
+    bindIframeToParent={[Function]}
     extension={
         Object {
             "authorName": "test",
@@ -490,6 +495,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionFrame
+    bindIframeToParent={[Function]}
     extension={
         Object {
             "authorName": "test",

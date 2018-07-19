@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ExtensionView /> component mode views renders component view when in component mode 1`] = `
+exports[`<ExtensionViewComponent /> component mode views renders component view when in component mode 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -53,6 +53,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={false}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -82,15 +83,36 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Broadcaster
+                    <div
+                              className="view__descriptor"
+                    >
+                              Broadcaster
+                               
+                              <span>
+                                         
+                              </span>
+                    </div>
+                    <div
+                              className="view__edit_button"
+                              onClick={[Function]}
+                    >
+                              Edit
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
-          />
+                    className="view__close_button"
+                    onClick={[Function]}
+          >
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
+          </div>
 </div>,
         <ExtensionComponentView
+          bindIframeToParent={[Function]}
           className="view"
           extension={
                     Object {
@@ -161,31 +183,115 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Broadcaster
+              <div
+                            className="view__descriptor"
+              >
+                            Broadcaster
+                             
+                            <span>
+                                           
+                            </span>
+              </div>
+              <div
+                            className="view__edit_button"
+                            onClick={[Function]}
+              >
+                            Edit
+              </div>
 </div>,
             <div
-              className="view__descriptor"
-/>,
+              className="view__close_button"
+              onClick={[Function]}
+>
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
+</div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Broadcaster",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Broadcaster
+                   
+                  <span>
+                                     
+                  </span>
+</div>,
+                undefined,
+                <div
+                  className="view__edit_button"
+                  onClick={[Function]}
+>
+                  Edit
+</div>,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Broadcaster",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Broadcaster",
+                    " ",
+                    <span>
+                       
+</span>,
+                    null,
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Broadcaster",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  null,
+                ],
+                "type": "div",
+              },
+              undefined,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Edit",
+                  "className": "view__edit_button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Edit",
+                "type": "div",
+              },
+            ],
             "type": "div",
           },
           Object {
@@ -193,11 +299,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": null,
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -208,6 +329,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "bindIframeToParent": [Function],
           "className": "view",
           "extension": Object {
             "authorName": "test",
@@ -276,15 +398,36 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Broadcaster
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Broadcaster
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                        </div>
+                        <div
+                                    className="view__edit_button"
+                                    onClick={[Function]}
+                        >
+                                    Edit
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
-            />
+                        className="view__close_button"
+                        onClick={[Function]}
+            >
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
+            </div>
 </div>,
           <ExtensionComponentView
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -355,31 +498,115 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Broadcaster
+                <div
+                                className="view__descriptor"
+                >
+                                Broadcaster
+                                 
+                                <span>
+                                                 
+                                </span>
+                </div>
+                <div
+                                className="view__edit_button"
+                                onClick={[Function]}
+                >
+                                Edit
+                </div>
 </div>,
               <div
-                className="view__descriptor"
-/>,
+                className="view__close_button"
+                onClick={[Function]}
+>
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
+</div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Broadcaster",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Broadcaster
+                     
+                    <span>
+                                         
+                    </span>
+</div>,
+                  undefined,
+                  <div
+                    className="view__edit_button"
+                    onClick={[Function]}
+>
+                    Edit
+</div>,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Broadcaster",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Broadcaster",
+                      " ",
+                      <span>
+                         
+</span>,
+                      null,
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Broadcaster",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    null,
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Edit",
+                    "className": "view__edit_button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Edit",
+                  "type": "div",
+                },
+              ],
               "type": "div",
             },
             Object {
@@ -387,11 +614,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": null,
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -402,6 +644,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -470,11 +713,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionView /> config mode views renders correctly when in config mode 1`] = `
+exports[`<ExtensionViewComponent /> config mode views renders correctly when in config mode 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -523,6 +766,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={false}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -552,13 +796,27 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Broadcaster
+                    <div
+                              className="view__descriptor"
+                    >
+                              Broadcaster
+                               
+                              <span>
+                                         
+                              </span>
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
-          />
+                    className="view__close_button"
+                    onClick={[Function]}
+          >
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
+          </div>
 </div>,
         <div
           className="view"
@@ -570,6 +828,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
@@ -633,31 +892,92 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Broadcaster
+              <div
+                            className="view__descriptor"
+              >
+                            Broadcaster
+                             
+                            <span>
+                                           
+                            </span>
+              </div>
 </div>,
             <div
-              className="view__descriptor"
-/>,
+              className="view__close_button"
+              onClick={[Function]}
+>
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
+</div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Broadcaster",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Broadcaster
+                   
+                  <span>
+                                     
+                  </span>
+</div>,
+                undefined,
+                false,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Broadcaster",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Broadcaster",
+                    " ",
+                    <span>
+                       
+</span>,
+                    null,
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Broadcaster",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  null,
+                ],
+                "type": "div",
+              },
+              undefined,
+              false,
+            ],
             "type": "div",
           },
           Object {
@@ -665,11 +985,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": null,
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -681,6 +1016,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -738,6 +1074,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -801,13 +1138,27 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Broadcaster
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Broadcaster
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
-            />
+                        className="view__close_button"
+                        onClick={[Function]}
+            >
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
+            </div>
 </div>,
           <div
             className="view"
@@ -819,6 +1170,7 @@ ShallowWrapper {
             }
 >
             <ExtensionFrame
+                        bindIframeToParent={[Function]}
                         className="view"
                         extension={
                                     Object {
@@ -882,31 +1234,92 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Broadcaster
+                <div
+                                className="view__descriptor"
+                >
+                                Broadcaster
+                                 
+                                <span>
+                                                 
+                                </span>
+                </div>
 </div>,
               <div
-                className="view__descriptor"
-/>,
+                className="view__close_button"
+                onClick={[Function]}
+>
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
+</div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Broadcaster",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Broadcaster
+                     
+                    <span>
+                                         
+                    </span>
+</div>,
+                  undefined,
+                  false,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Broadcaster",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Broadcaster",
+                      " ",
+                      <span>
+                         
+</span>,
+                      null,
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Broadcaster",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    null,
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                false,
+              ],
               "type": "div",
             },
             Object {
@@ -914,11 +1327,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": null,
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -930,6 +1358,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              bindIframeToParent={[Function]}
               className="view"
               extension={
                             Object {
@@ -987,6 +1416,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "bindIframeToParent": [Function],
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -1050,11 +1480,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionView /> live config mode views renders correctly when in config mode 1`] = `
+exports[`<ExtensionViewComponent /> live config mode views renders correctly when in config mode 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -1103,6 +1533,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={false}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -1132,13 +1563,27 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Broadcaster
+                    <div
+                              className="view__descriptor"
+                    >
+                              Broadcaster
+                               
+                              <span>
+                                         
+                              </span>
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
-          />
+                    className="view__close_button"
+                    onClick={[Function]}
+          >
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
+          </div>
 </div>,
         <div
           className="view"
@@ -1150,6 +1595,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
@@ -1210,31 +1656,92 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Broadcaster
+              <div
+                            className="view__descriptor"
+              >
+                            Broadcaster
+                             
+                            <span>
+                                           
+                            </span>
+              </div>
 </div>,
             <div
-              className="view__descriptor"
-/>,
+              className="view__close_button"
+              onClick={[Function]}
+>
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
+</div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Broadcaster",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Broadcaster
+                   
+                  <span>
+                                     
+                  </span>
+</div>,
+                undefined,
+                false,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Broadcaster",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Broadcaster",
+                    " ",
+                    <span>
+                       
+</span>,
+                    null,
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Broadcaster",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  null,
+                ],
+                "type": "div",
+              },
+              undefined,
+              false,
+            ],
             "type": "div",
           },
           Object {
@@ -1242,11 +1749,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": null,
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -1258,6 +1780,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -1315,6 +1838,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -1378,13 +1902,27 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Broadcaster
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Broadcaster
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
-            />
+                        className="view__close_button"
+                        onClick={[Function]}
+            >
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
+            </div>
 </div>,
           <div
             className="view"
@@ -1396,6 +1934,7 @@ ShallowWrapper {
             }
 >
             <ExtensionFrame
+                        bindIframeToParent={[Function]}
                         className="view"
                         extension={
                                     Object {
@@ -1456,31 +1995,92 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Broadcaster
+                <div
+                                className="view__descriptor"
+                >
+                                Broadcaster
+                                 
+                                <span>
+                                                 
+                                </span>
+                </div>
 </div>,
               <div
-                className="view__descriptor"
-/>,
+                className="view__close_button"
+                onClick={[Function]}
+>
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
+</div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Broadcaster",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Broadcaster
+                     
+                    <span>
+                                         
+                    </span>
+</div>,
+                  undefined,
+                  false,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Broadcaster",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Broadcaster",
+                      " ",
+                      <span>
+                         
+</span>,
+                      null,
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Broadcaster",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    null,
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                false,
+              ],
               "type": "div",
             },
             Object {
@@ -1488,11 +2088,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": null,
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -1504,6 +2119,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              bindIframeToParent={[Function]}
               className="view"
               extension={
                             Object {
@@ -1561,6 +2177,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "bindIframeToParent": [Function],
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -1624,11 +2241,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionView /> mobile mode views renders correctly when in mobile mode 1`] = `
+exports[`<ExtensionViewComponent /> mobile mode views renders correctly when in mobile mode 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -1677,6 +2294,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={false}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -1707,15 +2325,36 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Broadcaster
+                    <div
+                              className="view__descriptor"
+                    >
+                              Broadcaster
+                               
+                              <span>
+                                         
+                              </span>
+                    </div>
+                    <div
+                              className="view__edit_button"
+                              onClick={[Function]}
+                    >
+                              Edit
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
-          />
+                    className="view__close_button"
+                    onClick={[Function]}
+          >
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
+          </div>
 </div>,
         <ExtensionMobileView
+          bindIframeToParent={[Function]}
           className="view"
           extension={
                     Object {
@@ -1787,31 +2426,115 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Broadcaster
+              <div
+                            className="view__descriptor"
+              >
+                            Broadcaster
+                             
+                            <span>
+                                           
+                            </span>
+              </div>
+              <div
+                            className="view__edit_button"
+                            onClick={[Function]}
+              >
+                            Edit
+              </div>
 </div>,
             <div
-              className="view__descriptor"
-/>,
+              className="view__close_button"
+              onClick={[Function]}
+>
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
+</div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Broadcaster",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Broadcaster
+                   
+                  <span>
+                                     
+                  </span>
+</div>,
+                undefined,
+                <div
+                  className="view__edit_button"
+                  onClick={[Function]}
+>
+                  Edit
+</div>,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Broadcaster",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Broadcaster",
+                    " ",
+                    <span>
+                       
+</span>,
+                    null,
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Broadcaster",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  null,
+                ],
+                "type": "div",
+              },
+              undefined,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Edit",
+                  "className": "view__edit_button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Edit",
+                "type": "div",
+              },
+            ],
             "type": "div",
           },
           Object {
@@ -1819,11 +2542,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": null,
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -1834,6 +2572,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "bindIframeToParent": [Function],
           "className": "view",
           "extension": Object {
             "authorName": "test",
@@ -1903,15 +2642,36 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Broadcaster
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Broadcaster
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                        </div>
+                        <div
+                                    className="view__edit_button"
+                                    onClick={[Function]}
+                        >
+                                    Edit
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
-            />
+                        className="view__close_button"
+                        onClick={[Function]}
+            >
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
+            </div>
 </div>,
           <ExtensionMobileView
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -1983,31 +2743,115 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Broadcaster
+                <div
+                                className="view__descriptor"
+                >
+                                Broadcaster
+                                 
+                                <span>
+                                                 
+                                </span>
+                </div>
+                <div
+                                className="view__edit_button"
+                                onClick={[Function]}
+                >
+                                Edit
+                </div>
 </div>,
               <div
-                className="view__descriptor"
-/>,
+                className="view__close_button"
+                onClick={[Function]}
+>
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
+</div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Broadcaster",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Broadcaster
+                     
+                    <span>
+                                         
+                    </span>
+</div>,
+                  undefined,
+                  <div
+                    className="view__edit_button"
+                    onClick={[Function]}
+>
+                    Edit
+</div>,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Broadcaster",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Broadcaster",
+                      " ",
+                      <span>
+                         
+</span>,
+                      null,
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Broadcaster",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    null,
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Edit",
+                    "className": "view__edit_button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Edit",
+                  "type": "div",
+                },
+              ],
               "type": "div",
             },
             Object {
@@ -2015,11 +2859,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": null,
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -2030,6 +2889,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -2099,11 +2959,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionView /> overlay mode views renders correctly in overlay mode as a Broadcaster 1`] = `
+exports[`<ExtensionViewComponent /> overlay mode views renders correctly in overlay mode as a Broadcaster 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -2152,6 +3012,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={false}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -2181,13 +3042,27 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Broadcaster
+                    <div
+                              className="view__descriptor"
+                    >
+                              Broadcaster
+                               
+                              <span>
+                                         
+                              </span>
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
-          />
+                    className="view__close_button"
+                    onClick={[Function]}
+          >
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
+          </div>
 </div>,
         <div
           className="view"
@@ -2199,6 +3074,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
@@ -2259,31 +3135,92 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Broadcaster
+              <div
+                            className="view__descriptor"
+              >
+                            Broadcaster
+                             
+                            <span>
+                                           
+                            </span>
+              </div>
 </div>,
             <div
-              className="view__descriptor"
-/>,
+              className="view__close_button"
+              onClick={[Function]}
+>
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
+</div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Broadcaster",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Broadcaster
+                   
+                  <span>
+                                     
+                  </span>
+</div>,
+                undefined,
+                false,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Broadcaster",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Broadcaster",
+                    " ",
+                    <span>
+                       
+</span>,
+                    null,
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Broadcaster",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  null,
+                ],
+                "type": "div",
+              },
+              undefined,
+              false,
+            ],
             "type": "div",
           },
           Object {
@@ -2291,11 +3228,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": null,
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -2307,6 +3259,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -2364,6 +3317,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -2427,13 +3381,27 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Broadcaster
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Broadcaster
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
-            />
+                        className="view__close_button"
+                        onClick={[Function]}
+            >
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
+            </div>
 </div>,
           <div
             className="view"
@@ -2445,6 +3413,7 @@ ShallowWrapper {
             }
 >
             <ExtensionFrame
+                        bindIframeToParent={[Function]}
                         className="view"
                         extension={
                                     Object {
@@ -2505,31 +3474,92 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Broadcaster
+                <div
+                                className="view__descriptor"
+                >
+                                Broadcaster
+                                 
+                                <span>
+                                                 
+                                </span>
+                </div>
 </div>,
               <div
-                className="view__descriptor"
-/>,
+                className="view__close_button"
+                onClick={[Function]}
+>
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
+</div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Broadcaster",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Broadcaster
+                     
+                    <span>
+                                         
+                    </span>
+</div>,
+                  undefined,
+                  false,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Broadcaster",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Broadcaster",
+                      " ",
+                      <span>
+                         
+</span>,
+                      null,
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Broadcaster",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    null,
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                false,
+              ],
               "type": "div",
             },
             Object {
@@ -2537,11 +3567,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": null,
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -2553,6 +3598,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              bindIframeToParent={[Function]}
               className="view"
               extension={
                             Object {
@@ -2610,6 +3656,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "bindIframeToParent": [Function],
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -2673,11 +3720,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionView /> overlay mode views renders correctly when in overlay mode as a Logged In and Linked Viewer 1`] = `
+exports[`<ExtensionViewComponent /> overlay mode views renders correctly when in overlay mode as a Logged In and Linked Viewer 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -2726,6 +3773,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={true}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -2755,14 +3803,27 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Logged-In Viewer
+                    <div
+                              className="view__descriptor"
+                    >
+                              Logged-In Viewer
+                               
+                              <span>
+                                         
+                              </span>
+                              Linked
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
+                    className="view__close_button"
+                    onClick={[Function]}
           >
-                    Linked
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
           </div>
 </div>,
         <div
@@ -2775,6 +3836,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
@@ -2835,33 +3897,94 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Logged-In Viewer
+              <div
+                            className="view__descriptor"
+              >
+                            Logged-In Viewer
+                             
+                            <span>
+                                           
+                            </span>
+                            Linked
+              </div>
 </div>,
             <div
-              className="view__descriptor"
+              className="view__close_button"
+              onClick={[Function]}
 >
-              Linked
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
 </div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Logged-In Viewer",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Logged-In Viewer
+                   
+                  <span>
+                                     
+                  </span>
+                  Linked
+</div>,
+                undefined,
+                false,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Logged-In Viewer",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Logged-In Viewer",
+                    " ",
+                    <span>
+                       
+</span>,
+                    "Linked",
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Logged-In Viewer",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  "Linked",
+                ],
+                "type": "div",
+              },
+              undefined,
+              false,
+            ],
             "type": "div",
           },
           Object {
@@ -2869,11 +3992,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Linked",
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": "Linked",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -2885,6 +4023,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -2942,6 +4081,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -3005,14 +4145,27 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Logged-In Viewer
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Logged-In Viewer
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                                    Linked
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
+                        className="view__close_button"
+                        onClick={[Function]}
             >
-                        Linked
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
             </div>
 </div>,
           <div
@@ -3025,6 +4178,7 @@ ShallowWrapper {
             }
 >
             <ExtensionFrame
+                        bindIframeToParent={[Function]}
                         className="view"
                         extension={
                                     Object {
@@ -3085,33 +4239,94 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Logged-In Viewer
+                <div
+                                className="view__descriptor"
+                >
+                                Logged-In Viewer
+                                 
+                                <span>
+                                                 
+                                </span>
+                                Linked
+                </div>
 </div>,
               <div
-                className="view__descriptor"
+                className="view__close_button"
+                onClick={[Function]}
 >
-                Linked
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
 </div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Logged-In Viewer",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Logged-In Viewer
+                     
+                    <span>
+                                         
+                    </span>
+                    Linked
+</div>,
+                  undefined,
+                  false,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Logged-In Viewer",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Logged-In Viewer",
+                      " ",
+                      <span>
+                         
+</span>,
+                      "Linked",
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Logged-In Viewer",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    "Linked",
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                false,
+              ],
               "type": "div",
             },
             Object {
@@ -3119,11 +4334,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Linked",
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": "Linked",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -3135,6 +4365,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              bindIframeToParent={[Function]}
               className="view"
               extension={
                             Object {
@@ -3192,6 +4423,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "bindIframeToParent": [Function],
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -3255,11 +4487,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionView /> overlay mode views renders correctly when in overlay mode as a Logged In and Unlinked Viewer 1`] = `
+exports[`<ExtensionViewComponent /> overlay mode views renders correctly when in overlay mode as a Logged In and Unlinked Viewer 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -3308,6 +4540,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={false}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -3337,14 +4570,27 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Logged-In Viewer
+                    <div
+                              className="view__descriptor"
+                    >
+                              Logged-In Viewer
+                               
+                              <span>
+                                         
+                              </span>
+                              Unlinked
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
+                    className="view__close_button"
+                    onClick={[Function]}
           >
-                    Unlinked
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
           </div>
 </div>,
         <div
@@ -3357,6 +4603,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
@@ -3417,33 +4664,94 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Logged-In Viewer
+              <div
+                            className="view__descriptor"
+              >
+                            Logged-In Viewer
+                             
+                            <span>
+                                           
+                            </span>
+                            Unlinked
+              </div>
 </div>,
             <div
-              className="view__descriptor"
+              className="view__close_button"
+              onClick={[Function]}
 >
-              Unlinked
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
 </div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Logged-In Viewer",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Logged-In Viewer
+                   
+                  <span>
+                                     
+                  </span>
+                  Unlinked
+</div>,
+                undefined,
+                false,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Logged-In Viewer",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Logged-In Viewer",
+                    " ",
+                    <span>
+                       
+</span>,
+                    "Unlinked",
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Logged-In Viewer",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  "Unlinked",
+                ],
+                "type": "div",
+              },
+              undefined,
+              false,
+            ],
             "type": "div",
           },
           Object {
@@ -3451,11 +4759,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Unlinked",
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": "Unlinked",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -3467,6 +4790,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -3524,6 +4848,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -3587,14 +4912,27 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Logged-In Viewer
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Logged-In Viewer
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                                    Unlinked
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
+                        className="view__close_button"
+                        onClick={[Function]}
             >
-                        Unlinked
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
             </div>
 </div>,
           <div
@@ -3607,6 +4945,7 @@ ShallowWrapper {
             }
 >
             <ExtensionFrame
+                        bindIframeToParent={[Function]}
                         className="view"
                         extension={
                                     Object {
@@ -3667,33 +5006,94 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Logged-In Viewer
+                <div
+                                className="view__descriptor"
+                >
+                                Logged-In Viewer
+                                 
+                                <span>
+                                                 
+                                </span>
+                                Unlinked
+                </div>
 </div>,
               <div
-                className="view__descriptor"
+                className="view__close_button"
+                onClick={[Function]}
 >
-                Unlinked
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
 </div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Logged-In Viewer",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Logged-In Viewer
+                     
+                    <span>
+                                         
+                    </span>
+                    Unlinked
+</div>,
+                  undefined,
+                  false,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Logged-In Viewer",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Logged-In Viewer",
+                      " ",
+                      <span>
+                         
+</span>,
+                      "Unlinked",
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Logged-In Viewer",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    "Unlinked",
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                false,
+              ],
               "type": "div",
             },
             Object {
@@ -3701,11 +5101,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Unlinked",
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": "Unlinked",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -3717,6 +5132,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              bindIframeToParent={[Function]}
               className="view"
               extension={
                             Object {
@@ -3774,6 +5190,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "bindIframeToParent": [Function],
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -3837,11 +5254,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionView /> overlay mode views renders correctly when in overlay mode as a Logged Out 1`] = `
+exports[`<ExtensionViewComponent /> overlay mode views renders correctly when in overlay mode as a Logged Out 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -3890,6 +5307,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={false}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -3919,13 +5337,27 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Logged-Out Viewer
+                    <div
+                              className="view__descriptor"
+                    >
+                              Logged-Out Viewer
+                               
+                              <span>
+                                         
+                              </span>
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
-          />
+                    className="view__close_button"
+                    onClick={[Function]}
+          >
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
+          </div>
 </div>,
         <div
           className="view"
@@ -3937,6 +5369,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
@@ -3997,31 +5430,92 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Logged-Out Viewer
+              <div
+                            className="view__descriptor"
+              >
+                            Logged-Out Viewer
+                             
+                            <span>
+                                           
+                            </span>
+              </div>
 </div>,
             <div
-              className="view__descriptor"
-/>,
+              className="view__close_button"
+              onClick={[Function]}
+>
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
+</div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Logged-Out Viewer",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Logged-Out Viewer
+                   
+                  <span>
+                                     
+                  </span>
+</div>,
+                undefined,
+                false,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Logged-Out Viewer",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Logged-Out Viewer",
+                    " ",
+                    <span>
+                       
+</span>,
+                    null,
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Logged-Out Viewer",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  null,
+                ],
+                "type": "div",
+              },
+              undefined,
+              false,
+            ],
             "type": "div",
           },
           Object {
@@ -4029,11 +5523,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": null,
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -4045,6 +5554,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -4102,6 +5612,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -4165,13 +5676,27 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Logged-Out Viewer
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Logged-Out Viewer
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
-            />
+                        className="view__close_button"
+                        onClick={[Function]}
+            >
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
+            </div>
 </div>,
           <div
             className="view"
@@ -4183,6 +5708,7 @@ ShallowWrapper {
             }
 >
             <ExtensionFrame
+                        bindIframeToParent={[Function]}
                         className="view"
                         extension={
                                     Object {
@@ -4243,31 +5769,92 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Logged-Out Viewer
+                <div
+                                className="view__descriptor"
+                >
+                                Logged-Out Viewer
+                                 
+                                <span>
+                                                 
+                                </span>
+                </div>
 </div>,
               <div
-                className="view__descriptor"
-/>,
+                className="view__close_button"
+                onClick={[Function]}
+>
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
+</div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Logged-Out Viewer",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Logged-Out Viewer
+                     
+                    <span>
+                                         
+                    </span>
+</div>,
+                  undefined,
+                  false,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Logged-Out Viewer",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Logged-Out Viewer",
+                      " ",
+                      <span>
+                         
+</span>,
+                      null,
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Logged-Out Viewer",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    null,
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                false,
+              ],
               "type": "div",
             },
             Object {
@@ -4275,11 +5862,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": null,
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -4291,6 +5893,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              bindIframeToParent={[Function]}
               className="view"
               extension={
                             Object {
@@ -4348,6 +5951,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "bindIframeToParent": [Function],
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -4411,11 +6015,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionView /> panel mode views renders correctly when in panel mode as a Broadcaster 1`] = `
+exports[`<ExtensionViewComponent /> panel mode views renders correctly when in panel mode as a Broadcaster 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -4464,6 +6068,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={false}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -4493,13 +6098,27 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Broadcaster
+                    <div
+                              className="view__descriptor"
+                    >
+                              Broadcaster
+                               
+                              <span>
+                                         
+                              </span>
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
-          />
+                    className="view__close_button"
+                    onClick={[Function]}
+          >
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
+          </div>
 </div>,
         <div
           className="view"
@@ -4511,6 +6130,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
@@ -4571,31 +6191,92 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Broadcaster
+              <div
+                            className="view__descriptor"
+              >
+                            Broadcaster
+                             
+                            <span>
+                                           
+                            </span>
+              </div>
 </div>,
             <div
-              className="view__descriptor"
-/>,
+              className="view__close_button"
+              onClick={[Function]}
+>
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
+</div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Broadcaster",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Broadcaster
+                   
+                  <span>
+                                     
+                  </span>
+</div>,
+                undefined,
+                false,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Broadcaster",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Broadcaster",
+                    " ",
+                    <span>
+                       
+</span>,
+                    null,
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Broadcaster",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  null,
+                ],
+                "type": "div",
+              },
+              undefined,
+              false,
+            ],
             "type": "div",
           },
           Object {
@@ -4603,11 +6284,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": null,
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -4619,6 +6315,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -4676,6 +6373,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -4739,13 +6437,27 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Broadcaster
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Broadcaster
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
-            />
+                        className="view__close_button"
+                        onClick={[Function]}
+            >
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
+            </div>
 </div>,
           <div
             className="view"
@@ -4757,6 +6469,7 @@ ShallowWrapper {
             }
 >
             <ExtensionFrame
+                        bindIframeToParent={[Function]}
                         className="view"
                         extension={
                                     Object {
@@ -4817,31 +6530,92 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Broadcaster
+                <div
+                                className="view__descriptor"
+                >
+                                Broadcaster
+                                 
+                                <span>
+                                                 
+                                </span>
+                </div>
 </div>,
               <div
-                className="view__descriptor"
-/>,
+                className="view__close_button"
+                onClick={[Function]}
+>
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
+</div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Broadcaster",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Broadcaster
+                     
+                    <span>
+                                         
+                    </span>
+</div>,
+                  undefined,
+                  false,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Broadcaster",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Broadcaster",
+                      " ",
+                      <span>
+                         
+</span>,
+                      null,
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Broadcaster",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    null,
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                false,
+              ],
               "type": "div",
             },
             Object {
@@ -4849,11 +6623,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": null,
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -4865,6 +6654,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              bindIframeToParent={[Function]}
               className="view"
               extension={
                             Object {
@@ -4922,6 +6712,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "bindIframeToParent": [Function],
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -4985,11 +6776,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionView /> panel mode views renders correctly when in panel mode as a Logged In and Linked Viewer 1`] = `
+exports[`<ExtensionViewComponent /> panel mode views renders correctly when in panel mode as a Logged In and Linked Viewer 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -5038,6 +6829,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={true}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -5067,14 +6859,27 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Logged-In Viewer
+                    <div
+                              className="view__descriptor"
+                    >
+                              Logged-In Viewer
+                               
+                              <span>
+                                         
+                              </span>
+                              Linked
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
+                    className="view__close_button"
+                    onClick={[Function]}
           >
-                    Linked
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
           </div>
 </div>,
         <div
@@ -5087,6 +6892,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
@@ -5147,33 +6953,94 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Logged-In Viewer
+              <div
+                            className="view__descriptor"
+              >
+                            Logged-In Viewer
+                             
+                            <span>
+                                           
+                            </span>
+                            Linked
+              </div>
 </div>,
             <div
-              className="view__descriptor"
+              className="view__close_button"
+              onClick={[Function]}
 >
-              Linked
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
 </div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Logged-In Viewer",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Logged-In Viewer
+                   
+                  <span>
+                                     
+                  </span>
+                  Linked
+</div>,
+                undefined,
+                false,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Logged-In Viewer",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Logged-In Viewer",
+                    " ",
+                    <span>
+                       
+</span>,
+                    "Linked",
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Logged-In Viewer",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  "Linked",
+                ],
+                "type": "div",
+              },
+              undefined,
+              false,
+            ],
             "type": "div",
           },
           Object {
@@ -5181,11 +7048,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Linked",
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": "Linked",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -5197,6 +7079,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -5254,6 +7137,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -5317,14 +7201,27 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Logged-In Viewer
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Logged-In Viewer
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                                    Linked
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
+                        className="view__close_button"
+                        onClick={[Function]}
             >
-                        Linked
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
             </div>
 </div>,
           <div
@@ -5337,6 +7234,7 @@ ShallowWrapper {
             }
 >
             <ExtensionFrame
+                        bindIframeToParent={[Function]}
                         className="view"
                         extension={
                                     Object {
@@ -5397,33 +7295,94 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Logged-In Viewer
+                <div
+                                className="view__descriptor"
+                >
+                                Logged-In Viewer
+                                 
+                                <span>
+                                                 
+                                </span>
+                                Linked
+                </div>
 </div>,
               <div
-                className="view__descriptor"
+                className="view__close_button"
+                onClick={[Function]}
 >
-                Linked
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
 </div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Logged-In Viewer",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Logged-In Viewer
+                     
+                    <span>
+                                         
+                    </span>
+                    Linked
+</div>,
+                  undefined,
+                  false,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Logged-In Viewer",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Logged-In Viewer",
+                      " ",
+                      <span>
+                         
+</span>,
+                      "Linked",
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Logged-In Viewer",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    "Linked",
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                false,
+              ],
               "type": "div",
             },
             Object {
@@ -5431,11 +7390,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Linked",
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": "Linked",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -5447,6 +7421,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              bindIframeToParent={[Function]}
               className="view"
               extension={
                             Object {
@@ -5504,6 +7479,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "bindIframeToParent": [Function],
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -5567,11 +7543,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionView /> panel mode views renders correctly when in panel mode as a Logged In and Unlinked Viewer 1`] = `
+exports[`<ExtensionViewComponent /> panel mode views renders correctly when in panel mode as a Logged In and Unlinked Viewer 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -5620,6 +7596,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={false}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -5649,14 +7626,27 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Logged-In Viewer
+                    <div
+                              className="view__descriptor"
+                    >
+                              Logged-In Viewer
+                               
+                              <span>
+                                         
+                              </span>
+                              Unlinked
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
+                    className="view__close_button"
+                    onClick={[Function]}
           >
-                    Unlinked
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
           </div>
 </div>,
         <div
@@ -5669,6 +7659,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
@@ -5729,33 +7720,94 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Logged-In Viewer
+              <div
+                            className="view__descriptor"
+              >
+                            Logged-In Viewer
+                             
+                            <span>
+                                           
+                            </span>
+                            Unlinked
+              </div>
 </div>,
             <div
-              className="view__descriptor"
+              className="view__close_button"
+              onClick={[Function]}
 >
-              Unlinked
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
 </div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Logged-In Viewer",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Logged-In Viewer
+                   
+                  <span>
+                                     
+                  </span>
+                  Unlinked
+</div>,
+                undefined,
+                false,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Logged-In Viewer",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Logged-In Viewer",
+                    " ",
+                    <span>
+                       
+</span>,
+                    "Unlinked",
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Logged-In Viewer",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  "Unlinked",
+                ],
+                "type": "div",
+              },
+              undefined,
+              false,
+            ],
             "type": "div",
           },
           Object {
@@ -5763,11 +7815,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Unlinked",
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": "Unlinked",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -5779,6 +7846,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -5836,6 +7904,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -5899,14 +7968,27 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Logged-In Viewer
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Logged-In Viewer
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                                    Unlinked
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
+                        className="view__close_button"
+                        onClick={[Function]}
             >
-                        Unlinked
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
             </div>
 </div>,
           <div
@@ -5919,6 +8001,7 @@ ShallowWrapper {
             }
 >
             <ExtensionFrame
+                        bindIframeToParent={[Function]}
                         className="view"
                         extension={
                                     Object {
@@ -5979,33 +8062,94 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Logged-In Viewer
+                <div
+                                className="view__descriptor"
+                >
+                                Logged-In Viewer
+                                 
+                                <span>
+                                                 
+                                </span>
+                                Unlinked
+                </div>
 </div>,
               <div
-                className="view__descriptor"
+                className="view__close_button"
+                onClick={[Function]}
 >
-                Unlinked
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
 </div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Logged-In Viewer",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Logged-In Viewer
+                     
+                    <span>
+                                         
+                    </span>
+                    Unlinked
+</div>,
+                  undefined,
+                  false,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Logged-In Viewer",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Logged-In Viewer",
+                      " ",
+                      <span>
+                         
+</span>,
+                      "Unlinked",
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Logged-In Viewer",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    "Unlinked",
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                false,
+              ],
               "type": "div",
             },
             Object {
@@ -6013,11 +8157,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Unlinked",
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": "Unlinked",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -6029,6 +8188,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              bindIframeToParent={[Function]}
               className="view"
               extension={
                             Object {
@@ -6086,6 +8246,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "bindIframeToParent": [Function],
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -6149,11 +8310,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionView /> panel mode views renders correctly when in panel mode as a Logged Out 1`] = `
+exports[`<ExtensionViewComponent /> panel mode views renders correctly when in panel mode as a Logged Out 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -6202,6 +8363,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={false}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -6231,13 +8393,27 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Logged-Out Viewer
+                    <div
+                              className="view__descriptor"
+                    >
+                              Logged-Out Viewer
+                               
+                              <span>
+                                         
+                              </span>
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
-          />
+                    className="view__close_button"
+                    onClick={[Function]}
+          >
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
+          </div>
 </div>,
         <div
           className="view"
@@ -6249,6 +8425,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
@@ -6309,31 +8486,92 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Logged-Out Viewer
+              <div
+                            className="view__descriptor"
+              >
+                            Logged-Out Viewer
+                             
+                            <span>
+                                           
+                            </span>
+              </div>
 </div>,
             <div
-              className="view__descriptor"
-/>,
+              className="view__close_button"
+              onClick={[Function]}
+>
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
+</div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Logged-Out Viewer",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Logged-Out Viewer
+                   
+                  <span>
+                                     
+                  </span>
+</div>,
+                undefined,
+                false,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Logged-Out Viewer",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Logged-Out Viewer",
+                    " ",
+                    <span>
+                       
+</span>,
+                    null,
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Logged-Out Viewer",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  null,
+                ],
+                "type": "div",
+              },
+              undefined,
+              false,
+            ],
             "type": "div",
           },
           Object {
@@ -6341,11 +8579,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": null,
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -6357,6 +8610,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -6414,6 +8668,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -6477,13 +8732,27 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Logged-Out Viewer
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Logged-Out Viewer
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
-            />
+                        className="view__close_button"
+                        onClick={[Function]}
+            >
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
+            </div>
 </div>,
           <div
             className="view"
@@ -6495,6 +8764,7 @@ ShallowWrapper {
             }
 >
             <ExtensionFrame
+                        bindIframeToParent={[Function]}
                         className="view"
                         extension={
                                     Object {
@@ -6555,31 +8825,92 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Logged-Out Viewer
+                <div
+                                className="view__descriptor"
+                >
+                                Logged-Out Viewer
+                                 
+                                <span>
+                                                 
+                                </span>
+                </div>
 </div>,
               <div
-                className="view__descriptor"
-/>,
+                className="view__close_button"
+                onClick={[Function]}
+>
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
+</div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Logged-Out Viewer",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Logged-Out Viewer
+                     
+                    <span>
+                                         
+                    </span>
+</div>,
+                  undefined,
+                  false,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Logged-Out Viewer",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Logged-Out Viewer",
+                      " ",
+                      <span>
+                         
+</span>,
+                      null,
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Logged-Out Viewer",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    null,
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                false,
+              ],
               "type": "div",
             },
             Object {
@@ -6587,11 +8918,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": null,
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -6603,6 +8949,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              bindIframeToParent={[Function]}
               className="view"
               extension={
                             Object {
@@ -6660,6 +9007,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "bindIframeToParent": [Function],
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -6723,11 +9071,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionView /> panel mode views sets correct panel height when panel height provided 1`] = `
+exports[`<ExtensionViewComponent /> panel mode views sets correct panel height when panel height provided 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -6771,6 +9119,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={false}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -6800,13 +9149,27 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Broadcaster
+                    <div
+                              className="view__descriptor"
+                    >
+                              Broadcaster
+                               
+                              <span>
+                                         
+                              </span>
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
-          />
+                    className="view__close_button"
+                    onClick={[Function]}
+          >
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
+          </div>
 </div>,
         <div
           className="view"
@@ -6818,6 +9181,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
@@ -6873,31 +9237,92 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Broadcaster
+              <div
+                            className="view__descriptor"
+              >
+                            Broadcaster
+                             
+                            <span>
+                                           
+                            </span>
+              </div>
 </div>,
             <div
-              className="view__descriptor"
-/>,
+              className="view__close_button"
+              onClick={[Function]}
+>
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
+</div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Broadcaster",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Broadcaster
+                   
+                  <span>
+                                     
+                  </span>
+</div>,
+                undefined,
+                false,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Broadcaster",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Broadcaster",
+                    " ",
+                    <span>
+                       
+</span>,
+                    null,
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Broadcaster",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  null,
+                ],
+                "type": "div",
+              },
+              undefined,
+              false,
+            ],
             "type": "div",
           },
           Object {
@@ -6905,11 +9330,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": null,
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -6921,6 +9361,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -6973,6 +9414,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -7031,13 +9473,27 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Broadcaster
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Broadcaster
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
-            />
+                        className="view__close_button"
+                        onClick={[Function]}
+            >
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
+            </div>
 </div>,
           <div
             className="view"
@@ -7049,6 +9505,7 @@ ShallowWrapper {
             }
 >
             <ExtensionFrame
+                        bindIframeToParent={[Function]}
                         className="view"
                         extension={
                                     Object {
@@ -7104,31 +9561,92 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Broadcaster
+                <div
+                                className="view__descriptor"
+                >
+                                Broadcaster
+                                 
+                                <span>
+                                                 
+                                </span>
+                </div>
 </div>,
               <div
-                className="view__descriptor"
-/>,
+                className="view__close_button"
+                onClick={[Function]}
+>
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
+</div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Broadcaster",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Broadcaster
+                     
+                    <span>
+                                         
+                    </span>
+</div>,
+                  undefined,
+                  false,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Broadcaster",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Broadcaster",
+                      " ",
+                      <span>
+                         
+</span>,
+                      null,
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Broadcaster",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    null,
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                false,
+              ],
               "type": "div",
             },
             Object {
@@ -7136,11 +9654,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": null,
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -7152,6 +9685,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              bindIframeToParent={[Function]}
               className="view"
               extension={
                             Object {
@@ -7204,6 +9738,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "bindIframeToParent": [Function],
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -7262,11 +9797,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionView /> uses correct panel view styles if no type provided 1`] = `
+exports[`<ExtensionViewComponent /> uses correct panel view styles if no type provided 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionView
+  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -7315,6 +9850,7 @@ ShallowWrapper {
           }
     }
     id="0"
+    iframe=""
     linked={false}
     mode="viewer"
     openEditViewHandler={[Function]}
@@ -7344,13 +9880,27 @@ ShallowWrapper {
           className="view__header"
 >
           <div
-                    className="view__descriptor"
+                    className="view__header-container"
           >
-                    Broadcaster
+                    <div
+                              className="view__descriptor"
+                    >
+                              Broadcaster
+                               
+                              <span>
+                                         
+                              </span>
+                    </div>
           </div>
           <div
-                    className="view__descriptor"
-          />
+                    className="view__close_button"
+                    onClick={[Function]}
+          >
+                    <img
+                              alt="Close"
+                              src="close_icon.png"
+                    />
+          </div>
 </div>,
         <div
           className="view"
@@ -7362,6 +9912,7 @@ ShallowWrapper {
           }
 >
           <ExtensionFrame
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
@@ -7422,31 +9973,92 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            false,
             <div
-              className="view__descriptor"
+              className="view__header-container"
 >
-              Broadcaster
+              <div
+                            className="view__descriptor"
+              >
+                            Broadcaster
+                             
+                            <span>
+                                           
+                            </span>
+              </div>
 </div>,
             <div
-              className="view__descriptor"
-/>,
+              className="view__close_button"
+              onClick={[Function]}
+>
+              <img
+                            alt="Close"
+                            src="close_icon.png"
+              />
+</div>,
           ],
           "className": "view__header",
         },
         "ref": null,
         "rendered": Array [
-          false,
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Broadcaster",
-              "className": "view__descriptor",
+              "children": Array [
+                <div
+                  className="view__descriptor"
+>
+                  Broadcaster
+                   
+                  <span>
+                                     
+                  </span>
+</div>,
+                undefined,
+                false,
+              ],
+              "className": "view__header-container",
             },
             "ref": null,
-            "rendered": "Broadcaster",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Broadcaster",
+                    " ",
+                    <span>
+                       
+</span>,
+                    null,
+                  ],
+                  "className": "view__descriptor",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Broadcaster",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " ",
+                    },
+                    "ref": null,
+                    "rendered": " ",
+                    "type": "span",
+                  },
+                  null,
+                ],
+                "type": "div",
+              },
+              undefined,
+              false,
+            ],
             "type": "div",
           },
           Object {
@@ -7454,11 +10066,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": null,
-              "className": "view__descriptor",
+              "children": <img
+                alt="Close"
+                src="close_icon.png"
+/>,
+              "className": "view__close_button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Close",
+                "src": "close_icon.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             "type": "div",
           },
         ],
@@ -7470,6 +10097,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ExtensionFrame
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
@@ -7527,6 +10155,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -7590,13 +10219,27 @@ ShallowWrapper {
             className="view__header"
 >
             <div
-                        className="view__descriptor"
+                        className="view__header-container"
             >
-                        Broadcaster
+                        <div
+                                    className="view__descriptor"
+                        >
+                                    Broadcaster
+                                     
+                                    <span>
+                                                 
+                                    </span>
+                        </div>
             </div>
             <div
-                        className="view__descriptor"
-            />
+                        className="view__close_button"
+                        onClick={[Function]}
+            >
+                        <img
+                                    alt="Close"
+                                    src="close_icon.png"
+                        />
+            </div>
 </div>,
           <div
             className="view"
@@ -7608,6 +10251,7 @@ ShallowWrapper {
             }
 >
             <ExtensionFrame
+                        bindIframeToParent={[Function]}
                         className="view"
                         extension={
                                     Object {
@@ -7668,31 +10312,92 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              false,
               <div
-                className="view__descriptor"
+                className="view__header-container"
 >
-                Broadcaster
+                <div
+                                className="view__descriptor"
+                >
+                                Broadcaster
+                                 
+                                <span>
+                                                 
+                                </span>
+                </div>
 </div>,
               <div
-                className="view__descriptor"
-/>,
+                className="view__close_button"
+                onClick={[Function]}
+>
+                <img
+                                alt="Close"
+                                src="close_icon.png"
+                />
+</div>,
             ],
             "className": "view__header",
           },
           "ref": null,
           "rendered": Array [
-            false,
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Broadcaster",
-                "className": "view__descriptor",
+                "children": Array [
+                  <div
+                    className="view__descriptor"
+>
+                    Broadcaster
+                     
+                    <span>
+                                         
+                    </span>
+</div>,
+                  undefined,
+                  false,
+                ],
+                "className": "view__header-container",
               },
               "ref": null,
-              "rendered": "Broadcaster",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Broadcaster",
+                      " ",
+                      <span>
+                         
+</span>,
+                      null,
+                    ],
+                    "className": "view__descriptor",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Broadcaster",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": " ",
+                      },
+                      "ref": null,
+                      "rendered": " ",
+                      "type": "span",
+                    },
+                    null,
+                  ],
+                  "type": "div",
+                },
+                undefined,
+                false,
+              ],
               "type": "div",
             },
             Object {
@@ -7700,11 +10405,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": null,
-                "className": "view__descriptor",
+                "children": <img
+                  alt="Close"
+                  src="close_icon.png"
+/>,
+                "className": "view__close_button",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Close",
+                  "src": "close_icon.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
               "type": "div",
             },
           ],
@@ -7716,6 +10436,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ExtensionFrame
+              bindIframeToParent={[Function]}
               className="view"
               extension={
                             Object {
@@ -7773,6 +10494,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "bindIframeToParent": [Function],
               "className": "view",
               "extension": Object {
                 "authorName": "test",

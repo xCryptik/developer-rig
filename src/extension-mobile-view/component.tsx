@@ -15,6 +15,7 @@ interface ExtensionMobileViewProps {
   frameSize: FrameSize;
   position: Position
   role: string;
+  bindIframeToParent: (iframe: HTMLIFrameElement) => void;
 }
 type Props = ExtensionMobileViewProps & React.HTMLAttributes<HTMLDivElement>;
 
@@ -66,6 +67,7 @@ export class ExtensionMobileView extends React.Component<Props> {
         style={this.computeViewStyles()}>
           <div style={this.computeFrameStyles()}>
           <ExtensionFrame
+            bindIframeToParent={this.props.bindIframeToParent}
             className="view"
             frameId={`frameid-${this.props.id}`}
             extension={this.props.extension}

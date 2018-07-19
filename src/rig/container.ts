@@ -1,8 +1,15 @@
 import { connect, Dispatch } from 'react-redux';
-import { RigComponent, ReduxDispatchProps, RigProps } from './component';
+import { RigComponent, ReduxDispatchProps, ReduxStateProps } from './component';
 import * as extensionActions from '../core/actions/extensions';
 import * as userActions from '../core/actions/user-session';
 import { GlobalState } from '../core/models/global-state';
+import { getUserSession } from '../core/state/session';
+
+function mapStateToProps(state: GlobalState): ReduxStateProps {
+  return {
+    session: getUserSession(state),
+  }
+}
 
 function mapDispatchToProps(dispatch: Dispatch<GlobalState>): ReduxDispatchProps {
   return {
@@ -11,4 +18,4 @@ function mapDispatchToProps(dispatch: Dispatch<GlobalState>): ReduxDispatchProps
   };
 }
 
-export const Rig = connect(null, mapDispatchToProps)(RigComponent);
+export const Rig = connect<ReduxStateProps, ReduxDispatchProps>(mapStateToProps, mapDispatchToProps)(RigComponent);

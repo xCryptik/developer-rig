@@ -3,7 +3,7 @@
   twitch.ext = Object.assign(twitch.ext || {}, ext);
 })(function() {
   let authCallback, authData;
-  let context, contextChangedFields;
+  let contextCallback, context, contextChangedFields;
   let isVisible, visibilityCallback;
   let positionCallback;
   let followCallback;
@@ -11,25 +11,37 @@
   let webSocket;
 
   window.addEventListener("message", event => {
-    if (event.data && event.data.action === "extension-frame-authorize-response") {
-      webSocket = new WebSocket("wss://localhost.rig.twitch.tv:3003");
-      webSocket.addEventListener('message', function(event) {
-        let message = JSON.parse(event.data);
-        if (message.type === 'MESSAGE') {
-          const [channelId, clientId, target] = message.data.topic.split('.').pop().split('-');
-          if (authData.channelId === channelId && authData.clientId === clientId) {
-            const targetListeners = listeners[target];
-            if (targetListeners) {
-              message = JSON.parse(message.data.message);
-              targetListeners.forEach(fn => {
-                fn(target, message.content_type, message.content[0]);
-              });
+    if (event.data) {
+      switch (event.data.action) {
+        case "extension-frame-authorize-response":
+          webSocket = new WebSocket("wss://localhost.rig.twitch.tv:3003");
+          webSocket.addEventListener('message', function(event) {
+            let message = JSON.parse(event.data);
+            if (message.type === 'MESSAGE') {
+              const [channelId, clientId, target] = message.data.topic.split('.').pop().split('-');
+              if (authData.channelId === channelId && authData.clientId === clientId) {
+                const targetListeners = listeners[target];
+                if (targetListeners) {
+                  message = JSON.parse(message.data.message);
+                  targetListeners.forEach(fn => {
+                    fn(target, message.content_type, message.content[0]);
+                  });
+                }
+              }
             }
-          }
-        }
-      });
-      authData = Object.assign({}, event.data.response);
-      authCallback(authData);
+          });
+          authData = Object.assign({}, event.data.response);
+          authCallback(authData);
+          break;
+        case 'twitch-ext-context':
+          contextCallback(event.data.context);
+          break;
+        case 'twitch-ext-auth':
+          authCallback(event.data.auth);
+          break;
+        default:
+          break;
+      }
     }
   });
 

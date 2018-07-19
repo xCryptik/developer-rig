@@ -12,6 +12,7 @@ interface ExtensionFrameProps {
   extension: RigExtension;
   type: string;
   mode: string;
+  bindIframeToParent: (iframe: HTMLIFrameElement) => void;
 }
 
 type Props = ExtensionFrameProps;
@@ -38,6 +39,7 @@ export class ExtensionFrame extends React.Component<Props> {
 
   private bindIframeRef = (iframe: HTMLIFrameElement) => {
     this.iframe = iframe;
+    this.props.bindIframeToParent(iframe);
   }
 
   public extensionFrameInit = () => {

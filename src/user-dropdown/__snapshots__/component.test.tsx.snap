@@ -67,6 +67,10 @@ ShallowWrapper {
           >
                     test
           </div>
+          <img
+                    className="user-dropdown__triangle"
+                    src="whitetriangle.svg"
+          />
 </div>,
         <div
           className="user-dropdown__menu transition"
@@ -104,7 +108,9 @@ ShallowWrapper {
                               </a>
                     </li>
                     <li>
-                              <hr />
+                              <div
+                                        className="user-dropdown__divider"
+                              />
                     </li>
                     <li
                               onClick={[Function]}
@@ -137,6 +143,10 @@ ShallowWrapper {
 >
               test
 </div>,
+            <img
+              className="user-dropdown__triangle"
+              src="whitetriangle.svg"
+/>,
           ],
           "className": "user-dropdown__name-container",
         },
@@ -167,6 +177,18 @@ ShallowWrapper {
             "ref": null,
             "rendered": "test",
             "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "user-dropdown__triangle",
+              "src": "whitetriangle.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
           },
         ],
         "type": "div",
@@ -209,7 +231,9 @@ ShallowWrapper {
                         </a>
             </li>
             <li>
-                        <hr />
+                        <div
+                                    className="user-dropdown__divider"
+                        />
             </li>
             <li
                         onClick={[Function]}
@@ -258,7 +282,9 @@ ShallowWrapper {
                 </a>
 </li>,
               <li>
-                <hr />
+                <div
+                                className="user-dropdown__divider"
+                />
 </li>,
               <li
                 onClick={[Function]}
@@ -390,17 +416,21 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <hr />,
+                "children": <div
+                  className="user-dropdown__divider"
+/>,
               },
               "ref": null,
               "rendered": Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "host",
-                "props": Object {},
+                "props": Object {
+                  "className": "user-dropdown__divider",
+                },
                 "ref": null,
                 "rendered": null,
-                "type": "hr",
+                "type": "div",
               },
               "type": "li",
             },
@@ -444,6 +474,10 @@ ShallowWrapper {
             >
                         test
             </div>
+            <img
+                        className="user-dropdown__triangle"
+                        src="whitetriangle.svg"
+            />
 </div>,
           <div
             className="user-dropdown__menu transition"
@@ -481,7 +515,9 @@ ShallowWrapper {
                                     </a>
                         </li>
                         <li>
-                                    <hr />
+                                    <div
+                                                className="user-dropdown__divider"
+                                    />
                         </li>
                         <li
                                     onClick={[Function]}
@@ -514,6 +550,10 @@ ShallowWrapper {
 >
                 test
 </div>,
+              <img
+                className="user-dropdown__triangle"
+                src="whitetriangle.svg"
+/>,
             ],
             "className": "user-dropdown__name-container",
           },
@@ -544,6 +584,18 @@ ShallowWrapper {
               "ref": null,
               "rendered": "test",
               "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "user-dropdown__triangle",
+                "src": "whitetriangle.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
             },
           ],
           "type": "div",
@@ -586,7 +638,9 @@ ShallowWrapper {
                             </a>
               </li>
               <li>
-                            <hr />
+                            <div
+                                          className="user-dropdown__divider"
+                            />
               </li>
               <li
                             onClick={[Function]}
@@ -635,7 +689,9 @@ ShallowWrapper {
                   </a>
 </li>,
                 <li>
-                  <hr />
+                  <div
+                                    className="user-dropdown__divider"
+                  />
 </li>,
                 <li
                   onClick={[Function]}
@@ -767,17 +823,21 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <hr />,
+                  "children": <div
+                    className="user-dropdown__divider"
+/>,
                 },
                 "ref": null,
                 "rendered": Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
-                  "props": Object {},
+                  "props": Object {
+                    "className": "user-dropdown__divider",
+                  },
                   "ref": null,
                   "rendered": null,
-                  "type": "hr",
+                  "type": "div",
                 },
                 "type": "li",
               },

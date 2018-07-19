@@ -3,6 +3,7 @@ import * as classNames from 'classnames';
 import { UserSession } from '../core/models/user-session';
 import { fetchNewRelease } from '../util/api';
 import * as reddot from '../img/reddot.svg';
+import * as whitetriangle from '../img/whitetriangle.svg';
 import './component.sass';
 
 export interface PublicProps {
@@ -66,6 +67,10 @@ export class UserDropdownComponent extends React.Component<Props, State> {
       'transition': true,
       'open': this.state.open,
     });
+    const triangleClass = classNames({
+      'user-dropdown__triangle': true,
+      'open': this.state.open,
+    });
 
     return (
       <div onClick={this.toggleDropdown} className='user-dropdown' tabIndex={0}>
@@ -75,6 +80,7 @@ export class UserDropdownComponent extends React.Component<Props, State> {
           )}
           <img alt={login} className='user-dropdown__image' src={profileImageUrl} />
           <div className={usernameClasses}>{login}</div>
+          <img src={whitetriangle} className={triangleClass} />
         </div>
         <div className={dropdownClass}>
           <ul>
@@ -95,7 +101,7 @@ export class UserDropdownComponent extends React.Component<Props, State> {
                 )}
               </a>
             </li>
-            <li><hr /></li>
+            <li><div className='user-dropdown__divider'></div></li>
             <li onClick={() => { this.signOut() }}>Sign Out</li>
           </ul>
         </div>

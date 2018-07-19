@@ -109,7 +109,6 @@ describe('<RigComponent />', () => {
     instance.openConfigurationsHandler();
     expect(instance.state.showConfigurations).toBe(true);
 
-
     instance.closeConfigurationsHandler();
     expect(instance.state.showConfigurations).toBe(false);
   });

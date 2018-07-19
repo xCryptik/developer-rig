@@ -20,7 +20,7 @@ ShallowWrapper {
       "children": <button
         className="login-button"
 >
-        Log In
+        Sign In
 </button>,
       "href": "https://id.twitch.tv/oauth2/authorize?client_id=rtwj27xsv591q1zcnqqfg7suduj4pq&redirect_uri=https://localhost.rig.twitch.tv:3000&response_type=token&scope=user:edit+extensions:edit:catalog",
     },
@@ -30,11 +30,11 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "Log In",
+        "children": "Sign In",
         "className": "login-button",
       },
       "ref": null,
-      "rendered": "Log In",
+      "rendered": "Sign In",
       "type": "button",
     },
     "type": "a",
@@ -48,7 +48,7 @@ ShallowWrapper {
         "children": <button
           className="login-button"
 >
-          Log In
+          Sign In
 </button>,
         "href": "https://id.twitch.tv/oauth2/authorize?client_id=rtwj27xsv591q1zcnqqfg7suduj4pq&redirect_uri=https://localhost.rig.twitch.tv:3000&response_type=token&scope=user:edit+extensions:edit:catalog",
       },
@@ -58,11 +58,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Log In",
+          "children": "Sign In",
           "className": "login-button",
         },
         "ref": null,
-        "rendered": "Log In",
+        "rendered": "Sign In",
         "type": "button",
       },
       "type": "a",

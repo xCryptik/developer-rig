@@ -4,6 +4,7 @@ import { applyMiddleware, createStore, Reducer, combineReducers, Store as ReduxS
 import { sessionReducer } from './state/session';
 import { extensionsReducer } from './state/extensions';
 import { productsReducer } from './state/products';
+import { rigReducer } from './state/rig';
 import thunk from 'redux-thunk';
 
 interface RigState {
@@ -19,6 +20,7 @@ export class RigStore {
       session: sessionReducer,
       extensions: extensionsReducer,
       products: productsReducer,
+      rig: rigReducer,
     });
   }
 

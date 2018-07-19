@@ -20,10 +20,12 @@ import { RigExtensionView, RigExtension } from '../core/models/rig';
 import { Extension } from '../core/models/extension';
 import { ExtensionManifest } from '../core/models/manifest';
 import { UserSession } from '../core/models/user-session';
-
+import { SignInDialog } from '../sign-in-dialog';
 import { ExtensionMode, ExtensionViewType } from '../constants/extension-coordinator';
 
-// TODO: wrap this in container
+export interface ReduxStateProps {
+  session: UserSession;
+}
 
 export interface ReduxDispatchProps {
   saveManifest: (manifest: ExtensionManifest) => void;
@@ -42,6 +44,7 @@ interface State {
   mode: string;
   extensionViews: RigExtensionView[],
   manifest: ExtensionManifest;
+  showSignInDialog: boolean;
   showExtensionsView: boolean;
   showConfigurations: boolean;
   showEditView: boolean;
@@ -53,7 +56,8 @@ interface State {
   error: string;
 }
 
-type Props = RigProps & ReduxDispatchProps;
+type Props = RigProps & ReduxDispatchProps & ReduxStateProps;
+
 export class RigComponent extends React.Component<Props, State> {
   public refs: {
     extensionViewDialog: ExtensionViewDialog;
@@ -69,6 +73,7 @@ export class RigComponent extends React.Component<Props, State> {
     mode: ExtensionMode.Viewer,
     extensionViews: [],
     manifest: {} as ExtensionManifest,
+    showSignInDialog: true,
     showExtensionsView: false,
     showConfigurations: false,
     showEditView: false,
@@ -178,6 +183,12 @@ export class RigComponent extends React.Component<Props, State> {
     });
   }
 
+  public closeSignInDialog = () => {
+    this.setState({
+      showSignInDialog: false
+    });
+  }
+
   private refreshConfigurationsHandler = () => {
     const token = createSignedToken(RigRole, '', this.state.userId, this.state.channelId, this.state.secret);
     fetchExtensionManifest(this.state.apiHost, this.state.clientId, this.state.version, token)
@@ -284,6 +295,11 @@ export class RigComponent extends React.Component<Props, State> {
           config={this.state.manifest}
           closeConfigurationsHandler={this.closeConfigurationsHandler}
           refreshConfigurationsHandler={this.refreshConfigurationsHandler} />
+        {!this.props.session &&
+          <SignInDialog
+            show={this.state.showSignInDialog}
+            closeSignInDialog={this.closeSignInDialog} />
+        }
         <Console />
       </div>
     );

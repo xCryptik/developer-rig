@@ -61,3 +61,15 @@ export function mockFetchProducts() {
     })
   });
 }
+
+export function mockFetchNewRelease() {
+  return Promise.resolve({
+    ok: true,
+    json: () => ({
+      tag_name: '0.0.0',
+      assets: [{
+        browser_download_url: 'test.zip'
+        }]
+    })
+  });
+}

@@ -5,6 +5,9 @@ describe('RigStore', () => {
   it('initializes the correct reducers', () => {
     const store = new RigStore();
     const expectedState: GlobalState = {
+      rig: {
+        mockApi: false,
+      },
       session: {},
       extensions: {},
       products: {

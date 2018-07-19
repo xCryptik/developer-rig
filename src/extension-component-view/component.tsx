@@ -11,6 +11,7 @@ interface ExtensionComponentViewProps {
   frameSize: FrameSize;
   position: Position;
   role: string;
+  bindIframeToParent: (iframe: HTMLIFrameElement) => void;
 }
 
 type Props = ExtensionComponentViewProps & React.HTMLAttributes<HTMLDivElement>;
@@ -62,6 +63,7 @@ export class ExtensionComponentView extends React.Component<Props> {
         }}>
           <div style={this.computeViewStyles()}>
           <ExtensionFrame
+            bindIframeToParent={this.props.bindIframeToParent}
             className="view"
             frameId={`frameid-${this.props.id}`}
             extension={this.props.extension}

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './component.sass';
+import * as classNames from 'classnames';
 import { ExtensionFrame } from '../extension-frame';
 import { IdentityOptions } from '../constants/identity-options';
 import { ViewerTypes } from '../constants/viewer-types';
@@ -8,7 +9,10 @@ import { ExtensionComponentView } from '../extension-component-view';
 import { ExtensionMobileView } from '../extension-mobile-view/component';
 import { RigExtension, FrameSize } from '../core/models/rig';
 import { Position } from '../types/extension-coordinator';
-import { ExtensionAnchor, ExtensionMode, ExtensionViewType, ExtensionPlatform} from '../constants/extension-coordinator';
+import { RunListTrigger } from '../runlist-trigger';
+import * as runlist from '../../runlist/runlist.json';
+import { RunList } from '../core/models/run-list';
+import { ExtensionAnchor, ExtensionMode, ExtensionViewType, ExtensionPlatform } from '../constants/extension-coordinator';
 
 export const ConfigViewWrapperDimensions = Object.freeze({
   overflow: "auto",
@@ -42,17 +46,29 @@ interface ExtensionViewProps {
 
 interface State {
   mousedOver: boolean;
+  iframe: HTMLIFrameElement;
 }
+
 
 interface ExtensionProps {
   viewStyles: React.CSSProperties;
   viewWrapperStyles: React.CSSProperties;
 }
+export interface ReduxStateProps {
+  mockApiEnabled: boolean;
+}
 
-export class ExtensionView extends React.Component<ExtensionViewProps, State> {
+type Props = ExtensionViewProps & ReduxStateProps;
+
+export class ExtensionViewComponent extends React.Component<Props, State> {
   public state: State = {
     mousedOver: false,
+    iframe: undefined,
   };
+
+  private bindIframeToParent = (iframe: HTMLIFrameElement) => {
+    this.state.iframe = iframe;
+  }
 
   private mouseEnter() {
     this.setState({
@@ -71,6 +87,7 @@ export class ExtensionView extends React.Component<ExtensionViewProps, State> {
     switch (this.props.type) {
       case ExtensionAnchor.Component:
         view = (<ExtensionComponentView
+          bindIframeToParent={this.bindIframeToParent}
           id={`component-${this.props.id}`}
           role={this.props.role}
           className="view"
@@ -81,6 +98,7 @@ export class ExtensionView extends React.Component<ExtensionViewProps, State> {
         break;
       case ExtensionViewType.Mobile:
         view = (<ExtensionMobileView
+          bindIframeToParent={this.bindIframeToParent}
           id={`mobile-${this.props.id}`}
           className="view"
           role={this.props.role}
@@ -96,6 +114,7 @@ export class ExtensionView extends React.Component<ExtensionViewProps, State> {
           className="view"
           style={extensionProps.viewStyles}>
           <ExtensionFrame
+            bindIframeToParent={this.bindIframeToParent}
             className="view"
             frameId={`frameid-${this.props.id}`}
             extension={this.props.extension}
@@ -126,7 +145,7 @@ export class ExtensionView extends React.Component<ExtensionViewProps, State> {
     if (this.props.extension.views.panel && this.props.extension.views.panel.height) {
       panelHeight = this.props.extension.views.panel.height + '';
     }
-    switch(this.props.type) {
+    switch (this.props.type) {
       case ExtensionAnchor.Panel:
         extensionProps.viewStyles = {
           height: panelHeight + 'px',
@@ -156,7 +175,10 @@ export class ExtensionView extends React.Component<ExtensionViewProps, State> {
         }
         break;
     }
-
+    const buttonClassName = classNames({
+      view__close_button: true,
+      visible: this.state.mousedOver,
+    });
     return (
       <div
         className={'view__wrapper'}
@@ -165,30 +187,27 @@ export class ExtensionView extends React.Component<ExtensionViewProps, State> {
         style={extensionProps.viewWrapperStyles}>
         <div
           className={'view__header'}>
-          {(this.props.deleteViewHandler !== undefined && this.state.mousedOver) &&
-            (
-            <div>
-              <div className={'view__close_button'}
-                onClick={() => { this.props.deleteViewHandler(this.props.id) }}>
-              <img
-                alt='Close'
-                src={closeButton}
-              />
-              </div>
-              { this.isEditable() &&
-                <div className='view__edit_button'
+          <div className={'view__header-container'}>
+            <div className={'view__descriptor'}>
+              {this.props.role} <span> </span>
+              {(this.props.role === ViewerTypes.LoggedIn) ?
+                this.renderLinkedOrUnlinked() : null}
+            </div>
+
+            {this.props.mockApiEnabled && <RunListTrigger runList={runlist as RunList} iframe={this.state.iframe} />}
+
+            {this.isEditable() &&
+              <div className='view__edit_button'
                 onClick={() => { this.props.openEditViewHandler(this.props.id) }}>
                 Edit
-                </div>}
-            </div>
-          )
-          }
-          <div className={'view__descriptor'}>
-            { this.props.role }
+              </div>}
           </div>
-          <div className={'view__descriptor'}>
-            {(this.props.role === ViewerTypes.LoggedIn) ?
-              this.renderLinkedOrUnlinked() : null}
+          <div className={buttonClassName}
+            onClick={() => { this.props.deleteViewHandler(this.props.id) }}>
+            <img
+              alt='Close'
+              src={closeButton}
+            />
           </div>
         </div>
         {this.renderView(extensionProps)}

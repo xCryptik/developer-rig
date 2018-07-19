@@ -6,6 +6,7 @@ import { LoginButton } from '../login-button';
 import { UserSession } from '../core/models/user-session';
 import { ExtensionManifest } from '../core/models/manifest';
 import './component.sass';
+import { MockApiDropdown } from './mock-api-dropdown';
 
 export interface PublicProps {
   openProductManagementHandler: Function,
@@ -20,7 +21,9 @@ export interface PublicProps {
 export interface ReduxStateProps {
   session?: UserSession,
   manifest?: ExtensionManifest,
+  mockApiEnabled?: boolean,
 }
+
 type Props = PublicProps & ReduxStateProps;
 
 export class RigNavComponent extends React.Component<Props> {
@@ -37,7 +40,6 @@ export class RigNavComponent extends React.Component<Props> {
 
   public render() {
     const { session, manifest, selectedView } = this.props;
-
     const extensionViewsClass = classNames({
       'offset': true,
       'top-nav-item': true,
@@ -75,6 +77,7 @@ export class RigNavComponent extends React.Component<Props> {
       return (
         <div className='top-nav'>
           <div className='personal-bar'>
+            <MockApiDropdown />
             {manifest && <div className='personal-bar__ext-name'>
               <span>{manifest.name}</span>
             </div>}

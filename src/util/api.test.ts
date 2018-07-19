@@ -5,14 +5,16 @@ import {
   fetchManifest,
   fetchExtensionManifest,
   fetchUserInfo,
-  fetchProducts
+  fetchProducts,
+  fetchNewRelease
 } from './api';
 import {
   mockFetchError,
   mockFetchForExtensionManifest,
   mockFetchForManifest,
   mockFetchForUserInfo,
-  mockFetchProducts
+  mockFetchProducts,
+  mockFetchNewRelease
 } from '../tests/mocks';
 
 let globalAny = global as any;
@@ -115,6 +117,27 @@ describe('api', () => {
           inDevelopment: expect.stringMatching(/true|false/),
           broadcast: expect.stringMatching(/true|false/)
         });
+      });
+    });
+  });
+
+  describe('fetchNewRelease', () => {
+    beforeEach(function() {
+      globalAny.fetch = jest.fn().mockImplementation(mockFetchNewRelease);
+    });
+
+
+    it('should return data', async function () {
+      const data = await fetchNewRelease();
+      expect(data).toBeDefined();
+    });
+
+    it('on error should fire', async function () {
+      expect.assertions(1);
+
+      globalAny.fetch = jest.fn().mockImplementation(mockFetchError);
+      fetchNewRelease().catch((error) => {
+        expect(error).toEqual('Fake error');
       });
     });
   });

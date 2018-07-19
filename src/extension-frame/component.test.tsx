@@ -11,6 +11,7 @@ describe('<ExtensionFrame />', () => {
     type: ExtensionAnchor.Panel,
     mode: ExtensionMode.Viewer,
     iframe: '',
+    bindIframeToParent: jest.fn(),
   }));
 
   const setupMount = setupMountTest(ExtensionFrame, () => ({
@@ -20,6 +21,7 @@ describe('<ExtensionFrame />', () => {
     type: ExtensionAnchor.Panel,
     mode: ExtensionMode.Viewer,
     iframe: '',
+    bindIframeToParent: jest.fn(),
   }));
 
   it('onload postMessages data correctly', () => {
