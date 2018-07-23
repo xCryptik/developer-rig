@@ -14,6 +14,7 @@ ShallowWrapper {
             Object {
               "extension": Object {
                 "authorName": "test",
+                "bitsEnabled": false,
                 "channelId": "channelId",
                 "description": "description",
                 "iconUrl": "icon_url",
@@ -62,6 +63,7 @@ ShallowWrapper {
             Object {
               "extension": Object {
                 "authorName": "test",
+                "bitsEnabled": false,
                 "channelId": "channelId",
                 "description": "description",
                 "iconUrl": "icon_url",
@@ -145,6 +147,7 @@ ShallowWrapper {
             Object {
               "extension": Object {
                 "authorName": "test",
+                "bitsEnabled": false,
                 "channelId": "channelId",
                 "description": "description",
                 "iconUrl": "icon_url",
@@ -193,6 +196,7 @@ ShallowWrapper {
             Object {
               "extension": Object {
                 "authorName": "test",
+                "bitsEnabled": false,
                 "channelId": "channelId",
                 "description": "description",
                 "iconUrl": "icon_url",

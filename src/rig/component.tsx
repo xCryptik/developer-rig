@@ -126,7 +126,7 @@ export class RigComponent extends React.Component<Props, State> {
     this.setState({
       mode: ExtensionMode.Viewer,
       selectedView: ExtensionViews,
-      extension: {} as Extension,
+      extension: {} as RigExtension,
     });
   }
 

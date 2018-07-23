@@ -37,40 +37,41 @@ describe('<ExtensionFrame />', () => {
     instance.iframe = mockIframeRef;
     instance.extensionFrameInit();
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
-      "action": "extension-frame-init",
-      "extension": {
-        "anchor": "panel",
-        "channelId": "channelId",
-        "extension": {
-          "authorName": "test",
-          "channelId": "channelId",
-          "description": "description",
-          "iconUrl": "icon_url",
-          "id": "id",
-          "name": "name",
-          "requestIdentityLink": false,
-          "sku": "sku",
-          "state": "state",
-          "summary": "summary",
-          "token": "token",
-          "vendorCode": "vendorCode",
-          "version": "0.1",
-          "views": {
-            "component": { "aspectHeight": 3000, "aspectWidth": 2500, "viewerUrl": "test", "zoom": false },
-            "config": { "viewerUrl": "test" },
-            "liveConfig": { "viewerUrl": "test" },
-            "panel": { "viewerUrl": "test" }
+      'action': 'extension-frame-init',
+      'extension': {
+        'anchor': 'panel',
+        'channelId': 'channelId',
+        'extension': {
+          'authorName': 'test',
+          'bitsEnabled': false,
+          'channelId': 'channelId',
+          'description': 'description',
+          'iconUrl': 'icon_url',
+          'id': 'id',
+          'name': 'name',
+          'requestIdentityLink': false,
+          'sku': 'sku',
+          'state': 'state',
+          'summary': 'summary',
+          'token': 'token',
+          'vendorCode': 'vendorCode',
+          'version': '0.1',
+          'views': {
+            'component': { 'aspectHeight': 3000, 'aspectWidth': 2500, 'viewerUrl': 'test', 'zoom': false },
+            'config': { 'viewerUrl': 'test' },
+            'liveConfig': { 'viewerUrl': 'test' },
+            'panel': { 'viewerUrl': 'test' }
           },
-          "whitelistedConfigUrls": ["foo"],
-          "whitelistedPanelUrls": ["bar"] },
-          "iframeClassName": "extension-frame",
-          "loginId": null,
-          "mode": "viewer",
-          "platform": "web",
-          "trackingProperties": {}
+          'whitelistedConfigUrls': ['foo'],
+          'whitelistedPanelUrls': ['bar'] },
+          'iframeClassName': 'extension-frame',
+          'loginId': null,
+          'mode': 'viewer',
+          'platform': 'web',
+          'trackingProperties': {}
         },
-      "frameId": "0"
-    }, "*");
+      'frameId': '0'
+    }, '*');
   });
 
   it('onload postMessages data correctly when platform is mobile', () => {
@@ -87,40 +88,41 @@ describe('<ExtensionFrame />', () => {
     instance.iframe = mockIframeRef;
     instance.extensionFrameInit();
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
-      "action": "extension-frame-init",
-      "extension": {
-        "anchor": "mobile",
-        "channelId": "channelId",
-        "extension": {
-          "authorName": "test",
-          "channelId": "channelId",
-          "description": "description",
-          "iconUrl": "icon_url",
-          "id": "id",
-          "name": "name",
-          "requestIdentityLink": false,
-          "sku": "sku",
-          "state": "state",
-          "summary": "summary",
-          "token": "token",
-          "vendorCode": "vendorCode",
-          "version": "0.1",
-          "views": {
-            "component": { "aspectHeight": 3000, "aspectWidth": 2500, "viewerUrl": "test", "zoom": false },
-            "config": { "viewerUrl": "test" },
-            "liveConfig": { "viewerUrl": "test" },
-            "panel": { "viewerUrl": "test" }
+      'action': 'extension-frame-init',
+      'extension': {
+        'anchor': 'mobile',
+        'channelId': 'channelId',
+        'extension': {
+          'authorName': 'test',
+          'bitsEnabled': false,
+          'channelId': 'channelId',
+          'description': 'description',
+          'iconUrl': 'icon_url',
+          'id': 'id',
+          'name': 'name',
+          'requestIdentityLink': false,
+          'sku': 'sku',
+          'state': 'state',
+          'summary': 'summary',
+          'token': 'token',
+          'vendorCode': 'vendorCode',
+          'version': '0.1',
+          'views': {
+            'component': { 'aspectHeight': 3000, 'aspectWidth': 2500, 'viewerUrl': 'test', 'zoom': false },
+            'config': { 'viewerUrl': 'test' },
+            'liveConfig': { 'viewerUrl': 'test' },
+            'panel': { 'viewerUrl': 'test' }
           },
-          "whitelistedConfigUrls": ["foo"],
-          "whitelistedPanelUrls": ["bar"] },
-          "iframeClassName": "extension-frame",
-          "loginId": null,
-          "mode": "viewer",
-          "platform": "mobile",
-          "trackingProperties": {}
+          'whitelistedConfigUrls': ['foo'],
+          'whitelistedPanelUrls': ['bar'] },
+          'iframeClassName': 'extension-frame',
+          'loginId': null,
+          'mode': 'viewer',
+          'platform': 'mobile',
+          'trackingProperties': {}
         },
-      "frameId": "0"
-    }, "*");
+      'frameId': '0'
+    }, '*');
   });
 
   describe('when in live config mode', () => {

@@ -58,6 +58,7 @@ describe('extension', () => {
       whitelistedConfigUrls: manifest.whitelisted_config_urls,
       whitelistedPanelUrls: manifest.whitelisted_panel_urls,
       channelId: channelId,
+      bitsEnabled: manifest.bits_enabled,
     };
     const result = createExtensionObject(manifest, index, role, isLinked, ownerID, channelId, secret, opaqueId);
     expect(result).toEqual(expected);

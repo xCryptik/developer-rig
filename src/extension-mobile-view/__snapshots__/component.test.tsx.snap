@@ -9,6 +9,7 @@ ShallowWrapper {
     extension={
         Object {
             "authorName": "test",
+            "bitsEnabled": false,
             "channelId": "channelId",
             "description": "description",
             "iconUrl": "icon_url",
@@ -90,6 +91,7 @@ ShallowWrapper {
                 extension={
                         Object {
                                 "authorName": "test",
+                                "bitsEnabled": false,
                                 "channelId": "channelId",
                                 "description": "description",
                                 "iconUrl": "icon_url",
@@ -151,6 +153,7 @@ ShallowWrapper {
           extension={
                     Object {
                               "authorName": "test",
+                              "bitsEnabled": false,
                               "channelId": "channelId",
                               "description": "description",
                               "iconUrl": "icon_url",
@@ -209,6 +212,7 @@ ShallowWrapper {
           "className": "view",
           "extension": Object {
             "authorName": "test",
+            "bitsEnabled": false,
             "channelId": "channelId",
             "description": "description",
             "iconUrl": "icon_url",
@@ -279,6 +283,7 @@ ShallowWrapper {
                     extension={
                               Object {
                                         "authorName": "test",
+                                        "bitsEnabled": false,
                                         "channelId": "channelId",
                                         "description": "description",
                                         "iconUrl": "icon_url",
@@ -340,6 +345,7 @@ ShallowWrapper {
             extension={
                         Object {
                                     "authorName": "test",
+                                    "bitsEnabled": false,
                                     "channelId": "channelId",
                                     "description": "description",
                                     "iconUrl": "icon_url",
@@ -398,6 +404,7 @@ ShallowWrapper {
             "className": "view",
             "extension": Object {
               "authorName": "test",
+              "bitsEnabled": false,
               "channelId": "channelId",
               "description": "description",
               "iconUrl": "icon_url",

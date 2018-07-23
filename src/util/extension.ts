@@ -30,5 +30,6 @@ export function createExtensionObject(
     whitelistedConfigUrls: manifest.whitelisted_config_urls,
     whitelistedPanelUrls: manifest.whitelisted_panel_urls,
     channelId: channelId,
+    bitsEnabled: manifest.bits_enabled,
   };
 }

@@ -81,6 +81,7 @@ export const ExtensionForTest = {
   whitelistedConfigUrls: ['foo'],
   whitelistedPanelUrls: ['bar'],
   channelId: 'channelId',
+  bitsEnabled: false,
 };
 
 export function createViewsForTest(numOfViews: number, type: string, role: string, extras?: any): Partial<RigExtensionView>[] {

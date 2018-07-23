@@ -54,4 +54,5 @@ export interface RigExtension {
   whitelistedConfigUrls: string[];
   whitelistedPanelUrls: string[];
   channelId: string;
+  bitsEnabled: boolean;
 }
