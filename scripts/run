@@ -1,0 +1,97 @@
+#!/bin/bash
+
+# Check the platform.
+if [ "$(uname)" != "Darwin" ]; then
+	echo "This script is for Mac only."
+	exit 1
+fi
+
+# Create utility functions.
+getfullpath() {
+	python -c 'import os,sys;print(os.path.realpath(sys.argv[1]))' "$1"
+}
+fail() {
+	echo "$1"
+	exit 1
+}
+cannot() {
+	[ $? -eq 0 ] || fail "Cannot $1."
+}
+usage() {
+	echo "usage: $0 [-m manifest-file] [-f front-end-directory] [-b back-end-file]"
+	exit 2
+}
+
+# Run the configuration script first.
+$(dirname $0)/configure - || exit 1
+
+# Collect command line parameters or provide defaults.
+D=$(getfullpath $(dirname $0)/..)
+P=$(getfullpath $D/..)
+if [ $# -eq 0 ]; then
+	MANIFEST_FILE="$P/panel.json"
+	FRONTEND_DIRECTORY="$P/my-extension"
+	BACKEND_FILE="$P/my-extension/services/backend.js"
+else
+	ARGS=`getopt b:f:m:h $*`
+	[ $? -eq 0 ] || usage
+	set -- $ARGS
+	for i; do
+		case "$i" in
+		-b)
+			BACKEND_FILE="$2";
+			[ -s "$BACKEND_FILE" ] || cannot "open back-end file '$BACKEND_FILE'"
+			BACKEND_FILE=$(getfullpath "$2");
+			shift; shift;;
+		-f)
+			FRONTEND_DIRECTORY="$2";
+			[ -d "$FRONTEND_DIRECTORY" ] || cannot "open front-end directory '$FRONTEND_DIRECTORY'"
+			FRONTEND_DIRECTORY=$(getfullpath "$2");
+			shift; shift;;
+		-m)
+			MANIFEST_FILE="$2";
+			[ -s "$MANIFEST_FILE" ] || cannot "open manifest file '$MANIFEST_FILE'"
+			MANIFEST_FILE=$(getfullpath "$2");
+			shift; shift;;
+		-h)
+			usage;;
+		--)
+			shift;
+			break;;
+		esac
+	done
+	[ $# -eq 0 ] || usage
+fi
+
+# For the "hello world" extension, ensure service of the correct directory.
+[ -n "$FRONTEND_DIRECTORY" -a -d "$FRONTEND_DIRECTORY/public" ] && FRONTEND_DIRECTORY="$FRONTEND_DIRECTORY/public"
+
+# If necessary, create a panel extension manifest file.
+cd "$D"
+[ -n "$MANIFEST_FILE" ] || MANIFEST_FILE="$P/panel.json"
+if [ -s "$MANIFEST_FILE" ]; then
+	echo "Using extension manifest in '$MANIFEST_FILE'."
+else
+	echo "Creating and using panel extension manifest in '$MANIFEST_FILE'."
+	yarn create-manifest -t panel -o "$MANIFEST_FILE"
+fi
+
+# Start new processes for the different aspects of running the rig.
+NPROCESSES=0
+if [ -z "$FRONTEND_DIRECTORY" ]; then
+	echo "Front-end hosting is not being provided by the developer rig."
+else
+	echo "Hosting front-end in '$FRONTEND_DIRECTORY'."
+	yarn host -d "$FRONTEND_DIRECTORY" -p 8080 -l &
+	NPROCESSES=$(expr $NPROCESSES + 1)
+fi
+if [ -z "$BACKEND_FILE" ]; then
+	echo "Back-end hosting is not being provided by the developer rig."
+else
+	echo "Hosting back-end in '$BACKEND_FILE'."
+	node "$BACKEND_FILE" -l "$MANIFEST_FILE" &
+	NPROCESSES=$(expr $NPROCESSES + 1)
+fi
+[ $NPROCESSES -gt 1 ] && ES=es
+[ $NPROCESSES -gt 0 ] && echo "Started $NPROCESSES other process$ES to run the developer rig."
+yarn start -l "$MANIFEST_FILE"
