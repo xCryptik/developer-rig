@@ -260,11 +260,23 @@ window['extension-coordinator'] = (function() {
       }
 
       function createViewerSandboxAttrs() {
-        return DEFAULT_IFRAME_SANDBOX_ATTRIBUTES.join(' ');
+        let attributes = DEFAULT_IFRAME_SANDBOX_ATTRIBUTES;
+        const hasPanelWhitelist = parameters.anchor === ExtensionAnchor.Panel &&
+          extension.whitelistedPanelUrls.length &&
+          parameters.mode === ExtensionMode.Viewer;
+        if (hasPanelWhitelist) {
+          attributes = attributes.concat('allow-popups', 'allow-popups-to-escape-sandbox');
+        }
+        return attributes.join(' ');
       }
 
       function getConfigWhitelist() {
-        return DEFAULT_IFRAME_SANDBOX_ATTRIBUTES.join(' ');
+        let attributes = DEFAULT_IFRAME_SANDBOX_ATTRIBUTES;
+        const hasConfigWhitelist = extension.whitelistedConfigUrls.length;
+        if (hasConfigWhitelist) {
+          attributes = attributes.concat('allow-popups', 'allow-popups-to-escape-sandbox');
+        }
+        return attributes.join(' ');
       }
 
       function getAnchorAttributes() {
