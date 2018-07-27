@@ -24,7 +24,7 @@ const options = [
 const args = cli(options);
 
 // Validate command line parameters.
-const types = args.types;
+const types = args.types && args.types.map(s => s.split(',')).reduce((a, b) => a.concat(b), []).filter(s => s.length);
 const componentSize = extractSize(args.component_size);
 const panelHeight = extractExtent(args.panel_height);
 const zoomPixels = args.zoom_pixels;
@@ -36,6 +36,9 @@ if (args.help || !componentSize || !panelHeight || !areAllValid(types)) {
     const defaultValue = option.defaultValue !== undefined ? ` (default ${JSON.stringify(option.defaultValue)})` : "";
     console.log(`  -${option.alias}  ${option.description}${defaultValue}`);
   });
+  console.log();
+  console.log("You may specify the types either with multiple -t options or a single -t option\n" +
+    "with comma- or space-delimited values.");
   console.log();
   console.log("The height of a panel extension must be between 100 and 500.  The width of a\n" +
     "video component extension must be between 1.00% and 50.00%.  The height of a\n" +
@@ -76,7 +79,6 @@ function areAllValid(types) {
 }
 
 function generateManifest(baseUri) {
-  const viewerUrl = `${baseUri}/${types[0]}.html`;
   return {
     id: "u0000000000000000000" + now,
     state: "Testing",
@@ -88,12 +90,13 @@ function generateManifest(baseUri) {
     name: args.name,
     description: args.description,
     summary: args.summary,
-    viewer_url: viewerUrl,
+    viewer_url: `${baseUri}/${~types.indexOf("panel") ? 'panel' : types[0]}.html`,
     viewer_urls: getViewerUrls(baseUri),
-    views: Object.assign(getViews(), {
+    views: {
+      ...getViews(),
       config: { viewer_url: `${baseUri}/config.html` },
       live_config: { viewer_url: `${baseUri}/live_config.html` },
-    }),
+    },
     config_url: `${baseUri}/config.html`,
     live_config_url: `${baseUri}/live_config.html`,
     icon_url: "https://media.forgecdn.net/avatars/158/128/636650453584584748.png",
@@ -131,12 +134,14 @@ function generateManifest(baseUri) {
     return views;
 
     function getView(t) {
+      const viewerUrl = `${baseUri}/${t}.html`;
       switch (t) {
         case "panel":
           return {
             viewer_url: viewerUrl,
             height: panelHeight,
           };
+        case "mobile":
         case "video_overlay":
           return {
             viewer_url: viewerUrl,
