@@ -34,7 +34,7 @@ export class SignInDialog extends React.Component<SignInDialogProps> {
               Local Mode is composed of Mock APIs and Mock Pub Sub, enabling you to start building and testing an extension immediately, without the need to go through the normal Twitch Extension Developer Onboarding.
               <br />
               <br/>
-              So why are we asking you to sign in even when you're using mocks? Simply put, we want to know how we're doing. We have ambitions of devlivering more Developer Rig features and want to make sure we are making features that are helpful to you. Being able to see how frequently developers log into and use the Rig will give us a good signal that we are adding value to your workflow. And that we should continue to invest in it.
+              So why are we asking you to sign in even when you're using mocks? Simply put, we want to know how we're doing. We have ambitions of delivering more Developer Rig features and want to make sure we are making features that are helpful to you. Being able to see how frequently developers log into and use the Rig will give us a good signal that we are adding value to your workflow and that we should continue to invest in it.
               <br />
               <br/>
               We really appreciate you being part of the Twitch developer community. We're excited to see what kind of extensions you'll make!
