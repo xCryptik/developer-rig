@@ -106,14 +106,18 @@ There are several pieces of configuration that the Developer Rig requires to fun
   <img src="./docs/version.png" width="60%">
 
 Values for these fields need to be injected as environment variables to the Developer Rig at startup. The environment variables names are:
+* `EXT_CHANNEL`
 * `EXT_CLIENT_ID`
 * `EXT_SECRET`
+* `EXT_OWNER_NAME`
 * `EXT_VERSION`
 
 If you don't want to set these values via environment variables, all but the extension secret can be set through a configuration file. This file is specified via a command line argument and is in the format of
 ```javascript
 {
+  "channel": "<channel name>",
   "clientID": "<client id>",
+  "ownerName": "<owner name>",
   "version": "<version>"
 }
 ```
@@ -123,18 +127,19 @@ Ensure that the [Developer Rig dependencies](#installing-dependencies) are insta
 
 To start the rig with environment variables, run:
 ```bash
-EXT_CLIENT_ID=<client id> EXT_SECRET=<secret> EXT_VERSION=<version> yarn start
+Mac:
+EXT_CHANNEL=<channel name> EXT_CLIENT_ID=<client id> EXT_SECRET=<secret> EXT_OWNER_NAME=<owner name> EXT_VERSION=<version> yarn start
+
+Windows:
+SET EXT_CHANNEL=<channel name> & SET EXT_CLIENT_ID=<client id> & SET EXT_SECRET=<secret> & SET EXT_OWNER_NAME=<owner name> & SET EXT_VERSION=<version> & yarn start
 ```
-To start the rig with a config file and command line arguments, run:
+To start the rig with a configuration file and command line arguments, run:
 ```bash
 yarn start -s <secret> -c location/of/your/config
 ```
-The location of your config file can be either relative to the directory you are running the command or an absolute path to the file.
+The location of your configuration file can be either relative to the directory you are running the command or an absolute path to the file.
 
 This will cause your browser to open to `https://localhost.rig.twitch.tv:3000`.
-
-*Note*: Depending on your browser and operating system, you may see a warning that the TLS certificate is illegitimate as it is self-signed. You can choose to proceed through this warning. TLS certificate generation occurs the first time the Developer Rig is started or it is used to host an example extension. Generated certificates are stored in the `ssl` directory. If you are on OSX, we'll generate and install the certs in the keychain. If you are on Windows or Linux, you'll have to configure that yourself.
-
 
 ### Using the Developer Rig
 The Developer Rig UI presents a variety of views, anchors, and contexts.
@@ -292,7 +297,6 @@ _The linked Hello World repository uses `EXT_OWNER_ID` while the Developer Rig u
 _What browsers and platforms are supported?_
 
 > We know the Developer Rig works in Chrome and Firefox on Mac and Windows. Feel free to help ensure it works in other browsers and platforms!
-
 
 ## Troubleshooting
 

@@ -98,27 +98,34 @@
 </ul>
 <p>Values for these fields need to be injected as environment variables to the Developer Rig at startup. The environment variables names are:</p>
 <ul>
+<li><code>EXT_CHANNEL</code></li>
 <li><code>EXT_CLIENT_ID</code></li>
 <li><code>EXT_SECRET</code></li>
+<li><code>EXT_OWNER_NAME</code></li>
 <li><code>EXT_VERSION</code></li>
 </ul>
 <p>If you don't want to set these values via environment variables, all but the extension secret can be set through a configuration file. This file is specified via a command line argument and is in the format of</p>
 <pre><code class="language-javascript">{
+  &quot;channel&quot;: &quot;&lt;channel name&gt;&quot;,
   &quot;clientID&quot;: &quot;&lt;client id&gt;&quot;,
+  &quot;ownerName&quot;: &quot;&lt;owner name&gt;&quot;,
   &quot;version&quot;: &quot;&lt;version&gt;&quot;
 }
 </code></pre>
 <h3 id="starting-the-developer-rig-in-online-mode">Starting the Developer Rig in Online Mode</h3>
 <p>Ensure that the <a href="#installing-dependencies">Developer Rig dependencies</a> are installed and <a href="#developer-rig-configuration">required configuration</a> is available.</p>
 <p>To start the rig with environment variables, run:</p>
-<pre><code class="language-bash">EXT_CLIENT_ID=&lt;client id&gt; EXT_SECRET=&lt;secret&gt; EXT_VERSION=&lt;version&gt; yarn start
+<pre><code class="language-bash">Mac:
+EXT_CHANNEL=&lt;channel name&gt; EXT_CLIENT_ID=&lt;client id&gt; EXT_SECRET=&lt;secret&gt; EXT_OWNER_NAME=&lt;owner name&gt; EXT_VERSION=&lt;version&gt; yarn start
+
+Windows:
+SET EXT_CHANNEL=&lt;channel name&gt; &amp; SET EXT_CLIENT_ID=&lt;client id&gt; &amp; SET EXT_SECRET=&lt;secret&gt; &amp; SET EXT_OWNER_NAME=&lt;owner name&gt; &amp; SET EXT_VERSION=&lt;version&gt; &amp; yarn start
 </code></pre>
-<p>To start the rig with a config file and command line arguments, run:</p>
+<p>To start the rig with a configuration file and command line arguments, run:</p>
 <pre><code class="language-bash">yarn start -s &lt;secret&gt; -c location/of/your/config
 </code></pre>
-<p>The location of your config file can be either relative to the directory you are running the command or an absolute path to the file.</p>
+<p>The location of your configuration file can be either relative to the directory you are running the command or an absolute path to the file.</p>
 <p>This will cause your browser to open to <code>https://localhost.rig.twitch.tv:3000</code>.</p>
-<p><em>Note</em>: Depending on your browser and operating system, you may see a warning that the TLS certificate is illegitimate as it is self-signed. You can choose to proceed through this warning. TLS certificate generation occurs the first time the Developer Rig is started or it is used to host an example extension. Generated certificates are stored in the <code>ssl</code> directory. If you are on OSX, we'll generate and install the certs in the keychain. If you are on Windows or Linux, you'll have to configure that yourself.</p>
 <h3 id="using-the-developer-rig">Using the Developer Rig</h3>
 <p>The Developer Rig UI presents a variety of views, anchors, and contexts.</p>
 <h4 id="extension-views">Extension Views</h4>

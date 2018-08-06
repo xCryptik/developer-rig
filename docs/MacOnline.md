@@ -53,7 +53,7 @@ Follow these steps to launch the Developer Rig in Online Mode.
     1.  `cd path/to/my-extension`  
     2.  `curl -H 'Client-ID: `_your-client-ID_`' -X GET 'https://api.twitch.tv/helix/users?login=`_your-Twitch-user-name_`' | sed -e 's/.*"id":"//' -e 's/".*//'`  
         This will print your Twitch user ID for the next step.  
-        Your client ID is available in the **Overview** tab of your extension.  Your Twitch user name is displayed in the top-right corner of twitch.tv when you are signed in.  The channel name must be alphabetic.  For instance, if your Twitch user name is `dallas`, use the channel name `RIGdallas`.
+        Your client ID is available in the **Overview** tab of your extension.  Your Twitch user name is displayed in the top-right corner of twitch.tv when you are signed in.
     3.  `node services/backend -s `_your-extension-secret_` -o `_your-twitch-user-id_` -c `_your-client-id_  
 		The secret can be found in the `Secret Keys` section under the `Settings` tab in your extension on your [Twitch Extensions Dashboard](https://dev.twitch.tv/dashboard/extensions).
         **NOTE:**  this terminal window command will not exit.
@@ -65,7 +65,7 @@ Follow these steps to launch the Developer Rig in Online Mode.
 			"channel": "RIG`_your Twitch user name_`",
 			"ownerName": "`_your Twitch user name_`"
         }' > ../config.json`  
-		If you have multiple versions, substitute the latest version for `0.0.1` above.  You may use a real channel under your control instead of the Developer Rig channel above.
+		If you have multiple versions, substitute the latest version for `0.0.1` above.  The channel name must be alphabetic.  For instance, if your Twitch user name is `dallas`, use the channel name `RIGdallas`.  You may use a real channel under your control instead of the Developer Rig channel above.
     3.  `yarn start -s '`_your extension secret_`' -c ../config.json`  
         This will open your browser for the next step.  **NOTE:**  this terminal window command will not exit.
 4.  Verify the Developer Rig is working.
