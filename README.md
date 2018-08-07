@@ -298,6 +298,11 @@ _What browsers and platforms are supported?_
 
 > We know the Developer Rig works in Chrome and Firefox on Mac and Windows. Feel free to help ensure it works in other browsers and platforms!
 
+_What are the transparent purple zones in the Video Overlay view and the Component view?_
+
+> These are the areas where your extension cannot be interacted with due to Twitch Video Player elements. Please see [Desiging Extensions](https://dev.twitch.tv/docs/extensions/designing/#video-overlay-extensions) for more details.
+
+
 ## Troubleshooting
 
 _The Extension I have specified is not appearing the Developer Rig._
