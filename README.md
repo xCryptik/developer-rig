@@ -230,6 +230,8 @@ on the available options, run `yarn create-manifest -h` in a terminal
 window.  Note that you can edit the JSON file to make changes or
 adjustments.
 
+After having created a suitable manifest, you can launch the rig in local mode using `yarn start -l manifest.json`
+
 ### Using the Run List in the Rig
 The foundation of Local Mode is a JSON document called the "Run List".  It provides developers the ability to trigger specific callback responses through the Extensions Helper Library. To your extension, it will appear like these have come from Twitch Extension APIs.
 
