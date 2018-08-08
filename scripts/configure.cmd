@@ -74,7 +74,10 @@ REM Add localhost.rig.twitch.tv to /etc/hosts.
 SET LOCALHOST=localhost.rig.twitch.tv
 SET HOSTS_FILE=%SystemRoot%\System32\drivers\etc\hosts
 FIND "%LOCALHOST%" "%HOSTS_FILE%" > NUL
-IF ERRORLEVEL 1 ECHO 127.0.0.1 %LOCALHOST%>> "%HOSTS_FILE%"
+IF ERRORLEVEL 1 (
+	ECHO.>> "%HOSTS_FILE%"
+	ECHO 127.0.0.1 %LOCALHOST%>> "%HOSTS_FILE%"
+)
 FIND "%LOCALHOST%" "%HOSTS_FILE%" > NUL
 IF ERRORLEVEL 1 (
 	ECHO Cannot update "%HOSTS_FILE%".
