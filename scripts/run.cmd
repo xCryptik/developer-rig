@@ -107,6 +107,7 @@ IF EXIST "%~2" (
 	ECHO Cannot open %~3 "%~2".
 	"%~dp0false" 2> NUL
 )
+EXIT /B
 
 REM If the configure script installed the prerequisites, these are their paths.
 :path_and_check

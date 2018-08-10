@@ -1,6 +1,13 @@
 @ECHO OFF
 SETLOCAL
 
+REM Check for valid use.
+ECHO ECHO | FIND "ECHO" > NUL 2> NUL
+IF ERRORLEVEL 1 (
+	ECHO You must run this from a Windows command prompt.
+	EXIT /B 1
+)
+
 REM Exit with error level 0 if certificate creation is not required.
 REM Exit with error level 1 if certificate creation is required but not possible.
 REM Exit with error level 2 if certificate creation is required.
