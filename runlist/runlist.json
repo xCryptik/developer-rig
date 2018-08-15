@@ -1,6 +1,7 @@
 {
     "onContext": [{
         "name": "onContext1",
+        "arePlayerControlsVisible": false,
         "mode": "viewer",
         "bitrate": 5000,
         "bufferSize": 100,
@@ -17,6 +18,7 @@
     },
     {
         "name": "onContext2",
+        "arePlayerControlsVisible": true,
         "mode": "viewer",
         "bitrate": 900,
         "bufferSize": 20,
