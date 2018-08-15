@@ -179,7 +179,10 @@ window['extension-coordinator'] = (function() {
         return iframe;
 
         function applyAnchorAttributes(iframe, anchor) {
-          iframe.setAttribute('style', "height: 300px;");
+          const { style } = getAnchorAttributes();
+          if (style) {
+            iframe.setAttribute('style', style);
+          }
         }
 
         function applyViewerSandboxAttrs(iframe) {
