@@ -39,10 +39,7 @@ ShallowWrapper {
                     openEditViewHandler={[Function]}
                     openExtensionViewHandler={[Function]}
           />
-          <SignInDialog
-                    closeSignInDialog={[Function]}
-                    show={true}
-          />
+          <SignInDialog />
           <Console />
 </div>,
       ],
@@ -84,10 +81,7 @@ ShallowWrapper {
             false,
             false,
             false,
-            <SignInDialog
-              closeSignInDialog={[Function]}
-              show={true}
-/>,
+            <SignInDialog />,
             <Console />,
           ],
         },
@@ -116,10 +110,7 @@ ShallowWrapper {
             "instance": null,
             "key": undefined,
             "nodeType": "class",
-            "props": Object {
-              "closeSignInDialog": [Function],
-              "show": true,
-            },
+            "props": Object {},
             "ref": null,
             "rendered": null,
             "type": [Function],
@@ -164,10 +155,7 @@ ShallowWrapper {
                         openEditViewHandler={[Function]}
                         openExtensionViewHandler={[Function]}
             />
-            <SignInDialog
-                        closeSignInDialog={[Function]}
-                        show={true}
-            />
+            <SignInDialog />
             <Console />
 </div>,
         ],
@@ -209,10 +197,7 @@ ShallowWrapper {
               false,
               false,
               false,
-              <SignInDialog
-                closeSignInDialog={[Function]}
-                show={true}
-/>,
+              <SignInDialog />,
               <Console />,
             ],
           },
@@ -241,10 +226,7 @@ ShallowWrapper {
               "instance": null,
               "key": undefined,
               "nodeType": "class",
-              "props": Object {
-                "closeSignInDialog": [Function],
-                "show": true,
-              },
+              "props": Object {},
               "ref": null,
               "rendered": null,
               "type": [Function],
@@ -366,10 +348,7 @@ ShallowWrapper {
                     openEditViewHandler={[Function]}
                     openExtensionViewHandler={[Function]}
           />
-          <SignInDialog
-                    closeSignInDialog={[Function]}
-                    show={true}
-          />
+          <SignInDialog />
           <Console />
 </div>,
       ],
@@ -463,10 +442,7 @@ ShallowWrapper {
             false,
             false,
             false,
-            <SignInDialog
-              closeSignInDialog={[Function]}
-              show={true}
-/>,
+            <SignInDialog />,
             <Console />,
           ],
         },
@@ -545,10 +521,7 @@ ShallowWrapper {
             "instance": null,
             "key": undefined,
             "nodeType": "class",
-            "props": Object {
-              "closeSignInDialog": [Function],
-              "show": true,
-            },
+            "props": Object {},
             "ref": null,
             "rendered": null,
             "type": [Function],
@@ -645,10 +618,7 @@ ShallowWrapper {
                         openEditViewHandler={[Function]}
                         openExtensionViewHandler={[Function]}
             />
-            <SignInDialog
-                        closeSignInDialog={[Function]}
-                        show={true}
-            />
+            <SignInDialog />
             <Console />
 </div>,
         ],
@@ -742,10 +712,7 @@ ShallowWrapper {
               false,
               false,
               false,
-              <SignInDialog
-                closeSignInDialog={[Function]}
-                show={true}
-/>,
+              <SignInDialog />,
               <Console />,
             ],
           },
@@ -824,10 +791,7 @@ ShallowWrapper {
               "instance": null,
               "key": undefined,
               "nodeType": "class",
-              "props": Object {
-                "closeSignInDialog": [Function],
-                "show": true,
-              },
+              "props": Object {},
               "ref": null,
               "rendered": null,
               "type": [Function],

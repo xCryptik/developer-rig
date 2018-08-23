@@ -44,7 +44,6 @@ interface State {
   mode: string;
   extensionViews: RigExtensionView[],
   manifest: ExtensionManifest;
-  showSignInDialog: boolean;
   showExtensionsView: boolean;
   showConfigurations: boolean;
   showEditView: boolean;
@@ -73,7 +72,6 @@ export class RigComponent extends React.Component<Props, State> {
     mode: ExtensionMode.Viewer,
     extensionViews: [],
     manifest: {} as ExtensionManifest,
-    showSignInDialog: true,
     showExtensionsView: false,
     showConfigurations: false,
     showEditView: false,
@@ -179,12 +177,6 @@ export class RigComponent extends React.Component<Props, State> {
   public closeExtensionViewDialog = () => {
     this.setState({
       showExtensionsView: false
-    });
-  }
-
-  public closeSignInDialog = () => {
-    this.setState({
-      showSignInDialog: false
     });
   }
 
@@ -294,11 +286,7 @@ export class RigComponent extends React.Component<Props, State> {
           config={this.state.manifest}
           closeConfigurationsHandler={this.closeConfigurationsHandler}
           refreshConfigurationsHandler={this.refreshConfigurationsHandler} />}
-        {!this.props.session &&
-          <SignInDialog
-            show={this.state.showSignInDialog}
-            closeSignInDialog={this.closeSignInDialog} />
-        }
+        {!this.props.session && <SignInDialog />}
         <Console />
       </div>
     );

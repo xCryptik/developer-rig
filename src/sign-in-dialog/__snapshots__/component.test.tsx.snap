@@ -4,10 +4,7 @@ exports[`<SignInDialog /> renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <SignInDialog
-    closeSignInDialog={[Function]}
-    show={true}
-/>,
+  Symbol(enzyme.__unrendered__): <SignInDialog />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -35,15 +32,6 @@ ShallowWrapper {
                     >
                                Please Sign In 
                     </div>
-                    <div
-                              className="top-bar-container__escape"
-                              onClick={[Function]}
-                    >
-                              <img
-                                        alt="Close"
-                                        src="close_icon.png"
-                              />
-                    </div>
           </div>
           <div>
                     <hr
@@ -52,19 +40,15 @@ ShallowWrapper {
                     <div
                               className="sign-in__text"
                     >
-                              Why do I need to sign in for Local Mode?
-                              <br />
-                              <br />
-                              We created Local Mode for the Developer Rig with one goal in mind: helping developers build extensions faster.
-                              <br />
-                              <br />
-                              Local Mode is composed of Mock APIs and Mock Pub Sub, enabling you to start building and testing an extension immediately, without the need to go through the normal Twitch Extension Developer Onboarding.
-                              <br />
-                              <br />
-                              So why are we asking you to sign in even when you're using mocks? Simply put, we want to know how we're doing. We have ambitions of delivering more Developer Rig features and want to make sure we are making features that are helpful to you. Being able to see how frequently developers log into and use the Rig will give us a good signal that we are adding value to your workflow and that we should continue to invest in it.
-                              <br />
-                              <br />
-                              We really appreciate you being part of the Twitch developer community. We're excited to see what kind of extensions you'll make!
+                              <p>
+                                        Why do I need to sign in?
+                              </p>
+                              <p>
+                                        We built the Developer Rig with one goal in mind: helping developers build extensions faster.  We want to make sure you’re spending your time coding, not on process.  To take advantage of the Rig’s features, we need you to sign in.  You can look forward to more new features the coming months.
+                              </p>
+                              <p>
+                                        We really appreciate you being part of the Twitch developer community. We’re excited to see what kind of extensions you’ll make!
+                              </p>
                     </div>
                     <div
                               className="sign-in__bottom-bar"
@@ -103,15 +87,6 @@ ShallowWrapper {
               >
                              Please Sign In 
               </div>
-              <div
-                            className="top-bar-container__escape"
-                            onClick={[Function]}
-              >
-                            <img
-                                          alt="Close"
-                                          src="close_icon.png"
-                            />
-              </div>
 </div>,
             <div>
               <hr
@@ -120,19 +95,15 @@ ShallowWrapper {
               <div
                             className="sign-in__text"
               >
-                            Why do I need to sign in for Local Mode?
-                            <br />
-                            <br />
-                            We created Local Mode for the Developer Rig with one goal in mind: helping developers build extensions faster.
-                            <br />
-                            <br />
-                            Local Mode is composed of Mock APIs and Mock Pub Sub, enabling you to start building and testing an extension immediately, without the need to go through the normal Twitch Extension Developer Onboarding.
-                            <br />
-                            <br />
-                            So why are we asking you to sign in even when you're using mocks? Simply put, we want to know how we're doing. We have ambitions of delivering more Developer Rig features and want to make sure we are making features that are helpful to you. Being able to see how frequently developers log into and use the Rig will give us a good signal that we are adding value to your workflow and that we should continue to invest in it.
-                            <br />
-                            <br />
-                            We really appreciate you being part of the Twitch developer community. We're excited to see what kind of extensions you'll make!
+                            <p>
+                                          Why do I need to sign in?
+                            </p>
+                            <p>
+                                          We built the Developer Rig with one goal in mind: helping developers build extensions faster.  We want to make sure you’re spending your time coding, not on process.  To take advantage of the Rig’s features, we need you to sign in.  You can look forward to more new features the coming months.
+                            </p>
+                            <p>
+                                          We really appreciate you being part of the Twitch developer community. We’re excited to see what kind of extensions you’ll make!
+                            </p>
               </div>
               <div
                             className="sign-in__bottom-bar"
@@ -150,66 +121,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": Array [
-                <div
-                  className="top-bar-container__title"
+              "children": <div
+                className="top-bar-container__title"
 >
-                   Please Sign In 
+                 Please Sign In 
 </div>,
-                <div
-                  className="top-bar-container__escape"
-                  onClick={[Function]}
->
-                  <img
-                                    alt="Close"
-                                    src="close_icon.png"
-                  />
-</div>,
-              ],
               "className": "dialog__top-bar-container",
             },
             "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": " Please Sign In ",
-                  "className": "top-bar-container__title",
-                },
-                "ref": null,
-                "rendered": " Please Sign In ",
-                "type": "div",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": " Please Sign In ",
+                "className": "top-bar-container__title",
               },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <img
-                    alt="Close"
-                    src="close_icon.png"
-/>,
-                  "className": "top-bar-container__escape",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "alt": "Close",
-                    "src": "close_icon.png",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "img",
-                },
-                "type": "div",
-              },
-            ],
+              "ref": null,
+              "rendered": " Please Sign In ",
+              "type": "div",
+            },
             "type": "div",
           },
           Object {
@@ -224,19 +155,15 @@ ShallowWrapper {
                 <div
                   className="sign-in__text"
 >
-                  Why do I need to sign in for Local Mode?
-                  <br />
-                  <br />
-                  We created Local Mode for the Developer Rig with one goal in mind: helping developers build extensions faster.
-                  <br />
-                  <br />
-                  Local Mode is composed of Mock APIs and Mock Pub Sub, enabling you to start building and testing an extension immediately, without the need to go through the normal Twitch Extension Developer Onboarding.
-                  <br />
-                  <br />
-                  So why are we asking you to sign in even when you're using mocks? Simply put, we want to know how we're doing. We have ambitions of delivering more Developer Rig features and want to make sure we are making features that are helpful to you. Being able to see how frequently developers log into and use the Rig will give us a good signal that we are adding value to your workflow and that we should continue to invest in it.
-                  <br />
-                  <br />
-                  We really appreciate you being part of the Twitch developer community. We're excited to see what kind of extensions you'll make!
+                  <p>
+                                    Why do I need to sign in?
+                  </p>
+                  <p>
+                                    We built the Developer Rig with one goal in mind: helping developers build extensions faster.  We want to make sure you’re spending your time coding, not on process.  To take advantage of the Rig’s features, we need you to sign in.  You can look forward to more new features the coming months.
+                  </p>
+                  <p>
+                                    We really appreciate you being part of the Twitch developer community. We’re excited to see what kind of extensions you’ll make!
+                  </p>
 </div>,
                 <div
                   className="sign-in__bottom-bar"
@@ -264,101 +191,53 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    "Why do I need to sign in for Local Mode?",
-                    <br />,
-                    <br />,
-                    "We created Local Mode for the Developer Rig with one goal in mind: helping developers build extensions faster.",
-                    <br />,
-                    <br />,
-                    "Local Mode is composed of Mock APIs and Mock Pub Sub, enabling you to start building and testing an extension immediately, without the need to go through the normal Twitch Extension Developer Onboarding.",
-                    <br />,
-                    <br />,
-                    "So why are we asking you to sign in even when you're using mocks? Simply put, we want to know how we're doing. We have ambitions of delivering more Developer Rig features and want to make sure we are making features that are helpful to you. Being able to see how frequently developers log into and use the Rig will give us a good signal that we are adding value to your workflow and that we should continue to invest in it.",
-                    <br />,
-                    <br />,
-                    "We really appreciate you being part of the Twitch developer community. We're excited to see what kind of extensions you'll make!",
+                    <p>
+                      Why do I need to sign in?
+</p>,
+                    <p>
+                      We built the Developer Rig with one goal in mind: helping developers build extensions faster.  We want to make sure you’re spending your time coding, not on process.  To take advantage of the Rig’s features, we need you to sign in.  You can look forward to more new features the coming months.
+</p>,
+                    <p>
+                      We really appreciate you being part of the Twitch developer community. We’re excited to see what kind of extensions you’ll make!
+</p>,
                   ],
                   "className": "sign-in__text",
                 },
                 "ref": null,
                 "rendered": Array [
-                  "Why do I need to sign in for Local Mode?",
                   Object {
                     "instance": null,
                     "key": undefined,
                     "nodeType": "host",
-                    "props": Object {},
+                    "props": Object {
+                      "children": "Why do I need to sign in?",
+                    },
                     "ref": null,
-                    "rendered": null,
-                    "type": "br",
+                    "rendered": "Why do I need to sign in?",
+                    "type": "p",
                   },
                   Object {
                     "instance": null,
                     "key": undefined,
                     "nodeType": "host",
-                    "props": Object {},
+                    "props": Object {
+                      "children": "We built the Developer Rig with one goal in mind: helping developers build extensions faster.  We want to make sure you’re spending your time coding, not on process.  To take advantage of the Rig’s features, we need you to sign in.  You can look forward to more new features the coming months.",
+                    },
                     "ref": null,
-                    "rendered": null,
-                    "type": "br",
-                  },
-                  "We created Local Mode for the Developer Rig with one goal in mind: helping developers build extensions faster.",
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": "br",
+                    "rendered": "We built the Developer Rig with one goal in mind: helping developers build extensions faster.  We want to make sure you’re spending your time coding, not on process.  To take advantage of the Rig’s features, we need you to sign in.  You can look forward to more new features the coming months.",
+                    "type": "p",
                   },
                   Object {
                     "instance": null,
                     "key": undefined,
                     "nodeType": "host",
-                    "props": Object {},
+                    "props": Object {
+                      "children": "We really appreciate you being part of the Twitch developer community. We’re excited to see what kind of extensions you’ll make!",
+                    },
                     "ref": null,
-                    "rendered": null,
-                    "type": "br",
+                    "rendered": "We really appreciate you being part of the Twitch developer community. We’re excited to see what kind of extensions you’ll make!",
+                    "type": "p",
                   },
-                  "Local Mode is composed of Mock APIs and Mock Pub Sub, enabling you to start building and testing an extension immediately, without the need to go through the normal Twitch Extension Developer Onboarding.",
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": "br",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": "br",
-                  },
-                  "So why are we asking you to sign in even when you're using mocks? Simply put, we want to know how we're doing. We have ambitions of delivering more Developer Rig features and want to make sure we are making features that are helpful to you. Being able to see how frequently developers log into and use the Rig will give us a good signal that we are adding value to your workflow and that we should continue to invest in it.",
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": "br",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": "br",
-                  },
-                  "We really appreciate you being part of the Twitch developer community. We're excited to see what kind of extensions you'll make!",
                 ],
                 "type": "div",
               },
@@ -412,15 +291,6 @@ ShallowWrapper {
                         >
                                      Please Sign In 
                         </div>
-                        <div
-                                    className="top-bar-container__escape"
-                                    onClick={[Function]}
-                        >
-                                    <img
-                                                alt="Close"
-                                                src="close_icon.png"
-                                    />
-                        </div>
             </div>
             <div>
                         <hr
@@ -429,19 +299,15 @@ ShallowWrapper {
                         <div
                                     className="sign-in__text"
                         >
-                                    Why do I need to sign in for Local Mode?
-                                    <br />
-                                    <br />
-                                    We created Local Mode for the Developer Rig with one goal in mind: helping developers build extensions faster.
-                                    <br />
-                                    <br />
-                                    Local Mode is composed of Mock APIs and Mock Pub Sub, enabling you to start building and testing an extension immediately, without the need to go through the normal Twitch Extension Developer Onboarding.
-                                    <br />
-                                    <br />
-                                    So why are we asking you to sign in even when you're using mocks? Simply put, we want to know how we're doing. We have ambitions of delivering more Developer Rig features and want to make sure we are making features that are helpful to you. Being able to see how frequently developers log into and use the Rig will give us a good signal that we are adding value to your workflow and that we should continue to invest in it.
-                                    <br />
-                                    <br />
-                                    We really appreciate you being part of the Twitch developer community. We're excited to see what kind of extensions you'll make!
+                                    <p>
+                                                Why do I need to sign in?
+                                    </p>
+                                    <p>
+                                                We built the Developer Rig with one goal in mind: helping developers build extensions faster.  We want to make sure you’re spending your time coding, not on process.  To take advantage of the Rig’s features, we need you to sign in.  You can look forward to more new features the coming months.
+                                    </p>
+                                    <p>
+                                                We really appreciate you being part of the Twitch developer community. We’re excited to see what kind of extensions you’ll make!
+                                    </p>
                         </div>
                         <div
                                     className="sign-in__bottom-bar"
@@ -480,15 +346,6 @@ ShallowWrapper {
                 >
                                  Please Sign In 
                 </div>
-                <div
-                                className="top-bar-container__escape"
-                                onClick={[Function]}
-                >
-                                <img
-                                                alt="Close"
-                                                src="close_icon.png"
-                                />
-                </div>
 </div>,
               <div>
                 <hr
@@ -497,19 +354,15 @@ ShallowWrapper {
                 <div
                                 className="sign-in__text"
                 >
-                                Why do I need to sign in for Local Mode?
-                                <br />
-                                <br />
-                                We created Local Mode for the Developer Rig with one goal in mind: helping developers build extensions faster.
-                                <br />
-                                <br />
-                                Local Mode is composed of Mock APIs and Mock Pub Sub, enabling you to start building and testing an extension immediately, without the need to go through the normal Twitch Extension Developer Onboarding.
-                                <br />
-                                <br />
-                                So why are we asking you to sign in even when you're using mocks? Simply put, we want to know how we're doing. We have ambitions of delivering more Developer Rig features and want to make sure we are making features that are helpful to you. Being able to see how frequently developers log into and use the Rig will give us a good signal that we are adding value to your workflow and that we should continue to invest in it.
-                                <br />
-                                <br />
-                                We really appreciate you being part of the Twitch developer community. We're excited to see what kind of extensions you'll make!
+                                <p>
+                                                Why do I need to sign in?
+                                </p>
+                                <p>
+                                                We built the Developer Rig with one goal in mind: helping developers build extensions faster.  We want to make sure you’re spending your time coding, not on process.  To take advantage of the Rig’s features, we need you to sign in.  You can look forward to more new features the coming months.
+                                </p>
+                                <p>
+                                                We really appreciate you being part of the Twitch developer community. We’re excited to see what kind of extensions you’ll make!
+                                </p>
                 </div>
                 <div
                                 className="sign-in__bottom-bar"
@@ -527,66 +380,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  <div
-                    className="top-bar-container__title"
+                "children": <div
+                  className="top-bar-container__title"
 >
-                     Please Sign In 
+                   Please Sign In 
 </div>,
-                  <div
-                    className="top-bar-container__escape"
-                    onClick={[Function]}
->
-                    <img
-                                        alt="Close"
-                                        src="close_icon.png"
-                    />
-</div>,
-                ],
                 "className": "dialog__top-bar-container",
               },
               "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": " Please Sign In ",
-                    "className": "top-bar-container__title",
-                  },
-                  "ref": null,
-                  "rendered": " Please Sign In ",
-                  "type": "div",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": " Please Sign In ",
+                  "className": "top-bar-container__title",
                 },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <img
-                      alt="Close"
-                      src="close_icon.png"
-/>,
-                    "className": "top-bar-container__escape",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "alt": "Close",
-                      "src": "close_icon.png",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": "img",
-                  },
-                  "type": "div",
-                },
-              ],
+                "ref": null,
+                "rendered": " Please Sign In ",
+                "type": "div",
+              },
               "type": "div",
             },
             Object {
@@ -601,19 +414,15 @@ ShallowWrapper {
                   <div
                     className="sign-in__text"
 >
-                    Why do I need to sign in for Local Mode?
-                    <br />
-                    <br />
-                    We created Local Mode for the Developer Rig with one goal in mind: helping developers build extensions faster.
-                    <br />
-                    <br />
-                    Local Mode is composed of Mock APIs and Mock Pub Sub, enabling you to start building and testing an extension immediately, without the need to go through the normal Twitch Extension Developer Onboarding.
-                    <br />
-                    <br />
-                    So why are we asking you to sign in even when you're using mocks? Simply put, we want to know how we're doing. We have ambitions of delivering more Developer Rig features and want to make sure we are making features that are helpful to you. Being able to see how frequently developers log into and use the Rig will give us a good signal that we are adding value to your workflow and that we should continue to invest in it.
-                    <br />
-                    <br />
-                    We really appreciate you being part of the Twitch developer community. We're excited to see what kind of extensions you'll make!
+                    <p>
+                                        Why do I need to sign in?
+                    </p>
+                    <p>
+                                        We built the Developer Rig with one goal in mind: helping developers build extensions faster.  We want to make sure you’re spending your time coding, not on process.  To take advantage of the Rig’s features, we need you to sign in.  You can look forward to more new features the coming months.
+                    </p>
+                    <p>
+                                        We really appreciate you being part of the Twitch developer community. We’re excited to see what kind of extensions you’ll make!
+                    </p>
 </div>,
                   <div
                     className="sign-in__bottom-bar"
@@ -641,101 +450,53 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": Array [
-                      "Why do I need to sign in for Local Mode?",
-                      <br />,
-                      <br />,
-                      "We created Local Mode for the Developer Rig with one goal in mind: helping developers build extensions faster.",
-                      <br />,
-                      <br />,
-                      "Local Mode is composed of Mock APIs and Mock Pub Sub, enabling you to start building and testing an extension immediately, without the need to go through the normal Twitch Extension Developer Onboarding.",
-                      <br />,
-                      <br />,
-                      "So why are we asking you to sign in even when you're using mocks? Simply put, we want to know how we're doing. We have ambitions of delivering more Developer Rig features and want to make sure we are making features that are helpful to you. Being able to see how frequently developers log into and use the Rig will give us a good signal that we are adding value to your workflow and that we should continue to invest in it.",
-                      <br />,
-                      <br />,
-                      "We really appreciate you being part of the Twitch developer community. We're excited to see what kind of extensions you'll make!",
+                      <p>
+                        Why do I need to sign in?
+</p>,
+                      <p>
+                        We built the Developer Rig with one goal in mind: helping developers build extensions faster.  We want to make sure you’re spending your time coding, not on process.  To take advantage of the Rig’s features, we need you to sign in.  You can look forward to more new features the coming months.
+</p>,
+                      <p>
+                        We really appreciate you being part of the Twitch developer community. We’re excited to see what kind of extensions you’ll make!
+</p>,
                     ],
                     "className": "sign-in__text",
                   },
                   "ref": null,
                   "rendered": Array [
-                    "Why do I need to sign in for Local Mode?",
                     Object {
                       "instance": null,
                       "key": undefined,
                       "nodeType": "host",
-                      "props": Object {},
+                      "props": Object {
+                        "children": "Why do I need to sign in?",
+                      },
                       "ref": null,
-                      "rendered": null,
-                      "type": "br",
+                      "rendered": "Why do I need to sign in?",
+                      "type": "p",
                     },
                     Object {
                       "instance": null,
                       "key": undefined,
                       "nodeType": "host",
-                      "props": Object {},
+                      "props": Object {
+                        "children": "We built the Developer Rig with one goal in mind: helping developers build extensions faster.  We want to make sure you’re spending your time coding, not on process.  To take advantage of the Rig’s features, we need you to sign in.  You can look forward to more new features the coming months.",
+                      },
                       "ref": null,
-                      "rendered": null,
-                      "type": "br",
-                    },
-                    "We created Local Mode for the Developer Rig with one goal in mind: helping developers build extensions faster.",
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": "br",
+                      "rendered": "We built the Developer Rig with one goal in mind: helping developers build extensions faster.  We want to make sure you’re spending your time coding, not on process.  To take advantage of the Rig’s features, we need you to sign in.  You can look forward to more new features the coming months.",
+                      "type": "p",
                     },
                     Object {
                       "instance": null,
                       "key": undefined,
                       "nodeType": "host",
-                      "props": Object {},
+                      "props": Object {
+                        "children": "We really appreciate you being part of the Twitch developer community. We’re excited to see what kind of extensions you’ll make!",
+                      },
                       "ref": null,
-                      "rendered": null,
-                      "type": "br",
+                      "rendered": "We really appreciate you being part of the Twitch developer community. We’re excited to see what kind of extensions you’ll make!",
+                      "type": "p",
                     },
-                    "Local Mode is composed of Mock APIs and Mock Pub Sub, enabling you to start building and testing an extension immediately, without the need to go through the normal Twitch Extension Developer Onboarding.",
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": "br",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": "br",
-                    },
-                    "So why are we asking you to sign in even when you're using mocks? Simply put, we want to know how we're doing. We have ambitions of delivering more Developer Rig features and want to make sure we are making features that are helpful to you. Being able to see how frequently developers log into and use the Rig will give us a good signal that we are adding value to your workflow and that we should continue to invest in it.",
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": "br",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": "br",
-                    },
-                    "We really appreciate you being part of the Twitch developer community. We're excited to see what kind of extensions you'll make!",
                   ],
                   "type": "div",
                 },
