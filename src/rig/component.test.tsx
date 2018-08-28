@@ -1,11 +1,12 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { createViewsForTest, ExtensionForTest } from '../tests/constants/extension';
 import { mockFetchForManifest, mockFetchForUserInfo } from '../tests/mocks';
-import { ExtensionViews, BroadcasterConfig, LiveConfig } from '../constants/nav-items';
+import { ExtensionViews } from '../constants/nav-items';
 import { RigComponent } from './component';
 import { ExtensionAnchors } from '../constants/extension-types';
 import { ViewerTypes } from '../constants/viewer-types';
 import { RigExtensionView } from '../core/models/rig';
+import { ExtensionViewDialog, ExtensionViewDialogState } from '../extension-view-dialog';
 
 import { ExtensionAnchor, ExtensionMode, ExtensionViewType } from '../constants/extension-coordinator';
 
@@ -134,30 +135,7 @@ describe('<RigComponent />', () => {
     const instance = wrapper.instance() as RigComponent;
 
     instance.viewerHandler();
-    expect(instance.state.mode).toBe(ExtensionMode.Viewer);
     expect(instance.state.selectedView).toBe(ExtensionViews);
-    expect(instance.state.extension).toEqual({});
-  });
-
-
-  it('correctly sets state when configHandler is invoked', () => {
-    setupViewsForTest(1);
-    const { wrapper } = setupShallow();
-    const instance = wrapper.instance() as RigComponent;
-
-    instance.configHandler();
-    expect(instance.state.mode).toBe(ExtensionMode.Config);
-    expect(instance.state.selectedView).toBe(BroadcasterConfig);
-  });
-
-  it('correctly sets state when liveConfigHandler is invoked', () => {
-    setupViewsForTest(1);
-    const { wrapper } = setupShallow();
-    const instance = wrapper.instance() as RigComponent;
-
-    instance.liveConfigHandler();
-    expect(instance.state.mode).toBe(ExtensionMode.Dashboard);
-    expect(instance.state.selectedView).toBe(LiveConfig);
   });
 
   it('gets the correct views when getExtensionViews invoked', () => {
@@ -204,59 +182,53 @@ describe('<RigComponent />', () => {
   describe('gets frame size from dialog ref correctly', () => {
     it('returns correct data for mobile ', () => {
       const { wrapper } = setupShallow();
-      const testDialogRef = {
-        state: {
-          width: 0,
-          height: 0,
-          frameSize: 'iPhone X (375x822)',
-          extensionViewType: ExtensionViewType.Mobile
-        }
-      };
+      const testDialogState = {
+        width: 0,
+        height: 0,
+        frameSize: 'iPhone X (375x822)',
+        extensionViewType: ExtensionViewType.Mobile
+      } as ExtensionViewDialogState;
       const expectedMobileFrameSize = {
         width: 375,
         height: 822,
       };
       const instance = wrapper.instance() as RigComponent;
 
-      let frameSize = instance.getFrameSizeFromDialog(testDialogRef);
+      let frameSize = instance.getFrameSizeFromDialog(testDialogState);
       expect(frameSize).toEqual(expectedMobileFrameSize);
     });
 
     it('returns correct data for other types', () => {
       const { wrapper } = setupShallow();
-      const overlayTestDialogRef = {
-        state: {
-          width: 0,
-          height: 0,
-          frameSize: '640x480',
-          extensionViewType: ExtensionViewType.VideoOverlay
-        }
-      }
+      const overlayTestDialogState = {
+        width: 0,
+        height: 0,
+        frameSize: '640x480',
+        extensionViewType: ExtensionViewType.VideoOverlay
+      } as ExtensionViewDialogState;
       const expectedOverlayFrameSize = {
         width: 640,
         height: 480,
-      }
+      };
       const instance = wrapper.instance() as RigComponent;
-      const frameSize = instance.getFrameSizeFromDialog(overlayTestDialogRef);
+      const frameSize = instance.getFrameSizeFromDialog(overlayTestDialogState);
       expect(frameSize).toEqual(expectedOverlayFrameSize);
     });
 
     it('returns correct data for custom size', () => {
       const { wrapper } = setupShallow();
-      const overlayTestDialogRef = {
-        state: {
-          width: 100,
-          height: 100,
-          frameSize: 'Custom',
-          extensionViewType: ExtensionViewType.VideoOverlay
-        }
-      }
+      const overlayTestDialogState = {
+        width: 100,
+        height: 100,
+        frameSize: 'Custom',
+        extensionViewType: ExtensionViewType.VideoOverlay
+      } as ExtensionViewDialogState;
       const expectedOverlayFrameSize = {
         width: 100,
         height: 100,
-      }
+      };
       const instance = wrapper.instance() as RigComponent;
-      const frameSize = instance.getFrameSizeFromDialog(overlayTestDialogRef);
+      const frameSize = instance.getFrameSizeFromDialog(overlayTestDialogState);
       expect(frameSize).toEqual(expectedOverlayFrameSize);
     });
 

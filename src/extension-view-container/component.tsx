@@ -6,15 +6,18 @@ import './component.sass';
 import { RigExtensionView, RigExtension } from '../core/models/rig';
 
 interface ExtensionViewContainerProps {
-  mode: string;
   extensionViews: RigExtensionView[];
   openEditViewHandler?: (id: string) => void;
   deleteExtensionViewHandler: (id: string) => void;
   openExtensionViewHandler: Function;
-  extension: RigExtension;
 }
 
 type Props = ExtensionViewContainerProps;
+
+const ConfigNames: { [key: string]: string; } = {
+  [ExtensionMode.Config]: 'Broadcaster Configuration',
+  [ExtensionMode.Dashboard]: 'Broadcaster Live Dashboard',
+};
 
 export class ExtensionViewContainer extends React.Component<Props> {
   private openExtensionViewDialog = () => {
@@ -22,40 +25,30 @@ export class ExtensionViewContainer extends React.Component<Props> {
   }
 
   public render() {
-    if (this.props.mode !== ExtensionMode.Viewer) {
-      const configType = this.props.mode === ExtensionMode.Config ? ExtensionMode.Config : ExtensionMode.Dashboard;
-      return (<ExtensionView
-        id={this.props.mode}
-        type={configType}
-        extension={this.props.extension}
-        mode={this.props.mode}
-        key={this.props.mode}/>
-      );
-    }
-
     let extensionViews: JSX.Element[] = [];
     if (this.props.extensionViews && this.props.extensionViews.length > 0) {
       extensionViews = this.props.extensionViews.map(view => {
+        const role = view.mode === ExtensionMode.Viewer ? view.role : ConfigNames[view.mode];
         return <ExtensionView
           key={view.id}
           id={view.id}
           extension={view.extension}
           type={view.type}
-          mode={this.props.mode}
-          role={view.role}
+          mode={view.mode}
+          role={role}
           frameSize={view.frameSize}
-          position={{x: view.x, y: view.y}}
+          position={{ x: view.x, y: view.y }}
           linked={view.linked}
           orientation={view.orientation}
           openEditViewHandler={this.props.openEditViewHandler}
-          deleteViewHandler={this.props.deleteExtensionViewHandler}/>
+          deleteViewHandler={this.props.deleteExtensionViewHandler} />
       });
     }
 
     return (
       <div className='view-container-wrapper'>
-          <div className="view-container">
-          { extensionViews }
+        <div className="view-container">
+          {extensionViews}
         </div>
         <div>
           <ExtensionViewButton

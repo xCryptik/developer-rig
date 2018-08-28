@@ -3,14 +3,14 @@ import './component.sass';
 import { RigNav } from '../rig-nav';
 import { ExtensionViewContainer } from '../extension-view-container';
 import { Console } from '../console';
-import { ExtensionViewDialog } from '../extension-view-dialog';
+import { ExtensionViewDialog, ExtensionViewDialogState } from '../extension-view-dialog';
 import { RigConfigurationsDialog } from '../rig-configurations-dialog';
 import { EditViewDialog, EditViewProps } from '../edit-view-dialog';
 import { ProductManagementViewContainer } from '../product-management-container';
 import { createExtensionObject } from '../util/extension';
 import { createSignedToken } from '../util/token';
 import { fetchManifest, fetchExtensionManifest, fetchUserInfo } from '../util/api';
-import { ExtensionViews, BroadcasterConfig, LiveConfig, Configurations, ProductManagement } from '../constants/nav-items'
+import { ExtensionViews, ProductManagement } from '../constants/nav-items'
 import { ViewerTypes } from '../constants/viewer-types';
 import { OverlaySizes } from '../constants/overlay-sizes';
 import { IdentityOptions } from '../constants/identity-options';
@@ -32,53 +32,41 @@ export interface ReduxDispatchProps {
   userLogin: (userSession: UserSession) => void;
 }
 
-export interface RigProps { }
-
 interface State {
   apiHost: string;
   clientId: string;
   secret: string;
   version: string;
   channelId: string;
-  userName: string;
-  mode: string;
+  ownerName: string;
   extensionViews: RigExtensionView[],
   manifest: ExtensionManifest;
   showExtensionsView: boolean;
   showConfigurations: boolean;
   showEditView: boolean;
-  showProductManagementView: boolean;
   idToEdit: string;
   selectedView: string;
-  extension: RigExtension;
   userId: string;
   error: string;
 }
 
-type Props = RigProps & ReduxDispatchProps & ReduxStateProps;
+type Props = ReduxDispatchProps & ReduxStateProps;
 
 export class RigComponent extends React.Component<Props, State> {
-  public refs: {
-    extensionViewDialog: ExtensionViewDialog;
-  }
-
   public state: State = {
     apiHost: process.env.API_HOST || 'api.twitch.tv',
     clientId: process.env.EXT_CLIENT_ID,
     secret: process.env.EXT_SECRET,
     version: process.env.EXT_VERSION,
     channelId: process.env.EXT_CHANNEL_ID,
-    userName: process.env.EXT_USER_NAME,
-    mode: ExtensionMode.Viewer,
+    ownerName: process.env.EXT_OWNER_NAME,
     extensionViews: [],
     manifest: {} as ExtensionManifest,
     showExtensionsView: false,
     showConfigurations: false,
     showEditView: false,
-    showProductManagementView: false,
     idToEdit: '0',
     selectedView: ExtensionViews,
-    extension: {} as RigExtension,
     userId: '',
     error: '',
   }
@@ -105,7 +93,7 @@ export class RigComponent extends React.Component<Props, State> {
     });
   }
 
-  public openEditViewHandler = (id:string) => {
+  public openEditViewHandler = (id: string) => {
     this.setState({
       showEditView: true,
       idToEdit: id,
@@ -121,42 +109,7 @@ export class RigComponent extends React.Component<Props, State> {
 
   public viewerHandler = () => {
     this.setState({
-      mode: ExtensionMode.Viewer,
       selectedView: ExtensionViews,
-      extension: {} as RigExtension,
-    });
-  }
-
-  public configHandler = () => {
-    this.setState({
-      mode: ExtensionMode.Config,
-      selectedView: BroadcasterConfig,
-      extension: createExtensionObject(
-        this.state.manifest,
-        '0',
-        ViewerTypes.Broadcaster,
-        true,
-        this.state.userName,
-        this.state.channelId,
-        this.state.secret,
-        ''),
-    });
-  }
-
-  public liveConfigHandler = () => {
-    this.setState({
-      mode: ExtensionMode.Dashboard,
-      selectedView: LiveConfig,
-
-      extension: createExtensionObject(
-        this.state.manifest,
-        '0',
-        ViewerTypes.Broadcaster,
-        true,
-        this.state.userName,
-        this.state.channelId,
-        this.state.secret,
-        ''),
     });
   }
 
@@ -198,55 +151,60 @@ export class RigComponent extends React.Component<Props, State> {
     });
   }
 
-  public getFrameSizeFromDialog(dialogRef: any) {
-    if (dialogRef.state.frameSize === 'Custom') {
+  public getFrameSizeFromDialog(extensionViewDialogState: ExtensionViewDialogState) {
+    if (extensionViewDialogState.frameSize === 'Custom') {
       return {
-        width: dialogRef.state.width,
-        height: dialogRef.state.height
+        width: extensionViewDialogState.width,
+        height: extensionViewDialogState.height
       };
     }
-    if (dialogRef.state.extensionViewType === ExtensionViewType.Mobile) {
-      return MobileSizes[dialogRef.state.frameSize];
+    if (extensionViewDialogState.extensionViewType === ExtensionViewType.Mobile) {
+      return MobileSizes[extensionViewDialogState.frameSize];
     }
 
-    return OverlaySizes[dialogRef.state.frameSize];
+    return OverlaySizes[extensionViewDialogState.frameSize];
   }
 
-  public createExtensionView = () => {
+  public createExtensionView = (extensionViewDialogState: ExtensionViewDialogState) => {
     const extensionViews = this.getExtensionViews();
-    const linked = this.refs.extensionViewDialog.state.identityOption === IdentityOptions.Linked;
+    const mode = extensionViewDialogState.extensionViewType === ExtensionMode.Config ? ExtensionMode.Config :
+      extensionViewDialogState.extensionViewType === ExtensionMode.Dashboard ? ExtensionMode.Dashboard : ExtensionMode.Viewer;
+    const linked = extensionViewDialogState.identityOption === IdentityOptions.Linked ||
+      extensionViewDialogState.extensionViewType === ExtensionMode.Config ||
+      extensionViewDialogState.extensionViewType === ExtensionMode.Dashboard;
     const nextExtensionViewId = extensionViews.reduce((a: number, b: RigExtensionView) => Math.max(a, parseInt(b.id, 10)), 0) + 1;
     extensionViews.push({
       id: nextExtensionViewId.toString(),
-      type: this.refs.extensionViewDialog.state.extensionViewType,
+      type: extensionViewDialogState.extensionViewType,
       extension: createExtensionObject(
         this.state.manifest,
         nextExtensionViewId.toString(),
-        this.refs.extensionViewDialog.state.viewerType,
+        extensionViewDialogState.viewerType,
         linked,
-        this.state.userName,
+        this.state.ownerName,
         this.state.channelId,
         this.state.secret,
-        this.refs.extensionViewDialog.state.opaqueId,
+        extensionViewDialogState.opaqueId,
       ),
-      linked: linked,
-      role: this.refs.extensionViewDialog.state.viewerType,
-      x: this.refs.extensionViewDialog.state.x,
-      y: this.refs.extensionViewDialog.state.y,
-      orientation: this.refs.extensionViewDialog.state.orientation,
-      frameSize: this.getFrameSizeFromDialog(this.refs.extensionViewDialog),
+      linked,
+      mode,
+      role: extensionViewDialogState.viewerType,
+      x: extensionViewDialogState.x,
+      y: extensionViewDialogState.y,
+      orientation: extensionViewDialogState.orientation,
+      frameSize: this.getFrameSizeFromDialog(extensionViewDialogState),
     });
     this.pushExtensionViews(extensionViews);
     this.closeExtensionViewDialog();
   }
 
-  public deleteExtensionView = (id:string) => {
+  public deleteExtensionView = (id: string) => {
     this.pushExtensionViews(this.state.extensionViews.filter(element => element.id !== id));
   }
 
   public editViewHandler = (newViewState: EditViewProps) => {
     const views = this.getExtensionViews();
-    views.forEach((element: RigExtensionView)=> {
+    views.forEach((element: RigExtensionView) => {
       if (element.id === this.state.idToEdit) {
         element.x = newViewState.x;
         element.y = newViewState.y;
@@ -258,18 +216,17 @@ export class RigComponent extends React.Component<Props, State> {
   }
 
   public render() {
-    let view = (
+    const view = this.state.selectedView === ProductManagement ? (
+      <ProductManagementViewContainer clientId={this.state.clientId} />
+    ) : (
       <div>
         <ExtensionViewContainer
-          mode={this.state.mode}
           extensionViews={this.state.extensionViews}
           deleteExtensionViewHandler={this.deleteExtensionView}
           openExtensionViewHandler={this.openExtensionViewHandler}
-          openEditViewHandler={this.openEditViewHandler}
-          extension={this.state.extension} />
+          openEditViewHandler={this.openEditViewHandler} />
         {this.state.showExtensionsView &&
           <ExtensionViewDialog
-            ref="extensionViewDialog"
             extensionViews={this.state.manifest.views}
             show={this.state.showExtensionsView}
             closeHandler={this.closeExtensionViewDialog}
@@ -291,22 +248,14 @@ export class RigComponent extends React.Component<Props, State> {
       </div>
     );
 
-    if (this.state.selectedView === ProductManagement) {
-      view = (
-        <ProductManagementViewContainer clientId={this.state.clientId} />
-      );
-    }
-
     return (
       <div className="rig-container">
         <RigNav
           selectedView={this.state.selectedView}
           viewerHandler={this.viewerHandler}
-          configHandler={this.configHandler}
-          liveConfigHandler={this.liveConfigHandler}
           openConfigurationsHandler={this.openConfigurationsHandler}
           openProductManagementHandler={this.openProductManagementHandler}
-          error={this.state.error}/>
+          error={this.state.error} />
         {view}
       </div>
     );
@@ -325,17 +274,17 @@ export class RigComponent extends React.Component<Props, State> {
   }
 
   private fetchInitialConfiguration() {
-    if (this.state.userName) {
+    if (this.state.ownerName) {
       fetchManifest(
         this.state.apiHost,
         this.state.clientId,
-        this.state.userName,
+        this.state.ownerName,
         this.state.version,
         this.state.channelId,
         this.state.secret
       )
-      .then(this.onConfigurationSuccess)
-      .catch(this.onConfigurationError);
+        .then(this.onConfigurationSuccess)
+        .catch(this.onConfigurationError);
     }
   }
 
@@ -365,7 +314,7 @@ export class RigComponent extends React.Component<Props, State> {
             authToken: accessToken,
             profileImageUrl: resp.profile_image_url,
           }
-          this.state.userName = resp.login;
+          this.state.ownerName = resp.login;
           this.props.userLogin(userSess);
           localStorage.setItem('rigLogin', JSON.stringify(userSess));
           window.location.assign('/');
@@ -378,7 +327,7 @@ export class RigComponent extends React.Component<Props, State> {
     }
     else if (rigLogin) {
       const login = JSON.parse(rigLogin);
-      this.state.userName = login.login;
+      this.state.ownerName = login.login;
       this.props.userLogin({
         login: login.login,
         authToken: login.authToken,

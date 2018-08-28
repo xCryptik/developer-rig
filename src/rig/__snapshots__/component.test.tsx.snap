@@ -22,9 +22,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Connect(RigNavComponent)
-          configHandler={[Function]}
           error=""
-          liveConfigHandler={[Function]}
           openConfigurationsHandler={[Function]}
           openProductManagementHandler={[Function]}
           selectedView="Extension Views"
@@ -33,9 +31,7 @@ ShallowWrapper {
         <div>
           <ExtensionViewContainer
                     deleteExtensionViewHandler={[Function]}
-                    extension={Object {}}
                     extensionViews={Array []}
-                    mode="viewer"
                     openEditViewHandler={[Function]}
                     openExtensionViewHandler={[Function]}
           />
@@ -52,9 +48,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "configHandler": [Function],
           "error": "",
-          "liveConfigHandler": [Function],
           "openConfigurationsHandler": [Function],
           "openProductManagementHandler": [Function],
           "selectedView": "Extension Views",
@@ -72,9 +66,7 @@ ShallowWrapper {
           "children": Array [
             <ExtensionViewContainer
               deleteExtensionViewHandler={[Function]}
-              extension={Object {}}
               extensionViews={Array []}
-              mode="viewer"
               openEditViewHandler={[Function]}
               openExtensionViewHandler={[Function]}
 />,
@@ -93,9 +85,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "deleteExtensionViewHandler": [Function],
-              "extension": Object {},
               "extensionViews": Array [],
-              "mode": "viewer",
               "openEditViewHandler": [Function],
               "openExtensionViewHandler": [Function],
             },
@@ -138,9 +128,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Connect(RigNavComponent)
-            configHandler={[Function]}
             error=""
-            liveConfigHandler={[Function]}
             openConfigurationsHandler={[Function]}
             openProductManagementHandler={[Function]}
             selectedView="Extension Views"
@@ -149,9 +137,7 @@ ShallowWrapper {
           <div>
             <ExtensionViewContainer
                         deleteExtensionViewHandler={[Function]}
-                        extension={Object {}}
                         extensionViews={Array []}
-                        mode="viewer"
                         openEditViewHandler={[Function]}
                         openExtensionViewHandler={[Function]}
             />
@@ -168,9 +154,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "configHandler": [Function],
             "error": "",
-            "liveConfigHandler": [Function],
             "openConfigurationsHandler": [Function],
             "openProductManagementHandler": [Function],
             "selectedView": "Extension Views",
@@ -188,9 +172,7 @@ ShallowWrapper {
             "children": Array [
               <ExtensionViewContainer
                 deleteExtensionViewHandler={[Function]}
-                extension={Object {}}
                 extensionViews={Array []}
-                mode="viewer"
                 openEditViewHandler={[Function]}
                 openExtensionViewHandler={[Function]}
 />,
@@ -209,9 +191,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "deleteExtensionViewHandler": [Function],
-                "extension": Object {},
                 "extensionViews": Array [],
-                "mode": "viewer",
                 "openEditViewHandler": [Function],
                 "openExtensionViewHandler": [Function],
               },
@@ -279,9 +259,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Connect(RigNavComponent)
-          configHandler={[Function]}
           error=""
-          liveConfigHandler={[Function]}
           openConfigurationsHandler={[Function]}
           openProductManagementHandler={[Function]}
           selectedView="Extension Views"
@@ -290,7 +268,6 @@ ShallowWrapper {
         <div>
           <ExtensionViewContainer
                     deleteExtensionViewHandler={[Function]}
-                    extension={Object {}}
                     extensionViews={
                               Array [
                                         Object {
@@ -322,7 +299,13 @@ ShallowWrapper {
                                               "liveConfig": Object {
                                                 "viewerUrl": "test",
                                               },
+                                              "mobile": Object {
+                                                "viewerUrl": "test",
+                                              },
                                               "panel": Object {
+                                                "viewerUrl": "test",
+                                              },
+                                              "videoOverlay": Object {
                                                 "viewerUrl": "test",
                                               },
                                             },
@@ -344,7 +327,6 @@ ShallowWrapper {
                                         },
                                       ]
                     }
-                    mode="viewer"
                     openEditViewHandler={[Function]}
                     openExtensionViewHandler={[Function]}
           />
@@ -361,9 +343,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "configHandler": [Function],
           "error": "",
-          "liveConfigHandler": [Function],
           "openConfigurationsHandler": [Function],
           "openProductManagementHandler": [Function],
           "selectedView": "Extension Views",
@@ -381,7 +361,6 @@ ShallowWrapper {
           "children": Array [
             <ExtensionViewContainer
               deleteExtensionViewHandler={[Function]}
-              extension={Object {}}
               extensionViews={
                             Array [
                                           Object {
@@ -413,7 +392,13 @@ ShallowWrapper {
                                                 "liveConfig": Object {
                                                   "viewerUrl": "test",
                                                 },
+                                                "mobile": Object {
+                                                  "viewerUrl": "test",
+                                                },
                                                 "panel": Object {
+                                                  "viewerUrl": "test",
+                                                },
+                                                "videoOverlay": Object {
                                                   "viewerUrl": "test",
                                                 },
                                               },
@@ -435,7 +420,6 @@ ShallowWrapper {
                                           },
                                         ]
               }
-              mode="viewer"
               openEditViewHandler={[Function]}
               openExtensionViewHandler={[Function]}
 />,
@@ -454,7 +438,6 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "deleteExtensionViewHandler": [Function],
-              "extension": Object {},
               "extensionViews": Array [
                 Object {
                   "extension": Object {
@@ -485,7 +468,13 @@ ShallowWrapper {
                       "liveConfig": Object {
                         "viewerUrl": "test",
                       },
+                      "mobile": Object {
+                        "viewerUrl": "test",
+                      },
                       "panel": Object {
+                        "viewerUrl": "test",
+                      },
+                      "videoOverlay": Object {
                         "viewerUrl": "test",
                       },
                     },
@@ -506,7 +495,6 @@ ShallowWrapper {
                   "y": 0,
                 },
               ],
-              "mode": "viewer",
               "openEditViewHandler": [Function],
               "openExtensionViewHandler": [Function],
             },
@@ -549,9 +537,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Connect(RigNavComponent)
-            configHandler={[Function]}
             error=""
-            liveConfigHandler={[Function]}
             openConfigurationsHandler={[Function]}
             openProductManagementHandler={[Function]}
             selectedView="Extension Views"
@@ -560,7 +546,6 @@ ShallowWrapper {
           <div>
             <ExtensionViewContainer
                         deleteExtensionViewHandler={[Function]}
-                        extension={Object {}}
                         extensionViews={
                                     Array [
                                                 Object {
@@ -592,7 +577,13 @@ ShallowWrapper {
                                                       "liveConfig": Object {
                                                         "viewerUrl": "test",
                                                       },
+                                                      "mobile": Object {
+                                                        "viewerUrl": "test",
+                                                      },
                                                       "panel": Object {
+                                                        "viewerUrl": "test",
+                                                      },
+                                                      "videoOverlay": Object {
                                                         "viewerUrl": "test",
                                                       },
                                                     },
@@ -614,7 +605,6 @@ ShallowWrapper {
                                                 },
                                               ]
                         }
-                        mode="viewer"
                         openEditViewHandler={[Function]}
                         openExtensionViewHandler={[Function]}
             />
@@ -631,9 +621,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "configHandler": [Function],
             "error": "",
-            "liveConfigHandler": [Function],
             "openConfigurationsHandler": [Function],
             "openProductManagementHandler": [Function],
             "selectedView": "Extension Views",
@@ -651,7 +639,6 @@ ShallowWrapper {
             "children": Array [
               <ExtensionViewContainer
                 deleteExtensionViewHandler={[Function]}
-                extension={Object {}}
                 extensionViews={
                                 Array [
                                                 Object {
@@ -683,7 +670,13 @@ ShallowWrapper {
                                                       "liveConfig": Object {
                                                         "viewerUrl": "test",
                                                       },
+                                                      "mobile": Object {
+                                                        "viewerUrl": "test",
+                                                      },
                                                       "panel": Object {
+                                                        "viewerUrl": "test",
+                                                      },
+                                                      "videoOverlay": Object {
                                                         "viewerUrl": "test",
                                                       },
                                                     },
@@ -705,7 +698,6 @@ ShallowWrapper {
                                                 },
                                               ]
                 }
-                mode="viewer"
                 openEditViewHandler={[Function]}
                 openExtensionViewHandler={[Function]}
 />,
@@ -724,7 +716,6 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "deleteExtensionViewHandler": [Function],
-                "extension": Object {},
                 "extensionViews": Array [
                   Object {
                     "extension": Object {
@@ -755,7 +746,13 @@ ShallowWrapper {
                         "liveConfig": Object {
                           "viewerUrl": "test",
                         },
+                        "mobile": Object {
+                          "viewerUrl": "test",
+                        },
                         "panel": Object {
+                          "viewerUrl": "test",
+                        },
+                        "videoOverlay": Object {
                           "viewerUrl": "test",
                         },
                       },
@@ -776,7 +773,6 @@ ShallowWrapper {
                     "y": 0,
                   },
                 ],
-                "mode": "viewer",
                 "openEditViewHandler": [Function],
                 "openExtensionViewHandler": [Function],
               },

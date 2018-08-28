@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import { ExtensionViews, BroadcasterConfig, LiveConfig, Configurations, ProductManagement } from '../constants/nav-items';
+import { ExtensionViews, ProductManagement } from '../constants/nav-items';
 import { UserDropdown } from '../user-dropdown';
 import { LoginButton } from '../login-button';
 import { UserSession } from '../core/models/user-session';
@@ -13,8 +13,6 @@ export interface PublicProps {
   openProductManagementHandler: Function,
   openConfigurationsHandler: Function,
   viewerHandler: Function,
-  configHandler: Function,
-  liveConfigHandler: Function,
   selectedView: string,
   error: string,
 }
@@ -43,16 +41,6 @@ export class RigNavComponent extends React.Component<Props> {
       'top-nav-item__selected': selectedView === ExtensionViews,
     });
 
-    const broadcasterConfigClass = classNames({
-      'top-nav-item': true,
-      'top-nav-item__selected': selectedView === BroadcasterConfig,
-    });
-
-    const liveConfigClass = classNames({
-      'top-nav-item': true,
-      'top-nav-item__selected': selectedView === LiveConfig,
-    });
-
     const productManagementClass = classNames({
       'top-nav-item': true,
       'top-nav-item__selected': selectedView === ProductManagement,
@@ -77,18 +65,12 @@ export class RigNavComponent extends React.Component<Props> {
               <span>{manifest.name}</span>
             </div>}
             <div className='top-nav-item__login'>
-              {(session && session.login) ? <UserDropdown session={session} /> : <LoginButton/>}
+              {(session && session.login) ? <UserDropdown session={session} /> : <LoginButton />}
             </div>
           </div>
           <div className='top-nav__item-container'>
             <a className={extensionViewsClass} onClick={(event) => this.props.viewerHandler()}>
               Extension Views
-            </a>
-            <a className={broadcasterConfigClass} onClick={(event) => this.props.configHandler()}>
-              Broadcaster Config
-            </a>
-            <a className={liveConfigClass} onClick={(event) => this.props.liveConfigHandler()}>
-              Live Config
             </a>
             <a className={productManagementClass} onClick={(event) => this.openProductManagementHandler()}>
               Manage Bits Products
