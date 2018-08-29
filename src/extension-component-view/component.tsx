@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { ExtensionFrame } from '../extension-frame';
-import { RigExtension, FrameSize } from '../core/models/rig';
-import { Position } from '../types/extension-coordinator';
+import { FrameSize } from '../core/models/rig';
 import { ExtensionMode, ExtensionViewType } from '../constants/extension-coordinator';
 const { getComponentPositionFromView, getComponentSizeFromView } = window['extension-coordinator'];
 
 interface ExtensionComponentViewProps {
   id: string
-  extension: RigExtension;
+  extension: ExtensionCoordinator.ExtensionObject;
   frameSize: FrameSize;
-  position: Position;
+  position: ExtensionCoordinator.Position;
   role: string;
   bindIframeToParent: (iframe: HTMLIFrameElement) => void;
 }

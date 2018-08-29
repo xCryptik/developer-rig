@@ -81,11 +81,13 @@
   },
   "devDependencies": {
     "@types/eventemitter2": "^4.1.0",
+    "@types/fetch-mock": "^6.0.3",
     "@types/react-dom": "^16.0.6",
     "coveralls": "^3.0.0",
     "cross-env": "^5.1.4",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "fetch-mock": "^6.5.2",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.7",
     "semantic-release": "^12.4.1",

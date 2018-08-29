@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import { ExtensionViews, ProductManagement } from '../constants/nav-items';
+import { NavItem } from '../constants/nav-items';
 import { UserDropdown } from '../user-dropdown';
 import { LoginButton } from '../login-button';
 import { UserSession } from '../core/models/user-session';
@@ -13,7 +13,7 @@ export interface PublicProps {
   openProductManagementHandler: Function,
   openConfigurationsHandler: Function,
   viewerHandler: Function,
-  selectedView: string,
+  selectedView: NavItem,
   error: string,
 }
 
@@ -38,12 +38,12 @@ export class RigNavComponent extends React.Component<Props> {
     const extensionViewsClass = classNames({
       'offset': true,
       'top-nav-item': true,
-      'top-nav-item__selected': selectedView === ExtensionViews,
+      'top-nav-item__selected': selectedView === NavItem.ExtensionViews,
     });
 
     const productManagementClass = classNames({
       'top-nav-item': true,
-      'top-nav-item__selected': selectedView === ProductManagement,
+      'top-nav-item__selected': selectedView === NavItem.ProductManagement,
       'top-nav-item__disabled': !(session && session.login) || !(manifest && manifest.bits_enabled),
     });
 
@@ -69,7 +69,7 @@ export class RigNavComponent extends React.Component<Props> {
             </div>
           </div>
           <div className='top-nav__item-container'>
-            <a className={extensionViewsClass} onClick={(event) => this.props.viewerHandler()}>
+            <a className={extensionViewsClass} onClick={() => this.props.viewerHandler()}>
               Extension Views
             </a>
             <a className={productManagementClass} onClick={(event) => this.openProductManagementHandler()}>

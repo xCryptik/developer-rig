@@ -1,5 +1,7 @@
 export interface UserSession {
-  login?: string;
-  authToken?: string;
-  profileImageUrl?: string;
+  authToken: string;
+  displayName: string;
+  id: string;
+  login: string;
+  profileImageUrl: string;
 }

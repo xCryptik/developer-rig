@@ -1,94 +1,98 @@
 import { MobileOrientation } from '../../constants/mobile';
 import { ExtensionManifest } from '../../core/models/manifest';
 import { RigExtensionView } from '../../core/models/rig';
-import { ExtensionMode } from '../../constants/extension-coordinator';
 
-export const ManifestForTest: ExtensionManifest = {
-  anchor: 'panel',
+export const createExtensionManifestForTest = (): ExtensionManifest => ({
   author_name: 'test',
   bits_enabled: true,
-  can_install: true,
-  config_url: 'test',
   description: 'test',
-  eula_tos_url: 'test.com',
-  icon_url: 'test.com',
-  icon_urls: {},
+  icon_urls: {
+    '100x100': 'test',
+  },
   id: 'test',
-  installation_count: 0,
-  live_config_url: 'test.com',
   name: 'test',
-  panel_height: 300,
-  privacy_policy_url: 'test.com',
   request_identity_link: false,
-  required_broadcaster_abilities: ['test'],
-  screenshot_urls: ['test.png'],
   sku: 'test',
   state: 'test',
   summary: 'test',
-  support_email: 'test',
   vendor_code: 'test',
   version: '0.0.1',
   views: {
     panel: {
-      viewerUrl: 'test'
+      can_link_external_content: false,
+      height: 300,
+      viewer_url: 'test'
     },
     config: {
-      viewerUrl: 'test'
+      can_link_external_content: false,
+      viewer_url: 'test'
     },
-    liveConfig: {
+    live_config: {
+      can_link_external_content: false,
+      viewer_url: 'test',
+    },
+    component: {
+      aspect_height: 3000,
+      aspect_width: 2500,
+      can_link_external_content: false,
+      viewer_url: 'test',
+      size: 1024,
+      zoom: false,
+      zoom_pixels: 24,
+    }
+  },
+  whitelisted_config_urls: [],
+  whitelisted_panel_urls: [],
+});
+
+export const createExtensionForTest = (): ExtensionCoordinator.ExtensionObject => ({
+  authorName: 'test',
+  clientId: 'mockClientId',
+  bitsEnabled: false,
+  description: 'description',
+  iconUrl: 'icon_url',
+  id: 'id',
+  name: 'name',
+  requestIdentityLink: false,
+  sku: 'sku',
+  summary: 'summary',
+  token: 'token',
+  vendorCode: 'vendorCode',
+  version: '0.1',
+  state: 'Released' as ExtensionCoordinator.ExtensionState,
+  views: {
+    config: {
+      canLinkExternalContent: false,
       viewerUrl: 'test',
     },
     component: {
       aspectHeight: 3000,
       aspectWidth: 2500,
-      zoom: false,
+      canLinkExternalContent: false,
       viewerUrl: 'test',
-    }
-  },
-  whitelisted_config_urls: [],
-  whitelisted_panel_urls: [],
-}
-export const ExtensionForTest = {
-  authorName: 'test',
-  id: 'id',
-  description: 'description',
-  iconUrl: 'icon_url',
-  name: 'name',
-  requestIdentityLink: false,
-  sku: 'sku',
-  state: 'state',
-  summary: 'summary',
-  token: 'token',
-  vendorCode: 'vendorCode',
-  version: '0.1',
-  views: {
-    panel: {
-      viewerUrl: 'test'
-    },
-    config: {
-      viewerUrl: 'test'
+      zoom: false,
+      zoomPixels: 100,
     },
     liveConfig: {
-      viewerUrl: 'test',
-    },
-    videoOverlay: {
+      canLinkExternalContent: false,
       viewerUrl: 'test',
     },
     mobile: {
       viewerUrl: 'test',
     },
-    component: {
-      aspectHeight: 3000,
-      aspectWidth: 2500,
-      zoom: false,
+    panel: {
+      canLinkExternalContent: false,
+      height: 300,
       viewerUrl: 'test',
-    }
+    },
+    videoOverlay: {
+      canLinkExternalContent: false,
+      viewerUrl: 'test',
+    },
   },
   whitelistedConfigUrls: ['foo'],
   whitelistedPanelUrls: ['bar'],
-  channelId: 'channelId',
-  bitsEnabled: false,
-};
+});
 
 export function createViewsForTest(numOfViews: number, type: string, role: string, extras?: any): Partial<RigExtensionView>[] {
   let ex = {
@@ -107,7 +111,7 @@ export function createViewsForTest(numOfViews: number, type: string, role: strin
       id: (extViews.length + 1).toString(),
       type: type,
       mode: 'viewer',
-      extension: ExtensionForTest,
+      extension: createExtensionForTest(),
       linked: false,
       role: role,
       x: ex.x,
@@ -115,5 +119,6 @@ export function createViewsForTest(numOfViews: number, type: string, role: strin
       orientation: ex.orientation,
     })
   }
+
   return extViews;
 }

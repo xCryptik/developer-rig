@@ -23,7 +23,6 @@ interface State {
 type Props = PublicProps;
 
 export class RunListTrigger extends React.Component<Props, State>{
-
   constructor(props: Props) {
     super(props);
 
@@ -82,9 +81,9 @@ export class RunListTrigger extends React.Component<Props, State>{
     return data;
   }
 
-  private triggerRunlistResponse(iframe: HTMLIFrameElement): void{
+  private triggerRunlistResponse(iframe?: HTMLIFrameElement): void{
     const data = this.dataFromTrigger(this.state.selectedTrigger);
-    if (data) {
+    if (data && iframe && iframe.contentWindow) {
       iframe.contentWindow.postMessage(data, '*');
     }
   }
@@ -110,6 +109,7 @@ export class RunListTrigger extends React.Component<Props, State>{
           {this.renderRunListOptions(this.props.runList)}
         </select>
         <button className='runlist-trigger__button' onClick={() => this.triggerRunlistResponse(this.props.iframe)}>Trigger</button>
-      </div>);
+      </div>
+    );
   }
 }

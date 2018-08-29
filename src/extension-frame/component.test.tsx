@@ -1,29 +1,31 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { setupMountTest } from '../tests/enzyme-util/mount';
-import { ExtensionForTest } from '../tests/constants/extension';
-import { ExtensionFrame } from './component';
+import { createExtensionForTest } from '../tests/constants/extension';
+import { ExtensionFrameComponent } from './component';
 import { ExtensionViewType, ExtensionAnchor, ExtensionMode } from '../constants/extension-coordinator';
 
+const setupShallow = setupShallowTest(ExtensionFrameComponent, () => ({
+  channelId: 'mockChannelId',
+  frameId: '0',
+  extension: createExtensionForTest(),
+  type: ExtensionAnchor.Panel,
+  mode: ExtensionMode.Viewer,
+  iframe: '',
+  bindIframeToParent: jest.fn(),
+}));
+
+const setupMount = setupMountTest(ExtensionFrameComponent, () => ({
+  channelId: 'mockChannelId',
+  className: 'view',
+  frameId: '0',
+  extension: createExtensionForTest(),
+  type: ExtensionAnchor.Panel,
+  mode: ExtensionMode.Viewer,
+  iframe: '',
+  bindIframeToParent: jest.fn(),
+}));
+
 describe('<ExtensionFrame />', () => {
-  const setupShallow = setupShallowTest(ExtensionFrame, () => ({
-    frameId: '0',
-    extension: ExtensionForTest,
-    type: ExtensionAnchor.Panel,
-    mode: ExtensionMode.Viewer,
-    iframe: '',
-    bindIframeToParent: jest.fn(),
-  }));
-
-  const setupMount = setupMountTest(ExtensionFrame, () => ({
-    className: 'view',
-    frameId: '0',
-    extension: ExtensionForTest,
-    type: ExtensionAnchor.Panel,
-    mode: ExtensionMode.Viewer,
-    iframe: '',
-    bindIframeToParent: jest.fn(),
-  }));
-
   it('onload postMessages data correctly', () => {
     const { wrapper } = setupMount();
 
@@ -33,46 +35,72 @@ describe('<ExtensionFrame />', () => {
       },
     };
 
-    const instance = wrapper.instance() as ExtensionFrame;
+    const instance = wrapper.instance() as ExtensionFrameComponent;
     instance.iframe = mockIframeRef;
     instance.extensionFrameInit();
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
-      'action': 'extension-frame-init',
-      'extension': {
-        'anchor': 'panel',
-        'channelId': 'channelId',
-        'extension': {
-          'authorName': 'test',
-          'bitsEnabled': false,
-          'channelId': 'channelId',
-          'description': 'description',
-          'iconUrl': 'icon_url',
-          'id': 'id',
-          'name': 'name',
-          'requestIdentityLink': false,
-          'sku': 'sku',
-          'state': 'state',
-          'summary': 'summary',
-          'token': 'token',
-          'vendorCode': 'vendorCode',
-          'version': '0.1',
-          'views': {
-            'component': { 'aspectHeight': 3000, 'aspectWidth': 2500, 'viewerUrl': 'test', 'zoom': false },
-            'config': { 'viewerUrl': 'test' },
-            'liveConfig': { 'viewerUrl': 'test' },
-            'videoOverlay': { 'viewerUrl': 'test' },
-            'mobile': { 'viewerUrl': 'test' },
-            'panel': { 'viewerUrl': 'test' }
+      action: 'extension-frame-init',
+      extension: {
+        anchor: 'panel',
+        channelId: NaN,
+        extension: {
+          authorName: 'test',
+          clientId: 'mockClientId',
+          bitsEnabled: false,
+          description: 'description',
+          iconUrl: 'icon_url',
+          id: 'id',
+          name: 'name',
+          requestIdentityLink: false,
+          sku: 'sku',
+          summary: 'summary',
+          token: 'token',
+          vendorCode: 'vendorCode',
+          version: '0.1',
+          state: 'Released',
+          views: {
+            config: {
+              canLinkExternalContent: false,
+              viewerUrl: 'test',
+            },
+            component: {
+              aspectHeight: 3000,
+              aspectWidth: 2500,
+              canLinkExternalContent: false,
+              viewerUrl: 'test',
+              zoom: false,
+              zoomPixels: 100,
+            },
+            liveConfig: {
+              canLinkExternalContent: false,
+              viewerUrl: 'test',
+            },
+            mobile: {
+              viewerUrl: 'test',
+            },
+            panel: {
+              canLinkExternalContent: false,
+              height: 300,
+              viewerUrl: 'test',
+            },
+            videoOverlay: {
+              canLinkExternalContent: false,
+              viewerUrl: 'test',
+            },
           },
-          'whitelistedConfigUrls': ['foo'],
-          'whitelistedPanelUrls': ['bar'] },
-          'iframeClassName': 'extension-frame',
-          'loginId': null,
-          'mode': 'viewer',
-          'platform': 'web',
-          'trackingProperties': {}
+          whitelistedConfigUrls: ['foo'],
+          whitelistedPanelUrls: ['bar'],
         },
-      'frameId': '0'
+        iframeClassName: 'extension-frame',
+        installationAbilities: {
+          isChatEnabled: true,
+        },
+        loginId: null,
+        mode: 'viewer',
+        platform: 'web',
+        trackingProperties: {}
+      },
+      frameId: '0'
     }, '*');
   });
 
@@ -86,46 +114,73 @@ describe('<ExtensionFrame />', () => {
         postMessage: jest.fn(),
       },
     };
-    const instance = wrapper.instance() as ExtensionFrame;
+
+    const instance = wrapper.instance() as ExtensionFrameComponent;
     instance.iframe = mockIframeRef;
     instance.extensionFrameInit();
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
-      'action': 'extension-frame-init',
-      'extension': {
-        'anchor': 'mobile',
-        'channelId': 'channelId',
-        'extension': {
-          'authorName': 'test',
-          'bitsEnabled': false,
-          'channelId': 'channelId',
-          'description': 'description',
-          'iconUrl': 'icon_url',
-          'id': 'id',
-          'name': 'name',
-          'requestIdentityLink': false,
-          'sku': 'sku',
-          'state': 'state',
-          'summary': 'summary',
-          'token': 'token',
-          'vendorCode': 'vendorCode',
-          'version': '0.1',
-          'views': {
-            'component': { 'aspectHeight': 3000, 'aspectWidth': 2500, 'viewerUrl': 'test', 'zoom': false },
-            'config': { 'viewerUrl': 'test' },
-            'liveConfig': { 'viewerUrl': 'test' },
-            'videoOverlay': { 'viewerUrl': 'test' },
-            'mobile': { 'viewerUrl': 'test' },
-            'panel': { 'viewerUrl': 'test' }
+      action: 'extension-frame-init',
+      extension: {
+        anchor: 'mobile',
+        channelId: NaN,
+        extension: {
+          authorName: 'test',
+          clientId: 'mockClientId',
+          bitsEnabled: false,
+          description: 'description',
+          iconUrl: 'icon_url',
+          id: 'id',
+          name: 'name',
+          requestIdentityLink: false,
+          sku: 'sku',
+          summary: 'summary',
+          token: 'token',
+          vendorCode: 'vendorCode',
+          version: '0.1',
+          state: 'Released',
+          views: {
+            config: {
+              canLinkExternalContent: false,
+              viewerUrl: 'test',
+            },
+            component: {
+              aspectHeight: 3000,
+              aspectWidth: 2500,
+              canLinkExternalContent: false,
+              viewerUrl: 'test',
+              zoom: false,
+              zoomPixels: 100,
+            },
+            liveConfig: {
+              canLinkExternalContent: false,
+              viewerUrl: 'test',
+            },
+            mobile: {
+              viewerUrl: 'test',
+            },
+            panel: {
+              canLinkExternalContent: false,
+              height: 300,
+              viewerUrl: 'test',
+            },
+            videoOverlay: {
+              canLinkExternalContent: false,
+              viewerUrl: 'test',
+            },
           },
-          'whitelistedConfigUrls': ['foo'],
-          'whitelistedPanelUrls': ['bar'] },
-          'iframeClassName': 'extension-frame',
-          'loginId': null,
-          'mode': 'viewer',
-          'platform': 'mobile',
-          'trackingProperties': {}
+          whitelistedConfigUrls: ['foo'],
+          whitelistedPanelUrls: ['bar'],
         },
-      'frameId': '0'
+        iframeClassName: 'extension-frame',
+        installationAbilities: {
+          isChatEnabled: true,
+        },
+        loginId: null,
+        mode: 'viewer',
+        platform: 'mobile',
+        trackingProperties: {}
+      },
+      frameId: '0'
     }, '*');
   });
 

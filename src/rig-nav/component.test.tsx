@@ -1,32 +1,32 @@
-import { setupShallowTestWithStore, setupShallowTest } from '../tests/enzyme-util/shallow';
-import { RigNav, RigNavComponent } from '.';
-import { ExtensionViews, ProductManagement  } from '../constants/nav-items';
+import { setupShallowTest } from '../tests/enzyme-util/shallow';
+import { RigNavComponent } from '.';
+import { NavItem } from '../constants/nav-items';
 import { LoginButton } from '../login-button';
 import { UserDropdown } from '../user-dropdown';
-import { ManifestForTest } from '../tests/constants/extension';
+import { createExtensionManifestForTest } from '../tests/constants/extension';
+
+const defaultGenerator = () => ({
+  openConfigurationsHandler: jest.fn(),
+  viewerHandler: jest.fn(),
+  configHandler: jest.fn(),
+  liveConfigHandler: jest.fn(),
+  openProductManagementHandler: jest.fn(),
+  selectedView: NavItem.ExtensionViews,
+  error: '',
+  manifest: createExtensionManifestForTest(),
+  session: { login: 'test', profileImageUrl: 'test.png', authToken: 'test' },
+});
+
+const setupShallow = setupShallowTest(RigNavComponent, defaultGenerator);
 
 describe('<RigNavComponent />', () => {
-  const defaultGenerator = () => ({
-    openConfigurationsHandler: jest.fn(),
-    viewerHandler: jest.fn(),
-    configHandler: jest.fn(),
-    liveConfigHandler: jest.fn(),
-    openProductManagementHandler: jest.fn(),
-    selectedView: ExtensionViews,
-    error: '',
-    manifest: ManifestForTest,
-    session: { login: 'test', profileImageUrl: 'test.png', authToken: 'test'},
-  });
-  const setupRenderer = setupShallowTest(RigNavComponent, defaultGenerator);
-  const setupShallow = setupShallowTestWithStore(RigNav, defaultGenerator);
-
   it('renders correctly', () => {
-    const { wrapper } = setupRenderer();
+    const { wrapper } = setupShallow();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('renders an error', () => {
-    const { wrapper } = setupRenderer({
+    const { wrapper } = setupShallow({
       error: 'test error',
     });
 
@@ -34,7 +34,7 @@ describe('<RigNavComponent />', () => {
   });
 
   it('correctly handles clicks on each tab', () => {
-    const { wrapper } = setupRenderer();
+    const { wrapper } = setupShallow();
     wrapper.find('a.top-nav-item').forEach((tab: any) => {
       tab.simulate('click');
     });
@@ -43,43 +43,43 @@ describe('<RigNavComponent />', () => {
   });
 
   it('correct css classes are set when things are selected', () => {
-    const { wrapper } = setupRenderer({
-      selectedView: ExtensionViews,
+    const { wrapper } = setupShallow({
+      selectedView: NavItem.ExtensionViews,
     });
     expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
 
     wrapper.setProps({
-      selectedView: ProductManagement,
+      selectedView: NavItem.ProductManagement,
     });
     wrapper.update();
     expect(wrapper.find('.top-nav-item__selected')).toHaveLength(1);
   });
 
   it('renders login button if no session', () => {
-    const { wrapper } = setupRenderer({
+    const { wrapper } = setupShallow({
       session: undefined,
     });
     expect(wrapper.find(LoginButton));
   });
 
   it('renders user dropdown if session exists', () => {
-    const { wrapper } = setupRenderer({
-      session: { login: 'test', profileImageUrl: 'test.png', authToken: 'test'},
+    const { wrapper } = setupShallow({
+      session: { login: 'test', profileImageUrl: 'test.png', authToken: 'test' },
     });
     expect(wrapper.find(UserDropdown));
   });
 
   it('disables product management tab when user is not logged in', () => {
-    const { wrapper } = setupRenderer({
+    const { wrapper } = setupShallow({
       session: undefined,
     });
     expect(wrapper.find('.top-nav-item__disabled')).toHaveLength(1);
   });
 
   it('disables product management tab when extension is not bits enabled', () => {
-    const { wrapper } = setupRenderer({
+    const { wrapper } = setupShallow({
       manifest: {
-        ...ManifestForTest,
+        ...createExtensionManifestForTest(),
         bits_enabled: false,
       },
     });

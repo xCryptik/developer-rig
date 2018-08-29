@@ -1,7 +1,5 @@
 import { Product } from '../core/models/product';
 import {
-  ViewsResponse,
-  convertViews,
   fetchManifest,
   fetchExtensionManifest,
   fetchUserInfo,
@@ -45,7 +43,7 @@ describe('api', () => {
     });
 
     it('should return data', async function () {
-      const data = await fetchExtensionManifest('127.0.0.1:8080', 'clientId', 'version', 'jwt');
+      const data = await fetchExtensionManifest('clientId', 'version', 'jwt');
       expect(data).toBeDefined();
     });
   });
@@ -64,35 +62,11 @@ describe('api', () => {
       expect.assertions(1);
 
       globalAny.fetch = jest.fn().mockImplementation(mockFetchError);
-      fetchUserInfo('token').catch((error) => {
-      expect(error).toEqual('Fake error');
-    });
-    });
-  });
-
-  describe('convertViews', () => {
-    const data: ViewsResponse = {
-      config: {
-        viewer_url: 'test',
-      },
-      live_config: {
-        viewer_url: 'test',
-      },
-      video_overlay: {
-        viewer_url: 'test',
-      },
-      panel: {
-        viewer_url: 'test',
-        height: 300,
-      },
-    };
-
-    it('should convert camel case views correctly', () => {
-      const results = convertViews(data);
-      expect(results.config.viewerUrl).toBe('test');
-      expect(results.liveConfig.viewerUrl).toBe('test');
-      expect(results.videoOverlay.viewerUrl).toBe('test');
-      expect(results.panel.viewerUrl).toBe('test');
+      try {
+        await fetchUserInfo('token');
+      } catch(error) {
+        expect(error).toEqual('Fake error');
+      }
     });
   });
 

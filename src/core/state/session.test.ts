@@ -11,9 +11,11 @@ describe('Session', () => {
 
   it('sets a correct user login', () => {
     const userSession= {
+      authToken: 'test',
+      displayName: 'mockDisplayName',
+      id: 'mockId',
       login: 'test',
       profileImageUrl: 'test.png',
-      authToken: 'test',
     };
     state = sessionReducer(undefined, sessionActions.userLogin(userSession));
     expect(state.userSession).not.toBeUndefined();

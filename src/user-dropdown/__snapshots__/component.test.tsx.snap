@@ -101,7 +101,7 @@ ShallowWrapper {
                     </li>
                     <li>
                               <a
-                                        href={null}
+                                        href={undefined}
                                         target="_blank"
                               >
                                         Rig Up To Date
@@ -224,7 +224,7 @@ ShallowWrapper {
             </li>
             <li>
                         <a
-                                    href={null}
+                                    href={undefined}
                                     target="_blank"
                         >
                                     Rig Up To Date
@@ -275,7 +275,7 @@ ShallowWrapper {
 </li>,
               <li>
                 <a
-                                href={null}
+                                href={undefined}
                                 target="_blank"
                 >
                                 Rig Up To Date
@@ -383,7 +383,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <a
-                  href={null}
+                  href={undefined}
                   target="_blank"
 >
                   Rig Up To Date
@@ -399,7 +399,7 @@ ShallowWrapper {
                     "Rig Up To Date",
                     false,
                   ],
-                  "href": null,
+                  "href": undefined,
                   "target": "_blank",
                 },
                 "ref": null,
@@ -508,7 +508,7 @@ ShallowWrapper {
                         </li>
                         <li>
                                     <a
-                                                href={null}
+                                                href={undefined}
                                                 target="_blank"
                                     >
                                                 Rig Up To Date
@@ -631,7 +631,7 @@ ShallowWrapper {
               </li>
               <li>
                             <a
-                                          href={null}
+                                          href={undefined}
                                           target="_blank"
                             >
                                           Rig Up To Date
@@ -682,7 +682,7 @@ ShallowWrapper {
 </li>,
                 <li>
                   <a
-                                    href={null}
+                                    href={undefined}
                                     target="_blank"
                   >
                                     Rig Up To Date
@@ -790,7 +790,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": <a
-                    href={null}
+                    href={undefined}
                     target="_blank"
 >
                     Rig Up To Date
@@ -806,7 +806,7 @@ ShallowWrapper {
                       "Rig Up To Date",
                       false,
                     ],
-                    "href": null,
+                    "href": undefined,
                     "target": "_blank",
                   },
                   "ref": null,

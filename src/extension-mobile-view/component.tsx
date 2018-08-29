@@ -1,19 +1,18 @@
 import * as React from 'react';
 import { ExtensionFrame } from '../extension-frame';
 import { MobileOrientation } from '../constants/mobile';
-import { RigExtension, FrameSize } from '../core/models/rig';
-import { Position } from '../types/extension-coordinator';
-import { ExtensionMode, ExtensionViewType} from '../constants/extension-coordinator';
+import { FrameSize } from '../core/models/rig';
+import { ExtensionMode, ExtensionViewType } from '../constants/extension-coordinator';
 
 const ViewBackgroundColor = '#322F37';
 const AbsolutePosition = 'absolute';
 
 interface ExtensionMobileViewProps {
+  extension: ExtensionCoordinator.ExtensionObject;
+  frameSize: FrameSize;
   id: string;
   orientation: string;
-  extension: RigExtension;
-  frameSize: FrameSize;
-  position: Position
+  position: ExtensionCoordinator.Position
   role: string;
   bindIframeToParent: (iframe: HTMLIFrameElement) => void;
 }
@@ -69,10 +68,10 @@ export class ExtensionMobileView extends React.Component<Props> {
           <ExtensionFrame
             bindIframeToParent={this.props.bindIframeToParent}
             className="view"
-            frameId={`frameid-${this.props.id}`}
             extension={this.props.extension}
-            type={ExtensionViewType.Mobile}
+            frameId={`frameid-${this.props.id}`}
             mode={ExtensionMode.Viewer}
+            type={ExtensionViewType.Mobile}
           />
         </div>
       </div>

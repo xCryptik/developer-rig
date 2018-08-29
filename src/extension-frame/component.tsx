@@ -1,23 +1,26 @@
 import * as React from 'react';
 import './component.sass';
-import { RigExtension } from '../core/models/rig';
 import { ExtensionPlatform, ExtensionViewType} from '../constants/extension-coordinator';
 
 const IFRAME_CLASS = 'extension-frame';
 const EXTENSION_FRAME_INIT_ACTION = 'extension-frame-init';
 
-interface ExtensionFrameProps {
+export interface ReduxStateProps {
+  channelId?: string;
+}
+
+export interface PublicProps {
   className: string;
   frameId: string;
-  extension: RigExtension;
+  extension: ExtensionCoordinator.ExtensionObject;
   type: string;
   mode: string;
   bindIframeToParent: (iframe: HTMLIFrameElement) => void;
 }
 
-type Props = ExtensionFrameProps;
+type Props = PublicProps & ReduxStateProps;
 
-export class ExtensionFrame extends React.Component<Props> {
+export class ExtensionFrameComponent extends React.Component<Props> {
   public iframe: HTMLIFrameElement;
 
   public componentDidMount() {
@@ -27,13 +30,18 @@ export class ExtensionFrame extends React.Component<Props> {
   }
 
   public render() {
+    if (!this.props.channelId) {
+      return null;
+    }
+
     return (
       <iframe
-      ref={this.bindIframeRef}
+        ref={this.bindIframeRef}
         src={process.env.PUBLIC_URL + '/extension-frame.html'}
         frameBorder={0}
-        className={'rig-frame ' + IFRAME_CLASS}
-        title={this.props.frameId}/>
+        className={`rig-frame ${IFRAME_CLASS}`}
+        title={this.props.frameId}
+      />
     );
   }
 
@@ -43,21 +51,30 @@ export class ExtensionFrame extends React.Component<Props> {
   }
 
   public extensionFrameInit = () => {
-    const extension: any = {
-      anchor: this.props.type,
-      channelId: this.props.extension.channelId,
-      loginId: null,
+    if (!this.props.channelId) {
+      return;
+    }
+
+    const extensionFrameParams: ExtensionCoordinator.ExtensionFrameParams = {
+      anchor: this.props.type as ExtensionCoordinator.ExtensionAnchor,
+      channelId: parseInt(this.props.channelId, 10),
       extension: this.props.extension,
-      mode: this.props.mode,
+      iframeClassName: IFRAME_CLASS,
+      installationAbilities: {
+        isChatEnabled: true,
+      },
+      loginId: null,
+      mode: this.props.mode as ExtensionCoordinator.ExtensionMode,
       platform: (this.props.type === ExtensionViewType.Mobile) ? ExtensionPlatform.Mobile : ExtensionPlatform.Web,
       trackingProperties: {},
-      iframeClassName: IFRAME_CLASS,
     }
+
     const data = {
-      extension: extension,
       action: EXTENSION_FRAME_INIT_ACTION,
+      extension: extensionFrameParams,
       frameId: this.props.frameId,
-    }
+    };
+
     this.iframe.contentWindow.postMessage(data, '*');
   }
 }

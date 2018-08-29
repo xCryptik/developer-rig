@@ -6,10 +6,12 @@ import * as ProductActions from '../core/actions/products';
 import { GlobalState } from '../core/models/global-state';
 
 function mapStateToProps(state: GlobalState): ReduxStateProps {
+  const user = getUserSession(state);
+
   return {
     products: getProducts(state),
     error: getError(state),
-    token: (getUserSession(state) || {}).authToken,
+    token: user && user.authToken,
   };
 }
 

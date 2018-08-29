@@ -1,6 +1,6 @@
 import * as extensionActions from '../actions/extensions';
 import { extensionsReducer, ExtensionsState } from './extensions';
-import { ManifestForTest } from '../../tests/constants/extension';
+import { createExtensionManifestForTest } from '../../tests/constants/extension';
 
 describe('Extensions', () => {
   let state: ExtensionsState;
@@ -11,7 +11,8 @@ describe('Extensions', () => {
   });
 
   it('sets a correct extension manifest', () => {
-    state = extensionsReducer(undefined, extensionActions.saveManifest(ManifestForTest));
-    expect(state.manifest).toEqual(ManifestForTest);
+    const manifest = createExtensionManifestForTest();
+    state = extensionsReducer(undefined, extensionActions.saveManifest(manifest));
+    expect(state.manifest).toEqual(manifest);
   });
 });

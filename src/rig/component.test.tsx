@@ -1,23 +1,22 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
-import { createViewsForTest, ExtensionForTest } from '../tests/constants/extension';
+import { createViewsForTest, createExtensionForTest, createExtensionManifestForTest } from '../tests/constants/extension';
 import { mockFetchForManifest, mockFetchForUserInfo } from '../tests/mocks';
-import { ExtensionViews } from '../constants/nav-items';
+import { NavItem } from '../constants/nav-items';
 import { RigComponent } from './component';
 import { ExtensionAnchors } from '../constants/extension-types';
 import { ViewerTypes } from '../constants/viewer-types';
 import { RigExtensionView } from '../core/models/rig';
-import { ExtensionViewDialog, ExtensionViewDialogState } from '../extension-view-dialog';
-
-import { ExtensionAnchor, ExtensionMode, ExtensionViewType } from '../constants/extension-coordinator';
+import { ExtensionViewDialogState } from '../extension-view-dialog';
+import { ExtensionAnchor, ExtensionViewType } from '../constants/extension-coordinator';
 
 let globalAny = global as any;
 
-describe('<RigComponent />', () => {
-  const setupShallow = setupShallowTest(RigComponent, () => ({
-    saveManifest: jest.fn(),
-    userLogin: jest.fn()
-  }));
+const setupShallow = setupShallowTest(RigComponent, () => ({
+  saveManifest: jest.fn(),
+  userLogin: jest.fn()
+}));
 
+describe('<RigComponent />', () => {
   function setupViewsForTest(numViews: number) {
     const testViews = createViewsForTest(numViews, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut);
     localStorage.setItem('extensionViews', JSON.stringify(testViews));
@@ -40,7 +39,7 @@ describe('<RigComponent />', () => {
   it('gets extension views from local storage correctly when not in local storage', () => {
     const { wrapper } = setupShallow();
     const instance = wrapper.instance() as RigComponent;
-    expect(instance.getExtensionViews()).toEqual([]);
+    expect(instance.state.extensionViews).toEqual([]);
   });
 
   it('renders extension view correctly', () => {
@@ -55,7 +54,7 @@ describe('<RigComponent />', () => {
     const testViews = createViewsForTest(1, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut);
     const { wrapper } = setupShallow();
     const instance = wrapper.instance() as RigComponent;
-    expect(instance.getExtensionViews()).toEqual(testViews);
+    expect(instance.state.extensionViews).toEqual(testViews);
   });
 
   it('deletes extension view correctly', () => {
@@ -94,7 +93,7 @@ describe('<RigComponent />', () => {
 
     instance.editViewHandler({ x: 25, y: 25 });
 
-    const views = instance.getExtensionViews();
+    const views = instance.state.extensionViews;
     const editedView = views.filter((element: RigExtensionView) => element.id === '1');
     expect(editedView[0].x).toEqual(25);
     expect(editedView[0].y).toEqual(25);
@@ -117,25 +116,24 @@ describe('<RigComponent />', () => {
   it('correctly toggles state when create extension view is opened/closed', () => {
     setupViewsForTest(1);
     const { wrapper } = setupShallow();
-    wrapper.setState({
-      manifest: ExtensionForTest,
-    })
     const instance = wrapper.instance() as RigComponent;
+    instance.onConfigurationSuccess({ manifest: createExtensionManifestForTest() });
+
     instance.openExtensionViewHandler();
     expect(instance.state.showExtensionsView).toBe(true);
 
-
-    instance.closeExtensionViewDialog();
+    instance.closeExtensionViewDialog();``
     expect(instance.state.showExtensionsView).toBe(false);
   });
 
   it('correctly sets state when viewHandler is invoked', () => {
     setupViewsForTest(1);
     const { wrapper } = setupShallow();
-    const instance = wrapper.instance() as RigComponent;
+    wrapper.setState({ manifest: createExtensionManifestForTest() });
 
+    const instance = wrapper.instance() as RigComponent;
     instance.viewerHandler();
-    expect(instance.state.selectedView).toBe(ExtensionViews);
+    expect(instance.state.selectedView).toBe(NavItem.ExtensionViews);
   });
 
   it('gets the correct views when getExtensionViews invoked', () => {
@@ -161,22 +159,20 @@ describe('<RigComponent />', () => {
 
   it('sets state correctly when _onConfigurationSuccess invoked', () => {
     const { wrapper } = setupShallow();
-    const testData = {
-      test: 'test'
-    };
+    const fakeManifest = createExtensionManifestForTest();
     const instance = wrapper.instance() as RigComponent;
 
-    instance.onConfigurationSuccess(testData);
-    expect(wrapper.instance().state.test).toBe(testData.test);
+    instance.onConfigurationSuccess({ manifest: fakeManifest, });
+    expect(wrapper.instance().state.manifest).toBe(fakeManifest);
   });
 
   it('sets error state correctly when _onConfigurationError invoked', () => {
     const { wrapper } = setupShallow();
-    const testError = 'error';
+    const testError = new Error('test error');
     const instance = wrapper.instance() as RigComponent;
 
     instance.onConfigurationError(testError);
-    expect(wrapper.instance().state.error).toBe(testError);
+    expect(wrapper.instance().state.error).toBe(testError.message);
   });
 
   describe('gets frame size from dialog ref correctly', () => {

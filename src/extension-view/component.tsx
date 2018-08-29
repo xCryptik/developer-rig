@@ -7,8 +7,7 @@ import { ViewerTypes } from '../constants/viewer-types';
 import * as closeButton from '../img/close_icon.png';
 import { ExtensionComponentView } from '../extension-component-view';
 import { ExtensionMobileView } from '../extension-mobile-view/component';
-import { RigExtension, FrameSize } from '../core/models/rig';
-import { Position } from '../types/extension-coordinator';
+import { FrameSize } from '../core/models/rig';
 import { RunListTrigger } from '../runlist-trigger';
 import * as runlist from '../../runlist/runlist.json';
 import { RunList } from '../core/models/run-list';
@@ -32,7 +31,7 @@ export const PanelViewDimensions = Object.freeze({
 
 interface ExtensionViewProps {
   id: string;
-  extension: RigExtension;
+  extension: ExtensionCoordinator.ExtensionObject;
   type: string;
   mode: string;
   role?: string;
@@ -40,7 +39,7 @@ interface ExtensionViewProps {
   orientation?: string;
   deleteViewHandler?: (id: string) => void;
   openEditViewHandler?: (id: string) => void;
-  position?: Position;
+  position?: ExtensionCoordinator.Position;
   frameSize?: FrameSize;
 }
 

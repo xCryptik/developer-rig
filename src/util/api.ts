@@ -1,113 +1,51 @@
-import { ExtensionViews } from '../core/models/extension';
 import { Product, DeserializedProduct } from '../core/models/product';
-import { createSignedToken } from '../util/token';
-import { missingConfigurations } from '../util/errors';
+import { createSignedToken } from './token';
+import { missingConfigurations } from './errors';
 import { RigRole } from '../constants/rig';
+import { TwitchAPI } from './twitch-api';
+import { ExtensionManifest } from '../core/models/manifest';
 
-export interface ViewsResponse {
-  component?: {
-    viewer_url: string;
-    aspect_height: number;
-    aspect_width: number;
-    size: number;
-    zoom: boolean;
-    zoom_pixels: number;
-  };
-  config?: {
-    viewer_url: string;
-  };
-  live_config?: {
-    viewer_url: string;
-  };
-  mobile?: {
-    viewer_url: string;
-  };
-  panel?: {
-    height: number;
-    viewer_url: string;
-  };
-  video_overlay?: {
-    viewer_url: string;
-  };
+interface ExtensionsSearchResponse {
+  extensions: ExtensionManifest[];
 }
 
-export function convertViews(data: ViewsResponse): ExtensionViews {
-  const views: ExtensionViews = {};
-
-  if (data.config) {
-    views.config = { viewerUrl: data.config.viewer_url };
-  }
-
-  if (data.live_config) {
-    views.liveConfig = { viewerUrl: data.live_config.viewer_url };
-  }
-
-  if (data.panel) {
-    views.panel = {
-      height: data.panel.height,
-      viewerUrl: data.panel.viewer_url,
-    };
-  }
-
-  if (data.video_overlay) {
-    views.videoOverlay = { viewerUrl: data.video_overlay.viewer_url };
-  }
-
-  if (data.mobile) {
-    views.mobile = { viewerUrl: data.mobile.viewer_url };
-  }
-
-  if (data.component) {
-    views.component = {
-      aspectHeight: data.component.aspect_height,
-      aspectWidth: data.component.aspect_width,
-      viewerUrl: data.component.viewer_url,
-      zoom: data.component.zoom,
-      zoomPixels: data.component.zoom_pixels,
-    };
-  }
-
-  return views;
-}
-
-export function fetchExtensionManifest(host: string, clientId: string, version: string, jwt: string) {
-  const api = 'https://' + host + '/kraken/extensions/search';
-  return fetch(api, {
-    method: 'POST',
-    headers: {
-      'Authorization': 'Bearer ' + jwt,
-      'Accept': 'application/vnd.twitchtv.v5+json',
-      'Content-Type': 'application/json',
-      'Client-ID': clientId,
-    },
-    body: JSON.stringify({
+export async function fetchExtensionManifest(id: string, version: string, jwt: string) {
+  const { body } = await TwitchAPI.postOrThrow<ExtensionsSearchResponse>('/extensions/search', {
+    body: {
       limit: 1,
       searches: [
-        {
-          field: 'id',
-          term: clientId,
-        },
-        {
-          field: 'version',
-          term: version,
-        }
+        { field: 'id', term: id },
+        { field: 'version', term: version }
       ]
-    }),
-    referrer: 'Twitch Developer Rig',
-  })
-  .then((response) => response.json())
-  .then((data) => {
-    if (data.extensions && data.extensions.length > 0) {
-      const manifest = data.extensions[0];
-      manifest.views = convertViews(manifest.views);
-      return Promise.resolve({ manifest });
+    },
+    headers: {
+      Authorization: `Bearer ${jwt}`,
     }
-
-    return Promise.reject('Unable to retrieve extension manifest, please verify EXT_OWNER_NAME and EXT_SECRET');
   });
+
+  if (body.extensions && body.extensions.length > 0) {
+    const manifest = body.extensions[0];
+    return Promise.resolve({ manifest });
+  }
+
+  return Promise.reject('Unable to retrieve extension manifest, please verify EXT_OWNER_NAME and EXT_SECRET');
 }
 
-export function fetchManifest(host: string, clientId: string, username: string, version: string, channelId: string, secret: string) {
+interface UsersResponse {
+  data: {
+    broadcaster_type: string;
+    description: string;
+    display_name: string;
+    id: string;
+    login: string;
+    offline_image_url: string;
+    profile_image_url: string;
+    type: string;
+    view_count: number;
+  }[];
+}
+
+export async function fetchManifest(host: string, clientId: string, username: string, version: string, channelId: string, secret: string) {
   if (!username || !clientId || !version || !channelId || !secret) {
     return Promise.reject(missingConfigurations({
       'EXT_CLIENT_ID': clientId,
@@ -117,54 +55,33 @@ export function fetchManifest(host: string, clientId: string, username: string, 
     }));
   }
 
-  const api = 'https://' + host + '/helix/users?login=' + username;
-  return fetch(api, {
-    method: 'GET',
-    headers: {
-      'Client-ID': clientId,
-    },
-    referrer: 'Twitch Developer Rig',
-  }).then((response) => {
-    if (response.status >= 400 && response.status < 500) {
-      return Promise.reject(`Unable to authorize for user ${username} and client id ${clientId}`)
-    }
-    if (response.status >= 500) {
-      return Promise.reject('Unable to hit Twitch API to initialize the rig. Try again later.');
-    }
+  const response  = await TwitchAPI.get<UsersResponse>(`/helix/users?login=${username}`);
+  if (response.status >= 400 && response.status < 500) {
+    return Promise.reject(`Unable to authorize for user ${username} and client id ${clientId}`)
+  }
 
-    return response.json()
-  }).then((respJson) => {
-    if (!respJson) {
-      return null;
-    }
+  if (response.status >= 500) {
+    return Promise.reject('Unable to hit Twitch API to initialize the rig. Try again later.');
+  }
 
-    const data = respJson.data;
-    if (!data && data.length === 0) {
-      return Promise.reject('Unable to verify the id for username: ' + username);
-    }
-
-    const userId = data[0]['id'];
-    const token = createSignedToken(RigRole, '', userId, channelId, secret);
-    return fetchExtensionManifest(host, clientId, version, token);
-  });
+  const { data } = response.body;
+  const token = createSignedToken(RigRole, '', data[0].id, channelId, secret);
+  return fetchExtensionManifest(clientId, version, token);
 }
 
-export function fetchUserInfo(accessToken: string) {
-  const api = 'https://api.twitch.tv/helix/users';
-  return fetch(api, {
-    method: 'GET',
+export async function fetchUserInfo(accessToken: string) {
+  const response = await TwitchAPI.getOrThrow<UsersResponse>('/helix/users', {
     headers: {
-      'authorization': 'Bearer ' + accessToken,
+      Authorization: `Bearer ${accessToken}`,
     }
-  }).then(response => response.json())
-    .then(respJson => {
-      const data = respJson.data;
-      if (!data && data.length === 0) {
-        return Promise.reject(`Unable to get user data for token: ${accessToken}`);
-      }
+  });
 
-      return Promise.resolve(data[0]);
-    });
+  const { data } = response.body;
+  if (!data && data.length === 0) {
+    return Promise.reject(`Unable to get user data for token: ${accessToken}`);
+  }
+
+  return Promise.resolve(data[0]);
 }
 
 export function fetchProducts(host: string, clientId: string, token: string) {
@@ -173,9 +90,9 @@ export function fetchProducts(host: string, clientId: string, token: string) {
   return fetch(api, {
     method: 'GET',
     headers: {
-      'Accept': 'application/vnd.twitchtv.v5+json',
+      Accept: 'application/vnd.twitchtv.v5+json',
+      Authorization: `OAuth ${token}`,
       'Content-Type': 'application/json',
-      'Authorization': 'OAuth ' + token,
       'Client-ID': clientId,
     },
     referrer: 'Twitch Developer Rig',
@@ -226,9 +143,9 @@ export function saveProduct(host: string, clientId: string, token: string, produ
     method: 'POST',
     body: JSON.stringify({ product: deserializedProduct }),
     headers: {
-      'Accept': 'application/vnd.twitchtv.v5+json',
+      Accept: 'application/vnd.twitchtv.v5+json',
+      Authorization: `OAuth ${token}`,
       'Content-Type': 'application/json',
-      'Authorization': 'OAuth ' + token,
       'Client-ID': clientId,
     },
     referrer: 'Twitch Developer Rig',
@@ -242,7 +159,7 @@ export function fetchNewRelease() {
   return fetch(api, {
     method: 'GET',
     headers: {
-      'Accept': 'application/vnd.github.v3+json',
+      Accept: 'application/vnd.github.v3+json',
     }
   }).then(response => response.json())
     .then(respJson => {

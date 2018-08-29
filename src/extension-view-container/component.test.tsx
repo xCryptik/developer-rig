@@ -1,20 +1,20 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
-import { ExtensionForTest, createViewsForTest } from '../tests/constants/extension';
+import { createExtensionForTest, createViewsForTest } from '../tests/constants/extension';
 import { ExtensionViewContainer } from './component';
 import { ExtensionAnchors } from '../constants/extension-types';
 import { ViewerTypes } from '../constants/viewer-types';
 import { ExtensionMode, ExtensionAnchor} from '../constants/extension-coordinator';
 
-describe('<ExtensionViewContainer />', () => {
-  const setupShallow = setupShallowTest(ExtensionViewContainer, () => ({
-    mode: ExtensionMode.Viewer,
-    extensionViews: createViewsForTest(0, '', ''),
-    deleteExtensionViewHandler: jest.fn(),
-    openExtensionViewHandler: jest.fn(),
-    openEditViewHandler: jest.fn(),
-    extension: ExtensionForTest
-  }));
+const setupShallow = setupShallowTest(ExtensionViewContainer, () => ({
+  mode: ExtensionMode.Viewer,
+  extensionViews: createViewsForTest(0, '', ''),
+  deleteExtensionViewHandler: jest.fn(),
+  openExtensionViewHandler: jest.fn(),
+  openEditViewHandler: jest.fn(),
+  extension: createExtensionForTest(),
+}));
 
+describe('<ExtensionViewContainer />', () => {
   it('openExtensionViewHandler is called when the create button is clicked', () => {
     const { wrapper } = setupShallow();
     wrapper.find('ExtensionViewButton').simulate('click');

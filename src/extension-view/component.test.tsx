@@ -1,7 +1,7 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { ExtensionViewComponent } from './component';
 import { ViewerTypes } from '../constants/viewer-types';
-import { ExtensionForTest } from '../tests/constants/extension';
+import { createExtensionForTest } from '../tests/constants/extension';
 import { MobileOrientation } from '../constants/mobile';
 import { ExtensionAnchor, ExtensionMode, ExtensionViewType, ExtensionPlatform} from '../constants/extension-coordinator';
 
@@ -10,7 +10,7 @@ const DeleteButtonSelector = '.view__close_button.visible';
 describe('<ExtensionViewComponent />', () => {
   const setupShallow = setupShallowTest(ExtensionViewComponent, () => ({
     id: '0',
-    extension: ExtensionForTest,
+    extension: createExtensionForTest(),
     type: ExtensionAnchor.Panel,
     role: ViewerTypes.Broadcaster,
     mode: 'viewer',
@@ -104,8 +104,8 @@ describe('<ExtensionViewComponent />', () => {
     });
 
     it('sets correct panel height when panel height provided', () => {
-      const extensionWithPanelHeight = Object.assign({}, ExtensionForTest, {
-        ...ExtensionForTest,
+      const extensionWithPanelHeight = {
+        ...createExtensionForTest(),
         views: {
           config: {
             viewerUrl: "test",
@@ -118,10 +118,12 @@ describe('<ExtensionViewComponent />', () => {
             height: '300px'
           }
         },
-      });
+      };
+
       const { wrapper } = setupShallow({
         extension: extensionWithPanelHeight
       });
+
       expect(wrapper).toMatchSnapshot();
     });
 

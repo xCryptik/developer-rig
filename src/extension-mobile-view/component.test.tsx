@@ -1,20 +1,20 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { ExtensionMobileView } from './component';
-import { ExtensionForTest } from '../tests/constants/extension';
+import { createExtensionForTest } from '../tests/constants/extension';
 import { MobileOrientation } from '../constants/mobile';
 import { ExtensionMode } from '../constants/extension-coordinator';
 
-describe('<ExtensionMobileView />', () => {
-  const setupShallow = setupShallowTest(ExtensionMobileView, () => ({
-    id: '0',
-    extension: ExtensionForTest,
-    orientation: MobileOrientation.Portrait,
-    frameSize: { width: 100, height: 100 },
-    position: { x: 0, y: 0 },
-    role: ExtensionMode.Viewer,
-    biindIframeToParent: jest.fn(),
-  }));
+const setupShallow = setupShallowTest(ExtensionMobileView, () => ({
+  id: '0',
+  extension: createExtensionForTest(),
+  orientation: MobileOrientation.Portrait,
+  frameSize: { width: 100, height: 100 },
+  position: { x: 0, y: 0 },
+  role: ExtensionMode.Viewer,
+  bindIframeToParent: jest.fn(),
+}));
 
+describe('<ExtensionMobileView />', () => {
   it('renders correctly', () => {
     const { wrapper } = setupShallow();
     expect(wrapper).toMatchSnapshot();

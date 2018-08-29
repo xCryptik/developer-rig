@@ -7,10 +7,11 @@ export class LocalStorage {
     [key: string]: string;
   };
 
-  public getItem(key: string): string {
+  public getItem(key: string): string | null {
     if (!(key in this.self)) {
       return null;
     }
+
     return this.self[key];
   }
 

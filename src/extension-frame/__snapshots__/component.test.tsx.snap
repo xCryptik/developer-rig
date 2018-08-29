@@ -4,20 +4,21 @@ exports[`<ExtensionFrame /> when in config mode renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionFrame
+  Symbol(enzyme.__unrendered__): <ExtensionFrameComponent
     bindIframeToParent={[Function]}
+    channelId="mockChannelId"
     extension={
         Object {
             "authorName": "test",
             "bitsEnabled": false,
-            "channelId": "channelId",
+            "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "icon_url",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
             "sku": "sku",
-            "state": "state",
+            "state": "Released",
             "summary": "summary",
             "token": "token",
             "vendorCode": "vendorCode",
@@ -26,22 +27,29 @@ ShallowWrapper {
               "component": Object {
                 "aspectHeight": 3000,
                 "aspectWidth": 2500,
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
                 "zoom": false,
+                "zoomPixels": 100,
               },
               "config": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "liveConfig": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "mobile": Object {
                 "viewerUrl": "test",
               },
               "panel": Object {
+                "canLinkExternalContent": false,
+                "height": 300,
                 "viewerUrl": "test",
               },
               "videoOverlay": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
             },
@@ -109,20 +117,21 @@ exports[`<ExtensionFrame /> when in live config mode renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionFrame
+  Symbol(enzyme.__unrendered__): <ExtensionFrameComponent
     bindIframeToParent={[Function]}
+    channelId="mockChannelId"
     extension={
         Object {
             "authorName": "test",
             "bitsEnabled": false,
-            "channelId": "channelId",
+            "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "icon_url",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
             "sku": "sku",
-            "state": "state",
+            "state": "Released",
             "summary": "summary",
             "token": "token",
             "vendorCode": "vendorCode",
@@ -131,22 +140,29 @@ ShallowWrapper {
               "component": Object {
                 "aspectHeight": 3000,
                 "aspectWidth": 2500,
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
                 "zoom": false,
+                "zoomPixels": 100,
               },
               "config": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "liveConfig": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "mobile": Object {
                 "viewerUrl": "test",
               },
               "panel": Object {
+                "canLinkExternalContent": false,
+                "height": 300,
                 "viewerUrl": "test",
               },
               "videoOverlay": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
             },
@@ -214,20 +230,21 @@ exports[`<ExtensionFrame /> when in live config mode renders correctly 2`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionFrame
+  Symbol(enzyme.__unrendered__): <ExtensionFrameComponent
     bindIframeToParent={[Function]}
+    channelId="mockChannelId"
     extension={
         Object {
             "authorName": "test",
             "bitsEnabled": false,
-            "channelId": "channelId",
+            "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "icon_url",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
             "sku": "sku",
-            "state": "state",
+            "state": "Released",
             "summary": "summary",
             "token": "token",
             "vendorCode": "vendorCode",
@@ -236,22 +253,29 @@ ShallowWrapper {
               "component": Object {
                 "aspectHeight": 3000,
                 "aspectWidth": 2500,
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
                 "zoom": false,
+                "zoomPixels": 100,
               },
               "config": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "liveConfig": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "mobile": Object {
                 "viewerUrl": "test",
               },
               "panel": Object {
+                "canLinkExternalContent": false,
+                "height": 300,
                 "viewerUrl": "test",
               },
               "videoOverlay": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
             },
@@ -319,20 +343,21 @@ exports[`<ExtensionFrame /> when in panel mode renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionFrame
+  Symbol(enzyme.__unrendered__): <ExtensionFrameComponent
     bindIframeToParent={[Function]}
+    channelId="mockChannelId"
     extension={
         Object {
             "authorName": "test",
             "bitsEnabled": false,
-            "channelId": "channelId",
+            "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "icon_url",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
             "sku": "sku",
-            "state": "state",
+            "state": "Released",
             "summary": "summary",
             "token": "token",
             "vendorCode": "vendorCode",
@@ -341,22 +366,29 @@ ShallowWrapper {
               "component": Object {
                 "aspectHeight": 3000,
                 "aspectWidth": 2500,
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
                 "zoom": false,
+                "zoomPixels": 100,
               },
               "config": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "liveConfig": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "mobile": Object {
                 "viewerUrl": "test",
               },
               "panel": Object {
+                "canLinkExternalContent": false,
+                "height": 300,
                 "viewerUrl": "test",
               },
               "videoOverlay": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
             },
@@ -424,20 +456,21 @@ exports[`<ExtensionFrame /> when in video overlay mode renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionFrame
+  Symbol(enzyme.__unrendered__): <ExtensionFrameComponent
     bindIframeToParent={[Function]}
+    channelId="mockChannelId"
     extension={
         Object {
             "authorName": "test",
             "bitsEnabled": false,
-            "channelId": "channelId",
+            "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "icon_url",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
             "sku": "sku",
-            "state": "state",
+            "state": "Released",
             "summary": "summary",
             "token": "token",
             "vendorCode": "vendorCode",
@@ -446,22 +479,29 @@ ShallowWrapper {
               "component": Object {
                 "aspectHeight": 3000,
                 "aspectWidth": 2500,
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
                 "zoom": false,
+                "zoomPixels": 100,
               },
               "config": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "liveConfig": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "mobile": Object {
                 "viewerUrl": "test",
               },
               "panel": Object {
+                "canLinkExternalContent": false,
+                "height": 300,
                 "viewerUrl": "test",
               },
               "videoOverlay": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
             },
@@ -529,20 +569,21 @@ exports[`<ExtensionFrame /> when in video overlay mode renders correctly 2`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionFrame
+  Symbol(enzyme.__unrendered__): <ExtensionFrameComponent
     bindIframeToParent={[Function]}
+    channelId="mockChannelId"
     extension={
         Object {
             "authorName": "test",
             "bitsEnabled": false,
-            "channelId": "channelId",
+            "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "icon_url",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
             "sku": "sku",
-            "state": "state",
+            "state": "Released",
             "summary": "summary",
             "token": "token",
             "vendorCode": "vendorCode",
@@ -551,22 +592,29 @@ ShallowWrapper {
               "component": Object {
                 "aspectHeight": 3000,
                 "aspectWidth": 2500,
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
                 "zoom": false,
+                "zoomPixels": 100,
               },
               "config": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "liveConfig": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "mobile": Object {
                 "viewerUrl": "test",
               },
               "panel": Object {
+                "canLinkExternalContent": false,
+                "height": 300,
                 "viewerUrl": "test",
               },
               "videoOverlay": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
             },

@@ -15,8 +15,8 @@ export interface ReduxDispatchProps {
 }
 
 interface State {
-  open?: boolean;
-  showNewRelease?: boolean;
+  open: boolean;
+  showNewRelease: boolean;
   releaseUrl?: string;
 }
 
@@ -25,7 +25,6 @@ export class UserDropdownComponent extends React.Component<Props, State> {
   public state: State = {
     open: false,
     showNewRelease: false,
-    releaseUrl: null,
   }
 
   private signOut = () => {

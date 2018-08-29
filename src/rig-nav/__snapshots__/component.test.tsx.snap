@@ -10,49 +10,42 @@ ShallowWrapper {
     liveConfigHandler={[Function]}
     manifest={
         Object {
-            "anchor": "panel",
             "author_name": "test",
             "bits_enabled": true,
-            "can_install": true,
-            "config_url": "test",
             "description": "test",
-            "eula_tos_url": "test.com",
-            "icon_url": "test.com",
-            "icon_urls": Object {},
+            "icon_urls": Object {
+              "100x100": "test",
+            },
             "id": "test",
-            "installation_count": 0,
-            "live_config_url": "test.com",
             "name": "test",
-            "panel_height": 300,
-            "privacy_policy_url": "test.com",
             "request_identity_link": false,
-            "required_broadcaster_abilities": Array [
-              "test",
-            ],
-            "screenshot_urls": Array [
-              "test.png",
-            ],
             "sku": "test",
             "state": "test",
             "summary": "test",
-            "support_email": "test",
             "vendor_code": "test",
             "version": "0.0.1",
             "views": Object {
               "component": Object {
-                "aspectHeight": 3000,
-                "aspectWidth": 2500,
-                "viewerUrl": "test",
+                "aspect_height": 3000,
+                "aspect_width": 2500,
+                "can_link_external_content": false,
+                "size": 1024,
+                "viewer_url": "test",
                 "zoom": false,
+                "zoom_pixels": 24,
               },
               "config": Object {
-                "viewerUrl": "test",
+                "can_link_external_content": false,
+                "viewer_url": "test",
               },
-              "liveConfig": Object {
-                "viewerUrl": "test",
+              "live_config": Object {
+                "can_link_external_content": false,
+                "viewer_url": "test",
               },
               "panel": Object {
-                "viewerUrl": "test",
+                "can_link_external_content": false,
+                "height": 300,
+                "viewer_url": "test",
               },
             },
             "whitelisted_config_urls": Array [],

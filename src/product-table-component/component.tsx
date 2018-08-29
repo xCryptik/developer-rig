@@ -14,7 +14,7 @@ export interface ProductTableComponentProps {
 export interface ReduxStateProps {
   products: Product[];
   error: string;
-  token: string;
+  token?: string;
 }
 
 export interface ReduxDispatchProps {

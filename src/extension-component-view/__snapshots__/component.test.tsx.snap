@@ -5,19 +5,19 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionComponentView
-    biindIframeToParent={[Function]}
+    bindIframeToParent={[Function]}
     extension={
         Object {
             "authorName": "test",
             "bitsEnabled": false,
-            "channelId": "channelId",
+            "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "icon_url",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
             "sku": "sku",
-            "state": "state",
+            "state": "Released",
             "summary": "summary",
             "token": "token",
             "vendorCode": "vendorCode",
@@ -26,22 +26,29 @@ ShallowWrapper {
               "component": Object {
                 "aspectHeight": 3000,
                 "aspectWidth": 2500,
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
                 "zoom": false,
+                "zoomPixels": 100,
               },
               "config": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "liveConfig": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "mobile": Object {
                 "viewerUrl": "test",
               },
               "panel": Object {
+                "canLinkExternalContent": false,
+                "height": 300,
                 "viewerUrl": "test",
               },
               "videoOverlay": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
             },
@@ -92,21 +99,21 @@ ShallowWrapper {
                       }
         }
 >
-        <ExtensionFrame
-                bindIframeToParent={undefined}
+        <Connect(ExtensionFrameComponent)
+                bindIframeToParent={[Function]}
                 className="view"
                 extension={
                         Object {
                                 "authorName": "test",
                                 "bitsEnabled": false,
-                                "channelId": "channelId",
+                                "clientId": "mockClientId",
                                 "description": "description",
                                 "iconUrl": "icon_url",
                                 "id": "id",
                                 "name": "name",
                                 "requestIdentityLink": false,
                                 "sku": "sku",
-                                "state": "state",
+                                "state": "Released",
                                 "summary": "summary",
                                 "token": "token",
                                 "vendorCode": "vendorCode",
@@ -115,22 +122,29 @@ ShallowWrapper {
                                   "component": Object {
                                     "aspectHeight": 3000,
                                     "aspectWidth": 2500,
+                                    "canLinkExternalContent": false,
                                     "viewerUrl": "test",
                                     "zoom": false,
+                                    "zoomPixels": 100,
                                   },
                                   "config": Object {
+                                    "canLinkExternalContent": false,
                                     "viewerUrl": "test",
                                   },
                                   "liveConfig": Object {
+                                    "canLinkExternalContent": false,
                                     "viewerUrl": "test",
                                   },
                                   "mobile": Object {
                                     "viewerUrl": "test",
                                   },
                                   "panel": Object {
+                                    "canLinkExternalContent": false,
+                                    "height": 300,
                                     "viewerUrl": "test",
                                   },
                                   "videoOverlay": Object {
+                                    "canLinkExternalContent": false,
                                     "viewerUrl": "test",
                                   },
                                 },
@@ -159,21 +173,21 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <ExtensionFrame
-          bindIframeToParent={undefined}
+        "children": <Connect(ExtensionFrameComponent)
+          bindIframeToParent={[Function]}
           className="view"
           extension={
                     Object {
                               "authorName": "test",
                               "bitsEnabled": false,
-                              "channelId": "channelId",
+                              "clientId": "mockClientId",
                               "description": "description",
                               "iconUrl": "icon_url",
                               "id": "id",
                               "name": "name",
                               "requestIdentityLink": false,
                               "sku": "sku",
-                              "state": "state",
+                              "state": "Released",
                               "summary": "summary",
                               "token": "token",
                               "vendorCode": "vendorCode",
@@ -182,22 +196,29 @@ ShallowWrapper {
                                 "component": Object {
                                   "aspectHeight": 3000,
                                   "aspectWidth": 2500,
+                                  "canLinkExternalContent": false,
                                   "viewerUrl": "test",
                                   "zoom": false,
+                                  "zoomPixels": 100,
                                 },
                                 "config": Object {
+                                  "canLinkExternalContent": false,
                                   "viewerUrl": "test",
                                 },
                                 "liveConfig": Object {
+                                  "canLinkExternalContent": false,
                                   "viewerUrl": "test",
                                 },
                                 "mobile": Object {
                                   "viewerUrl": "test",
                                 },
                                 "panel": Object {
+                                  "canLinkExternalContent": false,
+                                  "height": 300,
                                   "viewerUrl": "test",
                                 },
                                 "videoOverlay": Object {
+                                  "canLinkExternalContent": false,
                                   "viewerUrl": "test",
                                 },
                               },
@@ -228,19 +249,19 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "bindIframeToParent": undefined,
+          "bindIframeToParent": [Function],
           "className": "view",
           "extension": Object {
             "authorName": "test",
             "bitsEnabled": false,
-            "channelId": "channelId",
+            "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "icon_url",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
             "sku": "sku",
-            "state": "state",
+            "state": "Released",
             "summary": "summary",
             "token": "token",
             "vendorCode": "vendorCode",
@@ -249,22 +270,29 @@ ShallowWrapper {
               "component": Object {
                 "aspectHeight": 3000,
                 "aspectWidth": 2500,
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
                 "zoom": false,
+                "zoomPixels": 100,
               },
               "config": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "liveConfig": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "mobile": Object {
                 "viewerUrl": "test",
               },
               "panel": Object {
+                "canLinkExternalContent": false,
+                "height": 300,
                 "viewerUrl": "test",
               },
               "videoOverlay": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
             },
@@ -305,21 +333,21 @@ ShallowWrapper {
                             }
           }
 >
-          <ExtensionFrame
-                    bindIframeToParent={undefined}
+          <Connect(ExtensionFrameComponent)
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
                                         "authorName": "test",
                                         "bitsEnabled": false,
-                                        "channelId": "channelId",
+                                        "clientId": "mockClientId",
                                         "description": "description",
                                         "iconUrl": "icon_url",
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
                                         "sku": "sku",
-                                        "state": "state",
+                                        "state": "Released",
                                         "summary": "summary",
                                         "token": "token",
                                         "vendorCode": "vendorCode",
@@ -328,22 +356,29 @@ ShallowWrapper {
                                           "component": Object {
                                             "aspectHeight": 3000,
                                             "aspectWidth": 2500,
+                                            "canLinkExternalContent": false,
                                             "viewerUrl": "test",
                                             "zoom": false,
+                                            "zoomPixels": 100,
                                           },
                                           "config": Object {
+                                            "canLinkExternalContent": false,
                                             "viewerUrl": "test",
                                           },
                                           "liveConfig": Object {
+                                            "canLinkExternalContent": false,
                                             "viewerUrl": "test",
                                           },
                                           "mobile": Object {
                                             "viewerUrl": "test",
                                           },
                                           "panel": Object {
+                                            "canLinkExternalContent": false,
+                                            "height": 300,
                                             "viewerUrl": "test",
                                           },
                                           "videoOverlay": Object {
+                                            "canLinkExternalContent": false,
                                             "viewerUrl": "test",
                                           },
                                         },
@@ -372,21 +407,21 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <ExtensionFrame
-            bindIframeToParent={undefined}
+          "children": <Connect(ExtensionFrameComponent)
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
                                     "authorName": "test",
                                     "bitsEnabled": false,
-                                    "channelId": "channelId",
+                                    "clientId": "mockClientId",
                                     "description": "description",
                                     "iconUrl": "icon_url",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
                                     "sku": "sku",
-                                    "state": "state",
+                                    "state": "Released",
                                     "summary": "summary",
                                     "token": "token",
                                     "vendorCode": "vendorCode",
@@ -395,22 +430,29 @@ ShallowWrapper {
                                       "component": Object {
                                         "aspectHeight": 3000,
                                         "aspectWidth": 2500,
+                                        "canLinkExternalContent": false,
                                         "viewerUrl": "test",
                                         "zoom": false,
+                                        "zoomPixels": 100,
                                       },
                                       "config": Object {
+                                        "canLinkExternalContent": false,
                                         "viewerUrl": "test",
                                       },
                                       "liveConfig": Object {
+                                        "canLinkExternalContent": false,
                                         "viewerUrl": "test",
                                       },
                                       "mobile": Object {
                                         "viewerUrl": "test",
                                       },
                                       "panel": Object {
+                                        "canLinkExternalContent": false,
+                                        "height": 300,
                                         "viewerUrl": "test",
                                       },
                                       "videoOverlay": Object {
+                                        "canLinkExternalContent": false,
                                         "viewerUrl": "test",
                                       },
                                     },
@@ -441,19 +483,19 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "bindIframeToParent": undefined,
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
-              "channelId": "channelId",
+              "clientId": "mockClientId",
               "description": "description",
               "iconUrl": "icon_url",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
               "sku": "sku",
-              "state": "state",
+              "state": "Released",
               "summary": "summary",
               "token": "token",
               "vendorCode": "vendorCode",
@@ -462,22 +504,29 @@ ShallowWrapper {
                 "component": Object {
                   "aspectHeight": 3000,
                   "aspectWidth": 2500,
+                  "canLinkExternalContent": false,
                   "viewerUrl": "test",
                   "zoom": false,
+                  "zoomPixels": 100,
                 },
                 "config": Object {
+                  "canLinkExternalContent": false,
                   "viewerUrl": "test",
                 },
                 "liveConfig": Object {
+                  "canLinkExternalContent": false,
                   "viewerUrl": "test",
                 },
                 "mobile": Object {
                   "viewerUrl": "test",
                 },
                 "panel": Object {
+                  "canLinkExternalContent": false,
+                  "height": 300,
                   "viewerUrl": "test",
                 },
                 "videoOverlay": Object {
+                  "canLinkExternalContent": false,
                   "viewerUrl": "test",
                 },
               },
@@ -516,19 +565,19 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionComponentView
-    biindIframeToParent={[Function]}
+    bindIframeToParent={[Function]}
     extension={
         Object {
             "authorName": "test",
             "bitsEnabled": false,
-            "channelId": "channelId",
+            "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "icon_url",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
             "sku": "sku",
-            "state": "state",
+            "state": "Released",
             "summary": "summary",
             "token": "token",
             "vendorCode": "vendorCode",
@@ -599,21 +648,21 @@ ShallowWrapper {
                       }
         }
 >
-        <ExtensionFrame
-                bindIframeToParent={undefined}
+        <Connect(ExtensionFrameComponent)
+                bindIframeToParent={[Function]}
                 className="view"
                 extension={
                         Object {
                                 "authorName": "test",
                                 "bitsEnabled": false,
-                                "channelId": "channelId",
+                                "clientId": "mockClientId",
                                 "description": "description",
                                 "iconUrl": "icon_url",
                                 "id": "id",
                                 "name": "name",
                                 "requestIdentityLink": false,
                                 "sku": "sku",
-                                "state": "state",
+                                "state": "Released",
                                 "summary": "summary",
                                 "token": "token",
                                 "vendorCode": "vendorCode",
@@ -660,21 +709,21 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <ExtensionFrame
-          bindIframeToParent={undefined}
+        "children": <Connect(ExtensionFrameComponent)
+          bindIframeToParent={[Function]}
           className="view"
           extension={
                     Object {
                               "authorName": "test",
                               "bitsEnabled": false,
-                              "channelId": "channelId",
+                              "clientId": "mockClientId",
                               "description": "description",
                               "iconUrl": "icon_url",
                               "id": "id",
                               "name": "name",
                               "requestIdentityLink": false,
                               "sku": "sku",
-                              "state": "state",
+                              "state": "Released",
                               "summary": "summary",
                               "token": "token",
                               "vendorCode": "vendorCode",
@@ -725,19 +774,19 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "bindIframeToParent": undefined,
+          "bindIframeToParent": [Function],
           "className": "view",
           "extension": Object {
             "authorName": "test",
             "bitsEnabled": false,
-            "channelId": "channelId",
+            "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "icon_url",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
             "sku": "sku",
-            "state": "state",
+            "state": "Released",
             "summary": "summary",
             "token": "token",
             "vendorCode": "vendorCode",
@@ -798,21 +847,21 @@ ShallowWrapper {
                             }
           }
 >
-          <ExtensionFrame
-                    bindIframeToParent={undefined}
+          <Connect(ExtensionFrameComponent)
+                    bindIframeToParent={[Function]}
                     className="view"
                     extension={
                               Object {
                                         "authorName": "test",
                                         "bitsEnabled": false,
-                                        "channelId": "channelId",
+                                        "clientId": "mockClientId",
                                         "description": "description",
                                         "iconUrl": "icon_url",
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
                                         "sku": "sku",
-                                        "state": "state",
+                                        "state": "Released",
                                         "summary": "summary",
                                         "token": "token",
                                         "vendorCode": "vendorCode",
@@ -859,21 +908,21 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <ExtensionFrame
-            bindIframeToParent={undefined}
+          "children": <Connect(ExtensionFrameComponent)
+            bindIframeToParent={[Function]}
             className="view"
             extension={
                         Object {
                                     "authorName": "test",
                                     "bitsEnabled": false,
-                                    "channelId": "channelId",
+                                    "clientId": "mockClientId",
                                     "description": "description",
                                     "iconUrl": "icon_url",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
                                     "sku": "sku",
-                                    "state": "state",
+                                    "state": "Released",
                                     "summary": "summary",
                                     "token": "token",
                                     "vendorCode": "vendorCode",
@@ -924,19 +973,19 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "bindIframeToParent": undefined,
+            "bindIframeToParent": [Function],
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
-              "channelId": "channelId",
+              "clientId": "mockClientId",
               "description": "description",
               "iconUrl": "icon_url",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
               "sku": "sku",
-              "state": "state",
+              "state": "Released",
               "summary": "summary",
               "token": "token",
               "vendorCode": "vendorCode",
