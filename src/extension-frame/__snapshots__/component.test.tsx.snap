@@ -4,9 +4,8 @@ exports[`<ExtensionFrame /> when in config mode renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionFrameComponent
+  Symbol(enzyme.__unrendered__): <ExtensionFrame
     bindIframeToParent={[Function]}
-    channelId="mockChannelId"
     extension={
         Object {
             "authorName": "test",
@@ -117,9 +116,8 @@ exports[`<ExtensionFrame /> when in live config mode renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionFrameComponent
+  Symbol(enzyme.__unrendered__): <ExtensionFrame
     bindIframeToParent={[Function]}
-    channelId="mockChannelId"
     extension={
         Object {
             "authorName": "test",
@@ -230,9 +228,8 @@ exports[`<ExtensionFrame /> when in live config mode renders correctly 2`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionFrameComponent
+  Symbol(enzyme.__unrendered__): <ExtensionFrame
     bindIframeToParent={[Function]}
-    channelId="mockChannelId"
     extension={
         Object {
             "authorName": "test",
@@ -343,9 +340,8 @@ exports[`<ExtensionFrame /> when in panel mode renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionFrameComponent
+  Symbol(enzyme.__unrendered__): <ExtensionFrame
     bindIframeToParent={[Function]}
-    channelId="mockChannelId"
     extension={
         Object {
             "authorName": "test",
@@ -456,9 +452,8 @@ exports[`<ExtensionFrame /> when in video overlay mode renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionFrameComponent
+  Symbol(enzyme.__unrendered__): <ExtensionFrame
     bindIframeToParent={[Function]}
-    channelId="mockChannelId"
     extension={
         Object {
             "authorName": "test",
@@ -569,9 +564,8 @@ exports[`<ExtensionFrame /> when in video overlay mode renders correctly 2`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionFrameComponent
+  Symbol(enzyme.__unrendered__): <ExtensionFrame
     bindIframeToParent={[Function]}
-    channelId="mockChannelId"
     extension={
         Object {
             "authorName": "test",

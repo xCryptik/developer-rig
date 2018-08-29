@@ -1,4 +1,4 @@
-let extensionFrameAPI, parameters;
+var extensionFrameAPI, parameters, frameChannelId;
 window.addEventListener('message', proxyIframeEvent);
 
 function proxyIframeEvent(event) {
@@ -7,6 +7,7 @@ function proxyIframeEvent(event) {
     case 'extension-frame-init':
       const ExtensionFrame = window['extension-coordinator'].ExtensionFrame;
       parameters = event.data.extension;
+      frameChannelId = event.data.channelId;
       parameters.parentElement = document.getElementById('extension-frame');
       parameters.dobbin = { trackEvent: () => { } };
       extensionFrameAPI = new ExtensionFrame(parameters);
@@ -15,7 +16,7 @@ function proxyIframeEvent(event) {
       event.source.postMessage({
         action: "extension-frame-authorize-response",
         response: {
-          channelId: parameters.extension.channelId,
+          channelId: frameChannelId,
           clientId: parameters.extension.clientId,
           token: parameters.extension.token,
           userId: JSON.parse(atob(parameters.extension.token.split('.')[1])).opaque_user_id,

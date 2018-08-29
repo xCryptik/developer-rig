@@ -1,11 +1,10 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { setupMountTest } from '../tests/enzyme-util/mount';
 import { createExtensionForTest } from '../tests/constants/extension';
-import { ExtensionFrameComponent } from './component';
+import { ExtensionFrame } from './component';
 import { ExtensionViewType, ExtensionAnchor, ExtensionMode } from '../constants/extension-coordinator';
 
-const setupShallow = setupShallowTest(ExtensionFrameComponent, () => ({
-  channelId: 'mockChannelId',
+const setupShallow = setupShallowTest(ExtensionFrame, () => ({
   frameId: '0',
   extension: createExtensionForTest(),
   type: ExtensionAnchor.Panel,
@@ -14,8 +13,7 @@ const setupShallow = setupShallowTest(ExtensionFrameComponent, () => ({
   bindIframeToParent: jest.fn(),
 }));
 
-const setupMount = setupMountTest(ExtensionFrameComponent, () => ({
-  channelId: 'mockChannelId',
+const setupMount = setupMountTest(ExtensionFrame, () => ({
   className: 'view',
   frameId: '0',
   extension: createExtensionForTest(),
@@ -35,11 +33,12 @@ describe('<ExtensionFrame />', () => {
       },
     };
 
-    const instance = wrapper.instance() as ExtensionFrameComponent;
+    const instance = wrapper.instance() as ExtensionFrame;
     instance.iframe = mockIframeRef;
     instance.extensionFrameInit();
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
       action: 'extension-frame-init',
+      channelId: process.env.EXT_CHANNEL_ID,
       extension: {
         anchor: 'panel',
         channelId: NaN,
@@ -115,11 +114,12 @@ describe('<ExtensionFrame />', () => {
       },
     };
 
-    const instance = wrapper.instance() as ExtensionFrameComponent;
+    const instance = wrapper.instance() as ExtensionFrame;
     instance.iframe = mockIframeRef;
     instance.extensionFrameInit();
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
       action: 'extension-frame-init',
+      channelId: process.env.EXT_CHANNEL_ID,
       extension: {
         anchor: 'mobile',
         channelId: NaN,

@@ -21,7 +21,7 @@ module.exports = function(app, extension) {
     const data = {
       'data': [
         {
-          'id': '000000000',
+          'id': '999999999',
           'login': url.query.login,
           'display_name': url.query.login,
           'type': '',
@@ -35,7 +35,8 @@ module.exports = function(app, extension) {
     };
     res.end(JSON.stringify(data));
   });
-  app.post('/kraken/extensions/search', (req, res) => {
+
+  app.post('/extensions/search', (req, res) => {
     checkClientId(req.header('Client-ID'));
     checkToken(req.header('Authorization'));
     const search = req.body;
@@ -47,6 +48,7 @@ module.exports = function(app, extension) {
     };
     res.end(JSON.stringify(data));
   });
+
   app.post('/extensions/message/:channelId', (req, res) => {
     checkToken(req.header('Authorization'));
     let message = {

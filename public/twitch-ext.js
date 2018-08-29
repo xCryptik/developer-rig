@@ -30,6 +30,7 @@
               }
             }
           });
+
           authData = Object.assign({}, event.data.response);
           authCallback(authData);
           break;

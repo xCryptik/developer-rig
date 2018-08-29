@@ -862,7 +862,7 @@ ShallowWrapper {
                             }
           }
 >
-          <Connect(ExtensionFrameComponent)
+          <ExtensionFrame
                     bindIframeToParent={[Function]}
                     className="view"
                     extension={
@@ -1044,7 +1044,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <Connect(ExtensionFrameComponent)
+          "children": <ExtensionFrame
             bindIframeToParent={[Function]}
             className="view"
             extension={
@@ -1223,7 +1223,7 @@ ShallowWrapper {
                                   }
             }
 >
-            <Connect(ExtensionFrameComponent)
+            <ExtensionFrame
                         bindIframeToParent={[Function]}
                         className="view"
                         extension={
@@ -1405,7 +1405,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <Connect(ExtensionFrameComponent)
+            "children": <ExtensionFrame
               bindIframeToParent={[Function]}
               className="view"
               extension={
@@ -1681,7 +1681,7 @@ ShallowWrapper {
                             }
           }
 >
-          <Connect(ExtensionFrameComponent)
+          <ExtensionFrame
                     bindIframeToParent={[Function]}
                     className="view"
                     extension={
@@ -1860,7 +1860,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <Connect(ExtensionFrameComponent)
+          "children": <ExtensionFrame
             bindIframeToParent={[Function]}
             className="view"
             extension={
@@ -2039,7 +2039,7 @@ ShallowWrapper {
                                   }
             }
 >
-            <Connect(ExtensionFrameComponent)
+            <ExtensionFrame
                         bindIframeToParent={[Function]}
                         className="view"
                         extension={
@@ -2218,7 +2218,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <Connect(ExtensionFrameComponent)
+            "children": <ExtensionFrame
               bindIframeToParent={[Function]}
               className="view"
               extension={
@@ -3236,7 +3236,7 @@ ShallowWrapper {
                             }
           }
 >
-          <Connect(ExtensionFrameComponent)
+          <ExtensionFrame
                     bindIframeToParent={[Function]}
                     className="view"
                     extension={
@@ -3415,7 +3415,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <Connect(ExtensionFrameComponent)
+          "children": <ExtensionFrame
             bindIframeToParent={[Function]}
             className="view"
             extension={
@@ -3594,7 +3594,7 @@ ShallowWrapper {
                                   }
             }
 >
-            <Connect(ExtensionFrameComponent)
+            <ExtensionFrame
                         bindIframeToParent={[Function]}
                         className="view"
                         extension={
@@ -3773,7 +3773,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <Connect(ExtensionFrameComponent)
+            "children": <ExtensionFrame
               bindIframeToParent={[Function]}
               className="view"
               extension={
@@ -4050,7 +4050,7 @@ ShallowWrapper {
                             }
           }
 >
-          <Connect(ExtensionFrameComponent)
+          <ExtensionFrame
                     bindIframeToParent={[Function]}
                     className="view"
                     extension={
@@ -4231,7 +4231,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <Connect(ExtensionFrameComponent)
+          "children": <ExtensionFrame
             bindIframeToParent={[Function]}
             className="view"
             extension={
@@ -4411,7 +4411,7 @@ ShallowWrapper {
                                   }
             }
 >
-            <Connect(ExtensionFrameComponent)
+            <ExtensionFrame
                         bindIframeToParent={[Function]}
                         className="view"
                         extension={
@@ -4592,7 +4592,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <Connect(ExtensionFrameComponent)
+            "children": <ExtensionFrame
               bindIframeToParent={[Function]}
               className="view"
               extension={
@@ -4869,7 +4869,7 @@ ShallowWrapper {
                             }
           }
 >
-          <Connect(ExtensionFrameComponent)
+          <ExtensionFrame
                     bindIframeToParent={[Function]}
                     className="view"
                     extension={
@@ -5050,7 +5050,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <Connect(ExtensionFrameComponent)
+          "children": <ExtensionFrame
             bindIframeToParent={[Function]}
             className="view"
             extension={
@@ -5230,7 +5230,7 @@ ShallowWrapper {
                                   }
             }
 >
-            <Connect(ExtensionFrameComponent)
+            <ExtensionFrame
                         bindIframeToParent={[Function]}
                         className="view"
                         extension={
@@ -5411,7 +5411,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <Connect(ExtensionFrameComponent)
+            "children": <ExtensionFrame
               bindIframeToParent={[Function]}
               className="view"
               extension={
@@ -5687,7 +5687,7 @@ ShallowWrapper {
                             }
           }
 >
-          <Connect(ExtensionFrameComponent)
+          <ExtensionFrame
                     bindIframeToParent={[Function]}
                     className="view"
                     extension={
@@ -5866,7 +5866,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <Connect(ExtensionFrameComponent)
+          "children": <ExtensionFrame
             bindIframeToParent={[Function]}
             className="view"
             extension={
@@ -6045,7 +6045,7 @@ ShallowWrapper {
                                   }
             }
 >
-            <Connect(ExtensionFrameComponent)
+            <ExtensionFrame
                         bindIframeToParent={[Function]}
                         className="view"
                         extension={
@@ -6224,7 +6224,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <Connect(ExtensionFrameComponent)
+            "children": <ExtensionFrame
               bindIframeToParent={[Function]}
               className="view"
               extension={
@@ -6500,7 +6500,7 @@ ShallowWrapper {
                             }
           }
 >
-          <Connect(ExtensionFrameComponent)
+          <ExtensionFrame
                     bindIframeToParent={[Function]}
                     className="view"
                     extension={
@@ -6679,7 +6679,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <Connect(ExtensionFrameComponent)
+          "children": <ExtensionFrame
             bindIframeToParent={[Function]}
             className="view"
             extension={
@@ -6858,7 +6858,7 @@ ShallowWrapper {
                                   }
             }
 >
-            <Connect(ExtensionFrameComponent)
+            <ExtensionFrame
                         bindIframeToParent={[Function]}
                         className="view"
                         extension={
@@ -7037,7 +7037,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <Connect(ExtensionFrameComponent)
+            "children": <ExtensionFrame
               bindIframeToParent={[Function]}
               className="view"
               extension={
@@ -7314,7 +7314,7 @@ ShallowWrapper {
                             }
           }
 >
-          <Connect(ExtensionFrameComponent)
+          <ExtensionFrame
                     bindIframeToParent={[Function]}
                     className="view"
                     extension={
@@ -7495,7 +7495,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <Connect(ExtensionFrameComponent)
+          "children": <ExtensionFrame
             bindIframeToParent={[Function]}
             className="view"
             extension={
@@ -7675,7 +7675,7 @@ ShallowWrapper {
                                   }
             }
 >
-            <Connect(ExtensionFrameComponent)
+            <ExtensionFrame
                         bindIframeToParent={[Function]}
                         className="view"
                         extension={
@@ -7856,7 +7856,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <Connect(ExtensionFrameComponent)
+            "children": <ExtensionFrame
               bindIframeToParent={[Function]}
               className="view"
               extension={
@@ -8133,7 +8133,7 @@ ShallowWrapper {
                             }
           }
 >
-          <Connect(ExtensionFrameComponent)
+          <ExtensionFrame
                     bindIframeToParent={[Function]}
                     className="view"
                     extension={
@@ -8314,7 +8314,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <Connect(ExtensionFrameComponent)
+          "children": <ExtensionFrame
             bindIframeToParent={[Function]}
             className="view"
             extension={
@@ -8494,7 +8494,7 @@ ShallowWrapper {
                                   }
             }
 >
-            <Connect(ExtensionFrameComponent)
+            <ExtensionFrame
                         bindIframeToParent={[Function]}
                         className="view"
                         extension={
@@ -8675,7 +8675,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <Connect(ExtensionFrameComponent)
+            "children": <ExtensionFrame
               bindIframeToParent={[Function]}
               className="view"
               extension={
@@ -8951,7 +8951,7 @@ ShallowWrapper {
                             }
           }
 >
-          <Connect(ExtensionFrameComponent)
+          <ExtensionFrame
                     bindIframeToParent={[Function]}
                     className="view"
                     extension={
@@ -9130,7 +9130,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <Connect(ExtensionFrameComponent)
+          "children": <ExtensionFrame
             bindIframeToParent={[Function]}
             className="view"
             extension={
@@ -9309,7 +9309,7 @@ ShallowWrapper {
                                   }
             }
 >
-            <Connect(ExtensionFrameComponent)
+            <ExtensionFrame
                         bindIframeToParent={[Function]}
                         className="view"
                         extension={
@@ -9488,7 +9488,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <Connect(ExtensionFrameComponent)
+            "children": <ExtensionFrame
               bindIframeToParent={[Function]}
               className="view"
               extension={
@@ -9746,7 +9746,7 @@ ShallowWrapper {
                             }
           }
 >
-          <Connect(ExtensionFrameComponent)
+          <ExtensionFrame
                     bindIframeToParent={[Function]}
                     className="view"
                     extension={
@@ -9907,7 +9907,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <Connect(ExtensionFrameComponent)
+          "children": <ExtensionFrame
             bindIframeToParent={[Function]}
             className="view"
             extension={
@@ -10050,7 +10050,7 @@ ShallowWrapper {
                                   }
             }
 >
-            <Connect(ExtensionFrameComponent)
+            <ExtensionFrame
                         bindIframeToParent={[Function]}
                         className="view"
                         extension={
@@ -10211,7 +10211,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <Connect(ExtensionFrameComponent)
+            "children": <ExtensionFrame
               bindIframeToParent={[Function]}
               className="view"
               extension={

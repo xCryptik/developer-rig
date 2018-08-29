@@ -5,10 +5,6 @@ import { ExtensionPlatform, ExtensionViewType} from '../constants/extension-coor
 const IFRAME_CLASS = 'extension-frame';
 const EXTENSION_FRAME_INIT_ACTION = 'extension-frame-init';
 
-export interface ReduxStateProps {
-  channelId?: string;
-}
-
 export interface PublicProps {
   className: string;
   frameId: string;
@@ -18,9 +14,9 @@ export interface PublicProps {
   bindIframeToParent: (iframe: HTMLIFrameElement) => void;
 }
 
-type Props = PublicProps & ReduxStateProps;
+type Props = PublicProps;
 
-export class ExtensionFrameComponent extends React.Component<Props> {
+export class ExtensionFrame extends React.Component<Props> {
   public iframe: HTMLIFrameElement;
 
   public componentDidMount() {
@@ -30,10 +26,6 @@ export class ExtensionFrameComponent extends React.Component<Props> {
   }
 
   public render() {
-    if (!this.props.channelId) {
-      return null;
-    }
-
     return (
       <iframe
         ref={this.bindIframeRef}
@@ -51,13 +43,9 @@ export class ExtensionFrameComponent extends React.Component<Props> {
   }
 
   public extensionFrameInit = () => {
-    if (!this.props.channelId) {
-      return;
-    }
-
     const extensionFrameParams: ExtensionCoordinator.ExtensionFrameParams = {
       anchor: this.props.type as ExtensionCoordinator.ExtensionAnchor,
-      channelId: parseInt(this.props.channelId, 10),
+      channelId: parseInt(process.env.EXT_CHANNEL_ID, 0),
       extension: this.props.extension,
       iframeClassName: IFRAME_CLASS,
       installationAbilities: {
@@ -72,6 +60,7 @@ export class ExtensionFrameComponent extends React.Component<Props> {
     const data = {
       action: EXTENSION_FRAME_INIT_ACTION,
       extension: extensionFrameParams,
+      channelId: process.env.EXT_CHANNEL_ID,
       frameId: this.props.frameId,
     };
 
