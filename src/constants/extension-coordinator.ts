@@ -53,7 +53,6 @@ export enum ExtensionAction {
   TwitchExtPubsubListen = 'twitch-ext-pubsub-listen',
   TwitchExtPubsubUnlisten = 'twitch-ext-pubsub-unlisten',
 }
-export const DefaultZoomPixelWidth = 1024;
 
 export enum ExtensionViewType {
     Component = "component",
@@ -62,5 +61,5 @@ export enum ExtensionViewType {
     LiveConfig = "liveConfig",
     Mobile = "mobile",
     Panel = "panel",
-    VideoOverlay = "videoOverlay",
+    Overlay = "videoOverlay",
 }

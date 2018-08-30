@@ -12,14 +12,12 @@ interface ExtensionViewContainerProps {
   openExtensionViewHandler: Function;
 }
 
-type Props = ExtensionViewContainerProps;
-
 const ConfigNames: { [key: string]: string; } = {
   [ExtensionMode.Config]: 'Broadcaster Configuration',
   [ExtensionMode.Dashboard]: 'Broadcaster Live Dashboard',
 };
 
-export class ExtensionViewContainer extends React.Component<Props> {
+export class ExtensionViewContainer extends React.Component<ExtensionViewContainerProps> {
   private openExtensionViewDialog = () => {
     this.props.openExtensionViewHandler();
   }
@@ -31,6 +29,7 @@ export class ExtensionViewContainer extends React.Component<Props> {
         <ExtensionView
           key={view.id}
           id={view.id}
+          channelId={view.channelId}
           extension={view.extension}
           type={view.type}
           mode={view.mode}

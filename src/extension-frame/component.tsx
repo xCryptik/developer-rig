@@ -1,11 +1,12 @@
 import * as React from 'react';
 import './component.sass';
-import { ExtensionPlatform, ExtensionViewType} from '../constants/extension-coordinator';
+import { ExtensionPlatform, ExtensionViewType } from '../constants/extension-coordinator';
 
 const IFRAME_CLASS = 'extension-frame';
 const EXTENSION_FRAME_INIT_ACTION = 'extension-frame-init';
 
 export interface PublicProps {
+  channelId: string;
   className: string;
   frameId: string;
   extension: ExtensionCoordinator.ExtensionObject;
@@ -45,7 +46,7 @@ export class ExtensionFrame extends React.Component<Props> {
   public extensionFrameInit = () => {
     const extensionFrameParams: ExtensionCoordinator.ExtensionFrameParams = {
       anchor: this.props.type as ExtensionCoordinator.ExtensionAnchor,
-      channelId: parseInt(process.env.EXT_CHANNEL_ID, 0),
+      channelId: parseInt(this.props.channelId, 10),
       extension: this.props.extension,
       iframeClassName: IFRAME_CLASS,
       installationAbilities: {
@@ -60,7 +61,7 @@ export class ExtensionFrame extends React.Component<Props> {
     const data = {
       action: EXTENSION_FRAME_INIT_ACTION,
       extension: extensionFrameParams,
-      channelId: process.env.EXT_CHANNEL_ID,
+      channelId: this.props.channelId,
       frameId: this.props.frameId,
     };
 

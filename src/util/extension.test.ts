@@ -1,50 +1,52 @@
-import { createExtensionObject } from './extension';
-import { ViewerTypes } from '../constants/viewer-types';
-import { createToken } from './token';
+import { createExtensionObject, createExtensionToken, generateOpaqueId } from './extension';
 import { ExtensionManifest } from '../core/models/manifest';
+import { RigRole } from '../constants/rig';
+import { TokenPayload } from './token';
+import { verify } from 'jsonwebtoken';
+import { ViewerTypes } from '../constants/viewer-types';
 
 describe('extension', () => {
   const manifest: ExtensionManifest = {
-    author_name: 'test',
-    bits_enabled: true,
+    authorName: 'test',
+    bitsEnabled: true,
     description: 'test',
-    icon_urls: {
+    iconUrls: {
       '100x100': 'test',
     },
     id: 'test',
     name: 'test',
-    request_identity_link: false,
+    requestIdentityLink: false,
     sku: 'test',
     state: 'test',
     summary: 'test',
-    vendor_code: 'test',
+    vendorCode: 'test',
     version: '0.0.1',
     views: {
       panel: {
-        can_link_external_content: false,
+        canLinkExternalContent: false,
         height: 300,
-        viewer_url: 'test'
+        viewerUrl: 'test'
       },
       config: {
-        can_link_external_content: false,
-        viewer_url: 'test'
+        canLinkExternalContent: false,
+        viewerUrl: 'test'
       },
-      live_config: {
-        can_link_external_content: false,
-        viewer_url: 'test',
+      liveConfig: {
+        canLinkExternalContent: false,
+        viewerUrl: 'test',
       },
       component: {
-        aspect_height: 3000,
-        aspect_width: 2500,
-        can_link_external_content: false,
-        viewer_url: 'test',
+        aspectHeight: 3000,
+        aspectWidth: 2500,
+        canLinkExternalContent: false,
+        viewerUrl: 'test',
         size: 1024,
         zoom: false,
-        zoom_pixels: 24,
+        zoomPixels: 24,
       }
     },
-    whitelisted_config_urls: [],
-    whitelisted_panel_urls: [],
+    whitelistedConfigUrls: [],
+    whitelistedPanelUrls: [],
   };
 
   const index = '0';
@@ -57,19 +59,19 @@ describe('extension', () => {
 
   it('creates an extension with the correct data', () => {
     const expected = {
-      authorName: manifest.author_name,
-      bitsEnabled: manifest.bits_enabled,
+      authorName: manifest.authorName,
+      bitsEnabled: manifest.bitsEnabled,
       clientId: manifest.id,
       description: manifest.description,
-      iconUrl: manifest.icon_urls["100x100"],
+      iconUrl: manifest.iconUrls["100x100"],
       id: manifest.id + ':' + index,
       name: manifest.name,
-      requestIdentityLink: manifest.request_identity_link,
+      requestIdentityLink: manifest.requestIdentityLink,
       sku: manifest.sku,
       state: manifest.state,
       summary: manifest.summary,
-      token: createToken(role, isLinked, ownerID, channelId, secret, opaqueId),
-      vendorCode: manifest.vendor_code,
+      token: createExtensionToken(role, isLinked, ownerID, channelId, secret, opaqueId),
+      vendorCode: manifest.vendorCode,
       version: manifest.version,
       views: {
         panel: {
@@ -89,16 +91,123 @@ describe('extension', () => {
           aspectHeight: 3000,
           aspectWidth: 2500,
           canLinkExternalContent: false,
+          size: 1024,
           viewerUrl: 'test',
           zoom: false,
           zoomPixels: 24,
         }
       },
-      whitelistedConfigUrls: manifest.whitelisted_config_urls,
-      whitelistedPanelUrls: manifest.whitelisted_panel_urls,
+      whitelistedConfigUrls: manifest.whitelistedConfigUrls,
+      whitelistedPanelUrls: manifest.whitelistedPanelUrls,
     };
 
     const result = createExtensionObject(manifest, index, role, isLinked, ownerID, channelId, secret, opaqueId);
     expect(result).toEqual(expected);
+  });
+});
+
+describe('createExtensionToken', () => {
+  const secret = 'secret';
+  const role = 'rig_role';
+  const ouid = 'rig_ouid';
+  const uid = 'rig_uid';
+  const channelId = 'rig_channel';
+  const ownerId = 'rig_owner';
+  const isLinked = false;
+
+  const LOGGED_OUT_PAYLOAD = {
+    channel_id: channelId,
+    opaque_user_id: 'ARIG' + ouid,
+    pubsub_perms: {
+      listen: ['broadcast'],
+    },
+    role: 'viewer',
+  };
+
+  const LOGGED_IN_UNLINKED_PAYLOAD = {
+    channel_id: channelId,
+    opaque_user_id: 'URIG' + ouid,
+    pubsub_perms: {
+      listen: ['broadcast'],
+    },
+    role: 'viewer',
+  };
+
+  const LOGGED_IN_LINKED_PAYLOAD = {
+    channel_id: channelId,
+    opaque_user_id: 'URIG' + ouid,
+    pubsub_perms: {
+      listen: ['broadcast'],
+    },
+    role: 'viewer',
+    user_id: 'RIG' + ownerId,
+  };
+
+  const BROADCASTER_PAYLOAD = {
+    channel_id: channelId,
+    opaque_user_id: 'URIG' + ouid,
+    pubsub_perms: {
+      listen: ['broadcast'],
+      send: ['broadcast'],
+    },
+    role: 'broadcaster',
+    user_id: 'RIG' + ownerId,
+  };
+
+  it('should create a token for logged out unlinked users', () => {
+    const token = createExtensionToken(ViewerTypes.LoggedOut, isLinked, ownerId, channelId, secret, ouid);
+    const payload = verify(token, Buffer.from(secret, 'base64')) as TokenPayload;
+
+    expect(payload.opaque_user_id).toBe(LOGGED_OUT_PAYLOAD.opaque_user_id);
+    expect(payload.role).toBe(LOGGED_OUT_PAYLOAD.role);
+    expect(payload.pubsub_perms.send).toBeUndefined();
+    expect(payload.pubsub_perms.listen).toEqual(['broadcast', 'global']);
+  });
+
+  it('should create a token for logged in unlinked users', () => {
+    const token = createExtensionToken(ViewerTypes.LoggedIn, isLinked, ownerId, channelId, secret, ouid);
+    const payload = verify(token, Buffer.from(secret, 'base64')) as TokenPayload;
+
+    expect(payload.opaque_user_id).toBe(LOGGED_IN_UNLINKED_PAYLOAD.opaque_user_id);
+    expect(payload.role).toBe(LOGGED_IN_UNLINKED_PAYLOAD.role);
+    expect(payload.pubsub_perms.send).toBeUndefined();
+    expect(payload.pubsub_perms.listen).toEqual(['broadcast', 'global']);
+  });
+
+  it('should create a token for logged in linked users', () => {
+    const token = createExtensionToken(ViewerTypes.LoggedIn, !isLinked, ownerId, channelId, secret, ouid);
+    const payload = verify(token, Buffer.from(secret, 'base64')) as TokenPayload;
+
+    expect(payload.opaque_user_id).toBe(LOGGED_IN_LINKED_PAYLOAD.opaque_user_id);
+    expect(payload.user_id).toBe(LOGGED_IN_LINKED_PAYLOAD.user_id);
+    expect(payload.role).toBe(LOGGED_IN_LINKED_PAYLOAD.role);
+    expect(payload.pubsub_perms.send).toBeUndefined();
+    expect(payload.pubsub_perms.listen).toEqual(['broadcast', 'global']);
+  });
+
+  it('should create a token for broadcaster users', () => {
+    const token = createExtensionToken(ViewerTypes.Broadcaster, isLinked, ownerId, channelId, secret, ouid);
+    const payload = verify(token, Buffer.from(secret, 'base64')) as TokenPayload;
+
+    expect(payload.opaque_user_id).toBe(BROADCASTER_PAYLOAD.opaque_user_id);
+    expect(payload.role).toBe(BROADCASTER_PAYLOAD.role);
+    expect(payload.user_id).toBe(BROADCASTER_PAYLOAD.user_id)
+    expect(payload.pubsub_perms.send).toEqual(['broadcast']);
+    expect(payload.pubsub_perms.listen).toEqual(['broadcast', 'global']);
+  });
+
+  it('should create a token for the rig', () => {
+    const token = createExtensionToken(RigRole, isLinked, ownerId, channelId, secret, ouid);
+    const payload = verify(token, Buffer.from(secret, 'base64')) as TokenPayload;
+
+    expect(payload.role).toBe(RigRole);
+    expect(payload.pubsub_perms.send).toEqual(['*']);
+    expect(payload.pubsub_perms.listen).toEqual(['*']);
+  });
+
+  it('generateOpaqueId should generate an opaque ID we expect', () => {
+    const idLength = 15;
+    const genOpaqueId = generateOpaqueId();
+    expect(genOpaqueId).toHaveLength(idLength);
   });
 });

@@ -3,46 +3,46 @@ import { ExtensionManifest } from '../../core/models/manifest';
 import { RigExtensionView } from '../../core/models/rig';
 
 export const createExtensionManifestForTest = (): ExtensionManifest => ({
-  author_name: 'test',
-  bits_enabled: true,
+  authorName: 'test',
+  bitsEnabled: true,
   description: 'test',
-  icon_urls: {
+  iconUrls: {
     '100x100': 'test',
   },
   id: 'test',
   name: 'test',
-  request_identity_link: false,
+  requestIdentityLink: false,
   sku: 'test',
   state: 'test',
   summary: 'test',
-  vendor_code: 'test',
+  vendorCode: 'test',
   version: '0.0.1',
   views: {
     panel: {
-      can_link_external_content: false,
+      canLinkExternalContent: false,
       height: 300,
-      viewer_url: 'test'
+      viewerUrl: 'test'
     },
     config: {
-      can_link_external_content: false,
-      viewer_url: 'test'
+      canLinkExternalContent: false,
+      viewerUrl: 'test'
     },
-    live_config: {
-      can_link_external_content: false,
-      viewer_url: 'test',
+    liveConfig: {
+      canLinkExternalContent: false,
+      viewerUrl: 'test',
     },
     component: {
-      aspect_height: 3000,
-      aspect_width: 2500,
-      can_link_external_content: false,
-      viewer_url: 'test',
+      aspectHeight: 3000,
+      aspectWidth: 2500,
+      canLinkExternalContent: false,
+      viewerUrl: 'test',
       size: 1024,
       zoom: false,
-      zoom_pixels: 24,
+      zoomPixels: 24,
     }
   },
-  whitelisted_config_urls: [],
-  whitelisted_panel_urls: [],
+  whitelistedConfigUrls: [],
+  whitelistedPanelUrls: [],
 });
 
 export const createExtensionForTest = (): ExtensionCoordinator.ExtensionObject => ({
@@ -50,7 +50,7 @@ export const createExtensionForTest = (): ExtensionCoordinator.ExtensionObject =
   clientId: 'mockClientId',
   bitsEnabled: false,
   description: 'description',
-  iconUrl: 'icon_url',
+  iconUrl: 'iconUrl',
   id: 'id',
   name: 'name',
   requestIdentityLink: false,

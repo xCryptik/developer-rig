@@ -1,83 +1,64 @@
-import { createToken } from './token';
 import { ExtensionManifest } from '../core/models/manifest';
+import { RigRole } from '../constants/rig';
+import { ViewerTypes } from '../constants/viewer-types';
+import { TokenSpec, createSignedToken } from './token';
+
+export function createExtensionToken(newRole: string, isLinked: boolean, ownerId: string, channelId: string, secret: string, opaqueId: string): string {
+  const opaque = opaqueId ? opaqueId : generateOpaqueId();
+  switch (newRole) {
+    case ViewerTypes.LoggedOut:
+      return createSignedToken({ role: 'viewer', opaqueUserId: 'ARIG' + opaque, channelId, secret });
+    case ViewerTypes.LoggedIn:
+      if (isLinked) {
+        return createSignedToken({ role: 'viewer', opaqueUserId: 'URIG' + opaque, userId: 'RIG' + ownerId, channelId, secret });
+      } else {
+        return createSignedToken({ role: 'viewer', opaqueUserId: 'URIG' + opaque, channelId, secret });
+      }
+    case ViewerTypes.Broadcaster:
+      return createSignedToken({ role: 'broadcaster', opaqueUserId: 'URIG' + opaque, userId: 'RIG' + ownerId, channelId, secret });
+    default:
+      return createSignedToken({ role: RigRole, opaqueUserId: 'ARIG' + opaque, channelId, secret });
+  }
+}
+
+const idSource: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+const idLength: number = 15;
+
+export function generateOpaqueId(): string {
+  let id = '';
+  for (let i = 0; i < idLength; i++) {
+    id += idSource.charAt(Math.floor(Math.random() * idSource.length));
+  }
+  return id;
+}
 
 export function createExtensionObject(
   manifest: ExtensionManifest,
   index: string,
   role: string,
   isLinked: boolean,
-  ownerID: string,
+  ownerId: string,
   channelId: string,
   secret: string,
   opaqueId: string
 ): ExtensionCoordinator.ExtensionObject {
   return {
-    authorName: manifest.author_name,
-    bitsEnabled: manifest.bits_enabled,
+    authorName: manifest.authorName,
+    bitsEnabled: manifest.bitsEnabled,
     clientId: manifest.id,
     description: manifest.description,
-    iconUrl: manifest.icon_urls["100x100"],
+    iconUrl: manifest.iconUrls["100x100"],
     id: manifest.id + ':' + index,
     name: manifest.name,
-    requestIdentityLink: manifest.request_identity_link,
+    requestIdentityLink: manifest.requestIdentityLink,
     sku: manifest.sku,
     state: manifest.state as ExtensionCoordinator.ExtensionState,
     summary: manifest.summary,
-    token: createToken(role, isLinked, ownerID, channelId, secret, opaqueId),
-    vendorCode: manifest.vendor_code,
+    token: createExtensionToken(role, isLinked, ownerId, channelId, secret, opaqueId),
+    vendorCode: manifest.vendorCode,
     version: manifest.version,
-    views: convertViews(manifest.views),
-    whitelistedConfigUrls: manifest.whitelisted_config_urls,
-    whitelistedPanelUrls: manifest.whitelisted_panel_urls,
+    views: manifest.views,
+    whitelistedConfigUrls: manifest.whitelistedConfigUrls,
+    whitelistedPanelUrls: manifest.whitelistedPanelUrls,
   };
-}
-
-export function convertViews(data: ExtensionManifest['views']): ExtensionCoordinator.ExtensionViews {
-  const views: ExtensionCoordinator.ExtensionViews = {};
-
-  if (data.component) {
-    views.component = {
-      aspectHeight: data.component.aspect_height,
-      aspectWidth: data.component.aspect_width,
-      canLinkExternalContent: data.component.can_link_external_content,
-      viewerUrl: data.component.viewer_url,
-      zoom: data.component.zoom,
-      zoomPixels: data.component.zoom_pixels,
-    };
-  }
-
-  if (data.config) {
-    views.config = {
-      canLinkExternalContent: data.config.can_link_external_content,
-      viewerUrl: data.config.viewer_url,
-    };
-  }
-
-  if (data.live_config) {
-    views.liveConfig = {
-      canLinkExternalContent: data.live_config.can_link_external_content,
-      viewerUrl: data.live_config.viewer_url,
-    };
-  }
-
-  if (data.mobile) {
-    views.mobile = { viewerUrl: data.mobile.viewer_url };
-  }
-
-  if (data.panel) {
-    views.panel = {
-      canLinkExternalContent: data.panel.can_link_external_content,
-      height: data.panel.height,
-      viewerUrl: data.panel.viewer_url,
-    };
-  }
-
-  if (data.video_overlay) {
-    views.videoOverlay = {
-      canLinkExternalContent: data.video_overlay.can_link_external_content,
-      viewerUrl: data.video_overlay.viewer_url,
-    };
-  }
-
-  return views;
 }

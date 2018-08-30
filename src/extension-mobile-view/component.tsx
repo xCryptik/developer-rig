@@ -11,6 +11,7 @@ interface ExtensionMobileViewProps {
   extension: ExtensionCoordinator.ExtensionObject;
   frameSize: FrameSize;
   id: string;
+  channelId: string;
   orientation: string;
   position: ExtensionCoordinator.Position
   role: string;
@@ -64,10 +65,11 @@ export class ExtensionMobileView extends React.Component<Props> {
       <div
         className="view component-view"
         style={this.computeViewStyles()}>
-          <div style={this.computeFrameStyles()}>
+        <div style={this.computeFrameStyles()}>
           <ExtensionFrame
             bindIframeToParent={this.props.bindIframeToParent}
             className="view"
+            channelId={this.props.channelId}
             extension={this.props.extension}
             frameId={`frameid-${this.props.id}`}
             mode={ExtensionMode.Viewer}

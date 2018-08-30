@@ -1,15 +1,4 @@
 
-export function mockFetchForManifest() {
-  return Promise.resolve({
-    ok: true,
-    json: () => ({
-      data: [{
-        id: '0',
-      }]
-    }),
-  });
-}
-
 export function mockFetchForExtensionManifest() {
   return Promise.resolve({
     ok: true,
@@ -20,6 +9,18 @@ export function mockFetchForExtensionManifest() {
         views: {}
       }]
     }),
+  });
+}
+
+export function mockFetchForUserByName() {
+  return Promise.resolve({
+    ok: true,
+    json: () => ({
+      data: [{
+        login: 'test',
+        profile_image_url: 'test.png',
+      }]
+    })
   });
 }
 

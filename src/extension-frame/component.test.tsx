@@ -38,7 +38,6 @@ describe('<ExtensionFrame />', () => {
     instance.extensionFrameInit();
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
       action: 'extension-frame-init',
-      channelId: process.env.EXT_CHANNEL_ID,
       extension: {
         anchor: 'panel',
         channelId: NaN,
@@ -47,7 +46,7 @@ describe('<ExtensionFrame />', () => {
           clientId: 'mockClientId',
           bitsEnabled: false,
           description: 'description',
-          iconUrl: 'icon_url',
+          iconUrl: 'iconUrl',
           id: 'id',
           name: 'name',
           requestIdentityLink: false,
@@ -119,7 +118,6 @@ describe('<ExtensionFrame />', () => {
     instance.extensionFrameInit();
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
       action: 'extension-frame-init',
-      channelId: process.env.EXT_CHANNEL_ID,
       extension: {
         anchor: 'mobile',
         channelId: NaN,
@@ -128,7 +126,7 @@ describe('<ExtensionFrame />', () => {
           clientId: 'mockClientId',
           bitsEnabled: false,
           description: 'description',
-          iconUrl: 'icon_url',
+          iconUrl: 'iconUrl',
           id: 'id',
           name: 'name',
           requestIdentityLink: false,

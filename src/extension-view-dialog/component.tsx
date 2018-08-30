@@ -12,15 +12,17 @@ import { MobileOrientation, DefaultMobileOrientation, MobileSizes } from '../con
 import { getSupportedAnchors, getSupportedPlatforms } from '../core/models/manifest';
 import { ExtensionAnchor, ExtensionMode, ExtensionPlatform, ExtensionViewType } from '../constants/extension-coordinator';
 
-export type ExtensionViewDialogProps = {
-  extensionViews: ExtensionCoordinator.ExtensionViews,
-  closeHandler: Function,
-  saveHandler: Function,
-  show?: boolean,
-};
+export interface ExtensionViewDialogProps {
+  channelId: string;
+  extensionViews: ExtensionCoordinator.ExtensionViews;
+  closeHandler: Function;
+  saveHandler: Function;
+  show?: boolean;
+}
 
-export type ExtensionViewDialogState = {
+export interface ExtensionViewDialogState {
   extensionViewType: ExtensionAnchor | ExtensionMode | ExtensionPlatform | ExtensionViewType;
+  channelId: string;
   frameSize: string;
   viewerType: string;
   x: number;
@@ -29,9 +31,9 @@ export type ExtensionViewDialogState = {
   height: number;
   identityOption: string;
   orientation: string;
-  opaqueId: string;
+  opaqueId?: string;
   [key: string]: number | string;
-};
+}
 
 const InitialState = {
   extensionViewType: DefaultExtensionType,
@@ -43,12 +45,12 @@ const InitialState = {
   height: DefaultCustomDimensions.height,
   identityOption: DefaultIdentityOption,
   orientation: DefaultMobileOrientation,
-  opaqueId: '',
 };
 
 export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProps, ExtensionViewDialogState> {
   public state: ExtensionViewDialogState = {
     ...InitialState,
+    channelId: this.props.channelId,
     extensionViewType: getSupportedAnchors(this.props.extensionViews)[0],
   }
 
@@ -137,7 +139,6 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
   }
 
   private close = () => {
-    this.setState(InitialState);
     this.props.closeHandler();
   }
 
@@ -300,6 +301,10 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
                 </div>
               </div>
             </div>}
+          <label className="new-extension-view__channel-id-label">
+            Channel ID:
+            <input type="text" name="channelId" value={this.state.channelId} onChange={this.onChange} />
+          </label>
           <hr className="dialog__divider" />
           <div className="dialog_bottom-bar">
             <div className="bottom-bar__save" onClick={this.save}> Save </div>

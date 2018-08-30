@@ -1,9 +1,7 @@
 import { Product, DeserializedProduct } from '../core/models/product';
-import { createSignedToken } from './token';
-import { missingConfigurations } from './errors';
-import { RigRole } from '../constants/rig';
 import { TwitchAPI } from './twitch-api';
 import { ExtensionManifest } from '../core/models/manifest';
+import { toCamelCase } from '../util/case';
 
 interface ExtensionsSearchResponse {
   extensions: ExtensionManifest[];
@@ -24,8 +22,8 @@ export async function fetchExtensionManifest(id: string, version: string, jwt: s
   });
 
   if (body.extensions && body.extensions.length > 0) {
-    const manifest = body.extensions[0];
-    return Promise.resolve({ manifest });
+    const manifest = toCamelCase(body.extensions[0]);
+    return Promise.resolve(manifest);
   }
 
   return Promise.reject('Unable to retrieve extension manifest, please verify EXT_OWNER_NAME and EXT_SECRET');
@@ -45,28 +43,20 @@ interface UsersResponse {
   }[];
 }
 
-export async function fetchManifest(host: string, clientId: string, username: string, version: string, channelId: string, secret: string) {
-  if (!username || !clientId || !version || !channelId || !secret) {
-    return Promise.reject(missingConfigurations({
-      'EXT_CLIENT_ID': clientId,
-      'EXT_VERSION': version,
-      'EXT_CHANNEL': channelId,
-      'EXT_SECRET': secret,
-    }));
-  }
-
-  const response  = await TwitchAPI.get<UsersResponse>(`/helix/users?login=${username}`);
+export async function fetchUserByName(clientId: string, username: string) {
+  const response = await TwitchAPI.get<UsersResponse>(`/helix/users?login=${username}`);
   if (response.status >= 400 && response.status < 500) {
     return Promise.reject(`Unable to authorize for user ${username} and client id ${clientId}`)
   }
-
   if (response.status >= 500) {
     return Promise.reject('Unable to hit Twitch API to initialize the rig. Try again later.');
   }
-
   const { data } = response.body;
-  const token = createSignedToken(RigRole, '', data[0].id, channelId, secret);
-  return fetchExtensionManifest(clientId, version, token);
+  if (data && data.length) {
+    return data[0];
+  } else {
+    return Promise.reject(`Invalid server response for username ${username}`);
+  }
 }
 
 export async function fetchUserInfo(accessToken: string) {
@@ -107,19 +97,14 @@ export function fetchProducts(host: string, clientId: string, token: string) {
         return Promise.reject('Unable to get products for clientId: ' + clientId);
       }
 
-      const serializedProducts = products.map((p: DeserializedProduct) => {
-        let product = {
-          sku: p.sku || '',
-          displayName: p.displayName || '',
-          amount: p.cost ? p.cost.amount.toString() : '1',
-          inDevelopment: p.inDevelopment ? 'true' : 'false',
-          broadcast: p.broadcast ? 'true' : 'false',
-          deprecated: p.expiration ? Date.parse(p.expiration) <= Date.now() : false,
-        };
-
-        return product;
-      });
-
+      const serializedProducts = products.map((p: DeserializedProduct) => ({
+        sku: p.sku || '',
+        displayName: p.displayName || '',
+        amount: p.cost ? p.cost.amount.toString() : '1',
+        inDevelopment: p.inDevelopment ? 'true' : 'false',
+        broadcast: p.broadcast ? 'true' : 'false',
+        deprecated: p.expiration ? Date.parse(p.expiration) <= Date.now() : false,
+      }));
       return Promise.resolve(serializedProducts);
     });
 }
@@ -168,7 +153,7 @@ export function fetchNewRelease() {
       if (tagName && zipUrl) {
         return Promise.resolve({
           tagName,
-          zipUrl
+          zipUrl,
         });
       }
 

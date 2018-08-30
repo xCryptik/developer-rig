@@ -10,46 +10,46 @@ ShallowWrapper {
     liveConfigHandler={[Function]}
     manifest={
         Object {
-            "author_name": "test",
-            "bits_enabled": true,
+            "authorName": "test",
+            "bitsEnabled": true,
             "description": "test",
-            "icon_urls": Object {
+            "iconUrls": Object {
               "100x100": "test",
             },
             "id": "test",
             "name": "test",
-            "request_identity_link": false,
+            "requestIdentityLink": false,
             "sku": "test",
             "state": "test",
             "summary": "test",
-            "vendor_code": "test",
+            "vendorCode": "test",
             "version": "0.0.1",
             "views": Object {
               "component": Object {
-                "aspect_height": 3000,
-                "aspect_width": 2500,
-                "can_link_external_content": false,
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "canLinkExternalContent": false,
                 "size": 1024,
-                "viewer_url": "test",
+                "viewerUrl": "test",
                 "zoom": false,
-                "zoom_pixels": 24,
+                "zoomPixels": 24,
               },
               "config": Object {
-                "can_link_external_content": false,
-                "viewer_url": "test",
+                "canLinkExternalContent": false,
+                "viewerUrl": "test",
               },
-              "live_config": Object {
-                "can_link_external_content": false,
-                "viewer_url": "test",
+              "liveConfig": Object {
+                "canLinkExternalContent": false,
+                "viewerUrl": "test",
               },
               "panel": Object {
-                "can_link_external_content": false,
+                "canLinkExternalContent": false,
                 "height": 300,
-                "viewer_url": "test",
+                "viewerUrl": "test",
               },
             },
-            "whitelisted_config_urls": Array [],
-            "whitelisted_panel_urls": Array [],
+            "whitelistedConfigUrls": Array [],
+            "whitelistedPanelUrls": Array [],
           }
     }
     openConfigurationsHandler={[Function]}

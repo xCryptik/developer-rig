@@ -1,4 +1,5 @@
 window['extension-coordinator'] = (function() {
+  const DEFAULT_ZOOM_PIXEL_WIDTH = 1024;
   const CONFIG_FRAME_HEIGHT = 700;
   const DEFAULT_FRAME_HEIGHT = 300;
   const DEFAULT_IFRAME_SANDBOX_ATTRIBUTES = [
@@ -81,7 +82,7 @@ window['extension-coordinator'] = (function() {
     getComponentSizeFromView: function(playerWidth, playerHeight, component) {
       const componentPctWidth = component.aspectWidth / 1e4;
       const componentPctHeight = component.aspectHeight / 1e4;
-      const scaleWidth = component.zoomPixels || DefaultZoomPixelWidth;
+      const scaleWidth = component.zoomPixels || DEFAULT_ZOOM_PIXEL_WIDTH;
       const width = playerWidth * componentPctWidth;
       const height = playerHeight * componentPctHeight;
       return {
@@ -103,6 +104,7 @@ window['extension-coordinator'] = (function() {
             case ExtensionPlatform.Mobile:
               viewerUrl = this.getViewerUrlForMobile(mode);
               break;
+            // no default
           }
           return viewerUrl || '';
         },
@@ -115,6 +117,7 @@ window['extension-coordinator'] = (function() {
               return views.liveConfig && views.liveConfig.viewerUrl;
             case ExtensionMode.Viewer:
               return this.getViewerUrlForAnchor(anchor);
+            // no default
           }
         },
         getViewerUrlForMobile: function(mode) {
@@ -131,6 +134,7 @@ window['extension-coordinator'] = (function() {
               return views.videoOverlay && views.videoOverlay.viewerUrl;
             case ExtensionAnchor.Panel:
               return views.panel && views.panel.viewerUrl;
+            // no default
           }
         },
       });
@@ -173,6 +177,7 @@ window['extension-coordinator'] = (function() {
             iframe.setAttribute('style', `width: 100%; height: ${CONFIG_FRAME_HEIGHT}px;`);
             applyConfigSandboxAttrs(iframe);
             break;
+          // no default
         }
 
         iframe.style.display = 'none';
@@ -198,7 +203,7 @@ window['extension-coordinator'] = (function() {
         iframe.ownerDocument.defaultView.addEventListener('message', handleMessage);
 
         function handleMessage(event) {
-          const { source, data } = event;
+          const { data } = event;
           if (data.action === SupervisorAction.SupervisorReady) {
             initSupervisedExtension();
           } else if (data.action === 'extension-frame-authorize') {
@@ -220,6 +225,7 @@ window['extension-coordinator'] = (function() {
               case ExtensionMode.Config:
                 sandboxWhitelist = getConfigWhitelist();
                 break;
+              // no default
             }
             const iframeAttrs = getAnchorAttributes();
             iframeAttrs.sandbox = sandboxWhitelist || DEFAULT_IFRAME_SANDBOX_ATTRIBUTES.join(' ');
@@ -297,6 +303,7 @@ window['extension-coordinator'] = (function() {
           case ExtensionAnchor.Component:
           case ExtensionAnchor.Hidden:
             return getDefaultAnchorAttributes();
+          // no default
         }
 
         return iframeAttrs;

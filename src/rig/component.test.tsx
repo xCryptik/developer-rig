@@ -1,6 +1,6 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { createViewsForTest, createExtensionForTest, createExtensionManifestForTest } from '../tests/constants/extension';
-import { mockFetchForManifest, mockFetchForUserInfo } from '../tests/mocks';
+import { mockFetchForUserInfo } from '../tests/mocks';
 import { NavItem } from '../constants/nav-items';
 import { RigComponent } from './component';
 import { ExtensionAnchors } from '../constants/extension-types';
@@ -26,10 +26,6 @@ describe('<RigComponent />', () => {
     const testViews = createViewsForTest(numViews, ExtensionAnchors[ExtensionAnchor.Component], ViewerTypes.LoggedOut);
     localStorage.setItem('extensionViews', JSON.stringify(testViews));
   };
-
-  beforeEach(() => {
-    globalAny.fetch = jest.fn().mockImplementation(mockFetchForManifest);
-  })
 
   it('renders correctly', () => {
     const { wrapper } = setupShallow();
@@ -117,12 +113,12 @@ describe('<RigComponent />', () => {
     setupViewsForTest(1);
     const { wrapper } = setupShallow();
     const instance = wrapper.instance() as RigComponent;
-    instance.onConfigurationSuccess({ manifest: createExtensionManifestForTest() });
+    instance.onConfigurationSuccess(createExtensionManifestForTest());
 
     instance.openExtensionViewHandler();
     expect(instance.state.showExtensionsView).toBe(true);
 
-    instance.closeExtensionViewDialog();``
+    instance.closeExtensionViewDialog();
     expect(instance.state.showExtensionsView).toBe(false);
   });
 
@@ -153,7 +149,7 @@ describe('<RigComponent />', () => {
 
     expect(instance.state.extensionViews).toEqual(testViews);
 
-    instance.state.extensionViews.push(createViewsForTest(1,ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut)[0] as RigExtensionView);
+    instance.state.extensionViews.push(createViewsForTest(1, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut)[0] as RigExtensionView);
     instance.pushExtensionViews(instance.state.extensionViews);
   });
 
@@ -162,7 +158,7 @@ describe('<RigComponent />', () => {
     const fakeManifest = createExtensionManifestForTest();
     const instance = wrapper.instance() as RigComponent;
 
-    instance.onConfigurationSuccess({ manifest: fakeManifest, });
+    instance.onConfigurationSuccess(fakeManifest);
     expect(wrapper.instance().state.manifest).toBe(fakeManifest);
   });
 
@@ -200,7 +196,7 @@ describe('<RigComponent />', () => {
         width: 0,
         height: 0,
         frameSize: '640x480',
-        extensionViewType: ExtensionViewType.VideoOverlay
+        extensionViewType: ExtensionViewType.Overlay
       } as ExtensionViewDialogState;
       const expectedOverlayFrameSize = {
         width: 640,
@@ -217,7 +213,7 @@ describe('<RigComponent />', () => {
         width: 100,
         height: 100,
         frameSize: 'Custom',
-        extensionViewType: ExtensionViewType.VideoOverlay
+        extensionViewType: ExtensionViewType.Overlay
       } as ExtensionViewDialogState;
       const expectedOverlayFrameSize = {
         width: 100,

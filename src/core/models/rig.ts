@@ -6,6 +6,7 @@ export interface RigExtensionView {
   y: number;
   orientation: string;
   id: string;
+  channelId: string;
   extension: ExtensionCoordinator.ExtensionObject;
   type: string;
   mode?: string;
@@ -14,19 +15,6 @@ export interface RigExtensionView {
   deleteViewHandler?: (id: string) => void;
   openEditViewHandler?: (id: string) => void;
   frameSize?: FrameSize;
-}
-
-export interface ViewStyles extends React.CSSProperties {
-  border?: string;
-  position?: PositionProperty;
-  left?: string;
-  right?: string;
-  top?: string;
-  bottom?: string;
-  width?: string;
-  height?: string;
-  transformOrigin?: string;
-  transform?: string;
 }
 
 export interface FrameSize {

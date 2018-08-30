@@ -1,59 +1,59 @@
 import { ExtensionAnchor, ExtensionPlatform } from '../../constants/extension-coordinator';
 
 export interface ExtensionManifest {
-  author_name: string;
-  bits_enabled: boolean;
+  authorName: string;
+  bitsEnabled: boolean;
   description: string;
-  icon_urls: {
+  iconUrls: {
     '100x100': string;
     '24x24'?: string;
     '300x200'?: string;
   };
   id: string;
   name: string;
-  request_identity_link: boolean;
+  requestIdentityLink: boolean;
   sku: string;
   summary: string;
-  vendor_code: string;
+  vendorCode: string;
   version: string;
   views: {
     component?: {
-      viewer_url: string;
-      aspect_height: number;
-      aspect_width: number;
-      can_link_external_content: boolean;
+      viewerUrl: string;
+      aspectHeight: number;
+      aspectWidth: number;
+      canLinkExternalContent: boolean;
       size: number;
       zoom: boolean;
-      zoom_pixels: number;
+      zoomPixels: number;
     };
     config?: {
-      can_link_external_content: boolean;
-      viewer_url: string;
+      canLinkExternalContent: boolean;
+      viewerUrl: string;
     };
     hidden?: {
-      can_link_external_content: boolean;
-      viewer_url: string;
+      canLinkExternalContent: boolean;
+      viewerUrl: string;
     };
-    live_config?: {
-      can_link_external_content: boolean;
-      viewer_url: string;
+    liveConfig?: {
+      canLinkExternalContent: boolean;
+      viewerUrl: string;
     };
     mobile?: {
-      viewer_url: string;
+      viewerUrl: string;
     };
     panel?: {
-      can_link_external_content: boolean;
+      canLinkExternalContent: boolean;
       height: number;
-      viewer_url: string;
+      viewerUrl: string;
     };
-    video_overlay?: {
-      can_link_external_content: boolean;
-      viewer_url: string;
+    videoOverlay?: {
+      canLinkExternalContent: boolean;
+      viewerUrl: string;
     };
   };
   state: string;
-  whitelisted_config_urls: string[];
-  whitelisted_panel_urls: string[];
+  whitelistedConfigUrls: string[];
+  whitelistedPanelUrls: string[];
 }
 
 export function getSupportedAnchors(views: ExtensionCoordinator.ExtensionViews): ExtensionAnchor[] {

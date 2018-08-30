@@ -22,7 +22,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Connect(RigNavComponent)
-          error=""
+          error={undefined}
           openConfigurationsHandler={[Function]}
           openProductManagementHandler={[Function]}
           selectedView="Extension Views"
@@ -48,7 +48,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "error": "",
+          "error": undefined,
           "openConfigurationsHandler": [Function],
           "openProductManagementHandler": [Function],
           "selectedView": "Extension Views",
@@ -128,7 +128,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Connect(RigNavComponent)
-            error=""
+            error={undefined}
             openConfigurationsHandler={[Function]}
             openProductManagementHandler={[Function]}
             selectedView="Extension Views"
@@ -154,7 +154,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "error": "",
+            "error": undefined,
             "openConfigurationsHandler": [Function],
             "openProductManagementHandler": [Function],
             "selectedView": "Extension Views",
@@ -259,7 +259,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Connect(RigNavComponent)
-          error=""
+          error={undefined}
           openConfigurationsHandler={[Function]}
           openProductManagementHandler={[Function]}
           selectedView="Extension Views"
@@ -276,7 +276,7 @@ ShallowWrapper {
                                             "bitsEnabled": false,
                                             "clientId": "mockClientId",
                                             "description": "description",
-                                            "iconUrl": "icon_url",
+                                            "iconUrl": "iconUrl",
                                             "id": "id",
                                             "name": "name",
                                             "requestIdentityLink": false,
@@ -350,7 +350,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "error": "",
+          "error": undefined,
           "openConfigurationsHandler": [Function],
           "openProductManagementHandler": [Function],
           "selectedView": "Extension Views",
@@ -376,7 +376,7 @@ ShallowWrapper {
                                               "bitsEnabled": false,
                                               "clientId": "mockClientId",
                                               "description": "description",
-                                              "iconUrl": "icon_url",
+                                              "iconUrl": "iconUrl",
                                               "id": "id",
                                               "name": "name",
                                               "requestIdentityLink": false,
@@ -459,7 +459,7 @@ ShallowWrapper {
                     "bitsEnabled": false,
                     "clientId": "mockClientId",
                     "description": "description",
-                    "iconUrl": "icon_url",
+                    "iconUrl": "iconUrl",
                     "id": "id",
                     "name": "name",
                     "requestIdentityLink": false,
@@ -558,7 +558,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Connect(RigNavComponent)
-            error=""
+            error={undefined}
             openConfigurationsHandler={[Function]}
             openProductManagementHandler={[Function]}
             selectedView="Extension Views"
@@ -575,7 +575,7 @@ ShallowWrapper {
                                                     "bitsEnabled": false,
                                                     "clientId": "mockClientId",
                                                     "description": "description",
-                                                    "iconUrl": "icon_url",
+                                                    "iconUrl": "iconUrl",
                                                     "id": "id",
                                                     "name": "name",
                                                     "requestIdentityLink": false,
@@ -649,7 +649,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "error": "",
+            "error": undefined,
             "openConfigurationsHandler": [Function],
             "openProductManagementHandler": [Function],
             "selectedView": "Extension Views",
@@ -675,7 +675,7 @@ ShallowWrapper {
                                                     "bitsEnabled": false,
                                                     "clientId": "mockClientId",
                                                     "description": "description",
-                                                    "iconUrl": "icon_url",
+                                                    "iconUrl": "iconUrl",
                                                     "id": "id",
                                                     "name": "name",
                                                     "requestIdentityLink": false,
@@ -758,7 +758,7 @@ ShallowWrapper {
                       "bitsEnabled": false,
                       "clientId": "mockClientId",
                       "description": "description",
-                      "iconUrl": "icon_url",
+                      "iconUrl": "iconUrl",
                       "id": "id",
                       "name": "name",
                       "requestIdentityLink": false,

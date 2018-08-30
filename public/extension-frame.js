@@ -1,30 +1,27 @@
-var extensionFrameAPI, parameters, frameChannelId;
-window.addEventListener('message', proxyIframeEvent);
-
-function proxyIframeEvent(event) {
-  const data = event.data;
-  switch (data.action) {
-    case 'extension-frame-init':
+(function() {
+  const container = {};
+  const actions = {
+    'extension-frame-init': (event) => {
       const ExtensionFrame = window['extension-coordinator'].ExtensionFrame;
-      parameters = event.data.extension;
-      frameChannelId = event.data.channelId;
-      parameters.parentElement = document.getElementById('extension-frame');
-      parameters.dobbin = { trackEvent: () => { } };
-      extensionFrameAPI = new ExtensionFrame(parameters);
-      break;
-    case 'extension-frame-authorize':
+      container.parameters = event.data.extension;
+      container.channelId = event.data.channelId;
+      container.parameters.parentElement = document.getElementById('extension-frame');
+      container.parameters.dobbin = { trackEvent: () => { } };
+      container._ = new ExtensionFrame(container.parameters);
+    },
+    'extension-frame-authorize': (event) => {
       event.source.postMessage({
         action: "extension-frame-authorize-response",
         response: {
-          channelId: frameChannelId,
-          clientId: parameters.extension.clientId,
-          token: parameters.extension.token,
-          userId: JSON.parse(atob(parameters.extension.token.split('.')[1])).opaque_user_id,
+          channelId: container.channelId,
+          clientId: container.parameters.extension.clientId,
+          token: container.parameters.extension.token,
+          userId: JSON.parse(atob(container.parameters.extension.token.split('.')[1])).opaque_user_id,
         },
       }, event.origin);
-      break;
-    case 'extension-frame-pubsub':
-      const { channelId, target, contentType, message } = e.data;
+    },
+    'extension-frame-pubsub': (event) => {
+      const { channelId, target, contentType, message } = event.data;
       const url = `${window.origin}/extensions/message/${channelId}`;
       fetch(url, {
         body: JSON.stringify({ targets: [target], content_type: contentType, message }),
@@ -33,17 +30,25 @@ function proxyIframeEvent(event) {
           'Content-Type': 'application/json',
         },
         method: 'POST',
-      }).catch(reason => console.error(endpoint, reason));
-      break;
-    case 'twitch-ext-auth':
-    case 'twitch-ext-context':
+      }).catch(reason => console.error(url, reason));
+    },
+    'twitch-ext-auth': (event) => {
       const ext = document.getElementById('extension-frame').getElementsByTagName('iframe')[0].contentWindow;
-      ext.postMessage(data, '*');
-      break;
-    case 'twitch-ext-rig-log':
-      window.parent.postMessage(data, '*');
-      break;
-    default:
-      break;
-  }
-}
+      ext.postMessage(event.data, '*');
+    },
+    'twitch-ext-context': (event) => actions['twitch-ext-auth'](event),
+    'twitch-ext-rig-log': (event) => {
+      window.parent.postMessage(event.data, '*');
+    },
+    'supervisor-ready': (event) => { },
+  };
+
+  window.addEventListener('message', (event) => {
+    const fn = actions[event.data.action];
+    if (fn) {
+      fn(event);
+    } else {
+      console.error(`Unexpected extension frame event action "${event.data.action}"`);
+    }
+  });
+}());

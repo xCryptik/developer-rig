@@ -12,7 +12,7 @@ ShallowWrapper {
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -124,6 +124,7 @@ ShallowWrapper {
 </div>,
         <ExtensionComponentView
           bindIframeToParent={[Function]}
+          channelId={undefined}
           className="view"
           extension={
                     Object {
@@ -131,7 +132,7 @@ ShallowWrapper {
                               "bitsEnabled": false,
                               "clientId": "mockClientId",
                               "description": "description",
-                              "iconUrl": "icon_url",
+                              "iconUrl": "iconUrl",
                               "id": "id",
                               "name": "name",
                               "requestIdentityLink": false,
@@ -335,13 +336,14 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "bindIframeToParent": [Function],
+          "channelId": undefined,
           "className": "view",
           "extension": Object {
             "authorName": "test",
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -444,6 +446,7 @@ ShallowWrapper {
 </div>,
           <ExtensionComponentView
             bindIframeToParent={[Function]}
+            channelId={undefined}
             className="view"
             extension={
                         Object {
@@ -451,7 +454,7 @@ ShallowWrapper {
                                     "bitsEnabled": false,
                                     "clientId": "mockClientId",
                                     "description": "description",
-                                    "iconUrl": "icon_url",
+                                    "iconUrl": "iconUrl",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -655,13 +658,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
+            "channelId": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
               "clientId": "mockClientId",
               "description": "description",
-              "iconUrl": "icon_url",
+              "iconUrl": "iconUrl",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -749,7 +753,7 @@ ShallowWrapper {
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -864,6 +868,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
+                    channelId={undefined}
                     className="view"
                     extension={
                               Object {
@@ -871,7 +876,7 @@ ShallowWrapper {
                                         "bitsEnabled": false,
                                         "clientId": "mockClientId",
                                         "description": "description",
-                                        "iconUrl": "icon_url",
+                                        "iconUrl": "iconUrl",
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
@@ -1046,6 +1051,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
+            channelId={undefined}
             className="view"
             extension={
                         Object {
@@ -1053,7 +1059,7 @@ ShallowWrapper {
                                     "bitsEnabled": false,
                                     "clientId": "mockClientId",
                                     "description": "description",
-                                    "iconUrl": "icon_url",
+                                    "iconUrl": "iconUrl",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -1118,13 +1124,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
+            "channelId": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
               "clientId": "mockClientId",
               "description": "description",
-              "iconUrl": "icon_url",
+              "iconUrl": "iconUrl",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -1225,6 +1232,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
+                        channelId={undefined}
                         className="view"
                         extension={
                                     Object {
@@ -1232,7 +1240,7 @@ ShallowWrapper {
                                                 "bitsEnabled": false,
                                                 "clientId": "mockClientId",
                                                 "description": "description",
-                                                "iconUrl": "icon_url",
+                                                "iconUrl": "iconUrl",
                                                 "id": "id",
                                                 "name": "name",
                                                 "requestIdentityLink": false,
@@ -1407,6 +1415,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
+              channelId={undefined}
               className="view"
               extension={
                             Object {
@@ -1414,7 +1423,7 @@ ShallowWrapper {
                                           "bitsEnabled": false,
                                           "clientId": "mockClientId",
                                           "description": "description",
-                                          "iconUrl": "icon_url",
+                                          "iconUrl": "iconUrl",
                                           "id": "id",
                                           "name": "name",
                                           "requestIdentityLink": false,
@@ -1479,13 +1488,14 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
+              "channelId": undefined,
               "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "bitsEnabled": false,
                 "clientId": "mockClientId",
                 "description": "description",
-                "iconUrl": "icon_url",
+                "iconUrl": "iconUrl",
                 "id": "id",
                 "name": "name",
                 "requestIdentityLink": false,
@@ -1568,7 +1578,7 @@ ShallowWrapper {
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -1683,6 +1693,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
+                    channelId={undefined}
                     className="view"
                     extension={
                               Object {
@@ -1690,7 +1701,7 @@ ShallowWrapper {
                                         "bitsEnabled": false,
                                         "clientId": "mockClientId",
                                         "description": "description",
-                                        "iconUrl": "icon_url",
+                                        "iconUrl": "iconUrl",
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
@@ -1862,6 +1873,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
+            channelId={undefined}
             className="view"
             extension={
                         Object {
@@ -1869,7 +1881,7 @@ ShallowWrapper {
                                     "bitsEnabled": false,
                                     "clientId": "mockClientId",
                                     "description": "description",
-                                    "iconUrl": "icon_url",
+                                    "iconUrl": "iconUrl",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -1934,13 +1946,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
+            "channelId": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
               "clientId": "mockClientId",
               "description": "description",
-              "iconUrl": "icon_url",
+              "iconUrl": "iconUrl",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -2041,6 +2054,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
+                        channelId={undefined}
                         className="view"
                         extension={
                                     Object {
@@ -2048,7 +2062,7 @@ ShallowWrapper {
                                                 "bitsEnabled": false,
                                                 "clientId": "mockClientId",
                                                 "description": "description",
-                                                "iconUrl": "icon_url",
+                                                "iconUrl": "iconUrl",
                                                 "id": "id",
                                                 "name": "name",
                                                 "requestIdentityLink": false,
@@ -2220,6 +2234,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
+              channelId={undefined}
               className="view"
               extension={
                             Object {
@@ -2227,7 +2242,7 @@ ShallowWrapper {
                                           "bitsEnabled": false,
                                           "clientId": "mockClientId",
                                           "description": "description",
-                                          "iconUrl": "icon_url",
+                                          "iconUrl": "iconUrl",
                                           "id": "id",
                                           "name": "name",
                                           "requestIdentityLink": false,
@@ -2292,13 +2307,14 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
+              "channelId": undefined,
               "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "bitsEnabled": false,
                 "clientId": "mockClientId",
                 "description": "description",
-                "iconUrl": "icon_url",
+                "iconUrl": "iconUrl",
                 "id": "id",
                 "name": "name",
                 "requestIdentityLink": false,
@@ -2381,7 +2397,7 @@ ShallowWrapper {
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -2494,6 +2510,7 @@ ShallowWrapper {
 </div>,
         <ExtensionMobileView
           bindIframeToParent={[Function]}
+          channelId={undefined}
           className="view"
           extension={
                     Object {
@@ -2501,7 +2518,7 @@ ShallowWrapper {
                               "bitsEnabled": false,
                               "clientId": "mockClientId",
                               "description": "description",
-                              "iconUrl": "icon_url",
+                              "iconUrl": "iconUrl",
                               "id": "id",
                               "name": "name",
                               "requestIdentityLink": false,
@@ -2706,13 +2723,14 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "bindIframeToParent": [Function],
+          "channelId": undefined,
           "className": "view",
           "extension": Object {
             "authorName": "test",
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -2816,6 +2834,7 @@ ShallowWrapper {
 </div>,
           <ExtensionMobileView
             bindIframeToParent={[Function]}
+            channelId={undefined}
             className="view"
             extension={
                         Object {
@@ -2823,7 +2842,7 @@ ShallowWrapper {
                                     "bitsEnabled": false,
                                     "clientId": "mockClientId",
                                     "description": "description",
-                                    "iconUrl": "icon_url",
+                                    "iconUrl": "iconUrl",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -3028,13 +3047,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
+            "channelId": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
               "clientId": "mockClientId",
               "description": "description",
-              "iconUrl": "icon_url",
+              "iconUrl": "iconUrl",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -3123,7 +3143,7 @@ ShallowWrapper {
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -3238,6 +3258,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
+                    channelId={undefined}
                     className="view"
                     extension={
                               Object {
@@ -3245,7 +3266,7 @@ ShallowWrapper {
                                         "bitsEnabled": false,
                                         "clientId": "mockClientId",
                                         "description": "description",
-                                        "iconUrl": "icon_url",
+                                        "iconUrl": "iconUrl",
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
@@ -3417,6 +3438,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
+            channelId={undefined}
             className="view"
             extension={
                         Object {
@@ -3424,7 +3446,7 @@ ShallowWrapper {
                                     "bitsEnabled": false,
                                     "clientId": "mockClientId",
                                     "description": "description",
-                                    "iconUrl": "icon_url",
+                                    "iconUrl": "iconUrl",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -3489,13 +3511,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
+            "channelId": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
               "clientId": "mockClientId",
               "description": "description",
-              "iconUrl": "icon_url",
+              "iconUrl": "iconUrl",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -3596,6 +3619,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
+                        channelId={undefined}
                         className="view"
                         extension={
                                     Object {
@@ -3603,7 +3627,7 @@ ShallowWrapper {
                                                 "bitsEnabled": false,
                                                 "clientId": "mockClientId",
                                                 "description": "description",
-                                                "iconUrl": "icon_url",
+                                                "iconUrl": "iconUrl",
                                                 "id": "id",
                                                 "name": "name",
                                                 "requestIdentityLink": false,
@@ -3775,6 +3799,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
+              channelId={undefined}
               className="view"
               extension={
                             Object {
@@ -3782,7 +3807,7 @@ ShallowWrapper {
                                           "bitsEnabled": false,
                                           "clientId": "mockClientId",
                                           "description": "description",
-                                          "iconUrl": "icon_url",
+                                          "iconUrl": "iconUrl",
                                           "id": "id",
                                           "name": "name",
                                           "requestIdentityLink": false,
@@ -3847,13 +3872,14 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
+              "channelId": undefined,
               "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "bitsEnabled": false,
                 "clientId": "mockClientId",
                 "description": "description",
-                "iconUrl": "icon_url",
+                "iconUrl": "iconUrl",
                 "id": "id",
                 "name": "name",
                 "requestIdentityLink": false,
@@ -3936,7 +3962,7 @@ ShallowWrapper {
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -4052,6 +4078,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
+                    channelId={undefined}
                     className="view"
                     extension={
                               Object {
@@ -4059,7 +4086,7 @@ ShallowWrapper {
                                         "bitsEnabled": false,
                                         "clientId": "mockClientId",
                                         "description": "description",
-                                        "iconUrl": "icon_url",
+                                        "iconUrl": "iconUrl",
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
@@ -4233,6 +4260,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
+            channelId={undefined}
             className="view"
             extension={
                         Object {
@@ -4240,7 +4268,7 @@ ShallowWrapper {
                                     "bitsEnabled": false,
                                     "clientId": "mockClientId",
                                     "description": "description",
-                                    "iconUrl": "icon_url",
+                                    "iconUrl": "iconUrl",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -4305,13 +4333,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
+            "channelId": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
               "clientId": "mockClientId",
               "description": "description",
-              "iconUrl": "icon_url",
+              "iconUrl": "iconUrl",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -4413,6 +4442,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
+                        channelId={undefined}
                         className="view"
                         extension={
                                     Object {
@@ -4420,7 +4450,7 @@ ShallowWrapper {
                                                 "bitsEnabled": false,
                                                 "clientId": "mockClientId",
                                                 "description": "description",
-                                                "iconUrl": "icon_url",
+                                                "iconUrl": "iconUrl",
                                                 "id": "id",
                                                 "name": "name",
                                                 "requestIdentityLink": false,
@@ -4594,6 +4624,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
+              channelId={undefined}
               className="view"
               extension={
                             Object {
@@ -4601,7 +4632,7 @@ ShallowWrapper {
                                           "bitsEnabled": false,
                                           "clientId": "mockClientId",
                                           "description": "description",
-                                          "iconUrl": "icon_url",
+                                          "iconUrl": "iconUrl",
                                           "id": "id",
                                           "name": "name",
                                           "requestIdentityLink": false,
@@ -4666,13 +4697,14 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
+              "channelId": undefined,
               "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "bitsEnabled": false,
                 "clientId": "mockClientId",
                 "description": "description",
-                "iconUrl": "icon_url",
+                "iconUrl": "iconUrl",
                 "id": "id",
                 "name": "name",
                 "requestIdentityLink": false,
@@ -4755,7 +4787,7 @@ ShallowWrapper {
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -4871,6 +4903,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
+                    channelId={undefined}
                     className="view"
                     extension={
                               Object {
@@ -4878,7 +4911,7 @@ ShallowWrapper {
                                         "bitsEnabled": false,
                                         "clientId": "mockClientId",
                                         "description": "description",
-                                        "iconUrl": "icon_url",
+                                        "iconUrl": "iconUrl",
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
@@ -5052,6 +5085,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
+            channelId={undefined}
             className="view"
             extension={
                         Object {
@@ -5059,7 +5093,7 @@ ShallowWrapper {
                                     "bitsEnabled": false,
                                     "clientId": "mockClientId",
                                     "description": "description",
-                                    "iconUrl": "icon_url",
+                                    "iconUrl": "iconUrl",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -5124,13 +5158,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
+            "channelId": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
               "clientId": "mockClientId",
               "description": "description",
-              "iconUrl": "icon_url",
+              "iconUrl": "iconUrl",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -5232,6 +5267,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
+                        channelId={undefined}
                         className="view"
                         extension={
                                     Object {
@@ -5239,7 +5275,7 @@ ShallowWrapper {
                                                 "bitsEnabled": false,
                                                 "clientId": "mockClientId",
                                                 "description": "description",
-                                                "iconUrl": "icon_url",
+                                                "iconUrl": "iconUrl",
                                                 "id": "id",
                                                 "name": "name",
                                                 "requestIdentityLink": false,
@@ -5413,6 +5449,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
+              channelId={undefined}
               className="view"
               extension={
                             Object {
@@ -5420,7 +5457,7 @@ ShallowWrapper {
                                           "bitsEnabled": false,
                                           "clientId": "mockClientId",
                                           "description": "description",
-                                          "iconUrl": "icon_url",
+                                          "iconUrl": "iconUrl",
                                           "id": "id",
                                           "name": "name",
                                           "requestIdentityLink": false,
@@ -5485,13 +5522,14 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
+              "channelId": undefined,
               "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "bitsEnabled": false,
                 "clientId": "mockClientId",
                 "description": "description",
-                "iconUrl": "icon_url",
+                "iconUrl": "iconUrl",
                 "id": "id",
                 "name": "name",
                 "requestIdentityLink": false,
@@ -5574,7 +5612,7 @@ ShallowWrapper {
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -5689,6 +5727,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
+                    channelId={undefined}
                     className="view"
                     extension={
                               Object {
@@ -5696,7 +5735,7 @@ ShallowWrapper {
                                         "bitsEnabled": false,
                                         "clientId": "mockClientId",
                                         "description": "description",
-                                        "iconUrl": "icon_url",
+                                        "iconUrl": "iconUrl",
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
@@ -5868,6 +5907,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
+            channelId={undefined}
             className="view"
             extension={
                         Object {
@@ -5875,7 +5915,7 @@ ShallowWrapper {
                                     "bitsEnabled": false,
                                     "clientId": "mockClientId",
                                     "description": "description",
-                                    "iconUrl": "icon_url",
+                                    "iconUrl": "iconUrl",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -5940,13 +5980,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
+            "channelId": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
               "clientId": "mockClientId",
               "description": "description",
-              "iconUrl": "icon_url",
+              "iconUrl": "iconUrl",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -6047,6 +6088,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
+                        channelId={undefined}
                         className="view"
                         extension={
                                     Object {
@@ -6054,7 +6096,7 @@ ShallowWrapper {
                                                 "bitsEnabled": false,
                                                 "clientId": "mockClientId",
                                                 "description": "description",
-                                                "iconUrl": "icon_url",
+                                                "iconUrl": "iconUrl",
                                                 "id": "id",
                                                 "name": "name",
                                                 "requestIdentityLink": false,
@@ -6226,6 +6268,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
+              channelId={undefined}
               className="view"
               extension={
                             Object {
@@ -6233,7 +6276,7 @@ ShallowWrapper {
                                           "bitsEnabled": false,
                                           "clientId": "mockClientId",
                                           "description": "description",
-                                          "iconUrl": "icon_url",
+                                          "iconUrl": "iconUrl",
                                           "id": "id",
                                           "name": "name",
                                           "requestIdentityLink": false,
@@ -6298,13 +6341,14 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
+              "channelId": undefined,
               "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "bitsEnabled": false,
                 "clientId": "mockClientId",
                 "description": "description",
-                "iconUrl": "icon_url",
+                "iconUrl": "iconUrl",
                 "id": "id",
                 "name": "name",
                 "requestIdentityLink": false,
@@ -6387,7 +6431,7 @@ ShallowWrapper {
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -6502,6 +6546,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
+                    channelId={undefined}
                     className="view"
                     extension={
                               Object {
@@ -6509,7 +6554,7 @@ ShallowWrapper {
                                         "bitsEnabled": false,
                                         "clientId": "mockClientId",
                                         "description": "description",
-                                        "iconUrl": "icon_url",
+                                        "iconUrl": "iconUrl",
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
@@ -6681,6 +6726,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
+            channelId={undefined}
             className="view"
             extension={
                         Object {
@@ -6688,7 +6734,7 @@ ShallowWrapper {
                                     "bitsEnabled": false,
                                     "clientId": "mockClientId",
                                     "description": "description",
-                                    "iconUrl": "icon_url",
+                                    "iconUrl": "iconUrl",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -6753,13 +6799,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
+            "channelId": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
               "clientId": "mockClientId",
               "description": "description",
-              "iconUrl": "icon_url",
+              "iconUrl": "iconUrl",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -6860,6 +6907,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
+                        channelId={undefined}
                         className="view"
                         extension={
                                     Object {
@@ -6867,7 +6915,7 @@ ShallowWrapper {
                                                 "bitsEnabled": false,
                                                 "clientId": "mockClientId",
                                                 "description": "description",
-                                                "iconUrl": "icon_url",
+                                                "iconUrl": "iconUrl",
                                                 "id": "id",
                                                 "name": "name",
                                                 "requestIdentityLink": false,
@@ -7039,6 +7087,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
+              channelId={undefined}
               className="view"
               extension={
                             Object {
@@ -7046,7 +7095,7 @@ ShallowWrapper {
                                           "bitsEnabled": false,
                                           "clientId": "mockClientId",
                                           "description": "description",
-                                          "iconUrl": "icon_url",
+                                          "iconUrl": "iconUrl",
                                           "id": "id",
                                           "name": "name",
                                           "requestIdentityLink": false,
@@ -7111,13 +7160,14 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
+              "channelId": undefined,
               "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "bitsEnabled": false,
                 "clientId": "mockClientId",
                 "description": "description",
-                "iconUrl": "icon_url",
+                "iconUrl": "iconUrl",
                 "id": "id",
                 "name": "name",
                 "requestIdentityLink": false,
@@ -7200,7 +7250,7 @@ ShallowWrapper {
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -7316,6 +7366,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
+                    channelId={undefined}
                     className="view"
                     extension={
                               Object {
@@ -7323,7 +7374,7 @@ ShallowWrapper {
                                         "bitsEnabled": false,
                                         "clientId": "mockClientId",
                                         "description": "description",
-                                        "iconUrl": "icon_url",
+                                        "iconUrl": "iconUrl",
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
@@ -7497,6 +7548,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
+            channelId={undefined}
             className="view"
             extension={
                         Object {
@@ -7504,7 +7556,7 @@ ShallowWrapper {
                                     "bitsEnabled": false,
                                     "clientId": "mockClientId",
                                     "description": "description",
-                                    "iconUrl": "icon_url",
+                                    "iconUrl": "iconUrl",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -7569,13 +7621,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
+            "channelId": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
               "clientId": "mockClientId",
               "description": "description",
-              "iconUrl": "icon_url",
+              "iconUrl": "iconUrl",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -7677,6 +7730,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
+                        channelId={undefined}
                         className="view"
                         extension={
                                     Object {
@@ -7684,7 +7738,7 @@ ShallowWrapper {
                                                 "bitsEnabled": false,
                                                 "clientId": "mockClientId",
                                                 "description": "description",
-                                                "iconUrl": "icon_url",
+                                                "iconUrl": "iconUrl",
                                                 "id": "id",
                                                 "name": "name",
                                                 "requestIdentityLink": false,
@@ -7858,6 +7912,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
+              channelId={undefined}
               className="view"
               extension={
                             Object {
@@ -7865,7 +7920,7 @@ ShallowWrapper {
                                           "bitsEnabled": false,
                                           "clientId": "mockClientId",
                                           "description": "description",
-                                          "iconUrl": "icon_url",
+                                          "iconUrl": "iconUrl",
                                           "id": "id",
                                           "name": "name",
                                           "requestIdentityLink": false,
@@ -7930,13 +7985,14 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
+              "channelId": undefined,
               "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "bitsEnabled": false,
                 "clientId": "mockClientId",
                 "description": "description",
-                "iconUrl": "icon_url",
+                "iconUrl": "iconUrl",
                 "id": "id",
                 "name": "name",
                 "requestIdentityLink": false,
@@ -8019,7 +8075,7 @@ ShallowWrapper {
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -8135,6 +8191,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
+                    channelId={undefined}
                     className="view"
                     extension={
                               Object {
@@ -8142,7 +8199,7 @@ ShallowWrapper {
                                         "bitsEnabled": false,
                                         "clientId": "mockClientId",
                                         "description": "description",
-                                        "iconUrl": "icon_url",
+                                        "iconUrl": "iconUrl",
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
@@ -8316,6 +8373,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
+            channelId={undefined}
             className="view"
             extension={
                         Object {
@@ -8323,7 +8381,7 @@ ShallowWrapper {
                                     "bitsEnabled": false,
                                     "clientId": "mockClientId",
                                     "description": "description",
-                                    "iconUrl": "icon_url",
+                                    "iconUrl": "iconUrl",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -8388,13 +8446,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
+            "channelId": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
               "clientId": "mockClientId",
               "description": "description",
-              "iconUrl": "icon_url",
+              "iconUrl": "iconUrl",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -8496,6 +8555,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
+                        channelId={undefined}
                         className="view"
                         extension={
                                     Object {
@@ -8503,7 +8563,7 @@ ShallowWrapper {
                                                 "bitsEnabled": false,
                                                 "clientId": "mockClientId",
                                                 "description": "description",
-                                                "iconUrl": "icon_url",
+                                                "iconUrl": "iconUrl",
                                                 "id": "id",
                                                 "name": "name",
                                                 "requestIdentityLink": false,
@@ -8677,6 +8737,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
+              channelId={undefined}
               className="view"
               extension={
                             Object {
@@ -8684,7 +8745,7 @@ ShallowWrapper {
                                           "bitsEnabled": false,
                                           "clientId": "mockClientId",
                                           "description": "description",
-                                          "iconUrl": "icon_url",
+                                          "iconUrl": "iconUrl",
                                           "id": "id",
                                           "name": "name",
                                           "requestIdentityLink": false,
@@ -8749,13 +8810,14 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
+              "channelId": undefined,
               "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "bitsEnabled": false,
                 "clientId": "mockClientId",
                 "description": "description",
-                "iconUrl": "icon_url",
+                "iconUrl": "iconUrl",
                 "id": "id",
                 "name": "name",
                 "requestIdentityLink": false,
@@ -8838,7 +8900,7 @@ ShallowWrapper {
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -8953,6 +9015,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
+                    channelId={undefined}
                     className="view"
                     extension={
                               Object {
@@ -8960,7 +9023,7 @@ ShallowWrapper {
                                         "bitsEnabled": false,
                                         "clientId": "mockClientId",
                                         "description": "description",
-                                        "iconUrl": "icon_url",
+                                        "iconUrl": "iconUrl",
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
@@ -9132,6 +9195,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
+            channelId={undefined}
             className="view"
             extension={
                         Object {
@@ -9139,7 +9203,7 @@ ShallowWrapper {
                                     "bitsEnabled": false,
                                     "clientId": "mockClientId",
                                     "description": "description",
-                                    "iconUrl": "icon_url",
+                                    "iconUrl": "iconUrl",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -9204,13 +9268,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
+            "channelId": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
               "clientId": "mockClientId",
               "description": "description",
-              "iconUrl": "icon_url",
+              "iconUrl": "iconUrl",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -9311,6 +9376,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
+                        channelId={undefined}
                         className="view"
                         extension={
                                     Object {
@@ -9318,7 +9384,7 @@ ShallowWrapper {
                                                 "bitsEnabled": false,
                                                 "clientId": "mockClientId",
                                                 "description": "description",
-                                                "iconUrl": "icon_url",
+                                                "iconUrl": "iconUrl",
                                                 "id": "id",
                                                 "name": "name",
                                                 "requestIdentityLink": false,
@@ -9490,6 +9556,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
+              channelId={undefined}
               className="view"
               extension={
                             Object {
@@ -9497,7 +9564,7 @@ ShallowWrapper {
                                           "bitsEnabled": false,
                                           "clientId": "mockClientId",
                                           "description": "description",
-                                          "iconUrl": "icon_url",
+                                          "iconUrl": "iconUrl",
                                           "id": "id",
                                           "name": "name",
                                           "requestIdentityLink": false,
@@ -9562,13 +9629,14 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
+              "channelId": undefined,
               "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "bitsEnabled": false,
                 "clientId": "mockClientId",
                 "description": "description",
-                "iconUrl": "icon_url",
+                "iconUrl": "iconUrl",
                 "id": "id",
                 "name": "name",
                 "requestIdentityLink": false,
@@ -9651,7 +9719,7 @@ ShallowWrapper {
             "bitsEnabled": false,
             "clientId": "mockClientId",
             "description": "description",
-            "iconUrl": "icon_url",
+            "iconUrl": "iconUrl",
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -9748,6 +9816,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
+                    channelId={undefined}
                     className="view"
                     extension={
                               Object {
@@ -9755,7 +9824,7 @@ ShallowWrapper {
                                         "bitsEnabled": false,
                                         "clientId": "mockClientId",
                                         "description": "description",
-                                        "iconUrl": "icon_url",
+                                        "iconUrl": "iconUrl",
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
@@ -9909,6 +9978,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
+            channelId={undefined}
             className="view"
             extension={
                         Object {
@@ -9916,7 +9986,7 @@ ShallowWrapper {
                                     "bitsEnabled": false,
                                     "clientId": "mockClientId",
                                     "description": "description",
-                                    "iconUrl": "icon_url",
+                                    "iconUrl": "iconUrl",
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -9963,13 +10033,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
+            "channelId": undefined,
             "className": "view",
             "extension": Object {
               "authorName": "test",
               "bitsEnabled": false,
               "clientId": "mockClientId",
               "description": "description",
-              "iconUrl": "icon_url",
+              "iconUrl": "iconUrl",
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -10052,6 +10123,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
+                        channelId={undefined}
                         className="view"
                         extension={
                                     Object {
@@ -10059,7 +10131,7 @@ ShallowWrapper {
                                                 "bitsEnabled": false,
                                                 "clientId": "mockClientId",
                                                 "description": "description",
-                                                "iconUrl": "icon_url",
+                                                "iconUrl": "iconUrl",
                                                 "id": "id",
                                                 "name": "name",
                                                 "requestIdentityLink": false,
@@ -10213,6 +10285,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
+              channelId={undefined}
               className="view"
               extension={
                             Object {
@@ -10220,7 +10293,7 @@ ShallowWrapper {
                                           "bitsEnabled": false,
                                           "clientId": "mockClientId",
                                           "description": "description",
-                                          "iconUrl": "icon_url",
+                                          "iconUrl": "iconUrl",
                                           "id": "id",
                                           "name": "name",
                                           "requestIdentityLink": false,
@@ -10267,13 +10340,14 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
+              "channelId": undefined,
               "className": "view",
               "extension": Object {
                 "authorName": "test",
                 "bitsEnabled": false,
                 "clientId": "mockClientId",
                 "description": "description",
-                "iconUrl": "icon_url",
+                "iconUrl": "iconUrl",
                 "id": "id",
                 "name": "name",
                 "requestIdentityLink": false,

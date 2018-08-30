@@ -5,7 +5,8 @@ import { ExtensionMode, ExtensionViewType } from '../constants/extension-coordin
 const { getComponentPositionFromView, getComponentSizeFromView } = window['extension-coordinator'];
 
 interface ExtensionComponentViewProps {
-  id: string
+  id: string;
+  channelId: string;
   extension: ExtensionCoordinator.ExtensionObject;
   frameSize: FrameSize;
   position: ExtensionCoordinator.Position;
@@ -30,7 +31,7 @@ export class ExtensionComponentView extends React.Component<Props> {
       this.props.frameSize.height,
       extension.views.component);
 
-    let viewStyles:  React.CSSProperties = {
+    let viewStyles: React.CSSProperties = {
       border: '1px solid #7D55C7',
       position: 'absolute',
       left: positionFromView.x + 'px',
@@ -60,10 +61,11 @@ export class ExtensionComponentView extends React.Component<Props> {
           width: this.props.frameSize.width + 'px',
           height: this.props.frameSize.height + 'px',
         }}>
-          <div style={this.computeViewStyles()}>
+        <div style={this.computeViewStyles()}>
           <ExtensionFrame
             bindIframeToParent={this.props.bindIframeToParent}
             className="view"
+            channelId={this.props.channelId}
             frameId={`frameid-${this.props.id}`}
             extension={this.props.extension}
             type={ExtensionViewType.Component}
