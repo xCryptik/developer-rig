@@ -157,6 +157,7 @@ ShallowWrapper {
                               }
                 }
                 frameId="frameid-0"
+                installationAbilities={undefined}
                 mode="viewer"
                 type="mobile"
         />
@@ -233,6 +234,7 @@ ShallowWrapper {
                             }
           }
           frameId="frameid-0"
+          installationAbilities={undefined}
           mode="viewer"
           type="mobile"
 />,
@@ -305,6 +307,7 @@ ShallowWrapper {
             ],
           },
           "frameId": "frameid-0",
+          "installationAbilities": undefined,
           "mode": "viewer",
           "type": "mobile",
         },
@@ -391,6 +394,7 @@ ShallowWrapper {
                                       }
                     }
                     frameId="frameid-0"
+                    installationAbilities={undefined}
                     mode="viewer"
                     type="mobile"
           />
@@ -467,6 +471,7 @@ ShallowWrapper {
                                   }
             }
             frameId="frameid-0"
+            installationAbilities={undefined}
             mode="viewer"
             type="mobile"
 />,
@@ -539,6 +544,7 @@ ShallowWrapper {
               ],
             },
             "frameId": "frameid-0",
+            "installationAbilities": undefined,
             "mode": "viewer",
             "type": "mobile",
           },

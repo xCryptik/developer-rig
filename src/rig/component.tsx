@@ -168,6 +168,9 @@ export class RigComponent extends React.Component<Props, State> {
       id: nextExtensionViewId.toString(),
       channelId: extensionViewDialogState.channelId,
       type: extensionViewDialogState.extensionViewType,
+      features: {
+        isChatEnabled: extensionViewDialogState.isChatEnabled,
+      },
       extension: createExtensionObject(
         this.state.manifest,
         nextExtensionViewId.toString(),

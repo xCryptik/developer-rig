@@ -24,6 +24,7 @@ export interface ExtensionViewDialogState {
   extensionViewType: ExtensionAnchor | ExtensionMode | ExtensionPlatform | ExtensionViewType;
   channelId: string;
   frameSize: string;
+  isChatEnabled: boolean;
   viewerType: string;
   x: number;
   y: number;
@@ -32,26 +33,22 @@ export interface ExtensionViewDialogState {
   identityOption: string;
   orientation: string;
   opaqueId?: string;
-  [key: string]: number | string;
+  [key: string]: number | string | boolean;
 }
-
-const InitialState = {
-  extensionViewType: DefaultExtensionType,
-  frameSize: DefaultOverlaySize,
-  viewerType: DefaultViewerType,
-  x: 0,
-  y: 0,
-  width: DefaultCustomDimensions.width,
-  height: DefaultCustomDimensions.height,
-  identityOption: DefaultIdentityOption,
-  orientation: DefaultMobileOrientation,
-};
 
 export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProps, ExtensionViewDialogState> {
   public state: ExtensionViewDialogState = {
-    ...InitialState,
     channelId: this.props.channelId,
     extensionViewType: getSupportedAnchors(this.props.extensionViews)[0],
+    isChatEnabled: false,
+    frameSize: DefaultOverlaySize,
+    viewerType: DefaultViewerType,
+    x: 0,
+    y: 0,
+    width: DefaultCustomDimensions.width,
+    height: DefaultCustomDimensions.height,
+    identityOption: DefaultIdentityOption,
+    orientation: DefaultMobileOrientation,
   }
 
   public onChange = (input: React.FormEvent<HTMLInputElement>) => {
@@ -142,8 +139,12 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
     this.props.closeHandler();
   }
 
-  save = () => {
+  private save = () => {
     this.props.saveHandler(this.state);
+  }
+
+  private toggleIsChatEnabled = () => {
+    this.setState({ isChatEnabled: !this.state.isChatEnabled });
   }
 
   public render() {
@@ -282,7 +283,7 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
               </div>
             </div>
           </div>
-          {this.state.extensionViewType !== ExtensionMode.Config && this.state.extensionViewType !== ExtensionMode.Dashboard &&
+          {this.state.extensionViewType !== ExtensionMode.Config && this.state.extensionViewType !== ExtensionMode.Dashboard && (
             <div className="dialog__viewer-container">
               <div className="type-title__type-container">
                 <div className="type-and-size-container__type-title">
@@ -300,7 +301,22 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
                   </div>
                 </div>
               </div>
-            </div>}
+            </div>
+          )}
+          <div className="dialog__viewer-container">
+            <div className="type-title__type-container">
+              <div className="type-and-size-container__type-title">
+                Feature Flags
+              </div>
+              <div className='dialog__type-container'>
+                <div className="option-div">
+                  <label className="option-label">
+                    <input id="isChatEnabled" type="checkbox" onChange={this.toggleIsChatEnabled} checked={this.state.isChatEnabled} />isChatEnabled
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
           <label className="new-extension-view__channel-id-label">
             Channel ID:
             <input type="text" name="channelId" value={this.state.channelId} onChange={this.onChange} />
