@@ -24,7 +24,7 @@ import { RigRole } from '../constants/rig';
 
 enum LocalStorageKeys {
   RigExtensionViews = 'extensionViews',
-  RigLogin = 'login',
+  RigLogin = 'rigLogin',
 }
 
 export interface ReduxStateProps {
@@ -311,7 +311,6 @@ export class RigComponent extends React.Component<Props, State> {
 
   private async setLogin() {
     const windowHash = window.location.hash;
-    const rigLogin = localStorage.getItem(LocalStorageKeys.RigLogin);
     if (windowHash.includes('access_token')) {
       const accessTokenKey = 'access_token=';
       const accessTokenIndex = windowHash.indexOf(accessTokenKey);
@@ -319,7 +318,7 @@ export class RigComponent extends React.Component<Props, State> {
       const accessToken = windowHash.substring(accessTokenIndex + accessTokenKey.length, ampersandIndex);
 
       try {
-        const response = await fetchUserInfo(accessToken)
+        const response = await fetchUserInfo(accessToken);
         const userSession = {
           authToken: accessToken,
           displayName: response.display_name,
@@ -334,9 +333,20 @@ export class RigComponent extends React.Component<Props, State> {
       } catch (error) {
         this.setState({ error });
       }
-    } else if (rigLogin) {
-      const userSession = JSON.parse(rigLogin) as UserSession;
-      this.props.userLogin(userSession);
+    } else {
+      const rigLogin = localStorage.getItem(LocalStorageKeys.RigLogin);
+      if (rigLogin) {
+        try {
+          const userSession = JSON.parse(rigLogin) as UserSession;
+          if (userSession && userSession.authToken && userSession.id && userSession.login && userSession.profileImageUrl) {
+            this.props.userLogin(userSession);
+          } else {
+            localStorage.removeItem(LocalStorageKeys.RigLogin);
+          }
+        } catch (ex) {
+          localStorage.removeItem(LocalStorageKeys.RigLogin);
+        }
+      }
     }
   }
 
