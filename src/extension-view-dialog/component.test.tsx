@@ -4,16 +4,20 @@ import { DefaultExtensionType, ExtensionAnchors } from '../constants/extension-t
 import { DefaultOverlaySize } from '../constants/overlay-sizes'
 import { ViewerTypes, DefaultViewerType } from '../constants/viewer-types'
 import { RadioOption } from './radio-option';
-import { ExtensionViewType, ExtensionMode, ExtensionAnchor} from '../constants/extension-coordinator';
+import { ExtensionViewType, ExtensionMode, ExtensionAnchor } from '../constants/extension-coordinator';
 import { DivOption } from './div-option';
 
 describe('<ExtensionViewDialog />', () => {
   const setupShallow = setupShallowTest(ExtensionViewDialog, () => ({
+    channelId: 'twitch',
     extensionViews: {
       panel: {
+        height: 300,
+        canLinkExternalContent: false,
         viewerUrl: 'test.html',
       },
       videoOverlay: {
+        canLinkExternalContent: false,
         viewerUrl: 'test.html',
       },
     },
@@ -118,7 +122,9 @@ describe('<ExtensionViewDialog />', () => {
     const { wrapper } = setupShallow({
       extensionViews: {
         panel: {
+          height: 300,
           viewerUrl: 'test.html',
+          canLinkExternalContent: false,
         },
       }
     });
@@ -151,7 +157,12 @@ describe('<ExtensionViewDialog />', () => {
     const { wrapper } = setupShallow({
       extensionViews: {
         component: {
+          canLinkExternalContent: true,
           viewerUrl: 'test.html',
+          aspectHeight: 10000,
+          aspectWidth: 10000,
+          zoom: true,
+          zoomPixels: 500,
         }
       }
     });

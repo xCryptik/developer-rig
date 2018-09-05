@@ -15,6 +15,7 @@ export interface RigExtensionView {
   mode?: string;
   role: string;
   linked: boolean;
+  isPopout: boolean;
   deleteViewHandler?: (id: string) => void;
   openEditViewHandler?: (id: string) => void;
   frameSize?: FrameSize;

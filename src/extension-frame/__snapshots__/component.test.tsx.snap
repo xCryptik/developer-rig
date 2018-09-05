@@ -6,6 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionFrame
     bindIframeToParent={[Function]}
+    channelId="twitch"
     className="view"
     extension={
         Object {
@@ -68,6 +69,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isPopout={false}
     mode="config"
     type="config"
 />,
@@ -124,6 +126,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionFrame
     bindIframeToParent={[Function]}
+    channelId="twitch"
     className="view"
     extension={
         Object {
@@ -186,6 +189,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isPopout={false}
     mode="dashboard"
     type="liveConfig"
 />,
@@ -242,6 +246,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionFrame
     bindIframeToParent={[Function]}
+    channelId="twitch"
     className="view"
     extension={
         Object {
@@ -304,6 +309,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isPopout={false}
     mode="dashboard"
     type="liveConfig"
 />,
@@ -360,6 +366,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionFrame
     bindIframeToParent={[Function]}
+    channelId="twitch"
     className="view"
     extension={
         Object {
@@ -422,6 +429,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isPopout={false}
     mode="viewer"
     type="panel"
 />,
@@ -478,6 +486,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionFrame
     bindIframeToParent={[Function]}
+    channelId="twitch"
     className="view"
     extension={
         Object {
@@ -540,6 +549,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isPopout={false}
     mode="viewer"
     type="video_overlay"
 />,
@@ -596,6 +606,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionFrame
     bindIframeToParent={[Function]}
+    channelId="twitch"
     className="view"
     extension={
         Object {
@@ -658,6 +669,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isPopout={false}
     mode="viewer"
     type="video_overlay"
 />,

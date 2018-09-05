@@ -76,6 +76,7 @@ export class ExtensionMobileView extends React.Component<Props> {
             frameId={`frameid-${this.props.id}`}
             mode={ExtensionMode.Viewer}
             type={ExtensionViewType.Mobile}
+            isPopout={false}
           />
         </div>
       </div>

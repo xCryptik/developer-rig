@@ -25,6 +25,7 @@ export interface ExtensionViewDialogState {
   channelId: string;
   frameSize: string;
   isChatEnabled: boolean;
+  isPopout: boolean;
   viewerType: string;
   x: number;
   y: number;
@@ -41,6 +42,7 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
     channelId: this.props.channelId,
     extensionViewType: getSupportedAnchors(this.props.extensionViews)[0],
     isChatEnabled: false,
+    isPopout: false,
     frameSize: DefaultOverlaySize,
     viewerType: DefaultViewerType,
     x: 0,
@@ -145,6 +147,10 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
 
   private toggleIsChatEnabled = () => {
     this.setState({ isChatEnabled: !this.state.isChatEnabled });
+  }
+
+  private toggleIsPopout = () => {
+    this.setState({ isPopout: !this.state.isPopout });
   }
 
   public render() {
@@ -311,16 +317,32 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
               <div className='dialog__type-container'>
                 <div className="option-div">
                   <label className="option-label">
-                    <input id="isChatEnabled" type="checkbox" onChange={this.toggleIsChatEnabled} checked={this.state.isChatEnabled} />isChatEnabled
+                    <input id="isChatEnabled" type="checkbox" onChange={this.toggleIsChatEnabled} checked={this.state.isChatEnabled} />
+                    <label htmlFor="isChatEnabled">isChatEnabled</label>
                   </label>
                 </div>
               </div>
             </div>
           </div>
-          <label className="new-extension-view__channel-id-label">
-            Channel ID:
-            <input type="text" name="channelId" value={this.state.channelId} onChange={this.onChange} />
-          </label>
+          <div className="dialog__viewer-container">
+            <div className="type-title__type-container">
+              <div className="type-and-size-container__type-title">
+                Frame Properties
+              </div>
+              <div className='dialog__frame-properties-container'>
+                {(this.state.extensionViewType === ExtensionAnchor.Panel || this.state.extensionViewType === ExtensionMode.Dashboard) && (
+                  <div className="option-div">
+                    <input id="isPopout" type="checkbox" onChange={this.toggleIsPopout} checked={this.state.isPopout} />
+                    <label className="option-label" htmlFor="isPopout">Simulate Popout</label>
+                  </div>
+                )}
+                <div className="option-div">
+                  <label className="option-label" htmlFor="channelId">Channel ID:</label>
+                  <input type="text" name="channelId" value={this.state.channelId} onChange={this.onChange} />
+                </div>
+              </div>
+            </div>
+          </div>
           <hr className="dialog__divider" />
           <div className="dialog_bottom-bar">
             <div className="bottom-bar__save" onClick={this.save}> Save </div>

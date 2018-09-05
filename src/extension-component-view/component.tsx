@@ -72,6 +72,7 @@ export class ExtensionComponentView extends React.Component<Props> {
             extension={this.props.extension}
             type={ExtensionViewType.Component}
             mode={ExtensionMode.Viewer}
+            isPopout={false}
           />
         </div>
       </div>

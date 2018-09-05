@@ -183,6 +183,7 @@ export class RigComponent extends React.Component<Props, State> {
       ),
       linked,
       mode,
+      isPopout: extensionViewDialogState.isPopout,
       role: extensionViewDialogState.viewerType,
       x: extensionViewDialogState.x,
       y: extensionViewDialogState.y,
@@ -224,42 +225,42 @@ export class RigComponent extends React.Component<Props, State> {
         ) : this.state.selectedView === NavItem.ProductManagement ? (
           <ProductManagementViewContainer clientId={this.state.clientId} />
         ) : (
-          <div>
-            <ExtensionViewContainer
-              deleteExtensionViewHandler={this.deleteExtensionView}
-              extensionViews={this.state.extensionViews}
-              openEditViewHandler={this.openEditViewHandler}
-              openExtensionViewHandler={this.openExtensionViewHandler}
-            />
-            {this.state.showExtensionsView && (
-              <ExtensionViewDialog
-                channelId={this.state.channelId}
-                extensionViews={this.state.manifest.views}
-                show={this.state.showExtensionsView}
-                closeHandler={this.closeExtensionViewDialog}
-                saveHandler={this.createExtensionView}
-              />
+              <div>
+                <ExtensionViewContainer
+                  deleteExtensionViewHandler={this.deleteExtensionView}
+                  extensionViews={this.state.extensionViews}
+                  openEditViewHandler={this.openEditViewHandler}
+                  openExtensionViewHandler={this.openExtensionViewHandler}
+                />
+                {this.state.showExtensionsView && (
+                  <ExtensionViewDialog
+                    channelId={this.state.channelId}
+                    extensionViews={this.state.manifest.views}
+                    show={this.state.showExtensionsView}
+                    closeHandler={this.closeExtensionViewDialog}
+                    saveHandler={this.createExtensionView}
+                  />
+                )}
+                {this.state.showEditView && (
+                  <EditViewDialog
+                    idToEdit={this.state.idToEdit}
+                    show={this.state.showEditView}
+                    views={this.getStoredRigExtensionViews()}
+                    closeHandler={this.closeEditViewHandler}
+                    saveViewHandler={this.editViewHandler}
+                  />
+                )}
+                {this.state.showConfigurations && (
+                  <RigConfigurationsDialog
+                    config={this.state.manifest}
+                    closeConfigurationsHandler={this.closeConfigurationsHandler}
+                    refreshConfigurationsHandler={this.fetchInitialConfiguration}
+                  />
+                )}
+                {!this.props.session && <SignInDialog />}
+                <Console />
+              </div>
             )}
-            {this.state.showEditView && (
-              <EditViewDialog
-                idToEdit={this.state.idToEdit}
-                show={this.state.showEditView}
-                views={this.getStoredRigExtensionViews()}
-                closeHandler={this.closeEditViewHandler}
-                saveViewHandler={this.editViewHandler}
-              />
-            )}
-            {this.state.showConfigurations && (
-              <RigConfigurationsDialog
-                config={this.state.manifest}
-                closeConfigurationsHandler={this.closeConfigurationsHandler}
-                refreshConfigurationsHandler={this.fetchInitialConfiguration}
-              />
-            )}
-            {!this.props.session && <SignInDialog />}
-            <Console />
-          </div>
-        )}
       </div>
     );
   }

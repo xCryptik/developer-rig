@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+    channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -68,7 +69,14 @@ ShallowWrapper {
     }
     id="0"
     iframe=""
+    installationAbilities={
+        Object {
+            "isChatEnabled": true,
+          }
+    }
+    isPopout={false}
     linked={false}
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     position={
@@ -124,7 +132,7 @@ ShallowWrapper {
 </div>,
         <ExtensionComponentView
           bindIframeToParent={[Function]}
-          channelId={undefined}
+          channelId="twitch"
           className="view"
           extension={
                     Object {
@@ -187,7 +195,11 @@ ShallowWrapper {
                             }
           }
           id="component-0"
-          installationAbilities={undefined}
+          installationAbilities={
+                    Object {
+                              "isChatEnabled": true,
+                            }
+          }
           position={
                     Object {
                               "x": 0,
@@ -252,7 +264,7 @@ ShallowWrapper {
                   Broadcaster
                    (test)
 </div>,
-                undefined,
+                false,
                 <div
                   className="view__edit_button"
                   onClick={[Function]}
@@ -272,6 +284,7 @@ ShallowWrapper {
                   "children": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "className": "view__descriptor",
@@ -280,11 +293,12 @@ ShallowWrapper {
                 "rendered": Array [
                   "Broadcaster",
                   null,
+                  null,
                   " (test)",
                 ],
                 "type": "div",
               },
-              undefined,
+              false,
               Object {
                 "instance": null,
                 "key": undefined,
@@ -337,7 +351,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "bindIframeToParent": [Function],
-          "channelId": undefined,
+          "channelId": "twitch",
           "className": "view",
           "extension": Object {
             "authorName": "test",
@@ -396,7 +410,9 @@ ShallowWrapper {
             "width": 0,
           },
           "id": "component-0",
-          "installationAbilities": undefined,
+          "installationAbilities": Object {
+            "isChatEnabled": true,
+          },
           "position": Object {
             "x": 0,
             "y": 0,
@@ -448,7 +464,7 @@ ShallowWrapper {
 </div>,
           <ExtensionComponentView
             bindIframeToParent={[Function]}
-            channelId={undefined}
+            channelId="twitch"
             className="view"
             extension={
                         Object {
@@ -511,7 +527,11 @@ ShallowWrapper {
                                   }
             }
             id="component-0"
-            installationAbilities={undefined}
+            installationAbilities={
+                        Object {
+                                    "isChatEnabled": true,
+                                  }
+            }
             position={
                         Object {
                                     "x": 0,
@@ -576,7 +596,7 @@ ShallowWrapper {
                     Broadcaster
                      (test)
 </div>,
-                  undefined,
+                  false,
                   <div
                     className="view__edit_button"
                     onClick={[Function]}
@@ -596,6 +616,7 @@ ShallowWrapper {
                     "children": Array [
                       "Broadcaster",
                       null,
+                      null,
                       " (test)",
                     ],
                     "className": "view__descriptor",
@@ -604,11 +625,12 @@ ShallowWrapper {
                   "rendered": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "type": "div",
                 },
-                undefined,
+                false,
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -661,7 +683,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
-            "channelId": undefined,
+            "channelId": "twitch",
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -720,7 +742,9 @@ ShallowWrapper {
               "width": 0,
             },
             "id": "component-0",
-            "installationAbilities": undefined,
+            "installationAbilities": Object {
+              "isChatEnabled": true,
+            },
             "position": Object {
               "x": 0,
               "y": 0,
@@ -750,6 +774,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+    channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -813,7 +838,14 @@ ShallowWrapper {
     }
     id="0"
     iframe=""
+    installationAbilities={
+        Object {
+            "isChatEnabled": true,
+          }
+    }
+    isPopout={false}
     linked={false}
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     position={
@@ -872,7 +904,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
-                    channelId={undefined}
+                    channelId="twitch"
                     className="view"
                     extension={
                               Object {
@@ -929,7 +961,12 @@ ShallowWrapper {
                                       }
                     }
                     frameId="frameid-0"
-                    installationAbilities={undefined}
+                    installationAbilities={
+                              Object {
+                                        "isChatEnabled": true,
+                                      }
+                    }
+                    isPopout={false}
                     mode="viewer"
                     type="config"
           />
@@ -987,7 +1024,7 @@ ShallowWrapper {
                   Broadcaster
                    (test)
 </div>,
-                undefined,
+                false,
                 false,
               ],
               "className": "view__header-container",
@@ -1002,6 +1039,7 @@ ShallowWrapper {
                   "children": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "className": "view__descriptor",
@@ -1010,11 +1048,12 @@ ShallowWrapper {
                 "rendered": Array [
                   "Broadcaster",
                   null,
+                  null,
                   " (test)",
                 ],
                 "type": "div",
               },
-              undefined,
+              false,
               false,
             ],
             "type": "div",
@@ -1056,7 +1095,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
-            channelId={undefined}
+            channelId="twitch"
             className="view"
             extension={
                         Object {
@@ -1113,7 +1152,12 @@ ShallowWrapper {
                                   }
             }
             frameId="frameid-0"
-            installationAbilities={undefined}
+            installationAbilities={
+                        Object {
+                                    "isChatEnabled": true,
+                                  }
+            }
+            isPopout={false}
             mode="viewer"
             type="config"
 />,
@@ -1130,7 +1174,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
-            "channelId": undefined,
+            "channelId": "twitch",
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -1185,7 +1229,10 @@ ShallowWrapper {
               ],
             },
             "frameId": "frameid-0",
-            "installationAbilities": undefined,
+            "installationAbilities": Object {
+              "isChatEnabled": true,
+            },
+            "isPopout": false,
             "mode": "viewer",
             "type": "config",
           },
@@ -1239,7 +1286,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
-                        channelId={undefined}
+                        channelId="twitch"
                         className="view"
                         extension={
                                     Object {
@@ -1296,7 +1343,12 @@ ShallowWrapper {
                                               }
                         }
                         frameId="frameid-0"
-                        installationAbilities={undefined}
+                        installationAbilities={
+                                    Object {
+                                                "isChatEnabled": true,
+                                              }
+                        }
+                        isPopout={false}
                         mode="viewer"
                         type="config"
             />
@@ -1354,7 +1406,7 @@ ShallowWrapper {
                     Broadcaster
                      (test)
 </div>,
-                  undefined,
+                  false,
                   false,
                 ],
                 "className": "view__header-container",
@@ -1369,6 +1421,7 @@ ShallowWrapper {
                     "children": Array [
                       "Broadcaster",
                       null,
+                      null,
                       " (test)",
                     ],
                     "className": "view__descriptor",
@@ -1377,11 +1430,12 @@ ShallowWrapper {
                   "rendered": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "type": "div",
                 },
-                undefined,
+                false,
                 false,
               ],
               "type": "div",
@@ -1423,7 +1477,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
-              channelId={undefined}
+              channelId="twitch"
               className="view"
               extension={
                             Object {
@@ -1480,7 +1534,12 @@ ShallowWrapper {
                                         }
               }
               frameId="frameid-0"
-              installationAbilities={undefined}
+              installationAbilities={
+                            Object {
+                                          "isChatEnabled": true,
+                                        }
+              }
+              isPopout={false}
               mode="viewer"
               type="config"
 />,
@@ -1497,7 +1556,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
-              "channelId": undefined,
+              "channelId": "twitch",
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -1552,7 +1611,10 @@ ShallowWrapper {
                 ],
               },
               "frameId": "frameid-0",
-              "installationAbilities": undefined,
+              "installationAbilities": Object {
+                "isChatEnabled": true,
+              },
+              "isPopout": false,
               "mode": "viewer",
               "type": "config",
             },
@@ -1581,6 +1643,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+    channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -1644,7 +1707,14 @@ ShallowWrapper {
     }
     id="0"
     iframe=""
+    installationAbilities={
+        Object {
+            "isChatEnabled": true,
+          }
+    }
+    isPopout={false}
     linked={false}
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     position={
@@ -1703,7 +1773,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
-                    channelId={undefined}
+                    channelId="twitch"
                     className="view"
                     extension={
                               Object {
@@ -1760,7 +1830,12 @@ ShallowWrapper {
                                       }
                     }
                     frameId="frameid-0"
-                    installationAbilities={undefined}
+                    installationAbilities={
+                              Object {
+                                        "isChatEnabled": true,
+                                      }
+                    }
+                    isPopout={false}
                     mode="viewer"
                     type="dashboard"
           />
@@ -1815,7 +1890,7 @@ ShallowWrapper {
                   Broadcaster
                    (test)
 </div>,
-                undefined,
+                false,
                 false,
               ],
               "className": "view__header-container",
@@ -1830,6 +1905,7 @@ ShallowWrapper {
                   "children": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "className": "view__descriptor",
@@ -1838,11 +1914,12 @@ ShallowWrapper {
                 "rendered": Array [
                   "Broadcaster",
                   null,
+                  null,
                   " (test)",
                 ],
                 "type": "div",
               },
-              undefined,
+              false,
               false,
             ],
             "type": "div",
@@ -1884,7 +1961,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
-            channelId={undefined}
+            channelId="twitch"
             className="view"
             extension={
                         Object {
@@ -1941,7 +2018,12 @@ ShallowWrapper {
                                   }
             }
             frameId="frameid-0"
-            installationAbilities={undefined}
+            installationAbilities={
+                        Object {
+                                    "isChatEnabled": true,
+                                  }
+            }
+            isPopout={false}
             mode="viewer"
             type="dashboard"
 />,
@@ -1958,7 +2040,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
-            "channelId": undefined,
+            "channelId": "twitch",
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -2013,7 +2095,10 @@ ShallowWrapper {
               ],
             },
             "frameId": "frameid-0",
-            "installationAbilities": undefined,
+            "installationAbilities": Object {
+              "isChatEnabled": true,
+            },
+            "isPopout": false,
             "mode": "viewer",
             "type": "dashboard",
           },
@@ -2067,7 +2152,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
-                        channelId={undefined}
+                        channelId="twitch"
                         className="view"
                         extension={
                                     Object {
@@ -2124,7 +2209,12 @@ ShallowWrapper {
                                               }
                         }
                         frameId="frameid-0"
-                        installationAbilities={undefined}
+                        installationAbilities={
+                                    Object {
+                                                "isChatEnabled": true,
+                                              }
+                        }
+                        isPopout={false}
                         mode="viewer"
                         type="dashboard"
             />
@@ -2179,7 +2269,7 @@ ShallowWrapper {
                     Broadcaster
                      (test)
 </div>,
-                  undefined,
+                  false,
                   false,
                 ],
                 "className": "view__header-container",
@@ -2194,6 +2284,7 @@ ShallowWrapper {
                     "children": Array [
                       "Broadcaster",
                       null,
+                      null,
                       " (test)",
                     ],
                     "className": "view__descriptor",
@@ -2202,11 +2293,12 @@ ShallowWrapper {
                   "rendered": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "type": "div",
                 },
-                undefined,
+                false,
                 false,
               ],
               "type": "div",
@@ -2248,7 +2340,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
-              channelId={undefined}
+              channelId="twitch"
               className="view"
               extension={
                             Object {
@@ -2305,7 +2397,12 @@ ShallowWrapper {
                                         }
               }
               frameId="frameid-0"
-              installationAbilities={undefined}
+              installationAbilities={
+                            Object {
+                                          "isChatEnabled": true,
+                                        }
+              }
+              isPopout={false}
               mode="viewer"
               type="dashboard"
 />,
@@ -2322,7 +2419,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
-              "channelId": undefined,
+              "channelId": "twitch",
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -2377,7 +2474,10 @@ ShallowWrapper {
                 ],
               },
               "frameId": "frameid-0",
-              "installationAbilities": undefined,
+              "installationAbilities": Object {
+                "isChatEnabled": true,
+              },
+              "isPopout": false,
               "mode": "viewer",
               "type": "dashboard",
             },
@@ -2406,6 +2506,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+    channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -2469,7 +2570,14 @@ ShallowWrapper {
     }
     id="0"
     iframe=""
+    installationAbilities={
+        Object {
+            "isChatEnabled": true,
+          }
+    }
+    isPopout={false}
     linked={false}
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     orientation="Portrait"
@@ -2526,7 +2634,7 @@ ShallowWrapper {
 </div>,
         <ExtensionMobileView
           bindIframeToParent={[Function]}
-          channelId={undefined}
+          channelId="twitch"
           className="view"
           extension={
                     Object {
@@ -2589,7 +2697,11 @@ ShallowWrapper {
                             }
           }
           id="mobile-0"
-          installationAbilities={undefined}
+          installationAbilities={
+                    Object {
+                              "isChatEnabled": true,
+                            }
+          }
           orientation="Portrait"
           position={
                     Object {
@@ -2655,7 +2767,7 @@ ShallowWrapper {
                   Broadcaster
                    (test)
 </div>,
-                undefined,
+                false,
                 <div
                   className="view__edit_button"
                   onClick={[Function]}
@@ -2675,6 +2787,7 @@ ShallowWrapper {
                   "children": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "className": "view__descriptor",
@@ -2683,11 +2796,12 @@ ShallowWrapper {
                 "rendered": Array [
                   "Broadcaster",
                   null,
+                  null,
                   " (test)",
                 ],
                 "type": "div",
               },
-              undefined,
+              false,
               Object {
                 "instance": null,
                 "key": undefined,
@@ -2740,7 +2854,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "bindIframeToParent": [Function],
-          "channelId": undefined,
+          "channelId": "twitch",
           "className": "view",
           "extension": Object {
             "authorName": "test",
@@ -2799,7 +2913,9 @@ ShallowWrapper {
             "width": 0,
           },
           "id": "mobile-0",
-          "installationAbilities": undefined,
+          "installationAbilities": Object {
+            "isChatEnabled": true,
+          },
           "orientation": "Portrait",
           "position": Object {
             "x": 0,
@@ -2852,7 +2968,7 @@ ShallowWrapper {
 </div>,
           <ExtensionMobileView
             bindIframeToParent={[Function]}
-            channelId={undefined}
+            channelId="twitch"
             className="view"
             extension={
                         Object {
@@ -2915,7 +3031,11 @@ ShallowWrapper {
                                   }
             }
             id="mobile-0"
-            installationAbilities={undefined}
+            installationAbilities={
+                        Object {
+                                    "isChatEnabled": true,
+                                  }
+            }
             orientation="Portrait"
             position={
                         Object {
@@ -2981,7 +3101,7 @@ ShallowWrapper {
                     Broadcaster
                      (test)
 </div>,
-                  undefined,
+                  false,
                   <div
                     className="view__edit_button"
                     onClick={[Function]}
@@ -3001,6 +3121,7 @@ ShallowWrapper {
                     "children": Array [
                       "Broadcaster",
                       null,
+                      null,
                       " (test)",
                     ],
                     "className": "view__descriptor",
@@ -3009,11 +3130,12 @@ ShallowWrapper {
                   "rendered": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "type": "div",
                 },
-                undefined,
+                false,
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -3066,7 +3188,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
-            "channelId": undefined,
+            "channelId": "twitch",
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -3125,7 +3247,9 @@ ShallowWrapper {
               "width": 0,
             },
             "id": "mobile-0",
-            "installationAbilities": undefined,
+            "installationAbilities": Object {
+              "isChatEnabled": true,
+            },
             "orientation": "Portrait",
             "position": Object {
               "x": 0,
@@ -3156,6 +3280,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+    channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -3213,13 +3338,20 @@ ShallowWrapper {
     }
     frameSize={
         Object {
-            "height": "1px",
-            "width": "1px",
+            "height": 1,
+            "width": 1,
           }
     }
     id="0"
     iframe=""
+    installationAbilities={
+        Object {
+            "isChatEnabled": true,
+          }
+    }
+    isPopout={false}
     linked={false}
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     position={
@@ -3271,14 +3403,14 @@ ShallowWrapper {
           className="view nono_zone"
           style={
                     Object {
-                              "height": "1pxpx",
-                              "width": "1pxpx",
+                              "height": "1px",
+                              "width": "1px",
                             }
           }
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
-                    channelId={undefined}
+                    channelId="twitch"
                     className="view"
                     extension={
                               Object {
@@ -3335,7 +3467,12 @@ ShallowWrapper {
                                       }
                     }
                     frameId="frameid-0"
-                    installationAbilities={undefined}
+                    installationAbilities={
+                              Object {
+                                        "isChatEnabled": true,
+                                      }
+                    }
+                    isPopout={false}
                     mode="viewer"
                     type="video_overlay"
           />
@@ -3390,7 +3527,7 @@ ShallowWrapper {
                   Broadcaster
                    (test)
 </div>,
-                undefined,
+                false,
                 false,
               ],
               "className": "view__header-container",
@@ -3405,6 +3542,7 @@ ShallowWrapper {
                   "children": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "className": "view__descriptor",
@@ -3413,11 +3551,12 @@ ShallowWrapper {
                 "rendered": Array [
                   "Broadcaster",
                   null,
+                  null,
                   " (test)",
                 ],
                 "type": "div",
               },
-              undefined,
+              false,
               false,
             ],
             "type": "div",
@@ -3459,7 +3598,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
-            channelId={undefined}
+            channelId="twitch"
             className="view"
             extension={
                         Object {
@@ -3516,14 +3655,19 @@ ShallowWrapper {
                                   }
             }
             frameId="frameid-0"
-            installationAbilities={undefined}
+            installationAbilities={
+                        Object {
+                                    "isChatEnabled": true,
+                                  }
+            }
+            isPopout={false}
             mode="viewer"
             type="video_overlay"
 />,
           "className": "view nono_zone",
           "style": Object {
-            "height": "1pxpx",
-            "width": "1pxpx",
+            "height": "1px",
+            "width": "1px",
           },
         },
         "ref": null,
@@ -3533,7 +3677,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
-            "channelId": undefined,
+            "channelId": "twitch",
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -3588,7 +3732,10 @@ ShallowWrapper {
               ],
             },
             "frameId": "frameid-0",
-            "installationAbilities": undefined,
+            "installationAbilities": Object {
+              "isChatEnabled": true,
+            },
+            "isPopout": false,
             "mode": "viewer",
             "type": "video_overlay",
           },
@@ -3635,14 +3782,14 @@ ShallowWrapper {
             className="view nono_zone"
             style={
                         Object {
-                                    "height": "1pxpx",
-                                    "width": "1pxpx",
+                                    "height": "1px",
+                                    "width": "1px",
                                   }
             }
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
-                        channelId={undefined}
+                        channelId="twitch"
                         className="view"
                         extension={
                                     Object {
@@ -3699,7 +3846,12 @@ ShallowWrapper {
                                               }
                         }
                         frameId="frameid-0"
-                        installationAbilities={undefined}
+                        installationAbilities={
+                                    Object {
+                                                "isChatEnabled": true,
+                                              }
+                        }
+                        isPopout={false}
                         mode="viewer"
                         type="video_overlay"
             />
@@ -3754,7 +3906,7 @@ ShallowWrapper {
                     Broadcaster
                      (test)
 </div>,
-                  undefined,
+                  false,
                   false,
                 ],
                 "className": "view__header-container",
@@ -3769,6 +3921,7 @@ ShallowWrapper {
                     "children": Array [
                       "Broadcaster",
                       null,
+                      null,
                       " (test)",
                     ],
                     "className": "view__descriptor",
@@ -3777,11 +3930,12 @@ ShallowWrapper {
                   "rendered": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "type": "div",
                 },
-                undefined,
+                false,
                 false,
               ],
               "type": "div",
@@ -3823,7 +3977,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
-              channelId={undefined}
+              channelId="twitch"
               className="view"
               extension={
                             Object {
@@ -3880,14 +4034,19 @@ ShallowWrapper {
                                         }
               }
               frameId="frameid-0"
-              installationAbilities={undefined}
+              installationAbilities={
+                            Object {
+                                          "isChatEnabled": true,
+                                        }
+              }
+              isPopout={false}
               mode="viewer"
               type="video_overlay"
 />,
             "className": "view nono_zone",
             "style": Object {
-              "height": "1pxpx",
-              "width": "1pxpx",
+              "height": "1px",
+              "width": "1px",
             },
           },
           "ref": null,
@@ -3897,7 +4056,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
-              "channelId": undefined,
+              "channelId": "twitch",
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -3952,7 +4111,10 @@ ShallowWrapper {
                 ],
               },
               "frameId": "frameid-0",
-              "installationAbilities": undefined,
+              "installationAbilities": Object {
+                "isChatEnabled": true,
+              },
+              "isPopout": false,
               "mode": "viewer",
               "type": "video_overlay",
             },
@@ -3981,6 +4143,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+    channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -4038,13 +4201,20 @@ ShallowWrapper {
     }
     frameSize={
         Object {
-            "height": "1px",
-            "width": "1px",
+            "height": 1,
+            "width": 1,
           }
     }
     id="0"
     iframe=""
+    installationAbilities={
+        Object {
+            "isChatEnabled": true,
+          }
+    }
+    isPopout={false}
     linked={true}
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     position={
@@ -4104,7 +4274,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
-                    channelId={undefined}
+                    channelId="twitch"
                     className="view"
                     extension={
                               Object {
@@ -4161,7 +4331,12 @@ ShallowWrapper {
                                       }
                     }
                     frameId="frameid-0"
-                    installationAbilities={undefined}
+                    installationAbilities={
+                              Object {
+                                        "isChatEnabled": true,
+                                      }
+                    }
+                    isPopout={false}
                     mode="viewer"
                     type="panel"
           />
@@ -4218,7 +4393,7 @@ ShallowWrapper {
                    Linked
                    (test)
 </div>,
-                undefined,
+                false,
                 false,
               ],
               "className": "view__header-container",
@@ -4233,6 +4408,7 @@ ShallowWrapper {
                   "children": Array [
                     "Logged-In Viewer",
                     " Linked",
+                    null,
                     " (test)",
                   ],
                   "className": "view__descriptor",
@@ -4241,11 +4417,12 @@ ShallowWrapper {
                 "rendered": Array [
                   "Logged-In Viewer",
                   " Linked",
+                  null,
                   " (test)",
                 ],
                 "type": "div",
               },
-              undefined,
+              false,
               false,
             ],
             "type": "div",
@@ -4287,7 +4464,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
-            channelId={undefined}
+            channelId="twitch"
             className="view"
             extension={
                         Object {
@@ -4344,7 +4521,12 @@ ShallowWrapper {
                                   }
             }
             frameId="frameid-0"
-            installationAbilities={undefined}
+            installationAbilities={
+                        Object {
+                                    "isChatEnabled": true,
+                                  }
+            }
+            isPopout={false}
             mode="viewer"
             type="panel"
 />,
@@ -4361,7 +4543,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
-            "channelId": undefined,
+            "channelId": "twitch",
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -4416,7 +4598,10 @@ ShallowWrapper {
               ],
             },
             "frameId": "frameid-0",
-            "installationAbilities": undefined,
+            "installationAbilities": Object {
+              "isChatEnabled": true,
+            },
+            "isPopout": false,
             "mode": "viewer",
             "type": "panel",
           },
@@ -4471,7 +4656,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
-                        channelId={undefined}
+                        channelId="twitch"
                         className="view"
                         extension={
                                     Object {
@@ -4528,7 +4713,12 @@ ShallowWrapper {
                                               }
                         }
                         frameId="frameid-0"
-                        installationAbilities={undefined}
+                        installationAbilities={
+                                    Object {
+                                                "isChatEnabled": true,
+                                              }
+                        }
+                        isPopout={false}
                         mode="viewer"
                         type="panel"
             />
@@ -4585,7 +4775,7 @@ ShallowWrapper {
                      Linked
                      (test)
 </div>,
-                  undefined,
+                  false,
                   false,
                 ],
                 "className": "view__header-container",
@@ -4600,6 +4790,7 @@ ShallowWrapper {
                     "children": Array [
                       "Logged-In Viewer",
                       " Linked",
+                      null,
                       " (test)",
                     ],
                     "className": "view__descriptor",
@@ -4608,11 +4799,12 @@ ShallowWrapper {
                   "rendered": Array [
                     "Logged-In Viewer",
                     " Linked",
+                    null,
                     " (test)",
                   ],
                   "type": "div",
                 },
-                undefined,
+                false,
                 false,
               ],
               "type": "div",
@@ -4654,7 +4846,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
-              channelId={undefined}
+              channelId="twitch"
               className="view"
               extension={
                             Object {
@@ -4711,7 +4903,12 @@ ShallowWrapper {
                                         }
               }
               frameId="frameid-0"
-              installationAbilities={undefined}
+              installationAbilities={
+                            Object {
+                                          "isChatEnabled": true,
+                                        }
+              }
+              isPopout={false}
               mode="viewer"
               type="panel"
 />,
@@ -4728,7 +4925,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
-              "channelId": undefined,
+              "channelId": "twitch",
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -4783,7 +4980,10 @@ ShallowWrapper {
                 ],
               },
               "frameId": "frameid-0",
-              "installationAbilities": undefined,
+              "installationAbilities": Object {
+                "isChatEnabled": true,
+              },
+              "isPopout": false,
               "mode": "viewer",
               "type": "panel",
             },
@@ -4812,6 +5012,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+    channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -4869,13 +5070,20 @@ ShallowWrapper {
     }
     frameSize={
         Object {
-            "height": "1px",
-            "width": "1px",
+            "height": 1,
+            "width": 1,
           }
     }
     id="0"
     iframe=""
+    installationAbilities={
+        Object {
+            "isChatEnabled": true,
+          }
+    }
+    isPopout={false}
     linked={false}
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     position={
@@ -4935,7 +5143,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
-                    channelId={undefined}
+                    channelId="twitch"
                     className="view"
                     extension={
                               Object {
@@ -4992,7 +5200,12 @@ ShallowWrapper {
                                       }
                     }
                     frameId="frameid-0"
-                    installationAbilities={undefined}
+                    installationAbilities={
+                              Object {
+                                        "isChatEnabled": true,
+                                      }
+                    }
+                    isPopout={false}
                     mode="viewer"
                     type="panel"
           />
@@ -5049,7 +5262,7 @@ ShallowWrapper {
                    Unlinked
                    (test)
 </div>,
-                undefined,
+                false,
                 false,
               ],
               "className": "view__header-container",
@@ -5064,6 +5277,7 @@ ShallowWrapper {
                   "children": Array [
                     "Logged-In Viewer",
                     " Unlinked",
+                    null,
                     " (test)",
                   ],
                   "className": "view__descriptor",
@@ -5072,11 +5286,12 @@ ShallowWrapper {
                 "rendered": Array [
                   "Logged-In Viewer",
                   " Unlinked",
+                  null,
                   " (test)",
                 ],
                 "type": "div",
               },
-              undefined,
+              false,
               false,
             ],
             "type": "div",
@@ -5118,7 +5333,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
-            channelId={undefined}
+            channelId="twitch"
             className="view"
             extension={
                         Object {
@@ -5175,7 +5390,12 @@ ShallowWrapper {
                                   }
             }
             frameId="frameid-0"
-            installationAbilities={undefined}
+            installationAbilities={
+                        Object {
+                                    "isChatEnabled": true,
+                                  }
+            }
+            isPopout={false}
             mode="viewer"
             type="panel"
 />,
@@ -5192,7 +5412,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
-            "channelId": undefined,
+            "channelId": "twitch",
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -5247,7 +5467,10 @@ ShallowWrapper {
               ],
             },
             "frameId": "frameid-0",
-            "installationAbilities": undefined,
+            "installationAbilities": Object {
+              "isChatEnabled": true,
+            },
+            "isPopout": false,
             "mode": "viewer",
             "type": "panel",
           },
@@ -5302,7 +5525,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
-                        channelId={undefined}
+                        channelId="twitch"
                         className="view"
                         extension={
                                     Object {
@@ -5359,7 +5582,12 @@ ShallowWrapper {
                                               }
                         }
                         frameId="frameid-0"
-                        installationAbilities={undefined}
+                        installationAbilities={
+                                    Object {
+                                                "isChatEnabled": true,
+                                              }
+                        }
+                        isPopout={false}
                         mode="viewer"
                         type="panel"
             />
@@ -5416,7 +5644,7 @@ ShallowWrapper {
                      Unlinked
                      (test)
 </div>,
-                  undefined,
+                  false,
                   false,
                 ],
                 "className": "view__header-container",
@@ -5431,6 +5659,7 @@ ShallowWrapper {
                     "children": Array [
                       "Logged-In Viewer",
                       " Unlinked",
+                      null,
                       " (test)",
                     ],
                     "className": "view__descriptor",
@@ -5439,11 +5668,12 @@ ShallowWrapper {
                   "rendered": Array [
                     "Logged-In Viewer",
                     " Unlinked",
+                    null,
                     " (test)",
                   ],
                   "type": "div",
                 },
-                undefined,
+                false,
                 false,
               ],
               "type": "div",
@@ -5485,7 +5715,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
-              channelId={undefined}
+              channelId="twitch"
               className="view"
               extension={
                             Object {
@@ -5542,7 +5772,12 @@ ShallowWrapper {
                                         }
               }
               frameId="frameid-0"
-              installationAbilities={undefined}
+              installationAbilities={
+                            Object {
+                                          "isChatEnabled": true,
+                                        }
+              }
+              isPopout={false}
               mode="viewer"
               type="panel"
 />,
@@ -5559,7 +5794,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
-              "channelId": undefined,
+              "channelId": "twitch",
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -5614,7 +5849,10 @@ ShallowWrapper {
                 ],
               },
               "frameId": "frameid-0",
-              "installationAbilities": undefined,
+              "installationAbilities": Object {
+                "isChatEnabled": true,
+              },
+              "isPopout": false,
               "mode": "viewer",
               "type": "panel",
             },
@@ -5643,6 +5881,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+    channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -5700,13 +5939,20 @@ ShallowWrapper {
     }
     frameSize={
         Object {
-            "height": "1px",
-            "width": "1px",
+            "height": 1,
+            "width": 1,
           }
     }
     id="0"
     iframe=""
+    installationAbilities={
+        Object {
+            "isChatEnabled": true,
+          }
+    }
+    isPopout={false}
     linked={false}
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     position={
@@ -5765,7 +6011,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
-                    channelId={undefined}
+                    channelId="twitch"
                     className="view"
                     extension={
                               Object {
@@ -5822,7 +6068,12 @@ ShallowWrapper {
                                       }
                     }
                     frameId="frameid-0"
-                    installationAbilities={undefined}
+                    installationAbilities={
+                              Object {
+                                        "isChatEnabled": true,
+                                      }
+                    }
+                    isPopout={false}
                     mode="viewer"
                     type="panel"
           />
@@ -5877,7 +6128,7 @@ ShallowWrapper {
                   Logged-Out Viewer
                    (test)
 </div>,
-                undefined,
+                false,
                 false,
               ],
               "className": "view__header-container",
@@ -5892,6 +6143,7 @@ ShallowWrapper {
                   "children": Array [
                     "Logged-Out Viewer",
                     null,
+                    null,
                     " (test)",
                   ],
                   "className": "view__descriptor",
@@ -5900,11 +6152,12 @@ ShallowWrapper {
                 "rendered": Array [
                   "Logged-Out Viewer",
                   null,
+                  null,
                   " (test)",
                 ],
                 "type": "div",
               },
-              undefined,
+              false,
               false,
             ],
             "type": "div",
@@ -5946,7 +6199,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
-            channelId={undefined}
+            channelId="twitch"
             className="view"
             extension={
                         Object {
@@ -6003,7 +6256,12 @@ ShallowWrapper {
                                   }
             }
             frameId="frameid-0"
-            installationAbilities={undefined}
+            installationAbilities={
+                        Object {
+                                    "isChatEnabled": true,
+                                  }
+            }
+            isPopout={false}
             mode="viewer"
             type="panel"
 />,
@@ -6020,7 +6278,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
-            "channelId": undefined,
+            "channelId": "twitch",
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -6075,7 +6333,10 @@ ShallowWrapper {
               ],
             },
             "frameId": "frameid-0",
-            "installationAbilities": undefined,
+            "installationAbilities": Object {
+              "isChatEnabled": true,
+            },
+            "isPopout": false,
             "mode": "viewer",
             "type": "panel",
           },
@@ -6129,7 +6390,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
-                        channelId={undefined}
+                        channelId="twitch"
                         className="view"
                         extension={
                                     Object {
@@ -6186,7 +6447,12 @@ ShallowWrapper {
                                               }
                         }
                         frameId="frameid-0"
-                        installationAbilities={undefined}
+                        installationAbilities={
+                                    Object {
+                                                "isChatEnabled": true,
+                                              }
+                        }
+                        isPopout={false}
                         mode="viewer"
                         type="panel"
             />
@@ -6241,7 +6507,7 @@ ShallowWrapper {
                     Logged-Out Viewer
                      (test)
 </div>,
-                  undefined,
+                  false,
                   false,
                 ],
                 "className": "view__header-container",
@@ -6256,6 +6522,7 @@ ShallowWrapper {
                     "children": Array [
                       "Logged-Out Viewer",
                       null,
+                      null,
                       " (test)",
                     ],
                     "className": "view__descriptor",
@@ -6264,11 +6531,12 @@ ShallowWrapper {
                   "rendered": Array [
                     "Logged-Out Viewer",
                     null,
+                    null,
                     " (test)",
                   ],
                   "type": "div",
                 },
-                undefined,
+                false,
                 false,
               ],
               "type": "div",
@@ -6310,7 +6578,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
-              channelId={undefined}
+              channelId="twitch"
               className="view"
               extension={
                             Object {
@@ -6367,7 +6635,12 @@ ShallowWrapper {
                                         }
               }
               frameId="frameid-0"
-              installationAbilities={undefined}
+              installationAbilities={
+                            Object {
+                                          "isChatEnabled": true,
+                                        }
+              }
+              isPopout={false}
               mode="viewer"
               type="panel"
 />,
@@ -6384,7 +6657,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
-              "channelId": undefined,
+              "channelId": "twitch",
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -6439,7 +6712,10 @@ ShallowWrapper {
                 ],
               },
               "frameId": "frameid-0",
-              "installationAbilities": undefined,
+              "installationAbilities": Object {
+                "isChatEnabled": true,
+              },
+              "isPopout": false,
               "mode": "viewer",
               "type": "panel",
             },
@@ -6468,6 +6744,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+    channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -6531,7 +6808,14 @@ ShallowWrapper {
     }
     id="0"
     iframe=""
+    installationAbilities={
+        Object {
+            "isChatEnabled": true,
+          }
+    }
+    isPopout={false}
     linked={false}
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     position={
@@ -6590,7 +6874,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
-                    channelId={undefined}
+                    channelId="twitch"
                     className="view"
                     extension={
                               Object {
@@ -6647,7 +6931,12 @@ ShallowWrapper {
                                       }
                     }
                     frameId="frameid-0"
-                    installationAbilities={undefined}
+                    installationAbilities={
+                              Object {
+                                        "isChatEnabled": true,
+                                      }
+                    }
+                    isPopout={false}
                     mode="viewer"
                     type="panel"
           />
@@ -6702,7 +6991,7 @@ ShallowWrapper {
                   Broadcaster
                    (test)
 </div>,
-                undefined,
+                false,
                 false,
               ],
               "className": "view__header-container",
@@ -6717,6 +7006,7 @@ ShallowWrapper {
                   "children": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "className": "view__descriptor",
@@ -6725,11 +7015,12 @@ ShallowWrapper {
                 "rendered": Array [
                   "Broadcaster",
                   null,
+                  null,
                   " (test)",
                 ],
                 "type": "div",
               },
-              undefined,
+              false,
               false,
             ],
             "type": "div",
@@ -6771,7 +7062,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
-            channelId={undefined}
+            channelId="twitch"
             className="view"
             extension={
                         Object {
@@ -6828,7 +7119,12 @@ ShallowWrapper {
                                   }
             }
             frameId="frameid-0"
-            installationAbilities={undefined}
+            installationAbilities={
+                        Object {
+                                    "isChatEnabled": true,
+                                  }
+            }
+            isPopout={false}
             mode="viewer"
             type="panel"
 />,
@@ -6845,7 +7141,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
-            "channelId": undefined,
+            "channelId": "twitch",
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -6900,7 +7196,10 @@ ShallowWrapper {
               ],
             },
             "frameId": "frameid-0",
-            "installationAbilities": undefined,
+            "installationAbilities": Object {
+              "isChatEnabled": true,
+            },
+            "isPopout": false,
             "mode": "viewer",
             "type": "panel",
           },
@@ -6954,7 +7253,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
-                        channelId={undefined}
+                        channelId="twitch"
                         className="view"
                         extension={
                                     Object {
@@ -7011,7 +7310,12 @@ ShallowWrapper {
                                               }
                         }
                         frameId="frameid-0"
-                        installationAbilities={undefined}
+                        installationAbilities={
+                                    Object {
+                                                "isChatEnabled": true,
+                                              }
+                        }
+                        isPopout={false}
                         mode="viewer"
                         type="panel"
             />
@@ -7066,7 +7370,7 @@ ShallowWrapper {
                     Broadcaster
                      (test)
 </div>,
-                  undefined,
+                  false,
                   false,
                 ],
                 "className": "view__header-container",
@@ -7081,6 +7385,7 @@ ShallowWrapper {
                     "children": Array [
                       "Broadcaster",
                       null,
+                      null,
                       " (test)",
                     ],
                     "className": "view__descriptor",
@@ -7089,11 +7394,12 @@ ShallowWrapper {
                   "rendered": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "type": "div",
                 },
-                undefined,
+                false,
                 false,
               ],
               "type": "div",
@@ -7135,7 +7441,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
-              channelId={undefined}
+              channelId="twitch"
               className="view"
               extension={
                             Object {
@@ -7192,7 +7498,12 @@ ShallowWrapper {
                                         }
               }
               frameId="frameid-0"
-              installationAbilities={undefined}
+              installationAbilities={
+                            Object {
+                                          "isChatEnabled": true,
+                                        }
+              }
+              isPopout={false}
               mode="viewer"
               type="panel"
 />,
@@ -7209,7 +7520,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
-              "channelId": undefined,
+              "channelId": "twitch",
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -7264,7 +7575,10 @@ ShallowWrapper {
                 ],
               },
               "frameId": "frameid-0",
-              "installationAbilities": undefined,
+              "installationAbilities": Object {
+                "isChatEnabled": true,
+              },
+              "isPopout": false,
               "mode": "viewer",
               "type": "panel",
             },
@@ -7293,6 +7607,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+    channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -7356,7 +7671,14 @@ ShallowWrapper {
     }
     id="0"
     iframe=""
+    installationAbilities={
+        Object {
+            "isChatEnabled": true,
+          }
+    }
+    isPopout={false}
     linked={true}
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     position={
@@ -7416,7 +7738,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
-                    channelId={undefined}
+                    channelId="twitch"
                     className="view"
                     extension={
                               Object {
@@ -7473,7 +7795,12 @@ ShallowWrapper {
                                       }
                     }
                     frameId="frameid-0"
-                    installationAbilities={undefined}
+                    installationAbilities={
+                              Object {
+                                        "isChatEnabled": true,
+                                      }
+                    }
+                    isPopout={false}
                     mode="viewer"
                     type="panel"
           />
@@ -7530,7 +7857,7 @@ ShallowWrapper {
                    Linked
                    (test)
 </div>,
-                undefined,
+                false,
                 false,
               ],
               "className": "view__header-container",
@@ -7545,6 +7872,7 @@ ShallowWrapper {
                   "children": Array [
                     "Logged-In Viewer",
                     " Linked",
+                    null,
                     " (test)",
                   ],
                   "className": "view__descriptor",
@@ -7553,11 +7881,12 @@ ShallowWrapper {
                 "rendered": Array [
                   "Logged-In Viewer",
                   " Linked",
+                  null,
                   " (test)",
                 ],
                 "type": "div",
               },
-              undefined,
+              false,
               false,
             ],
             "type": "div",
@@ -7599,7 +7928,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
-            channelId={undefined}
+            channelId="twitch"
             className="view"
             extension={
                         Object {
@@ -7656,7 +7985,12 @@ ShallowWrapper {
                                   }
             }
             frameId="frameid-0"
-            installationAbilities={undefined}
+            installationAbilities={
+                        Object {
+                                    "isChatEnabled": true,
+                                  }
+            }
+            isPopout={false}
             mode="viewer"
             type="panel"
 />,
@@ -7673,7 +8007,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
-            "channelId": undefined,
+            "channelId": "twitch",
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -7728,7 +8062,10 @@ ShallowWrapper {
               ],
             },
             "frameId": "frameid-0",
-            "installationAbilities": undefined,
+            "installationAbilities": Object {
+              "isChatEnabled": true,
+            },
+            "isPopout": false,
             "mode": "viewer",
             "type": "panel",
           },
@@ -7783,7 +8120,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
-                        channelId={undefined}
+                        channelId="twitch"
                         className="view"
                         extension={
                                     Object {
@@ -7840,7 +8177,12 @@ ShallowWrapper {
                                               }
                         }
                         frameId="frameid-0"
-                        installationAbilities={undefined}
+                        installationAbilities={
+                                    Object {
+                                                "isChatEnabled": true,
+                                              }
+                        }
+                        isPopout={false}
                         mode="viewer"
                         type="panel"
             />
@@ -7897,7 +8239,7 @@ ShallowWrapper {
                      Linked
                      (test)
 </div>,
-                  undefined,
+                  false,
                   false,
                 ],
                 "className": "view__header-container",
@@ -7912,6 +8254,7 @@ ShallowWrapper {
                     "children": Array [
                       "Logged-In Viewer",
                       " Linked",
+                      null,
                       " (test)",
                     ],
                     "className": "view__descriptor",
@@ -7920,11 +8263,12 @@ ShallowWrapper {
                   "rendered": Array [
                     "Logged-In Viewer",
                     " Linked",
+                    null,
                     " (test)",
                   ],
                   "type": "div",
                 },
-                undefined,
+                false,
                 false,
               ],
               "type": "div",
@@ -7966,7 +8310,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
-              channelId={undefined}
+              channelId="twitch"
               className="view"
               extension={
                             Object {
@@ -8023,7 +8367,12 @@ ShallowWrapper {
                                         }
               }
               frameId="frameid-0"
-              installationAbilities={undefined}
+              installationAbilities={
+                            Object {
+                                          "isChatEnabled": true,
+                                        }
+              }
+              isPopout={false}
               mode="viewer"
               type="panel"
 />,
@@ -8040,7 +8389,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
-              "channelId": undefined,
+              "channelId": "twitch",
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -8095,7 +8444,10 @@ ShallowWrapper {
                 ],
               },
               "frameId": "frameid-0",
-              "installationAbilities": undefined,
+              "installationAbilities": Object {
+                "isChatEnabled": true,
+              },
+              "isPopout": false,
               "mode": "viewer",
               "type": "panel",
             },
@@ -8124,6 +8476,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+    channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -8187,7 +8540,14 @@ ShallowWrapper {
     }
     id="0"
     iframe=""
+    installationAbilities={
+        Object {
+            "isChatEnabled": true,
+          }
+    }
+    isPopout={false}
     linked={false}
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     position={
@@ -8247,7 +8607,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
-                    channelId={undefined}
+                    channelId="twitch"
                     className="view"
                     extension={
                               Object {
@@ -8304,7 +8664,12 @@ ShallowWrapper {
                                       }
                     }
                     frameId="frameid-0"
-                    installationAbilities={undefined}
+                    installationAbilities={
+                              Object {
+                                        "isChatEnabled": true,
+                                      }
+                    }
+                    isPopout={false}
                     mode="viewer"
                     type="panel"
           />
@@ -8361,7 +8726,7 @@ ShallowWrapper {
                    Unlinked
                    (test)
 </div>,
-                undefined,
+                false,
                 false,
               ],
               "className": "view__header-container",
@@ -8376,6 +8741,7 @@ ShallowWrapper {
                   "children": Array [
                     "Logged-In Viewer",
                     " Unlinked",
+                    null,
                     " (test)",
                   ],
                   "className": "view__descriptor",
@@ -8384,11 +8750,12 @@ ShallowWrapper {
                 "rendered": Array [
                   "Logged-In Viewer",
                   " Unlinked",
+                  null,
                   " (test)",
                 ],
                 "type": "div",
               },
-              undefined,
+              false,
               false,
             ],
             "type": "div",
@@ -8430,7 +8797,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
-            channelId={undefined}
+            channelId="twitch"
             className="view"
             extension={
                         Object {
@@ -8487,7 +8854,12 @@ ShallowWrapper {
                                   }
             }
             frameId="frameid-0"
-            installationAbilities={undefined}
+            installationAbilities={
+                        Object {
+                                    "isChatEnabled": true,
+                                  }
+            }
+            isPopout={false}
             mode="viewer"
             type="panel"
 />,
@@ -8504,7 +8876,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
-            "channelId": undefined,
+            "channelId": "twitch",
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -8559,7 +8931,10 @@ ShallowWrapper {
               ],
             },
             "frameId": "frameid-0",
-            "installationAbilities": undefined,
+            "installationAbilities": Object {
+              "isChatEnabled": true,
+            },
+            "isPopout": false,
             "mode": "viewer",
             "type": "panel",
           },
@@ -8614,7 +8989,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
-                        channelId={undefined}
+                        channelId="twitch"
                         className="view"
                         extension={
                                     Object {
@@ -8671,7 +9046,12 @@ ShallowWrapper {
                                               }
                         }
                         frameId="frameid-0"
-                        installationAbilities={undefined}
+                        installationAbilities={
+                                    Object {
+                                                "isChatEnabled": true,
+                                              }
+                        }
+                        isPopout={false}
                         mode="viewer"
                         type="panel"
             />
@@ -8728,7 +9108,7 @@ ShallowWrapper {
                      Unlinked
                      (test)
 </div>,
-                  undefined,
+                  false,
                   false,
                 ],
                 "className": "view__header-container",
@@ -8743,6 +9123,7 @@ ShallowWrapper {
                     "children": Array [
                       "Logged-In Viewer",
                       " Unlinked",
+                      null,
                       " (test)",
                     ],
                     "className": "view__descriptor",
@@ -8751,11 +9132,12 @@ ShallowWrapper {
                   "rendered": Array [
                     "Logged-In Viewer",
                     " Unlinked",
+                    null,
                     " (test)",
                   ],
                   "type": "div",
                 },
-                undefined,
+                false,
                 false,
               ],
               "type": "div",
@@ -8797,7 +9179,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
-              channelId={undefined}
+              channelId="twitch"
               className="view"
               extension={
                             Object {
@@ -8854,7 +9236,12 @@ ShallowWrapper {
                                         }
               }
               frameId="frameid-0"
-              installationAbilities={undefined}
+              installationAbilities={
+                            Object {
+                                          "isChatEnabled": true,
+                                        }
+              }
+              isPopout={false}
               mode="viewer"
               type="panel"
 />,
@@ -8871,7 +9258,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
-              "channelId": undefined,
+              "channelId": "twitch",
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -8926,7 +9313,10 @@ ShallowWrapper {
                 ],
               },
               "frameId": "frameid-0",
-              "installationAbilities": undefined,
+              "installationAbilities": Object {
+                "isChatEnabled": true,
+              },
+              "isPopout": false,
               "mode": "viewer",
               "type": "panel",
             },
@@ -8955,6 +9345,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+    channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -9018,7 +9409,14 @@ ShallowWrapper {
     }
     id="0"
     iframe=""
+    installationAbilities={
+        Object {
+            "isChatEnabled": true,
+          }
+    }
+    isPopout={false}
     linked={false}
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     position={
@@ -9077,7 +9475,7 @@ ShallowWrapper {
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
-                    channelId={undefined}
+                    channelId="twitch"
                     className="view"
                     extension={
                               Object {
@@ -9134,7 +9532,12 @@ ShallowWrapper {
                                       }
                     }
                     frameId="frameid-0"
-                    installationAbilities={undefined}
+                    installationAbilities={
+                              Object {
+                                        "isChatEnabled": true,
+                                      }
+                    }
+                    isPopout={false}
                     mode="viewer"
                     type="panel"
           />
@@ -9189,7 +9592,7 @@ ShallowWrapper {
                   Logged-Out Viewer
                    (test)
 </div>,
-                undefined,
+                false,
                 false,
               ],
               "className": "view__header-container",
@@ -9204,6 +9607,7 @@ ShallowWrapper {
                   "children": Array [
                     "Logged-Out Viewer",
                     null,
+                    null,
                     " (test)",
                   ],
                   "className": "view__descriptor",
@@ -9212,11 +9616,12 @@ ShallowWrapper {
                 "rendered": Array [
                   "Logged-Out Viewer",
                   null,
+                  null,
                   " (test)",
                 ],
                 "type": "div",
               },
-              undefined,
+              false,
               false,
             ],
             "type": "div",
@@ -9258,7 +9663,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
-            channelId={undefined}
+            channelId="twitch"
             className="view"
             extension={
                         Object {
@@ -9315,7 +9720,12 @@ ShallowWrapper {
                                   }
             }
             frameId="frameid-0"
-            installationAbilities={undefined}
+            installationAbilities={
+                        Object {
+                                    "isChatEnabled": true,
+                                  }
+            }
+            isPopout={false}
             mode="viewer"
             type="panel"
 />,
@@ -9332,7 +9742,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
-            "channelId": undefined,
+            "channelId": "twitch",
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -9387,7 +9797,10 @@ ShallowWrapper {
               ],
             },
             "frameId": "frameid-0",
-            "installationAbilities": undefined,
+            "installationAbilities": Object {
+              "isChatEnabled": true,
+            },
+            "isPopout": false,
             "mode": "viewer",
             "type": "panel",
           },
@@ -9441,7 +9854,7 @@ ShallowWrapper {
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
-                        channelId={undefined}
+                        channelId="twitch"
                         className="view"
                         extension={
                                     Object {
@@ -9498,7 +9911,12 @@ ShallowWrapper {
                                               }
                         }
                         frameId="frameid-0"
-                        installationAbilities={undefined}
+                        installationAbilities={
+                                    Object {
+                                                "isChatEnabled": true,
+                                              }
+                        }
+                        isPopout={false}
                         mode="viewer"
                         type="panel"
             />
@@ -9553,7 +9971,7 @@ ShallowWrapper {
                     Logged-Out Viewer
                      (test)
 </div>,
-                  undefined,
+                  false,
                   false,
                 ],
                 "className": "view__header-container",
@@ -9568,6 +9986,7 @@ ShallowWrapper {
                     "children": Array [
                       "Logged-Out Viewer",
                       null,
+                      null,
                       " (test)",
                     ],
                     "className": "view__descriptor",
@@ -9576,11 +9995,12 @@ ShallowWrapper {
                   "rendered": Array [
                     "Logged-Out Viewer",
                     null,
+                    null,
                     " (test)",
                   ],
                   "type": "div",
                 },
-                undefined,
+                false,
                 false,
               ],
               "type": "div",
@@ -9622,7 +10042,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
-              channelId={undefined}
+              channelId="twitch"
               className="view"
               extension={
                             Object {
@@ -9679,7 +10099,12 @@ ShallowWrapper {
                                         }
               }
               frameId="frameid-0"
-              installationAbilities={undefined}
+              installationAbilities={
+                            Object {
+                                          "isChatEnabled": true,
+                                        }
+              }
+              isPopout={false}
               mode="viewer"
               type="panel"
 />,
@@ -9696,7 +10121,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
-              "channelId": undefined,
+              "channelId": "twitch",
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -9751,7 +10176,10 @@ ShallowWrapper {
                 ],
               },
               "frameId": "frameid-0",
-              "installationAbilities": undefined,
+              "installationAbilities": Object {
+                "isChatEnabled": true,
+              },
+              "isPopout": false,
               "mode": "viewer",
               "type": "panel",
             },
@@ -9780,6 +10208,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+    channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
         Object {
@@ -9799,13 +10228,16 @@ ShallowWrapper {
             "version": "0.1",
             "views": Object {
               "config": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "liveConfig": Object {
+                "canLinkExternalContent": false,
                 "viewerUrl": "test",
               },
               "panel": Object {
-                "height": "300px",
+                "canLinkExternalContent": false,
+                "height": 300,
                 "viewerUrl": "test",
               },
             },
@@ -9825,7 +10257,14 @@ ShallowWrapper {
     }
     id="0"
     iframe=""
+    installationAbilities={
+        Object {
+            "isChatEnabled": true,
+          }
+    }
+    isPopout={false}
     linked={false}
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     position={
@@ -9877,14 +10316,14 @@ ShallowWrapper {
           className="view"
           style={
                     Object {
-                              "height": "300pxpx",
+                              "height": "300px",
                               "width": "320px",
                             }
           }
 >
           <ExtensionFrame
                     bindIframeToParent={[Function]}
-                    channelId={undefined}
+                    channelId="twitch"
                     className="view"
                     extension={
                               Object {
@@ -9904,13 +10343,16 @@ ShallowWrapper {
                                         "version": "0.1",
                                         "views": Object {
                                           "config": Object {
+                                            "canLinkExternalContent": false,
                                             "viewerUrl": "test",
                                           },
                                           "liveConfig": Object {
+                                            "canLinkExternalContent": false,
                                             "viewerUrl": "test",
                                           },
                                           "panel": Object {
-                                            "height": "300px",
+                                            "canLinkExternalContent": false,
+                                            "height": 300,
                                             "viewerUrl": "test",
                                           },
                                         },
@@ -9923,7 +10365,12 @@ ShallowWrapper {
                                       }
                     }
                     frameId="frameid-0"
-                    installationAbilities={undefined}
+                    installationAbilities={
+                              Object {
+                                        "isChatEnabled": true,
+                                      }
+                    }
+                    isPopout={false}
                     mode="viewer"
                     type="panel"
           />
@@ -9978,7 +10425,7 @@ ShallowWrapper {
                   Broadcaster
                    (test)
 </div>,
-                undefined,
+                false,
                 false,
               ],
               "className": "view__header-container",
@@ -9993,6 +10440,7 @@ ShallowWrapper {
                   "children": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "className": "view__descriptor",
@@ -10001,11 +10449,12 @@ ShallowWrapper {
                 "rendered": Array [
                   "Broadcaster",
                   null,
+                  null,
                   " (test)",
                 ],
                 "type": "div",
               },
-              undefined,
+              false,
               false,
             ],
             "type": "div",
@@ -10047,7 +10496,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ExtensionFrame
             bindIframeToParent={[Function]}
-            channelId={undefined}
+            channelId="twitch"
             className="view"
             extension={
                         Object {
@@ -10067,13 +10516,16 @@ ShallowWrapper {
                                     "version": "0.1",
                                     "views": Object {
                                       "config": Object {
+                                        "canLinkExternalContent": false,
                                         "viewerUrl": "test",
                                       },
                                       "liveConfig": Object {
+                                        "canLinkExternalContent": false,
                                         "viewerUrl": "test",
                                       },
                                       "panel": Object {
-                                        "height": "300px",
+                                        "canLinkExternalContent": false,
+                                        "height": 300,
                                         "viewerUrl": "test",
                                       },
                                     },
@@ -10086,13 +10538,18 @@ ShallowWrapper {
                                   }
             }
             frameId="frameid-0"
-            installationAbilities={undefined}
+            installationAbilities={
+                        Object {
+                                    "isChatEnabled": true,
+                                  }
+            }
+            isPopout={false}
             mode="viewer"
             type="panel"
 />,
           "className": "view",
           "style": Object {
-            "height": "300pxpx",
+            "height": "300px",
             "width": "320px",
           },
         },
@@ -10103,7 +10560,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "bindIframeToParent": [Function],
-            "channelId": undefined,
+            "channelId": "twitch",
             "className": "view",
             "extension": Object {
               "authorName": "test",
@@ -10122,13 +10579,16 @@ ShallowWrapper {
               "version": "0.1",
               "views": Object {
                 "config": Object {
+                  "canLinkExternalContent": false,
                   "viewerUrl": "test",
                 },
                 "liveConfig": Object {
+                  "canLinkExternalContent": false,
                   "viewerUrl": "test",
                 },
                 "panel": Object {
-                  "height": "300px",
+                  "canLinkExternalContent": false,
+                  "height": 300,
                   "viewerUrl": "test",
                 },
               },
@@ -10140,7 +10600,10 @@ ShallowWrapper {
               ],
             },
             "frameId": "frameid-0",
-            "installationAbilities": undefined,
+            "installationAbilities": Object {
+              "isChatEnabled": true,
+            },
+            "isPopout": false,
             "mode": "viewer",
             "type": "panel",
           },
@@ -10187,14 +10650,14 @@ ShallowWrapper {
             className="view"
             style={
                         Object {
-                                    "height": "300pxpx",
+                                    "height": "300px",
                                     "width": "320px",
                                   }
             }
 >
             <ExtensionFrame
                         bindIframeToParent={[Function]}
-                        channelId={undefined}
+                        channelId="twitch"
                         className="view"
                         extension={
                                     Object {
@@ -10214,13 +10677,16 @@ ShallowWrapper {
                                                 "version": "0.1",
                                                 "views": Object {
                                                   "config": Object {
+                                                    "canLinkExternalContent": false,
                                                     "viewerUrl": "test",
                                                   },
                                                   "liveConfig": Object {
+                                                    "canLinkExternalContent": false,
                                                     "viewerUrl": "test",
                                                   },
                                                   "panel": Object {
-                                                    "height": "300px",
+                                                    "canLinkExternalContent": false,
+                                                    "height": 300,
                                                     "viewerUrl": "test",
                                                   },
                                                 },
@@ -10233,7 +10699,12 @@ ShallowWrapper {
                                               }
                         }
                         frameId="frameid-0"
-                        installationAbilities={undefined}
+                        installationAbilities={
+                                    Object {
+                                                "isChatEnabled": true,
+                                              }
+                        }
+                        isPopout={false}
                         mode="viewer"
                         type="panel"
             />
@@ -10288,7 +10759,7 @@ ShallowWrapper {
                     Broadcaster
                      (test)
 </div>,
-                  undefined,
+                  false,
                   false,
                 ],
                 "className": "view__header-container",
@@ -10303,6 +10774,7 @@ ShallowWrapper {
                     "children": Array [
                       "Broadcaster",
                       null,
+                      null,
                       " (test)",
                     ],
                     "className": "view__descriptor",
@@ -10311,11 +10783,12 @@ ShallowWrapper {
                   "rendered": Array [
                     "Broadcaster",
                     null,
+                    null,
                     " (test)",
                   ],
                   "type": "div",
                 },
-                undefined,
+                false,
                 false,
               ],
               "type": "div",
@@ -10357,7 +10830,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ExtensionFrame
               bindIframeToParent={[Function]}
-              channelId={undefined}
+              channelId="twitch"
               className="view"
               extension={
                             Object {
@@ -10377,13 +10850,16 @@ ShallowWrapper {
                                           "version": "0.1",
                                           "views": Object {
                                             "config": Object {
+                                              "canLinkExternalContent": false,
                                               "viewerUrl": "test",
                                             },
                                             "liveConfig": Object {
+                                              "canLinkExternalContent": false,
                                               "viewerUrl": "test",
                                             },
                                             "panel": Object {
-                                              "height": "300px",
+                                              "canLinkExternalContent": false,
+                                              "height": 300,
                                               "viewerUrl": "test",
                                             },
                                           },
@@ -10396,13 +10872,18 @@ ShallowWrapper {
                                         }
               }
               frameId="frameid-0"
-              installationAbilities={undefined}
+              installationAbilities={
+                            Object {
+                                          "isChatEnabled": true,
+                                        }
+              }
+              isPopout={false}
               mode="viewer"
               type="panel"
 />,
             "className": "view",
             "style": Object {
-              "height": "300pxpx",
+              "height": "300px",
               "width": "320px",
             },
           },
@@ -10413,7 +10894,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "bindIframeToParent": [Function],
-              "channelId": undefined,
+              "channelId": "twitch",
               "className": "view",
               "extension": Object {
                 "authorName": "test",
@@ -10432,13 +10913,16 @@ ShallowWrapper {
                 "version": "0.1",
                 "views": Object {
                   "config": Object {
+                    "canLinkExternalContent": false,
                     "viewerUrl": "test",
                   },
                   "liveConfig": Object {
+                    "canLinkExternalContent": false,
                     "viewerUrl": "test",
                   },
                   "panel": Object {
-                    "height": "300px",
+                    "canLinkExternalContent": false,
+                    "height": 300,
                     "viewerUrl": "test",
                   },
                 },
@@ -10450,7 +10934,10 @@ ShallowWrapper {
                 ],
               },
               "frameId": "frameid-0",
-              "installationAbilities": undefined,
+              "installationAbilities": Object {
+                "isChatEnabled": true,
+              },
+              "isPopout": false,
               "mode": "viewer",
               "type": "panel",
             },

@@ -13,6 +13,7 @@ export interface PublicProps {
   installationAbilities: ExtensionCoordinator.ExtensionInstallationAbilities;
   type: string;
   mode: string;
+  isPopout: boolean;
   bindIframeToParent: (iframe: HTMLIFrameElement) => void;
 }
 
@@ -55,7 +56,8 @@ export class ExtensionFrame extends React.Component<Props> {
       mode: this.props.mode as ExtensionCoordinator.ExtensionMode,
       platform: (this.props.type === ExtensionViewType.Mobile) ? ExtensionPlatform.Mobile : ExtensionPlatform.Web,
       trackingProperties: {},
-    }
+      isPopout: this.props.isPopout,
+    };
 
     const data = {
       action: EXTENSION_FRAME_INIT_ACTION,

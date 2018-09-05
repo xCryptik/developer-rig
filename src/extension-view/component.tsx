@@ -37,6 +37,7 @@ interface ExtensionViewProps {
   mode: string;
   role?: string;
   linked?: boolean;
+  isPopout: boolean;
   orientation?: string;
   deleteViewHandler?: (id: string) => void;
   openEditViewHandler?: (id: string) => void;
@@ -137,38 +138,7 @@ export class ExtensionViewComponent extends React.Component<Props, State> {
               installationAbilities={this.props.installationAbilities}
               type={this.props.type}
               mode={this.props.mode}
-            />
-          </div>
-        );
-        break;
-      case ExtensionViewType.Mobile:
-        view = (
-          <ExtensionMobileView
-            bindIframeToParent={this.bindIframeToParent}
-            channelId={this.props.channelId}
-            className="view"
-            extension={this.props.extension}
-            frameSize={this.props.frameSize}
-            id={`mobile-${this.props.id}`}
-            installationAbilities={this.props.installationAbilities}
-            orientation={this.props.orientation}
-            position={this.props.position}
-            role={this.props.role}
-          />
-        );
-        break;
-      case ExtensionAnchor.Overlay:
-        view = (
-          <div className="view nono_zone" style={extensionProps.viewStyles}>
-            <ExtensionFrame
-              bindIframeToParent={this.bindIframeToParent}
-              channelId={this.props.channelId}
-              className="view"
-              extension={this.props.extension}
-              frameId={`frameid-${this.props.id}`}
-              installationAbilities={this.props.installationAbilities}
-              mode={this.props.mode}
-              type={this.props.type}
+              isPopout={false}
             />
           </div>
         );
@@ -186,6 +156,7 @@ export class ExtensionViewComponent extends React.Component<Props, State> {
               installationAbilities={this.props.installationAbilities}
               mode={this.props.mode}
               type={this.props.type}
+              isPopout={this.props.isPopout}
             />
           </div>
         );
@@ -259,6 +230,7 @@ export class ExtensionViewComponent extends React.Component<Props, State> {
               {this.props.role}
               {(this.props.role === ViewerTypes.LoggedIn) ?
                 ' ' + this.renderLinkedOrUnlinked() : null}
+              {this.props.isPopout ? ' Popout' : null}
               {` (${(this.props.extension.views as any)[TypeViews[this.props.type]].viewerUrl.replace(/.*\//, '')})`}
             </div>
 

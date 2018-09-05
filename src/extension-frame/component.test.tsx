@@ -5,6 +5,7 @@ import { ExtensionFrame } from './component';
 import { ExtensionViewType, ExtensionAnchor, ExtensionMode } from '../constants/extension-coordinator';
 
 const defaultPropGenerator = () => ({
+  channelId: 'twitch',
   className: 'view',
   frameId: '0',
   installationAbilities: {
@@ -14,6 +15,7 @@ const defaultPropGenerator = () => ({
   type: ExtensionAnchor.Panel,
   mode: ExtensionMode.Viewer,
   iframe: '',
+  isPopout: false,
   bindIframeToParent: jest.fn(),
 });
 
@@ -35,6 +37,7 @@ describe('<ExtensionFrame />', () => {
     instance.extensionFrameInit();
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
       action: 'extension-frame-init',
+      channelId: 'twitch',
       extension: {
         anchor: 'panel',
         channelId: NaN,
@@ -90,6 +93,7 @@ describe('<ExtensionFrame />', () => {
         installationAbilities: {
           isChatEnabled: true,
         },
+        isPopout: false,
         loginId: null,
         mode: 'viewer',
         platform: 'web',
@@ -115,6 +119,7 @@ describe('<ExtensionFrame />', () => {
     instance.extensionFrameInit();
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
       action: 'extension-frame-init',
+      channelId: 'twitch',
       extension: {
         anchor: 'mobile',
         channelId: NaN,
@@ -170,6 +175,7 @@ describe('<ExtensionFrame />', () => {
         installationAbilities: {
           isChatEnabled: true,
         },
+        isPopout: false,
         loginId: null,
         mode: 'viewer',
         platform: 'mobile',

@@ -38,6 +38,7 @@ export class ExtensionViewContainer extends React.Component<ExtensionViewContain
           frameSize={view.frameSize}
           position={{ x: view.x, y: view.y }}
           linked={view.linked}
+          isPopout={view.isPopout}
           orientation={view.orientation}
           openEditViewHandler={this.props.openEditViewHandler}
           deleteViewHandler={this.props.deleteExtensionViewHandler}
