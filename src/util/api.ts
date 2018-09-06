@@ -29,36 +29,6 @@ export async function fetchExtensionManifest(id: string, version: string, jwt: s
   return Promise.reject('Unable to retrieve extension manifest, please verify EXT_OWNER_NAME and EXT_SECRET');
 }
 
-interface UsersResponse {
-  data: {
-    broadcaster_type: string;
-    description: string;
-    display_name: string;
-    id: string;
-    login: string;
-    offline_image_url: string;
-    profile_image_url: string;
-    type: string;
-    view_count: number;
-  }[];
-}
-
-export async function fetchUserByName(clientId: string, username: string) {
-  const response = await TwitchAPI.get<UsersResponse>(`/helix/users?login=${username}`);
-  if (response.status >= 400 && response.status < 500) {
-    return Promise.reject(`Unable to authorize for user ${username} and client id ${clientId}`)
-  }
-  if (response.status >= 500) {
-    return Promise.reject('Unable to hit Twitch API to initialize the rig. Try again later.');
-  }
-  const { data } = response.body;
-  if (data && data.length) {
-    return data[0];
-  } else {
-    return Promise.reject(`Invalid server response for username ${username}`);
-  }
-}
-
 export async function fetchUserInfo(accessToken: string) {
   const api = 'https://api.twitch.tv/helix/users';
   return fetch(api, {
@@ -157,7 +127,6 @@ export function fetchNewRelease() {
           zipUrl,
         });
       }
-
       return Promise.reject(new Error('Cannot get GitHub developer rig latest release'));
     });
 }

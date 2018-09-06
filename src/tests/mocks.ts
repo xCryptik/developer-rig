@@ -6,21 +6,9 @@ export function mockFetchForExtensionManifest() {
       extensions: [{
         version: 1,
         id: 'clientid',
-        views: {}
-      }]
+        views: {},
+      }],
     }),
-  });
-}
-
-export function mockFetchForUserByName() {
-  return Promise.resolve({
-    ok: true,
-    json: () => ({
-      data: [{
-        login: 'test',
-        profile_image_url: 'test.png',
-      }]
-    })
   });
 }
 
@@ -31,8 +19,8 @@ export function mockFetchForUserInfo() {
       data: [{
         login: 'test',
         profile_image_url: 'test.png',
-      }]
-    })
+      }],
+    }),
   });
 }
 
@@ -47,30 +35,30 @@ export function mockFetchProducts() {
         domain: 'twitch.ext.mock',
         sku: 'test1',
         displayName: 'Test 1',
-        cost: {amount: 1, type: 'bits'},
+        cost: { amount: 1, type: 'bits' },
         inDevelopment: true,
-        broadcast: false
+        broadcast: false,
       },
       {
         domain: 'twitch.ext.mock',
         sku: 'test2',
         displayName: 'Test 2',
-        cost: {amount: 100, type: 'bits'},
+        cost: { amount: 100, type: 'bits' },
         inDevelopment: false,
-        broadcast: false
-      }]
-    })
+        broadcast: false,
+      }],
+    }),
   });
 }
 
-export function mockFetchNewRelease() {
+export function mockFetchNewRelease(includeTagName: boolean) {
   return Promise.resolve({
     ok: true,
     json: () => ({
-      tag_name: '0.0.0',
+      tag_name: includeTagName && '0.0.0',
       assets: [{
-        browser_download_url: 'test.zip'
-        }]
-    })
+        browser_download_url: 'test.zip',
+      }],
+    }),
   });
 }

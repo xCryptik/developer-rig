@@ -8,7 +8,7 @@ import { RigConfigurationsDialog } from '../rig-configurations-dialog';
 import { EditViewDialog, EditViewProps } from '../edit-view-dialog';
 import { ProductManagementViewContainer } from '../product-management-container';
 import { createExtensionObject } from '../util/extension';
-import { fetchExtensionManifest, fetchUserByName, fetchUserInfo } from '../util/api';
+import { fetchExtensionManifest, fetchUserInfo } from '../util/api';
 import { NavItem } from '../constants/nav-items'
 import { OverlaySizes } from '../constants/overlay-sizes';
 import { IdentityOptions } from '../constants/identity-options';
@@ -18,7 +18,6 @@ import { ExtensionManifest } from '../core/models/manifest';
 import { UserSession } from '../core/models/user-session';
 import { SignInDialog } from '../sign-in-dialog';
 import { ExtensionMode, ExtensionViewType } from '../constants/extension-coordinator';
-import { missingConfigurations } from '../util/errors';
 import { TokenSpec, createSignedToken } from '../util/token';
 import { RigRole } from '../constants/rig';
 
@@ -137,7 +136,13 @@ export class RigComponent extends React.Component<Props, State> {
   }
 
   public onConfigurationError = (error: Error) => {
-    this.setState({ error: error.message });
+    const emptyVariables = [];
+    this.state.clientId.trim() || emptyVariables.push('EXT_CLIENT_ID');
+    this.state.secret.trim() || emptyVariables.push('EXT_SECRET');
+    this.state.version.trim() || emptyVariables.push('EXT_VERSION');
+    const message = emptyVariables.length ? 'set ' + emptyVariables.join(', ') :
+      'verify EXT_CLIENT_ID, EXT_SECRET, and EXT_VERSION.';
+    this.setState({ error: `${error.message}  Please ${message}` });
   }
 
   public getFrameSizeFromDialog(extensionViewDialogState: ExtensionViewDialogState) {
@@ -273,26 +278,16 @@ export class RigComponent extends React.Component<Props, State> {
   }
 
   private fetchInitialConfiguration = () => {
-    if (this.state.clientId && this.state.version && this.state.secret) {
-      fetchUserByName(this.state.clientId, this.state.ownerName).then((user) => {
-        const userId = user.id;
-        this.setState({ userId });
-        const tokenSpec: TokenSpec = {
-          role: RigRole,
-          secret: this.state.secret,
-          userId,
-        };
-        const token = createSignedToken(tokenSpec);
-        return fetchExtensionManifest(this.state.clientId, this.state.version, token);
-      })
+    if (this.state.clientId && this.state.version && this.state.secret && this.state.userId) {
+      const tokenSpec: TokenSpec = {
+        role: RigRole,
+        secret: this.state.secret,
+        userId: this.state.userId,
+      };
+      const token = createSignedToken(tokenSpec);
+      fetchExtensionManifest(this.state.clientId, this.state.version, token)
         .then(this.onConfigurationSuccess)
         .catch(this.onConfigurationError);
-    } else {
-      this.onConfigurationError(new Error(missingConfigurations({
-        EXT_CLIENT_ID: this.state.clientId,
-        EXT_SECRET: this.state.secret,
-        EXT_VERSION: this.state.version,
-      })));
     }
   }
 
@@ -341,6 +336,7 @@ export class RigComponent extends React.Component<Props, State> {
           const userSession = JSON.parse(rigLogin) as UserSession;
           if (userSession && userSession.authToken && userSession.id && userSession.login && userSession.profileImageUrl) {
             this.props.userLogin(userSession);
+            this.state.userId = userSession.id;
           } else {
             localStorage.removeItem(LocalStorageKeys.RigLogin);
           }

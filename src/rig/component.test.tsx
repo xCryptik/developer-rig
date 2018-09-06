@@ -154,7 +154,7 @@ describe('<RigComponent />', () => {
     instance.pushExtensionViews(instance.state.extensionViews);
   });
 
-  it('sets state correctly when _onConfigurationSuccess invoked', () => {
+  it('sets state correctly when onConfigurationSuccess invoked', () => {
     const { wrapper } = setupShallow();
     const fakeManifest = createExtensionManifestForTest();
     const instance = wrapper.instance() as RigComponent;
@@ -163,13 +163,13 @@ describe('<RigComponent />', () => {
     expect(wrapper.instance().state.manifest).toBe(fakeManifest);
   });
 
-  it('sets error state correctly when _onConfigurationError invoked', () => {
+  it('sets error state correctly when onConfigurationError invoked', () => {
     const { wrapper } = setupShallow();
     const testError = new Error('test error');
     const instance = wrapper.instance() as RigComponent;
 
     instance.onConfigurationError(testError);
-    expect(wrapper.instance().state.error).toBe(testError.message);
+    expect(wrapper.instance().state.error).toBe(testError.message +'  Please verify EXT_CLIENT_ID, EXT_SECRET, and EXT_VERSION.');
   });
 
   describe('gets frame size from dialog ref correctly', () => {
@@ -229,7 +229,7 @@ describe('<RigComponent />', () => {
       globalAny.fetch = jest.fn().mockImplementation(mockFetchForUserInfo);
       globalAny.window.location.hash = 'access_token=test&';
 
-      const { wrapper } = setupShallow();
+      setupShallow();
       expect(globalAny.fetch).toHaveBeenCalled();
     });
   });
