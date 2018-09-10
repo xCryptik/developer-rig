@@ -59,6 +59,7 @@ IF EXIST %MY%\.git (
 		ECHO Cannot initialize %MY%
 		GOTO done
 	)
+	SET WANTS_NPM_INSTALL=YES
 )
 PUSHD %MY%
 IF "%WANTS_NPM_INSTALL%" == "YES" (
