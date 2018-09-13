@@ -8,7 +8,7 @@ import { RigConfigurationsDialog } from '../rig-configurations-dialog';
 import { EditViewDialog, EditViewProps } from '../edit-view-dialog';
 import { ProductManagementViewContainer } from '../product-management-container';
 import { createExtensionObject } from '../util/extension';
-import { fetchExtensionManifest, fetchUserInfo } from '../util/api';
+import { fetchExtensionManifest, fetchUser } from '../util/api';
 import { NavItem } from '../constants/nav-items'
 import { OverlaySizes } from '../constants/overlay-sizes';
 import { IdentityOptions } from '../constants/identity-options';
@@ -314,7 +314,7 @@ export class RigComponent extends React.Component<Props, State> {
       const accessToken = windowHash.substring(accessTokenIndex + accessTokenKey.length, ampersandIndex);
 
       try {
-        const response = await fetchUserInfo(accessToken);
+        const response = await fetchUser(accessToken);
         const userSession = {
           authToken: accessToken,
           displayName: response.display_name,

@@ -24,6 +24,24 @@ export function mockFetchForUserInfo() {
   });
 }
 
+export function mockEmptyResponse() {
+  return Promise.resolve({ json: () => ({}) });
+}
+
+export function mockFetch400() {
+  return Promise.resolve({
+    status: 400,
+    json: () => Promise.resolve({ message: '400 error' }),
+  });
+}
+
+export function mockFetch500() {
+  return Promise.resolve({
+    status: 500,
+    json: () => Promise.resolve({ message: '500 error' }),
+  });
+}
+
 export function mockFetchError() {
   return Promise.reject('Fake error');
 }
@@ -48,6 +66,13 @@ export function mockFetchProducts() {
         broadcast: false,
       }],
     }),
+  });
+}
+
+export function mockSaveProduct() {
+  return Promise.resolve({
+    status: 204,
+    json: () => Promise.resolve({}),
   });
 }
 

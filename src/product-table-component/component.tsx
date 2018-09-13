@@ -32,12 +32,12 @@ export class ProductTableComponent extends React.Component<Props>{
 
   public componentDidMount() {
     const { clientId, token, loadProductsSuccess, loadProductsFailure } = this.props;
-    fetchProducts('api.twitch.tv', clientId, token)
+    fetchProducts(clientId, token)
       .then(loadProductsSuccess)
       .catch(loadProductsFailure);
   }
 
-  public handleValueChange(index: number, event: React.FormEvent<HTMLInputElement> ) {
+  public handleValueChange(index: number, event: React.FormEvent<HTMLInputElement>) {
     const { changeProductValue } = this.props;
     const value = event.currentTarget.value;
     const fieldName = event.currentTarget.name;
@@ -50,20 +50,22 @@ export class ProductTableComponent extends React.Component<Props>{
     changeProductValue(index, 'deprecated', !deprecated);
   }
 
-  public handleAddProductClick() {
-    const { addProduct } = this.props;
-    addProduct();
+  public handleAddProductClick = () => {
+    this.props.addProduct();
   }
 
-  public handleSaveProductsClick() {
+  public handleSaveProductsClick = () => {
     const { clientId, token, saveProductsSuccess, saveProductsFailure } = this.props;
-    this.props.products.forEach((product, index) => {
+    return Promise.all(this.props.products.filter(async (product, index) => {
       if (product.dirty) {
-        saveProduct('api.twitch.tv', clientId, token, product, index)
-          .then(saveProductsSuccess)
-          .catch(saveProductsFailure as any)
+        try {
+          await saveProduct(clientId, token, product);
+          saveProductsSuccess(index);
+        } catch (ex) {
+          saveProductsFailure(index, ex.message);
+        }
       }
-    });
+    }));
   }
 
   public render() {
@@ -167,13 +169,13 @@ export class ProductTableComponent extends React.Component<Props>{
         }
         <div className="product-table__buttons">
           <button className="product-table__add-button"
-              onClick={this.handleAddProductClick.bind(this)}
-              disabled={disableAddButton}>
+            onClick={this.handleAddProductClick}
+            disabled={disableAddButton}>
             Add Product
           </button>
           <button className="product-table__save-button"
-              onClick={this.handleSaveProductsClick.bind(this)}
-              disabled={disableSaveButton}>
+            onClick={this.handleSaveProductsClick}
+            disabled={disableSaveButton}>
             Save All
           </button>
         </div>
