@@ -44,21 +44,6 @@ if (require.main === module) {
     logFn: logRequest,
   };
 
-  // Copy files from the appropriate sub-directory, if necessary and available.
-  const subDirectory = `${root}/${args.local ? "local" : "online"}`;
-  if (fs.existsSync(subDirectory)) {
-    const fileNames = fs.readdirSync(subDirectory);
-    fileNames.forEach(fileName => {
-      if (args.local) {
-        let fileText = fs.readFileSync(root + "/local/" + fileName, "utf8");
-        fileText = fileText.replace("%PORT%", 3000);
-        fs.writeFileSync(root + "/" + fileName, fileText, "utf8");
-      } else {
-        fs.copyFileSync(root + "/online/" + fileName, root + "/" + fileName);
-      }
-    });
-  }
-
   const server = http.createServer(options)
   server.listen(port, function() {
     console.log("Serving assets from https://" + options.host + ":" + port);

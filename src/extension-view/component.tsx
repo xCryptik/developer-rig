@@ -77,6 +77,15 @@ export class ExtensionViewComponent extends React.Component<Props, State> {
   };
 
   private bindIframeToParent = (iframe: HTMLIFrameElement) => {
+    if (iframe) {
+      const coordinatorScriptElement = document.getElementById('coordinatorScriptElement') as HTMLScriptElement;
+      const coordinatorUrl = process.env.API_HOST === window.location.host ?
+        `https://${window.location.host}/coordinator.js` :
+        coordinatorScriptElement.src;
+      const attribute = iframe.contentDocument.createAttribute('coordinatorUrl');
+      attribute.value = coordinatorUrl;
+      iframe.attributes.setNamedItem(attribute);
+    }
     this.state.iframe = iframe;
   }
 

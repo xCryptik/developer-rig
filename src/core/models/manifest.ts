@@ -13,16 +13,17 @@ export interface ExtensionManifest {
   name: string;
   requestIdentityLink: boolean;
   sku: string;
+  state: string;
   summary: string;
   vendorCode: string;
   version: string;
   views: {
     component?: {
-      viewerUrl: string;
       aspectHeight: number;
       aspectWidth: number;
       canLinkExternalContent: boolean;
       size: number;
+      viewerUrl: string;
       zoom: boolean;
       zoomPixels: number;
     };
@@ -51,7 +52,6 @@ export interface ExtensionManifest {
       viewerUrl: string;
     };
   };
-  state: string;
   whitelistedConfigUrls: string[];
   whitelistedPanelUrls: string[];
 }

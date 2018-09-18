@@ -64,9 +64,9 @@ export class RigNavComponent extends React.Component<Props> {
             {manifest && <div className='personal-bar__ext-name'>
               <span>{manifest.name}</span>
             </div>}
-            <div className='top-nav-item__login'>
-              {(session && session.login) ? <UserDropdown session={session} /> : <LoginButton />}
-            </div>
+            {session && session.login && <div className='top-nav-item__login'>
+              <UserDropdown session={session} />
+            </div>}
           </div>
           <div className='top-nav__item-container'>
             <a className={extensionViewsClass} onClick={() => this.props.viewerHandler()}>

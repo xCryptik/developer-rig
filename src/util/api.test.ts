@@ -57,7 +57,7 @@ describe('api', () => {
       try {
         await fetchExtensionManifest('clientId', 'version', 'jwt');
       } catch (ex) {
-        expect(ex.message).toEqual('Unable to retrieve extension manifest; please verify EXT_OWNER_NAME and EXT_SECRET');
+        expect(ex.message).toEqual('Unable to retrieve extension manifest; please verify EXT_SECRET');
       }
     });
   });

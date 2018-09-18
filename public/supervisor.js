@@ -7,7 +7,7 @@
   };
 
   document.addEventListener("DOMContentLoaded", function() {
-    parent.postMessage({ action: SupervisorReady }, "*");
+    window.parent.postMessage({ action: SupervisorReady }, "*");
     document.body.setAttribute("tabindex", "-1");
     document.documentElement.setAttribute("style", "height: 100%; width: 100%;");
   });
@@ -15,7 +15,7 @@
 
   function checkInitialize(message) {
     const data = message.data;
-    if (message.source === parent && message.origin.match(rx) && data.action === SupervisorInit) {
+    if (message.source === window.parent && message.origin.match(rx) && data.action === SupervisorInit) {
       initialize(data.options);
       window.removeEventListener("message", checkInitialize);
     }
@@ -28,7 +28,7 @@
     meta.content = "frame-src 'self' " + extensionOrigin;
     document.head.appendChild(meta);
     const iframe = document.createElement("iframe");
-    iframe.setAttribute("src", extensionURL);
+    iframe.setAttribute("src", extensionURL + '&developer_rig=local');
     iframe.setAttribute("frameBorder", "0");
     document.body.appendChild(iframe);
     iframe.setAttribute("style", iframeAttrs.style || "width: 100%; height: 100%");
@@ -51,8 +51,8 @@
     function handleAction(message) {
       const { source, data, origin } = message;
       if (source === iframe.contentWindow && origin === extensionOrigin) {
-        parent.postMessage(data, hostOrigin);
-      } else if (source === parent && origin.match(rx)) {
+        window.parent.postMessage(data, hostOrigin);
+      } else if (source === window.parent && origin.match(rx)) {
         iframe.contentWindow.postMessage(data, extensionOrigin);
       } else {
         console.error("Got message from unexpected source", origin, JSON.stringify(data));

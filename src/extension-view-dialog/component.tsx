@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './component.sass';
-import { ExtensionAnchors, DefaultExtensionType } from '../constants/extension-types'
+import { ExtensionAnchors } from '../constants/extension-types'
 import { OverlaySizes, DefaultOverlaySize, DefaultCustomDimensions } from '../constants/overlay-sizes'
 import { ViewerTypes, DefaultViewerType } from '../constants/viewer-types'
 import { IdentityOptions, DefaultIdentityOption } from '../constants/identity-options';
@@ -17,7 +17,6 @@ export interface ExtensionViewDialogProps {
   extensionViews: ExtensionCoordinator.ExtensionViews;
   closeHandler: Function;
   saveHandler: Function;
-  show?: boolean;
 }
 
 export interface ExtensionViewDialogState {
@@ -32,6 +31,7 @@ export interface ExtensionViewDialogState {
   width: number;
   height: number;
   identityOption: string;
+  linkedUserId: string;
   orientation: string;
   opaqueId?: string;
   [key: string]: number | string | boolean;
@@ -50,19 +50,19 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
     width: DefaultCustomDimensions.width,
     height: DefaultCustomDimensions.height,
     identityOption: DefaultIdentityOption,
+    linkedUserId: '888888888',
     orientation: DefaultMobileOrientation,
   }
 
   public onChange = (input: React.FormEvent<HTMLInputElement>) => {
-    this.setState({
-      [input.currentTarget.name]: input.currentTarget.value,
-    });
+    const { name, value } = input.currentTarget;
+    this.setState({ [name]: value });
   }
 
   private renderExtensionTypeComponents() {
     const allowedAnchors = getSupportedAnchors(this.props.extensionViews);
     const allowedPlatforms = getSupportedPlatforms(this.props.extensionViews);
-    const divOptions = allowedAnchors.map((key: string, index: number) => (
+    const divOptions = allowedAnchors.map((key: string) => (
       <DivOption
         key={key}
         img={this.state.extensionViewType === key ? ViewTypeImages[key].on : ViewTypeImages[key].off}
@@ -127,7 +127,15 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
 
   private renderIdentityOptionComponents() {
     return Object.keys(IdentityOptions).map(option => {
-      return <RadioOption key={option} name="identityOption" value={option} onChange={this.onChange} checked={option === this.state.identityOption} />
+      const isChecked = option === this.state.identityOption;
+      return option === IdentityOptions.Linked ? (
+        <div key={option}>
+          <RadioOption name="identityOption" value={option} onChange={this.onChange} checked={isChecked} />
+          {isChecked && <input type="text" name="linkedUserId" value={this.state.linkedUserId} onChange={this.onChange} />}
+        </div>
+      ) : (
+          <RadioOption key={option} name="identityOption" value={option} onChange={this.onChange} checked={isChecked} />
+        );
     });
   }
 
@@ -154,9 +162,6 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
   }
 
   public render() {
-    if (!this.props.show) {
-      return null;
-    }
     return (
       <div className="new-extension-view">
         <div className="new-extension-view__background" />
@@ -298,8 +303,8 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
                 <div className='dialog__type-container'>
                   {this.renderViewerTypeComponents()}
                   <div>
-                    {(this.state.viewerType === ViewerTypes.LoggedIn) ?
-                      this.renderIdentityOptionComponents() : null}
+                    {this.state.viewerType === ViewerTypes.LoggedIn &&
+                      this.renderIdentityOptionComponents()}
                   </div>
                   <div className='opaque_id-input'>
                     <label className="opaque-id-label">Custom Opaque ID</label>

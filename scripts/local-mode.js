@@ -4,6 +4,7 @@ module.exports = function(app, extension) {
     return;
   }
 
+  const fs = require('fs');
   const jwt = require('jsonwebtoken');
   const parseUrl = require('url').parse;
   const dateFormat = require('dateformat');
@@ -16,7 +17,7 @@ module.exports = function(app, extension) {
   app.get('/helix/users', (req, res) => {
     checkClientId(req.header('Client-ID'));
     const url = parseUrl(req.url, true);
-    res.setHeader('Content-Type', '');
+    res.setHeader('Content-Type', 'application/json');
     res.writeHead(200);
     const data = {
       'data': [
@@ -39,8 +40,7 @@ module.exports = function(app, extension) {
   app.post('/extensions/search', (req, res) => {
     checkClientId(req.header('Client-ID'));
     checkToken(req.header('Authorization'));
-    const search = req.body;
-    res.setHeader('Content-Type', '');
+    res.setHeader('Content-Type', 'application/json');
     res.writeHead(200);
     const data = {
       _total: 1,
@@ -70,7 +70,6 @@ module.exports = function(app, extension) {
   });
 
   // Create a Web socket server for PubSub.
-  const fs = require('fs');
   const options = {
     key: fs.readFileSync('ssl/selfsigned.key'),
     cert: fs.readFileSync('ssl/selfsigned.crt')

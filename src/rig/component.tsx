@@ -40,13 +40,11 @@ interface State {
   clientId: string;
   secret: string;
   version: string;
-  channelId: string;
   extensionViews: RigExtensionView[],
   manifest: ExtensionManifest;
-  ownerName: string;
-  showExtensionsView: boolean;
-  showConfigurations: boolean;
-  showEditView: boolean;
+  showingExtensionsView: boolean;
+  showingConfigurations: boolean;
+  showingEditView: boolean;
   idToEdit: string;
   selectedView: NavItem;
   userId?: string;
@@ -61,13 +59,11 @@ export class RigComponent extends React.Component<Props, State> {
     clientId: process.env.EXT_CLIENT_ID,
     secret: process.env.EXT_SECRET,
     version: process.env.EXT_VERSION,
-    channelId: process.env.EXT_CHANNEL_ID || '999999999',
-    ownerName: this.props.session ? this.props.session.login : process.env.EXT_OWNER_NAME,
     extensionViews: [],
     manifest: {} as ExtensionManifest,
-    showExtensionsView: false,
-    showConfigurations: false,
-    showEditView: false,
+    showingExtensionsView: false,
+    showingConfigurations: false,
+    showingEditView: false,
     idToEdit: '0',
     selectedView: NavItem.ExtensionViews,
   }
@@ -84,26 +80,26 @@ export class RigComponent extends React.Component<Props, State> {
 
   public openConfigurationsHandler = () => {
     this.setState({
-      showConfigurations: true,
+      showingConfigurations: true,
     });
   }
 
   public closeConfigurationsHandler = () => {
     this.setState({
-      showConfigurations: false,
+      showingConfigurations: false,
     });
   }
 
   public openEditViewHandler = (id: string) => {
     this.setState({
-      showEditView: true,
+      showingEditView: true,
       idToEdit: id,
     });
   }
 
   public closeEditViewHandler = () => {
     this.setState({
-      showEditView: false,
+      showingEditView: false,
       idToEdit: '0',
     });
   }
@@ -119,14 +115,14 @@ export class RigComponent extends React.Component<Props, State> {
   public openExtensionViewHandler = () => {
     if (!this.state.error) {
       this.setState({
-        showExtensionsView: true,
+        showingExtensionsView: true,
       });
     }
   }
 
   public closeExtensionViewDialog = () => {
     this.setState({
-      showExtensionsView: false
+      showingExtensionsView: false
     });
   }
 
@@ -180,8 +176,7 @@ export class RigComponent extends React.Component<Props, State> {
         this.state.manifest,
         nextExtensionViewId.toString(),
         extensionViewDialogState.viewerType,
-        linked,
-        this.state.ownerName,
+        linked ? extensionViewDialogState.linkedUserId : '',
         extensionViewDialogState.channelId,
         this.state.secret,
         extensionViewDialogState.opaqueId,
@@ -230,42 +225,40 @@ export class RigComponent extends React.Component<Props, State> {
         ) : this.state.selectedView === NavItem.ProductManagement ? (
           <ProductManagementViewContainer clientId={this.state.clientId} />
         ) : (
-              <div>
-                <ExtensionViewContainer
-                  deleteExtensionViewHandler={this.deleteExtensionView}
-                  extensionViews={this.state.extensionViews}
-                  openEditViewHandler={this.openEditViewHandler}
-                  openExtensionViewHandler={this.openExtensionViewHandler}
-                />
-                {this.state.showExtensionsView && (
-                  <ExtensionViewDialog
-                    channelId={this.state.channelId}
-                    extensionViews={this.state.manifest.views}
-                    show={this.state.showExtensionsView}
-                    closeHandler={this.closeExtensionViewDialog}
-                    saveHandler={this.createExtensionView}
-                  />
-                )}
-                {this.state.showEditView && (
-                  <EditViewDialog
-                    idToEdit={this.state.idToEdit}
-                    show={this.state.showEditView}
-                    views={this.getStoredRigExtensionViews()}
-                    closeHandler={this.closeEditViewHandler}
-                    saveViewHandler={this.editViewHandler}
-                  />
-                )}
-                {this.state.showConfigurations && (
-                  <RigConfigurationsDialog
-                    config={this.state.manifest}
-                    closeConfigurationsHandler={this.closeConfigurationsHandler}
-                    refreshConfigurationsHandler={this.fetchInitialConfiguration}
-                  />
-                )}
-                {!this.props.session && <SignInDialog />}
-                <Console />
-              </div>
+          <div>
+            <ExtensionViewContainer
+              deleteExtensionViewHandler={this.deleteExtensionView}
+              extensionViews={this.state.extensionViews}
+              openEditViewHandler={this.openEditViewHandler}
+              openExtensionViewHandler={this.openExtensionViewHandler}
+            />
+            {this.state.showingExtensionsView && (
+              <ExtensionViewDialog
+                channelId="999999999"
+                extensionViews={this.state.manifest.views}
+                closeHandler={this.closeExtensionViewDialog}
+                saveHandler={this.createExtensionView}
+              />
             )}
+            {this.state.showingEditView && (
+              <EditViewDialog
+                idToEdit={this.state.idToEdit}
+                views={this.getStoredRigExtensionViews()}
+                closeHandler={this.closeEditViewHandler}
+                saveViewHandler={this.editViewHandler}
+              />
+            )}
+            {this.state.showingConfigurations && (
+              <RigConfigurationsDialog
+                config={this.state.manifest}
+                closeConfigurationsHandler={this.closeConfigurationsHandler}
+                refreshConfigurationsHandler={this.fetchInitialConfiguration}
+              />
+            )}
+            {!this.props.session && <SignInDialog />}
+            <Console />
+          </div>
+        )}
       </div>
     );
   }

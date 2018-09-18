@@ -14,7 +14,6 @@ export interface EditViewProps {
 }
 
 interface EditViewDialogProps {
-  show: boolean;
   idToEdit: string;
   views: RigExtensionView[];
   closeHandler: () => void;
@@ -84,10 +83,6 @@ export class EditViewDialog extends React.Component<Props, State> {
   }
 
   public render() {
-    if (!this.props.show) {
-      return null;
-    }
-
     return (
       <div className='edit-view'>
         <div className="edit-view__background"/>

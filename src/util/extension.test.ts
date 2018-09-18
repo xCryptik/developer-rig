@@ -1,4 +1,4 @@
-import { createExtensionObject, createExtensionToken, generateOpaqueId } from './extension';
+import { createExtensionObject, createExtensionToken } from './extension';
 import { ExtensionManifest } from '../core/models/manifest';
 import { RigRole } from '../constants/rig';
 import { TokenPayload } from './token';
@@ -51,8 +51,6 @@ describe('extension', () => {
 
   const index = '0';
   const role = ViewerTypes.LoggedOut;
-  const isLinked = false;
-  const ownerID = 'test';
   const channelId = 'test';
   const secret = 'test';
   const opaqueId = 'testOpaqueId';
@@ -70,7 +68,7 @@ describe('extension', () => {
       sku: manifest.sku,
       state: manifest.state,
       summary: manifest.summary,
-      token: createExtensionToken(role, isLinked, ownerID, channelId, secret, opaqueId),
+      token: createExtensionToken(role, '', channelId, secret, opaqueId),
       vendorCode: manifest.vendorCode,
       version: manifest.version,
       views: {
@@ -101,19 +99,16 @@ describe('extension', () => {
       whitelistedPanelUrls: manifest.whitelistedPanelUrls,
     };
 
-    const result = createExtensionObject(manifest, index, role, isLinked, ownerID, channelId, secret, opaqueId);
+    const result = createExtensionObject(manifest, index, role, '', channelId, secret, opaqueId);
     expect(result).toEqual(expected);
   });
 });
 
 describe('createExtensionToken', () => {
   const secret = 'secret';
-  const role = 'rig_role';
   const ouid = 'rig_ouid';
-  const uid = 'rig_uid';
-  const channelId = 'rig_channel';
-  const ownerId = 'rig_owner';
-  const isLinked = false;
+  const channelId = '999999999';
+  const linkedUserId = '888888888';
 
   const LOGGED_OUT_PAYLOAD = {
     channel_id: channelId,
@@ -140,7 +135,7 @@ describe('createExtensionToken', () => {
       listen: ['broadcast'],
     },
     role: 'viewer',
-    user_id: 'RIG' + ownerId,
+    user_id: linkedUserId,
   };
 
   const BROADCASTER_PAYLOAD = {
@@ -151,11 +146,11 @@ describe('createExtensionToken', () => {
       send: ['broadcast'],
     },
     role: 'broadcaster',
-    user_id: 'RIG' + ownerId,
+    user_id: channelId,
   };
 
-  it('should create a token for logged out unlinked users', () => {
-    const token = createExtensionToken(ViewerTypes.LoggedOut, isLinked, ownerId, channelId, secret, ouid);
+  it('should create a token for logged-out users', () => {
+    const token = createExtensionToken(ViewerTypes.LoggedOut, '', channelId, secret, ouid);
     const payload = verify(token, Buffer.from(secret, 'base64')) as TokenPayload;
 
     expect(payload.opaque_user_id).toBe(LOGGED_OUT_PAYLOAD.opaque_user_id);
@@ -164,8 +159,8 @@ describe('createExtensionToken', () => {
     expect(payload.pubsub_perms.listen).toEqual(['broadcast', 'global']);
   });
 
-  it('should create a token for logged in unlinked users', () => {
-    const token = createExtensionToken(ViewerTypes.LoggedIn, isLinked, ownerId, channelId, secret, ouid);
+  it('should create a token for unlinked logged-in users', () => {
+    const token = createExtensionToken(ViewerTypes.LoggedIn, '', channelId, secret, ouid);
     const payload = verify(token, Buffer.from(secret, 'base64')) as TokenPayload;
 
     expect(payload.opaque_user_id).toBe(LOGGED_IN_UNLINKED_PAYLOAD.opaque_user_id);
@@ -174,8 +169,8 @@ describe('createExtensionToken', () => {
     expect(payload.pubsub_perms.listen).toEqual(['broadcast', 'global']);
   });
 
-  it('should create a token for logged in linked users', () => {
-    const token = createExtensionToken(ViewerTypes.LoggedIn, !isLinked, ownerId, channelId, secret, ouid);
+  it('should create a token for linked logged-in users', () => {
+    const token = createExtensionToken(ViewerTypes.LoggedIn, linkedUserId, channelId, secret, ouid);
     const payload = verify(token, Buffer.from(secret, 'base64')) as TokenPayload;
 
     expect(payload.opaque_user_id).toBe(LOGGED_IN_LINKED_PAYLOAD.opaque_user_id);
@@ -186,7 +181,7 @@ describe('createExtensionToken', () => {
   });
 
   it('should create a token for broadcaster users', () => {
-    const token = createExtensionToken(ViewerTypes.Broadcaster, isLinked, ownerId, channelId, secret, ouid);
+    const token = createExtensionToken(ViewerTypes.Broadcaster, '', channelId, secret, ouid);
     const payload = verify(token, Buffer.from(secret, 'base64')) as TokenPayload;
 
     expect(payload.opaque_user_id).toBe(BROADCASTER_PAYLOAD.opaque_user_id);
@@ -197,17 +192,11 @@ describe('createExtensionToken', () => {
   });
 
   it('should create a token for the rig', () => {
-    const token = createExtensionToken(RigRole, isLinked, ownerId, channelId, secret, ouid);
+    const token = createExtensionToken(RigRole, '', channelId, secret, ouid);
     const payload = verify(token, Buffer.from(secret, 'base64')) as TokenPayload;
 
     expect(payload.role).toBe(RigRole);
     expect(payload.pubsub_perms.send).toEqual(['*']);
     expect(payload.pubsub_perms.listen).toEqual(['*']);
-  });
-
-  it('generateOpaqueId should generate an opaque ID we expect', () => {
-    const idLength = 15;
-    const genOpaqueId = generateOpaqueId();
-    expect(genOpaqueId).toHaveLength(idLength);
   });
 });

@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="extension-frame.css"/>
-    <script src="%COORDINATOR_URL%"></script>
+<head>
+    <link rel="stylesheet" type="text/css" href="extension-frame.css" />
+    <script>
+        const coordinatorUrl = window.frameElement.attributes.getNamedItem('coordinatorUrl');
+        const el = document.createElement('script');
+        el.src = coordinatorUrl.value;
+        document.head.appendChild(el);
+    </script>
     <script src="extension-frame.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <div id="extension-frame" class="extension-frame"></div>
-  </body>
+</body>
 </html>

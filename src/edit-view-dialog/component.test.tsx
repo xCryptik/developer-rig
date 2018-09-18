@@ -7,7 +7,6 @@ import { ExtensionViewType } from '../constants/extension-coordinator';
 
 describe('<EditViewDialog />', () => {
   const setupShallow = setupShallowTest(EditViewDialog, () => ({
-    show: true,
     idToEdit: '1',
     views: createViewsForTest(2, ExtensionViewType.Component, ViewerTypes.LoggedOut, { x: 10, y: 10 }),
     closeHandler: jest.fn(),
@@ -16,13 +15,6 @@ describe('<EditViewDialog />', () => {
 
   it('renders correctly', () => {
     const { wrapper } = setupShallow();
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('does not render if show is false', () => {
-    const { wrapper } = setupShallow({
-      show: false,
-    });
     expect(wrapper).toMatchSnapshot();
   });
 

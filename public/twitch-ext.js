@@ -1,11 +1,15 @@
-(function(ext) {
+(function() {
+  const queries = new URLSearchParams(document.location.search.substring(1));
+  const developerRig = queries.get('developer_rig');
+  return developerRig === 'local';
+})() && (function(ext) {
   var twitch = window.Twitch = window.Twitch || {};
   twitch.ext = Object.assign(twitch.ext || {}, ext);
 })(function() {
   let authCallback, authData;
   let contextCallback, context, contextChangedFields;
   let isVisible, visibilityCallback;
-  let positionCallback;
+  let errorCallback, positionCallback;
   let followCallback;
   let listeners = {};
   let webSocket;
@@ -57,7 +61,7 @@
       }
     },
     onError: fn => {
-      errCallback = fn;
+      errorCallback = fn;
     },
     onContext: fn => {
       contextCallback = fn;

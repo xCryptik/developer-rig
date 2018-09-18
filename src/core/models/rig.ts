@@ -1,6 +1,3 @@
-import * as React from 'react';
-import { PositionProperty } from 'csstype';
-
 export interface RigExtensionView {
   x: number;
   y: number;

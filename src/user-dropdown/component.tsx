@@ -16,7 +16,7 @@ export interface ReduxDispatchProps {
 
 interface State {
   open: boolean;
-  showNewRelease: boolean;
+  showingNewRelease: boolean;
   releaseUrl?: string;
 }
 
@@ -24,7 +24,7 @@ type Props = PublicProps & ReduxDispatchProps;
 export class UserDropdownComponent extends React.Component<Props, State> {
   public state: State = {
     open: false,
-    showNewRelease: false,
+    showingNewRelease: false,
   }
 
   private signOut = () => {
@@ -44,7 +44,7 @@ export class UserDropdownComponent extends React.Component<Props, State> {
         .then((result) => {
           if (result.tagName !== process.env.GIT_RELEASE) {
             this.setState({
-              showNewRelease: true,
+              showingNewRelease: true,
               releaseUrl: result.zipUrl,
             });
           }
@@ -74,7 +74,7 @@ export class UserDropdownComponent extends React.Component<Props, State> {
     return (
       <div onClick={this.toggleDropdown} className='user-dropdown' tabIndex={0}>
         <div className='user-dropdown__name-container'>
-          {this.state.showNewRelease && (
+          {this.state.showingNewRelease && (
             <img alt='!' title='Rig Update Available' src={reddot} width='8' height='8' />
           )}
           <img alt={login} className='user-dropdown__image' src={profileImageUrl} />
@@ -94,8 +94,8 @@ export class UserDropdownComponent extends React.Component<Props, State> {
             </li>
             <li>
               <a target='_blank' href={this.state.releaseUrl}>
-                {this.state.showNewRelease ? 'Rig Update Available' : 'Rig Up To Date'}
-                {this.state.showNewRelease && (
+                {this.state.showingNewRelease ? 'Rig Update Available' : 'Rig Up To Date'}
+                {this.state.showingNewRelease && (
                   <img alt='!' src={reddot} width='8' height='8' />
                 )}
               </a>

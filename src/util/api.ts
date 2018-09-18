@@ -56,7 +56,7 @@ export async function fetchExtensionManifest(id: string, version: string, jwt: s
     const manifest = toCamelCase(extensions[0]) as ExtensionManifest;
     return manifest;
   }
-  throw new Error('Unable to retrieve extension manifest; please verify EXT_OWNER_NAME and EXT_SECRET');
+  throw new Error('Unable to retrieve extension manifest; please verify EXT_SECRET');
 }
 
 interface UsersResponse {

@@ -8,11 +8,11 @@ export class LocalStorage {
   };
 
   public getItem(key: string): string | null {
-    if (!(key in this.self)) {
-      return null;
-    }
+    return key in this.self ? this.self[key] : null;
+  }
 
-    return this.self[key];
+  public removeItem(key: string, value: string) {
+    delete this.self[key];
   }
 
   public setItem(key: string, value: string) {

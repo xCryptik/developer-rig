@@ -17,7 +17,7 @@ export interface OnContextResponse extends GenericResponse {
   videoResolution: string;
 }
 
-export interface OnAuthorizedResponse extends GenericResponse{
+export interface OnAuthorizedResponse extends GenericResponse {
   channelId: string;
   clientId: string;
   token: string;

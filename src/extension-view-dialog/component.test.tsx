@@ -23,7 +23,6 @@ describe('<ExtensionViewDialog />', () => {
     },
     closeHandler: jest.fn(),
     saveHandler: jest.fn(),
-    show: true
   }));
 
   it('when top nav close button is clicked closeHandler is called', () => {
@@ -42,13 +41,6 @@ describe('<ExtensionViewDialog />', () => {
     const { wrapper } = setupShallow();
     wrapper.find('.bottom-bar__save').simulate('click');
     expect(wrapper.instance().props.saveHandler).toHaveBeenCalled();
-  });
-
-  it('is null when show is false', () => {
-    const { wrapper } = setupShallow({
-      show: false
-    });
-    expect(wrapper.type()).toBe(null);
   });
 
   it('only shows the default views of no other views supported', () => {

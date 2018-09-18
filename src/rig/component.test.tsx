@@ -71,11 +71,11 @@ describe('<RigComponent />', () => {
     const instance = wrapper.instance() as RigComponent;
 
     instance.openEditViewHandler('1');
-    expect(instance.state.showEditView).toBe(true);
+    expect(instance.state.showingEditView).toBe(true);
     expect(instance.state.idToEdit).toBe('1');
 
     instance.closeEditViewHandler();
-    expect(instance.state.showEditView).toBe(false);
+    expect(instance.state.showingEditView).toBe(false);
     expect(instance.state.idToEdit).toBe('0');
   });
 
@@ -85,7 +85,7 @@ describe('<RigComponent />', () => {
     const instance = wrapper.instance() as RigComponent;
 
     instance.openEditViewHandler('1');
-    expect(instance.state.showEditView).toBe(true);
+    expect(instance.state.showingEditView).toBe(true);
     expect(instance.state.idToEdit).toBe('1');
 
     instance.editViewHandler({ x: 25, y: 25 });
@@ -94,7 +94,7 @@ describe('<RigComponent />', () => {
     const editedView = views.filter((element: RigExtensionView) => element.id === '1');
     expect(editedView[0].x).toEqual(25);
     expect(editedView[0].y).toEqual(25);
-    expect(instance.state.showEditView).toBe(false);
+    expect(instance.state.showingEditView).toBe(false);
     expect(instance.state.idToEdit).toBe('0');
   });
 
@@ -104,10 +104,10 @@ describe('<RigComponent />', () => {
     const instance = wrapper.instance() as RigComponent;
 
     instance.openConfigurationsHandler();
-    expect(instance.state.showConfigurations).toBe(true);
+    expect(instance.state.showingConfigurations).toBe(true);
 
     instance.closeConfigurationsHandler();
-    expect(instance.state.showConfigurations).toBe(false);
+    expect(instance.state.showingConfigurations).toBe(false);
   });
 
   it('correctly toggles state when create extension view is opened/closed', () => {
@@ -117,10 +117,10 @@ describe('<RigComponent />', () => {
     instance.onConfigurationSuccess(createExtensionManifestForTest());
 
     instance.openExtensionViewHandler();
-    expect(instance.state.showExtensionsView).toBe(true);
+    expect(instance.state.showingExtensionsView).toBe(true);
 
     instance.closeExtensionViewDialog();
-    expect(instance.state.showExtensionsView).toBe(false);
+    expect(instance.state.showingExtensionsView).toBe(false);
   });
 
   it('correctly sets state when viewHandler is invoked', () => {

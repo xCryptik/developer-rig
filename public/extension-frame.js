@@ -1,5 +1,6 @@
 (function() {
   const container = {};
+  let loggingUnknownActions = false;
   const actions = {
     'extension-frame-init': (event) => {
       const ExtensionFrame = window['extension-coordinator'].ExtensionFrame;
@@ -47,7 +48,7 @@
     const fn = actions[event.data.action];
     if (fn) {
       fn(event);
-    } else {
+    } else if (loggingUnknownActions) {
       console.error(`Unexpected extension frame event action "${event.data.action}"`);
     }
   });

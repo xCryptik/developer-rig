@@ -106,18 +106,14 @@ There are several pieces of configuration that the Developer Rig requires to fun
   <img src="./docs/version.png" width="60%">
 
 Values for these fields need to be injected as environment variables to the Developer Rig at startup. The environment variables names are:
-* `EXT_CHANNEL`
 * `EXT_CLIENT_ID`
 * `EXT_SECRET`
-* `EXT_OWNER_NAME`
 * `EXT_VERSION`
 
 If you don't want to set these values via environment variables, all but the extension secret can be set through a configuration file. This file is specified via a command line argument and is in the format of
 ```javascript
 {
-  "channel": "<channel name>",
   "clientID": "<client id>",
-  "ownerName": "<owner name>",
   "version": "<version>"
 }
 ```
@@ -128,10 +124,12 @@ Ensure that the [Developer Rig dependencies](#installing-dependencies) are insta
 To start the rig with environment variables, run:
 ```bash
 Mac:
-EXT_CHANNEL=<channel name> EXT_CLIENT_ID=<client id> EXT_SECRET=<secret> EXT_OWNER_NAME=<owner name> EXT_VERSION=<version> yarn start
+EXT_CLIENT_ID=<client id> EXT_SECRET=<secret> EXT_VERSION=<version> yarn start
 
 Windows:
-SET EXT_CHANNEL=<channel name> & SET EXT_CLIENT_ID=<client id> & SET EXT_SECRET=<secret> & SET EXT_OWNER_NAME=<owner name> & SET EXT_VERSION=<version> & yarn start
+SET EXT_CLIENT_ID=<client id>& SET EXT_SECRET=<secret>& SET EXT_VERSION=<version>& yarn start
+
+(Note the lack of spaces before the ampersands.)
 ```
 To start the rig with a configuration file and command line arguments, run:
 ```bash
@@ -291,10 +289,6 @@ _XXX in the Developer Rig sucks! The Developer Rig is missing feature YYY!_
 _What are these Twitch Extensions of which you speak, and how can I learn more?_
 
 > More information about Twitch Extensions is available on the [Twitch Developer Site](https://dev.twitch.tv/extensions), and in the [Twitch Developer Forums](https://discuss.dev.twitch.tv/c/extensions).
-
-_The linked Hello World repository uses `EXT_OWNER_ID` while the Developer Rig uses `EXT_OWNER_NAME`. What's up with that?_
-
-> The Developer Rig uses an API call to the Twitch /users endpoint to retrieve an owner's user id. This has not been done yet in the Hello World repository. It should be added shortly.
 
 _What browsers and platforms are supported?_
 
