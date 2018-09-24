@@ -38,7 +38,7 @@ describe('<ExtensionFrame />', () => {
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
       action: 'extension-frame-init',
       channelId: 'twitch',
-      extension: {
+      parameters: {
         anchor: 'panel',
         channelId: NaN,
         extension: {
@@ -47,6 +47,7 @@ describe('<ExtensionFrame />', () => {
           bitsEnabled: false,
           description: 'description',
           iconUrl: 'iconUrl',
+          iconUrls: { square100: '100x100' },
           id: 'id',
           name: 'name',
           requestIdentityLink: false,
@@ -120,7 +121,7 @@ describe('<ExtensionFrame />', () => {
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith({
       action: 'extension-frame-init',
       channelId: 'twitch',
-      extension: {
+      parameters: {
         anchor: 'mobile',
         channelId: NaN,
         extension: {
@@ -129,6 +130,7 @@ describe('<ExtensionFrame />', () => {
           bitsEnabled: false,
           description: 'description',
           iconUrl: 'iconUrl',
+          iconUrls: { square100: '100x100' },
           id: 'id',
           name: 'name',
           requestIdentityLink: false,

@@ -7,7 +7,6 @@ import { ExtensionViewDialog, ExtensionViewDialogState } from '../extension-view
 import { RigConfigurationsDialog } from '../rig-configurations-dialog';
 import { EditViewDialog, EditViewProps } from '../edit-view-dialog';
 import { ProductManagementViewContainer } from '../product-management-container';
-import { createExtensionObject } from '../util/extension';
 import { fetchExtensionManifest, fetchUser } from '../util/api';
 import { NavItem } from '../constants/nav-items'
 import { OverlaySizes } from '../constants/overlay-sizes';
@@ -41,7 +40,7 @@ interface State {
   secret: string;
   version: string;
   extensionViews: RigExtensionView[],
-  manifest: ExtensionManifest;
+  manifest?: ExtensionManifest;
   showingExtensionsView: boolean;
   showingConfigurations: boolean;
   showingEditView: boolean;
@@ -60,7 +59,6 @@ export class RigComponent extends React.Component<Props, State> {
     secret: process.env.EXT_SECRET,
     version: process.env.EXT_VERSION,
     extensionViews: [],
-    manifest: {} as ExtensionManifest,
     showingExtensionsView: false,
     showingConfigurations: false,
     showingEditView: false,
@@ -172,16 +170,9 @@ export class RigComponent extends React.Component<Props, State> {
       features: {
         isChatEnabled: extensionViewDialogState.isChatEnabled,
       },
-      extension: createExtensionObject(
-        this.state.manifest,
-        nextExtensionViewId.toString(),
-        extensionViewDialogState.viewerType,
-        linked ? extensionViewDialogState.linkedUserId : '',
-        extensionViewDialogState.channelId,
-        this.state.secret,
-        extensionViewDialogState.opaqueId,
-      ),
       linked,
+      linkedUserId: extensionViewDialogState.linkedUserId,
+      opaqueId: extensionViewDialogState.opaqueId,
       mode,
       isPopout: extensionViewDialogState.isPopout,
       role: extensionViewDialogState.viewerType,
@@ -222,13 +213,17 @@ export class RigComponent extends React.Component<Props, State> {
           error={this.state.error} />
         {this.state.error ? (
           <label>Something went wrong: {this.state.error}</label>
+        ) : !this.props.session ? (
+          <SignInDialog />
         ) : this.state.selectedView === NavItem.ProductManagement ? (
           <ProductManagementViewContainer clientId={this.state.clientId} />
-        ) : (
+        ) : this.state.manifest ? (
           <div>
             <ExtensionViewContainer
               deleteExtensionViewHandler={this.deleteExtensionView}
               extensionViews={this.state.extensionViews}
+              manifest={this.state.manifest}
+              secret={this.state.secret}
               openEditViewHandler={this.openEditViewHandler}
               openExtensionViewHandler={this.openExtensionViewHandler}
             />
@@ -255,9 +250,10 @@ export class RigComponent extends React.Component<Props, State> {
                 refreshConfigurationsHandler={this.fetchInitialConfiguration}
               />
             )}
-            {!this.props.session && <SignInDialog />}
             <Console />
           </div>
+        ) : (
+          <label>loading...</label>
         )}
       </div>
     );

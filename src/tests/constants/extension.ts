@@ -51,6 +51,7 @@ export const createExtensionForTest = (): ExtensionCoordinator.ExtensionObject =
   bitsEnabled: false,
   description: 'description',
   iconUrl: 'iconUrl',
+  iconUrls: { square100: '100x100' },
   id: 'id',
   name: 'name',
   requestIdentityLink: false,
@@ -100,7 +101,7 @@ export function createViewsForTest(numOfViews: number, type: string, role: strin
     y: 0,
     orientation: MobileOrientation.Portrait,
   }
-  const extViews = [];
+  const extViews: RigExtensionView[] = [];
   if (extras) {
     ex.x = extras.x;
     ex.y = extras.y;
@@ -112,8 +113,9 @@ export function createViewsForTest(numOfViews: number, type: string, role: strin
       id: (extViews.length + 1).toString(),
       type: type,
       mode: 'viewer',
-      extension: createExtensionForTest(),
       linked: false,
+      linkedUserId: '',
+      opaqueId: 'ARIGopaqueId',
       role: role,
       x: ex.x,
       y: ex.y,

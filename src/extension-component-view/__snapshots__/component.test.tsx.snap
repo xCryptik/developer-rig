@@ -14,6 +14,9 @@ ShallowWrapper {
             "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "iconUrl",
+            "iconUrls": Object {
+              "square100": "100x100",
+            },
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -116,6 +119,9 @@ ShallowWrapper {
                                 "clientId": "mockClientId",
                                 "description": "description",
                                 "iconUrl": "iconUrl",
+                                "iconUrls": Object {
+                                  "square100": "100x100",
+                                },
                                 "id": "id",
                                 "name": "name",
                                 "requestIdentityLink": false,
@@ -197,6 +203,9 @@ ShallowWrapper {
                               "clientId": "mockClientId",
                               "description": "description",
                               "iconUrl": "iconUrl",
+                              "iconUrls": Object {
+                                "square100": "100x100",
+                              },
                               "id": "id",
                               "name": "name",
                               "requestIdentityLink": false,
@@ -278,6 +287,9 @@ ShallowWrapper {
             "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "iconUrl",
+            "iconUrls": Object {
+              "square100": "100x100",
+            },
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -369,6 +381,9 @@ ShallowWrapper {
                                         "clientId": "mockClientId",
                                         "description": "description",
                                         "iconUrl": "iconUrl",
+                                        "iconUrls": Object {
+                                          "square100": "100x100",
+                                        },
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
@@ -450,6 +465,9 @@ ShallowWrapper {
                                     "clientId": "mockClientId",
                                     "description": "description",
                                     "iconUrl": "iconUrl",
+                                    "iconUrls": Object {
+                                      "square100": "100x100",
+                                    },
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -531,6 +549,9 @@ ShallowWrapper {
               "clientId": "mockClientId",
               "description": "description",
               "iconUrl": "iconUrl",
+              "iconUrls": Object {
+                "square100": "100x100",
+              },
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,
@@ -618,6 +639,9 @@ ShallowWrapper {
             "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "iconUrl",
+            "iconUrls": Object {
+              "square100": "100x100",
+            },
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -715,6 +739,9 @@ ShallowWrapper {
                                 "clientId": "mockClientId",
                                 "description": "description",
                                 "iconUrl": "iconUrl",
+                                "iconUrls": Object {
+                                  "square100": "100x100",
+                                },
                                 "id": "id",
                                 "name": "name",
                                 "requestIdentityLink": false,
@@ -789,6 +816,9 @@ ShallowWrapper {
                               "clientId": "mockClientId",
                               "description": "description",
                               "iconUrl": "iconUrl",
+                              "iconUrls": Object {
+                                "square100": "100x100",
+                              },
                               "id": "id",
                               "name": "name",
                               "requestIdentityLink": false,
@@ -865,6 +895,9 @@ ShallowWrapper {
             "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "iconUrl",
+            "iconUrls": Object {
+              "square100": "100x100",
+            },
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -951,6 +984,9 @@ ShallowWrapper {
                                         "clientId": "mockClientId",
                                         "description": "description",
                                         "iconUrl": "iconUrl",
+                                        "iconUrls": Object {
+                                          "square100": "100x100",
+                                        },
                                         "id": "id",
                                         "name": "name",
                                         "requestIdentityLink": false,
@@ -1025,6 +1061,9 @@ ShallowWrapper {
                                     "clientId": "mockClientId",
                                     "description": "description",
                                     "iconUrl": "iconUrl",
+                                    "iconUrls": Object {
+                                      "square100": "100x100",
+                                    },
                                     "id": "id",
                                     "name": "name",
                                     "requestIdentityLink": false,
@@ -1101,6 +1140,9 @@ ShallowWrapper {
               "clientId": "mockClientId",
               "description": "description",
               "iconUrl": "iconUrl",
+              "iconUrls": Object {
+                "square100": "100x100",
+              },
               "id": "id",
               "name": "name",
               "requestIdentityLink": false,

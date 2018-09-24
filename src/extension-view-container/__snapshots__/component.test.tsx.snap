@@ -13,6 +13,9 @@ ShallowWrapper {
             "clientId": "mockClientId",
             "description": "description",
             "iconUrl": "iconUrl",
+            "iconUrls": Object {
+              "square100": "100x100",
+            },
             "id": "id",
             "name": "name",
             "requestIdentityLink": false,
@@ -61,9 +64,54 @@ ShallowWrapper {
           }
     }
     extensionViews={Array []}
+    manifest={
+        Object {
+            "authorName": "test",
+            "bitsEnabled": true,
+            "description": "test",
+            "iconUrls": Object {
+              "100x100": "test",
+            },
+            "id": "test",
+            "name": "test",
+            "requestIdentityLink": false,
+            "sku": "test",
+            "state": "test",
+            "summary": "test",
+            "vendorCode": "test",
+            "version": "0.0.1",
+            "views": Object {
+              "component": Object {
+                "aspectHeight": 3000,
+                "aspectWidth": 2500,
+                "canLinkExternalContent": false,
+                "size": 1024,
+                "viewerUrl": "test",
+                "zoom": false,
+                "zoomPixels": 24,
+              },
+              "config": Object {
+                "canLinkExternalContent": false,
+                "viewerUrl": "test",
+              },
+              "liveConfig": Object {
+                "canLinkExternalContent": false,
+                "viewerUrl": "test",
+              },
+              "panel": Object {
+                "canLinkExternalContent": false,
+                "height": 300,
+                "viewerUrl": "test",
+              },
+            },
+            "whitelistedConfigUrls": Array [],
+            "whitelistedPanelUrls": Array [],
+          }
+    }
     mode="viewer"
     openEditViewHandler={[Function]}
     openExtensionViewHandler={[Function]}
+    secret=""
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

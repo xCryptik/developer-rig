@@ -4,7 +4,6 @@ export interface RigExtensionView {
   orientation: string;
   id: string;
   channelId: string;
-  extension: ExtensionCoordinator.ExtensionObject;
   features: {
     isChatEnabled: boolean;
   };
@@ -12,6 +11,8 @@ export interface RigExtensionView {
   mode?: string;
   role: string;
   linked: boolean;
+  linkedUserId: string;
+  opaqueId: string;
   isPopout: boolean;
   deleteViewHandler?: (id: string) => void;
   openEditViewHandler?: (id: string) => void;

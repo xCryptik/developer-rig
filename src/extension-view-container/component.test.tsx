@@ -1,11 +1,13 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
-import { createExtensionForTest, createViewsForTest } from '../tests/constants/extension';
+import { createExtensionForTest, createViewsForTest, createExtensionManifestForTest } from '../tests/constants/extension';
 import { ExtensionViewContainer } from './component';
 import { ExtensionAnchors } from '../constants/extension-types';
 import { ViewerTypes } from '../constants/viewer-types';
 import { ExtensionMode, ExtensionAnchor } from '../constants/extension-coordinator';
 
 const setupShallow = setupShallowTest(ExtensionViewContainer, () => ({
+  manifest: createExtensionManifestForTest(),
+  secret: '',
   mode: ExtensionMode.Viewer,
   extensionViews: createViewsForTest(0, '', ''),
   deleteExtensionViewHandler: jest.fn(),

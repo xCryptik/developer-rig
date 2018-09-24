@@ -1,5 +1,5 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
-import { createViewsForTest, createExtensionForTest, createExtensionManifestForTest } from '../tests/constants/extension';
+import { createViewsForTest, createExtensionManifestForTest } from '../tests/constants/extension';
 import { mockFetchForUserInfo } from '../tests/mocks';
 import { NavItem } from '../constants/nav-items';
 import { RigComponent } from './component';
@@ -10,6 +10,20 @@ import { ExtensionViewDialogState } from '../extension-view-dialog';
 import { ExtensionAnchor, ExtensionViewType } from '../constants/extension-coordinator';
 
 let globalAny = global as any;
+let onFetchExtensionManifest: Function;
+
+function mockApiFunctions() {
+  const original = require.requireActual('../util/api');
+  return {
+    ...original,
+    fetchExtensionManifest: jest.fn().mockImplementation(() => {
+      onFetchExtensionManifest();
+      return Promise.resolve(createExtensionManifestForTest());
+    }),
+  }
+}
+jest.mock('../util/api', () => mockApiFunctions());
+const api = require.requireMock('../util/api');
 
 const setupShallow = setupShallowTest(RigComponent, () => ({
   session: { displayName: 'test', login: 'test', id: 'test', profileImageUrl: 'test.png', authToken: 'test' },
@@ -18,15 +32,30 @@ const setupShallow = setupShallowTest(RigComponent, () => ({
 }));
 
 describe('<RigComponent />', () => {
+  function addUserSessionToLocalStorage() {
+    const p = new Promise((resolve, _) => {
+      onFetchExtensionManifest = resolve;
+    });
+    const userSession = {
+      authToken: 'accessToken',
+      displayName: 'displayName',
+      id: 'id',
+      login: 'login',
+      profileImageUrl: 'profileImageUrl',
+    };
+    localStorage.setItem('rigLogin', JSON.stringify(userSession));
+    return p;
+  }
+
   function setupViewsForTest(numViews: number) {
     const testViews = createViewsForTest(numViews, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut);
     localStorage.setItem('extensionViews', JSON.stringify(testViews));
-  };
+  }
 
   function setupComponentViewsForTest(numViews: number) {
     const testViews = createViewsForTest(numViews, ExtensionAnchors[ExtensionAnchor.Component], ViewerTypes.LoggedOut);
     localStorage.setItem('extensionViews', JSON.stringify(testViews));
-  };
+  }
 
   it('renders correctly', () => {
     const { wrapper } = setupShallow();
@@ -39,9 +68,12 @@ describe('<RigComponent />', () => {
     expect(instance.state.extensionViews).toEqual([]);
   });
 
-  it('renders extension view correctly', () => {
+  it('renders extension view correctly', async () => {
+    const p = addUserSessionToLocalStorage();
     setupViewsForTest(1);
     const { wrapper } = setupShallow();
+    await p;
+    wrapper.update();
     expect(wrapper).toMatchSnapshot();
     expect((wrapper.find('ExtensionViewContainer') as any).props().extensionViews).toHaveLength(1);
   });
@@ -54,9 +86,12 @@ describe('<RigComponent />', () => {
     expect(instance.state.extensionViews).toEqual(testViews);
   });
 
-  it('deletes extension view correctly', () => {
+  it('deletes extension view correctly', async () => {
+    const p = addUserSessionToLocalStorage();
     setupViewsForTest(1);
     const { wrapper } = setupShallow();
+    await p;
+    wrapper.update();
     const instance = wrapper.instance() as RigComponent;
     expect((wrapper.find('ExtensionViewContainer') as any).props().extensionViews).toHaveLength(1);
 
@@ -169,7 +204,7 @@ describe('<RigComponent />', () => {
     const instance = wrapper.instance() as RigComponent;
 
     instance.onConfigurationError(testError);
-    expect(wrapper.instance().state.error).toBe(testError.message +'  Please verify EXT_CLIENT_ID, EXT_SECRET, and EXT_VERSION.');
+    expect(wrapper.instance().state.error).toBe(testError.message + '  Please verify EXT_CLIENT_ID, EXT_SECRET, and EXT_VERSION.');
   });
 
   describe('gets frame size from dialog ref correctly', () => {

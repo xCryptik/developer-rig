@@ -4,11 +4,15 @@ import { ExtensionViewButton } from '../extension-view-button';
 import { ExtensionMode } from '../constants/extension-coordinator';
 import './component.sass';
 import { RigExtensionView } from '../core/models/rig';
+import { ExtensionManifest } from '../core/models/manifest';
+import { createExtensionObject } from '../util/extension';
 
 interface ExtensionViewContainerProps {
   extensionViews: RigExtensionView[];
-  openEditViewHandler?: (id: string) => void;
+  manifest: ExtensionManifest;
+  secret: string;
   deleteExtensionViewHandler: (id: string) => void;
+  openEditViewHandler?: (id: string) => void;
   openExtensionViewHandler: Function;
 }
 
@@ -25,25 +29,30 @@ export class ExtensionViewContainer extends React.Component<ExtensionViewContain
   public render() {
     let extensionViews: JSX.Element[] = [];
     if (this.props.extensionViews && this.props.extensionViews.length > 0) {
-      extensionViews = this.props.extensionViews.map((view) => ((
-        <ExtensionView
-          key={view.id}
-          id={view.id}
-          channelId={view.channelId}
-          extension={view.extension}
-          installationAbilities={view.features}
-          type={view.type}
-          mode={view.mode}
-          role={view.mode === ExtensionMode.Viewer ? view.role : ConfigNames[view.mode]}
-          frameSize={view.frameSize}
-          position={{ x: view.x, y: view.y }}
-          linked={view.linked}
-          isPopout={view.isPopout}
-          orientation={view.orientation}
-          openEditViewHandler={this.props.openEditViewHandler}
-          deleteViewHandler={this.props.deleteExtensionViewHandler}
-        />
-      )));
+      extensionViews = this.props.extensionViews.map((view, index) => {
+        const linkedUserId = view.linked ? view.linkedUserId : '';
+        const extension = createExtensionObject(this.props.manifest, index.toString(), view.role,
+          linkedUserId, view.channelId, this.props.secret, view.opaqueId);
+        return (
+          <ExtensionView
+            key={view.id}
+            id={view.id}
+            channelId={view.channelId}
+            extension={extension}
+            installationAbilities={view.features}
+            type={view.type}
+            mode={view.mode}
+            role={view.mode === ExtensionMode.Viewer ? view.role : ConfigNames[view.mode]}
+            frameSize={view.frameSize}
+            position={{ x: view.x, y: view.y }}
+            linked={view.linked}
+            isPopout={view.isPopout}
+            orientation={view.orientation}
+            openEditViewHandler={this.props.openEditViewHandler}
+            deleteViewHandler={this.props.deleteExtensionViewHandler}
+          />
+        );
+      });
     }
 
     return (

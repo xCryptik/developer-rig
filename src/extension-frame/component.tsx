@@ -61,7 +61,7 @@ export class ExtensionFrame extends React.Component<Props> {
 
     const data = {
       action: EXTENSION_FRAME_INIT_ACTION,
-      extension: extensionFrameParams,
+      parameters: extensionFrameParams,
       channelId: this.props.channelId,
       frameId: this.props.frameId,
     };

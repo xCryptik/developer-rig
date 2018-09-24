@@ -62,6 +62,11 @@ declare namespace ExtensionCoordinator {
     clientId: string;
     description: string;
     iconUrl: string;
+    iconUrls: {
+      square24?: string;
+      square100: string;
+      discoverySplash?: string;
+    };
     id: string;
     name: string;
     requestIdentityLink: boolean;

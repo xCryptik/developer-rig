@@ -4,7 +4,7 @@
   const actions = {
     'extension-frame-init': (event) => {
       const ExtensionFrame = window['extension-coordinator'].ExtensionFrame;
-      container.parameters = event.data.extension;
+      container.parameters = event.data.parameters;
       container.channelId = event.data.channelId;
       container.parameters.parentElement = document.getElementById('extension-frame');
       container.parameters.dobbin = { trackEvent: () => { } };

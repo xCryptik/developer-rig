@@ -3,10 +3,12 @@
 <head>
     <link rel="stylesheet" type="text/css" href="extension-frame.css" />
     <script>
-        const coordinatorUrl = window.frameElement.attributes.getNamedItem('coordinatorUrl');
-        const el = document.createElement('script');
-        el.src = coordinatorUrl.value;
-        document.head.appendChild(el);
+        (function() {
+            const coordinatorUrl = window.frameElement.attributes.getNamedItem('coordinatorUrl');
+            const el = document.createElement('script');
+            el.src = coordinatorUrl.value;
+            document.head.appendChild(el);
+        })();
     </script>
     <script src="extension-frame.js"></script>
 </head>
