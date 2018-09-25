@@ -95,7 +95,7 @@ export async function fetchProducts(clientId: string, token: string): Promise<Pr
     Authorization: `OAuth ${token}`,
     'Client-ID': clientId,
   });
-  if (response.products && response.products.length) {
+  if (response.products) {
     return response.products.map((p: DeserializedProduct) => ({
       sku: p.sku || '',
       displayName: p.displayName || '',
