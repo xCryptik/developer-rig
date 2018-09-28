@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as closeButton from '../img/close_icon.png';
 import './component.sass';
 import { LoginButton } from '../login-button';
 

@@ -20,7 +20,9 @@ ShallowWrapper {
       "children": Array [],
       "className": "console",
     },
-    "ref": null,
+    "ref": Object {
+      "current": null,
+    },
     "rendered": Array [],
     "type": "div",
   },
@@ -33,7 +35,9 @@ ShallowWrapper {
         "children": Array [],
         "className": "console",
       },
-      "ref": null,
+      "ref": Object {
+        "current": null,
+      },
       "rendered": Array [],
       "type": "div",
     },

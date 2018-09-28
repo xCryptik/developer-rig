@@ -28,7 +28,7 @@ export const PanelViewDimensions = Object.freeze({
   height: "300",
 });
 
-interface ExtensionViewProps {
+interface Props {
   id: string;
   channelId: string;
   extension: ExtensionCoordinator.ExtensionObject;
@@ -37,12 +37,14 @@ interface ExtensionViewProps {
   mode: string;
   role?: string;
   linked?: boolean;
+  isLocal: boolean;
   isPopout: boolean;
   orientation?: string;
   deleteViewHandler?: (id: string) => void;
   openEditViewHandler?: (id: string) => void;
   position?: ExtensionCoordinator.Position;
   frameSize?: FrameSize;
+  mockApiEnabled: boolean;
 }
 
 interface State {
@@ -64,13 +66,7 @@ const TypeViews: { [key: string]: string; } = {
   [ExtensionPlatform.Mobile]: ExtensionViewType.Mobile,
 };
 
-export interface ReduxStateProps {
-  mockApiEnabled: boolean;
-}
-
-type Props = ExtensionViewProps & ReduxStateProps;
-
-export class ExtensionViewComponent extends React.Component<Props, State> {
+export class ExtensionView extends React.Component<Props, State> {
   public state: State = {
     mousedOver: false,
     iframe: undefined,
@@ -79,7 +75,7 @@ export class ExtensionViewComponent extends React.Component<Props, State> {
   private bindIframeToParent = (iframe: HTMLIFrameElement) => {
     if (iframe) {
       const coordinatorScriptElement = document.getElementById('coordinatorScriptElement') as HTMLScriptElement;
-      const coordinatorUrl = process.env.API_HOST === window.location.host ?
+      const coordinatorUrl = this.props.isLocal ?
         `https://${window.location.host}/coordinator.js` :
         coordinatorScriptElement.src;
       const attribute = iframe.contentDocument.createAttribute('coordinatorUrl');

@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ExtensionViewComponent /> component mode views renders component view when in component mode 1`] = `
+exports[`<ExtensionView /> component mode views renders component view when in component mode 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+  Symbol(enzyme.__unrendered__): <ExtensionView
     channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
@@ -77,6 +77,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isLocal={true}
     isPopout={false}
     linked={false}
     mockApiEnabled={false}
@@ -784,11 +785,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionViewComponent /> config mode views renders correctly when in config mode 1`] = `
+exports[`<ExtensionView /> config mode views renders correctly when in config mode 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+  Symbol(enzyme.__unrendered__): <ExtensionView
     channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
@@ -861,6 +862,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isLocal={true}
     isPopout={false}
     linked={false}
     mockApiEnabled={false}
@@ -1674,11 +1676,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionViewComponent /> live config mode views renders correctly when in config mode 1`] = `
+exports[`<ExtensionView /> live config mode views renders correctly when in config mode 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+  Symbol(enzyme.__unrendered__): <ExtensionView
     channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
@@ -1751,6 +1753,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isLocal={true}
     isPopout={false}
     linked={false}
     mockApiEnabled={false}
@@ -2558,11 +2561,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionViewComponent /> mobile mode views renders correctly when in mobile mode 1`] = `
+exports[`<ExtensionView /> mobile mode views renders correctly when in mobile mode 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+  Symbol(enzyme.__unrendered__): <ExtensionView
     channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
@@ -2635,6 +2638,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isLocal={true}
     isPopout={false}
     linked={false}
     mockApiEnabled={false}
@@ -3347,11 +3351,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionViewComponent /> overlay mode views renders correctly in overlay mode as a Broadcaster 1`] = `
+exports[`<ExtensionView /> overlay mode views renders correctly in overlay mode as a Broadcaster 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+  Symbol(enzyme.__unrendered__): <ExtensionView
     channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
@@ -3424,6 +3428,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isLocal={true}
     isPopout={false}
     linked={false}
     mockApiEnabled={false}
@@ -4231,11 +4236,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionViewComponent /> overlay mode views renders correctly when in overlay mode as a Logged In and Linked Viewer 1`] = `
+exports[`<ExtensionView /> overlay mode views renders correctly when in overlay mode as a Logged In and Linked Viewer 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+  Symbol(enzyme.__unrendered__): <ExtensionView
     channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
@@ -4308,6 +4313,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isLocal={true}
     isPopout={false}
     linked={true}
     mockApiEnabled={false}
@@ -5121,11 +5127,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionViewComponent /> overlay mode views renders correctly when in overlay mode as a Logged In and Unlinked Viewer 1`] = `
+exports[`<ExtensionView /> overlay mode views renders correctly when in overlay mode as a Logged In and Unlinked Viewer 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+  Symbol(enzyme.__unrendered__): <ExtensionView
     channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
@@ -5198,6 +5204,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isLocal={true}
     isPopout={false}
     linked={false}
     mockApiEnabled={false}
@@ -6011,11 +6018,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionViewComponent /> overlay mode views renders correctly when in overlay mode as a Logged Out 1`] = `
+exports[`<ExtensionView /> overlay mode views renders correctly when in overlay mode as a Logged Out 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+  Symbol(enzyme.__unrendered__): <ExtensionView
     channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
@@ -6088,6 +6095,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isLocal={true}
     isPopout={false}
     linked={false}
     mockApiEnabled={false}
@@ -6895,11 +6903,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionViewComponent /> panel mode views renders correctly when in panel mode as a Broadcaster 1`] = `
+exports[`<ExtensionView /> panel mode views renders correctly when in panel mode as a Broadcaster 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+  Symbol(enzyme.__unrendered__): <ExtensionView
     channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
@@ -6972,6 +6980,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isLocal={true}
     isPopout={false}
     linked={false}
     mockApiEnabled={false}
@@ -7779,11 +7788,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionViewComponent /> panel mode views renders correctly when in panel mode as a Logged In and Linked Viewer 1`] = `
+exports[`<ExtensionView /> panel mode views renders correctly when in panel mode as a Logged In and Linked Viewer 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+  Symbol(enzyme.__unrendered__): <ExtensionView
     channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
@@ -7856,6 +7865,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isLocal={true}
     isPopout={false}
     linked={true}
     mockApiEnabled={false}
@@ -8669,11 +8679,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionViewComponent /> panel mode views renders correctly when in panel mode as a Logged In and Unlinked Viewer 1`] = `
+exports[`<ExtensionView /> panel mode views renders correctly when in panel mode as a Logged In and Unlinked Viewer 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+  Symbol(enzyme.__unrendered__): <ExtensionView
     channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
@@ -8746,6 +8756,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isLocal={true}
     isPopout={false}
     linked={false}
     mockApiEnabled={false}
@@ -9559,11 +9570,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionViewComponent /> panel mode views renders correctly when in panel mode as a Logged Out 1`] = `
+exports[`<ExtensionView /> panel mode views renders correctly when in panel mode as a Logged Out 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+  Symbol(enzyme.__unrendered__): <ExtensionView
     channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
@@ -9636,6 +9647,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isLocal={true}
     isPopout={false}
     linked={false}
     mockApiEnabled={false}
@@ -10443,11 +10455,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ExtensionViewComponent /> panel mode views sets correct panel height when panel height provided 1`] = `
+exports[`<ExtensionView /> panel mode views sets correct panel height when panel height provided 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewComponent
+  Symbol(enzyme.__unrendered__): <ExtensionView
     channelId="twitch"
     deleteViewHandler={[Function]}
     extension={
@@ -10505,6 +10517,7 @@ ShallowWrapper {
             "isChatEnabled": true,
           }
     }
+    isLocal={true}
     isPopout={false}
     linked={false}
     mockApiEnabled={false}

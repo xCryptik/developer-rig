@@ -11,11 +11,23 @@ interface State {
 }
 
 export class Console extends React.Component<{}, State> {
+  private console: React.RefObject<HTMLDivElement>;
+
   public state: State = {
     logHistory: window.rig.history || []
   }
 
+  constructor(props: {}) {
+    super(props);
+    this.console = React.createRef();
+  }
+
   private updateConsole() {
+    setTimeout(() => {
+      const console = this.console.current;
+      const { offsetHeight, scrollHeight } = console;
+      console.scrollTop = Math.max(0, scrollHeight - offsetHeight);
+    }, 1);
     this.setState({
       logHistory: window.rig.history
     });
@@ -35,7 +47,7 @@ export class Console extends React.Component<{}, State> {
     ));
 
     return (
-      <div className="console">{logs}</div>
+      <div className="console" ref={this.console}>{logs}</div>
     );
   }
 }

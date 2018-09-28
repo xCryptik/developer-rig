@@ -31,15 +31,31 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Connect(RigNavComponent)
+          createNewProject={[Function]}
+          currentProjectIndex={0}
           error={undefined}
-          openConfigurationsHandler={[Function]}
-          openProductManagementHandler={[Function]}
+          manifest={undefined}
+          projects={
+                    Array [
+                              Object {},
+                            ]
+          }
+          selectProject={[Function]}
           selectedView="Extension Views"
           viewerHandler={[Function]}
 />,
-        <label>
-          loading...
-</label>,
+        <div>
+          <ExtensionViewContainer
+                    deleteExtensionViewHandler={[Function]}
+                    extensionViews={undefined}
+                    isLocal={undefined}
+                    manifest={undefined}
+                    openEditViewHandler={[Function]}
+                    openExtensionViewHandler={[Function]}
+                    secret={undefined}
+          />
+          <Console />
+</div>,
       ],
       "className": "rig-container",
     },
@@ -50,9 +66,14 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "createNewProject": [Function],
+          "currentProjectIndex": 0,
           "error": undefined,
-          "openConfigurationsHandler": [Function],
-          "openProductManagementHandler": [Function],
+          "manifest": undefined,
+          "projects": Array [
+            Object {},
+          ],
+          "selectProject": [Function],
           "selectedView": "Extension Views",
           "viewerHandler": [Function],
         },
@@ -65,11 +86,53 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "loading...",
+          "children": Array [
+            <ExtensionViewContainer
+              deleteExtensionViewHandler={[Function]}
+              extensionViews={undefined}
+              isLocal={undefined}
+              manifest={undefined}
+              openEditViewHandler={[Function]}
+              openExtensionViewHandler={[Function]}
+              secret={undefined}
+/>,
+            false,
+            false,
+            <Console />,
+          ],
         },
         "ref": null,
-        "rendered": "loading...",
-        "type": "label",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "deleteExtensionViewHandler": [Function],
+              "extensionViews": undefined,
+              "isLocal": undefined,
+              "manifest": undefined,
+              "openEditViewHandler": [Function],
+              "openExtensionViewHandler": [Function],
+              "secret": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          false,
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
     ],
     "type": "div",
@@ -82,15 +145,31 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Connect(RigNavComponent)
+            createNewProject={[Function]}
+            currentProjectIndex={0}
             error={undefined}
-            openConfigurationsHandler={[Function]}
-            openProductManagementHandler={[Function]}
+            manifest={undefined}
+            projects={
+                        Array [
+                                    Object {},
+                                  ]
+            }
+            selectProject={[Function]}
             selectedView="Extension Views"
             viewerHandler={[Function]}
 />,
-          <label>
-            loading...
-</label>,
+          <div>
+            <ExtensionViewContainer
+                        deleteExtensionViewHandler={[Function]}
+                        extensionViews={undefined}
+                        isLocal={undefined}
+                        manifest={undefined}
+                        openEditViewHandler={[Function]}
+                        openExtensionViewHandler={[Function]}
+                        secret={undefined}
+            />
+            <Console />
+</div>,
         ],
         "className": "rig-container",
       },
@@ -101,9 +180,14 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "createNewProject": [Function],
+            "currentProjectIndex": 0,
             "error": undefined,
-            "openConfigurationsHandler": [Function],
-            "openProductManagementHandler": [Function],
+            "manifest": undefined,
+            "projects": Array [
+              Object {},
+            ],
+            "selectProject": [Function],
             "selectedView": "Extension Views",
             "viewerHandler": [Function],
           },
@@ -116,11 +200,53 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "loading...",
+            "children": Array [
+              <ExtensionViewContainer
+                deleteExtensionViewHandler={[Function]}
+                extensionViews={undefined}
+                isLocal={undefined}
+                manifest={undefined}
+                openEditViewHandler={[Function]}
+                openExtensionViewHandler={[Function]}
+                secret={undefined}
+/>,
+              false,
+              false,
+              <Console />,
+            ],
           },
           "ref": null,
-          "rendered": "loading...",
-          "type": "label",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "deleteExtensionViewHandler": [Function],
+                "extensionViews": undefined,
+                "isLocal": undefined,
+                "manifest": undefined,
+                "openEditViewHandler": [Function],
+                "openExtensionViewHandler": [Function],
+                "secret": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            false,
+            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
         },
       ],
       "type": "div",
@@ -167,9 +293,36 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Connect(RigNavComponent)
+          createNewProject={[Function]}
+          currentProjectIndex={0}
           error={undefined}
-          openConfigurationsHandler={[Function]}
-          openProductManagementHandler={[Function]}
+          manifest={undefined}
+          projects={
+                    Array [
+                              Object {
+                                "extensionViews": Array [
+                                  Object {
+                                    "channelId": "twitch",
+                                    "features": Object {
+                                      "isChatEnabled": true,
+                                    },
+                                    "id": "1",
+                                    "isPopout": false,
+                                    "linked": false,
+                                    "linkedUserId": "",
+                                    "mode": "viewer",
+                                    "opaqueId": "ARIGopaqueId",
+                                    "orientation": "Portrait",
+                                    "role": "Logged-Out Viewer",
+                                    "type": "Panel",
+                                    "x": 0,
+                                    "y": 0,
+                                  },
+                                ],
+                              },
+                            ]
+          }
+          selectProject={[Function]}
           selectedView="Extension Views"
           viewerHandler={[Function]}
 />,
@@ -197,53 +350,11 @@ ShallowWrapper {
                                         },
                                       ]
                     }
-                    manifest={
-                              Object {
-                                        "authorName": "test",
-                                        "bitsEnabled": true,
-                                        "description": "test",
-                                        "iconUrls": Object {
-                                          "100x100": "test",
-                                        },
-                                        "id": "test",
-                                        "name": "test",
-                                        "requestIdentityLink": false,
-                                        "sku": "test",
-                                        "state": "test",
-                                        "summary": "test",
-                                        "vendorCode": "test",
-                                        "version": "0.0.1",
-                                        "views": Object {
-                                          "component": Object {
-                                            "aspectHeight": 3000,
-                                            "aspectWidth": 2500,
-                                            "canLinkExternalContent": false,
-                                            "size": 1024,
-                                            "viewerUrl": "test",
-                                            "zoom": false,
-                                            "zoomPixels": 24,
-                                          },
-                                          "config": Object {
-                                            "canLinkExternalContent": false,
-                                            "viewerUrl": "test",
-                                          },
-                                          "liveConfig": Object {
-                                            "canLinkExternalContent": false,
-                                            "viewerUrl": "test",
-                                          },
-                                          "panel": Object {
-                                            "canLinkExternalContent": false,
-                                            "height": 300,
-                                            "viewerUrl": "test",
-                                          },
-                                        },
-                                        "whitelistedConfigUrls": Array [],
-                                        "whitelistedPanelUrls": Array [],
-                                      }
-                    }
+                    isLocal={undefined}
+                    manifest={undefined}
                     openEditViewHandler={[Function]}
                     openExtensionViewHandler={[Function]}
-                    secret="test"
+                    secret={undefined}
           />
           <Console />
 </div>,
@@ -257,9 +368,34 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "createNewProject": [Function],
+          "currentProjectIndex": 0,
           "error": undefined,
-          "openConfigurationsHandler": [Function],
-          "openProductManagementHandler": [Function],
+          "manifest": undefined,
+          "projects": Array [
+            Object {
+              "extensionViews": Array [
+                Object {
+                  "channelId": "twitch",
+                  "features": Object {
+                    "isChatEnabled": true,
+                  },
+                  "id": "1",
+                  "isPopout": false,
+                  "linked": false,
+                  "linkedUserId": "",
+                  "mode": "viewer",
+                  "opaqueId": "ARIGopaqueId",
+                  "orientation": "Portrait",
+                  "role": "Logged-Out Viewer",
+                  "type": "Panel",
+                  "x": 0,
+                  "y": 0,
+                },
+              ],
+            },
+          ],
+          "selectProject": [Function],
           "selectedView": "Extension Views",
           "viewerHandler": [Function],
         },
@@ -296,55 +432,12 @@ ShallowWrapper {
                                           },
                                         ]
               }
-              manifest={
-                            Object {
-                                          "authorName": "test",
-                                          "bitsEnabled": true,
-                                          "description": "test",
-                                          "iconUrls": Object {
-                                            "100x100": "test",
-                                          },
-                                          "id": "test",
-                                          "name": "test",
-                                          "requestIdentityLink": false,
-                                          "sku": "test",
-                                          "state": "test",
-                                          "summary": "test",
-                                          "vendorCode": "test",
-                                          "version": "0.0.1",
-                                          "views": Object {
-                                            "component": Object {
-                                              "aspectHeight": 3000,
-                                              "aspectWidth": 2500,
-                                              "canLinkExternalContent": false,
-                                              "size": 1024,
-                                              "viewerUrl": "test",
-                                              "zoom": false,
-                                              "zoomPixels": 24,
-                                            },
-                                            "config": Object {
-                                              "canLinkExternalContent": false,
-                                              "viewerUrl": "test",
-                                            },
-                                            "liveConfig": Object {
-                                              "canLinkExternalContent": false,
-                                              "viewerUrl": "test",
-                                            },
-                                            "panel": Object {
-                                              "canLinkExternalContent": false,
-                                              "height": 300,
-                                              "viewerUrl": "test",
-                                            },
-                                          },
-                                          "whitelistedConfigUrls": Array [],
-                                          "whitelistedPanelUrls": Array [],
-                                        }
-              }
+              isLocal={undefined}
+              manifest={undefined}
               openEditViewHandler={[Function]}
               openExtensionViewHandler={[Function]}
-              secret="test"
+              secret={undefined}
 />,
-            false,
             false,
             false,
             <Console />,
@@ -377,57 +470,16 @@ ShallowWrapper {
                   "y": 0,
                 },
               ],
-              "manifest": Object {
-                "authorName": "test",
-                "bitsEnabled": true,
-                "description": "test",
-                "iconUrls": Object {
-                  "100x100": "test",
-                },
-                "id": "test",
-                "name": "test",
-                "requestIdentityLink": false,
-                "sku": "test",
-                "state": "test",
-                "summary": "test",
-                "vendorCode": "test",
-                "version": "0.0.1",
-                "views": Object {
-                  "component": Object {
-                    "aspectHeight": 3000,
-                    "aspectWidth": 2500,
-                    "canLinkExternalContent": false,
-                    "size": 1024,
-                    "viewerUrl": "test",
-                    "zoom": false,
-                    "zoomPixels": 24,
-                  },
-                  "config": Object {
-                    "canLinkExternalContent": false,
-                    "viewerUrl": "test",
-                  },
-                  "liveConfig": Object {
-                    "canLinkExternalContent": false,
-                    "viewerUrl": "test",
-                  },
-                  "panel": Object {
-                    "canLinkExternalContent": false,
-                    "height": 300,
-                    "viewerUrl": "test",
-                  },
-                },
-                "whitelistedConfigUrls": Array [],
-                "whitelistedPanelUrls": Array [],
-              },
+              "isLocal": undefined,
+              "manifest": undefined,
               "openEditViewHandler": [Function],
               "openExtensionViewHandler": [Function],
-              "secret": "test",
+              "secret": undefined,
             },
             "ref": null,
             "rendered": null,
             "type": [Function],
           },
-          false,
           false,
           false,
           Object {
@@ -453,9 +505,36 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Connect(RigNavComponent)
+            createNewProject={[Function]}
+            currentProjectIndex={0}
             error={undefined}
-            openConfigurationsHandler={[Function]}
-            openProductManagementHandler={[Function]}
+            manifest={undefined}
+            projects={
+                        Array [
+                                    Object {
+                                      "extensionViews": Array [
+                                        Object {
+                                          "channelId": "twitch",
+                                          "features": Object {
+                                            "isChatEnabled": true,
+                                          },
+                                          "id": "1",
+                                          "isPopout": false,
+                                          "linked": false,
+                                          "linkedUserId": "",
+                                          "mode": "viewer",
+                                          "opaqueId": "ARIGopaqueId",
+                                          "orientation": "Portrait",
+                                          "role": "Logged-Out Viewer",
+                                          "type": "Panel",
+                                          "x": 0,
+                                          "y": 0,
+                                        },
+                                      ],
+                                    },
+                                  ]
+            }
+            selectProject={[Function]}
             selectedView="Extension Views"
             viewerHandler={[Function]}
 />,
@@ -483,53 +562,11 @@ ShallowWrapper {
                                                 },
                                               ]
                         }
-                        manifest={
-                                    Object {
-                                                "authorName": "test",
-                                                "bitsEnabled": true,
-                                                "description": "test",
-                                                "iconUrls": Object {
-                                                  "100x100": "test",
-                                                },
-                                                "id": "test",
-                                                "name": "test",
-                                                "requestIdentityLink": false,
-                                                "sku": "test",
-                                                "state": "test",
-                                                "summary": "test",
-                                                "vendorCode": "test",
-                                                "version": "0.0.1",
-                                                "views": Object {
-                                                  "component": Object {
-                                                    "aspectHeight": 3000,
-                                                    "aspectWidth": 2500,
-                                                    "canLinkExternalContent": false,
-                                                    "size": 1024,
-                                                    "viewerUrl": "test",
-                                                    "zoom": false,
-                                                    "zoomPixels": 24,
-                                                  },
-                                                  "config": Object {
-                                                    "canLinkExternalContent": false,
-                                                    "viewerUrl": "test",
-                                                  },
-                                                  "liveConfig": Object {
-                                                    "canLinkExternalContent": false,
-                                                    "viewerUrl": "test",
-                                                  },
-                                                  "panel": Object {
-                                                    "canLinkExternalContent": false,
-                                                    "height": 300,
-                                                    "viewerUrl": "test",
-                                                  },
-                                                },
-                                                "whitelistedConfigUrls": Array [],
-                                                "whitelistedPanelUrls": Array [],
-                                              }
-                        }
+                        isLocal={undefined}
+                        manifest={undefined}
                         openEditViewHandler={[Function]}
                         openExtensionViewHandler={[Function]}
-                        secret="test"
+                        secret={undefined}
             />
             <Console />
 </div>,
@@ -543,9 +580,34 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "createNewProject": [Function],
+            "currentProjectIndex": 0,
             "error": undefined,
-            "openConfigurationsHandler": [Function],
-            "openProductManagementHandler": [Function],
+            "manifest": undefined,
+            "projects": Array [
+              Object {
+                "extensionViews": Array [
+                  Object {
+                    "channelId": "twitch",
+                    "features": Object {
+                      "isChatEnabled": true,
+                    },
+                    "id": "1",
+                    "isPopout": false,
+                    "linked": false,
+                    "linkedUserId": "",
+                    "mode": "viewer",
+                    "opaqueId": "ARIGopaqueId",
+                    "orientation": "Portrait",
+                    "role": "Logged-Out Viewer",
+                    "type": "Panel",
+                    "x": 0,
+                    "y": 0,
+                  },
+                ],
+              },
+            ],
+            "selectProject": [Function],
             "selectedView": "Extension Views",
             "viewerHandler": [Function],
           },
@@ -582,55 +644,12 @@ ShallowWrapper {
                                                 },
                                               ]
                 }
-                manifest={
-                                Object {
-                                                "authorName": "test",
-                                                "bitsEnabled": true,
-                                                "description": "test",
-                                                "iconUrls": Object {
-                                                  "100x100": "test",
-                                                },
-                                                "id": "test",
-                                                "name": "test",
-                                                "requestIdentityLink": false,
-                                                "sku": "test",
-                                                "state": "test",
-                                                "summary": "test",
-                                                "vendorCode": "test",
-                                                "version": "0.0.1",
-                                                "views": Object {
-                                                  "component": Object {
-                                                    "aspectHeight": 3000,
-                                                    "aspectWidth": 2500,
-                                                    "canLinkExternalContent": false,
-                                                    "size": 1024,
-                                                    "viewerUrl": "test",
-                                                    "zoom": false,
-                                                    "zoomPixels": 24,
-                                                  },
-                                                  "config": Object {
-                                                    "canLinkExternalContent": false,
-                                                    "viewerUrl": "test",
-                                                  },
-                                                  "liveConfig": Object {
-                                                    "canLinkExternalContent": false,
-                                                    "viewerUrl": "test",
-                                                  },
-                                                  "panel": Object {
-                                                    "canLinkExternalContent": false,
-                                                    "height": 300,
-                                                    "viewerUrl": "test",
-                                                  },
-                                                },
-                                                "whitelistedConfigUrls": Array [],
-                                                "whitelistedPanelUrls": Array [],
-                                              }
-                }
+                isLocal={undefined}
+                manifest={undefined}
                 openEditViewHandler={[Function]}
                 openExtensionViewHandler={[Function]}
-                secret="test"
+                secret={undefined}
 />,
-              false,
               false,
               false,
               <Console />,
@@ -663,57 +682,16 @@ ShallowWrapper {
                     "y": 0,
                   },
                 ],
-                "manifest": Object {
-                  "authorName": "test",
-                  "bitsEnabled": true,
-                  "description": "test",
-                  "iconUrls": Object {
-                    "100x100": "test",
-                  },
-                  "id": "test",
-                  "name": "test",
-                  "requestIdentityLink": false,
-                  "sku": "test",
-                  "state": "test",
-                  "summary": "test",
-                  "vendorCode": "test",
-                  "version": "0.0.1",
-                  "views": Object {
-                    "component": Object {
-                      "aspectHeight": 3000,
-                      "aspectWidth": 2500,
-                      "canLinkExternalContent": false,
-                      "size": 1024,
-                      "viewerUrl": "test",
-                      "zoom": false,
-                      "zoomPixels": 24,
-                    },
-                    "config": Object {
-                      "canLinkExternalContent": false,
-                      "viewerUrl": "test",
-                    },
-                    "liveConfig": Object {
-                      "canLinkExternalContent": false,
-                      "viewerUrl": "test",
-                    },
-                    "panel": Object {
-                      "canLinkExternalContent": false,
-                      "height": 300,
-                      "viewerUrl": "test",
-                    },
-                  },
-                  "whitelistedConfigUrls": Array [],
-                  "whitelistedPanelUrls": Array [],
-                },
+                "isLocal": undefined,
+                "manifest": undefined,
                 "openEditViewHandler": [Function],
                 "openExtensionViewHandler": [Function],
-                "secret": "test",
+                "secret": undefined,
               },
               "ref": null,
               "rendered": null,
               "type": [Function],
             },
-            false,
             false,
             false,
             Object {

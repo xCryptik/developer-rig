@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { RunList, GenericResponse } from '../core/models/run-list';
 import './component.sass';
+import { setTimeout } from 'timers';
 
 const ExtensionOnContext = 'twitch-ext-context';
 const ExtensionOnAuthorized = 'twitch-ext-auth';
@@ -10,7 +11,14 @@ export interface PublicProps {
   iframe?: HTMLIFrameElement;
 }
 
+enum TriggerState {
+  Hidden = 0,
+  Visible = 1,
+  Fading = 2,
+}
+
 interface State {
+  triggerState: number;
   selectedTrigger: string;
   runListTriggerMap: {
     [key: string]: GenericResponse;
@@ -34,12 +42,13 @@ export class RunListTrigger extends React.Component<Props, State>{
   public onChange(event: React.FormEvent<HTMLSelectElement>) {
     this.setState({
       selectedTrigger: event.currentTarget.value,
-    })
+      triggerState: TriggerState.Hidden,
+    });
   }
 
   private stateFromRunList(runList: RunList): State {
     let firstTrigger;
-    let runlistMap: { [key: string]: GenericResponse} = {}
+    let runlistMap: { [key: string]: GenericResponse } = {}
     let triggerMap: { [key: string]: string } = {}
     for (let callback in runList) {
       for (let resp of runList[callback]) {
@@ -52,6 +61,7 @@ export class RunListTrigger extends React.Component<Props, State>{
     }
 
     return {
+      triggerState: TriggerState.Hidden,
       selectedTrigger: firstTrigger,
       runListTriggerMap: runlistMap,
       triggerTypeMap: triggerMap,
@@ -81,10 +91,11 @@ export class RunListTrigger extends React.Component<Props, State>{
     return data;
   }
 
-  private triggerRunlistResponse(iframe?: HTMLIFrameElement): void{
+  private triggerRunlistResponse(iframe?: HTMLIFrameElement) {
     const data = this.dataFromTrigger(this.state.selectedTrigger);
     if (data && iframe && iframe.contentWindow) {
       iframe.contentWindow.postMessage(data, '*');
+      this.setState({ triggerState: TriggerState.Visible });
     }
   }
 
@@ -103,8 +114,18 @@ export class RunListTrigger extends React.Component<Props, State>{
   }
 
   public render() {
+    let textClassName = 'runlist-trigger__text';
+    if (this.state.triggerState === TriggerState.Visible) {
+      textClassName += ' runlist-trigger__text--on';
+      setTimeout(() => {
+        this.setState({ triggerState: TriggerState.Fading });
+      }, 1);
+    } else if (this.state.triggerState === TriggerState.Fading) {
+      textClassName += ' runlist-trigger__text--fading';
+    }
     return (
-      <div className='runlist-trigger__container'>
+      <div className='runlist-trigger'>
+        <div className={textClassName}>[Response Recieved]</div>
         <select className='runlist-trigger__select' onChange={(e) => this.onChange(e)}>
           {this.renderRunListOptions(this.props.runList)}
         </select>

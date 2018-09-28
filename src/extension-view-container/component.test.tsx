@@ -14,6 +14,8 @@ const setupShallow = setupShallowTest(ExtensionViewContainer, () => ({
   openExtensionViewHandler: jest.fn(),
   openEditViewHandler: jest.fn(),
   extension: createExtensionForTest(),
+  isLocal: true,
+  mockApiEnabled: false,
 }));
 
 describe('<ExtensionViewContainer />', () => {
@@ -32,11 +34,11 @@ describe('<ExtensionViewContainer />', () => {
       const { wrapper } = setupShallow({
         extensionViews: createViewsForTest(2, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut)
       });
-      expect(wrapper.find('Connect(ExtensionViewComponent)')).toHaveLength(2);
+      expect(wrapper.find('ExtensionView')).toHaveLength(2);
     });
     it('renders no views if none specified', () => {
       const { wrapper } = setupShallow();
-      expect(wrapper.find('Connect(ExtensionViewComponent)')).toHaveLength(0);
+      expect(wrapper.find('ExtensionView')).toHaveLength(0);
     });
   });
 });

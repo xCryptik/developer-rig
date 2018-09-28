@@ -64,6 +64,7 @@ ShallowWrapper {
           }
     }
     extensionViews={Array []}
+    isLocal={true}
     manifest={
         Object {
             "authorName": "test",
@@ -108,6 +109,7 @@ ShallowWrapper {
             "whitelistedPanelUrls": Array [],
           }
     }
+    mockApiEnabled={false}
     mode="viewer"
     openEditViewHandler={[Function]}
     openExtensionViewHandler={[Function]}
@@ -127,6 +129,48 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
+          className="trigger-bar"
+>
+          <svg
+                    height="20"
+                    version="1.1"
+                    viewBox="0 0 44 20"
+                    width="44"
+          >
+                    <g
+                              onClick={[Function]}
+                    >
+                              <rect
+                                        className="trigger-bar__switch"
+                                        height="19"
+                                        rx="2"
+                                        ry="2"
+                                        width="43"
+                                        x="0.5"
+                                        y="0.5"
+                              />
+                              <path
+                                        className="trigger-bar__switch-check"
+                                        d="m 6.5,9 4,4 6,-6 -1,-1 -5,5 -3,-3 z"
+                              />
+                              <rect
+                                        className="trigger-bar__switch-handle"
+                                        height="19"
+                                        rx="2"
+                                        ry="2"
+                                        width="21"
+                                        x="0.5"
+                                        y="0.5"
+                              />
+                    </g>
+          </svg>
+          <div
+                    className="trigger-bar__text"
+          >
+                    Use Mock Triggers
+          </div>
+</div>,
+        <div
           className="view-container"
 >
           
@@ -141,6 +185,191 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <svg
+              height="20"
+              version="1.1"
+              viewBox="0 0 44 20"
+              width="44"
+>
+              <g
+                            onClick={[Function]}
+              >
+                            <rect
+                                          className="trigger-bar__switch"
+                                          height="19"
+                                          rx="2"
+                                          ry="2"
+                                          width="43"
+                                          x="0.5"
+                                          y="0.5"
+                            />
+                            <path
+                                          className="trigger-bar__switch-check"
+                                          d="m 6.5,9 4,4 6,-6 -1,-1 -5,5 -3,-3 z"
+                            />
+                            <rect
+                                          className="trigger-bar__switch-handle"
+                                          height="19"
+                                          rx="2"
+                                          ry="2"
+                                          width="21"
+                                          x="0.5"
+                                          y="0.5"
+                            />
+              </g>
+</svg>,
+            <div
+              className="trigger-bar__text"
+>
+              Use Mock Triggers
+</div>,
+          ],
+          "className": "trigger-bar",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <g
+                onClick={[Function]}
+>
+                <rect
+                                className="trigger-bar__switch"
+                                height="19"
+                                rx="2"
+                                ry="2"
+                                width="43"
+                                x="0.5"
+                                y="0.5"
+                />
+                <path
+                                className="trigger-bar__switch-check"
+                                d="m 6.5,9 4,4 6,-6 -1,-1 -5,5 -3,-3 z"
+                />
+                <rect
+                                className="trigger-bar__switch-handle"
+                                height="19"
+                                rx="2"
+                                ry="2"
+                                width="21"
+                                x="0.5"
+                                y="0.5"
+                />
+</g>,
+              "height": "20",
+              "version": "1.1",
+              "viewBox": "0 0 44 20",
+              "width": "44",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <rect
+                    className="trigger-bar__switch"
+                    height="19"
+                    rx="2"
+                    ry="2"
+                    width="43"
+                    x="0.5"
+                    y="0.5"
+/>,
+                  <path
+                    className="trigger-bar__switch-check"
+                    d="m 6.5,9 4,4 6,-6 -1,-1 -5,5 -3,-3 z"
+/>,
+                  <rect
+                    className="trigger-bar__switch-handle"
+                    height="19"
+                    rx="2"
+                    ry="2"
+                    width="21"
+                    x="0.5"
+                    y="0.5"
+/>,
+                ],
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "trigger-bar__switch",
+                    "height": "19",
+                    "rx": "2",
+                    "ry": "2",
+                    "width": "43",
+                    "x": "0.5",
+                    "y": "0.5",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "rect",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "trigger-bar__switch-check",
+                    "d": "m 6.5,9 4,4 6,-6 -1,-1 -5,5 -3,-3 z",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "path",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "trigger-bar__switch-handle",
+                    "height": "19",
+                    "rx": "2",
+                    "ry": "2",
+                    "width": "21",
+                    "x": "0.5",
+                    "y": "0.5",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "rect",
+                },
+              ],
+              "type": "g",
+            },
+            "type": "svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Use Mock Triggers",
+              "className": "trigger-bar__text",
+            },
+            "ref": null,
+            "rendered": "Use Mock Triggers",
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -187,6 +416,48 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
+            className="trigger-bar"
+>
+            <svg
+                        height="20"
+                        version="1.1"
+                        viewBox="0 0 44 20"
+                        width="44"
+            >
+                        <g
+                                    onClick={[Function]}
+                        >
+                                    <rect
+                                                className="trigger-bar__switch"
+                                                height="19"
+                                                rx="2"
+                                                ry="2"
+                                                width="43"
+                                                x="0.5"
+                                                y="0.5"
+                                    />
+                                    <path
+                                                className="trigger-bar__switch-check"
+                                                d="m 6.5,9 4,4 6,-6 -1,-1 -5,5 -3,-3 z"
+                                    />
+                                    <rect
+                                                className="trigger-bar__switch-handle"
+                                                height="19"
+                                                rx="2"
+                                                ry="2"
+                                                width="21"
+                                                x="0.5"
+                                                y="0.5"
+                                    />
+                        </g>
+            </svg>
+            <div
+                        className="trigger-bar__text"
+            >
+                        Use Mock Triggers
+            </div>
+</div>,
+          <div
             className="view-container"
 >
             
@@ -201,6 +472,191 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <svg
+                height="20"
+                version="1.1"
+                viewBox="0 0 44 20"
+                width="44"
+>
+                <g
+                                onClick={[Function]}
+                >
+                                <rect
+                                                className="trigger-bar__switch"
+                                                height="19"
+                                                rx="2"
+                                                ry="2"
+                                                width="43"
+                                                x="0.5"
+                                                y="0.5"
+                                />
+                                <path
+                                                className="trigger-bar__switch-check"
+                                                d="m 6.5,9 4,4 6,-6 -1,-1 -5,5 -3,-3 z"
+                                />
+                                <rect
+                                                className="trigger-bar__switch-handle"
+                                                height="19"
+                                                rx="2"
+                                                ry="2"
+                                                width="21"
+                                                x="0.5"
+                                                y="0.5"
+                                />
+                </g>
+</svg>,
+              <div
+                className="trigger-bar__text"
+>
+                Use Mock Triggers
+</div>,
+            ],
+            "className": "trigger-bar",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <g
+                  onClick={[Function]}
+>
+                  <rect
+                                    className="trigger-bar__switch"
+                                    height="19"
+                                    rx="2"
+                                    ry="2"
+                                    width="43"
+                                    x="0.5"
+                                    y="0.5"
+                  />
+                  <path
+                                    className="trigger-bar__switch-check"
+                                    d="m 6.5,9 4,4 6,-6 -1,-1 -5,5 -3,-3 z"
+                  />
+                  <rect
+                                    className="trigger-bar__switch-handle"
+                                    height="19"
+                                    rx="2"
+                                    ry="2"
+                                    width="21"
+                                    x="0.5"
+                                    y="0.5"
+                  />
+</g>,
+                "height": "20",
+                "version": "1.1",
+                "viewBox": "0 0 44 20",
+                "width": "44",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <rect
+                      className="trigger-bar__switch"
+                      height="19"
+                      rx="2"
+                      ry="2"
+                      width="43"
+                      x="0.5"
+                      y="0.5"
+/>,
+                    <path
+                      className="trigger-bar__switch-check"
+                      d="m 6.5,9 4,4 6,-6 -1,-1 -5,5 -3,-3 z"
+/>,
+                    <rect
+                      className="trigger-bar__switch-handle"
+                      height="19"
+                      rx="2"
+                      ry="2"
+                      width="21"
+                      x="0.5"
+                      y="0.5"
+/>,
+                  ],
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "trigger-bar__switch",
+                      "height": "19",
+                      "rx": "2",
+                      "ry": "2",
+                      "width": "43",
+                      "x": "0.5",
+                      "y": "0.5",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "rect",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "trigger-bar__switch-check",
+                      "d": "m 6.5,9 4,4 6,-6 -1,-1 -5,5 -3,-3 z",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "path",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "trigger-bar__switch-handle",
+                      "height": "19",
+                      "rx": "2",
+                      "ry": "2",
+                      "width": "21",
+                      "x": "0.5",
+                      "y": "0.5",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "rect",
+                  },
+                ],
+                "type": "g",
+              },
+              "type": "svg",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Use Mock Triggers",
+                "className": "trigger-bar__text",
+              },
+              "ref": null,
+              "rendered": "Use Mock Triggers",
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
         Object {
           "instance": null,
           "key": undefined,

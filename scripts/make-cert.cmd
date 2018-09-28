@@ -43,15 +43,6 @@ IF "%HAS_ALL_FILES%" == "YES" (
 	IF ERRORLEVEL 1 GOTO done
 )
 
-REM Copy localhost certificates to the extension conf directory.
-SET CONF=%D%..\..\my-extension\conf
-IF NOT EXIST "%CONF%" MD "%CONF%"
-COPY /Y "%SSL%\server.*" "%CONF%" > NUL
-IF ERRORLEVEL 1 (
-	ECHO Cannot place the extension server certificates.
-	GOTO done
-)
-
 REM Import the CA certificate into the local machine's root certificate store.
 SET FF=%ProgramFiles%\Mozilla Firefox\defaults\pref
 IF NOT EXIST "%FF%" SET FF=%ProgramFiles(x86)%\Mozilla Firefox\defaults\pref
@@ -112,39 +103,34 @@ IF ERRORLEVEL 1 (
 	EXIT /B 1
 )
 
-REM Create the certificate requests for the Developer Rig and localhost.
-ECHO DNS.1 = localhost.rig.twitch.tv> rig.dns
-ECHO DNS.1 = localhost> localhost.dns
-FOR %%I IN (rig localhost) DO (
-	DEL openssl-server.cnf
-	COPY /B "%D%openssl-server.cnf"+%%I.dns openssl-server.cnf > NUL
-	openssl req -config openssl-server.cnf -newkey rsa:2048 -sha256 -nodes -out %%Icert.csr -outform PEM < enters.txt
-	IF ERRORLEVEL 1 (
-		ECHO Cannot create the %%I certificate request.
-		EXIT /B 1
-	)
-	REN serverkey.pem %%Ikey.pem
+REM Create the certificate request.
+ECHO DNS.1 = localhost.rig.twitch.tv> dns.txt
+ECHO DNS.2 = localhost>> dns.txt
+DEL openssl-server.cnf
+COPY /B "%D%openssl-server.cnf"+dns.txt openssl-server.cnf > NUL
+openssl req -config openssl-server.cnf -newkey rsa:2048 -sha256 -nodes -out servercert.csr -outform PEM < enters.txt
+IF ERRORLEVEL 1 (
+	ECHO Cannot create the certificate request.
+	EXIT /B 1
 )
 
-REM Create the server certificates for the Developer Rig and localhost.
+REM Create the server certificate.
 DEL %CA%
 COPY /B "%D%%CA%"+"%D%openssl-ca.add" %CA%
 ECHO unique_subject = no> index.txt.attr
-FOR %%I IN (rig localhost) DO (
-	openssl ca -config %CA% -policy signing_policy -extensions signing_req -out %%Icert.pem -infiles %%Icert.csr < yes.txt
-	IF ERRORLEVEL 1 (
-		ECHO Cannot create the %%I server certificate.
-		EXIT /B 1
-	)
+openssl ca -config %CA% -policy signing_policy -extensions signing_req -out servercert.pem -infiles servercert.csr < yes.txt
+IF ERRORLEVEL 1 (
+	ECHO Cannot create the server certificate.
+	EXIT /B 1
 )
 
 REM Move all desired files to the Developer Rig ssl directory.
 MOVE /Y cacert.pem "%SSL%\cacert.crt" > NUL
 MOVE /Y cakey.pem "%SSL%\cacert.key" > NUL
-MOVE /Y rigcert.pem "%SSL%\selfsigned.crt" > NUL
-MOVE /Y rigkey.pem "%SSL%\selfsigned.key" > NUL
-MOVE /Y localhostcert.pem "%SSL%\server.crt" > NUL
-MOVE /Y localhostkey.pem "%SSL%\server.key" > NUL
+COPY /Y servercert.pem "%SSL%\selfsigned.crt" > NUL
+COPY /Y serverkey.pem "%SSL%\selfsigned.key" > NUL
+MOVE /Y servercert.pem "%SSL%\server.crt" > NUL
+MOVE /Y serverkey.pem "%SSL%\server.key" > NUL
 IF ERRORLEVEL 1 (
 	ECHO Cannot place the Developer Rig certificates.
 	EXIT /B 1

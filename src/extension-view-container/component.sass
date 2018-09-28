@@ -1,10 +1,63 @@
+=user-select($property)
+  -o-user-select: $property
+  -moz-user-select: $property
+  -ms-user-select: $property
+  -webkit-user-select: $property
+  user-select: $property
+
 .view-container
   display: flex
   flex-direction: row
-  margin: 1em
+  margin: 1rem
   flex-wrap: wrap
   align-items: stretch
 
 .view-container-wrapper
   overflow-y: auto
   height: 70vh
+
+.trigger-bar
+  display: grid
+  grid-template-columns: 3rem 7rem 8rem
+  grid-gap: 11px
+  margin: 3px
+  text-align: center
+  vertical-align: middle
+
+  &__switch
+    fill: #B7B5BF
+    stroke: #B7B5BF
+
+    &--on
+      fill: #52B46E
+      stroke: #52B46E
+
+    &-check
+      fill: #FFFFFF
+      stroke: none
+      visibility: hidden
+
+      &--on
+        transition: visibility 0s .2s
+        visibility: visible
+
+    &-handle
+      fill: #FFFFFF
+      stroke: #B7B5BF
+      transition: transform ease-out .2s
+
+      &--on
+        fill: #FFFFFF
+        stroke: #52B46E
+        transform: translateX(22px)
+
+  &__text
+    margin-top: 2px
+    font-size: smaller
+    grid-column: 2
+
+  &__button
+    grid-column: 3
+    color: white
+    background-color: #7D55C7
+    border: 2px solid #7D55C7

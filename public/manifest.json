@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Developer Rig",
+  "name": "Twitch Developer Rig for Extensions",
   "icons": [
     {
       "src": "favicon.ico",

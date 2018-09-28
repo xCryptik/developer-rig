@@ -8,7 +8,7 @@
 })(function() {
   let authCallback, authData;
   let contextCallback, context, contextChangedFields;
-  let isVisible, visibilityCallback;
+  let isVisible = true, visibilityCallback;
   let errorCallback, positionCallback;
   let followCallback;
   let listeners = {};

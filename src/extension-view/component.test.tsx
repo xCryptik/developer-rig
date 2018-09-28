@@ -1,5 +1,5 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
-import { ExtensionViewComponent } from './component';
+import { ExtensionView } from './component';
 import { ViewerTypes } from '../constants/viewer-types';
 import { createExtensionForTest } from '../tests/constants/extension';
 import { MobileOrientation } from '../constants/mobile';
@@ -7,8 +7,8 @@ import { ExtensionAnchor, ExtensionMode, ExtensionViewType, ExtensionPlatform } 
 
 const DeleteButtonSelector = '.view__close_button.visible';
 
-describe('<ExtensionViewComponent />', () => {
-  const setupShallow = setupShallowTest(ExtensionViewComponent, () => ({
+describe('<ExtensionView />', () => {
+  const setupShallow = setupShallowTest(ExtensionView, () => ({
     channelId: 'twitch',
     id: '0',
     extension: createExtensionForTest(),
@@ -16,6 +16,7 @@ describe('<ExtensionViewComponent />', () => {
     role: ViewerTypes.Broadcaster,
     mode: 'viewer',
     linked: false,
+    isLocal: true,
     isPopout: false,
     position: { x: 0, y: 0 },
     frameSize: { width: 0, height: 0 },

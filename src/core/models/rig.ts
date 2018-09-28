@@ -1,3 +1,16 @@
+import { ExtensionManifest } from './manifest';
+
+export interface RigProject {
+  extensionViews: RigExtensionView[],
+  isLocal: boolean;
+  projectFolderPath: string;
+  manifest: ExtensionManifest;
+  secret: string;
+  frontendFolderName: string;
+  frontendCommand: string;
+  backendCommand: string;
+}
+
 export interface RigExtensionView {
   x: number;
   y: number;
