@@ -108,6 +108,13 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
     }
   }
 
+  private getExtensionClientId(rigProject: RigProject): string{
+    if(rigProject.manifest.id){
+      return rigProject.manifest.id;
+    }
+    return '';
+  }
+
   private getExtensionViews(rigProject: RigProject): string {
     if (rigProject.manifest.views) {
       const extensionViewTypes = ['panel', 'component', 'videoOverlay', 'mobile'];
@@ -181,6 +188,10 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
           <label className="project-view-property">
             <div className="project-view-property__name">Extension Types</div>
             <div className="project-view-property__value">{this.getExtensionViews(rigProject)}</div>
+          </label>
+          <label className="project-view-property">
+            <div className="project-view-property__name">Client ID</div>
+            <div className="project-view-property__value">{this.getExtensionClientId(rigProject)}</div>
           </label>
           {!rigProject.isLocal && (
             <>

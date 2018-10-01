@@ -199,6 +199,20 @@ ShallowWrapper {
                               Panel, Component
                     </div>
           </label>
+          <label
+                    className="project-view-property"
+          >
+                    <div
+                              className="project-view-property__name"
+                    >
+                              Client ID
+                    </div>
+                    <div
+                              className="project-view-property__value"
+                    >
+                              test
+                    </div>
+          </label>
 </div>,
         <div
           className="project-view__vertical-bar"
@@ -394,6 +408,20 @@ ShallowWrapper {
                             className="project-view-property__value"
               >
                             Panel, Component
+              </div>
+</label>,
+            <label
+              className="project-view-property"
+>
+              <div
+                            className="project-view-property__name"
+              >
+                            Client ID
+              </div>
+              <div
+                            className="project-view-property__value"
+              >
+                            test
               </div>
 </label>,
             false,
@@ -819,6 +847,54 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": "Panel, Component",
+                "type": "div",
+              },
+            ],
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="project-view-property__name"
+>
+                  Client ID
+</div>,
+                <div
+                  className="project-view-property__value"
+>
+                  test
+</div>,
+              ],
+              "className": "project-view-property",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Client ID",
+                  "className": "project-view-property__name",
+                },
+                "ref": null,
+                "rendered": "Client ID",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "test",
+                  "className": "project-view-property__value",
+                },
+                "ref": null,
+                "rendered": "test",
                 "type": "div",
               },
             ],
@@ -1255,6 +1331,20 @@ ShallowWrapper {
                                     Panel, Component
                         </div>
             </label>
+            <label
+                        className="project-view-property"
+            >
+                        <div
+                                    className="project-view-property__name"
+                        >
+                                    Client ID
+                        </div>
+                        <div
+                                    className="project-view-property__value"
+                        >
+                                    test
+                        </div>
+            </label>
 </div>,
           <div
             className="project-view__vertical-bar"
@@ -1450,6 +1540,20 @@ ShallowWrapper {
                                 className="project-view-property__value"
                 >
                                 Panel, Component
+                </div>
+</label>,
+              <label
+                className="project-view-property"
+>
+                <div
+                                className="project-view-property__name"
+                >
+                                Client ID
+                </div>
+                <div
+                                className="project-view-property__value"
+                >
+                                test
                 </div>
 </label>,
               false,
@@ -1875,6 +1979,54 @@ ShallowWrapper {
                   },
                   "ref": null,
                   "rendered": "Panel, Component",
+                  "type": "div",
+                },
+              ],
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="project-view-property__name"
+>
+                    Client ID
+</div>,
+                  <div
+                    className="project-view-property__value"
+>
+                    test
+</div>,
+                ],
+                "className": "project-view-property",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Client ID",
+                    "className": "project-view-property__name",
+                  },
+                  "ref": null,
+                  "rendered": "Client ID",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "test",
+                    "className": "project-view-property__value",
+                  },
+                  "ref": null,
+                  "rendered": "test",
                   "type": "div",
                 },
               ],
