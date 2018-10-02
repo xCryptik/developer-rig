@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <UserDropdownComponent
+    logout={[Function]}
     session={null}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -33,9 +34,12 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <UserDropdownComponent
+    logout={[Function]}
     session={
         Object {
             "authToken": "test",
+            "displayName": "test",
+            "id": "test",
             "login": "test",
             "profileImageUrl": "test.png",
           }

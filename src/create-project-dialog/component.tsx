@@ -303,7 +303,7 @@ export class CreateProjectDialog extends React.Component<Props, State>{
                 <div className="project-dialog-property__name">Add Code to Project</div>
                 <label className="project-dialog-property__value">
                   <input className="project-dialog-property__left-input" type="radio" name="codeGenerationOption" value={CodeGenerationOption.None} checked={codeGenerationOption === CodeGenerationOption.None} onChange={this.onChange} />
-                  <span className="project-dialog-property__right-text">None (Just Create Project Folder)</span>
+                  <span className="project-dialog-property__right-text">None (Only create project folder, if specified)</span>
                 </label>
                 {false && <label className="project-dialog-property__value">
                   <input className="project-dialog-property__left-input" type="radio" name="codeGenerationOption" value={CodeGenerationOption.Scaffolding} checked={codeGenerationOption === CodeGenerationOption.Scaffolding} onChange={this.onChange} />

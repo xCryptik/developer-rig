@@ -70,7 +70,7 @@ module.exports = function(app, extension) {
       res.end();
     } else {
       res.writeHead(400);
-      res.end({ message: 'Client-ID not provided' });
+      res.end(JSON.stringify({ message: 'Client-ID not provided' }));
     }
   });
 

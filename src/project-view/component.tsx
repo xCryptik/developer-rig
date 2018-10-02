@@ -33,9 +33,10 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
     super(props);
     fetchHostingStatus().then((status) => {
       const { rigProject } = props;
+      const frontend = rigProject.projectFolderPath || rigProject.frontendFolderName || rigProject.frontendCommand;
       this.setState({
         backendResult: getStatus(rigProject.backendCommand, status.isBackendRunning),
-        frontendResult: getStatus(rigProject.frontendFolderName || rigProject.frontendCommand, status.isFrontendRunning),
+        frontendResult: getStatus(frontend, status.isFrontendRunning),
       });
 
       function getStatus(value: string, isRunning: boolean): HostingResult {
@@ -76,10 +77,11 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
 
   private toggleFrontend = async () => {
     const rigProject = this.props.rigProject;
-    if (rigProject.frontendFolderName || rigProject.frontendCommand) {
+    if (rigProject.projectFolderPath || rigProject.frontendFolderName || rigProject.frontendCommand) {
       try {
+        const frontendState = this.state.frontendResult;
         this.setState({ frontendResult: HostingResult.None });
-        if (this.getIsRunning(this.state.frontendResult)) {
+        if (this.getIsRunning(frontendState)) {
           const { frontendResult } = await stopHosting(StopOptions.Frontend);
           this.setState({ frontendResult });
         } else if (rigProject.frontendCommand) {
@@ -106,13 +108,6 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
         this.setState({ frontendResult: ex.message });
       }
     }
-  }
-
-  private getExtensionClientId(rigProject: RigProject): string{
-    if(rigProject.manifest.id){
-      return rigProject.manifest.id;
-    }
-    return '';
   }
 
   private getExtensionViews(rigProject: RigProject): string {
@@ -191,7 +186,7 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
           </label>
           <label className="project-view-property">
             <div className="project-view-property__name">Client ID</div>
-            <div className="project-view-property__value">{this.getExtensionClientId(rigProject)}</div>
+            <div className="project-view-property__value">{rigProject.manifest.id}</div>
           </label>
           {!rigProject.isLocal && (
             <>

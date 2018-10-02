@@ -3,7 +3,14 @@ import { UserDropdownComponent } from './component';
 
 describe('<UserDropdownComponent />', () => {
   const defaultGenerator = () => ({
-    session: { login: 'test', profileImageUrl: 'test.png', authToken: 'test' },
+    session: {
+      authToken: 'test',
+      displayName: 'test',
+      id: 'test',
+      login: 'test',
+      profileImageUrl: 'test.png',
+    },
+    logout: jest.fn(),
   });
   const setupRenderer = setupShallowTest(UserDropdownComponent, defaultGenerator);
 
@@ -19,12 +26,19 @@ describe('<UserDropdownComponent />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('remders correctly when clicked', () => {
+  it('renders correctly when clicked', () => {
     const { wrapper } = setupRenderer();
     wrapper.simulate('click');
     expect(wrapper.find('.user-dropdown__menu.open')).toHaveLength(1);
 
     wrapper.simulate('click');
     expect(wrapper.find('.open')).toHaveLength(0);
+  });
+
+  it('signs out', () => {
+    const { wrapper } = setupRenderer();
+    wrapper.find('li').last().simulate('click');
+    expect(localStorage.getItem('rigLogin')).toEqual(null);
+    expect(wrapper.instance().props.logout).toHaveBeenCalledTimes(1);
   });
 });

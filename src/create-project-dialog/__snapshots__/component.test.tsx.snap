@@ -232,7 +232,7 @@ ShallowWrapper {
                                                   <span
                                                             className="project-dialog-property__right-text"
                                                   >
-                                                            None (Just Create Project Folder)
+                                                            None (Only create project folder, if specified)
                                                   </span>
                                         </label>
                                         <label
@@ -544,7 +544,7 @@ ShallowWrapper {
                                                         <span
                                                                       className="project-dialog-property__right-text"
                                                         >
-                                                                      None (Just Create Project Folder)
+                                                                      None (Only create project folder, if specified)
                                                         </span>
                                           </label>
                                           <label
@@ -898,7 +898,7 @@ ShallowWrapper {
                                                       <span
                                                                         className="project-dialog-property__right-text"
                                                       >
-                                                                        None (Just Create Project Folder)
+                                                                        None (Only create project folder, if specified)
                                                       </span>
                                     </label>
                                     <label
@@ -1151,7 +1151,7 @@ ShallowWrapper {
                                             <span
                                                                   className="project-dialog-property__right-text"
                                             >
-                                                                  None (Just Create Project Folder)
+                                                                  None (Only create project folder, if specified)
                                             </span>
                       </label>
                       <label
@@ -1808,7 +1808,7 @@ ShallowWrapper {
                           <span
                                                     className="project-dialog-property__right-text"
                           >
-                                                    None (Just Create Project Folder)
+                                                    None (Only create project folder, if specified)
                           </span>
 </label>,
                         false,
@@ -1863,7 +1863,7 @@ ShallowWrapper {
                             <span
                               className="project-dialog-property__right-text"
 >
-                              None (Just Create Project Folder)
+                              None (Only create project folder, if specified)
 </span>,
                           ],
                           "className": "project-dialog-property__value",
@@ -1891,11 +1891,11 @@ ShallowWrapper {
                             "key": undefined,
                             "nodeType": "host",
                             "props": Object {
-                              "children": "None (Just Create Project Folder)",
+                              "children": "None (Only create project folder, if specified)",
                               "className": "project-dialog-property__right-text",
                             },
                             "ref": null,
-                            "rendered": "None (Just Create Project Folder)",
+                            "rendered": "None (Only create project folder, if specified)",
                             "type": "span",
                           },
                         ],
@@ -2462,7 +2462,7 @@ ShallowWrapper {
                                                             <span
                                                                         className="project-dialog-property__right-text"
                                                             >
-                                                                        None (Just Create Project Folder)
+                                                                        None (Only create project folder, if specified)
                                                             </span>
                                                 </label>
                                                 <label
@@ -2774,7 +2774,7 @@ ShallowWrapper {
                                                                 <span
                                                                                 className="project-dialog-property__right-text"
                                                                 >
-                                                                                None (Just Create Project Folder)
+                                                                                None (Only create project folder, if specified)
                                                                 </span>
                                                 </label>
                                                 <label
@@ -3128,7 +3128,7 @@ ShallowWrapper {
                                                             <span
                                                                                 className="project-dialog-property__right-text"
                                                             >
-                                                                                None (Just Create Project Folder)
+                                                                                None (Only create project folder, if specified)
                                                             </span>
                                         </label>
                                         <label
@@ -3381,7 +3381,7 @@ ShallowWrapper {
                                                 <span
                                                                         className="project-dialog-property__right-text"
                                                 >
-                                                                        None (Just Create Project Folder)
+                                                                        None (Only create project folder, if specified)
                                                 </span>
                         </label>
                         <label
@@ -4038,7 +4038,7 @@ ShallowWrapper {
                             <span
                                                         className="project-dialog-property__right-text"
                             >
-                                                        None (Just Create Project Folder)
+                                                        None (Only create project folder, if specified)
                             </span>
 </label>,
                           false,
@@ -4093,7 +4093,7 @@ ShallowWrapper {
                               <span
                                 className="project-dialog-property__right-text"
 >
-                                None (Just Create Project Folder)
+                                None (Only create project folder, if specified)
 </span>,
                             ],
                             "className": "project-dialog-property__value",
@@ -4121,11 +4121,11 @@ ShallowWrapper {
                               "key": undefined,
                               "nodeType": "host",
                               "props": Object {
-                                "children": "None (Just Create Project Folder)",
+                                "children": "None (Only create project folder, if specified)",
                                 "className": "project-dialog-property__right-text",
                               },
                               "ref": null,
-                              "rendered": "None (Just Create Project Folder)",
+                              "rendered": "None (Only create project folder, if specified)",
                               "type": "span",
                             },
                           ],
