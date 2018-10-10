@@ -214,7 +214,7 @@ export class ExtensionView extends React.Component<Props, State> {
         extensionProps.viewStyles = ConfigViewDimensions;
         extensionProps.viewWrapperStyles = ConfigViewWrapperDimensions;
         break;
-      case ExtensionViewType.LiveConfig:
+      case ExtensionMode.Dashboard:
         extensionProps.viewStyles = {
           height: panelHeight + 'px',
           width: PanelViewDimensions.width + 'px',
