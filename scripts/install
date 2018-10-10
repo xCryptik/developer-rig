@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Configure the temporary directory.
-if [ "$(uname)" != "Darwin" ]; then
-	echo "This script is for Mac only."
+if [ "$(uname)" != "Linux" -a "$(uname)" != "Darwin" ]; then
+	echo "This script is for Linux or Mac only."
 	exit 1
 fi
 T=$(mktemp -d)
@@ -22,31 +22,55 @@ check() {
 	[ $? -eq 0 ] || fail "Cannot $1."
 }
 
-# Download and install Node, if necessary.
-if ! node --version > /dev/null 2>&1; then
-	PKG="$T/node-v8.11.3.pkg"
-	curl -o "$PKG" 'https://nodejs.org/dist/v8.11.3/node-v8.11.3.pkg'
-	check "download Node"
-	sudo installer -pkg "$PKG" -target /
-	check "install Node"
-else
-	V=$(node --version | sed -e 's/v//' -e 's/\..*//')
-	if [ $V -lt 6 ]; then
-		echo -e "\033[0;31mYour current version of node is less than 6.  Before re-running this script,"
-		echo "you must either uninstall the current version or, if you already have a later"
-		echo "version installed, ensure it is earlier in your path so this and other"
-		echo -e "Developer Rig scripts will use it.\033[0m"
+install_for_linux() {
+	# Check for required installations.
+	node --version > /dev/null 2>&1 && MISSING_NODE=false || MISSING_NODE=true
+	yarn --version > /dev/null 2>&1 && MISSING_YARN=false || MISSING_YARN=true
+	if $MISSING_NODE || $MISSING_YARN; then
+		echo -e -n "\033[0;31mThe Developer Rig requires "
+		if $MISSING_NODE && $MISSING_YARN; then
+			echo -n "node and yarn"
+		elif $MISSING_NODE; then
+			echo -n "node"
+		else
+			echo -n "yarn"
+		fi
+		echo -e ".  Please install them and try again.\033[0m"
+		exit 1
+	else
+		exit 0
+	fi
+}
+
+install_for_mac() {
+	# Download and install Node, if necessary.
+	if ! node --version > /dev/null 2>&1; then
+		PKG="$T/node-v8.11.3.pkg"
+		curl -o "$PKG" 'https://nodejs.org/dist/v8.11.3/node-v8.11.3.pkg'
+		check "download Node"
+		sudo installer -pkg "$PKG" -target /
+		check "install Node"
+	else
+		V=$(node --version | sed -e 's/v//' -e 's/\..*//')
+		if [ $V -lt 6 ]; then
+			echo -e "\033[0;31mYour current version of node is less than 6.  Before re-running this script,"
+			echo "you must either uninstall the current version or, if you already have a later"
+			echo "version installed, ensure it is earlier in your path so this and other"
+			echo -e "Developer Rig scripts will use it.\033[0m"
+			exit 1
+		fi
+	fi
+
+	# Download and install Yarn, if necessary.
+	if ! yarn --version > /dev/null 2>&1; then
+		touch ~/.profile
+		rm -rf ~/.yarn
+		curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --rc
+		check "install Yarn"
+		echo -e "\033[1;32mNOTE:\033[0;32m  A fresh installation of Yarn requires a new terminal window.  Please run"
+		echo -e "the script again in a new terminal window\033[0m."
 		exit 1
 	fi
-fi
+}
 
-# Download and install Yarn, if necessary.
-if ! yarn --version > /dev/null 2>&1; then
-	touch ~/.profile
-	rm -rf ~/.yarn
-	curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --rc
-	check "install Yarn"
-	echo -e "\033[1;32mNOTE:\033[0;32m  A fresh installation of Yarn requires a new terminal window.  Please run"
-	echo -e "the script again in a new terminal window\033[0m."
-	exit 1
-fi
+[ "$(uname)" != "Linux" ] && install_for_linux || install_for_mac
