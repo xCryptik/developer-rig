@@ -12,17 +12,18 @@ class Api {
     this.isLocal = isLocal;
   }
 
-  public async get<T>(path: string, message4xx?: string, headers?: HeadersInit): Promise<T> {
-    return this.fetch<T>('GET', path, message4xx, headers);
+  public async get<T>(path: string, headers?: HeadersInit): Promise<T> {
+    return this.fetch<T>('GET', path, headers);
   }
 
-  public async post<T = void>(path: string, body: any, message4xx?: string, headers?: HeadersInit): Promise<T> {
-    return this.fetch<T>('POST', path, message4xx, headers, body);
+  public async post<T = void>(path: string, body: any, headers?: HeadersInit): Promise<T> {
+    return this.fetch<T>('POST', path, headers, body);
   }
 
-  public async fetch<T>(method: 'GET' | 'POST', path: string, message4xx: string, headers: HeadersInit, body?: any): Promise<T> {
+  public async fetch<T>(method: 'GET' | 'POST', path: string, headers: HeadersInit, body?: any): Promise<T> {
     const overridableHeaders: HeadersInit = {
       Accept: 'application/vnd.twitchtv.v5+json; charset=UTF-8',
+      'X-Requested-With': 'developer-rig; 0.6.0',
     };
     if (body) {
       overridableHeaders['Content-Type'] = 'application/json; charset=UTF-8';
@@ -38,12 +39,8 @@ class Api {
     const url = new URL(path, `https://${this.isLocal ? 'localhost.rig.twitch.tv:3000' : API_HOST}`);
     const response = await fetch(url.toString(), request);
     if (response.status >= 400) {
-      if (response.status < 500 && message4xx) {
-        throw new Error(message4xx);
-      } else {
-        const message = 'Cannot access Twitch API.  Try again later.';
-        throw new Error(await response.json().then((json) => json.message || message).catch(() => message));
-      }
+      const message = 'Cannot access Twitch API.  Try again later.';
+      throw new Error(await response.json().then((json) => json.message || message).catch(() => message));
     } else if (response.status !== 204) {
       return await response.json() as T;
     }
@@ -115,7 +112,7 @@ export async function fetchExamples(): Promise<Example[]> {
 
 export async function fetchExtensionManifest(isLocal: boolean, id: string, version: string, jwt: string): Promise<ExtensionManifest> {
   const api = new Api({ isLocal });
-  const response = await api.get<{ extensions: any[] }>(`/extensions/${id}/${version}`, `Unable to authorize for client id ${id}`, {
+  const response = await api.get<{ extensions: any[] }>(`/extensions/${id}/${version}`, {
     Authorization: `Bearer ${jwt}`,
     'Client-ID': id,
   });
@@ -142,7 +139,7 @@ interface UsersResponse {
 
 export async function fetchUser(token: string, login?: string) {
   const path = `/helix/users${login ? `?login=${login}` : ''}`;
-  const response = await onlineApi.get<UsersResponse>(path, `Cannot authorize to get user data with access token ${token}`, {
+  const response = await onlineApi.get<UsersResponse>(path, {
     Authorization: `Bearer ${token}`,
   });
   const { data } = response;
@@ -162,7 +159,7 @@ interface ProductsResponse {
 
 export async function fetchProducts(clientId: string, token: string): Promise<Product[]> {
   const path = `/v5/bits/extensions/twitch.ext.${clientId}/products?includeAll=true`;
-  const response = await onlineApi.get<ProductsResponse>(path, `Cannot authorize to get products for clientId: ${clientId}`, {
+  const response = await onlineApi.get<ProductsResponse>(path, {
     Authorization: `OAuth ${token}`,
     'Client-ID': clientId,
   });
@@ -195,7 +192,7 @@ export async function saveProduct(clientId: string, token: string, product: Prod
     broadcast: product.broadcast === 'true',
     expiration: product.deprecated ? new Date(Date.now()).toISOString() : null,
   };
-  return onlineApi.post(path, { product: deserializedProduct }, 'Cannot authorize to save product', {
+  return onlineApi.post(path, { product: deserializedProduct }, {
     Authorization: `OAuth ${token}`,
     'Client-ID': clientId,
   });
@@ -203,7 +200,7 @@ export async function saveProduct(clientId: string, token: string, product: Prod
 
 export async function fetchNewRelease() {
   const url = 'https://api.github.com/repos/twitchdev/developer-rig/releases/latest';
-  const response = await onlineApi.get<any>(url, 'Cannot authorize at GitHub', {
+  const response = await onlineApi.get<any>(url, {
     Accept: 'application/vnd.github.v3+json',
   });
   const tagName = response.tag_name;
@@ -229,7 +226,7 @@ export async function fetchGlobalConfigurationSegment(clientId: string, userId: 
     Authorization: `Bearer ${createConfigurationToken(secret, userId)}`,
     'Client-ID': clientId,
   };
-  const segmentMap = await onlineApi.get<SegmentRecordMap>(path, 'Cannot authorize for global configuration', headers);
+  const segmentMap = await onlineApi.get<SegmentRecordMap>(path, headers);
   const global = segmentMap['global:'];
   return global ? global.record : { content: '', version: '' };
 }
@@ -245,7 +242,7 @@ export async function fetchChannelConfigurationSegments(clientId: string, userId
     Authorization: `Bearer ${createConfigurationToken(secret, userId)}`,
     'Client-ID': clientId,
   };
-  const segmentMap = await onlineApi.get<SegmentRecordMap>(path, 'Cannot authorize for channel configurations', headers);
+  const segmentMap = await onlineApi.get<SegmentRecordMap>(path, headers);
   const broadcaster = segmentMap[`broadcaster:${channelId}`];
   const developer = segmentMap[`developer:${channelId}`];
   const segments = {} as SegmentMap;

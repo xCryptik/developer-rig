@@ -127,7 +127,7 @@ export class ConfigurationServiceView extends React.Component<Props, State>{
           </label>
           {this.state.configurationType !== ConfigurationType.Global && <>
             <label className="configuration-service-view-property">
-              <div className="configuration-service-view-property__name">Channel Name</div>
+              <div className="configuration-service-view-property__name">Channel ID or Name</div>
               <input className={channelClassName} type="text" name="channelId" value={this.state.channelId} onChange={this.onChange} />
             </label>
             <button className="configuration-service-view__button" onClick={this.fetchChannelConfiguration}>Fetch</button>
