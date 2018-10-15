@@ -9,7 +9,7 @@ Take these steps to get the Rig running:
 1.  If you already have [Git](https://git-scm.com/download) installed, clone the rig.  Otherwise, [download and extract the Zip file](https://github.com/twitchdev/developer-rig/archive/master.zip).
 2.  Open the `scripts` folder in the `developer-rig` folder.
 3.  Double-click the `configure` file on Mac, `configure.cmd` file on Windows.  The first time you run the script it will take a while since it will install and configure all of the dependencies.
-4. Double-click the `run` file on Mac, `run.cmd` file on Windows.  Alternatively, open a terminal, navigate to the root folder of the Developer Rig on your machine, type `yarn start`.  
+4. Double-click the `run` file on Mac, `run.cmd` file on Windows.  Alternatively, open a terminal, navigate to the root folder of the Developer Rig on your machine, type `yarn start`.
 
 Once in the Rig, sign in with your Twitch credentials and create your first Extension Project.  Learn more [here](https://dev.twitch.tv/docs/extensions/rig/).
 
@@ -32,7 +32,7 @@ Sometimes deleting and reinstalling your node_modules fixes this issue.
 On macOS, you may need to explicitly install watchman via brew install watchman.
 
 #### yarn install fails in libssh2
-See issue #48. Be sure libssh and its dependencies are installed.
+See [issue #48](https://github.com/twitchdev/developer-rig/issues/48). Be sure libssh and its dependencies are installed.
 
 #### I get an error when pulling in the example project
 Ensure that Git is in your PATH variables by trying to run git at your command line. If that works, also ensure that the local folder does not currently exist.
