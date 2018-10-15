@@ -10,6 +10,7 @@ import {
   fetchProducts,
   fetchUser,
   hostFrontend,
+  saveConfigurationSegment,
   saveProduct,
   startBackend,
   startFrontend,
@@ -182,6 +183,20 @@ describe('api', () => {
       } catch (ex) {
         expect(ex.message).toEqual(`Invalid server response for access token ${token}`);
       }
+    });
+  });
+
+  describe('saveConfigurationSegment', () => {
+    beforeEach(function() {
+      globalAny.fetch = jest.fn().mockImplementation(mockSaveProduct);
+    });
+
+    it('succeeds with channel', async function() {
+      await saveConfigurationSegment('clientId', 'userId', 'secret', 'segment', 'channelId', 'content', 'version');
+    });
+
+    it('succeeds with global', async function() {
+      await saveConfigurationSegment('clientId', 'userId', 'secret', 'global', '', 'content', 'version');
     });
   });
 

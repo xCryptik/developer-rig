@@ -20,7 +20,11 @@ class Api {
     return this.fetch<T>('POST', path, headers, body);
   }
 
-  public async fetch<T>(method: 'GET' | 'POST', path: string, headers: HeadersInit, body?: any): Promise<T> {
+  public async put<T = void>(path: string, body: any, headers?: HeadersInit): Promise<T> {
+    return this.fetch<T>('PUT', path, headers, body);
+  }
+
+  public async fetch<T>(method: 'GET' | 'POST' | 'PUT', path: string, headers: HeadersInit, body?: any): Promise<T> {
     const overridableHeaders: HeadersInit = {
       Accept: 'application/vnd.twitchtv.v5+json; charset=UTF-8',
       'X-Requested-With': 'developer-rig; 0.6.0',
@@ -253,4 +257,21 @@ export async function fetchChannelConfigurationSegments(clientId: string, userId
     segments.developer = developer.record;
   }
   return segments;
+}
+
+export async function saveConfigurationSegment(clientId: string, userId: string, secret: string, segment: string, channelId: string, content: string, version: string) {
+  const path = `/extensions/${clientId}/configurations/`;
+  const headers = {
+    Authorization: `Bearer ${createConfigurationToken(secret, userId)}`,
+    'Client-ID': clientId,
+  };
+  const body: { [key: string]: string } = {
+    segment,
+    version,
+    content,
+  };
+  if (segment !== 'global') {
+    body.channel_id = channelId;
+  }
+  onlineApi.put(path, body, headers);
 }

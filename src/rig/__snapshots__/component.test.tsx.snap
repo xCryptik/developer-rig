@@ -79,7 +79,7 @@ ShallowWrapper {
           "children": Array [
             false,
             undefined,
-            false,
+            undefined,
             undefined,
             <CreateProjectDialog
               closeHandler={[Function]}
@@ -95,7 +95,7 @@ ShallowWrapper {
         "rendered": Array [
           false,
           undefined,
-          false,
+          undefined,
           undefined,
           Object {
             "instance": null,
@@ -175,7 +175,7 @@ ShallowWrapper {
             "children": Array [
               false,
               undefined,
-              false,
+              undefined,
               undefined,
               <CreateProjectDialog
                 closeHandler={[Function]}
@@ -191,7 +191,7 @@ ShallowWrapper {
           "rendered": Array [
             false,
             undefined,
-            false,
+            undefined,
             undefined,
             Object {
               "instance": null,
@@ -378,7 +378,7 @@ ShallowWrapper {
           "children": Array [
             false,
             false,
-            false,
+            undefined,
             <ExtensionViewContainer
               configurations={undefined}
               deleteExtensionViewHandler={[Function]}
@@ -419,7 +419,7 @@ ShallowWrapper {
         "rendered": Array [
           false,
           false,
-          false,
+          undefined,
           Object {
             "instance": null,
             "key": "ExtensionViewContainer0",
@@ -595,7 +595,7 @@ ShallowWrapper {
             "children": Array [
               false,
               false,
-              false,
+              undefined,
               <ExtensionViewContainer
                 configurations={undefined}
                 deleteExtensionViewHandler={[Function]}
@@ -636,7 +636,7 @@ ShallowWrapper {
           "rendered": Array [
             false,
             false,
-            false,
+            undefined,
             Object {
               "instance": null,
               "key": "ExtensionViewContainer0",

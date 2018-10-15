@@ -151,6 +151,18 @@ ShallowWrapper {
                               value=""
                     />
           </label>
+          <button
+                    className="configuration-service-view__button"
+                    onClick={[Function]}
+          >
+                    Save
+          </button>
+          <button
+                    className="configuration-service-view__button"
+                    onClick={[Function]}
+          >
+                    Cancel
+          </button>
 </div>,
         <div
           className="configuration-service-view__vertical-bar"
@@ -272,7 +284,18 @@ ShallowWrapper {
                             value=""
               />
 </label>,
-            false,
+            <button
+              className="configuration-service-view__button"
+              onClick={[Function]}
+>
+              Save
+</button>,
+            <button
+              className="configuration-service-view__button"
+              onClick={[Function]}
+>
+              Cancel
+</button>,
           ],
           "className": "configuration-service-view__section configuration-service-view__section--left",
         },
@@ -504,7 +527,32 @@ ShallowWrapper {
             ],
             "type": "label",
           },
-          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Save",
+              "className": "configuration-service-view__button",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Save",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Cancel",
+              "className": "configuration-service-view__button",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Cancel",
+            "type": "button",
+          },
         ],
         "type": "div",
       },
@@ -746,6 +794,18 @@ ShallowWrapper {
                                     value=""
                         />
             </label>
+            <button
+                        className="configuration-service-view__button"
+                        onClick={[Function]}
+            >
+                        Save
+            </button>
+            <button
+                        className="configuration-service-view__button"
+                        onClick={[Function]}
+            >
+                        Cancel
+            </button>
 </div>,
           <div
             className="configuration-service-view__vertical-bar"
@@ -867,7 +927,18 @@ ShallowWrapper {
                                 value=""
                 />
 </label>,
-              false,
+              <button
+                className="configuration-service-view__button"
+                onClick={[Function]}
+>
+                Save
+</button>,
+              <button
+                className="configuration-service-view__button"
+                onClick={[Function]}
+>
+                Cancel
+</button>,
             ],
             "className": "configuration-service-view__section configuration-service-view__section--left",
           },
@@ -1099,7 +1170,32 @@ ShallowWrapper {
               ],
               "type": "label",
             },
-            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Save",
+                "className": "configuration-service-view__button",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Save",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Cancel",
+                "className": "configuration-service-view__button",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Cancel",
+              "type": "button",
+            },
           ],
           "type": "div",
         },
