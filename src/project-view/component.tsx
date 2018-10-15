@@ -22,12 +22,16 @@ enum HostingResult {
 interface State {
   backendResult: string;
   frontendResult: string;
+  updateResult: string;
+  version: string;
 }
 
 export class ProjectView extends React.Component<ProjectViewProps, State>{
   public state: State = {
     backendResult: HostingResult.None,
     frontendResult: HostingResult.None,
+    updateResult: '',
+    version: this.props.rigProject.manifest.version,
   };
 
   constructor(props: ProjectViewProps) {
@@ -56,6 +60,10 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
     } else {
       this.props.onChange({ [name]: value } as any as RigProject);
     }
+  }
+
+  public onChangeVersion = (input: React.FormEvent<HTMLInputElement>) => {
+    this.setState({ updateResult: '', version: input.currentTarget.value });
   }
 
   private toggleBackend = async () => {
@@ -138,65 +146,90 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
   private refreshManifest = async () => {
     const { isLocal, secret, manifest: { id: clientId, version } } = this.props.rigProject;
     const manifest = await fetchUserExtensionManifest(isLocal, this.props.userId, secret, clientId, version);
+    this.setState({ version: manifest.version });
     this.props.onChange({ manifest } as any as RigProject);
   }
 
+  private updateByVersion = async () => {
+    this.setState({ updateResult: 'fetching...' });
+    try {
+      const { isLocal, secret, manifest: { id: clientId } } = this.props.rigProject;
+      const manifest = await fetchUserExtensionManifest(isLocal, this.props.userId, secret, clientId, this.state.version);
+      this.setState({ updateResult: '' });
+      this.props.onChange({ manifest } as any as RigProject);
+    } catch (ex) {
+      this.setState({ updateResult: 'not found' });
+    }
+  }
+
   public render() {
-    const rigProject = this.props.rigProject;
+    const { rigProject } = this.props;
     const frontendHostText = this.getIsRunning(this.state.frontendResult) ? 'Stop Hosting' : 'Host with Rig';
     const frontendCommandText = this.getIsRunning(this.state.frontendResult) ? 'Deactivate' : 'Activate';
     const backendText = this.getIsRunning(this.state.backendResult) ? 'Deactivate' : 'Activate';
     return (
       <div className="project-view">
-        <div className="project-view__section project-view__section--left">
-          <label className="project-view-property">
+        <div className="project-view__section project-view-grid">
+          <label className="project-view-property project-view-grid__column-1">
             <div className="project-view-property__name">Project Name</div>
             <input className="project-view-property__input project-view-property__input--half" type="text" name="name" value={rigProject.manifest.name} onChange={this.onChange} />
           </label>
-          <label className="project-view-property" title="This is the path to your front-end files relative to the Project Folder.  If there is no Project Folder, ensure this path is absolute.">
+          {!rigProject.isLocal && <>
+            <label className="project-view-property project-view-grid__column-2">
+              <div className="project-view-property__name">Version</div>
+              <input className="project-view-property__input project-view-property__input--third" type="text" name="version" value={this.state.version} onChange={this.onChangeVersion} />
+            </label>
+            <div className="project-view-grid__column-3">
+              <button className="project-view__button" onClick={this.updateByVersion}>Update</button>
+              <div title="This is the result of updating the extension by version." className="project-view-property__result">{this.state.updateResult}</div>
+            </div>
+          </>}
+          <label className="project-view-property project-view-grid__column-1-2" title="This is the path to your front-end files relative to the Project Folder.  If there is no Project Folder, ensure this path is absolute.">
             <div className="project-view-property__name">Front-end Files Location</div>
             <input className="project-view-property__input" type="text" name="frontendFolderName" value={rigProject.frontendFolderName} onChange={this.onChange} />
-            {!rigProject.frontendCommand && (
-              <>
-                <button className="project-view__button" title="" onClick={this.toggleFrontend}>{frontendHostText}</button>
-                <div title="This is the result of the front-end hosting command." className="project-view-property__result">{this.state.frontendResult}</div>
-              </>
-            )}
           </label>
-          <label className="project-view-property" title="This is the command used to host your front-end files.  If you leave this blank, you may use the Developer Rig to host your front-end files.">
+          {!rigProject.frontendCommand && (
+            <div className="project-view-grid__column-3">
+              <button className="project-view__button" onClick={this.toggleFrontend}>{frontendHostText}</button>
+              <div title="This is the result of the front-end hosting command." className="project-view-property__result">{this.state.frontendResult}</div>
+            </div>
+          )}
+          <label className="project-view-property project-view-grid__column-1-2" title="This is the command used to host your front-end files.  If you leave this blank, you may use the Developer Rig to host your front-end files.">
             <div className="project-view-property__name">Front-end Host Command</div>
             <input className="project-view-property__input" type="text" name="frontendCommand" value={rigProject.frontendCommand} onChange={this.onChange} placeholder="Leave blank for Developer Rig hosting" />
-            {rigProject.frontendCommand && (
-              <>
-                <button className="project-view__button" title="" onClick={this.toggleFrontend}>{frontendCommandText}</button>
-                <div title="This is the result of the front-end activation command." className="project-view-property__result">{this.state.frontendResult}</div>
-              </>
-            )}
           </label>
-          <label className="project-view-property" title="This is the command used to run your back-end.  If there is a Project Folder, this command is run with that folder as its current directory.">
+          {rigProject.frontendCommand && (
+            <div className="project-view-grid__column-3">
+              <button className="project-view__button" onClick={this.toggleFrontend}>{frontendCommandText}</button>
+              <div title="This is the result of the front-end activation command." className="project-view-property__result">{this.state.frontendResult}</div>
+            </div>
+          )}
+          <label className="project-view-property project-view-grid__column-1-2" title="This is the command used to run your back-end.  If there is a Project Folder, this command is run with that folder as its current directory.">
             <div className="project-view-property__name">Back-end Run Command</div>
             <input className="project-view-property__input" type="text" name="backendCommand" value={rigProject.backendCommand} onChange={this.onChange} />
-            <button className="project-view__button" title="" onClick={this.toggleBackend}>{backendText}</button>
-            <div title="This is the result of the back-end activation command." className="project-view-property__result">{this.state.backendResult}</div>
           </label>
-          <label className="project-view-property">
+          <div className="project-view-grid__column-3">
+            <button className="project-view__button" onClick={this.toggleBackend}>{backendText}</button>
+            <div title="This is the result of the back-end activation command." className="project-view-property__result">{this.state.backendResult}</div>
+          </div>
+          <label className="project-view-property project-view-grid__column-1-2">
             <div className="project-view-property__name">Project Folder</div>
             <input className="project-view-property__input" type="text" name="projectFolderPath" value={rigProject.projectFolderPath} onChange={this.onChange} />
           </label>
-          <label className="project-view-property">
+          <label className="project-view-property project-view-grid__column-1-2">
             <div className="project-view-property__name">Extension Types</div>
             <div className="project-view-property__value">{this.getExtensionViews(rigProject)}</div>
           </label>
-          <label className="project-view-property">
+          <label className="project-view-property project-view-grid__column-1-2">
             <div className="project-view-property__name">Client ID</div>
             <div className="project-view-property__value">{rigProject.manifest.id}</div>
           </label>
           {!rigProject.isLocal && (
             <>
-              <label className="project-view-property">
+              <label className="project-view-property project-view-grid__column-1">
                 <button className="project-view__button project-view__button--first" onClick={this.refreshManifest}>Refresh Manifest</button>
               </label>
-              <label className="project-view-property">
+              <label className="project-view-property project-view-grid__column-1-2">
                 Make sure your Asset Paths are correct. Your "Testing Base URI" must
                 be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig.
                 Also, ensure the individual Extension Type paths are correct.
@@ -208,7 +241,7 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
           )}
         </div>
         <div className="project-view__vertical-bar" />
-        <div className="project-view__section project-view__section--right">
+        <div className="project-view__section">
           <div className="project-view__title">How to Run an Extension in the Rig</div>
           <ol>
             <li className="project-view__item">
@@ -228,8 +261,8 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
                 Extension Types that match your extension.</div>
             </li>
           </ol>
-          <button className="project-view__button project-view__button--first" onClick={this.viewTutorial}>View Tutorial</button>
-          <button className="project-view__button" onClick={this.viewDocumentation}>Go to Documentation</button>
+          <button className="project-view__button" onClick={this.viewTutorial}>View Tutorial</button>
+          <button className="project-view__button project-view__button--next" onClick={this.viewDocumentation}>Go to Documentation</button>
         </div>
       </div>
     );

@@ -1,36 +1,12 @@
 module.exports = function(app, extension) {
   const fs = require('fs');
   const jwt = require('jsonwebtoken');
-  const parseUrl = require('url').parse;
   const dateFormat = require('dateformat');
   let sequenceNumber = 0;
 
   app.use(require('body-parser').json());
 
   // Create endpoints for API in local mode.
-  app.get('/helix/users', (req, res) => {
-    checkClientId(req.header('Client-ID'));
-    const url = parseUrl(req.url, true);
-    res.setHeader('Content-Type', 'application/json');
-    res.writeHead(200);
-    const data = {
-      'data': [
-        {
-          'id': '265737932',
-          'login': url.query.login,
-          'display_name': url.query.login,
-          'type': '',
-          'broadcaster_type': '',
-          'description': '',
-          'profile_image_url': 'https://static-cdn.jtvnw.net/user-default-pictures/49988c7b-57bc-4dee-bd4f-6df4ad215d3a-profile_image-300x300.jpg',
-          'offline_image_url': '',
-          'view_count': 1,
-        },
-      ],
-    };
-    res.end(JSON.stringify(data));
-  });
-
   app.get('/extensions/:clientId/:version', (req, res) => {
     checkClientId(req.header('Client-ID'));
     checkToken(req.header('Authorization'));

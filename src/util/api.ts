@@ -3,8 +3,6 @@ import { ExtensionManifest } from '../core/models/manifest';
 import { toCamelCase } from '../util/case';
 import { createConfigurationToken } from './token';
 
-const API_HOST = process.env.API_HOST || 'api.twitch.tv';
-
 class Api {
   private isLocal: boolean;
 
@@ -40,7 +38,7 @@ class Api {
     if (body) {
       request.body = JSON.stringify(body);
     }
-    const url = new URL(path, `https://${this.isLocal ? 'localhost.rig.twitch.tv:3000' : API_HOST}`);
+    const url = new URL(path, `https://${this.isLocal ? 'localhost.rig.twitch.tv:3000' : 'api.twitch.tv'}`);
     const response = await fetch(url.toString(), request);
     if (response.status >= 400) {
       const message = 'Cannot access Twitch API.  Try again later.';

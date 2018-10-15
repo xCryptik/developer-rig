@@ -222,58 +222,58 @@ export class RigComponent extends React.Component<Props, State> {
         ) : !this.props.session ? (
           <SignInDialog />
         ) : (
-              <>
-                {this.state.selectedView === NavItem.ProductManagement && <ProductManagementViewContainer clientId={currentProject.manifest.id} />}
-                {this.state.selectedView === NavItem.ProjectOverview && currentProject && <ProjectView
-                  key={this.currentProjectIndex}
-                  rigProject={currentProject}
-                  userId={this.state.userId}
-                  onChange={this.updateProject}
-                  refreshViews={this.refreshViews}
-                />}
-                {configurations && this.state.selectedView === NavItem.ConfigurationService && <ConfigurationServiceView
-                  authToken={this.props.session.authToken}
-                  configurations={configurations}
-                  rigProject={currentProject}
-                  userId={this.state.userId}
-                  saveHandler={this.saveConfiguration}
-                />}
-                {currentProject && <ExtensionViewContainer
-                  key={`ExtensionViewContainer${this.state.extensionsViewContainerKey}`}
-                  configurations={configurations}
-                  isDisplayed={this.state.selectedView === NavItem.ExtensionViews}
-                  deleteExtensionViewHandler={this.deleteExtensionView}
-                  extensionViews={currentProject.extensionViews}
-                  isLocal={currentProject.isLocal}
-                  manifest={currentProject.manifest}
-                  secret={currentProject.secret}
-                  openEditViewHandler={this.openEditViewHandler}
-                  openExtensionViewHandler={this.openExtensionViewHandler}
-                />}
-                {(!currentProject || this.state.showingCreateProjectDialog) && <CreateProjectDialog
-                  userId={this.state.userId}
-                  mustSave={!currentProject}
-                  closeHandler={this.closeProjectDialog}
-                  saveHandler={this.createProject}
-                />}
-                {this.state.showingExtensionsView && (
-                  <ExtensionViewDialog
-                    channelId="265737932"
-                    extensionViews={currentProject.manifest.views}
-                    closeHandler={this.closeExtensionViewDialog}
-                    saveHandler={this.createExtensionView}
-                  />
-                )}
-                {this.state.showingEditView && (
-                  <EditViewDialog
-                    idToEdit={this.state.idToEdit}
-                    views={currentProject.extensionViews}
-                    closeHandler={this.closeEditViewHandler}
-                    saveViewHandler={this.editViewHandler}
-                  />
-                )}
-              </>
+          <>
+            {this.state.selectedView === NavItem.ProductManagement && <ProductManagementViewContainer clientId={currentProject.manifest.id} />}
+            {this.state.selectedView === NavItem.ProjectOverview && currentProject && <ProjectView
+              key={this.currentProjectIndex}
+              rigProject={currentProject}
+              userId={this.state.userId}
+              onChange={this.updateProject}
+              refreshViews={this.refreshViews}
+            />}
+            {configurations && this.state.selectedView === NavItem.ConfigurationService && <ConfigurationServiceView
+              authToken={this.props.session.authToken}
+              configurations={configurations}
+              rigProject={currentProject}
+              userId={this.state.userId}
+              saveHandler={this.saveConfiguration}
+            />}
+            {currentProject && <ExtensionViewContainer
+              key={`ExtensionViewContainer${this.state.extensionsViewContainerKey}`}
+              configurations={configurations}
+              isDisplayed={this.state.selectedView === NavItem.ExtensionViews}
+              deleteExtensionViewHandler={this.deleteExtensionView}
+              extensionViews={currentProject.extensionViews}
+              isLocal={currentProject.isLocal}
+              manifest={currentProject.manifest}
+              secret={currentProject.secret}
+              openEditViewHandler={this.openEditViewHandler}
+              openExtensionViewHandler={this.openExtensionViewHandler}
+            />}
+            {(!currentProject || this.state.showingCreateProjectDialog) && <CreateProjectDialog
+              userId={this.state.userId}
+              mustSave={!currentProject}
+              closeHandler={this.closeProjectDialog}
+              saveHandler={this.createProject}
+            />}
+            {this.state.showingExtensionsView && (
+              <ExtensionViewDialog
+                channelId="265737932"
+                extensionViews={currentProject.manifest.views}
+                closeHandler={this.closeExtensionViewDialog}
+                saveHandler={this.createExtensionView}
+              />
             )}
+            {this.state.showingEditView && (
+              <EditViewDialog
+                idToEdit={this.state.idToEdit}
+                views={currentProject.extensionViews}
+                closeHandler={this.closeEditViewHandler}
+                saveViewHandler={this.editViewHandler}
+              />
+            )}
+          </>
+        )}
       </div>
     );
   }

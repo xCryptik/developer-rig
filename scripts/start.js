@@ -59,7 +59,6 @@ let extension;
 if (cmdOptions.local) {
   const localFileLocation = path.resolve(process.cwd(), cmdOptions.local);
   const { id: clientId, version } = extension = require(localFileLocation);
-  process.env.API_HOST = `localhost.rig.twitch.tv:${DEFAULT_PORT}`;
   if (!process.env.EXT_CLIENT_ID) {
     process.env.EXT_CLIENT_ID = clientId;
   }
@@ -69,8 +68,6 @@ if (cmdOptions.local) {
   if (!process.env.EXT_SECRET) {
     process.env.EXT_SECRET = "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk";
   }
-} else {
-  process.env.API_HOST = "api.twitch.tv";
 }
 if (process.argv.length > 2) {
   console.log('clientId:', process.env.EXT_CLIENT_ID);

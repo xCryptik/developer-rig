@@ -1,6 +1,7 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { ProjectView } from './component';
 import { createExtensionManifestForTest } from '../tests/constants/extension';
+import { RigExtensionView } from '../core/models/rig';
 
 let globalAny = global as any;
 
@@ -8,6 +9,7 @@ function mockApiFunctions() {
   const original = require.requireActual('../util/api');
   return {
     ...original,
+    fetchExtensionManifest: jest.fn().mockImplementation(() => Promise.resolve({})),
     fetchHostingStatus: jest.fn().mockImplementation(() => Promise.resolve({})),
     startBackend: jest.fn().mockImplementation(() => Promise.resolve({})),
     hostFrontend: jest.fn().mockImplementation(() => Promise.resolve({})),
@@ -19,25 +21,82 @@ jest.mock('../util/api', () => mockApiFunctions());
 const api = require.requireMock('../util/api');
 
 describe('<ProjectView />', () => {
+  const rigProject = {
+    extensionViews: [] as RigExtensionView[],
+    isLocal: true,
+    projectFolderPath: 'test',
+    manifest: createExtensionManifestForTest(),
+    secret: 'test',
+    frontendFolderName: 'test',
+    frontendCommand: 'test',
+    backendCommand: 'test',
+  };
   const setupShallow = setupShallowTest(ProjectView, () => ({
-    rigProject: {
-      extensionViews: [],
-      isLocal: true,
-      projectFolderPath: 'test',
-      manifest: createExtensionManifestForTest(),
-      secret: 'test',
-      frontendFolderName: 'test',
-      frontendCommand: 'test',
-      backendCommand: 'test',
-    },
+    rigProject: { ...rigProject },
     userId: '999999999',
-    onChange: () => { },
+    onChange: jest.fn(),
     refreshViews: jest.fn(),
   }));
 
-  it('renders correctly', () => {
+  function setupOnlineShallow() {
+    return setupShallow({
+      rigProject: {
+        ...rigProject,
+        isLocal: false,
+      }
+    });
+  }
+
+  it('renders local correctly', () => {
     const { wrapper } = setupShallow();
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders online correctly', () => {
+    const { wrapper } = setupOnlineShallow();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  describe('onChange', () => {
+    it('invokes name for local', () => {
+      const { wrapper } = setupShallow();
+      const instance = wrapper.instance() as ProjectView;
+      const name = 'name';
+      wrapper.find('input[name="' + name + '"]').simulate('change', { currentTarget: { name, value: name } });
+      wrapper.update();
+      expect(instance.props.onChange).toHaveBeenCalled();
+    });
+
+    it('invokes for online', () => {
+      const { wrapper } = setupOnlineShallow();
+      const instance = wrapper.instance() as ProjectView;
+      const name = 'projectFolderPath';
+      wrapper.find('input[name="' + name + '"]').simulate('change', { currentTarget: { name, value: name } });
+      wrapper.update();
+      expect(instance.props.onChange).toHaveBeenCalled();
+    });
+  });
+
+  it('invokes onChangeVersion', () => {
+    const { wrapper } = setupOnlineShallow();
+    const instance = wrapper.instance() as ProjectView;
+    const name = 'version';
+    wrapper.find('input[name="' + name + '"]').simulate('change', { currentTarget: { name, value: name } });
+    wrapper.update();
+    expect(instance.state.updateResult).toEqual('');
+    expect(instance.state.version).toEqual('version');
+  });
+
+  it('invokes fetchExtensionManifest through refreshManifest', () => {
+    const { wrapper } = setupOnlineShallow();
+    wrapper.find('.project-view__button--first').simulate('click');
+    expect(api.fetchExtensionManifest).toHaveBeenCalled();
+  });
+
+  it('invokes fetchExtensionManifest through updateByVersion', () => {
+    const { wrapper } = setupOnlineShallow();
+    wrapper.find('.project-view__button').first().simulate('click');
+    expect(api.fetchExtensionManifest).toHaveBeenCalled();
   });
 
   describe('front-end', () => {
