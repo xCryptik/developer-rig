@@ -202,6 +202,7 @@ ShallowWrapper {
                               "isChatEnabled": true,
                             }
           }
+          isLocal={true}
           position={
                     Object {
                               "x": 10,
@@ -417,6 +418,7 @@ ShallowWrapper {
           "installationAbilities": Object {
             "isChatEnabled": true,
           },
+          "isLocal": true,
           "position": Object {
             "x": 10,
             "y": 10,
@@ -536,6 +538,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             position={
                         Object {
                                     "x": 10,
@@ -751,6 +754,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "position": Object {
               "x": 10,
               "y": 10,
@@ -979,6 +983,7 @@ ShallowWrapper {
                                         "isChatEnabled": true,
                                       }
                     }
+                    isLocal={true}
                     isPopout={false}
                     mode="viewer"
                     type="config"
@@ -1175,6 +1180,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             isPopout={false}
             mode="viewer"
             type="config"
@@ -1255,6 +1261,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "isPopout": false,
             "mode": "viewer",
             "type": "config",
@@ -1376,6 +1383,7 @@ ShallowWrapper {
                                                 "isChatEnabled": true,
                                               }
                         }
+                        isLocal={true}
                         isPopout={false}
                         mode="viewer"
                         type="config"
@@ -1572,6 +1580,7 @@ ShallowWrapper {
                                           "isChatEnabled": true,
                                         }
               }
+              isLocal={true}
               isPopout={false}
               mode="viewer"
               type="config"
@@ -1652,6 +1661,7 @@ ShallowWrapper {
               "installationAbilities": Object {
                 "isChatEnabled": true,
               },
+              "isLocal": true,
               "isPopout": false,
               "mode": "viewer",
               "type": "config",
@@ -1880,6 +1890,7 @@ ShallowWrapper {
                                         "isChatEnabled": true,
                                       }
                     }
+                    isLocal={true}
                     isPopout={false}
                     mode="viewer"
                     type="dashboard"
@@ -2073,6 +2084,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             isPopout={false}
             mode="viewer"
             type="dashboard"
@@ -2153,6 +2165,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "isPopout": false,
             "mode": "viewer",
             "type": "dashboard",
@@ -2274,6 +2287,7 @@ ShallowWrapper {
                                                 "isChatEnabled": true,
                                               }
                         }
+                        isLocal={true}
                         isPopout={false}
                         mode="viewer"
                         type="dashboard"
@@ -2467,6 +2481,7 @@ ShallowWrapper {
                                           "isChatEnabled": true,
                                         }
               }
+              isLocal={true}
               isPopout={false}
               mode="viewer"
               type="dashboard"
@@ -2547,6 +2562,7 @@ ShallowWrapper {
               "installationAbilities": Object {
                 "isChatEnabled": true,
               },
+              "isLocal": true,
               "isPopout": false,
               "mode": "viewer",
               "type": "dashboard",
@@ -2745,6 +2761,7 @@ ShallowWrapper {
                                         "isChatEnabled": true,
                                       }
                     }
+                    isLocal={true}
                     isPopout={false}
                     mode="viewer"
                     type="dashboard"
@@ -2923,6 +2940,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             isPopout={false}
             mode="viewer"
             type="dashboard"
@@ -2988,6 +3006,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "isPopout": false,
             "mode": "viewer",
             "type": "dashboard",
@@ -3094,6 +3113,7 @@ ShallowWrapper {
                                                 "isChatEnabled": true,
                                               }
                         }
+                        isLocal={true}
                         isPopout={false}
                         mode="viewer"
                         type="dashboard"
@@ -3272,6 +3292,7 @@ ShallowWrapper {
                                           "isChatEnabled": true,
                                         }
               }
+              isLocal={true}
               isPopout={false}
               mode="viewer"
               type="dashboard"
@@ -3337,6 +3358,7 @@ ShallowWrapper {
               "installationAbilities": Object {
                 "isChatEnabled": true,
               },
+              "isLocal": true,
               "isPopout": false,
               "mode": "viewer",
               "type": "dashboard",
@@ -3563,6 +3585,7 @@ ShallowWrapper {
                               "isChatEnabled": true,
                             }
           }
+          isLocal={true}
           orientation="Portrait"
           position={
                     Object {
@@ -3779,6 +3802,7 @@ ShallowWrapper {
           "installationAbilities": Object {
             "isChatEnabled": true,
           },
+          "isLocal": true,
           "orientation": "Portrait",
           "position": Object {
             "x": 10,
@@ -3899,6 +3923,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             orientation="Portrait"
             position={
                         Object {
@@ -4115,6 +4140,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "orientation": "Portrait",
             "position": Object {
               "x": 10,
@@ -4348,6 +4374,7 @@ ShallowWrapper {
                                         "isChatEnabled": true,
                                       }
                     }
+                    isLocal={true}
                     isPopout={false}
                     mode="viewer"
                     type="video_overlay"
@@ -4541,6 +4568,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             isPopout={false}
             mode="viewer"
             type="video_overlay"
@@ -4621,6 +4649,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "isPopout": false,
             "mode": "viewer",
             "type": "video_overlay",
@@ -4742,6 +4771,7 @@ ShallowWrapper {
                                                 "isChatEnabled": true,
                                               }
                         }
+                        isLocal={true}
                         isPopout={false}
                         mode="viewer"
                         type="video_overlay"
@@ -4935,6 +4965,7 @@ ShallowWrapper {
                                           "isChatEnabled": true,
                                         }
               }
+              isLocal={true}
               isPopout={false}
               mode="viewer"
               type="video_overlay"
@@ -5015,6 +5046,7 @@ ShallowWrapper {
               "installationAbilities": Object {
                 "isChatEnabled": true,
               },
+              "isLocal": true,
               "isPopout": false,
               "mode": "viewer",
               "type": "video_overlay",
@@ -5251,6 +5283,7 @@ ShallowWrapper {
                               "isChatEnabled": true,
                             }
           }
+          isLocal={true}
           position={
                     Object {
                               "x": 10,
@@ -5471,6 +5504,7 @@ ShallowWrapper {
           "installationAbilities": Object {
             "isChatEnabled": true,
           },
+          "isLocal": true,
           "position": Object {
             "x": 10,
             "y": 10,
@@ -5596,6 +5630,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             position={
                         Object {
                                     "x": 10,
@@ -5816,6 +5851,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "position": Object {
               "x": 10,
               "y": 10,
@@ -6049,6 +6085,7 @@ ShallowWrapper {
                                         "isChatEnabled": true,
                                       }
                     }
+                    isLocal={true}
                     isPopout={false}
                     mode="viewer"
                     type="video_overlay"
@@ -6244,6 +6281,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             isPopout={false}
             mode="viewer"
             type="video_overlay"
@@ -6324,6 +6362,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "isPopout": false,
             "mode": "viewer",
             "type": "video_overlay",
@@ -6446,6 +6485,7 @@ ShallowWrapper {
                                                 "isChatEnabled": true,
                                               }
                         }
+                        isLocal={true}
                         isPopout={false}
                         mode="viewer"
                         type="video_overlay"
@@ -6641,6 +6681,7 @@ ShallowWrapper {
                                           "isChatEnabled": true,
                                         }
               }
+              isLocal={true}
               isPopout={false}
               mode="viewer"
               type="video_overlay"
@@ -6721,6 +6762,7 @@ ShallowWrapper {
               "installationAbilities": Object {
                 "isChatEnabled": true,
               },
+              "isLocal": true,
               "isPopout": false,
               "mode": "viewer",
               "type": "video_overlay",
@@ -6956,6 +6998,7 @@ ShallowWrapper {
                               "isChatEnabled": true,
                             }
           }
+          isLocal={true}
           position={
                     Object {
                               "x": 10,
@@ -7174,6 +7217,7 @@ ShallowWrapper {
           "installationAbilities": Object {
             "isChatEnabled": true,
           },
+          "isLocal": true,
           "position": Object {
             "x": 10,
             "y": 10,
@@ -7298,6 +7342,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             position={
                         Object {
                                     "x": 10,
@@ -7516,6 +7561,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "position": Object {
               "x": 10,
               "y": 10,
@@ -7742,6 +7788,7 @@ ShallowWrapper {
                               "isChatEnabled": true,
                             }
           }
+          isLocal={true}
           position={
                     Object {
                               "x": 10,
@@ -7957,6 +8004,7 @@ ShallowWrapper {
           "installationAbilities": Object {
             "isChatEnabled": true,
           },
+          "isLocal": true,
           "position": Object {
             "x": 10,
             "y": 10,
@@ -8076,6 +8124,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             position={
                         Object {
                                     "x": 10,
@@ -8291,6 +8340,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "position": Object {
               "x": 10,
               "y": 10,
@@ -8518,6 +8568,7 @@ ShallowWrapper {
                               "isChatEnabled": true,
                             }
           }
+          isLocal={true}
           position={
                     Object {
                               "x": 10,
@@ -8735,6 +8786,7 @@ ShallowWrapper {
           "installationAbilities": Object {
             "isChatEnabled": true,
           },
+          "isLocal": true,
           "position": Object {
             "x": 10,
             "y": 10,
@@ -8855,6 +8907,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             position={
                         Object {
                                     "x": 10,
@@ -9072,6 +9125,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "position": Object {
               "x": 10,
               "y": 10,
@@ -9299,6 +9353,7 @@ ShallowWrapper {
                               "isChatEnabled": true,
                             }
           }
+          isLocal={true}
           position={
                     Object {
                               "x": 10,
@@ -9516,6 +9571,7 @@ ShallowWrapper {
           "installationAbilities": Object {
             "isChatEnabled": true,
           },
+          "isLocal": true,
           "position": Object {
             "x": 10,
             "y": 10,
@@ -9636,6 +9692,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             position={
                         Object {
                                     "x": 10,
@@ -9853,6 +9910,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "position": Object {
               "x": 10,
               "y": 10,
@@ -10079,6 +10137,7 @@ ShallowWrapper {
                               "isChatEnabled": true,
                             }
           }
+          isLocal={true}
           position={
                     Object {
                               "x": 10,
@@ -10294,6 +10353,7 @@ ShallowWrapper {
           "installationAbilities": Object {
             "isChatEnabled": true,
           },
+          "isLocal": true,
           "position": Object {
             "x": 10,
             "y": 10,
@@ -10413,6 +10473,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             position={
                         Object {
                                     "x": 10,
@@ -10628,6 +10689,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "position": Object {
               "x": 10,
               "y": 10,
@@ -10826,6 +10888,7 @@ ShallowWrapper {
                                         "isChatEnabled": true,
                                       }
                     }
+                    isLocal={true}
                     isPopout={false}
                     mode="viewer"
                     type="panel"
@@ -11004,6 +11067,7 @@ ShallowWrapper {
                                     "isChatEnabled": true,
                                   }
             }
+            isLocal={true}
             isPopout={false}
             mode="viewer"
             type="panel"
@@ -11069,6 +11133,7 @@ ShallowWrapper {
             "installationAbilities": Object {
               "isChatEnabled": true,
             },
+            "isLocal": true,
             "isPopout": false,
             "mode": "viewer",
             "type": "panel",
@@ -11175,6 +11240,7 @@ ShallowWrapper {
                                                 "isChatEnabled": true,
                                               }
                         }
+                        isLocal={true}
                         isPopout={false}
                         mode="viewer"
                         type="panel"
@@ -11353,6 +11419,7 @@ ShallowWrapper {
                                           "isChatEnabled": true,
                                         }
               }
+              isLocal={true}
               isPopout={false}
               mode="viewer"
               type="panel"
@@ -11418,6 +11485,7 @@ ShallowWrapper {
               "installationAbilities": Object {
                 "isChatEnabled": true,
               },
+              "isLocal": true,
               "isPopout": false,
               "mode": "viewer",
               "type": "panel",
