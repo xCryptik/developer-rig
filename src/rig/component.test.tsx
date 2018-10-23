@@ -8,6 +8,7 @@ import { ViewerTypes } from '../constants/viewer-types';
 import { RigExtensionView, RigProject } from '../core/models/rig';
 import { ExtensionViewDialogState } from '../extension-view-dialog';
 import { ExtensionAnchor, ExtensionViewType } from '../constants/extension-coordinator';
+import { DefaultMobileSize } from '../constants/mobile';
 
 let globalAny = global as any;
 
@@ -200,7 +201,7 @@ describe('<RigComponent />', () => {
     const testDialogState = {
       width: 0,
       height: 0,
-      mobileFrameSize: 'iPhone X (375x822)',
+      mobileFrameSize: DefaultMobileSize,
       extensionViewType: ExtensionViewType.Mobile
     } as ExtensionViewDialogState;
     const expectedMobileFrameSize = {
