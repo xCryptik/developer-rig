@@ -101,7 +101,7 @@ export class RigComponent extends React.Component<Props, State> {
       };
     }
 
-    const sizes = extensionViewDialogState.extensionViewType === ExtensionViewType.Mobile ? MobileSizes : OverlaySizes;''
+    const sizes = extensionViewDialogState.extensionViewType === ExtensionViewType.Mobile ? MobileSizes : OverlaySizes;
     return sizes[extensionViewDialogState[key]];
   }
 
@@ -193,6 +193,25 @@ export class RigComponent extends React.Component<Props, State> {
     this.setState({ showingCreateProjectDialog: false });
   }
 
+  public deleteProject = async () => {
+    const message = `Are you sure you want to delete project "${this.state.currentProject.manifest.name}"?\n\n` +
+      `This will not delete any files${this.state.currentProject.isLocal ? '' : ' or affect your extension online'}.`;
+    if (confirm(message)) {
+      await stopHosting();
+      this.setState((previousState) => {
+        const projects = previousState.projects.filter((project) => project !== previousState.currentProject);
+        const currentProject = projects.length ? projects[0] : null;
+        localStorage.setItem(LocalStorageKeys.CurrentProjectIndex, '0');
+        localStorage.setItem(LocalStorageKeys.Projects, JSON.stringify(projects));
+        return {
+          currentProject, projects,
+          extensionsViewContainerKey: previousState.extensionsViewContainerKey + 1,
+          selectedView: NavItem.ProjectOverview,
+        };
+      });
+    }
+  }
+
   public render() {
     const { configurations, currentProject } = this.state;
     return (
@@ -204,6 +223,7 @@ export class RigComponent extends React.Component<Props, State> {
           selectProject={this.selectProject}
           manifest={currentProject ? currentProject.manifest : null}
           selectedView={this.state.selectedView}
+          deleteProject={this.deleteProject}
           viewerHandler={this.viewerHandler}
           error={this.state.error}
         />

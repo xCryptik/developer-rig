@@ -16,7 +16,7 @@ localStorage.setItem('projects', '[{"manifest":{}},{"manifest":{}}]');
 const setupShallow = setupShallowTest(RigComponent, () => ({
   session: { displayName: 'test', login: 'test', id: 'test', profileImageUrl: 'test.png', authToken: 'test' },
   saveManifest: jest.fn(),
-  userLogin: jest.fn()
+  userLogin: jest.fn(),
 }));
 
 describe('<RigComponent />', () => {
@@ -255,6 +255,7 @@ describe('<RigComponent />', () => {
     expect(globalAny.fetch).toHaveBeenCalled();
   });
 
+  globalAny.confirm = jest.fn().mockImplementation(() => true);
   globalAny.fetch = jest.fn().mockImplementation(() => Promise.resolve({
     status: 200,
     json: () => Promise.resolve({}),
@@ -284,6 +285,26 @@ describe('<RigComponent />', () => {
     const instance = wrapper.instance() as RigComponent;
     await instance.selectProject(1);
     expect(globalAny.fetch).toHaveBeenCalled();
+  });
+
+  it('deletes project', async () => {
+    const { wrapper } = setupShallow();
+    return new Promise((resolve, reject) => {
+      setTimeout(async () => {
+        try {
+          wrapper.update();
+          const currentProject = { manifest: createExtensionManifestForTest() } as RigProject;
+          wrapper.setState({ currentProject });
+          const instance = wrapper.instance() as RigComponent;
+          await instance.deleteProject();
+          expect(globalAny.confirm).toHaveBeenCalled();
+          expect(instance.state.currentProject).not.toBe(currentProject);
+          resolve();
+        } catch (ex) {
+          reject(ex.message);
+        }
+      });
+    });
   });
 
   it('correctly displays an error if user fetch fails', done => {
