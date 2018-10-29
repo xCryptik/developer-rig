@@ -49,7 +49,14 @@ export class UserDropdownComponent extends React.Component<Props, State> {
               releaseUrl: result.zipUrl,
             });
           }
-        });
+        })
+        .catch(e=>{
+          console.log(e)
+          this.setState({
+            showingNewRelease:false,
+            releaseUrl:''
+          })
+        })
     }
   }
 

@@ -202,18 +202,21 @@ export async function saveProduct(clientId: string, token: string, product: Prod
 
 export async function fetchNewRelease() {
   const url = 'https://api.github.com/repos/twitchdev/developer-rig/releases/latest';
-  const response = await onlineApi.get<any>(url, {
-    Accept: 'application/vnd.github.v3+json',
-  });
-  const tagName = response.tag_name;
-  const zipUrl = response.assets[0].browser_download_url;
-  if (tagName && zipUrl) {
-    return {
-      tagName,
-      zipUrl,
-    };
+  try {
+    const response = await onlineApi.get<any>(url, {
+      Accept: 'application/vnd.github.v3+json',
+    });
+    const tagName = response.tag_name;
+    const zipUrl = response.assets[0].browser_download_url;
+    if (tagName && zipUrl) {
+      return {
+        tagName,
+        zipUrl,
+      };
+    }
+  } catch (_e) {
+    throw new Error('Cannot get GitHub developer rig latest release');
   }
-  throw new Error('Cannot get GitHub developer rig latest release');
 }
 
 interface SegmentRecordMap {
