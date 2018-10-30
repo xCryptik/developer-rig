@@ -27,7 +27,8 @@
       fetch(url, {
         body: JSON.stringify({ targets: [target], content_type: contentType, message }),
         headers: {
-          'Accept': 'application/json',
+          Accept: 'application/json',
+          Authorization: `Bearer ${container.parameters.extension.token}`,
           'Client-ID': container.parameters.extension.clientId,
           'Content-Type': 'application/json',
         },
