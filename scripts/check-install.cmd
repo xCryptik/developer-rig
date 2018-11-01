@@ -25,6 +25,10 @@ python --version > NUL 2> NUL
 IF ERRORLEVEL 1 EXIT /B 2
 CALL yarn --version > NUL 2> NUL
 IF ERRORLEVEL 1 EXIT /B 2
+openssl version 2> NUL > NUL
+IF ERRORLEVEL 1 PATH %PATH%;%ProgramFiles%\openssl;%ProgramFiles%\Git\mingw64\bin
+openssl version 2> NUL > NUL
+IF ERRORLEVEL 1 EXIT /B 2
 EXIT /B
 
 REM Determine if an appropriate version of node is available.
