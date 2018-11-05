@@ -1,6 +1,6 @@
 export enum NavItem {
-  ExtensionViews,
-  ProductManagement,
-  ProjectOverview,
-  ConfigurationService,
+  ConfigurationService = '/configuration-service',
+  ExtensionViews = '/extension-views',
+  ProductManagement = '/product-management',
+  ProjectOverview = '/',
 }

@@ -13,6 +13,10 @@ ShallowWrapper {
             "features": Object {
               "isChatEnabled": true,
             },
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
+            },
             "id": "1",
             "isPopout": false,
             "linked": false,

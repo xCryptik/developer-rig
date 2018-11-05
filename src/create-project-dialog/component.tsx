@@ -12,8 +12,7 @@ import { LocalStorageKeys } from '../constants/rig';
 
 interface Props {
   userId: string;
-  mustSave?: boolean;
-  closeHandler: () => void;
+  closeHandler?: () => void;
   saveHandler: (state: RigProject) => void;
 }
 
@@ -57,7 +56,7 @@ export class CreateProjectDialog extends React.Component<Props, State>{
       isLocal: true,
       projectFolderPath: '',
       manifest: {} as ExtensionManifest,
-      secret: process.env.EXT_SECRET || '',
+      secret: process.env.EXT_SECRET,
       frontendFolderName: '',
       frontendCommand: '',
       backendCommand: '',
@@ -162,12 +161,13 @@ export class CreateProjectDialog extends React.Component<Props, State>{
   }
 
   private constructBackendCommand(example: Example) {
-    if (this.state.codeGenerationOption === CodeGenerationOption.Example && example.backendCommand) {
+    const { codeGenerationOption, rigProject: { isLocal, manifest: { id: clientId }, secret } } = this.state;
+    if (codeGenerationOption === CodeGenerationOption.Example && example.backendCommand) {
       let backendCommand = example.backendCommand
-        .replace('{clientId}', this.state.rigProject.manifest.id)
-        .replace('{secret}', this.state.rigProject.secret)
+        .replace('{clientId}', clientId)
+        .replace('{secret}', secret)
         .replace('{ownerId}', this.props.userId);
-      if (this.state.rigProject.isLocal) {
+      if (isLocal) {
         backendCommand += ' -l';
       }
       return backendCommand;
@@ -180,7 +180,6 @@ export class CreateProjectDialog extends React.Component<Props, State>{
       try {
         this.setState({ errorMessage: 'Creating your project...' });
         if (this.state.rigProject.isLocal) {
-          this.state.rigProject.secret = this.state.rigProject.secret || 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk';
           const ownerName: string = JSON.parse(localStorage.getItem(LocalStorageKeys.RigLogin)).login;
           this.state.rigProject.manifest = generateManifest('https://localhost.rig.twitch.tv:8080',
             ownerName, this.state.localName.trim(), this.getTypes());
@@ -245,7 +244,7 @@ export class CreateProjectDialog extends React.Component<Props, State>{
         <div className="project-dialog__dialog">
           <div className="project-dialog__header">
             <div className="project-dialog__title">Create New Extension Project</div>
-            {!this.props.mustSave && <div className="project-dialog__escape" onClick={this.props.closeHandler}><img alt="Close" src={closeButton} /></div>}
+            {this.props.closeHandler && <div className="project-dialog__escape" onClick={this.props.closeHandler}><img alt="Close" src={closeButton} /></div>}
           </div>
           {this.state.errorMessage && <div>{this.state.errorMessage}</div>}
           <hr className="project-dialog__divider" />
@@ -367,7 +366,7 @@ export class CreateProjectDialog extends React.Component<Props, State>{
           <hr className="project-dialog__divider" />
           <div className="project-dialog__footer">
             <div className={saveClassName} onClick={this.saveHandler}>Save</div>
-            {!this.props.mustSave && (
+            {this.props.closeHandler && (
               <div className="bottom-bar__cancel" onClick={this.props.closeHandler}>Cancel</div>
             )}
           </div>

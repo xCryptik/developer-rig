@@ -1,16 +1,35 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { createViewsForTest, createExtensionManifestForTest } from '../tests/constants/extension';
 import { mockFetchForUserInfo } from '../tests/mocks';
-import { NavItem } from '../constants/nav-items';
 import { RigComponent } from './component';
 import { ExtensionAnchors } from '../constants/extension-types';
 import { ViewerTypes } from '../constants/viewer-types';
-import { RigExtensionView, RigProject } from '../core/models/rig';
+import { RigProject } from '../core/models/rig';
 import { ExtensionViewDialogState } from '../extension-view-dialog';
 import { ExtensionAnchor, ExtensionViewType } from '../constants/extension-coordinator';
 import { DefaultMobileSize } from '../constants/mobile';
+import { DeveloperRigUserId } from '../constants/rig';
 
 let globalAny = global as any;
+
+function mockApiFunctions() {
+  return {
+    ...require.requireActual('../util/api'),
+    fetchChannelConfigurationSegments: jest.fn().mockImplementation(() => Promise.resolve({})),
+    saveConfigurationSegment: jest.fn(),
+  };
+}
+jest.mock('../util/api', () => mockApiFunctions());
+const api = require.requireMock('../util/api');
+function mockIdFunctions() {
+  return {
+    ...require.requireActual('../util/id'),
+    fetchIdForUser: jest.fn().mockImplementation((_, id) => id === 'developerrig' ?
+      Promise.resolve(DeveloperRigUserId) : Promise.reject(new Error(`Cannot fetch user "${id}"`))),
+  };
+}
+jest.mock('../util/id', () => mockIdFunctions());
+const { fetchIdForUser } = require.requireMock('../util/id');
 
 localStorage.setItem('projects', '[{"manifest":{}},{"manifest":{}}]');
 
@@ -36,23 +55,6 @@ describe('<RigComponent />', () => {
       } catch (ex) {
         reject(ex.message);
       }
-    });
-  });
-
-  it('renders extension view correctly', async () => {
-    setUpProjectForTest(ExtensionAnchor.Panel);
-    const { wrapper } = setupShallow();
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        try {
-          wrapper.update();
-          expect(wrapper).toMatchSnapshot();
-          expect((wrapper.find('ExtensionViewContainer') as any).props().extensionViews).toHaveLength(1);
-          resolve();
-        } catch (ex) {
-          reject(ex.message);
-        }
-      });
     });
   });
 
@@ -82,30 +84,10 @@ describe('<RigComponent />', () => {
         try {
           wrapper.update();
           const instance = wrapper.instance() as RigComponent;
-          expect((wrapper.find('ExtensionViewContainer') as any).props().extensionViews).toHaveLength(1);
+          expect(wrapper.state().currentProject.extensionViews).toHaveLength(1);
           instance.deleteExtensionView('1');
           wrapper.update();
-          expect((wrapper.find('ExtensionViewContainer') as any).props().extensionViews).toHaveLength(0);
-          resolve();
-        } catch (ex) {
-          reject(ex.message);
-        }
-      });
-    });
-  });
-
-  it('toggles state when edit dialog is opened/closed', () => {
-    setUpProjectForTest(ExtensionAnchor.Component);
-    const { wrapper } = setupShallow();
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        try {
-          wrapper.update();
-          const instance = wrapper.instance() as RigComponent;
-          instance.openEditViewHandler('1');
-          expect(instance.state.viewForEdit).toBeTruthy();
-          instance.closeEditViewHandler();
-          expect(instance.state.viewForEdit).toBe(null);
+          expect(wrapper.state().currentProject.extensionViews).toHaveLength(0);
           resolve();
         } catch (ex) {
           reject(ex.message);
@@ -123,13 +105,10 @@ describe('<RigComponent />', () => {
           wrapper.update();
           const instance = wrapper.instance() as RigComponent;
           const views = instance.state.currentProject.extensionViews;
-          const editedView = views.filter((element: RigExtensionView) => element.id === '1')[0];
-          instance.openEditViewHandler('1');
-          expect(instance.state.viewForEdit).toBe(editedView);
-          instance.editViewHandler(editedView, { x: 25, y: 25 });
+          const editedView = views[0];
+          instance.editView(editedView, { x: 25, y: 25 });
           expect(editedView.x).toEqual(25);
           expect(editedView.y).toEqual(25);
-          expect(instance.state.viewForEdit).toBe(null);
           resolve();
         } catch (ex) {
           reject(ex.message);
@@ -142,34 +121,14 @@ describe('<RigComponent />', () => {
     setUpProjectForTest(ExtensionAnchor.Panel);
     const { wrapper } = setupShallow();
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
+      setTimeout(async () => {
         try {
           wrapper.update();
           const instance = wrapper.instance() as RigComponent;
           instance.state.currentProject = { manifest: createExtensionManifestForTest() } as RigProject;
-          instance.openExtensionViewHandler();
-          expect(instance.state.showingExtensionsView).toBe(true);
-          instance.closeExtensionViewDialog();
-          expect(instance.state.showingExtensionsView).toBe(false);
-          resolve();
-        } catch (ex) {
-          reject(ex.message);
-        }
-      });
-    });
-  });
-
-  it('correctly sets state when viewHandler is invoked', () => {
-    setUpProjectForTest(ExtensionAnchor.Panel);
-    const { wrapper } = setupShallow();
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        try {
+          await instance.createExtensionView({ channelId: 'developerrig' } as ExtensionViewDialogState);
           wrapper.update();
-          wrapper.setState({ currentProject: { manifest: createExtensionManifestForTest() } as RigProject });
-          const instance = wrapper.instance() as RigComponent;
-          instance.viewerHandler(NavItem.ExtensionViews);
-          expect(instance.state.selectedView).toBe(NavItem.ExtensionViews);
+          expect(fetchIdForUser).toHaveBeenCalled();
           resolve();
         } catch (ex) {
           reject(ex.message);
@@ -300,6 +259,44 @@ describe('<RigComponent />', () => {
           await instance.deleteProject();
           expect(globalAny.confirm).toHaveBeenCalled();
           expect(instance.state.currentProject).not.toBe(currentProject);
+          resolve();
+        } catch (ex) {
+          reject(ex.message);
+        }
+      });
+    });
+  });
+
+  it('renders and closes CreateProjectDialog', () => {
+    setUpProjectForTest(ExtensionAnchor.Panel);
+    const { wrapper } = setupShallow();
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        try {
+          const instance = wrapper.instance() as RigComponent;
+          instance.showCreateProjectDialog();
+          wrapper.update();
+          expect(wrapper.find('CreateProjectDialog').length).toBe(1);
+          instance.closeProjectDialog();
+          wrapper.update();
+          expect(wrapper.find('CreateProjectDialog').length).toBe(0);
+          resolve();
+        } catch (ex) {
+          reject(ex.message);
+        }
+      });
+    });
+  });
+
+  it('saves configuration', () => {
+    setUpProjectForTest(ExtensionAnchor.Panel);
+    const { wrapper } = setupShallow();
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        try {
+          const instance = wrapper.instance() as any;
+          instance.saveConfiguration('segment', 'channelId', 'content', 'version');
+          expect(api.saveConfigurationSegment).toHaveBeenCalled();
           resolve();
         } catch (ex) {
           reject(ex.message);

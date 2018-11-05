@@ -9,21 +9,25 @@ import { ExtensionViewButton } from '../extension-view-button';
 import { RigExtensionView } from '../core/models/rig';
 import { ExtensionManifest } from '../core/models/manifest';
 import { createExtensionObject } from '../util/extension';
+import { ExtensionViewDialog, ExtensionViewDialogState } from '../extension-view-dialog';
+import { EditViewProps, EditViewDialog } from '../edit-view-dialog';
 
 interface Props {
   configurations: Configurations;
-  isDisplayed: boolean;
   extensionViews: RigExtensionView[];
+  isDisplayed: boolean;
   isLocal: boolean;
   manifest: ExtensionManifest;
   secret: string;
+  createExtensionViewHandler: (extensionViewDialogState: ExtensionViewDialogState) => Promise<void>;
   deleteExtensionViewHandler: (id: string) => void;
-  openEditViewHandler?: (id: string) => void;
-  openExtensionViewHandler: Function;
+  editViewHandler: (viewForEdit: RigExtensionView, newViewState: EditViewProps) => void;
 }
 
 interface State {
   mockTriggersEnabled: boolean;
+  showingExtensionsViewDialog: boolean;
+  viewForEdit?: RigExtensionView;
 }
 
 const ConfigNames: { [key: string]: string; } = {
@@ -34,10 +38,14 @@ const ConfigNames: { [key: string]: string; } = {
 export class ExtensionViewContainer extends React.Component<Props, State> {
   public state: State = {
     mockTriggersEnabled: false,
+    showingExtensionsViewDialog: false,
   };
 
-  private openExtensionViewDialog = () => {
-    this.props.openExtensionViewHandler();
+  static getDerivedStateFromProps(props: Props, _state: State): Partial<State> {
+    if (!props.isDisplayed) {
+      return { showingExtensionsViewDialog: false, viewForEdit: null };
+    }
+    return null;
   }
 
   private toggleMockTriggers = () => {
@@ -62,6 +70,34 @@ export class ExtensionViewContainer extends React.Component<Props, State> {
     return configuration;
   }
 
+  private openEditViewDialog = (id: string) => {
+    this.setState({
+      viewForEdit: this.props.extensionViews.filter((extensionView) => extensionView.id === id)[0],
+    });
+  }
+
+  private saveView = (viewForEdit: RigExtensionView, newViewState: EditViewProps) => {
+    this.props.editViewHandler(viewForEdit, newViewState);
+    this.closeEditViewDialog();
+  }
+
+  private closeEditViewDialog = () => {
+    this.setState({ viewForEdit: null });
+  }
+
+  private openExtensionViewDialog = () => {
+    this.setState({ showingExtensionsViewDialog: true });
+  }
+
+  private createExtensionView = async (extensionViewDialogState: ExtensionViewDialogState) => {
+    await this.props.createExtensionViewHandler(extensionViewDialogState);
+    this.closeExtensionViewDialog();
+  }
+
+  private closeExtensionViewDialog = () => {
+    this.setState({ showingExtensionsViewDialog: false });
+  }
+
   public render() {
     let extensionViews: JSX.Element[] = [];
     if (this.props.extensionViews && this.props.extensionViews.length > 0) {
@@ -78,7 +114,7 @@ export class ExtensionViewContainer extends React.Component<Props, State> {
             extension={extension}
             role={view.mode === ExtensionMode.Viewer ? view.role : ConfigNames[view.mode]}
             isLocal={this.props.isLocal}
-            openEditViewHandler={this.props.openEditViewHandler}
+            openEditViewHandler={this.openEditViewDialog}
             deleteViewHandler={this.props.deleteExtensionViewHandler}
             mockApiEnabled={this.state.mockTriggersEnabled}
           />
@@ -95,25 +131,41 @@ export class ExtensionViewContainer extends React.Component<Props, State> {
       'view-container-wrapper--hidden': !this.props.isDisplayed,
     });
     return (
-      <div className={wrapperClassName}>
-        <div className="trigger-bar">
-          <svg version="1.1" viewBox="0 0 44 20" height="20" width="44">
-            <g onClick={this.toggleMockTriggers}>
-              <rect className={switchClassName} rx="2" ry="2" x="0.5" y="0.5" height="19" width="43" />
-              <path className={checkClassName} d="m 6.5,9 4,4 6,-6 -1,-1 -5,5 -3,-3 z" />
-              <rect className={handleClassName} rx="2" ry="2" x="0.5" y="0.5" height="19" width="21" />
-            </g>
-          </svg>
-          <div className="trigger-bar__text">Use Mock Triggers</div>
+      <>
+        <div className={wrapperClassName}>
+          <div className="trigger-bar">
+            <svg version="1.1" viewBox="0 0 44 20" height="20" width="44">
+              <g onClick={this.toggleMockTriggers}>
+                <rect className={switchClassName} rx="2" ry="2" x="0.5" y="0.5" height="19" width="43" />
+                <path className={checkClassName} d="m 6.5,9 4,4 6,-6 -1,-1 -5,5 -3,-3 z" />
+                <rect className={handleClassName} rx="2" ry="2" x="0.5" y="0.5" height="19" width="21" />
+              </g>
+            </svg>
+            <div className="trigger-bar__text">Use Mock Triggers</div>
+          </div>
+          <div className="view-container">
+            {extensionViews}
+          </div>
+          <div>
+            <ExtensionViewButton onClick={this.openExtensionViewDialog} />
+          </div>
+          <Console />
         </div>
-        <div className="view-container">
-          {extensionViews}
-        </div>
-        <div>
-          <ExtensionViewButton onClick={this.openExtensionViewDialog} />
-        </div>
-        <Console />
-      </div>
+        {this.state.showingExtensionsViewDialog && (
+          <ExtensionViewDialog
+            extensionViews={this.props.manifest.views}
+            closeHandler={this.closeExtensionViewDialog}
+            saveHandler={this.createExtensionView}
+          />
+        )}
+        {this.state.viewForEdit && (
+          <EditViewDialog
+            viewForEdit={this.state.viewForEdit}
+            closeHandler={this.closeEditViewDialog}
+            saveViewHandler={this.saveView}
+          />
+        )}
+      </>
     );
   }
 }

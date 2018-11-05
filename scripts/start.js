@@ -65,14 +65,14 @@ if (cmdOptions.local) {
   if (!process.env.EXT_VERSION) {
     process.env.EXT_VERSION = version;
   }
-  if (!process.env.EXT_SECRET) {
-    process.env.EXT_SECRET = "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk";
-  }
 }
 if (process.argv.length > 2) {
   console.log('clientId:', process.env.EXT_CLIENT_ID);
   console.log('version:', process.env.EXT_VERSION);
   console.log('secret:', process.env.EXT_SECRET);
+}
+if (!process.env.EXT_SECRET) {
+  process.env.EXT_SECRET = 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk';
 }
 
 // Makes the script crash on unhandled rejections instead of silently

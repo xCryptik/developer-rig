@@ -126,8 +126,12 @@ export function createViewsForTest(numOfViews: number, type: string, role: strin
       orientation: ex.orientation,
       features: {
         isChatEnabled: true,
-      }
-    })
+      },
+      frameSize: {
+        height: 99,
+        width: 99,
+      },
+    });
   }
 
   return extViews;

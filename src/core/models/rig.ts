@@ -22,15 +22,13 @@ export interface RigExtensionView {
     isChatEnabled: boolean;
   };
   type: string;
-  mode?: string;
+  mode: string;
   role: string;
   linked: boolean;
   linkedUserId: string;
   opaqueId: string;
   isPopout: boolean;
-  deleteViewHandler?: (id: string) => void;
-  openEditViewHandler?: (id: string) => void;
-  frameSize?: FrameSize;
+  frameSize: FrameSize;
 }
 
 export interface FrameSize {

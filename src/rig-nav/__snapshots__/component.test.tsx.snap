@@ -9,7 +9,6 @@ ShallowWrapper {
     createNewProject={[Function]}
     currentProjectIndex={0}
     deleteProject={[Function]}
-    error=""
     liveConfigHandler={[Function]}
     manifest={
         Object {
@@ -62,7 +61,6 @@ ShallowWrapper {
     openProductManagementHandler={[Function]}
     projects={Array []}
     selectProject={[Function]}
-    selectedView={0}
     session={
         Object {
             "authToken": "test",
@@ -72,7 +70,6 @@ ShallowWrapper {
             "profileImageUrl": "test.png",
           }
     }
-    viewerHandler={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -128,30 +125,42 @@ ShallowWrapper {
         <div
           className="top-nav__item-container"
 >
-          <a
+          <NavLink
+                    activeClassName="top-nav-item__selected"
+                    aria-current="page"
                     className="offset top-nav-item"
-                    onClick={[Function]}
+                    exact={true}
+                    to="/"
           >
                     Project Overview
-          </a>
-          <a
-                    className="offset top-nav-item top-nav-item__selected"
-                    onClick={[Function]}
+          </NavLink>
+          <NavLink
+                    activeClassName="top-nav-item__selected"
+                    aria-current="page"
+                    className="offset top-nav-item"
+                    exact={true}
+                    to="/extension-views"
           >
                     Extension Views
-          </a>
-          <a
+          </NavLink>
+          <NavLink
+                    activeClassName="top-nav-item__selected"
+                    aria-current="page"
                     className="offset top-nav-item"
-                    onClick={[Function]}
+                    exact={true}
+                    to="/product-management"
           >
                     Manage Bits Products
-          </a>
-          <a
+          </NavLink>
+          <NavLink
+                    activeClassName="top-nav-item__selected"
+                    aria-current="page"
                     className="offset top-nav-item top-nav-item__disabled"
-                    onClick={[Function]}
+                    exact={true}
+                    to="/configuration-service"
           >
                     Configuration Service
-          </a>
+          </NavLink>
 </div>,
       ],
       "className": "top-nav",
@@ -311,30 +320,42 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <a
+            <NavLink
+              activeClassName="top-nav-item__selected"
+              aria-current="page"
               className="offset top-nav-item"
-              onClick={[Function]}
+              exact={true}
+              to="/"
 >
               Project Overview
-</a>,
-            <a
-              className="offset top-nav-item top-nav-item__selected"
-              onClick={[Function]}
+</NavLink>,
+            <NavLink
+              activeClassName="top-nav-item__selected"
+              aria-current="page"
+              className="offset top-nav-item"
+              exact={true}
+              to="/extension-views"
 >
               Extension Views
-</a>,
-            <a
+</NavLink>,
+            <NavLink
+              activeClassName="top-nav-item__selected"
+              aria-current="page"
               className="offset top-nav-item"
-              onClick={[Function]}
+              exact={true}
+              to="/product-management"
 >
               Manage Bits Products
-</a>,
-            <a
+</NavLink>,
+            <NavLink
+              activeClassName="top-nav-item__selected"
+              aria-current="page"
               className="offset top-nav-item top-nav-item__disabled"
-              onClick={[Function]}
+              exact={true}
+              to="/configuration-service"
 >
               Configuration Service
-</a>,
+</NavLink>,
           ],
           "className": "top-nav__item-container",
         },
@@ -343,54 +364,66 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "function",
             "props": Object {
+              "activeClassName": "top-nav-item__selected",
+              "aria-current": "page",
               "children": "Project Overview",
               "className": "offset top-nav-item",
-              "onClick": [Function],
+              "exact": true,
+              "to": "/",
             },
             "ref": null,
             "rendered": "Project Overview",
-            "type": "a",
+            "type": [Function],
           },
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "function",
             "props": Object {
+              "activeClassName": "top-nav-item__selected",
+              "aria-current": "page",
               "children": "Extension Views",
-              "className": "offset top-nav-item top-nav-item__selected",
-              "onClick": [Function],
+              "className": "offset top-nav-item",
+              "exact": true,
+              "to": "/extension-views",
             },
             "ref": null,
             "rendered": "Extension Views",
-            "type": "a",
+            "type": [Function],
           },
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "function",
             "props": Object {
+              "activeClassName": "top-nav-item__selected",
+              "aria-current": "page",
               "children": "Manage Bits Products",
               "className": "offset top-nav-item",
-              "onClick": [Function],
+              "exact": true,
+              "to": "/product-management",
             },
             "ref": null,
             "rendered": "Manage Bits Products",
-            "type": "a",
+            "type": [Function],
           },
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "function",
             "props": Object {
+              "activeClassName": "top-nav-item__selected",
+              "aria-current": "page",
               "children": "Configuration Service",
               "className": "offset top-nav-item top-nav-item__disabled",
-              "onClick": [Function],
+              "exact": true,
+              "to": "/configuration-service",
             },
             "ref": null,
             "rendered": "Configuration Service",
-            "type": "a",
+            "type": [Function],
           },
         ],
         "type": "div",
@@ -446,30 +479,42 @@ ShallowWrapper {
           <div
             className="top-nav__item-container"
 >
-            <a
+            <NavLink
+                        activeClassName="top-nav-item__selected"
+                        aria-current="page"
                         className="offset top-nav-item"
-                        onClick={[Function]}
+                        exact={true}
+                        to="/"
             >
                         Project Overview
-            </a>
-            <a
-                        className="offset top-nav-item top-nav-item__selected"
-                        onClick={[Function]}
+            </NavLink>
+            <NavLink
+                        activeClassName="top-nav-item__selected"
+                        aria-current="page"
+                        className="offset top-nav-item"
+                        exact={true}
+                        to="/extension-views"
             >
                         Extension Views
-            </a>
-            <a
+            </NavLink>
+            <NavLink
+                        activeClassName="top-nav-item__selected"
+                        aria-current="page"
                         className="offset top-nav-item"
-                        onClick={[Function]}
+                        exact={true}
+                        to="/product-management"
             >
                         Manage Bits Products
-            </a>
-            <a
+            </NavLink>
+            <NavLink
+                        activeClassName="top-nav-item__selected"
+                        aria-current="page"
                         className="offset top-nav-item top-nav-item__disabled"
-                        onClick={[Function]}
+                        exact={true}
+                        to="/configuration-service"
             >
                         Configuration Service
-            </a>
+            </NavLink>
 </div>,
         ],
         "className": "top-nav",
@@ -629,30 +674,42 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <a
+              <NavLink
+                activeClassName="top-nav-item__selected"
+                aria-current="page"
                 className="offset top-nav-item"
-                onClick={[Function]}
+                exact={true}
+                to="/"
 >
                 Project Overview
-</a>,
-              <a
-                className="offset top-nav-item top-nav-item__selected"
-                onClick={[Function]}
+</NavLink>,
+              <NavLink
+                activeClassName="top-nav-item__selected"
+                aria-current="page"
+                className="offset top-nav-item"
+                exact={true}
+                to="/extension-views"
 >
                 Extension Views
-</a>,
-              <a
+</NavLink>,
+              <NavLink
+                activeClassName="top-nav-item__selected"
+                aria-current="page"
                 className="offset top-nav-item"
-                onClick={[Function]}
+                exact={true}
+                to="/product-management"
 >
                 Manage Bits Products
-</a>,
-              <a
+</NavLink>,
+              <NavLink
+                activeClassName="top-nav-item__selected"
+                aria-current="page"
                 className="offset top-nav-item top-nav-item__disabled"
-                onClick={[Function]}
+                exact={true}
+                to="/configuration-service"
 >
                 Configuration Service
-</a>,
+</NavLink>,
             ],
             "className": "top-nav__item-container",
           },
@@ -661,54 +718,66 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
+                "activeClassName": "top-nav-item__selected",
+                "aria-current": "page",
                 "children": "Project Overview",
                 "className": "offset top-nav-item",
-                "onClick": [Function],
+                "exact": true,
+                "to": "/",
               },
               "ref": null,
               "rendered": "Project Overview",
-              "type": "a",
+              "type": [Function],
             },
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
+                "activeClassName": "top-nav-item__selected",
+                "aria-current": "page",
                 "children": "Extension Views",
-                "className": "offset top-nav-item top-nav-item__selected",
-                "onClick": [Function],
+                "className": "offset top-nav-item",
+                "exact": true,
+                "to": "/extension-views",
               },
               "ref": null,
               "rendered": "Extension Views",
-              "type": "a",
+              "type": [Function],
             },
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
+                "activeClassName": "top-nav-item__selected",
+                "aria-current": "page",
                 "children": "Manage Bits Products",
                 "className": "offset top-nav-item",
-                "onClick": [Function],
+                "exact": true,
+                "to": "/product-management",
               },
               "ref": null,
               "rendered": "Manage Bits Products",
-              "type": "a",
+              "type": [Function],
             },
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
+                "activeClassName": "top-nav-item__selected",
+                "aria-current": "page",
                 "children": "Configuration Service",
                 "className": "offset top-nav-item top-nav-item__disabled",
-                "onClick": [Function],
+                "exact": true,
+                "to": "/configuration-service",
               },
               "ref": null,
               "rendered": "Configuration Service",
-              "type": "a",
+              "type": [Function],
             },
           ],
           "type": "div",

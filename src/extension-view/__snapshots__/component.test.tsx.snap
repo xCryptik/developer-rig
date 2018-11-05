@@ -76,6 +76,10 @@ ShallowWrapper {
             "features": Object {
               "isChatEnabled": true,
             },
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
+            },
             "id": "1",
             "isPopout": false,
             "linked": false,
@@ -195,7 +199,12 @@ ShallowWrapper {
                               ],
                             }
           }
-          frameSize={undefined}
+          frameSize={
+                    Object {
+                              "height": 99,
+                              "width": 99,
+                            }
+          }
           id="component-1"
           installationAbilities={
                     Object {
@@ -413,7 +422,10 @@ ShallowWrapper {
               "bar",
             ],
           },
-          "frameSize": undefined,
+          "frameSize": Object {
+            "height": 99,
+            "width": 99,
+          },
           "id": "component-1",
           "installationAbilities": Object {
             "isChatEnabled": true,
@@ -531,7 +543,12 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            frameSize={undefined}
+            frameSize={
+                        Object {
+                                    "height": 99,
+                                    "width": 99,
+                                  }
+            }
             id="component-1"
             installationAbilities={
                         Object {
@@ -749,7 +766,10 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "frameSize": undefined,
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
+            },
             "id": "component-1",
             "installationAbilities": Object {
               "isChatEnabled": true,
@@ -854,6 +874,10 @@ ShallowWrapper {
             "channelId": "twitch",
             "features": Object {
               "isChatEnabled": true,
+            },
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
             },
             "id": "1",
             "isPopout": false,
@@ -1762,6 +1786,10 @@ ShallowWrapper {
             "features": Object {
               "isChatEnabled": true,
             },
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
+            },
             "id": "1",
             "isPopout": false,
             "linked": false,
@@ -2648,6 +2676,10 @@ ShallowWrapper {
             "features": Object {
               "isChatEnabled": true,
             },
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
+            },
             "id": "1",
             "isPopout": false,
             "linked": false,
@@ -3459,6 +3491,10 @@ ShallowWrapper {
             "features": Object {
               "isChatEnabled": true,
             },
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
+            },
             "id": "1",
             "isPopout": false,
             "linked": false,
@@ -3578,7 +3614,12 @@ ShallowWrapper {
                               ],
                             }
           }
-          frameSize={undefined}
+          frameSize={
+                    Object {
+                              "height": 99,
+                              "width": 99,
+                            }
+          }
           id="mobile-1"
           installationAbilities={
                     Object {
@@ -3797,7 +3838,10 @@ ShallowWrapper {
               "bar",
             ],
           },
-          "frameSize": undefined,
+          "frameSize": Object {
+            "height": 99,
+            "width": 99,
+          },
           "id": "mobile-1",
           "installationAbilities": Object {
             "isChatEnabled": true,
@@ -3916,7 +3960,12 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            frameSize={undefined}
+            frameSize={
+                        Object {
+                                    "height": 99,
+                                    "width": 99,
+                                  }
+            }
             id="mobile-1"
             installationAbilities={
                         Object {
@@ -4135,7 +4184,10 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "frameSize": undefined,
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
+            },
             "id": "mobile-1",
             "installationAbilities": Object {
               "isChatEnabled": true,
@@ -7662,6 +7714,10 @@ ShallowWrapper {
             "features": Object {
               "isChatEnabled": true,
             },
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
+            },
             "id": "1",
             "isPopout": false,
             "linked": false,
@@ -7781,7 +7837,12 @@ ShallowWrapper {
                               ],
                             }
           }
-          frameSize={undefined}
+          frameSize={
+                    Object {
+                              "height": 99,
+                              "width": 99,
+                            }
+          }
           id="component-1"
           installationAbilities={
                     Object {
@@ -7999,7 +8060,10 @@ ShallowWrapper {
               "bar",
             ],
           },
-          "frameSize": undefined,
+          "frameSize": Object {
+            "height": 99,
+            "width": 99,
+          },
           "id": "component-1",
           "installationAbilities": Object {
             "isChatEnabled": true,
@@ -8117,7 +8181,12 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            frameSize={undefined}
+            frameSize={
+                        Object {
+                                    "height": 99,
+                                    "width": 99,
+                                  }
+            }
             id="component-1"
             installationAbilities={
                         Object {
@@ -8335,7 +8404,10 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "frameSize": undefined,
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
+            },
             "id": "component-1",
             "installationAbilities": Object {
               "isChatEnabled": true,
@@ -8440,6 +8512,10 @@ ShallowWrapper {
             "channelId": "twitch",
             "features": Object {
               "isChatEnabled": true,
+            },
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
             },
             "id": "1",
             "isPopout": false,
@@ -8561,7 +8637,12 @@ ShallowWrapper {
                               ],
                             }
           }
-          frameSize={undefined}
+          frameSize={
+                    Object {
+                              "height": 99,
+                              "width": 99,
+                            }
+          }
           id="component-1"
           installationAbilities={
                     Object {
@@ -8781,7 +8862,10 @@ ShallowWrapper {
               "bar",
             ],
           },
-          "frameSize": undefined,
+          "frameSize": Object {
+            "height": 99,
+            "width": 99,
+          },
           "id": "component-1",
           "installationAbilities": Object {
             "isChatEnabled": true,
@@ -8900,7 +8984,12 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            frameSize={undefined}
+            frameSize={
+                        Object {
+                                    "height": 99,
+                                    "width": 99,
+                                  }
+            }
             id="component-1"
             installationAbilities={
                         Object {
@@ -9120,7 +9209,10 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "frameSize": undefined,
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
+            },
             "id": "component-1",
             "installationAbilities": Object {
               "isChatEnabled": true,
@@ -9225,6 +9317,10 @@ ShallowWrapper {
             "channelId": "twitch",
             "features": Object {
               "isChatEnabled": true,
+            },
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
             },
             "id": "1",
             "isPopout": false,
@@ -9346,7 +9442,12 @@ ShallowWrapper {
                               ],
                             }
           }
-          frameSize={undefined}
+          frameSize={
+                    Object {
+                              "height": 99,
+                              "width": 99,
+                            }
+          }
           id="component-1"
           installationAbilities={
                     Object {
@@ -9566,7 +9667,10 @@ ShallowWrapper {
               "bar",
             ],
           },
-          "frameSize": undefined,
+          "frameSize": Object {
+            "height": 99,
+            "width": 99,
+          },
           "id": "component-1",
           "installationAbilities": Object {
             "isChatEnabled": true,
@@ -9685,7 +9789,12 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            frameSize={undefined}
+            frameSize={
+                        Object {
+                                    "height": 99,
+                                    "width": 99,
+                                  }
+            }
             id="component-1"
             installationAbilities={
                         Object {
@@ -9905,7 +10014,10 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "frameSize": undefined,
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
+            },
             "id": "component-1",
             "installationAbilities": Object {
               "isChatEnabled": true,
@@ -10010,6 +10122,10 @@ ShallowWrapper {
             "channelId": "twitch",
             "features": Object {
               "isChatEnabled": true,
+            },
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
             },
             "id": "1",
             "isPopout": false,
@@ -10130,7 +10246,12 @@ ShallowWrapper {
                               ],
                             }
           }
-          frameSize={undefined}
+          frameSize={
+                    Object {
+                              "height": 99,
+                              "width": 99,
+                            }
+          }
           id="component-1"
           installationAbilities={
                     Object {
@@ -10348,7 +10469,10 @@ ShallowWrapper {
               "bar",
             ],
           },
-          "frameSize": undefined,
+          "frameSize": Object {
+            "height": 99,
+            "width": 99,
+          },
           "id": "component-1",
           "installationAbilities": Object {
             "isChatEnabled": true,
@@ -10466,7 +10590,12 @@ ShallowWrapper {
                                     ],
                                   }
             }
-            frameSize={undefined}
+            frameSize={
+                        Object {
+                                    "height": 99,
+                                    "width": 99,
+                                  }
+            }
             id="component-1"
             installationAbilities={
                         Object {
@@ -10684,7 +10813,10 @@ ShallowWrapper {
                 "bar",
               ],
             },
-            "frameSize": undefined,
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
+            },
             "id": "component-1",
             "installationAbilities": Object {
               "isChatEnabled": true,
@@ -10774,6 +10906,10 @@ ShallowWrapper {
             "channelId": "twitch",
             "features": Object {
               "isChatEnabled": true,
+            },
+            "frameSize": Object {
+              "height": 99,
+              "width": 99,
             },
             "id": "1",
             "isPopout": false,

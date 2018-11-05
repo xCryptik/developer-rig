@@ -6,12 +6,10 @@ import { UserDropdown } from '../user-dropdown';
 import { UserSession } from '../core/models/user-session';
 import { ExtensionManifest } from '../core/models/manifest';
 import { ProjectDropdown, Props as ProjectDropdownProps } from './project-dropdown';
+import { NavLink } from 'react-router-dom';
 
 export interface PublicProps {
   manifest: ExtensionManifest,
-  viewerHandler: Function,
-  selectedView: NavItem,
-  error: string,
   deleteProject: () => void,
 }
 
@@ -23,42 +21,14 @@ export interface ReduxStateProps {
 type Props = PublicProps & ProjectDropdownProps & ReduxStateProps;
 
 export class RigNavComponent extends React.Component<Props> {
-  private openProductManagementHandler = (): void => {
-    const { session, manifest, viewerHandler } = this.props;
-    if ((session && session.login) && (manifest && manifest.bitsEnabled)) {
-      viewerHandler(NavItem.ProductManagement);
-    }
-  }
-
   public render() {
-    const { session, manifest, selectedView } = this.props;
-    const projectOverviewClass = classNames({
-      'offset': true,
-      'top-nav-item': true,
-      'top-nav-item__selected': selectedView === NavItem.ProjectOverview,
-    });
-    const extensionViewsClass = classNames({
-      'offset': true,
-      'top-nav-item': true,
-      'top-nav-item__selected': selectedView === NavItem.ExtensionViews,
-    });
-    const productManagementClass = classNames({
-      'offset': true,
-      'top-nav-item': true,
-      'top-nav-item__selected': selectedView === NavItem.ProductManagement,
+    const { session, manifest } = this.props;
+    const productManagementClass = classNames('offset', 'top-nav-item', {
       'top-nav-item__disabled': !(session && session.login) || !(manifest && manifest.bitsEnabled),
     });
     const configurationServiceClass = classNames('offset', 'top-nav-item', {
       'top-nav-item__disabled': manifest && manifest.configurationLocation !== 'hosted',
-      'top-nav-item__selected': selectedView === NavItem.ConfigurationService,
     });
-    if (this.props.error) {
-      return (
-        <div className='top-nav-error'>
-          <a> {this.props.error} </a>
-        </div>
-      );
-    } else {
       return (
         <div className='top-nav'>
           <div className='personal-bar'>
@@ -77,27 +47,20 @@ export class RigNavComponent extends React.Component<Props> {
             </div>}
           </div>
           <div className='top-nav__item-container'>
-            <a className={projectOverviewClass} onClick={() => this.props.viewerHandler(NavItem.ProjectOverview)}>
+            <NavLink className="offset top-nav-item" to={NavItem.ProjectOverview} exact={true} activeClassName="top-nav-item__selected">
               Project Overview
-            </a>
-            <a className={extensionViewsClass} onClick={() => this.props.viewerHandler(NavItem.ExtensionViews)}>
+            </NavLink>
+            <NavLink className="offset top-nav-item" to={NavItem.ExtensionViews} exact={true} activeClassName="top-nav-item__selected">
               Extension Views
-            </a>
-            <a className={productManagementClass} onClick={(event) => this.openProductManagementHandler()}>
+            </NavLink>
+            <NavLink className={productManagementClass} to={NavItem.ProductManagement} exact={true} activeClassName="top-nav-item__selected">
               Manage Bits Products
-            </a>
-            <a className={configurationServiceClass} onClick={this.selectConfigurationServiceView}>
+            </NavLink>
+            <NavLink className={configurationServiceClass} to={NavItem.ConfigurationService} exact={true} activeClassName="top-nav-item__selected">
               Configuration Service
-            </a>
+            </NavLink>
           </div>
         </div>
       );
-    }
-  }
-
-  private selectConfigurationServiceView = () => {
-    if (this.props.manifest.configurationLocation === 'hosted') {
-      this.props.viewerHandler(NavItem.ConfigurationService);
-    }
   }
 }

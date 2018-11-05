@@ -2,8 +2,8 @@ import * as React from 'react';
 import './component.sass';
 import { RigNav } from '../rig-nav';
 import { ExtensionViewContainer } from '../extension-view-container';
-import { ExtensionViewDialog, ExtensionViewDialogState } from '../extension-view-dialog';
-import { EditViewDialog, EditViewProps } from '../edit-view-dialog';
+import { ExtensionViewDialogState } from '../extension-view-dialog';
+import { EditViewProps } from '../edit-view-dialog';
 import { ProductManagementViewContainer } from '../product-management-container';
 import { fetchUserExtensionManifest } from '../util/extension';
 import { fetchUser, stopHosting, fetchGlobalConfigurationSegment, fetchChannelConfigurationSegments, saveConfigurationSegment } from '../util/api';
@@ -21,6 +21,7 @@ import { CreateProjectDialog } from '../create-project-dialog';
 import { ConfigurationServiceView } from '../configuration-service-view';
 import { fetchIdForUser } from '../util/id';
 import { LocalStorageKeys } from '../constants/rig';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
 export interface ReduxStateProps {
   session: UserSession;
@@ -35,10 +36,8 @@ interface State {
   projects: RigProject[],
   configurations?: Configurations;
   currentProject?: RigProject,
-  showingExtensionsView: boolean;
   showingCreateProjectDialog: boolean;
-  viewForEdit?: RigExtensionView;
-  selectedView: NavItem;
+  selectedView?: NavItem;
   extensionsViewContainerKey: number;
   userId?: string;
   error?: string;
@@ -49,9 +48,7 @@ type Props = ReduxDispatchProps & ReduxStateProps;
 export class RigComponent extends React.Component<Props, State> {
   public state: State = {
     projects: [],
-    showingExtensionsView: false,
     showingCreateProjectDialog: false,
-    selectedView: NavItem.ProjectOverview,
     extensionsViewContainerKey: 0,
   }
 
@@ -62,36 +59,6 @@ export class RigComponent extends React.Component<Props, State> {
     this.setLogin().then(this.loadProjects);
   }
 
-  public openEditViewHandler = (id: string) => {
-    this.setState({
-      viewForEdit: this.state.currentProject.extensionViews.filter((extensionView) => extensionView.id === id)[0],
-    });
-  }
-
-  public closeEditViewHandler = () => {
-    this.setState({
-      viewForEdit: null,
-    });
-  }
-
-  public viewerHandler = (selectedView: NavItem) => {
-    this.setState({ selectedView });
-  }
-
-  public openExtensionViewHandler = () => {
-    if (!this.state.error) {
-      this.setState({
-        showingExtensionsView: true,
-      });
-    }
-  }
-
-  public closeExtensionViewDialog = () => {
-    this.setState({
-      showingExtensionsView: false
-    });
-  }
-
   public getFrameSizeFromDialog(extensionViewDialogState: ExtensionViewDialogState) {
     const key = extensionViewDialogState.extensionViewType === ExtensionViewType.Mobile ? 'mobileFrameSize' : 'frameSize';
     if (extensionViewDialogState[key] === 'Custom') {
@@ -100,7 +67,6 @@ export class RigComponent extends React.Component<Props, State> {
         height: extensionViewDialogState.height
       };
     }
-
     const sizes = extensionViewDialogState.extensionViewType === ExtensionViewType.Mobile ? MobileSizes : OverlaySizes;
     return sizes[extensionViewDialogState[key]];
   }
@@ -140,19 +106,17 @@ export class RigComponent extends React.Component<Props, State> {
     this.updateExtensionViews(extensionViews);
     const { manifest, secret } = this.state.currentProject;
     await this.updateConfiguration(manifest, extensionViews, this.state.userId, secret);
-    this.closeExtensionViewDialog();
   }
 
   public deleteExtensionView = (id: string) => {
     this.updateExtensionViews(this.state.currentProject.extensionViews.filter(element => element.id !== id));
   }
 
-  public editViewHandler = (viewForEdit: RigExtensionView, newViewState: EditViewProps) => {
+  public editView = (viewForEdit: RigExtensionView, newViewState: EditViewProps) => {
     viewForEdit.x = newViewState.x;
     viewForEdit.y = newViewState.y;
     viewForEdit.orientation = newViewState.orientation;
     this.updateExtensionViews(this.state.currentProject.extensionViews);
-    this.closeEditViewHandler();
   }
 
   public createProject = async (project: RigProject) => {
@@ -217,74 +181,73 @@ export class RigComponent extends React.Component<Props, State> {
     const { configurations, currentProject } = this.state;
     return (
       <div className="rig-container">
-        <RigNav
-          currentProjectIndex={this.currentProjectIndex}
-          projects={this.state.projects}
-          createNewProject={this.showCreateProjectDialog}
-          selectProject={this.selectProject}
-          manifest={currentProject ? currentProject.manifest : null}
-          selectedView={this.state.selectedView}
-          deleteProject={this.deleteProject}
-          viewerHandler={this.viewerHandler}
-          error={this.state.error}
-        />
         {this.state.error ? (
           <label>Something went wrong: {this.state.error}</label>
         ) : !this.props.session ? (
           <SignInDialog />
+        ) : !currentProject ? (
+          <CreateProjectDialog userId={this.state.userId} saveHandler={this.createProject} />
         ) : (
-          <>
-            {this.state.selectedView === NavItem.ProductManagement && <ProductManagementViewContainer clientId={currentProject.manifest.id} />}
-            {this.state.selectedView === NavItem.ProjectOverview && currentProject && <ProjectView
+          <BrowserRouter><div>
+            {this.needsRedirect() && <Redirect to={this.state.selectedView} push />}
+            <Route path="/" render={({ location }) => <RigNav {...location}
+              currentProjectIndex={this.currentProjectIndex}
+              projects={this.state.projects}
+              createNewProject={this.showCreateProjectDialog}
+              selectProject={this.selectProject}
+              manifest={currentProject.manifest}
+              deleteProject={this.deleteProject}
+            />} />
+            <Route exact path={NavItem.ProductManagement} render={() => (
+              this.props.session && this.props.session.login && currentProject.manifest && currentProject.manifest.bitsEnabled ?
+                <ProductManagementViewContainer clientId={currentProject.manifest.id} /> :
+                <Redirect to={NavItem.ProjectOverview} />
+            )} />
+            <Route exact path={NavItem.ProjectOverview} render={() => <ProjectView
               key={`ProjectView${this.currentProjectIndex}`}
               rigProject={currentProject}
               userId={this.state.userId}
               onChange={this.updateProject}
               refreshViews={this.refreshViews}
-            />}
-            {configurations && this.state.selectedView === NavItem.ConfigurationService && <ConfigurationServiceView
+            />} />
+            {configurations && <Route exact path={NavItem.ConfigurationService} render={() => currentProject.isLocal ?
+            <Redirect to={NavItem.ProjectOverview} /> :
+            <ConfigurationServiceView
               authToken={this.props.session.authToken}
               configurations={configurations}
               rigProject={currentProject}
               userId={this.state.userId}
               saveHandler={this.saveConfiguration}
-            />}
-            {configurations && currentProject && <ExtensionViewContainer
+            />} />}
+            {configurations && <Route path="/" render={({ location }) => <ExtensionViewContainer
               key={`ExtensionViewContainer${this.state.extensionsViewContainerKey}`}
               configurations={configurations}
-              isDisplayed={this.state.selectedView === NavItem.ExtensionViews}
+              isDisplayed={location.pathname === NavItem.ExtensionViews}
               deleteExtensionViewHandler={this.deleteExtensionView}
               extensionViews={currentProject.extensionViews}
               isLocal={currentProject.isLocal}
               manifest={currentProject.manifest}
               secret={currentProject.secret}
-              openEditViewHandler={this.openEditViewHandler}
-              openExtensionViewHandler={this.openExtensionViewHandler}
-            />}
-            {(!currentProject || this.state.showingCreateProjectDialog) && <CreateProjectDialog
+              editViewHandler={this.editView}
+              createExtensionViewHandler={this.createExtensionView}
+            />} />}
+            {this.state.showingCreateProjectDialog && <CreateProjectDialog
               userId={this.state.userId}
-              mustSave={!currentProject}
               closeHandler={this.closeProjectDialog}
               saveHandler={this.createProject}
             />}
-            {this.state.showingExtensionsView && (
-              <ExtensionViewDialog
-                extensionViews={currentProject.manifest.views}
-                closeHandler={this.closeExtensionViewDialog}
-                saveHandler={this.createExtensionView}
-              />
-            )}
-            {this.state.viewForEdit && (
-              <EditViewDialog
-                viewForEdit={this.state.viewForEdit}
-                closeHandler={this.closeEditViewHandler}
-                saveViewHandler={this.editViewHandler}
-              />
-            )}
-          </>
+          </div></BrowserRouter>
         )}
       </div>
     );
+  }
+
+  private needsRedirect = (): boolean => {
+    if (this.state.selectedView) {
+      setTimeout(() => this.setState({ selectedView: null }));
+      return true;
+    }
+    return false;
   }
 
   private saveConfiguration = (segment: string, channelId: string, content: string, version: string) => {
@@ -306,9 +269,7 @@ export class RigComponent extends React.Component<Props, State> {
     if (projectsValue) {
       const projects = JSON.parse(projectsValue) as RigProject[];
       const currentProject = projects[Number(localStorage.getItem(LocalStorageKeys.CurrentProjectIndex) || 0)];
-      const selectedView = currentProject.backendCommand || currentProject.frontendCommand || currentProject.frontendFolderName ?
-        NavItem.ProjectOverview : NavItem.ExtensionViews;
-      this.setState({ currentProject, projects, selectedView });
+      this.setState({ currentProject, projects });
       const { manifest, extensionViews, secret } = currentProject;
       await this.updateConfiguration(manifest, extensionViews, this.state.userId, secret);
     } else if (process.env.EXT_CLIENT_ID && process.env.EXT_SECRET && process.env.EXT_VERSION) {
