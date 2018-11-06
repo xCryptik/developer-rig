@@ -58,6 +58,12 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
     orientation: DefaultMobileOrientation,
   }
 
+  private opaqueIdInput: HTMLInputElement;
+
+  public componentDidMount() {
+    this.opaqueIdInput.focus();
+  }
+
   public onChange = (input: React.FormEvent<HTMLInputElement>) => {
     const { checked, name, type, value } = input.currentTarget;
     this.setState({ [name]: type === 'checkbox' ? checked : value });
@@ -170,9 +176,19 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
     this.setState({ isPopout: !this.state.isPopout });
   }
 
+  private handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+  }
+
+  private handleKeyDown = (event: React.KeyboardEvent<HTMLFormElement>) => {
+    if (event.key === 'Escape') {
+      this.close();
+    }
+  }
+
   public render() {
     return (
-      <div className="new-extension-view">
+      <form className="new-extension-view" onSubmit={this.handleSubmit} onKeyDown={this.handleKeyDown}>
         <div className="new-extension-view__background" />
         <div className="new-extension-view__dialog">
           <div className="dialog__top-bar-container">
@@ -317,7 +333,7 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
                   </div>
                   <div className='opaque_id-input'>
                     <label className="opaque-id-label">Custom Opaque ID</label>
-                    <input type="text" name="opaqueId" onChange={this.onChange} />
+                    <input type="text" name="opaqueId" onChange={this.onChange} ref={(input) => { this.opaqueIdInput = input; }} />
                   </div>
                 </div>
               </div>
@@ -358,12 +374,12 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
           </div>
           <hr className="dialog__divider" />
           <div className="dialog_bottom-bar">
-            <div className="bottom-bar__save" onClick={this.save}> Save </div>
-            <div className="bottom-bar__cancel" onClick={this.close}> Cancel </div>
+            <input type="submit" className="bottom-bar__save" onClick={this.save} defaultValue="Save" />
+            <input type="reset" className="bottom-bar__cancel" onClick={this.close} defaultValue="Cancel" />
             <span>{this.state.error}</span>
           </div>
         </div>
-      </div>
+      </form>
     );
   }
 }

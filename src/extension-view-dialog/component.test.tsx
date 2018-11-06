@@ -26,7 +26,7 @@ describe('<ExtensionViewDialog />', () => {
     },
     closeHandler: jest.fn(),
     saveHandler: jest.fn(),
-  }));
+  }), { disableLifecycleMethods: true });
 
   it('when top nav close button is clicked closeHandler is called', () => {
     const { wrapper } = setupShallow();
