@@ -373,7 +373,7 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
             </div>
           </div>
           <hr className="dialog__divider" />
-          <div className="dialog_bottom-bar">
+          <div className="dialog__bottom-bar">
             <input type="submit" className="bottom-bar__save" onClick={this.save} defaultValue="Save" />
             <input type="reset" className="bottom-bar__cancel" onClick={this.close} defaultValue="Cancel" />
             <span>{this.state.error}</span>

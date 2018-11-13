@@ -100,7 +100,7 @@ export class EditViewDialog extends React.Component<Props, State> {
             </div>}
 
           <hr className="dialog__divider" />
-          <div className="dialog_bottom-bar">
+          <div className="dialog__bottom-bar">
             <div className="bottom-bar__save" onClick={() => this.props.saveViewHandler(this.props.viewForEdit, this.state)}> Save </div>
             <div className="bottom-bar__cancel" onClick={this.props.closeHandler}> Cancel </div>
           </div>
