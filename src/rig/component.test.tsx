@@ -229,7 +229,7 @@ describe('<RigComponent />', () => {
           wrapper.update();
           const instance = wrapper.instance() as RigComponent;
           const extensionViews = createViewsForTest(1, ExtensionAnchors[ExtensionAnchor.Panel], ViewerTypes.LoggedOut);
-          await instance.createProject({ extensionViews } as RigProject);
+          await instance.createProject({ manifest: {}, extensionViews } as RigProject);
           expect(globalAny.fetch).toHaveBeenCalled();
           resolve();
         } catch (ex) {

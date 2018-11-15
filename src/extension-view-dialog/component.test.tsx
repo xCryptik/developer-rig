@@ -1,3 +1,4 @@
+import { setupMountTest } from '../tests/enzyme-util/mount';
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { ExtensionViewDialog } from './component';
 import { DefaultExtensionType, ExtensionAnchors } from '../constants/extension-types'
@@ -8,7 +9,7 @@ import { ExtensionViewType, ExtensionMode, ExtensionAnchor, ExtensionPlatform } 
 import { DivOption } from './div-option';
 
 describe('<ExtensionViewDialog />', () => {
-  const setupShallow = setupShallowTest(ExtensionViewDialog, () => ({
+  const props = {
     channelId: 'twitch',
     extensionViews: {
       panel: {
@@ -26,7 +27,15 @@ describe('<ExtensionViewDialog />', () => {
     },
     closeHandler: jest.fn(),
     saveHandler: jest.fn(),
-  }), { disableLifecycleMethods: true });
+  };
+  const setupMount = setupMountTest(ExtensionViewDialog, () => props);
+  const setupShallow = setupShallowTest(ExtensionViewDialog, () => props, { disableLifecycleMethods: true });
+
+  it('focuses on mount', () => {
+    const { wrapper } = setupMount();
+    const instance = wrapper.instance() as ExtensionViewDialog;
+    expect((instance as any).opaqueIdInput).toBeDefined();
+  });
 
   it('when top nav close button is clicked closeHandler is called', () => {
     const { wrapper } = setupShallow();
