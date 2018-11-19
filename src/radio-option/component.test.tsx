@@ -1,4 +1,4 @@
-import { setupShallowTest } from '../../tests/enzyme-util/shallow';
+import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { RadioOption } from './component';
 
 describe('<RadioOption />', () => {

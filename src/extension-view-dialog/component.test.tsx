@@ -4,7 +4,7 @@ import { ExtensionViewDialog } from './component';
 import { DefaultExtensionType, ExtensionAnchors } from '../constants/extension-types'
 import { DefaultOverlaySize } from '../constants/overlay-sizes'
 import { ViewerTypes, DefaultViewerType } from '../constants/viewer-types'
-import { RadioOption } from './radio-option';
+import { RadioOption } from '../radio-option';
 import { ExtensionViewType, ExtensionMode, ExtensionAnchor, ExtensionPlatform } from '../constants/extension-coordinator';
 import { DivOption } from './div-option';
 

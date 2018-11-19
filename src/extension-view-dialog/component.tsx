@@ -5,7 +5,7 @@ import { OverlaySizes, DefaultOverlaySize, DefaultCustomDimensions } from '../co
 import { ViewerTypes, DefaultViewerType } from '../constants/viewer-types'
 import { IdentityOptions, DefaultIdentityOption } from '../constants/identity-options';
 import { ViewTypeImages } from '../constants/img-map';
-import { RadioOption } from './radio-option';
+import { RadioOption } from '../radio-option';
 import { DivOption } from './div-option';
 import * as closeButton from '../img/close_icon.png';
 import { MobileOrientation, DefaultMobileOrientation, MobileSizes, DefaultMobileSize } from '../constants/mobile';

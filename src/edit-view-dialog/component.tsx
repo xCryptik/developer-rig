@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as closeButton from '../img/close_icon.png';
 import './component.sass';
-import { RadioOption } from '../extension-view-dialog/radio-option';
+import { RadioOption } from '../radio-option';
 import { MobileOrientation } from '../constants/mobile';
 import { RigExtensionView } from '../core/models/rig';
 import { ExtensionViewType } from '../constants/extension-coordinator';
