@@ -249,7 +249,7 @@ describe('api', () => {
           Authorization: `OAuth ${token}`,
           'Client-ID': 'clientId',
           'Content-Type': 'application/json; charset=UTF-8',
-          'X-Requested-With': 'developer-rig; 0.6.0',
+          'X-Requested-With': 'developer-rig; 0.7.0',
         },
       });
     })
@@ -292,7 +292,7 @@ describe('api', () => {
       headers: {
         Accept: 'application/vnd.twitchtv.v5+json; charset=UTF-8',
         'Content-Type': 'application/json; charset=UTF-8',
-        'X-Requested-With': 'developer-rig; 0.6.0',
+        'X-Requested-With': 'developer-rig; 0.7.0',
       },
       method: 'POST',
     });
@@ -310,7 +310,7 @@ describe('api', () => {
       headers: {
         Accept: 'application/vnd.twitchtv.v5+json; charset=UTF-8',
         'Content-Type': 'application/json; charset=UTF-8',
-        'X-Requested-With': 'developer-rig; 0.6.0',
+        'X-Requested-With': 'developer-rig; 0.7.0',
       },
       method: 'POST',
     });
