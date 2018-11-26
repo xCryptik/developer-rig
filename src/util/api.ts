@@ -173,7 +173,7 @@ export async function fetchProducts(clientId: string, token: string): Promise<Pr
       broadcast: p.broadcast ? 'true' : 'false',
       deprecated: p.expiration ? Date.parse(p.expiration) <= Date.now() : false,
       dirty: false,
-      savedInCatalog: false,
+      savedInCatalog: true,
     } as Product));
   }
   throw new Error(`Invalid server response for access token ${token}`);

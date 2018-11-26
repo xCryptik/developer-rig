@@ -176,7 +176,8 @@ describe('api', () => {
           displayName: expect.any(String),
           amount: expect.stringMatching(/[1-9]\d*/),
           inDevelopment: expect.stringMatching(/true|false/),
-          broadcast: expect.stringMatching(/true|false/)
+          broadcast: expect.stringMatching(/true|false/),
+          savedInCatalog: true,
         });
       });
     });
